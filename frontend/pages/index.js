@@ -1,21 +1,45 @@
 import Head from 'next/head'
 import { Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ARTICLES_QUERY from "../apollo/queries/article/articles";
+import Query from '../components/query';
+const Home = () => {
+  return (
+    <div className="container">
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-const Home = () => (
-  <div className="container">
-    <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+      <Query query={ARTICLES_QUERY} id={null}>
+        {({ data: { articles } }) => {
+          console.log(articles)
+          console.log(articles[0].name);
 
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
 
-      <Button color="danger">Pass på!!</Button>
+          return (
+            <div className="hero">
+              <h1 className="title">Welcome to Next.js!</h1>
+
+              <Button color="danger">Pass på!!</Button>
+
+            </div>
+          );
+
+
+
+        }}
+
+
+
+      </Query>
+
     </div>
+  );
+};
 
-  </div>
-)
 
-export default Home
+
+export default Home;
+/*
+*/
