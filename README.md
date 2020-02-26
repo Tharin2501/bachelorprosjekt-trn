@@ -8,6 +8,9 @@
 
 For å kjøre må man skrive - yarn strapi dev // npm strapi dev
 
+Username: Admin 
+Pw : test123
+
 Frontend React Nextjs + Apollo + bootstrap + reactstrap
 Starup
 - cd frotend
