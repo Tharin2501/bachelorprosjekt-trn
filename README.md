@@ -20,4 +20,4 @@ Starup
 - yarn dev in folder // npm dev
 
 
-Werrk a
+Werrk fins eg?
