@@ -3,8 +3,13 @@
  
  BACKEND Strapi
  Alt ligger i backend mappen
-For å kjøre må man skrive - yarn strapi dev
+ Cd Backend
+ Npm install 
+
+For å kjøre må man skrive - yarn strapi dev // npm strapi dev
 
 Frontend React Nextjs + Apollo + bootstrap + reactstrap
 Starup
-- yarn dev in folder
+- cd frotend
+- npm install
+- yarn dev in folder // npm dev
