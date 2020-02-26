@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "sub_categories",
+  "info": {
+    "name": "SubCategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "category": {
+      "via": "sub_categories",
+      "model": "category"
+    }
+  }
+}

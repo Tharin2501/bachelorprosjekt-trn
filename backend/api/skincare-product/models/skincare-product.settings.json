@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "skincare_products",
+  "info": {
+    "name": "SkincareProduct"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type_of_skincare_product": {
+      "model": "type-of-skincare-product"
+    },
+    "bullet_point_on_skincare_products": {
+      "collection": "bullet-point-on-skincare-product"
+    }
+  }
+}

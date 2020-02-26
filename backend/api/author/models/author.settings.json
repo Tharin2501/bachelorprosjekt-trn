@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "Author"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "tittle": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "authors"
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/type-of-skincare-products",
+      "handler": "type-of-skincare-product.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/type-of-skincare-products/count",
+      "handler": "type-of-skincare-product.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/type-of-skincare-products/:id",
+      "handler": "type-of-skincare-product.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/type-of-skincare-products",
+      "handler": "type-of-skincare-product.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/type-of-skincare-products/:id",
+      "handler": "type-of-skincare-product.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/type-of-skincare-products/:id",
+      "handler": "type-of-skincare-product.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
