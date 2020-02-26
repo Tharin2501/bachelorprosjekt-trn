@@ -18,3 +18,6 @@ Starup
 - cd frotend
 - npm install
 - yarn dev in folder // npm dev
+
+
+Werrk
