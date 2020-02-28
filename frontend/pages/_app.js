@@ -3,12 +3,14 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
+
 const App = ({ Component, pageProps, apollo }) => {
     return (
         <ApolloProvider client={apollo}>
             <Head>
                 <title>Strapi blog</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                 <link
                     rel="stylesheet"
                     href="https://fonts.googleapis.com/css?family=Staatliches"
