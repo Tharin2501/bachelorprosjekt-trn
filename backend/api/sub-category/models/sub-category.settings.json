@@ -22,8 +22,16 @@
       "required": false
     },
     "category": {
-      "via": "sub_categories",
-      "model": "category"
+      "model": "category",
+      "via": "sub_categories"
+    },
+    "sub_category": {
+      "model": "sub-category",
+      "via": "sub_categories"
+    },
+    "sub_categories": {
+      "collection": "sub-category",
+      "via": "sub_category"
     }
   }
 }
