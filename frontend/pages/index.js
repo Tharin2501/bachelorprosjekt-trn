@@ -15,9 +15,7 @@ const Home = () => {
             </Head>
 
            <MyHeader/>
-            <div>
             <MyMarquee/>
-            </div>
             <Query query={ARTICLES_QUERY} id={null}>
                 {({data: {articles}}) => {
                     console.log(articles)
