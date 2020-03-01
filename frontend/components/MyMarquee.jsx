@@ -1,14 +1,24 @@
-import React, {Component} from "react"
-import Marquee from "react-double-marquee"
+import React from "react"
+import Ticker from 'react-ticker'
 
+const array = ["Norges største parfymeri","Alltid åpent","Ingen moms"];
+
+function rand(min, max) {
+    let offset = min;
+    let range = (max - min) + 1;
+    return Math.floor(Math.random() * range) + offset
+}
 
 export const MyMarquee = () => (
-
-    <div style={{width: '100%', whiteSpace: 'nowrap', backgroundColor: "red"}}>
-        <Marquee delay={0} childMargin={150} speed={0.10} >
-            aaaaaaaaaaaaaaaaa
-            bbbbbbbbbbbbbbbbb
-            ddddddddddddddddd
-        </Marquee>
+    <div style={{backgroundColor: "lightgrey"}}>
+    <Ticker
+        direction="toRight"
+        mode="smooth"
+        speed={10}
+    >
+        {(index) => (
+            <li>{array[rand(0, array.length - 1)]}</li>
+        )}
+    </Ticker>
     </div>
 );
