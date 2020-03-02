@@ -22,7 +22,7 @@
     "next-with-apollo": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-double-marquee": "^1.0.1",
+    "react-ticker": "^1.2.2",
     "reactstrap": "^8.4.1"
   }
 }
