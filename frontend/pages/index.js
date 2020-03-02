@@ -4,7 +4,7 @@ import {Button} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import Query from '../components/query';
-import {MyFooter, MyHeader} from "../components/layout/layout";
+import {MyFooter, MyHeader, F} from "../components/layout/layout";
 import {MyMarquee} from "../components/MyMarquee";
 
 const Home = () => {
@@ -14,8 +14,10 @@ const Home = () => {
                 <title>Create Next App</title>
             </Head>
 
-           <MyHeader/>
+            <MyHeader/>
             <MyMarquee/>
+
+            {/*
             <Query query={ARTICLES_QUERY} id={null}>
                 {({data: {articles}}) => {
                     console.log(articles)
@@ -26,11 +28,11 @@ const Home = () => {
                             <h1 className="title">Welcome to Next.js!</h1>
 
                             <Button color="danger">Pass på!!</Button>
-
                         </div>
                     );
                 }}
             </Query>
+            */}
         <MyFooter/>
 
         </div>
