@@ -3,16 +3,17 @@
 Bachlor prosjeket til gruppe "69"
 
 BACKEND Strapi
-Alt ligger i backend mappen
-Cd Backend
-Npm install
 
-For å kjøre må man skrive - yarn strapi dev // npm strapi dev
-
+URL: https://trnbackend.herokuapp.com/
 Username: admin
 Pw : test123
 
+
+
 Frontend React Nextjs + Apollo + bootstrap + reactstrap
+
+https://trn-nettbutikk-frontend.now.sh/
+
 Starup
 
 - cd frotend
