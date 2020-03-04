@@ -55,10 +55,10 @@ export const MyHeader = (props) => {
                     <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
                 </div>
                 <div className="col-2">
-                    <a className="nav-item" href="Favorites"><FaHeart color="black" /></a>
+                    <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
                 </div>
                 <div className="ml-auto">
-                    <a className="nav-item" href="ShoppingCart"><FaShoppingCart color="black" /></a>
+                    <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
                 </div>
             </Navbar>
         </div>
