@@ -1,8 +1,8 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import Link from "next/link";
-import {FaHeart, FaShoppingCart} from 'react-icons/fa';
-import {Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from "reactstrap";
-import {GiHamburgerMenu} from "react-icons/gi";
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export const MyHeader = (props) => {
 
@@ -15,7 +15,7 @@ export const MyHeader = (props) => {
                 <div className="mr-auto">
                     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                         <DropdownToggle color="transparent">
-                            <GiHamburgerMenu/>
+                            <GiHamburgerMenu />
                         </DropdownToggle>
                         <DropdownMenu modifiers={{
                             setModifiers: {
@@ -35,16 +35,16 @@ export const MyHeader = (props) => {
                         }}
                         >
                             <DropdownItem header>Alle produkter</DropdownItem>
-                            <Link href="profil"><a title="min profil"><DropdownItem>Dynamisk brukerprofil</DropdownItem></a></Link>
-                            <DropdownItem divider/>
+                            <Link href="profile"><a title="min profil"><DropdownItem>Dynamisk brukerprofil</DropdownItem></a></Link>
+                            <DropdownItem divider />
                             <Link href="lojalitet"><a title="lojalitet"><DropdownItem>Tax Free and Me</DropdownItem></a></Link>
-                            <DropdownItem divider/>
+                            <DropdownItem divider />
                             <Link href="parfyme"><a title="parfyme"><DropdownItem>Parfyme</DropdownItem></a></Link>
-                            <DropdownItem divider/>
+                            <DropdownItem divider />
                             <Link href="makeup"><a title="makeup"><DropdownItem>Makeup</DropdownItem></a></Link>
-                            <DropdownItem divider/>
+                            <DropdownItem divider />
                             <Link href="hudpleie"><a title="hudpleie"><DropdownItem>Hudpleie</DropdownItem></a></Link>
-                            <DropdownItem divider/>
+                            <DropdownItem divider />
                         </DropdownMenu>
                     </Dropdown>
                 </div>
@@ -52,13 +52,13 @@ export const MyHeader = (props) => {
                     <a className="nav-item" href="#">Searchbar</a>
                 </div>
                 <div className="mx-auto">
-                    <img src="/images/logo.png" width="50px" height="55px" alt="logo"/>
+                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
                 </div>
                 <div className="col-2">
-                    <a className="nav-item" href="#"><FaHeart color="black"/></a>
+                    <a className="nav-item" href="Favourites"><FaHeart color="black" /></a>
                 </div>
                 <div className="ml-auto">
-                    <a className="nav-item" href="handlekurv"><FaShoppingCart color="black"/></a>
+                    <a className="nav-item" href="ShoppingCart"><FaShoppingCart color="black" /></a>
                 </div>
             </Navbar>
         </div>

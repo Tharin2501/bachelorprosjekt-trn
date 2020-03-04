@@ -14,8 +14,6 @@ const Home = () => {
                 <title>Tax free</title>
             </Head>
 
-            <MyHeader />
-            <MyMarquee />
 
             {
                 <Query query={ARTICLES_QUERY} id={null}>
@@ -33,7 +31,7 @@ const Home = () => {
                     }}
                 </Query>
             }
-            <MyFooter />
+
 
         </div>
     );
