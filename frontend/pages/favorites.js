@@ -1,9 +1,9 @@
 import React from "react"
 
-const Favourites = () => (
+const Favorites = () => (
 
     <h1>Dette er lagret siden</h1>
 
 );
 
-export default Favourites;
+export default Favorites;
