@@ -1,10 +1,24 @@
 # TRNNettbutikk
- Bachlor prosjeket til gruppe "69" 
- 
- BACKEND Strapi
- Alt ligger i backend mappen
-For å kjøre må man skrive - yarn strapi dev
+
+Bachlor prosjeket til gruppe "69"
+
+BACKEND Strapi
+
+URL: https://trnbackend.herokuapp.com/
+Username: admin
+Pw : test123
+
+
 
 Frontend React Nextjs + Apollo + bootstrap + reactstrap
+
+https://trn-nettbutikk-frontend.now.sh/
+
 Starup
-- yarn dev in folder
+
+- cd frotend
+- npm install
+- yarn dev in folder // npm dev
+
+
+Werrk fins eg? rart
