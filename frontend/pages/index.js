@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <Head>
-                <title>Create Next App</title>
+                <title>Tax free</title>
             </Head>
 
             <MyHeader/>

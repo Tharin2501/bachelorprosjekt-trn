@@ -34,11 +34,17 @@ export const MyHeader = (props) => {
                             },
                         }}
                         >
-                            <h5>Alle Kategorier</h5>
-                            <DropdownItem>DIOR</DropdownItem><DropdownItem divider/>
-                            <DropdownItem>DIOR</DropdownItem><DropdownItem divider/>
-                            <DropdownItem>DIOR</DropdownItem><DropdownItem divider/>
-                            <DropdownItem>DIOR</DropdownItem><DropdownItem divider/>
+                            <DropdownItem header>Alle produkter</DropdownItem>
+                            <Link href="profil"><a title="min profil"><DropdownItem>Dynamisk brukerprofil</DropdownItem></a></Link>
+                            <DropdownItem divider/>
+                            <Link href="lojalitet"><a title="lojalitet"><DropdownItem>Tax Free and Me</DropdownItem></a></Link>
+                            <DropdownItem divider/>
+                            <Link href="parfyme"><a title="parfyme"><DropdownItem>Parfyme</DropdownItem></a></Link>
+                            <DropdownItem divider/>
+                            <Link href="makeup"><a title="makeup"><DropdownItem>Makeup</DropdownItem></a></Link>
+                            <DropdownItem divider/>
+                            <Link href="hudpleie"><a title="hudpleie"><DropdownItem>Hudpleie</DropdownItem></a></Link>
+                            <DropdownItem divider/>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
