@@ -68,7 +68,7 @@ img:hover {
 .info {
     position: absolute;
     width: 94%;
-    top: 280px;
+    top: 310px;
     left: 3%;
     background-color: #fff
 }
@@ -121,5 +121,25 @@ img:hover {
 
 .image {
     width: 180px;
-    height: 300px
+    height: 300px;
+}
+
+.vl{
+    border-left: 2px solid black;
+    height: 20px;
+}
+
+.productgridFav{
+    color: #757575;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 7px;
+    border-radius: 50%
+}
+.productgridFav-Checked{
+    color: #E53935
+}
+.productgridFav:hover{
+    color: #E53935;
+    cursor: pointer
 }
