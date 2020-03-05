@@ -79,10 +79,10 @@ img:hover {
 }
 
 .cartProductCard{
-    background-color: #26A69A;
+    background-color: black;
     color: #fff;
     padding: 6px;
-    width: 48%;
+    width: 100%;
     margin-right: 2%;
     border: 2px solid #26A69A;
     cursor: pointer 
@@ -130,6 +130,8 @@ img:hover {
 }
 
 .productgridFav{
+    position: absolute;
+    top:10px;
     color: #757575;
     font-weight: bold;
     background-color: #EEEEEE;

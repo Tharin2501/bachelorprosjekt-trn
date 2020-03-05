@@ -41,8 +41,8 @@ const Home = () => {
                                     <div className="info py-2 px-2">
 
                                         <div className="text-center">
-                                            <h5 className="mb-0 mt-2">Tittel</h5>
-                                            <small className="text-muted mb-1">Beskrivelse</small>
+                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
+                                            <small className="text-muted mb-1">Mountain</small>
                                         </div>
                                         <div className="row px-3">
                                             <h5> 250ml</h5>
@@ -56,9 +56,6 @@ const Home = () => {
                                         <div className="row px-3">
                                             <div className="cartProductCard">
                                                 <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                            <div className="order">
-                                                <p className="mb-0 sm-font">Test</p>
                                             </div>
                                         </div>
                                     </div>
