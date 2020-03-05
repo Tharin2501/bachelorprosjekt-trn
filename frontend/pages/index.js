@@ -28,24 +28,28 @@ const Home = () => {
                     console.log(products)
 
                     return (
-                        <div className="block text-center">
-                            <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                            <div className="info py-2 px-2">
-                                <div className="row px-3">
-                                    <div className="cartProductCard">
-                                        <p className="mb-0 sm-font">Legg til</p>
+                        <div className="container-fluid px-5 py-5 mx-auto">
+                            <div className="row justify-content-between px-3">
+                                <div className="block text-center">
+                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
+                                    <div className="info py-2 px-2">
+                                        <div className="row px-3">
+                                            <div className="cartProductCard">
+                                                <p className="mb-0 sm-font">Legg til</p>
+                                            </div>
+                                            <div className="order">
+                                                <p className="mb-0 sm-font">Test</p>
+                                            </div>
+                                        </div>
+                                        <div className="text-left">
+                                            <h5 className="mb-0 mt-2">Tittel</h5>
+                                            <small className="text-muted mb-1">Beskrivelse</small>
+                                        </div>
+                                        <div className="row px-3">
+                                            <h5> 250kr</h5>
+                                            <p className="text-muted ml-2"><del>300kr</del></p>
+                                        </div>
                                     </div>
-                                    <div class="order">
-                                        <p className="mb-0 sm-font">Test</p>
-                                    </div>
-                                </div>
-                                <div className="text-left">
-                                    <h5 class="mb-0 mt-2">Tittel</h5>
-                                    <small className="text-muted mb-1">Beskrivelse</small>
-                                </div>
-                                <div className="row px-3">
-                                    <h5> 250kr</h5>
-                                    <p class="text-muted ml-2"><del>300kr</del></p>
                                 </div>
                             </div>
                         </div>

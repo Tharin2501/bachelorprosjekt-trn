@@ -106,3 +106,20 @@ img:hover {
     color: #fff;
     background-color: #00796B
 }
+
+@media screen and (max-width: 992px) {
+    .block {
+        width: 45%
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .block {
+        width: 100%
+    }
+}
+
+.image {
+    width: 180px;
+    height: 300px
+}
