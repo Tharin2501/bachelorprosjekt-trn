@@ -61,8 +61,9 @@ img:hover {
     position: relative;
     width: 22%;
     background-color: lightgray;
-    padding-top: 10px;
+    padding-top: 40px;
     margin-bottom: 165px;
+    
 }
 
 .info {
@@ -70,7 +71,8 @@ img:hover {
     width: 94%;
     top: 310px;
     left: 3%;
-    background-color: #fff
+    background-color: #fff;
+
 }
 
 
@@ -122,6 +124,7 @@ img:hover {
 .image {
     width: 180px;
     height: 300px;
+    
 }
 
 .vl{

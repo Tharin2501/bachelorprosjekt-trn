@@ -33,7 +33,7 @@ const Home = () => {
                     return (
                         <div className="container-fluid px-5 py-5 mx-auto">
                             <div className="row justify-content-between px-3">
-                                <div className="block text-center">
+                                <div className="block text-center border border-dark">
                                     <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
                                     <div className="pr-3 row justify-content-end">
                                         <div className="fa fa-heart-o productgridFav"> </div>
@@ -42,6 +42,34 @@ const Home = () => {
 
                                         <div className="text-center">
                                             <h5 className="mb-0 mt-2"> {products[0].name}</h5>
+                                            <small className="text-muted mb-1">Mountain</small>
+                                        </div>
+                                        <div className="row px-3">
+                                            <h5> 250ml</h5>
+                                            <div className="vl"></div>
+                                            <h5> 250kr</h5>
+                                            <p className="text-muted ml-2"><del>300kr</del></p>
+
+
+
+                                        </div>
+                                        <div className="row px-3">
+                                            <div className="cartProductCard">
+                                                <p className="mb-0 sm-font">Legg til</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="block text-center">
+                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
+                                    <div className="pr-3 row justify-content-end">
+                                        <div className="fa fa-heart-o productgridFav"> </div>
+                                    </div>
+                                    <div className="info py-2 px-2">
+
+                                        <div className="text-center">
+                                            <h5 className="mb-0 mt-2"> {products[1].name}</h5>
                                             <small className="text-muted mb-1">Mountain</small>
                                         </div>
                                         <div className="row px-3">
