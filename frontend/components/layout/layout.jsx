@@ -1,8 +1,10 @@
 import React, {useState} from "react"
 import Link from "next/link";
 import {FaHeart, FaShoppingCart} from 'react-icons/fa';
-import {Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from "reactstrap";
 import {GiHamburgerMenu} from "react-icons/gi";
+import {GoSearch} from "react-icons/go";
+import {Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from "reactstrap";
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 export const MyHeader = (props) => {
 
@@ -48,19 +50,33 @@ export const MyHeader = (props) => {
                         </DropdownMenu>
                     </Dropdown>
                 </div>
-                <div className="col-4">
-                    <a className="nav-item" href="#">Searchbar</a>
-                </div>
+                {/* mx-auto -> margin-left and margin-right: auto. Center an element .*/}
                 <div className="mx-auto">
                     <img src="/images/logo.png" width="50px" height="55px" alt="logo"/>
                 </div>
+                {/*
                 <div className="col-2">
                     <a className="nav-item" href="#"><FaHeart color="black"/></a>
                 </div>
+                */}
+                {/* ml-auto -> margin-left: auto which aligns an element to the right.*/}
                 <div className="ml-auto">
                     <a className="nav-item" href="handlekurv"><FaShoppingCart color="black"/></a>
                 </div>
             </Navbar>
+        </div>
+    );
+};
+// serchbar, se https://getbootstrap.com/docs/4.0/components/forms/ imorgen for å gjøre den mindre
+ export const SearchBar = (props) => {
+    return (
+        <div>
+            <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                    <InputGroupText><GoSearch/></InputGroupText>
+                </InputGroupAddon>
+                <Input placeholder="søk..." />
+            </InputGroup>
         </div>
     );
 };
