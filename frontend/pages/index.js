@@ -11,11 +11,11 @@ import Query from '../components/query';
 
 const divStyle = {
     border: "5px solid pink",
-    width: "14rem",
+    width: "10rem",
 
 }
 
-const
+
 const Home = () => {
     return (
         <div>
@@ -28,18 +28,26 @@ const Home = () => {
                     console.log(products)
 
                     return (
-                        <div style={divStyle}>
-                            <Card>
-
-                                <CardImg className="w-30 p-5 text-center" src="https://trnbackend.herokuapp.com/files/SPF50+Anthelios.jpg" alt="test" />
-
-                                <CardBody>
-                                    <CardTitle> {products[0].name}</CardTitle>
-                                    <CardSubtitle>{products[0].id}</CardSubtitle>
-                                    <CardText>{products[0].desc}</CardText>
-                                    <Button> Add to cart</Button>
-                                </CardBody>
-                            </Card>
+                        <div className="block text-center">
+                            <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
+                            <div className="info py-2 px-2">
+                                <div className="row px-3">
+                                    <div className="cartProductCard">
+                                        <p className="mb-0 sm-font">Legg til</p>
+                                    </div>
+                                    <div class="order">
+                                        <p className="mb-0 sm-font">Test</p>
+                                    </div>
+                                </div>
+                                <div className="text-left">
+                                    <h5 class="mb-0 mt-2">Tittel</h5>
+                                    <small className="text-muted mb-1">Beskrivelse</small>
+                                </div>
+                                <div className="row px-3">
+                                    <h5> 250kr</h5>
+                                    <p class="text-muted ml-2"><del>300kr</del></p>
+                                </div>
+                            </div>
                         </div>
                     );
                 }}
