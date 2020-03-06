@@ -6,6 +6,9 @@ const PRODUCTS_QUERY = gql`
       id
       name
       description
+      image{
+        url
+      }
     }
   }
 `;

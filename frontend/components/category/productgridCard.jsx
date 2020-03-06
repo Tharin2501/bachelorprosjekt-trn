@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const ProductgridCard = () => {
+const ProductgridCard = (props) => {
     var initialprice = 200;
+    console.log(props.productcard);
+    //console.log(props.productgridCard);
     // change color of hearthfunction
+    const [productName, setProductName] = useState(props.productcard.name)
+    const [productImage, setProductImage] = useState(props.productcard.image[0].url)
     const [heartColor, setheartColor] = useState("black");
     const [numberOfProducts, setNumberOfProducts] = useState(1);
     const [price, setPrice] = useState(initialprice);
@@ -46,9 +50,9 @@ export const ProductgridCard = () => {
                 <div className="pr-3 row justify-content-end">
                     <a onClick={(() => changeHeartcolor())}><FaHeart color={heartColor} /></a>
                 </div>
-                <div className="product-pic"> <img className="pic1" src="https://trnbackend.herokuapp.com/files/SPF50+Anthelios.jpg" /> </div>
+                <div className="product-pic"> <img className="pic1" src={"https://trnbackend.herokuapp.com" + productImage} /> </div>
                 <small className="category"> lepper</small>
-                <h5 className="product-name"> Test</h5>
+                <h5 className="product-name"> {productName}</h5>
                 <div className="row px-3 justify-content-between">
                     <p className="price">{price} kr</p>
                     <p className="price">{quantity}ml</p>
@@ -65,3 +69,4 @@ export const ProductgridCard = () => {
         </div>
     );
 };
+export default ProductgridCard;
