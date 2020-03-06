@@ -9,8 +9,6 @@ import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import PRODUCTS_QUERY from "../apollo/queries/product/products";
 import Query from '../components/query';
 
-import Productgrid from "../components/category/productgrid";
-import { SubCategoryList } from "../components/category/subCategoryList";
 
 const Home = () => {
     return (
@@ -20,23 +18,7 @@ const Home = () => {
                 <title>Tax free</title>
 
             </Head>
-            <Query query={PRODUCTS_QUERY} id={null}>
-                {({ data: { products } }) => {
 
-                    //console.log(products)
-                    //{products[0].name}
-                    return (
-                        <div>
-                            <SubCategoryList />
-                            <Productgrid productgrid={products} />;
-                        </div>
-
-
-                    );
-                }}
-
-
-            </Query>
 
             {
                 <Query query={ARTICLES_QUERY} id={null}>
@@ -55,12 +37,9 @@ const Home = () => {
                 </Query>
             }
 
-
         </div >
     );
 };
 
 
 export default Home;
-        /*
-*/
