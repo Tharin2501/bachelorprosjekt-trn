@@ -148,3 +148,51 @@ img:hover {
     color: #E53935;
     cursor: pointer
 }
+
+
+.card {
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.pic1 {
+width: 250px; /* 90% */
+height: 250px; /* null */
+margin-left: auto;
+margin-right: auto;
+display: block
+}
+
+.product-pic {
+padding-left: auto;
+padding-right: auto;
+width: 100%
+}
+
+.card-1 {
+padding: 30px 30px 20px 30px !important;
+border: none;
+width: 90%
+}
+
+.category {
+padding-top: 25px;
+color: grey
+}
+
+.product-name {
+padding-bottom: 15px;
+font-family: Florence;
+font-weight: bold
+}
+
+.price {
+font-size: 18px
+}
+
+.sm-text {
+font-size: 14px
+}

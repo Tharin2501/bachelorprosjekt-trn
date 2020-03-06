@@ -9,13 +9,8 @@ import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import PRODUCTS_QUERY from "../apollo/queries/product/products";
 import Query from '../components/query';
 
-
-const divStyle = {
-    border: "5px solid pink",
-    width: "10rem",
-
-}
-
+import { Productgrid } from "../components/category/productgrid";
+import { SubCategoryList } from "../components/category/subCategoryList";
 
 const Home = () => {
     return (
@@ -23,236 +18,20 @@ const Home = () => {
             <Head>
 
                 <title>Tax free</title>
-                <script src="https://kit.fontawesome.com/b0dd2d05dd.js" crossOrigin="anonymous"></script>
 
             </Head>
             <Query query={PRODUCTS_QUERY} id={null}>
                 {({ data: { products } }) => {
 
                     console.log(products)
-
+                    //{products[0].name}
                     return (
-                        <div className="container-fluid px-5 py-5 mx-auto">
-                            <div className="row justify-content-between px-3">
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block text-center border border-dark">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[0].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block text-center">
-                                    <img className="image" src="https://i.imgur.com/rwdD8hv.png"></img>
-                                    <div className="pr-3 row justify-content-end">
-                                        <div className="fa fa-heart-o productgridFav"> </div>
-                                    </div>
-                                    <div className="info py-2 px-2">
-
-                                        <div className="text-center">
-                                            <h5 className="mb-0 mt-2"> {products[1].name}</h5>
-                                            <small className="text-muted mb-1">Mountain</small>
-                                        </div>
-                                        <div className="row px-3">
-                                            <h5> 250ml</h5>
-                                            <div className="vl"></div>
-                                            <h5> 250kr</h5>
-                                            <p className="text-muted ml-2"><del>300kr</del></p>
-
-
-
-                                        </div>
-                                        <div className="row px-3">
-                                            <div className="cartProductCard">
-                                                <p className="mb-0 sm-font">Legg til</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <SubCategoryList />
+                            <Productgrid />
                         </div>
+
+
                     );
                 }}
 
@@ -277,11 +56,11 @@ const Home = () => {
             }
 
 
-        </div>
+        </div >
     );
 };
 
 
 export default Home;
-/*
+        /*
 */
