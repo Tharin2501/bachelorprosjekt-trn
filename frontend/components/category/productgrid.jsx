@@ -8,8 +8,14 @@ const Productgrid = (props) => {
         <div>
             <div className="container-fluid px-sm-1 py-5 mx-auto">
                 <div className="row justify-content-center">
-                    {props.productgrid.map((product, i) => {
-                        return <ProductgridCard productcard={product} />
+                    {props.productgrid.map((product, i, ) => {
+                        return (
+
+                            <div key={i.id}>
+                                <ProductgridCard productcard={product} />
+                            </div>
+
+                        )
                     })}
 
                 </div>

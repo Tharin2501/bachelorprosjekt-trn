@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { calculatePrice, setCart, getCart } from "../cart/cart"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -23,6 +24,8 @@ const ProductgridCard = (props) => {
     const [numberOfProducts, setNumberOfProducts] = useState(1);
     const [price, setPrice] = useState(productContext.price);
     const [quantity, setQuantity] = useState(100);
+
+    const [cartItems, setCartItems] = useState(getCart());
 
 
 
@@ -79,5 +82,25 @@ const ProductgridCard = (props) => {
             </div>
         </div>
     );
+
+    function addToCart(product) {
+        const alreadyInCart = cartItems.findIndex(
+            item => item.id === product.id
+        );
+        if (alreadyInCart === -1) {
+            const updatedItems = cartItems.concat({
+                ...product,
+                quantity: 1
+            });
+            this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
+        } else {
+            const updatedItems = [cartItems];
+            updatedItems[alreadyInCart].quantity += 1;
+            this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
+        }
+
+    };
+
 };
 export default ProductgridCard;
+
