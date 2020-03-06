@@ -41,7 +41,7 @@ export const MyHeader = (props) => {
                             <DropdownItem divider />
                             <Link href="parfyme"><a title="parfyme"><DropdownItem>Parfyme</DropdownItem></a></Link>
                             <DropdownItem divider />
-                            <Link href="makeup"><a title="makeup"><DropdownItem>Makeup</DropdownItem></a></Link>
+                            <Link href="category"><a title="makeup"><DropdownItem>Makeup</DropdownItem></a></Link>
                             <DropdownItem divider />
                             <Link href="hudpleie"><a title="hudpleie"><DropdownItem>Hudpleie</DropdownItem></a></Link>
                             <DropdownItem divider />

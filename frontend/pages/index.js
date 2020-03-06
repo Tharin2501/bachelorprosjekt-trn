@@ -1,24 +1,29 @@
 import React from "react"
 import Head from 'next/head'
-import { Button } from "reactstrap";
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
+import PRODUCTS_QUERY from "../apollo/queries/product/products";
 import Query from '../components/query';
-import { MyFooter, MyHeader, F } from "../components/layout/layout";
-import { MyMarquee } from "../components/MyMarquee";
+
 
 const Home = () => {
     return (
         <div>
             <Head>
+
                 <title>Tax free</title>
+
             </Head>
 
 
             {
                 <Query query={ARTICLES_QUERY} id={null}>
                     {({ data: { articles } }) => {
-                        console.log(articles)
+                        //console.log(articles)
                         console.log(articles[0].name);
 
                         return (
@@ -32,12 +37,9 @@ const Home = () => {
                 </Query>
             }
 
-
-        </div>
+        </div >
     );
 };
 
 
 export default Home;
-/*
-*/
