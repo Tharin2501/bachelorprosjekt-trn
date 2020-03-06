@@ -6,7 +6,6 @@ import {
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
-import PRODUCTS_QUERY from "../apollo/queries/product/products";
 import Query from '../components/query';
 
 
