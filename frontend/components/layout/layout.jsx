@@ -64,19 +64,22 @@ export const MyHeader = (props) => {
                     <a className="nav-item" href="handlekurv"><FaShoppingCart color="black"/></a>
                 </div>
             </Navbar>
+            <MySearchbar/>
         </div>
     );
 };
 // serchbar, se https://getbootstrap.com/docs/4.0/components/forms/ imorgen for å gjøre den mindre
- export const SearchBar = (props) => {
+ export const MySearchbar = () => {
     return (
-        <div>
+        <div className="row mx-auto w-75">
+            <div className="col">
             <InputGroup>
                 <InputGroupAddon addonType="prepend">
                     <InputGroupText><GoSearch/></InputGroupText>
                 </InputGroupAddon>
                 <Input placeholder="søk..." />
             </InputGroup>
+            </div>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import {Button} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import Query from '../components/query';
-import {MyFooter, MyHeader, SearchBar} from "../components/layout/layout";
+import {MyFooter, MyHeader, } from "../components/layout/layout";
 import {MyMarquee} from "../components/MyMarquee";
 
 const Home = () => {
@@ -14,9 +14,6 @@ const Home = () => {
                 <title>Tax free</title>
             </Head>
 
-            <MyHeader/>
-            <SearchBar/>
-            <MyMarquee/>
             {/*
             <Query query={ARTICLES_QUERY} id={null}>
                 {({data: {articles}}) => {
@@ -33,13 +30,9 @@ const Home = () => {
                 }}
             </Query>
             */}
-        <MyFooter/>
-
         </div>
     );
 };
 
 
 export default Home;
-/*
-*/

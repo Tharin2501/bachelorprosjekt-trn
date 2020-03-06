@@ -3,7 +3,7 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
-import { MyFooter, MyHeader, F } from "../components/layout/layout";
+import {MyFooter, MyHeader, F, MySearchbar} from "../components/layout/layout";
 import { MyMarquee } from "../components/MyMarquee";
 
 const App = ({ Component, pageProps, apollo }) => {
