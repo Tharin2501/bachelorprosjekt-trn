@@ -1,19 +1,30 @@
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const ProductgridCard = (props) => {
-    var initialprice = 200;
+    // to pass around to cart
+    const productContext = {
+        id: props.productcard.id,
+        name: props.productcard.name,
+
+        price: 200,
+        image: props.productcard.image[0].url,
+
+    }
     console.log(props.productcard);
     //console.log(props.productgridCard);
     // change color of hearthfunction
-    const [productName, setProductName] = useState(props.productcard.name)
-    const [productImage, setProductImage] = useState(props.productcard.image[0].url)
+    const [productName, setProductName] = useState(productContext.name)
+    const [productImage, setProductImage] = useState(productContext.image)
     const [heartColor, setheartColor] = useState("black");
     const [numberOfProducts, setNumberOfProducts] = useState(1);
-    const [price, setPrice] = useState(initialprice);
+    const [price, setPrice] = useState(productContext.price);
     const [quantity, setQuantity] = useState(100);
+
+
 
     function changeHeartcolor() {
         if (heartColor === "black") {
@@ -64,7 +75,7 @@ const ProductgridCard = (props) => {
                     <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
                 </div>
 
-                <button type="button" className="btn btn-dark">Buy</button>
+                <button onClick={(() => addToCart(productContext))} type="button" className="btn btn-dark">Buy</button>
             </div>
         </div>
     );
