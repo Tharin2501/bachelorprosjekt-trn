@@ -1,12 +1,15 @@
 
 import React, { useState, useEffect } from "react"
-import { FaHeart, FaMinusCircle } from 'react-icons/fa';
+import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const ProductgridCard = () => {
-
+    var initialprice = 200;
     // change color of hearthfunction
     const [heartColor, setheartColor] = useState("black");
+    const [numberOfProducts, setNumberOfProducts] = useState(1);
+    const [price, setPrice] = useState(initialprice);
+    const [quantity, setQuantity] = useState(100);
 
     function changeHeartcolor() {
         if (heartColor === "black") {
@@ -16,6 +19,25 @@ export const ProductgridCard = () => {
         }
     }
     ///// end chage color of hearthfunction
+
+    function changeNumberofProducts(value) {
+        if (value === "increaseAmount") {
+            if (numberOfProducts < 99) {
+                setNumberOfProducts(numberOfProducts + 1)
+            } else {
+                alert("U cant add more then 99 products")
+            }
+
+        } else {
+            if ((numberOfProducts - 1) >= 1) {
+                setNumberOfProducts(numberOfProducts - 1)
+            } else {
+                alert("invalid number");
+            }
+        }
+    }
+
+
 
     return (
 
@@ -28,14 +50,14 @@ export const ProductgridCard = () => {
                 <small className="category"> lepper</small>
                 <h5 className="product-name"> Test</h5>
                 <div className="row px-3 justify-content-between">
-                    <p className="price">200kr</p>
-                    <p className="price">100ml</p>
+                    <p className="price">{price} kr</p>
+                    <p className="price">{quantity}ml</p>
 
                 </div>
                 <div className="row px-3 justify-content-between">
-                    <div className="fas fa-minus-circle" ></div>
-                    <small> 2</small>
-                    <div className="fas fa-plus-circle" ></div>
+                    <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle /></a>
+                    <small> {numberOfProducts}</small>
+                    <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
                 </div>
 
                 <button type="button" className="btn btn-dark">Buy</button>
