@@ -15,8 +15,7 @@ const ProductgridCard = (props) => {
         image: props.productcard.image[0].url,
 
     }
-    console.log(props.productcard);
-    //console.log(props.productgridCard);
+
     // change color of hearthfunction
     const [productName, setProductName] = useState(productContext.name)
     const [productImage, setProductImage] = useState(productContext.image)
