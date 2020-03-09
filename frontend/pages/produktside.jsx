@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import ProduktTab from "../components/ProduktTab";
 
 const Produktside = () => (
   <div className="bg-info w-100 h-100 p-3 d-inline-block overflow-auto">
@@ -110,6 +111,9 @@ const Produktside = () => (
           pizzle.
         </Col>
       </Row>
+    </div>
+    <div className="bg-warning">
+      <ProduktTab />
     </div>
   </div>
 );
