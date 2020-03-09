@@ -47,3 +47,7 @@ img:hover {
 .cart {
   color: #101622;
 }
+.img {
+  width: 150px;
+  height: 150px;
+}
