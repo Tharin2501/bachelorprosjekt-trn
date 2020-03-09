@@ -26,7 +26,6 @@ const ProductgridCard = (props) => {
     const [price, setPrice] = useState(productContext.price);
     const [quantity, setQuantity] = useState(100);
 
-    const [cartItems, setCartItems] = useState(2);
 
 
     const [rememberMe, setRememberMe] = useState(() =>
@@ -34,7 +33,19 @@ const ProductgridCard = (props) => {
 
     );
 
+    useEffect(() => {
+        Cookie.set("rememberMe", (rememberMe)); //  JSON.stringify makes bool work
 
+    }, [rememberMe]);
+
+    function getCart() {
+        Cookie.set("rememberMe", (rememberMe))
+    }
+
+    function addtoCart() {
+        const updatedCart = rememberMe.concat({ ...productName })
+        setRememberMe(updatedCart)
+    }
 
     function changeHeartcolor() {
         if (heartColor === "black") {
@@ -57,12 +68,14 @@ const ProductgridCard = (props) => {
             if ((numberOfProducts - 1) >= 1) {
                 setNumberOfProducts(numberOfProducts - 1)
             } else {
+
+                getCart();
+                addtoCart();
                 alert("invalid number" + rememberMe);
             }
         }
     }
 
-    //getCart();
 
     return (
 

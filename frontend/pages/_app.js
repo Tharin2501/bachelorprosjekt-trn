@@ -7,6 +7,7 @@ import { MyFooter, MyHeader, F } from "../components/layout/layout";
 import { MyMarquee } from "../components/MyMarquee";
 
 const App = ({ Component, pageProps, apollo }) => {
+
     return (
         <ApolloProvider client={apollo}>
             <Head>
