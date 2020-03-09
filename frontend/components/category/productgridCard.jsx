@@ -27,7 +27,7 @@ const ProductgridCard = (props) => {
     const [quantity, setQuantity] = useState(100);
 
 
-
+    // er en string må gjøres til js array
     const [rememberMe, setRememberMe] = useState(() =>
         (Cookie.get("rememberMe", rememberMe)) // JSON.parse makes bool work
 
@@ -43,8 +43,14 @@ const ProductgridCard = (props) => {
     }
 
     function addtoCart() {
-        const updatedCart = rememberMe.concat({ ...productName })
-        setRememberMe(updatedCart)
+
+        var proudctnamestring = JSON.stringify(productName)
+        //const updatedCart = rememberMe.concat({ ...productName })
+
+        //alert(updatedCart + productName)
+
+
+        setRememberMe(rememberMe + productName)
     }
 
     function changeHeartcolor() {
