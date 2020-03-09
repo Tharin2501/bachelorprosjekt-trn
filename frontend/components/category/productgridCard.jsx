@@ -3,6 +3,9 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Cookie from "js-cookie";
+
+//import parsCookies from "../components/cart/parseCookies";
 
 const ProductgridCard = (props) => {
     // to pass around to cart
@@ -26,6 +29,12 @@ const ProductgridCard = (props) => {
     const [cartItems, setCartItems] = useState(2);
 
 
+    const [rememberMe, setRememberMe] = useState(() =>
+        (Cookie.get("rememberMe", rememberMe)) // JSON.parse makes bool work
+
+    );
+
+
 
     function changeHeartcolor() {
         if (heartColor === "black") {
@@ -41,19 +50,19 @@ const ProductgridCard = (props) => {
             if (numberOfProducts < 99) {
                 setNumberOfProducts(numberOfProducts + 1)
             } else {
-                alert("U cant add more then 99 products")
+                alert("U cant add more then 99 products" + rememberMe)
             }
 
         } else {
             if ((numberOfProducts - 1) >= 1) {
                 setNumberOfProducts(numberOfProducts - 1)
             } else {
-                alert("invalid number");
+                alert("invalid number" + rememberMe);
             }
         }
     }
 
-
+    //getCart();
 
     return (
 
@@ -82,6 +91,9 @@ const ProductgridCard = (props) => {
     );
 
     function addToCart(product) {
+
+        console.log(rememberMe + "test");
+        /*
         const alreadyInCart = cartItems.findIndex(
             item => item.id === product.id
         );
@@ -96,8 +108,12 @@ const ProductgridCard = (props) => {
             updatedItems[alreadyInCart].quantity += 1;
             this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
         }
-
+        */
     };
+
+    function getCart() {
+
+    }
 
     function deleteItemFromCart(itemtoDelete) {
         const filteredItems = this.state.cartItems.filter(
