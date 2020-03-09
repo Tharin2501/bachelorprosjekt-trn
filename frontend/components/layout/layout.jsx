@@ -3,11 +3,13 @@ import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { calculatePrice, getCart } from "../cart/cart"
 
 export const MyHeader = (props) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
+    const [cartItems, setCartItems] = useState(getCart());
 
     return (
         <div>
@@ -59,6 +61,7 @@ export const MyHeader = (props) => {
                 </div>
                 <div className="ml-auto">
                     <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
+                    <p>${calculatePrice(cartItems)}</p>
                 </div>
             </Navbar>
         </div>

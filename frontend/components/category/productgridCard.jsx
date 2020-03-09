@@ -100,6 +100,13 @@ const ProductgridCard = (props) => {
 
     };
 
+    function deleteItemFromCart(itemtoDelete) {
+        const filteredItems = this.state.cartItems.filter(
+            item => item.id !== itemtoDelete
+        );
+        this.setState({ cartItems: filteredItems }, () => setCart(filteredItems));
+    };
+
 };
 export default ProductgridCard;
 
