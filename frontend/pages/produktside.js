@@ -6,7 +6,7 @@ const Produktside = () => (
     <div>
       <Breadcrumb>
         <BreadcrumbItem>
-          <a href="#">Hjem</a>
+          <a href="/">Hjem</a>
         </BreadcrumbItem>
         <BreadcrumbItem>
           <a href="#">Vin</a>
@@ -36,34 +36,42 @@ const Produktside = () => (
             <h3>
               <Row>
                 <Col xs="6" sm="4">
-                  +
+                  <Button>-</Button>
                 </Col>
                 <Col xs="6" sm="4">
                   1
                 </Col>
-                <Col sm="4">-</Col>
+                <Col sm="4">
+                  <Button>+</Button>
+                </Col>
               </Row>
             </h3>
           </Col>
         </Row>
         <div className="text-center w-75 m-auto">
           <Row className="bg-info p-3">
-            <Col>Legg til i handleposen</Col>
+            <Col>
+              <Button>Legg til i handleposen</Button>
+            </Col>
           </Row>
           <Row className="bg-primary p-3">
-            <Col>Legg til i ønskelisten</Col>
+            <Col>
+              <Button>Legg til i ønskelisten</Button>
+            </Col>
           </Row>
         </div>
       </Col>
     </Row>
     <Row className="bg-secondary text-center p-3">
       <Col xs="6" sm="4">
-        Info
+        <Button>Info</Button>
       </Col>
       <Col xs="6" sm="4">
-        Ingredienser
+        <Button>Ingredienser</Button>
       </Col>
-      <Col sm="4">Omtale</Col>
+      <Col sm="4">
+        <Button>Omtale</Button>
+      </Col>
     </Row>
     <div className="container text-left w-50 bg-success p-5">
       <Row className="p-3 bg-danger">
@@ -107,18 +115,3 @@ const Produktside = () => (
 );
 
 export default Produktside;
-
-/**
- * <p>
-          Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
-          Phat sapien velizzle, shizzlin dizzle volutpat, suscipizzle stuff,
-          gravida izzle, funky fresh. Pellentesque yo tortor. Sheezy erizzle.
-          Sizzle go to hizzle fizzle mah nizzle break yo neck, yall for sure
-          pizzle. Maurizzle pellentesque nibh izzle turpizzle. Fo shizzle my
-          nizzle fo shizzle my nizzle tortizzle. Sure boofron rhoncizzle sizzle.
-          In hac habitasse we gonna chung dictumst. Fo dapibizzle. Curabitizzle
-          tellus bling bling, pretizzle eu, yo mamma crunk, eleifend vitae,
-          nunc. Fo shizzle my nizzle suscipit. Integer rizzle shiznit sed
-          purizzle.
-        </p>
- */
