@@ -7,17 +7,34 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import Query from '../components/query';
+//import Cart from "../components/cart/cart"
 
 
-const Home = () => {
+import Cookie from "js-cookie";
+import { useState, useEffect } from "react";
+import parsCookies from "../components/cart/parseCookies";
+
+//const CART_KEY = "cart";
+
+const myArray = [1, 2, 3];
+console.log(myArray)
+const Cart = ({ initialRememberValue = myArray }) => { //(myArray)
+    const [rememberMe, setRememberMe] = useState(() =>
+        (initialRememberValue) // JSON.parse makes bool work
+    );
+
+    console.log(rememberMe + " abc");
+    <head>
+        <title>Tax free</title>
+    </head>
+
+    useEffect(() => {
+        Cookie.set("rememberMe", (rememberMe)); //  JSON.stringify makes bool work
+
+    }, [rememberMe]);
+
     return (
         <div>
-            <Head>
-
-                <title>Tax free</title>
-
-            </Head>
-
 
             {
                 <Query query={ARTICLES_QUERY} id={null}>
@@ -33,9 +50,25 @@ const Home = () => {
                 </Query>
             }
 
-        </div >
+
+            remember me
+        <input
+                type="checkbox"
+                value={rememberMe}
+                checked={rememberMe}
+                onChange={e => setRememberMe([4, 5, 6])}
+            />
+        </div>
     );
 };
 
+Cart.getInitialProps = ({ req }) => {
+    const cookies = parsCookies(req);
 
-export default Home;
+
+    return {
+        initialRememberValue: cookies.rememberMe
+    };
+};
+
+export default Cart;

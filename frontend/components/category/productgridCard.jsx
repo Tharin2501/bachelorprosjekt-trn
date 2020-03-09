@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import { calculatePrice, setCart, getCart } from "../cart/cart"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -24,7 +23,7 @@ const ProductgridCard = (props) => {
     const [price, setPrice] = useState(productContext.price);
     const [quantity, setQuantity] = useState(100);
 
-    const [cartItems, setCartItems] = useState(getCart());
+    const [cartItems, setCartItems] = useState(2);
 
 
 
