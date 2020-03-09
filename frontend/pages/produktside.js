@@ -1,8 +1,22 @@
 import React from "react";
-import { Button, Row, Col } from "reactstrap";
+import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 
 const Produktside = () => (
   <div className="bg-info w-100 h-100 p-3 d-inline-block overflow-auto">
+    <div>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <a href="#">Hjem</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <a href="#">Vin</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <a href="#">Rødvin</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
+      </Breadcrumb>
+    </div>
     <h1>Dette er produktsiden</h1>
     <Row>
       <Col xs="6" className="text-center bg-warning h-auto w-50">
@@ -42,7 +56,16 @@ const Produktside = () => (
         </div>
       </Col>
     </Row>
-    <div className="container text-left w-50 bg-secondary p-5">
+    <Row className="bg-secondary text-center p-3">
+      <Col xs="6" sm="4">
+        Info
+      </Col>
+      <Col xs="6" sm="4">
+        Ingredienser
+      </Col>
+      <Col sm="4">Omtale</Col>
+    </Row>
+    <div className="container text-left w-50 bg-success p-5">
       <Row className="p-3 bg-danger">
         <Col>
           Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
