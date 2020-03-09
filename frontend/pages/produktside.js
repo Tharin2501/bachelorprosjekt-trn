@@ -32,7 +32,7 @@ const Produktside = () => (
             </h3>
           </Col>
         </Row>
-        <div className="text-center w-75 m-auto p-3">
+        <div className="text-center w-75 m-auto">
           <Row className="bg-info p-3">
             <Col>Legg til i handleposen</Col>
           </Row>
@@ -42,6 +42,44 @@ const Produktside = () => (
         </div>
       </Col>
     </Row>
+    <div className="container text-left w-50 bg-secondary p-5">
+      <Row className="p-3 bg-danger">
+        <Col>
+          Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
+          Phat sapien velizzle, shizzlin dizzle volutpat, suscipizzle stuff,
+          gravida izzle, funky fresh. Pellentesque yo tortor. Sheezy erizzle.
+          Sizzle go to hizzle fizzle mah nizzle break yo neck, yall for sure
+          pizzle.
+        </Col>
+      </Row>
+      <Row className="p-3 bg-info">
+        <Col>
+          Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
+          Phat sapien velizzle, shizzlin dizzle volutpat, suscipizzle stuff,
+          gravida izzle, funky fresh. Pellentesque yo tortor. Sheezy erizzle.
+          Sizzle go to hizzle fizzle mah nizzle break yo neck, yall for sure
+          pizzle.
+        </Col>
+      </Row>
+      <Row className="p-3 bg-danger">
+        <Col>
+          Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
+          Phat sapien velizzle, shizzlin dizzle volutpat, suscipizzle stuff,
+          gravida izzle, funky fresh. Pellentesque yo tortor. Sheezy erizzle.
+          Sizzle go to hizzle fizzle mah nizzle break yo neck, yall for sure
+          pizzle.
+        </Col>
+      </Row>
+      <Row className="p-3 bg-info">
+        <Col>
+          Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the bizzle.
+          Phat sapien velizzle, shizzlin dizzle volutpat, suscipizzle stuff,
+          gravida izzle, funky fresh. Pellentesque yo tortor. Sheezy erizzle.
+          Sizzle go to hizzle fizzle mah nizzle break yo neck, yall for sure
+          pizzle.
+        </Col>
+      </Row>
+    </div>
   </div>
 );
 
