@@ -13,24 +13,61 @@ import Query from '../components/query';
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
+import { GiTestTubes } from "react-icons/gi";
 
 //const CART_KEY = "cart";
 
-const myArray = [1, 2, 3];
-console.log(myArray)
-const Cart = ({ initialRememberValue = myArray }) => { //(myArray)
+var myarray = { key: 1, key: 2 }
+
+const jsonObj = [
+
+]
+
+
+var test1 = {
+    id: 1,
+    name: 'test'
+}
+var test2 = {
+    id: 2,
+    name: 'test2'
+}
+
+var doit = true;
+
+jsonObj.push(test1)
+jsonObj.push(test2)
+
+//jsonObj = JSON.parse(jsonObj)
+
+const Cart = ({ initialRememberValue = jsonObj }) => {
     const [rememberMe, setRememberMe] = useState(() =>
-        (initialRememberValue) // JSON.parse makes bool work
+        (initialRememberValue) //  JSON.parse
     );
 
-    console.log(rememberMe + " abc");
-    <head>
-        <title>Tax free</title>
-    </head>
+    const jsonStr = JSON.stringify(jsonObj);
+    //console.log(jsonStr)
+    //console.log(rememberMe)
+
+
+    //console.log(rememberMe)
+
+    //console.log(test)
+    //console.log(test[0])
+
+    var test3 = {
+        id: 3,
+        name: 'faen!'
+
+    }
+
+    console.log(rememberMe)
+
+
+
 
     useEffect(() => {
-        Cookie.set("rememberMe", (rememberMe)); //  JSON.stringify makes bool work
-
+        Cookie.set("rememberMe", (rememberMe));// JSON.stringify
     }, [rememberMe]);
 
     return (
@@ -52,15 +89,26 @@ const Cart = ({ initialRememberValue = myArray }) => { //(myArray)
 
 
             remember me
-        <input
+            <input
                 type="checkbox"
                 value={rememberMe}
                 checked={rememberMe}
-                onChange={e => setRememberMe([4, 5, 6])}
+                onChange={e => addItem()}
             />
         </div>
     );
+
+    function addItem() {
+        var test = JSON.parse(rememberMe)
+        test.push(test3)
+        //console.log(test[2])
+        //console.log(test)
+        var restult = JSON.stringify(test)
+        setRememberMe(restult)
+    }
 };
+
+
 
 Cart.getInitialProps = ({ req }) => {
     const cookies = parsCookies(req);

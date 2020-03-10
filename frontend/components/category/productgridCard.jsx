@@ -12,7 +12,7 @@ const ProductgridCard = (props) => {
     const productContext = {
         id: props.productcard.id,
         name: props.productcard.name,
-
+        quantity: 1,
         price: 200,
         image: props.productcard.image[0].url,
 
@@ -28,9 +28,14 @@ const ProductgridCard = (props) => {
 
 
     // er en string må gjøres til js array
-    const [rememberMe, setRememberMe] = useState(() =>
-        (Cookie.get("rememberMe", rememberMe)) // JSON.parse makes bool work
+    const [rememberMe, setRememberMe] = useState(() => {
+        var result
+        Cookie.get("rememberMe", result) // JSON.parse makes bool work
+        alert(result)
+        setRememberMe(JSON.parse(result))
 
+
+    }
     );
 
     useEffect(() => {
@@ -44,11 +49,11 @@ const ProductgridCard = (props) => {
 
     function addtoCart() {
 
-        var proudctnamestring = JSON.stringify(productName)
+        var productcontextString = JSON.stringify(productContext)
         //const updatedCart = rememberMe.concat({ ...productName })
 
         //alert(updatedCart + productName)
-
+        alert(productcontextString)
 
         setRememberMe(rememberMe + productName)
     }
