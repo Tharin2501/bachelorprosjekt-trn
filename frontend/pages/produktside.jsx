@@ -36,7 +36,7 @@ const Produktside = () => (
           <Col xs="6">
             <h4>Pris</h4>
           </Col>
-          <Col xs="6">
+          <Col>
             <h3>
               <Row>
                 <Col xs="6" sm="4">
@@ -71,18 +71,6 @@ const Produktside = () => (
       </Col>
     </Row>
     {/** Info tabs start */}
-    <Row className="bg-secondary text-center p-3">
-      <Col xs="6" sm="4">
-        <Button>Info</Button>
-      </Col>
-      <Col xs="6" sm="4">
-        <Button>Ingredienser</Button>
-      </Col>
-      <Col sm="4">
-        <Button>Omtale</Button>
-      </Col>
-    </Row>
-
     <Row className="bg-warning pb-5 text-left">
       <Col>
         <ProduktTab />
@@ -94,6 +82,18 @@ const Produktside = () => (
 export default Produktside;
 
 /**
+ *     <Row className="bg-secondary text-center p-3">
+      <Col xs="6" sm="4">
+        <Button>Info</Button>
+      </Col>
+      <Col xs="6" sm="4">
+        <Button>Ingredienser</Button>
+      </Col>
+      <Col sm="4">
+        <Button>Omtale</Button>
+      </Col>
+    </Row>
+    
  * 
  * <div className="container text-left w-50 bg-success p-5">
       <Row className="p-3 bg-danger">
