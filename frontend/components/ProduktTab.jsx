@@ -5,16 +5,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Card,
-  Button,
-  CardTitle,
-  CardText,
   Row,
   Col
 } from "reactstrap";
 import classnames from "classnames";
 
-const Example = props => {
+const ProduktTab = props => {
   const [activeTab, setActiveTab] = useState("1");
 
   const toggle = tab => {
@@ -22,9 +18,9 @@ const Example = props => {
   };
 
   return (
-    <div className="container h-100 text-center">
-      <Nav tabs>
-        <NavItem>
+    <div className="h-100">
+      <Nav tabs className="bg-secondary w-auto m-3 mx-auto">
+        <NavItem className="mx-auto">
           <NavLink
             className={classnames({ active: activeTab === "1" })}
             onClick={() => {
@@ -34,56 +30,58 @@ const Example = props => {
             Informasjon
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="mx-auto">
           <NavLink
             className={classnames({ active: activeTab === "2" })}
             onClick={() => {
               toggle("2");
             }}
           >
-            Informasjon
+            Ingredienser
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="mx-auto">
           <NavLink
             className={classnames({ active: activeTab === "3" })}
             onClick={() => {
               toggle("3");
             }}
           >
-            Moar Tabs
+            Omtale
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab}>
+      <TabContent activeTab={activeTab} className="container w-100">
         <TabPane tabId="1">
-          <Row>
-            <Col sm="12">
-              <h4>Tab 1 Contents</h4>
+          <Row className="p-3 bg-success">
+            <Col>
+              Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
+              bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
+              suscipizzle stuff, gravida izzle, funky fresh. Pellentesque yo
+              tortor. Sheezy erizzle. Sizzle go to hizzle fizzle mah nizzle
+              break yo neck, yall for sure pizzle.
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="2">
-          <Row>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </CardText>
-                <Button>Go somewhere</Button>
-              </Card>
+          <Row className="p-3 bg-danger">
+            <Col>
+              Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
+              bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
+              suscipizzle stuff, gravida izzle, funky fresh. Pellentesque yo
+              tortor. Sheezy erizzle. Sizzle go to hizzle fizzle mah nizzle
+              break yo neck, yall for sure pizzle.
             </Col>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </CardText>
-                <Button>Go somewhere</Button>
-              </Card>
+          </Row>
+        </TabPane>
+        <TabPane tabId="3">
+          <Row className="p-3 bg-info">
+            <Col>
+              Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
+              bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
+              suscipizzle stuff, gravida izzle, funky fresh. Pellentesque yo
+              tortor. Sheezy erizzle. Sizzle go to hizzle fizzle mah nizzle
+              break yo neck, yall for sure pizzle.
             </Col>
           </Row>
         </TabPane>
@@ -92,4 +90,14 @@ const Example = props => {
   );
 };
 
-export default Example;
+export default ProduktTab;
+
+/**
+ *
+ *
+ */
+
+/**
+ *
+ *
+ */
