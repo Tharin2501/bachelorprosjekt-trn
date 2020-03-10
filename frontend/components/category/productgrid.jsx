@@ -6,7 +6,7 @@ import ProductgridCard from "./productgridCard";
 const Productgrid = (props) => {
 
 
-    //console.log(props);
+
     return (
         <div>
             <div className="container-fluid px-sm-1 py-5 mx-auto">

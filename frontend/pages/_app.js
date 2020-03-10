@@ -6,45 +6,7 @@ import withData from "../utils/apollo";
 import { MyFooter, MyHeader, F } from "../components/layout/layout";
 import { MyMarquee } from "../components/MyMarquee";
 
-
-
-import Cookie from "js-cookie";
-import { useState, useEffect } from "react";
-import parsCookies from "../components/cart/parseCookies";
-
-var jsonObj = [
-
-]
-
-jsonObj = JSON.stringify(jsonObj)
-
-
-const App = ({ Component, pageProps, apollo, initialRememberValue = jsonObj }) => {
-
-    const [rememberMe, setRememberMe] = useState(() =>
-        (initialRememberValue) //  JSON.parse
-    );
-
-    useEffect(() => {
-        Cookie.set("rememberMe", (rememberMe));// JSON.stringify
-    }, [rememberMe]);
-
-    console.log(rememberMe)
-    var test4 = {
-        id: 4,
-        name: 'jævla!'
-
-    }
-    function addItem() {
-
-        var test = JSON.parse(rememberMe)
-        test.push(test4)
-        //console.log(test[2])
-        //console.log(test)
-        //var restult = JSON.stringify(test)
-        //setRememberMe(restult)
-
-    }
+const App = ({ Component, pageProps, apollo }) => {
 
     return (
         <ApolloProvider client={apollo}>
@@ -73,13 +35,4 @@ const App = ({ Component, pageProps, apollo, initialRememberValue = jsonObj }) =
     )
 };
 // Wraps all components in the tree with the data provider
-
-App.getInitialProps = ({ req }) => {
-    const cookies = parsCookies(req);
-
-
-    return {
-        initialRememberValue: cookies.rememberMe
-    };
-};
 export default withData(App);
