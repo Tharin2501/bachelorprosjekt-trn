@@ -7,7 +7,42 @@ import Query from '../components/query';
 import Productgrid from "../components/category/productgrid";
 import { SubCategoryList } from "../components/category/subCategoryList";
 
-const Category = () => {
+import Cookie from "js-cookie";
+import { useState, useEffect } from "react";
+import parsCookies from "../components/cart/parseCookies";
+
+var jsonObj = [
+
+]
+
+jsonObj = JSON.stringify(jsonObj)
+const Category = ({ initialRememberValue = jsonObj }) => {
+
+    const [rememberMe, setRememberMe] = useState(() =>
+        (initialRememberValue) //  JSON.parse
+    );
+
+    useEffect(() => {
+        Cookie.set("rememberMe", (rememberMe));// JSON.stringify
+    }, [rememberMe]);
+
+    console.log(rememberMe)
+    var test4 = {
+        id: 4,
+        name: 'jævla!'
+
+    }
+    function addItem() {
+
+        var test = JSON.parse(rememberMe)
+        test.push(test4)
+        //console.log(test[2])
+        //console.log(test)
+        //var restult = JSON.stringify(test)
+        //setRememberMe(restult)
+
+    }
+
     return (
         <div>
             <Query query={PRODUCTS_QUERY} id={null}>
@@ -31,6 +66,16 @@ const Category = () => {
 
         </div>
     );
+
+};
+
+Category.getInitialProps = ({ req }) => {
+    const cookies = parsCookies(req);
+
+
+    return {
+        initialRememberValue: cookies.rememberMe
+    };
 };
 
 export default Category;
