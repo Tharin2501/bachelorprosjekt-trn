@@ -20,7 +20,7 @@ const ProduktTab = props => {
 
   return (
     <div className="h-100">
-      <Nav tabs className="bg-secondary w-auto m-3 mx-auto">
+      <Nav tabs className="w-auto m-3 mx-auto">
         <NavItem className="mx-auto">
           <NavLink
             className={classnames({ active: activeTab === "1" })}
@@ -69,7 +69,7 @@ const ProduktTab = props => {
       </Nav>
       <TabContent activeTab={activeTab} className="container w-100">
         <TabPane tabId="1">
-          <Row className="p-3 bg-success">
+          <Row className="p-3">
             <Col>
               Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
               bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
@@ -80,24 +80,26 @@ const ProduktTab = props => {
           </Row>
         </TabPane>
         <TabPane tabId="2">
-          <Row className="p-3 bg-danger">
+          <Row className="p-3">
             <Col>
-              Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
-              bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
-              suscipizzle stuff, gravida izzle, funky fresh. Pellentesque yo
-              tortor. Sheezy erizzle. Sizzle go to hizzle fizzle mah nizzle
-              break yo neck, yall for sure pizzle.
+              Do what you can, with what you have, where you are. First we form
+              habits, then they form us. Conquer your bad habits, or they will
+              eventually conquer you. Imagine you only have one year to live.
+              What important things would you be doing? How would you be
+              allotting your time to accomplish the most you could? This
+              exercise is one method of going after your priorities.
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="3">
-          <Row className="p-3 bg-info">
+          <Row className="p-3">
             <Col>
-              Lorizzle ipsizzle hizzle sit amizzle, consectetuer own yo' the
-              bizzle. Phat sapien velizzle, shizzlin dizzle volutpat,
-              suscipizzle stuff, gravida izzle, funky fresh. Pellentesque yo
-              tortor. Sheezy erizzle. Sizzle go to hizzle fizzle mah nizzle
-              break yo neck, yall for sure pizzle.
+              Bulbasaur Ivysaur Venusaur Charmander Charmeleon Charizard
+              Squirtle Wartortle Blastoise Caterpie Metapod Butterfree Weedle
+              Kakuna Beedrill Pidgey Pidgeotto Pidgeot Rattata Raticate Spearow
+              Fearow Ekans Arbok Pikachu Raichu Sandshrew Sandslash Nidoran
+              Nidorina Nidoqueen Nidoran Nidorino Nidoking Clefairy Clefable
+              Vulpix Ninetales.
             </Col>
           </Row>
         </TabPane>
@@ -107,13 +109,3 @@ const ProduktTab = props => {
 };
 
 export default ProduktTab;
-
-/**
- *
- *
- */
-
-/**
- *
- *
- */
