@@ -9,6 +9,7 @@ import {
   Col
 } from "reactstrap";
 import classnames from "classnames";
+import { FaInfo, FaVial, FaStar } from "react-icons/fa";
 
 const ProduktTab = props => {
   const [activeTab, setActiveTab] = useState("1");
@@ -27,7 +28,12 @@ const ProduktTab = props => {
               toggle("1");
             }}
           >
-            Informasjon
+            <Row>
+              <Col>
+                <FaInfo />
+              </Col>
+              <Col>Informasjon</Col>
+            </Row>
           </NavLink>
         </NavItem>
         <NavItem className="mx-auto">
@@ -37,7 +43,12 @@ const ProduktTab = props => {
               toggle("2");
             }}
           >
-            Ingredienser
+            <Row>
+              <Col>
+                <FaVial />
+              </Col>
+              <Col>Ingredienser</Col>
+            </Row>
           </NavLink>
         </NavItem>
         <NavItem className="mx-auto">
@@ -47,7 +58,12 @@ const ProduktTab = props => {
               toggle("3");
             }}
           >
-            Omtale
+            <Row>
+              <Col>
+                <FaStar />
+              </Col>
+              <Col>Omtale</Col>
+            </Row>
           </NavLink>
         </NavItem>
       </Nav>
