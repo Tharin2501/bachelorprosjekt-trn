@@ -35,7 +35,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
 
 
     // er en string må gjøres til js array
-    const [rememberMe, setRememberMe] = useState(() => (initialRememberValue));
+    /*const [rememberMe, setRememberMe] = useState(() => (initialRememberValue));
 
 
     useEffect(() => {
@@ -46,17 +46,24 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     function getCart() {
         Cookie.set("rememberMe", (rememberMe))
     }
+    */
 
     function addtoCart() {
-        var oldCartList = JSON.parse(rememberMe)
+        var oldCartList = Cookie.getJSON("rememberMe")
+
+
         oldCartList.push(productContext)
-        //console.log(oldCartList)
+
         const result = JSON.stringify(oldCartList)
+
+        //console.log(oldCartList)
+
         console.log(result)
-        setRememberMe(result)
+
+        Cookie.set("rememberMe", (result))
         /*
         var result
-        Cookie.set("rememberMe", "Test")
+      
         alert(result)
         */
     }
@@ -149,7 +156,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     };
 
 };
-
+/*
 ProductgridCard.getInitialProps = ({ req }) => {
     const cookies = parsCookies(req);
 
@@ -158,5 +165,6 @@ ProductgridCard.getInitialProps = ({ req }) => {
         initialRememberValue: cookies.rememberMe
     };
 };
+*/
 
 export default ProductgridCard;
