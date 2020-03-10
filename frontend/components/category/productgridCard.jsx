@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,8 +5,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Cookie from "js-cookie";
 
 //import parsCookies from "../components/cart/parseCookies";
+import parsCookies from "../cart/parseCookies";
 
-const ProductgridCard = (props) => {
+var jsonObj = [
+
+]
+
+jsonObj = JSON.stringify(jsonObj)
+
+
+const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     // to pass around to cart
     const productContext = {
         id: props.productcard.id,
@@ -28,15 +35,8 @@ const ProductgridCard = (props) => {
 
 
     // er en string må gjøres til js array
-    const [rememberMe, setRememberMe] = useState(() => {
-        var result
-        Cookie.get("rememberMe", result) // JSON.parse makes bool work
-        alert(result)
-        setRememberMe(JSON.parse(result))
+    const [rememberMe, setRememberMe] = useState(() => (initialRememberValue));
 
-
-    }
-    );
 
     useEffect(() => {
         Cookie.set("rememberMe", (rememberMe)); //  JSON.stringify makes bool work
@@ -48,15 +48,19 @@ const ProductgridCard = (props) => {
     }
 
     function addtoCart() {
-
-        var productcontextString = JSON.stringify(productContext)
-        //const updatedCart = rememberMe.concat({ ...productName })
-
-        //alert(updatedCart + productName)
-        alert(productcontextString)
-
-        setRememberMe(rememberMe + productName)
+        var oldCartList = JSON.parse(rememberMe)
+        oldCartList.push(productContext)
+        //console.log(oldCartList)
+        const result = JSON.stringify(oldCartList)
+        console.log(result)
+        setRememberMe(result)
+        /*
+        var result
+        Cookie.set("rememberMe", "Test")
+        alert(result)
+        */
     }
+
 
     function changeHeartcolor() {
         if (heartColor === "black") {
@@ -80,9 +84,9 @@ const ProductgridCard = (props) => {
                 setNumberOfProducts(numberOfProducts - 1)
             } else {
 
-                getCart();
+                //getCart();
                 addtoCart();
-                alert("invalid number" + rememberMe);
+                //alert("invalid number" + rememberMe);
             }
         }
     }
@@ -116,7 +120,7 @@ const ProductgridCard = (props) => {
 
     function addToCart(product) {
 
-        console.log(rememberMe + "test");
+
         /*
         const alreadyInCart = cartItems.findIndex(
             item => item.id === product.id
@@ -135,9 +139,7 @@ const ProductgridCard = (props) => {
         */
     };
 
-    function getCart() {
 
-    }
 
     function deleteItemFromCart(itemtoDelete) {
         const filteredItems = this.state.cartItems.filter(
@@ -147,5 +149,14 @@ const ProductgridCard = (props) => {
     };
 
 };
-export default ProductgridCard;
 
+ProductgridCard.getInitialProps = ({ req }) => {
+    const cookies = parsCookies(req);
+
+
+    return {
+        initialRememberValue: cookies.rememberMe
+    };
+};
+
+export default ProductgridCard;
