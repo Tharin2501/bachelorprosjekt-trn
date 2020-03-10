@@ -19,7 +19,7 @@ import { GiTestTubes } from "react-icons/gi";
 
 var myarray = { key: 1, key: 2 }
 
-const jsonObj = [
+var jsonObj = [
 
 ]
 
@@ -35,10 +35,10 @@ var test2 = {
 
 var doit = true;
 
-jsonObj.push(test1)
-jsonObj.push(test2)
+//jsonObj.push(test1)
+//jsonObj.push(test2)
 
-//jsonObj = JSON.parse(jsonObj)
+jsonObj = JSON.stringify(jsonObj)
 
 const Cart = ({ initialRememberValue = jsonObj }) => {
     const [rememberMe, setRememberMe] = useState(() =>
