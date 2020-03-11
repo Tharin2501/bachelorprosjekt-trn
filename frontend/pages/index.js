@@ -6,6 +6,7 @@ import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import Query from '../components/query';
 import {MyFooter, MyHeader, } from "../components/layout/layout";
 import {MyMarquee} from "../components/MyMarquee";
+import {Frontpage} from "../components/Frontpage";
 
 const Home = () => {
     return (
@@ -30,6 +31,7 @@ const Home = () => {
                 }}
             </Query>
             */}
+            <Frontpage/>
         </div>
     );
 };
