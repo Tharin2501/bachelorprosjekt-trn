@@ -68,7 +68,7 @@ const Cart = ({ initialRememberValue = jsonObj }) => {
 
     useEffect(() => {
         Cookie.set("rememberMe", (rememberMe));// JSON.stringify
-    }, [rememberMe]);
+    }, []);
 
     return (
         <div>

@@ -4,12 +4,29 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 
+
+import Cookie from "js-cookie";
+
 export const MyHeader = (props) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const [cartItems, setCartItems] = useState(1);
 
+    var totalprice = 0
+    getCartPrice()
+    function getCartPrice() {
+        if (typeof window !== "undefined") {
+
+            var cart = Cookie.getJSON("rememberMe")
+            //console.log(cart)
+            cart.map((item, i) => {
+                totalprice += item.quantity * item.price
+            })
+            console.log(totalprice)
+        }
+
+    }
     return (
         <div>
             <Navbar color="light" light expand="md">
@@ -60,7 +77,7 @@ export const MyHeader = (props) => {
                 </div>
                 <div className="ml-auto">
                     <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
-                    <p>00</p>
+                    <p>{totalprice} kr</p>
                 </div>
             </Navbar>
         </div>
