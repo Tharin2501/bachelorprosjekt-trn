@@ -161,3 +161,16 @@ font-size: 18px
 .sm-text {
 font-size: 14px
 }
+
+
+
+.book,
+.book-img {
+    width: 120px;
+    height: 180px;
+    border-radius: 5px
+}
+
+.book {
+    margin: 20px 15px 5px 15px
+}

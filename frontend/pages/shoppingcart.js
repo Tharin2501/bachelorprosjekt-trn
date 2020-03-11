@@ -1,8 +1,9 @@
 import React from "react"
+import CartList from "../components/cart/cartList";
 
 const ShoppingCart = () => (
 
-    <h1>Dette er handlekurv</h1>
+    <CartList></CartList>
 
 );
 
