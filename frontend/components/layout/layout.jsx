@@ -20,6 +20,11 @@ export const MyHeader = (props) => {
 
             var cart = Cookie.getJSON("rememberMe")
             //console.log(cart)
+            if (cart === "undefined" || cart.length === 0) {
+                console.log("YAS")
+                return;
+            }
+
             cart.map((item, i) => {
                 totalprice += item.quantity * item.price
             })
@@ -27,6 +32,10 @@ export const MyHeader = (props) => {
         }
 
     }
+
+
+
+
     return (
         <div>
             <Navbar color="light" light expand="md">
