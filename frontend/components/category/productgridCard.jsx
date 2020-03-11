@@ -76,7 +76,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
             setheartColor("black")
         }
     }
-    ///// end chage color of hearthfunction
+    ///// end change color of hearthfunction
 
     function changeNumberofProducts(value) {
         if (value === "increaseAmount") {

@@ -3,7 +3,16 @@ import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
-const CartListCard = () => {
+const CartListCard = (props) => {
+    console.log(props)
+    const productContext = {
+        id: props.CartListCard.id,
+        name: props.CartListCard.name,
+        quantity: 1,
+        price: 200,
+        image: props.CartListCard.image,
+
+    }
 
 
 
@@ -13,10 +22,10 @@ const CartListCard = () => {
         <div className="row d-flex justify-content-center border-top">
             <div className="col-5">
                 <div className="rod d-flex">
-                    <div className="book">  <img src="https://trnbackend.herokuapp.com/files/PizSPF30.jpg" className="book-img"></img></div>
+                    <div className="book">  <img src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"></img></div>
                     <div className="my-auto flex-column d-flex pad-left">
-                        <h6 className="mob-text">Thinking, Fast and Slow</h6>
-                        <p className="mob-text">Daniel Kahneman</p>
+                        {<h6 className="mob-text">{productContext.name}</h6>}
+
                     </div>
                 </div>
             </div>

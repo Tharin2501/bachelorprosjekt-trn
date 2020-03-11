@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useContext } from "react"
 import CartListCard from "./cartListCard"
-const CartList = (props) => {
+import Cookie from "js-cookie";
+import { Button } from "reactstrap";
+import dynamic from "next/dynamic"
 
+const isServer = () => typeof window === `undefined`;
+
+const CartList = () => {
+
+
+    var cart = Cookie.getJSON("rememberMe")
 
 
     return (
@@ -24,13 +32,54 @@ const CartList = (props) => {
                 </div>
             </div>
 
-            <CartListCard></CartListCard>
-            <CartListCard></CartListCard>
-            <CartListCard></CartListCard>
+
+            {!isServer() && cart.map((product, i) => {
+                console.log(product.name)
+                return (
+                    <div>
+                        <CartListCard key={product.id} CartListCard={product} />
+                    </div>
+
+                );
+
+            })}
 
         </div>
 
     );
+
+    function returnBtn() {
+        return (
+            <Button>TEst</Button>
+        )
+    }
+    function getCart() {
+        if (typeof window !== "undefined") {
+            var cart = Cookie.getJSON("rememberMe")
+
+            if (cart === "undefined" || cart.length === 0) {
+                console.log("YAS")
+
+                return (
+                    <Button>Test</Button>
+                )
+            }
+
+            cart.map((product, i) => {
+                console.log(product.name)
+                return (
+                    <div>
+                        <CartListCard key={product.id} CartListCard={product} />
+                    </div>
+
+                );
+
+            })
+
+
+        }
+
+    }
 };
 
 export default CartList;
