@@ -12,6 +12,12 @@ const CartList = () => {
 
     const [cart, setCart] = useState(Cookie.getJSON("rememberMe"))
 
+    const changecart = () => {
+        setCart(Cookie.getJSON("rememberMe"))
+        console.log("test")
+    }
+
+
 
     return (
         <div div className="container px-4 py-5 mx-auto">
@@ -33,12 +39,12 @@ const CartList = () => {
                 </div>
             </div>
 
-
             {!isServer() && cart !== undefined && cart.map((product, i) => {
                 console.log(product.name)
                 return (
                     <div>
-                        <CartListCard key={product.id} CartListCard={product} />
+
+                        <CartListCard key={product.id} cart={cart} setcart={setCart} onDelete={changecart} CartListCard={product} />
                     </div>
 
                 );
@@ -65,7 +71,7 @@ const CartList = () => {
                 console.log(product.name)
                 return (
                     <div>
-                        <CartListCard key={product.id} CartListCard={product} />
+                        <CartListCard key={product.id} CartListCard={product} onChange={handleNewCart} />
                     </div>
 
                 );

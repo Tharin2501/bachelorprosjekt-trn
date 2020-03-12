@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { removeOneProduct } from "../cookieHandler"
+
+import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
     console.log(props)
@@ -14,7 +16,9 @@ const CartListCard = (props) => {
 
     }
 
+
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
+
 
 
     return (
@@ -45,7 +49,7 @@ const CartListCard = (props) => {
                     </div>
 
                     <div className="col-4">
-                        <button onClick={(() => removeOneProduct(productContext))}> Remove</button>
+                        <button onClick={(() => deleteProduct(productContext))}> Remove</button>
                         <button> Add to fav</button>
                     </div>
                 </div>
@@ -69,6 +73,14 @@ const CartListCard = (props) => {
 
             }
         }
+    }
+
+    function deleteProduct(productContext) {
+
+        removeOneProduct(productContext)
+        props.setcart(Cookie.getJSON("rememberMe"))
+
+        console.log("test")
     }
 
 
