@@ -49,6 +49,110 @@ img:hover {
    color: #101622;
 }
 
+
+.sm-font {
+    font-size: 12px
+}
+
+.cartProductCard{
+    background-color: black;
+    color: #fff;
+    padding: 6px;
+    width: 100%;
+    margin-right: 2%;
+    border: 2px solid #26A69A;
+    cursor: pointer
+}
+
+
+.cartProductCard:hover {
+    background-color: #00796B
+}
+
+.order {
+    color: #26A69A;
+    padding: 6px 5px;
+    width: 48%;
+    margin-left: 2%;
+    border: 2px solid #26A69A;
+    cursor: pointer
+}
+
+.order:hover {
+    color: #fff;
+    background-color: #00796B
+}
+
+
+.vl{
+    border-left: 2px solid black;
+    height: 20px;
+}
+
+.productgridFav{
+    position: absolute;
+    top:10px;
+    color: #757575;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 7px;
+    border-radius: 50%
+}
+.productgridFav-Checked{
+    color: #E53935
+}
+.productgridFav:hover{
+    color: #E53935;
+    cursor: pointer
+}
+
+
+.card {
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.pic1 {
+width: 250px; /* 90% */
+height: 250px; /* null */
+margin-left: auto;
+margin-right: auto;
+display: block
+}
+
+.product-pic {
+padding-left: auto;
+padding-right: auto;
+width: 100%
+}
+
+.card-1 {
+padding: 30px 30px 20px 30px !important;
+border: none;
+width: 90%
+}
+
+.category {
+padding-top: 25px;
+color: grey
+}
+
+.product-name {
+padding-bottom: 15px;
+font-family: Florence;
+font-weight: bold
+}
+
+.price {
+font-size: 18px
+}
+
+.sm-text {
+font-size: 14px
+}
 .rc-menu-root {
     background-color: white;
 }
