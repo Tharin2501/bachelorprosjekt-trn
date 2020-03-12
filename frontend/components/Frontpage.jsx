@@ -14,7 +14,7 @@ export const Frontpage = () => {
         </div>
     );
 };
-{/* numbers in .col-*-* should always add up to 12 for each row.*/}
+
 export const FrontpageGrid = () => {
 
     return (
