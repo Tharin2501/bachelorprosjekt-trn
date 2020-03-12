@@ -11,24 +11,22 @@ export const addOneProductToCart = (productToAdd) => {
 
     if (cart === "undefined" || cart.length === 0) {
         console.log("YAS kween")
-
+        cart.push(productToAdd)
     }
 
-    // endre slik at den stopper når den finner en match å gjør alreadyInCart til index
-    //var alreadyInCart = -1;
+    // -1 = betyr at den er ikke i listen
     const alreadyInCart = cart.findIndex(
         product => product.id === productToAdd.id
     )
+    // nytt produkt
+    if (alreadyInCart === -1) {
+        cart.push(productToAdd)
+    } else {
 
-    console.log(alreadyInCart)
-    /*
-    if (alreadyInCart !== -1) {
         cart[alreadyInCart].quantity += productToAdd.quantity
     }
-    */
 
-    // add product to end of array
-    cart.push(productToAdd)
+
 
     console.log(cart)
 

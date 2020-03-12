@@ -8,12 +8,13 @@ const CartListCard = (props) => {
     const productContext = {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
-        quantity: 1,
+        quantity: props.CartListCard.quantity,
         price: 200,
         image: props.CartListCard.image,
 
     }
 
+    const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
 
     return (
@@ -34,9 +35,9 @@ const CartListCard = (props) => {
 
                     <div className="col-4">
                         <div className="row px-3 justify-content-between">
-                            <a ><FaMinusCircle /></a>
-                            <small> 1</small>
-                            <a > <FaPlusCircle /></a>
+                            <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle /></a>
+                            <small> {numberOfProducts}</small>
+                            <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
                         </div>
                     </div>
                     <div className="col-4">
@@ -52,6 +53,25 @@ const CartListCard = (props) => {
         </div>
 
     );
+
+    function changeNumberofProducts(value) {
+        if (value === "increaseAmount") {
+            if (numberOfProducts < 99) {
+                setNumberOfProducts(numberOfProducts + 1)
+            } else {
+                alert("U cant add more then 99 products" + rememberMe)
+            }
+
+        } else {
+            if ((numberOfProducts - 1) >= 1) {
+                setNumberOfProducts(numberOfProducts - 1)
+            } else {
+
+            }
+        }
+    }
+
+
 };
 
 export default CartListCard;
