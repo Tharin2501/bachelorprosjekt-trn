@@ -5,11 +5,13 @@ import { Button } from "reactstrap";
 import dynamic from "next/dynamic"
 
 const isServer = () => typeof window === `undefined`;
+var cartExcists = "undefined"
 
 const CartList = () => {
 
 
     var cart = Cookie.getJSON("rememberMe")
+
 
 
     return (
@@ -33,7 +35,7 @@ const CartList = () => {
             </div>
 
 
-            {!isServer() && cart.map((product, i) => {
+            {!isServer() && cart !== undefined && cart.map((product, i) => {
                 console.log(product.name)
                 return (
                     <div>
@@ -47,6 +49,7 @@ const CartList = () => {
         </div>
 
     );
+
 
     function returnBtn() {
         return (
