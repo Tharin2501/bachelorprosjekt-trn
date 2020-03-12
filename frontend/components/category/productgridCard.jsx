@@ -50,8 +50,6 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     */
 
     function addtoCart() {
-        //var temp productContext
-        console.log(numberOfProducts)
         var tempProdcutContext = productContext
         tempProdcutContext.quantity = numberOfProducts
         addOneProductToCart(tempProdcutContext)
