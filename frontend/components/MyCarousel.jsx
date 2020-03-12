@@ -26,9 +26,9 @@ const items = [
 ];
 
 const MyCarousel = () => (
-    <div className="container-fluid">
+
     <UncontrolledCarousel items={items}/>
-    </div>
+
 );
 
 

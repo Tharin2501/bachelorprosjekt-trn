@@ -56,6 +56,22 @@ img:hover {
     background-color: white;
 }
 
-.fisk {
+.frontpage-img-wh {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin: 5px;
+}
 
+.horizontal-line1 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.horizontal-line2 {
+    background:#ffffff;
+    padding:0 10px;
 }

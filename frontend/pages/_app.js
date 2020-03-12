@@ -29,6 +29,7 @@ const App = ({ Component, pageProps, apollo }) => {
 
             <MyHeader />
             <Component {...pageProps} />
+            <MyFooter/>
         </ApolloProvider>
     )
 };

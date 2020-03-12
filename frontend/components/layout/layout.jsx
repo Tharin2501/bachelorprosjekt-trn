@@ -3,75 +3,34 @@ import Link from "next/link";
 import {FaHeart, FaShoppingCart} from 'react-icons/fa';
 import {GiHamburgerMenu} from "react-icons/gi";
 import {GoSearch} from "react-icons/go";
-import {Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from "reactstrap";
+import {Navbar} from "reactstrap";
 import {InputGroup, InputGroupAddon, InputGroupText, Input} from 'reactstrap';
 import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
 import "rc-menu/assets/index.css"
 
 export const MyHeader = (props) => {
 
-    {/*
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const toggle = () => setDropdownOpen(prevState => !prevState);
-    */}
-
     return (
-        <div className="row">
-            <div className="col">
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col">
                 <Navbar light expand="md">
-                    <MyDropDown/>
-                    {/*
-                    <div className="mr-auto">
-                        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                            <DropdownToggle color="transparent">
-                                <GiHamburgerMenu/>
-                            </DropdownToggle>
-                            <DropdownMenu modifiers={{
-                                setModifiers: {
-                                    enabled: true,
-                                    fn: (data) => {
-                                        return {
-                                            ...data,
-                                            styles: {
-                                                ...data.styles,
-                                                overflow: 'auto',
-                                                minHeight: "500px",
-                                                minWidth: "50%"
-                                            },
-                                        };
-                                    },
-                                },
-                            }}
-                            >
-                                <DropdownItem header><span>Alle produkter</span></DropdownItem>
-                                <Link href="profile"><a title="profil"><MyMultiDropDown name="Dynamisk brukernavn etterpå"/></a></Link>
-                                <Link href="lojalitet"><a title="lojalitet"><MyMultiDropDown name ="Tax Free and Me"/></a></Link>
-                                <Link href="parfyme"><a title="parfyme"><MyMultiDropDown name ="Parfyme"/></a></Link>
-                                <Link href="makeup"><a title="makeup"><MyMultiDropDown name ="Makeup"/></a></Link>
-                                <Link href="hudpleie"><a title="hudpleie"><MyMultiDropDown name ="Hudpleie"/></a></Link>
-                            </DropdownMenu>
-                        </Dropdown>
+                    <div className="col-sm-lg-4 mr-auto pt-1">
+                        <MyDropDown width="50px"/>
                     </div>
-                    */}
-                    {/* mx-auto -> margin-left and margin-right: auto. Center an element .*/}
-                    <div className="mx-auto">
-                        <img src="/images/logo.png" width="50px" height="55px" alt="logo"/>
+                    <div className="col-sm-lg-4 mx-auto pt-1">
+                        <img src="/images/logo.png" width="50px" alt="logo"/>
                     </div>
-                    {/*
-                <div className="col-2">
-                    <a className="nav-item" href="#"><FaHeart color="black"/></a>
-                </div>
-                */}
-                    <div className="ml-auto">
-                        <a className="nav-item" href="handlekurv"><FaShoppingCart color="black"/></a>
+                    <div className="col-sm-lg-4 ml-auto pt-1">
+                        <a className="nav-item" href="handlekurv"><FaShoppingCart color="black" width="50px"/></a>
                     </div>
                 </Navbar>
-                <MySearchbar/>
+                </div>
             </div>
+            <MySearchbar/>
         </div>
     );
 };
-
 
 const nestSubMenu = (
 
@@ -143,32 +102,6 @@ const nestSubMenu = (
     </SubMenu>
 );
 
-/*
-class CommonMenu extends React.Component {
-    state={
-        children: Mychildren
-    }
-
-    render() {
-        const { triggerSubMenuAction } = this.props;
-        const { children} = this.state;
-        return (
-            <div>
-                <Menu
-                    triggerSubMenuAction={triggerSubMenuAction}
-                    selectedKeys={['3']}
-                    mode={this.props.mode}
-                    openAnimation={this.props.openAnimation}
-                    defaultOpenKeys={this.props.defaultOpenKeys}
-                >
-                    {children}
-                </Menu>
-            </div>
-        );
-    }
-}
-*/
-
 const CommonMenu = ({triggerSubMenuAction,mode,openAnimation,defaultOpenKeys}) => {
 
     const Mychildren = [nestSubMenu];
@@ -221,48 +154,56 @@ const MySearchbar = () => {
     );
 };
 
-{/*
-export const MyMultiDropDown = (props) => {
-
-    const myName = <div>{props.name}</div>;
-
-    const leftMenu = (
-        <Menu>
-            <SubMenu title={myName}>
-                <MenuItem><Link href="lojalitet"><a title="lojalitet">{props.name}</a></Link></MenuItem>
-                <MenuItem>second</MenuItem>
-            </SubMenu>
-        </Menu>
-    );
-    return (
-        <div>
-            <div style={{width: "100%"}}>{leftMenu}</div>
-        </div>
-    );
-};
-*/}
-
 export const MyFooter = () => (
-    <div className="container fixed-bottom">
-        <nav className="navbar nav-expand bg-light">
-            <div className="row">
-                {/* Links*/}
-                <div className="col-4">
-                    <Link href="parfyme">
-                        <a className="nav-link">hei</a>
+    <div className="container-fluid">
+            <div className="row align-items-start py-3">
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">Kontakt oss</a>
                     </Link>
                 </div>
-                <div className="col-4">
-                    <Link href="makeup">
-                        <a className="nav-link">hei</a>
+                <div className="w-100 d-none d-block"></div>
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">Om oss</a>
                     </Link>
                 </div>
-                <div className="col-4">
-                    <Link href="makeup">
-                        <a className="nav-link">hei</a>
+                <div className="w-100 d-none d-block"></div>
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">FAQ</a>
+                    </Link>
+                </div>
+                <div className="w-100 d-none d-block"/>
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">Våre butikker</a>
+                    </Link>
+                </div>
+                <div className="w-100 d-none d-block"/>
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">Karriere og ledige stillinger</a>
+                    </Link>
+                </div>
+                <div className="w-100 d-none d-block"/>
+                <div className="col-2">
+                    <Link href="#">
+                        <a className="nav-link">Presse</a>
                     </Link>
                 </div>
             </div>
-        </nav>
+        <div className="row">
+            <div className="col-lg-sm-6 px-3">
+                <Link href="parfyme">
+                    <a className="nav-link"><img  src="/images/parfyme.png" alt="logo"/></a>
+                </Link>
+            </div>
+            <div className="col-lg-sm-6 px-3">
+                <Link href="makeup">
+                    <a className="nav-link"><img src="/images/makeup.png" alt="logo"/></a>
+                </Link>
+            </div>
+        </div>
     </div>
 );
