@@ -8,20 +8,24 @@ export const getCart = () => {
 
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCart()
-    // endre slik at den stopper når den finner en match
-    const alreadyInCart = cart.map((product, i) => {
-        if (product.id === productToAdd.id) {
-            //console.log("alreadyincart")
 
-            return i
-        }
+    if (cart === "undefined" || cart.length === 0) {
+        console.log("YAS kween")
 
-    })
+    }
+
+    // endre slik at den stopper når den finner en match å gjør alreadyInCart til index
+    //var alreadyInCart = -1;
+    const alreadyInCart = cart.findIndex(
+        product => product.id === productToAdd.id
+    )
+
     console.log(alreadyInCart)
+    /*
     if (alreadyInCart !== -1) {
         cart[alreadyInCart].quantity += productToAdd.quantity
     }
-
+    */
 
     // add product to end of array
     cart.push(productToAdd)
