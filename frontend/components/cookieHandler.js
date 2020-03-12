@@ -35,3 +35,19 @@ export const addOneProductToCart = (productToAdd) => {
     Cookie.set("rememberMe", (result))
 
 }
+
+export const removeOneProduct = (productToRemove) => {
+    var cart = getCart()
+
+    if (cart === "undefined" || cart.length === 0) {
+        console.log("Cart does not exsist")
+
+    }
+
+    const filteredCart = cart.filter(
+        product => product.id !== productToRemove.id
+    )
+
+    const result = JSON.stringify(filteredCart)
+    Cookie.set("rememberMe", (result))
+}

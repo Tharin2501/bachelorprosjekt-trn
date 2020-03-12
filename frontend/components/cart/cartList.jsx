@@ -8,8 +8,9 @@ const isServer = () => typeof window === `undefined`;
 const CartList = () => {
 
 
-    var cart = Cookie.getJSON("rememberMe")
+    //var cart = Cookie.getJSON("rememberMe")
 
+    const [cart, setCart] = useState(Cookie.getJSON("rememberMe"))
 
 
     return (
