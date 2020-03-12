@@ -19,7 +19,6 @@ export const MyHeader = (props) => {
         if (typeof window !== "undefined") {
 
             var cart = Cookie.getJSON("rememberMe")
-            //console.log(cart)
             if (cart === undefined || cart.length === 0) {
                 console.log("YAS")
                 return;

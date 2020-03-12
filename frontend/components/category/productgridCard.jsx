@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getCart, addOneProductToCart } from "../cookieHandler"
 
 import Cookie from "js-cookie";
 
@@ -16,7 +17,7 @@ jsonObj = JSON.stringify(jsonObj)
 
 const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     // to pass around to cart
-    const productContext = {
+    var productContext = {
         id: props.productcard.id,
         name: props.productcard.name,
         quantity: 1,
@@ -31,7 +32,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     const [heartColor, setheartColor] = useState("black");
     const [numberOfProducts, setNumberOfProducts] = useState(1);
     const [price, setPrice] = useState(productContext.price);
-    const [quantity, setQuantity] = useState(100);
+    const [quantity, setQuantity] = useState(1);
 
 
     // er en string må gjøres til js array
@@ -49,23 +50,11 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     */
 
     function addtoCart() {
-        var oldCartList = Cookie.getJSON("rememberMe")
-
-
-        oldCartList.push(productContext)
-
-        const result = JSON.stringify(oldCartList)
-
-        //console.log(oldCartList)
-
-        console.log(result)
-
-        Cookie.set("rememberMe", (result))
-        /*
-        var result
-      
-        alert(result)
-        */
+        //var temp productContext
+        console.log(numberOfProducts)
+        var tempProdcutContext = productContext
+        tempProdcutContext.quantity = numberOfProducts
+        addOneProductToCart(tempProdcutContext)
     }
 
 
@@ -92,7 +81,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
             } else {
 
                 //getCart();
-                addtoCart();
+                //addtoCart();
                 //alert("invalid number" + rememberMe);
             }
         }
@@ -120,7 +109,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
                     <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
                 </div>
 
-                <button onClick={(() => addToCart(productContext))} type="button" className="btn btn-dark">Buy</button>
+                <button onClick={(() => addtoCart())} type="button" className="btn btn-dark">Buy</button>
             </div>
         </div>
     );
@@ -156,15 +145,6 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     };
 
 };
-/*
-ProductgridCard.getInitialProps = ({ req }) => {
-    const cookies = parsCookies(req);
 
-
-    return {
-        initialRememberValue: cookies.rememberMe
-    };
-};
-*/
 
 export default ProductgridCard;

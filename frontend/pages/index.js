@@ -13,7 +13,6 @@ import Query from '../components/query';
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
-import { GiTestTubes } from "react-icons/gi";
 
 //const CART_KEY = "cart";
 

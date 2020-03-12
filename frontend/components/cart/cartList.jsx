@@ -2,10 +2,8 @@ import React, { useState, useEffect, useContext } from "react"
 import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
-import dynamic from "next/dynamic"
 
 const isServer = () => typeof window === `undefined`;
-var cartExcists = "undefined"
 
 const CartList = () => {
 
@@ -50,12 +48,6 @@ const CartList = () => {
 
     );
 
-
-    function returnBtn() {
-        return (
-            <Button>TEst</Button>
-        )
-    }
     function getCart() {
         if (typeof window !== "undefined") {
             var cart = Cookie.getJSON("rememberMe")
