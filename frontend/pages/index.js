@@ -6,8 +6,6 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
