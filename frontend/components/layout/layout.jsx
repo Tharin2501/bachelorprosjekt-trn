@@ -19,10 +19,11 @@ export const MyHeader = () => {
               <MyDropDown width="50px" />
             </div>
             <div className="col-sm-lg-4 mx-auto pt-1">
-              <img src="/images/trn-logos/trn_header.png" width="125px" height="62px" alt="logo" />
+              <a href="index"><img src="/images/trn-logos/trn_header.png" width="125px" height="62px" alt="logo" /></a>
             </div>
             <div className="col-sm-lg-4 ml-auto pt-1">
               <a className="nav-item" href="handlekurv"><FaShoppingCart color="black" width="50px" /></a>
+              <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
             </div>
           </Navbar>
         </div>
@@ -154,6 +155,7 @@ const MySearchbar = () => {
   return (
     <div className="row mx-auto w-80 pt-3 pb-3">
       <div className="col">
+
         <InputGroup>
           <InputGroupAddon addonType="prepend">
             <InputGroupText><GoSearch /></InputGroupText>
@@ -162,8 +164,7 @@ const MySearchbar = () => {
         </InputGroup>
       </div>
     </div>
-      </Navbar >
-    </div >
+
   );
 };
 
