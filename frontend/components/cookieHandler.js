@@ -35,6 +35,8 @@ export const calculatePrice = () => {
 
 
 };
+
+/* <--CART -->*/
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCookieArray("cartStorage")
     /*
@@ -73,16 +75,17 @@ export const removeOneProduct = (productToRemove) => {
         product => product.id !== productToRemove.id
     )
 
-    saveCookieArrayToCookie(cart, "cartStorage")
+    saveCookieArrayToCookie(filteredCart, "cartStorage")
 }
+/* <--CART END -->*/
 
 
-
-
-export const addProductToFavorites = () => {
+/* <--FAV -->*/
+export const addOneProductToFavorites = () => {
     var favorites = getCookieArray()
+    console.log(favorites.favoritesStorage)
 
-    const alreadyInCart = favorites.findIndex(
+    const alreadyInCart = favorites.favoritesStorage.findIndex(
         product => product.id === productToAdd.id
     )
     // nytt produkt
@@ -93,3 +96,4 @@ export const addProductToFavorites = () => {
     }
     saveCookieArrayToCookie(favorites, "favoritesStorage")
 }
+/* <--FAV END-->*/

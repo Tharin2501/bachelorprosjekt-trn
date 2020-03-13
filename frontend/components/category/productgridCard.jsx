@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getCart, addOneProductToCart } from "../cookieHandler"
+import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 
 import Cookie from "js-cookie";
 
@@ -58,6 +58,17 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
 
         addOneProductToCart(tempProdcutContext)
     }
+
+
+    function addtoFavorites() {
+
+        var tempProdcutContext = productContext
+
+        tempProdcutContext.quantity = 1
+
+        addOneProductToFavorites(tempProdcutContext)
+    }
+
 
 
     function changeHeartcolor() {

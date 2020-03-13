@@ -10,10 +10,10 @@ const FavoritesList = () => {
 
     //var cart = Cookie.getJSON("cartStorage")
 
-    const [cart, setCart] = useState(Cookie.getJSON("cartStorage"))
+    const [favorites, setFavorites] = useState(Cookie.getJSON("favoritesStorage"))
 
-    const changecart = () => {
-        setCart(Cookie.getJSON("cartStorage"))
+    const changeFavorites = () => {
+        setCart(Cookie.getJSON("favoritesStorage"))
         console.log("test")
     }
 
@@ -39,12 +39,12 @@ const FavoritesList = () => {
                 </div>
             </div>
 
-            {!isServer() && cart !== undefined && cart.map((product, i) => {
+            {!isServer() && favorites !== undefined && favorites.map((product, i) => {
                 console.log(product.name)
                 return (
                     <div>
 
-                        <FavoritesCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
+                        <FavoritesCard key={product.id} setFavorites={setFavorites} onDelete={changeFavorites} CartListCard={product} />
                     </div>
 
                 );
