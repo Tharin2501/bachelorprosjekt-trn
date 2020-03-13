@@ -3,6 +3,7 @@ import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
 import { calculatePrice } from "../cookieHandler"
+import NoSSR from 'react-no-ssr';
 
 const isServer = () => typeof window === `undefined`;
 
@@ -48,12 +49,12 @@ const CartList = () => {
                 );
 
             })}
-
-            <div className="row d-flex justify-content-center">
-                <div className="col-5"><h4> Total pris:</h4></div>
-                <div className="col-5"><h4> {calculatePrice()}</h4> </div>
-            </div>
-
+            <NoSSR>
+                <div className="row d-flex justify-content-center">
+                    <div className="col-5"><h4> Total pris:</h4></div>
+                    <div className="col-5"><h4> {calculatePrice()}</h4> </div>
+                </div>
+            </NoSSR>
         </div>
 
     );
