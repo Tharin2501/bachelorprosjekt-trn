@@ -1,8 +1,12 @@
 import React, { useState } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { GoSearch } from "react-icons/go";
+import { Navbar } from "reactstrap";
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
+import "rc-menu/assets/index.css"
 
 
 import Cookie from "js-cookie";

@@ -1,13 +1,12 @@
 import React from "react"
-import Head from 'next/head'
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Frontpage } from "../components/Frontpage";
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ARTICLES_QUERY from "../apollo/queries/article/articles";
-import Query from '../components/query';
-//import Cart from "../components/cart/cart"
 
 
 import Cookie from "js-cookie";
@@ -46,6 +45,7 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
         Cookie.set("favoritesStorage", (favoritesStorage));// JSON.stringify
     }, []);
 
+    /* FAV END*/
 
     /* FAV END*/
 
@@ -53,19 +53,23 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
     return (
         <div>
 
-            {
-                <Query query={ARTICLES_QUERY} id={null}>
-                    {({ data: { articles } }) => {
-                        return (
-                            <div className="hero">
-                                <h1 className="title">Welcome to Next.js!</h1>
+            {/*
+            <Query query={ARTICLES_QUERY} id={null}>
+                {({data: {articles}}) => {
+                    console.log(articles)
+                    console.log(articles[0].name);
 
-                                <Button color="danger">Pass på!!</Button>
-                            </div>
-                        );
-                    }}
-                </Query>
-            }
+                    return (
+                        <div className="hero">
+                            <h1 className="title">Welcome to Next.js!</h1>
+
+                            <Button color="danger">Pass på!!</Button>
+                        </div>
+                    );
+                }}
+            </Query>
+            */}
+            <Frontpage />
         </div>
     );
 };
