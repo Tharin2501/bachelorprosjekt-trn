@@ -1,5 +1,10 @@
-import React from "react";
+import React from "react"
+import CartList from "../components/cart/cartList";
 
-const ShoppingCart = () => <h1>Dette er handlekurven din!</h1>;
+const ShoppingCart = () => (
+
+    <CartList></CartList>
+
+);
 
 export default ShoppingCart;

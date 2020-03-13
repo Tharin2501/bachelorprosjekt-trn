@@ -1,153 +1,98 @@
+
 import React, { useState } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoSearch } from "react-icons/go";
-import { Navbar } from "reactstrap";
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
-import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
-import "rc-menu/assets/index.css"
 
-export const MyHeader = () => {
+import Cookie from "js-cookie";
 
-  return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col">
-          <Navbar light expand="md">
-            <div className="col-sm-lg-4 mr-auto pt-1">
-              <MyDropDown width="50px" />
-            </div>
-            <div className="col-sm-lg-4 mx-auto pt-1">
-              <a href="index"><img src="/images/trn-logos/trn_header.png" width="125px" height="62px" alt="logo" /></a>
-            </div>
-            <div className="col-sm-lg-4 ml-auto pt-1">
-              <a className="nav-item" href="handlekurv"><FaShoppingCart color="black" width="50px" /></a>
-              <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
-            </div>
-          </Navbar>
-        </div>
-      </div>
-      <MySearchbar />
-    </div>
-  );
-};
+export const MyHeader = (props) => {
 
-const nestSubMenu = (
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggle = () => setDropdownOpen(prevState => !prevState);
+  const [cartItems, setCartItems] = useState(1);
 
-  <SubMenu title={<span className="submenu-title-wrapper"><GiHamburgerMenu /></span>} key="4" popupOffset={[10, 15]}>
-    {/* Menu 1/2 */}
-    <MenuItem><Link href="profile"><a title="profil">Dynamisk brukernavn etterpå</a></Link></MenuItem>
-    <Divider />
-    {/* Menu 2/2 */}
-    <MenuItem><Link href="lojalitet"><a title="lojalitet">Tax Free and Me</a></Link></MenuItem>
-    <Divider />
-    {/* Submenu 1/3 */}
-    <SubMenu title={<span className="submenu-title-wrapper">
-      <Link href="parfyme">
-        <a title="parfyme">Parfyme</a>
-      </Link>
-    </span>}>
-      <SubMenu title={<span className="submenu-title-wrapper">Dame</span>}>
-        <MenuItem>Parfyme</MenuItem>
-        <Divider />
-        <MenuItem>Deodorant</MenuItem>
-      </SubMenu>
-      <Divider />
-      <SubMenu title={<span className="submenu-title-wrapper">Herre</span>}>
-        <MenuItem>Parfyme</MenuItem>
-        <Divider />
-        <MenuItem>Deodorant</MenuItem>
-      </SubMenu>
-    </SubMenu>
-    <Divider />
-    {/* Submenu 2/3 */}
-    <SubMenu title={<span className="submenu-title-wrapper">
-      <Link href="makeup">
-        <a title="Makeup">Makeup</a>
-      </Link>
-    </span>}>
-      <SubMenu title={<span className="submenu-title-wrapper">Ansikt</span>}>
-        <MenuItem>Parfyme</MenuItem>
-        <Divider />
-        <MenuItem>Deodorant</MenuItem>
-      </SubMenu>
-      <Divider />
-      <SubMenu title={<span className="submenu-title-wrapper">Øyne</span>}>
-        <MenuItem>X</MenuItem>
-        <Divider />
-        <MenuItem>Y</MenuItem>
-      </SubMenu>
-      <Divider />
-      <SubMenu title={<span className="submenu-title-wrapper">Lepper</span>}>
-        <MenuItem>X</MenuItem>
-        <Divider />
-        <MenuItem>Y</MenuItem>
-      </SubMenu>
-      <Divider />
-    </SubMenu>
-    <Divider />
-    {/* Submenu 3/3 */}
-    <SubMenu title={<span className="submenu-title-wrapper">
-      <Link href="hudpleie">
-        <a title="hudpleie">Hudpleie</a>
-      </Link>
-    </span>}>
-      <SubMenu title={<span className="submenu-title-wrapper">Ansikt</span>}>
-        <MenuItem>X</MenuItem>
-        <Divider />
-        <MenuItem>Y</MenuItem>
-      </SubMenu>
-      <Divider />
-      <SubMenu title={<span className="submenu-title-wrapper">Kropp</span>}>
-        <MenuItem>X</MenuItem>
-        <Divider />
-        <MenuItem>Y</MenuItem>
-      </SubMenu>
-      <Divider />
-      <SubMenu title={<span className="submenu-title-wrapper">Hender og Føtter</span>}>
-        <MenuItem>X</MenuItem>
-        <Divider />
-        <MenuItem>Y</MenuItem>
-      </SubMenu>
-      <Divider />
-    </SubMenu>
-  </SubMenu>
-);
+  var totalprice = 0
+  getCartPrice()
+  function getCartPrice() {
+    if (typeof window !== "undefined") {
 
-const CommonMenu = ({ triggerSubMenuAction, mode, openAnimation, defaultOpenKeys }) => {
+      var cart = Cookie.getJSON("cartStorage")
+      if (cart === undefined || cart.length === 0) {
+        console.log("YAS")
+        return;
+      }
 
-  const Mychildren = [nestSubMenu];
+      cart.map((item, i) => {
+        totalprice += item.quantity * item.price
+      })
+      console.log(totalprice)
+    }
 
-  const [children, setChildren] = useState(Mychildren);
+  }
+
+
+
 
   return (
     <div>
-      <Menu
-        triggerSubMenuAction={triggerSubMenuAction}
-        mode={mode}
-        openAnimation={openAnimation}
-        defaultOpenKeys={defaultOpenKeys}
-      >
-        {children}
-      </Menu>
+      <Navbar color="light" light expand="md">
+        <div className="mr-auto">
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle color="transparent">
+              <GiHamburgerMenu />
+            </DropdownToggle>
+            <DropdownMenu modifiers={{
+              setModifiers: {
+                enabled: true,
+                fn: (data) => {
+                  return {
+                    ...data,
+                    styles: {
+                      ...data.styles,
+                      overflow: 'auto',
+                      minHeight: "500px",
+                      minWidth: "500px"
+                    },
+                  };
+                },
+              },
+            }}
+            >
+              <DropdownItem header>Alle produkter</DropdownItem>
+              <Link href="profile"><a title="min profil"><DropdownItem>Dynamisk brukerprofil</DropdownItem></a></Link>
+              <DropdownItem divider />
+              <Link href="lojalitet"><a title="lojalitet"><DropdownItem>Tax Free and Me</DropdownItem></a></Link>
+              <DropdownItem divider />
+              <Link href="parfyme"><a title="parfyme"><DropdownItem>Parfyme</DropdownItem></a></Link>
+              <DropdownItem divider />
+              <Link href="category"><a title="makeup"><DropdownItem>Makeup</DropdownItem></a></Link>
+              <DropdownItem divider />
+              <Link href="hudpleie"><a title="hudpleie"><DropdownItem>Hudpleie</DropdownItem></a></Link>
+              <DropdownItem divider />
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+        <div className="col-4">
+          <a className="nav-item" href="#">Searchbar</a>
+        </div>
+        <div className="mx-auto">
+          <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+        </div>
+        <div className="col-2">
+          <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
+        </div>
+        <div className="ml-auto">
+          <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
+          <p>{totalprice} kr</p>
+        </div>
+      </Navbar>
+      <MySearchbar>
+
+      </MySearchbar>
     </div>
-  );
-};
-
-
-const horizontalMenu = (
-  <CommonMenu
-    mode="horizontal"
-    // use openTransition for antd
-    openAnimation="slide-up"
-    triggerSubMenuAction="click"
-  />
-);
-
-export const MyDropDown = () => {
-  return (
-    <div>{horizontalMenu}</div>
   );
 };
 
@@ -167,6 +112,7 @@ const MySearchbar = () => {
 
   );
 };
+
 
 export const MyFooter = () => (
   <div className="container-fluid">
