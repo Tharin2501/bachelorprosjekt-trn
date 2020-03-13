@@ -55,7 +55,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
         var tempProdcutContext = productContext
 
         tempProdcutContext.quantity = numberOfProducts
-        console.log(tempProdcutContext.quantity)
+
         addOneProductToCart(tempProdcutContext)
     }
 

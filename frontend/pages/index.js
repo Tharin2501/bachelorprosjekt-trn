@@ -17,21 +17,38 @@ import parsCookies from "../components/cart/parseCookies";
 var jsonObj = [
 
 ]
-
+// favoritesStroage
 
 jsonObj = JSON.stringify(jsonObj)
 
-const Cart = ({ initialRememberValue = jsonObj }) => {
+/* <--CART --> */
+const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue = jsonObj }) => {
     const [cartStorage, setcartStorage] = useState(() =>
-        (initialRememberValue) //  JSON.parse
+        (initialcartStorageValue) //  JSON.parse
     );
-    console.log(cartStorage)
-
+    //console.log(cartStorage)
 
 
     useEffect(() => {
         Cookie.set("cartStorage", (cartStorage));// JSON.stringify
     }, []);
+    /* <--CART END-->*/
+
+    /* FAV */
+
+    const [favoritesStorage, setfavoritesStorage] = useState(() =>
+        (initialfavoritesStorageValue) //  JSON.parse
+    );
+    console.log(favoritesStorage)
+
+
+    useEffect(() => {
+        Cookie.set("favoritesStorage", (favoritesStorage));// JSON.stringify
+    }, []);
+
+
+    /* FAV END*/
+
 
     return (
         <div>
@@ -60,7 +77,8 @@ Cart.getInitialProps = ({ req }) => {
 
 
     return {
-        initialRememberValue: cookies.cartStorage
+        initialcartStorageValue: cookies.cartStorage,
+        initialfavoritesStorageValue: cookies.favoritesStorage
     };
 };
 

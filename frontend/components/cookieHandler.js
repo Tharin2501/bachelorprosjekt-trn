@@ -1,13 +1,42 @@
 import Cookie from "js-cookie"
 
-export const getCart = () => {
-    var cart = Cookie.getJSON("cartStorage")
+export const getCookieArray = (cookieName) => {
+    var cart = Cookie.getJSON(cookieName)
     return cart
 
 }
 
+export const saveCookieArrayToCookie = (arrayToSave, cookieName) => {
+    const result = JSON.stringify(arrayToSave)
+    Cookie.set(cookieName, (result))
+}
+
+export const calculatePrice = () => {
+
+
+    if (typeof window !== "undefined") {
+
+        var cart = getCookieArray("cartStorage")
+        console.log(cart)
+        var totalprice = 0
+        console.log(cart)
+        if (cart === "undefined" || cart.length === 0) {
+            console.log("Cart does not exsist")
+            return totalprice
+        }
+
+        cart.map((product, i) => {
+            totalprice += product.quantity * product.price
+        })
+
+        return totalprice
+    }
+    return 0
+
+
+};
 export const addOneProductToCart = (productToAdd) => {
-    var cart = getCart()
+    var cart = getCookieArray("cartStorage")
     /*
     if (cart === "undefined" || cart.length === 0) {
         console.log("Cart not defined")
@@ -27,13 +56,13 @@ export const addOneProductToCart = (productToAdd) => {
         cart[alreadyInCart].quantity += productToAdd.quantity
     }
 
-    const result = JSON.stringify(cart)
-    Cookie.set("cartStorage", (result))
+    saveCookieArrayToCookie(cart, "cartStorage")
+
 
 }
 
 export const removeOneProduct = (productToRemove) => {
-    var cart = getCart()
+    var cart = getCookieArray("cartStorage")
 
     if (cart === "undefined" || cart.length === 0) {
         console.log("Cart does not exsist")
@@ -44,32 +73,23 @@ export const removeOneProduct = (productToRemove) => {
         product => product.id !== productToRemove.id
     )
 
-    const result = JSON.stringify(filteredCart)
-    Cookie.set("cartStorage", (result))
+    saveCookieArrayToCookie(cart, "cartStorage")
 }
 
 
-export const calculatePrice = () => {
 
 
-    if (typeof window !== "undefined") {
+export const addProductToFavorites = () => {
+    var favorites = getCookieArray()
 
-        var cart = getCart()
-        console.log(cart)
-        var totalprice = 0
-        console.log(cart)
-        if (cart === "undefined" || cart.length === 0) {
-            console.log("Cart does not exsist")
-            return totalprice
-        }
-
-        cart.map((product, i) => {
-            totalprice += product.quantity * product.price
-        })
-
-        return totalprice
+    const alreadyInCart = favorites.findIndex(
+        product => product.id === productToAdd.id
+    )
+    // nytt produkt
+    if (alreadyInCart === -1) {
+        favorites.push(productToAdd)
+    } else {
+        // NADA
     }
-    return 0
-
-
-};
+    saveCookieArrayToCookie(favorites, "favoritesStorage")
+}
