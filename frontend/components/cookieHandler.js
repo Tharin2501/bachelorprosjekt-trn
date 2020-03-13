@@ -67,7 +67,7 @@ export const calculatePrice = () => {
 
         return totalprice
     }
-    //return 0
+    return 0
 
 
 };
