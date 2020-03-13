@@ -3,8 +3,10 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
-import { MyFooter, MyHeader, F } from "../components/layout/layout";
+import {MyFooter, MyHeader} from "../components/layout/layout";
 import { MyMarquee } from "../components/MyMarquee";
+import MyCarousel from "../components/MyCarousel";
+
 
 const App = ({ Component, pageProps, apollo }) => {
     return (
@@ -27,9 +29,8 @@ const App = ({ Component, pageProps, apollo }) => {
             </Head>
 
             <MyHeader />
-            <MyMarquee />
             <Component {...pageProps} />
-            <MyFooter />
+            <MyFooter/>
         </ApolloProvider>
     )
 };
