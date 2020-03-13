@@ -8,12 +8,13 @@ export const getCart = () => {
 
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCart()
-
+    /*
     if (cart === "undefined" || cart.length === 0) {
-        console.log("YAS kween")
+        console.log("Cart not defined")
         cart.push(productToAdd)
+        //return
     }
-
+    */
     // -1 = betyr at den ikke i listen
     const alreadyInCart = cart.findIndex(
         product => product.id === productToAdd.id

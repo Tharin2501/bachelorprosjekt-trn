@@ -35,6 +35,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     const [quantity, setQuantity] = useState(1);
 
 
+
     // er en string må gjøres til js array
     /*const [rememberMe, setRememberMe] = useState(() => (initialRememberValue));
 
@@ -50,8 +51,11 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     */
 
     function addtoCart() {
+
         var tempProdcutContext = productContext
+
         tempProdcutContext.quantity = numberOfProducts
+        console.log(tempProdcutContext.quantity)
         addOneProductToCart(tempProdcutContext)
     }
 
