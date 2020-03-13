@@ -78,9 +78,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
                 setNumberOfProducts(numberOfProducts - 1)
             } else {
 
-                //getCart();
-                //addtoCart();
-                //alert("invalid number" + rememberMe);
+                alert("U cant have minus products" + rememberMe)
             }
         }
     }
@@ -112,35 +110,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
         </div>
     );
 
-    function addToCart(product) {
 
-
-        /*
-        const alreadyInCart = cartItems.findIndex(
-            item => item.id === product.id
-        );
-        if (alreadyInCart === -1) {
-            const updatedItems = cartItems.concat({
-                ...product,
-                quantity: 1
-            });
-            this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
-        } else {
-            const updatedItems = [cartItems];
-            updatedItems[alreadyInCart].quantity += 1;
-            this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
-        }
-        */
-    };
-
-
-
-    function deleteItemFromCart(itemtoDelete) {
-        const filteredItems = this.state.cartItems.filter(
-            item => item.id !== itemtoDelete
-        );
-        this.setState({ cartItems: filteredItems }, () => setCart(filteredItems));
-    };
 
 };
 

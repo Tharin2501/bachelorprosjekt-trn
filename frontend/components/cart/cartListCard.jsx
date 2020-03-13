@@ -80,7 +80,6 @@ const CartListCard = (props) => {
         removeOneProduct(productContext)
         props.setcart(Cookie.getJSON("rememberMe"))
 
-        console.log("test")
     }
 
 

@@ -1,8 +1,9 @@
 import React from "react"
+import FavoritesList from "../components/Favorites/FavoritesList"
 
 const Favorites = () => (
 
-    <h1>Dette er lagret siden</h1>
+    <FavoritesList></FavoritesList>
 
 );
 

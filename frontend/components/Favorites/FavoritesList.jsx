@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext } from "react"
-import CartListCard from "./cartListCard"
+import CartListCard from "../cart/cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
 
 const isServer = () => typeof window === `undefined`;
 
-const CartList = () => {
+const FavoritesList = () => {
+
+
+    //var cart = Cookie.getJSON("rememberMe")
 
     const [cart, setCart] = useState(Cookie.getJSON("rememberMe"))
 
@@ -20,7 +23,7 @@ const CartList = () => {
         <div div className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
                 <div className="col-5">
-                    <h4 className="heading">Shopping Bag</h4>
+                    <h4 className="heading">Favorites</h4>
                 </div>
                 <div className="col-7">
                     <div className="row text-right">
@@ -81,4 +84,4 @@ const CartList = () => {
     }
 };
 
-export default CartList;
+export default FavoritesList;
