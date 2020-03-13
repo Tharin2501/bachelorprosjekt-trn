@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import ProduktTab from "../ProduktTab";
 import {
   FaShoppingCart,
