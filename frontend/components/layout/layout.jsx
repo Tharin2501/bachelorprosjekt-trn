@@ -1,13 +1,10 @@
+
 import React, { useState } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoSearch } from "react-icons/go";
-import { Navbar } from "reactstrap";
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
-import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
-import "rc-menu/assets/index.css"
-
 
 import Cookie from "js-cookie";
 
@@ -92,31 +89,85 @@ export const MyHeader = (props) => {
           <p>{totalprice} kr</p>
         </div>
       </Navbar>
+      <MySearchbar>
+
+      </MySearchbar>
     </div>
   );
 };
 
-export const MyFooter = () => (
-  <div className="container-sm-fluid fixed-bottom">
-    <nav className="navbar nav-expand bg-light">
-      <div className="row">
-        {/* Links*/}
-        <div className="col-4">
-          <Link href="parfyme">
-            <a className="nav-link">hei</a>
-          </Link>
-        </div>
-        <div className="col-4">
-          <Link href="makeup">
-            <a className="nav-link">hei</a>
-          </Link>
-        </div>
-        <div className="col-4">
-          <Link href="makeup">
-            <a className="nav-link">hei</a>
-          </Link>
-        </div>
+const MySearchbar = () => {
+  return (
+    <div className="row mx-auto w-80 pt-3 pb-3">
+      <div className="col">
+
+        <InputGroup>
+          <InputGroupAddon addonType="prepend">
+            <InputGroupText><GoSearch /></InputGroupText>
+          </InputGroupAddon>
+          <Input placeholder="søk..." />
+        </InputGroup>
       </div>
-    </nav>
+    </div>
+
+  );
+};
+
+
+export const MyFooter = () => (
+  <div className="container-fluid">
+    <div className="row align-items-start py-3">
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">Kontakt oss</a>
+        </Link>
+      </div>
+      <div className="w-100 d-none d-block" />
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">Om oss</a>
+        </Link>
+      </div>
+      <div className="w-100 d-none d-block" />
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">FAQ</a>
+        </Link>
+      </div>
+      <div className="w-100 d-none d-block" />
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">Våre butikker</a>
+        </Link>
+      </div>
+      <div className="w-100 d-none d-block" />
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">Karriere og ledige stillinger</a>
+        </Link>
+      </div>
+      <div className="w-100 d-none d-block" />
+      <div className="col-2">
+        <Link href="#">
+          <a className="nav-link">Presse</a>
+        </Link>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-lg-sm-6">
+        <Link href="parfyme">
+          <a className="nav-link">
+            <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo" />
+          </a>
+        </Link>
+      </div>
+      <div className="col-lg-sm-6">
+        <Link href="makeup">
+          <a className="nav-link">
+            <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo" />
+          </a>
+        </Link>
+      </div>
+    </div>
   </div>
 );

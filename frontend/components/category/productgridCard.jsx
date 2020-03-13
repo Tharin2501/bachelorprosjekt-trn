@@ -1,7 +1,7 @@
 
+
+import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import React, { useState, useEffect } from "react";
-import { FaHeart, FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 
