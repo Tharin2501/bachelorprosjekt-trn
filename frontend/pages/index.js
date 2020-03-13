@@ -14,28 +14,10 @@ import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
 
-//const CART_KEY = "cart";
-
-var myarray = { key: 1, key: 2 }
-
 var jsonObj = [
 
 ]
 
-
-var test1 = {
-    id: 1,
-    name: 'test'
-}
-var test2 = {
-    id: 2,
-    name: 'test2'
-}
-
-var doit = true;
-
-//jsonObj.push(test1)
-//jsonObj.push(test2)
 
 jsonObj = JSON.stringify(jsonObj)
 
@@ -43,25 +25,7 @@ const Cart = ({ initialRememberValue = jsonObj }) => {
     const [rememberMe, setRememberMe] = useState(() =>
         (initialRememberValue) //  JSON.parse
     );
-
-    const jsonStr = JSON.stringify(jsonObj);
-    //console.log(jsonStr)
-    //console.log(rememberMe)
-
-
-    //console.log(rememberMe)
-
-    //console.log(test)
-    //console.log(test[0])
-
-    var test3 = {
-        id: 3,
-        name: 'faen!'
-
-    }
-
     console.log(rememberMe)
-
 
 
 
@@ -85,26 +49,8 @@ const Cart = ({ initialRememberValue = jsonObj }) => {
                     }}
                 </Query>
             }
-
-
-            remember me
-            <input
-                type="checkbox"
-                value={rememberMe}
-                checked={rememberMe}
-                onChange={e => addItem()}
-            />
         </div>
     );
-
-    function addItem() {
-        var test = JSON.parse(rememberMe)
-        test.push(test3)
-        //console.log(test[2])
-        //console.log(test)
-        var restult = JSON.stringify(test)
-        setRememberMe(restult)
-    }
 };
 
 
