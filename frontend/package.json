@@ -21,9 +21,9 @@
     "next-fonts": "^1.0.3",
     "next-with-apollo": "^5.0.0",
     "rc-menu": "^8.0.2",
-    "react": "^16.12.0",
     "react-burger-menu": "^2.6.13",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-icons": "^3.9.0",
     "react-ticker": "^1.2.2",
     "reactstrap": "^8.4.1"
