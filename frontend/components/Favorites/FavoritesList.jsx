@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
-import CartListCard from "../cart/cartListCard"
+import FavoritesCard from "./favoritesCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
 
@@ -44,7 +44,7 @@ const FavoritesList = () => {
                 return (
                     <div>
 
-                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
+                        <FavoritesCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
                     </div>
 
                 );
@@ -54,34 +54,6 @@ const FavoritesList = () => {
         </div>
 
     );
-
-    function getCart() {
-        if (typeof window !== "undefined") {
-            var cart = Cookie.getJSON("cartStorage")
-
-            if (cart === "undefined" || cart.length === 0) {
-                console.log("YAS")
-
-                return (
-                    <Button>Test</Button>
-                )
-            }
-
-            cart.map((product, i) => {
-                console.log(product.name)
-                return (
-                    <div>
-                        <CartListCard key={product.id} CartListCard={product} onChange={handleNewCart} />
-                    </div>
-
-                );
-
-            })
-
-
-        }
-
-    }
 };
 
 export default FavoritesList;

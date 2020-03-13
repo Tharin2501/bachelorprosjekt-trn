@@ -13,7 +13,6 @@ const CartList = () => {
 
     const changecart = () => {
         setCart(Cookie.getJSON("cartStorage"))
-        console.log("test")
     }
 
 
@@ -59,34 +58,6 @@ const CartList = () => {
         </div>
 
     );
-
-    function getCart() {
-        if (typeof window !== "undefined") {
-            var cart = Cookie.getJSON("cartStorage")
-
-            if (cart === "undefined" || cart.length === 0) {
-                console.log("YAS")
-
-                return (
-                    <Button>Test</Button>
-                )
-            }
-
-            cart.map((product, i) => {
-                console.log(product.name)
-                return (
-                    <div>
-                        <CartListCard key={product.id} CartListCard={product} onChange={handleNewCart} />
-                    </div>
-
-                );
-
-            })
-
-
-        }
-
-    }
 };
 
 export default CartList;
