@@ -1,7 +1,7 @@
 import Cookie from "js-cookie"
 
 export const getCart = () => {
-    var cart = Cookie.getJSON("rememberMe")
+    var cart = Cookie.getJSON("cartStorage")
     return cart
 
 }
@@ -27,7 +27,7 @@ export const addOneProductToCart = (productToAdd) => {
     }
 
     const result = JSON.stringify(cart)
-    Cookie.set("rememberMe", (result))
+    Cookie.set("cartStorage", (result))
 
 }
 
@@ -44,7 +44,7 @@ export const removeOneProduct = (productToRemove) => {
     )
 
     const result = JSON.stringify(filteredCart)
-    Cookie.set("rememberMe", (result))
+    Cookie.set("cartStorage", (result))
 }
 
 
@@ -54,6 +54,7 @@ export const calculatePrice = () => {
     if (typeof window !== "undefined") {
 
         var cart = getCart()
+        console.log(cart)
         var totalprice = 0
         console.log(cart)
         if (cart === "undefined" || cart.length === 0) {

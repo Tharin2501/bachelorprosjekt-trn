@@ -22,15 +22,15 @@ var jsonObj = [
 jsonObj = JSON.stringify(jsonObj)
 
 const Cart = ({ initialRememberValue = jsonObj }) => {
-    const [rememberMe, setRememberMe] = useState(() =>
+    const [cartStorage, setcartStorage] = useState(() =>
         (initialRememberValue) //  JSON.parse
     );
-    console.log(rememberMe)
+    console.log(cartStorage)
 
 
 
     useEffect(() => {
-        Cookie.set("rememberMe", (rememberMe));// JSON.stringify
+        Cookie.set("cartStorage", (cartStorage));// JSON.stringify
     }, []);
 
     return (
@@ -60,7 +60,7 @@ Cart.getInitialProps = ({ req }) => {
 
 
     return {
-        initialRememberValue: cookies.rememberMe
+        initialRememberValue: cookies.cartStorage
     };
 };
 

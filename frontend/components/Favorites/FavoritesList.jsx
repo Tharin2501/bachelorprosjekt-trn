@@ -8,12 +8,12 @@ const isServer = () => typeof window === `undefined`;
 const FavoritesList = () => {
 
 
-    //var cart = Cookie.getJSON("rememberMe")
+    //var cart = Cookie.getJSON("cartStorage")
 
-    const [cart, setCart] = useState(Cookie.getJSON("rememberMe"))
+    const [cart, setCart] = useState(Cookie.getJSON("cartStorage"))
 
     const changecart = () => {
-        setCart(Cookie.getJSON("rememberMe"))
+        setCart(Cookie.getJSON("cartStorage"))
         console.log("test")
     }
 
@@ -57,7 +57,7 @@ const FavoritesList = () => {
 
     function getCart() {
         if (typeof window !== "undefined") {
-            var cart = Cookie.getJSON("rememberMe")
+            var cart = Cookie.getJSON("cartStorage")
 
             if (cart === "undefined" || cart.length === 0) {
                 console.log("YAS")

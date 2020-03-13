@@ -63,7 +63,7 @@ const CartListCard = (props) => {
             if (numberOfProducts < 99) {
                 setNumberOfProducts(numberOfProducts + 1)
             } else {
-                alert("U cant add more then 99 products" + rememberMe)
+                alert("U cant add more then 99 products" + cartStorage)
             }
 
         } else {
@@ -78,7 +78,7 @@ const CartListCard = (props) => {
     function deleteProduct(productContext) {
 
         removeOneProduct(productContext)
-        props.setcart(Cookie.getJSON("rememberMe"))
+        props.setcart(Cookie.getJSON("cartStorage"))
 
     }
 

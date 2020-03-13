@@ -6,22 +6,22 @@ import parsCookies from "./parseCookies";
 
 
 const Cart = ({ initialRememberValue = 1 }) => {
-    const [rememberMe, setRememberMe] = useState(() =>
+    const [cartStorage, setcartStorage] = useState(() =>
         JSON.parse(initialRememberValue)
     );
 
     useEffect(() => {
-        Cookie.set("rememberMe", JSON.stringify(rememberMe));
-    }, [rememberMe]);
+        Cookie.set("cartStorage", JSON.stringify(cartStorage));
+    }, [cartStorage]);
 
     return (
         <div>
             remember me
             <input
                 type="checkbox"
-                value={rememberMe}
-                checked={rememberMe}
-                onChange={e => setRememberMe(e.target.checked)}
+                value={cartStorage}
+                checked={cartStorage}
+                onChange={e => setcartStorage(e.target.checked)}
             />
         </div>
     );
@@ -31,7 +31,7 @@ Cart.getInitialProps = ({ req }) => {
     const cookies = parseCookies(req);
 
     return {
-        initialRememberValue: cookies.rememberMe
+        initialRememberValue: cookies.cartStorage
     };
 };
 
