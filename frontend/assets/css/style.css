@@ -1,163 +1,162 @@
-
 body {
-    color: #000;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #fff;
-    background-repeat: no-repeat
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #fff;
+  background-repeat: no-repeat;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1 {
-    font-family: Staatliches;
-    font-size: 120px;
+  font-family: Staatliches;
+  font-size: 120px;
 }
 
 #category {
-    font-family: Staatliches;
-    font-weight: 500;
+  font-family: Staatliches;
+  font-weight: 500;
 }
 
 #title {
-    letter-spacing: 0.4px;
-    font-size: 22px;
-    font-size: 1.375rem;
-    line-height: 1.13636;
+  letter-spacing: 0.4px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.13636;
 }
 
 #banner {
-    margin: 20px;
-    height: 800px;
+  margin: 20px;
+  height: 800px;
 }
 
 #editor {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.75;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .uk-navbar-container {
-    background: #fff !important;
-    font-family: Staatliches;
+  background: #fff !important;
+  font-family: Staatliches;
 }
 
 img:hover {
-    opacity: 1;
-    transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .DropdownMenu {
-    min-width: 900px !important;
+  min-width: 900px !important;
 }
 
 .cart {
-   color: #101622;
+  color: #101622;
 }
 
+.product-page-bg {
+  background-color: #f9f9f9;
+}
 
 .sm-font {
-    font-size: 12px
+  font-size: 12px;
 }
 
-.cartProductCard{
-    background-color: black;
-    color: #fff;
-    padding: 6px;
-    width: 100%;
-    margin-right: 2%;
-    border: 2px solid #26A69A;
-    cursor: pointer 
+.cartProductCard {
+  background-color: black;
+  color: #fff;
+  padding: 6px;
+  width: 100%;
+  margin-right: 2%;
+  border: 2px solid #26a69a;
+  cursor: pointer;
 }
-
 
 .cartProductCard:hover {
-    background-color: #00796B
+  background-color: #00796b;
 }
 
 .order {
-    color: #26A69A;
-    padding: 6px 5px;
-    width: 48%;
-    margin-left: 2%;
-    border: 2px solid #26A69A;
-    cursor: pointer
+  color: #26a69a;
+  padding: 6px 5px;
+  width: 48%;
+  margin-left: 2%;
+  border: 2px solid #26a69a;
+  cursor: pointer;
 }
 
 .order:hover {
-    color: #fff;
-    background-color: #00796B
+  color: #fff;
+  background-color: #00796b;
 }
 
-
-.vl{
-    border-left: 2px solid black;
-    height: 20px;
+.vl {
+  border-left: 2px solid black;
+  height: 20px;
 }
 
-.productgridFav{
-    position: absolute;
-    top:10px;
-    color: #757575;
-    font-weight: bold;
-    background-color: #EEEEEE;
-    padding: 7px;
-    border-radius: 50%
+.productgridFav {
+  position: absolute;
+  top: 10px;
+  color: #757575;
+  font-weight: bold;
+  background-color: #eeeeee;
+  padding: 7px;
+  border-radius: 50%;
 }
-.productgridFav-Checked{
-    color: #E53935
+.productgridFav-Checked {
+  color: #e53935;
 }
-.productgridFav:hover{
-    color: #E53935;
-    cursor: pointer
+.productgridFav:hover {
+  color: #e53935;
+  cursor: pointer;
 }
-
 
 .card {
-    margin: auto;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 50px;
-    margin-bottom: 50px
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .pic1 {
-width: 250px; /* 90% */
-height: 250px; /* null */
-margin-left: auto;
-margin-right: auto;
-display: block
+  width: 250px; /* 90% */
+  height: 250px; /* null */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .product-pic {
-padding-left: auto;
-padding-right: auto;
-width: 100%
+  padding-left: auto;
+  padding-right: auto;
+  width: 100%;
 }
 
 .card-1 {
-padding: 30px 30px 20px 30px !important;
-border: none;
-width: 90%
+  padding: 30px 30px 20px 30px !important;
+  border: none;
+  width: 90%;
 }
 
 .category {
-padding-top: 25px;
-color: grey
+  padding-top: 25px;
+  color: grey;
 }
 
 .product-name {
-padding-bottom: 15px;
-font-family: Florence;
-font-weight: bold
+  padding-bottom: 15px;
+  font-family: Florence;
+  font-weight: bold;
 }
 
 .price {
-font-size: 18px
+  font-size: 18px;
 }
 
 .sm-text {
-font-size: 14px
+  font-size: 14px;
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import Ticker from 'react-ticker'
 
-const array = ["Norges største parfymeri","Alltid åpent","Ingen moms"];
+const array = ["Norges største parfymeri","Alltid åpent","Ingen moms", "Spar Tid", "Merkevarer"];
 
 function rand(min, max) {
     let offset = min;
