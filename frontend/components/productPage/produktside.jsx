@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
-import ProduktTab from "../components/ProduktTab";
+import ProduktTab from "../ProduktTab";
 import {
   FaShoppingCart,
   FaShoppingBasket,
