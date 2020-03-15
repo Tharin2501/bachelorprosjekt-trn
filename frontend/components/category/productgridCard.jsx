@@ -64,10 +64,11 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
 
   function addtoFavorites() {
 
+    //console.log(productContext)
     var tempProdcutContext = productContext
 
     tempProdcutContext.quantity = 1
-
+    console.log(tempProdcutContext)
     addOneProductToFavorites(tempProdcutContext)
   }
 
@@ -79,26 +80,27 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     } else {
       setheartColor("black");
     }
-    ///// end change color of hearthfunction
+  }
+  ///// end change color of hearthfunction
 
-    function changeNumberofProducts(value) {
-      if (value === "increaseAmount") {
-        if (numberOfProducts < 99) {
-          setNumberOfProducts(numberOfProducts + 1)
-        } else {
-          alert("U cant add more then 99 products" + rememberMe)
-        }
-
+  function changeNumberofProducts(value) {
+    if (value === "increaseAmount") {
+      if (numberOfProducts < 99) {
+        setNumberOfProducts(numberOfProducts + 1)
       } else {
-        if ((numberOfProducts - 1) >= 1) {
-          setNumberOfProducts(numberOfProducts - 1)
-        } else {
+        alert("U cant add more then 99 products" + rememberMe)
+      }
 
-          alert("U cant have minus products" + rememberMe)
-        }
+    } else {
+      if ((numberOfProducts - 1) >= 1) {
+        setNumberOfProducts(numberOfProducts - 1)
+      } else {
+
+        alert("U cant have minus products" + rememberMe)
       }
     }
   }
+
 
 
   return (
@@ -106,7 +108,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     <div className="d-flex">
       <div className="card card-1">
         <div className="pr-3 row justify-content-end">
-          <a onClick={(() => changeHeartcolor())}><FaHeart color={heartColor} /></a>
+          <a onClick={(() => addtoFavorites())}><FaHeart color={heartColor} /></a>
         </div>
         <div className="product-pic"> <img className="pic1" src={"https://trnbackend.herokuapp.com" + productImage} /> </div>
         <small className="category"> lepper</small>
