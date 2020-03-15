@@ -11,6 +11,21 @@ export const saveCookieArrayToCookie = (arrayToSave, cookieName) => {
     Cookie.set(cookieName, (result))
 }
 
+export const removeOneProduct = (productToRemove, removefromCookie) => {
+    var cart = getCookieArray(removefromCookie)
+
+    if (cart === "undefined" || cart.length === 0) {
+        console.log("Cart does not exsist")
+
+    }
+
+    const filteredCart = cart.filter(
+        product => product.id !== productToRemove.id
+    )
+
+    saveCookieArrayToCookie(filteredCart, removefromCookie)
+}
+
 export const calculatePrice = () => {
 
 
@@ -63,29 +78,16 @@ export const addOneProductToCart = (productToAdd) => {
 
 }
 
-export const removeOneProduct = (productToRemove) => {
-    var cart = getCookieArray("cartStorage")
 
-    if (cart === "undefined" || cart.length === 0) {
-        console.log("Cart does not exsist")
-
-    }
-
-    const filteredCart = cart.filter(
-        product => product.id !== productToRemove.id
-    )
-
-    saveCookieArrayToCookie(filteredCart, "cartStorage")
-}
 /* <--CART END -->*/
 
 
 /* <--FAV -->*/
-export const addOneProductToFavorites = () => {
-    var favorites = getCookieArray()
-    console.log(favorites.favoritesStorage)
+export const addOneProductToFavorites = (productToAdd) => {
+    var favorites = getCookieArray("favoritesStorage")
+    console.log(favorites)
 
-    const alreadyInCart = favorites.favoritesStorage.findIndex(
+    const alreadyInCart = favorites.findIndex(
         product => product.id === productToAdd.id
     )
     // nytt produkt
@@ -97,3 +99,4 @@ export const addOneProductToFavorites = () => {
     saveCookieArrayToCookie(favorites, "favoritesStorage")
 }
 /* <--FAV END-->*/
+

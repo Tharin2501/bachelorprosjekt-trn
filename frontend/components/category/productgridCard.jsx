@@ -64,6 +64,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
 
   function addtoFavorites() {
 
+    changeHeartcolor()
     //console.log(productContext)
     var tempProdcutContext = productContext
 

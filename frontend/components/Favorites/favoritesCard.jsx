@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { removeOneProduct } from "../cookieHandler"
+import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
 
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
@@ -50,7 +50,7 @@ const FavoritesCard = (props) => {
 
                     <div className="col-4">
                         <button onClick={(() => deleteProduct(productContext))}> Remove</button>
-                        <button> Add to Cart</button>
+                        <button onClick={(() => addOneProductToCart(productContext))}> Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -77,8 +77,8 @@ const FavoritesCard = (props) => {
 
     function deleteProduct(productContext) {
 
-        removeOneProduct(productContext)
-        props.setcart(Cookie.getJSON("cartStorage"))
+        removeOneProduct(productContext, "favoritesStorage")
+        props.setFavorites(Cookie.getJSON("favoritesStorage"))
 
     }
 
