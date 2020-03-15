@@ -1,5 +1,5 @@
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
@@ -12,13 +12,16 @@ export const MyHeader = (props) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
-  const [cartItems, setCartItems] = useState(1);
+  const [totalprice, setTotalprice] = useState(0);
 
-  var totalprice = 0
-  getCartPrice()
+
+  useEffect(() => {
+    getCartPrice()
+  }, [])
+
   function getCartPrice() {
     if (typeof window !== "undefined") {
-
+      var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
       if (cart === undefined || cart.length === 0) {
         console.log("YAS")
@@ -26,9 +29,10 @@ export const MyHeader = (props) => {
       }
 
       cart.map((item, i) => {
-        totalprice += item.quantity * item.price
+        newtotalprice += item.quantity * item.price
       })
-      console.log(totalprice)
+      console.log(newtotalprice)
+      setTotalprice(newtotalprice)
     }
 
   }

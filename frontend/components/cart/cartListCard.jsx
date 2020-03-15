@@ -77,7 +77,7 @@ const CartListCard = (props) => {
 
     function deleteProduct(productContext) {
 
-        removeOneProduct(productContext)
+        removeOneProduct(productContext, "cartStorage")
         props.setcart(Cookie.getJSON("cartStorage"))
 
     }

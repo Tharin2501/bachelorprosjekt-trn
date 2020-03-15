@@ -14,7 +14,6 @@ const FavoritesList = () => {
 
     const changeFavorites = () => {
         setCart(Cookie.getJSON("favoritesStorage"))
-        console.log("test")
     }
 
 
