@@ -167,53 +167,48 @@ const MySearchbar = () => {
 
 export const MyFooter = () => (
     <div className="container-fluid">
-        <div className="row align-items-start py-3">
-            <div className="col-2">
+        <div className="row py-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">Kontakt oss</a>
                 </Link>
             </div>
-            <div className="w-100 d-none d-block"/>
-            <div className="col-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">Om oss</a>
                 </Link>
             </div>
-            <div className="w-100 d-none d-block"/>
-            <div className="col-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">FAQ</a>
                 </Link>
             </div>
-            <div className="w-100 d-none d-block"/>
-            <div className="col-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">Våre butikker</a>
                 </Link>
             </div>
-            <div className="w-100 d-none d-block"/>
-            <div className="col-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">Karriere og ledige stillinger</a>
                 </Link>
             </div>
-            <div className="w-100 d-none d-block"/>
-            <div className="col-2">
+            <div className="col-sm-2">
                 <Link href="#">
                     <a className="nav-link">Presse</a>
                 </Link>
             </div>
         </div>
-        <div className="row">
+        <div className="row px-1">
             <div className="col-lg-sm-6">
-                <Link href="parfyme">
+                <Link href="#">
                     <a className="nav-link">
-                        <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo"/>
+                        <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
                     </a>
                 </Link>
             </div>
             <div className="col-lg-sm-6">
-                <Link href="makeup">
+                <Link href="#">
                     <a className="nav-link">
                         <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo"/>
                     </a>
