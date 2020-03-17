@@ -4,7 +4,7 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
-import { addtoCart, addItemToFavorites } from "../cart/cartHandler"
+import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import Produktside from "../productPage/produktside"
 import Router from 'next/router'
 
@@ -81,25 +81,6 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   }
   ///// end change color of hearthfunction
 
-  function changeNumberofProducts(value) {
-    if (value === "increaseAmount") {
-      if (numberOfProducts < 99) {
-        setNumberOfProducts(numberOfProducts + 1)
-      } else {
-        alert("U cant add more then 99 products" + rememberMe)
-      }
-
-    } else {
-      if ((numberOfProducts - 1) >= 1) {
-        setNumberOfProducts(numberOfProducts - 1)
-      } else {
-
-        alert("U cant have minus products" + rememberMe)
-      }
-    }
-  }
-
-
   return (
 
     <div className="d-flex">
@@ -121,9 +102,9 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
 
         </div>
         <div className="row px-3 justify-content-between">
-          <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle /></a>
+          <a onClick={(() => setNumberOfProducts(changeNumberOfProducts("decAmount", numberOfProducts)))}><FaMinusCircle /></a>
           <small> {numberOfProducts}</small>
-          <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
+          <a onClick={(() => setNumberOfProducts(changeNumberOfProducts("increaseAmount", numberOfProducts)))}> <FaPlusCircle /></a>
         </div>
 
         <button onClick={(() => addtoCart(productContext, numberOfProducts))} type="button" className="btn btn-dark">Buy</button>
