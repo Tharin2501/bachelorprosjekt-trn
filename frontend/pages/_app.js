@@ -9,6 +9,7 @@ import MyCarousel from "../components/MyCarousel";
 
 
 const App = ({ Component, pageProps, apollo }) => {
+
     return (
         <ApolloProvider client={apollo}>
             <Head>

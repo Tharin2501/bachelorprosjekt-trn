@@ -1,7 +1,7 @@
 import React from "react"
 import Ticker from 'react-ticker'
 
-const names = ["Norges største parfymeri", "Alltid åpent", "Ingen moms"];
+const names = ["Norges største parfymeri", "Alltid åpent", "Ingen moms", "Spar Tid", "Merkevarer"];
 
 // If you don’t pass in an initial value, reduce will assume the first item in your array is your initial value
 export const MyMarquee = () => (
