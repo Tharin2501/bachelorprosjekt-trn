@@ -181,13 +181,15 @@ font-size: 14px
     background-color: white;
 }
 
+/* OLD - for fronpage grid
 .frontpage-img-wh {
     width: 100px;
     height: 100px;
     padding: 5px;
     margin: 5px;
 }
-
+*/
+/* Frontpage Horizontal line */
 .horizontal-line1 {
     width: 100%;
     text-align: center;
@@ -199,4 +201,18 @@ font-size: 14px
 .horizontal-line2 {
     background:#ffffff;
     padding:0 10px;
+}
+
+a.carousel-control-next, a.carousel-control-prev {
+    position: absolute;
+    top: 40%;
+    width: 10%;
+    height: 20%;
+}
+
+.marquee-container{
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+
 }
