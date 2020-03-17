@@ -168,6 +168,7 @@ font-size: 14px
     margin: 5px;
 }
 */
+/* Frontpage Horizontal line */
 .horizontal-line1 {
     width: 100%;
     text-align: center;
@@ -186,4 +187,11 @@ a.carousel-control-next, a.carousel-control-prev {
     top: 40%;
     width: 10%;
     height: 20%;
+}
+
+.marquee-container{
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+
 }
