@@ -4,29 +4,41 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
+import Produktside from "../productPage/produktside"
+import Router from 'next/router'
 
 import Cookie from "js-cookie";
 
 //import parsCookies from "../components/cart/parseCookies";
 import parsCookies from "../cart/parseCookies";
+import Link from "next/link";
 
 var jsonObj = [
 
 ]
 
+
+
 jsonObj = JSON.stringify(jsonObj)
 
+const PrudktLink = () => (
+  <li>
+    <Link href={`/produkt?title=${productcard.name}`}></Link>
+    <a>{productcard.name}</a>
+  </li>
+)
 
-const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
+const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   // to pass around to cart
   var productContext = {
-    id: props.productcard.id,
-    name: props.productcard.name,
+    id: productcard.id,
+    name: productcard.name,
     quantity: 1,
     price: 200,
-    image: props.productcard.image[0].url,
+    image: productcard.image[0].url,
 
   }
+
 
   // change color of hearthfunction
   const [productName, setProductName] = useState(productContext.name)
@@ -102,6 +114,13 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
     }
   }
 
+  function goToProductPage(ProductgridCard) {
+    //<Link href="/produktside"></Link>
+    Router.push("/produktside")
+    console.log("WTF")
+  }
+
+  // <Produktside Produktside={ProductgridCard}></Produktside>
 
 
   return (
@@ -125,7 +144,7 @@ const ProductgridCard = (props, { initialRememberValue = jsonObj }) => {
           <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
         </div>
 
-        <button onClick={(() => addtoCart())} type="button" className="btn btn-dark">Buy</button>
+        <button onClick={(() => goToProductPage(productContext))} type="button" className="btn btn-dark">Buy</button>
       </div>
     </div>
   );

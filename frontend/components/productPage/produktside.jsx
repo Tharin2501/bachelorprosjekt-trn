@@ -11,7 +11,19 @@ import {
   FaMinusCircle
 } from "react-icons/fa";
 
-const Produktside = props => {
+
+const Produktside = (props) => {
+
+  var productContext = {
+    id: props.productcard.id,
+    name: props.productcard.name,
+    quantity: 1,
+    price: 200,
+    image: props.productcard.image[0].url,
+
+  }
+
+
   //Variables
   const [numberOfProducts, setNumberOfProducts] = useState(1);
 
@@ -61,22 +73,21 @@ const Produktside = props => {
           <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <h1>Dette er produktsiden</h1>
       <Row>
         {/** Image start */}
         <Col lg="6" xs="12" className="text-center h-auto w-50">
           <img
             className="mh-25 w-25"
-            src="https://trnbackend.herokuapp.com/files/SPF50+Anthelios.jpg"
+            src={"https://trnbackend.herokuapp.com" + props.productcard.image[0].url}
           />
         </Col>
         {/** Product title++ start */}
         <Col lg="6" xs="12" className="text-left overflow-auto w-50">
-          <h2>PRODUKTTITTEL</h2>
+          <h2>{productContext.name}</h2>
           <h3>Volum</h3>
           <Row className="">
             <Col xs="6">
-              <h4>Pris</h4>
+              <h4>{productContext.price}</h4>
             </Col>
             <Col>
               <h3>
