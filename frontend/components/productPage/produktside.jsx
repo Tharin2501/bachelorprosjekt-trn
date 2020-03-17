@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProduktTab from "../ProduktTab";
+import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import {
   FaShoppingCart,
   FaShoppingBasket,
@@ -27,22 +28,6 @@ const Produktside = (props) => {
   //Variables
   const [numberOfProducts, setNumberOfProducts] = useState(1);
 
-  //Redundant function - copied from productgridcard
-  function changeNumberofProducts(value) {
-    if (value === "increaseAmount") {
-      if (numberOfProducts < 99) {
-        setNumberOfProducts(numberOfProducts + 1);
-      } else {
-        alert("You can not add more than 99 products");
-      }
-    } else {
-      if (numberOfProducts - 1 >= 1) {
-        setNumberOfProducts(numberOfProducts - 1);
-      } else {
-        alert("invalid number");
-      }
-    }
-  }
 
   //Add to Shopping Cart
   function addToShoppingCart(value) {
@@ -94,7 +79,7 @@ const Produktside = (props) => {
                 <Row>
                   <Col xs="4" sm="4" lg="4">
                     <Button
-                      onClick={() => changeNumberofProducts("decAmount")}
+                      onClick={(() => setNumberOfProducts(changeNumberOfProducts("decAmount", numberOfProducts)))}
                       className="bg-transparent border-0 p-0"
                     >
                       <FaMinusCircle color="black" />
@@ -105,7 +90,7 @@ const Produktside = (props) => {
                   </Col>
                   <Col xs="4" sm="4" lg="4">
                     <Button
-                      onClick={() => changeNumberofProducts("increaseAmount")}
+                      onClick={(() => setNumberOfProducts(changeNumberOfProducts("increaseAmount", numberOfProducts)))}
                       className="bg-transparent border-0 p-0"
                     >
                       {" "}
@@ -120,7 +105,7 @@ const Produktside = (props) => {
             <Row className="p-3">
               <Col>
                 <Button
-                  onClick={() => addToShoppingCart("shoppingCart")}
+                  onClick={(() => addtoCart(productContext, numberOfProducts))}
                   className="bg-light border border-secondary text-dark p-2 w-100"
                 >
                   <Row>
@@ -135,7 +120,7 @@ const Produktside = (props) => {
             <Row className="p-3">
               <Col>
                 <Button
-                  onClick={() => addToShoppingCart("wishList")}
+                  onClick={(() => addItemToFavorites(productContext))}
                   className="bg-light border border-secondary text-dark p-2 w-100"
                 >
                   <Row>
