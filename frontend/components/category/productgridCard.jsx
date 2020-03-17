@@ -13,6 +13,7 @@ import Cookie from "js-cookie";
 import parsCookies from "../cart/parseCookies";
 import Link from "next/link";
 
+
 var jsonObj = [
 
 ]
