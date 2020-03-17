@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
+import { addtoCart, addItemToFavorites } from "../cart/cartHandler"
 import Produktside from "../productPage/produktside"
 import Router from 'next/router'
 
@@ -60,25 +61,13 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   }
   */
 
-  function addtoCart() {
 
-    var tempProdcutContext = productContext
-
-    tempProdcutContext.quantity = numberOfProducts
-
-    addOneProductToCart(tempProdcutContext)
-  }
 
 
   function addtoFavorites() {
 
     changeHeartcolor()
-    //console.log(productContext)
-    var tempProdcutContext = productContext
-
-    tempProdcutContext.quantity = 1
-    console.log(tempProdcutContext)
-    addOneProductToFavorites(tempProdcutContext)
+    addItemToFavorites(productContext)
   }
 
 
@@ -137,7 +126,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
         </div>
 
-        <button onClick={(() => addtoCart())} type="button" className="btn btn-dark">Buy</button>
+        <button onClick={(() => addtoCart(productContext, numberOfProducts))} type="button" className="btn btn-dark">Buy</button>
       </div>
 
     </div>

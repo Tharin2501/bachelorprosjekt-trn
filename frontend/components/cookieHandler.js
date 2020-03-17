@@ -52,6 +52,7 @@ export const calculatePrice = () => {
 };
 
 /* <--CART -->*/
+
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCookieArray("cartStorage")
     /*
