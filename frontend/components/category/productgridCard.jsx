@@ -109,25 +109,22 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     }
   }
 
-  function goToProductPage(ProductgridCard) {
-
-    //Router.push("/produktside")
-    console.log("WTF")
-  }
-
-  // <Produktside Produktside={ProductgridCard}></Produktside>
-
 
   return (
 
     <div className="d-flex">
+
       <div className="card card-1">
         <div className="pr-3 row justify-content-end">
           <a onClick={(() => addtoFavorites())}><FaHeart color={heartColor} /></a>
         </div>
-        <div className="product-pic"> <img className="pic1" src={"https://trnbackend.herokuapp.com" + productImage} /> </div>
+        <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
+          <div className="product-pic"> <img className="pic1" src={"https://trnbackend.herokuapp.com" + productImage} /> </div>
+        </Link>
         <small className="category"> lepper</small>
-        <h5 className="product-name"> {productName}</h5>
+        <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
+          <a><h5 className="product-name"> {productName}</h5></a>
+        </Link>
         <div className="row px-3 justify-content-between">
           <p className="price">{price} kr</p>
           <p className="price">{quantity}ml</p>
@@ -139,8 +136,9 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
         </div>
 
-        <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}><button type="button" className="btn btn-dark">Buy</button></Link>
+        <button onClick={(() => addtoCart())} type="button" className="btn btn-dark">Buy</button>
       </div>
+
     </div>
   );
 
