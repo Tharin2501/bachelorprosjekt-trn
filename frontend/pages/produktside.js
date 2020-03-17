@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const productSide = () => {
     const router = useRouter()
-    console.log(router.query.id)
+    //console.log(router.query.id)
     return (
         <Query query={PRODUCT_QUERY} id={router.query.id}>
             {({ data: { product } }) => {

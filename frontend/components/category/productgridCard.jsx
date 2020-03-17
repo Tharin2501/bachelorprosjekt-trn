@@ -21,12 +21,7 @@ var jsonObj = [
 
 jsonObj = JSON.stringify(jsonObj)
 
-const PrudktLink = () => (
-  <li>
-    <Link href={`/produkt?title=${productcard.name}`}></Link>
-    <a>{productcard.name}</a>
-  </li>
-)
+
 
 const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   // to pass around to cart
@@ -115,8 +110,8 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   }
 
   function goToProductPage(ProductgridCard) {
-    //<Link href="/produktside"></Link>
-    Router.push("/produktside")
+
+    //Router.push("/produktside")
     console.log("WTF")
   }
 
@@ -144,7 +139,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
         </div>
 
-        <button onClick={(() => goToProductPage(productContext))} type="button" className="btn btn-dark">Buy</button>
+        <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}><button type="button" className="btn btn-dark">Buy</button></Link>
       </div>
     </div>
   );

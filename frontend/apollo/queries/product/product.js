@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const PRODUCT_QUERY = gql`  
-  query products($id:ID!) {
-    products(id:$id) {
+  query products($id: ID!) {
+    product(id: $id) {
       id
       name
       description

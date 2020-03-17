@@ -15,11 +15,11 @@ import {
 const Produktside = (props) => {
 
   var productContext = {
-    id: props.productcard.id,
-    name: props.productcard.name,
+    id: props.productSide.id,
+    name: props.productSide.name,
     quantity: 1,
     price: 200,
-    image: props.productcard.image[0].url,
+    image: props.productSide.image[0].url,
 
   }
 
@@ -78,7 +78,7 @@ const Produktside = (props) => {
         <Col lg="6" xs="12" className="text-center h-auto w-50">
           <img
             className="mh-25 w-25"
-            src={"https://trnbackend.herokuapp.com" + props.productcard.image[0].url}
+            src={"https://trnbackend.herokuapp.com" + props.productSide.image[0].url}
           />
         </Col>
         {/** Product title++ start */}
