@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
+import { Collapse, NavbarToggler, NavbarBrand, Navbar, Nav,NavItem, NavLink ,Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoSearch } from "react-icons/go";
 
 import Cookie from "js-cookie";
 
+
+/*
 export const MyHeader = (props) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -99,7 +101,7 @@ export const MyHeader = (props) => {
     </div>
   );
 };
-
+*/
 const MySearchbar = () => {
   return (
     <div className="row mx-auto w-80 pt-3 pb-3">
@@ -115,6 +117,114 @@ const MySearchbar = () => {
     </div>
 
   );
+};
+
+
+
+export const MyHeader = (props) => {
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    const [totalprice, setTotalprice] = useState(0);
+
+
+    useEffect(() => {
+        getCartPrice()
+    }, [])
+
+    function getCartPrice() {
+        if (typeof window !== "undefined") {
+            var newtotalprice = 0
+            var cart = Cookie.getJSON("cartStorage")
+            if (cart === undefined || cart.length === 0) {
+                console.log("YAS")
+                return;
+            }
+
+            cart.map((item, i) => {
+                newtotalprice += item.quantity * item.price
+            })
+            console.log(newtotalprice)
+            setTotalprice(newtotalprice)
+        }
+
+    }
+
+
+
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => setCollapsed(!collapsed);
+
+    return (
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
+
+                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+
+                <Collapse isOpen={!collapsed} navbar>
+                    <Nav navbar>
+
+                        <NavItem className="menu-container">
+                                <nav className="nav">
+                                    <ul className="nav__menu">
+
+                                        <li className="nav__menu-item">
+                                            <a>Parfyme</a>
+                                            <SubMenu/>
+                                        </li>
+                                        <li className="nav__menu-item">
+                                            <a>Makeup</a>
+                                            <SubMenu/>
+                                        </li>
+                                        <li className="nav__menu-item">
+                                            <a>Hudpleie</a>
+                                            <SubMenu/>
+                                        </li>
+                                    </ul>
+                                </nav>
+                        </NavItem>
+
+                        <NavItem>
+
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+
+                {/* Ikke se ned her
+                <div className="mx-auto">
+                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+                </div>
+                <div className="col-xs-2">
+                    <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
+                </div>
+                <div className="ml-auto">
+                    <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
+                    <p>{totalprice} kr</p>
+                </div>
+                */}
+
+            </nav>
+        </div>
+    );
+};
+
+export const SubMenu = () => {
+    return (
+        <div>
+            <ul className="nav__submenu">
+                <li className="nav__submenu-item ">
+                    <a>Ansikt</a>
+                </li>
+                <li className="nav__submenu-item ">
+                    <a>Lepper</a>
+                </li>
+                <li className="nav__submenu-item ">
+                    <a>Øyne</a>
+                </li>
+            </ul>
+        </div>
+    );
 };
 
 
