@@ -183,7 +183,11 @@ export const MyHeader = (props) => {
                                 <Link href="#">
                                     <a className="nav-link">Alle produkter</a>
                                 </Link>
-                                <MySubMenu/>
+                                <MySubMenu
+                                    firstItem="Parfyme" secondItem="Makeup" thirdItem="Hudpleie"
+                                    fourthItem="Hår" fifthItem="Solkrem" sixthItem="Alkohol" seventhItem="Tobakkvare"
+                                    eigthItem="Søtsaker" ninthItem="Til Reisen" tenthItem="Mote"
+                                />
                             </li>
                             <li className="nav__menu-item">
                                 <Link href="#">
@@ -218,18 +222,39 @@ export const MyHeader = (props) => {
     );
 };
 
-export const MySubMenu = () => {
+export const MySubMenu = (props) => {
     return (
         <div>
             <ul className="nav__submenu">
                 <li className="nav_submenu-item">
-                    <h1>Ansikt</h1>
+                    <h1>{props.firstItem}</h1>
                 </li>
                 <li className="nav_submenu-item ">
-                    <h1>Lepper</h1>
+                    <h1>{props.secondItem}</h1>
                 </li>
                 <li className="nav_submenu-item ">
-                    <h1>Øyne</h1>
+                    <h1>{props.thirdItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.fourthItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.fifthItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.sixthItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.seventhItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.eigthItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.ninthItem}</h1>
+                </li>
+                <li className="nav_submenu-item">
+                    <h1>{props.tenthItem}</h1>
                 </li>
             </ul>
         </div>

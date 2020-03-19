@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import Drawer from 'react-motion-drawer';
-import { GiHamburgerMenu } from "react-icons/gi";
+import Drawer from 'react-motion-drawer-improved';
+import {GiHamburgerMenu} from "react-icons/gi";
+
 
 export default class MyDrawer extends Component {
     state = {
@@ -37,6 +38,7 @@ export default class MyDrawer extends Component {
     }
 
     render() {
+
         const {
             drawerStyle: stringDrawerStyle,
             openLeft,
@@ -45,35 +47,28 @@ export default class MyDrawer extends Component {
             noTouchClose
         } = this.state;
 
-        let drawerStyle = {}
+        let drawerStyle = {};
 
         const drawerProps = {
-            overlayColor: "rgba(255,255,255,0.6)",
-            drawerStyle
+            overlayColor: "rgba(255,255,255,0.6)", drawerStyle
         };
 
         return (
             <div>
+
                 {!openRight &&
-                <Drawer
-                    {...drawerProps}
-                    width={this.state.width}
-                    fadeOut
-                    open={openLeft}
-                    onChange={open => this.setState({ openLeft: open })}
-                    noTouchOpen={noTouchOpen}
-                    noTouchClose={noTouchClose}
-                >
+                <Drawer {...drawerProps}
+                        width={this.state.width}
+                        fadeOut
+                        open={openLeft}
+                        onChange={open => this.setState({openLeft: open})}
+                        noTouchOpen={noTouchOpen}
+                        noTouchClose={noTouchClose}>
                     {val => {
                         var per = val / 300;
+
                         return (
-                            <div
-                                style={{
-                                    backgroundColor: `rgba(0, 184, 212, ${per})`,
-                                    width: "100%",
-                                    height: "100%"
-                                }}
-                            />
+                            <div style={{backgroundColor: `rgba(0, 184, 212, ${per})`, width: "100%", height: "100%"}}/>
                         );
                     }}
                 </Drawer>}
@@ -82,12 +77,12 @@ export default class MyDrawer extends Component {
                     <nav>
                         <div className="nav-wrapper cyan accent-4">
                             <ul className="left">
-                                <li style={{ cursor: "pointer", height: "100%" }}>
+                                <li style={{cursor: "pointer", height: "100%"}}>
                                     <a
-                                        style={{ padding: 15 }}
+                                        style={{padding: 15}}
                                         className=""
                                         onClick={() =>
-                                            this.setState({ openLeft: !openLeft, openRight: false })}
+                                            this.setState({openLeft: !openLeft, openRight: false})}
                                     >
                                         <GiHamburgerMenu/>
                                     </a>

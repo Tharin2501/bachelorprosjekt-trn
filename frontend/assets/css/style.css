@@ -217,6 +217,8 @@ a.carousel-control-next, a.carousel-control-prev {
 
 }
 /* NAVBAR*/
+
+/*
 .nav__submenu {
     display: none;
 }
@@ -224,36 +226,37 @@ a.carousel-control-next, a.carousel-control-prev {
 .nav__menu-item:hover .nav__submenu {
     display: block;
 }
+*/
+
 .menu-container {
     text-align: center;
 }
 .nav, ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .nav a {
     display: block;
-    padding: 0 16px;
     line-height: inherit;
     cursor: pointer;
 }
 .nav__menu {
     font-weight: 700;
     text-transform: uppercase;
+    list-style: none;
 }
+
 .nav__menu-item {
     display: inline-block;
     position: relative;
     margin-left: 20px;
-}
 
+}
 .nav__menu-item:hover {
-    /*background-color: pink; */
     text-decoration: underline;
 }
+
 .nav__menu-item:hover .nav__submenu {
     display: block;
 }
@@ -264,15 +267,18 @@ a.carousel-control-next, a.carousel-control-prev {
     text-transform: none;
     display: none;
     position: absolute;
-    min-width: 20em;
-    width: 600%;
-    height: 600%;
-    background-color: pink;
+    width: 70vw;
+    height: 83vh;
+    background-color: lightgrey;
+    text-align: center;
 }
 
-/* content for subitems */
+
+/* submenu items hover */
 .nav_submenu-item:hover {
+    cursor: pointer;
     background: greenyellow;
+    text-decoration: underline;
 }
 .nav-container {
     z-index: 10;
