@@ -29,9 +29,9 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   // to pass around to cart
   var productContext = {
     id: productcard.id,
-    name: productcard.name,
+    name: productcard.ProductName,
     quantity: 1,
-    price: 200,
+    price: productcard.pris,
     image: productcard.image[0].url,
 
   }

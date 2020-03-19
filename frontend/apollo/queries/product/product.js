@@ -4,10 +4,29 @@ const PRODUCT_QUERY = gql`
   query products($id: ID!) {
     product(id: $id) {
       id
-      name
+      ProductName
+      pris
+      ReviewScore
+      ingredients
+      directions
+      Volume
       description
+
       image{
         url
+      }
+      sub_categories{
+        StrapiName
+        description
+        image{url}
+        category{name}
+        
+      }
+      type_of_products{
+        id
+        StrapiName
+      	TypeOfProductName
+        
       }
     }
   }
