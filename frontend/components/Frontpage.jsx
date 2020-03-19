@@ -2,15 +2,20 @@ import React from "react"
 import MyCarousel from "../components/MyCarousel"
 import Link from "next/link";
 import { MyMarquee } from "./MyMarquee";
+import MyDrawer from "./MyDrawer";
 
 
 export const Frontpage = () => {
     return (
         <div>
+            {/*
             <MyMarquee />
             <MyCarousel />
+
             <FrontpageGrid />
+
             <hr />
+            */}
         </div>
     );
 };

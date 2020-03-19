@@ -1,12 +1,29 @@
-
-import React, { useState, useEffect } from "react"
+import React, {useState, useEffect} from "react"
 import Link from "next/link";
-import { FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { Collapse, NavbarToggler, NavbarBrand, Navbar, Nav,NavItem, NavLink ,Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GoSearch } from "react-icons/go";
-
+import {FaHeart, FaShoppingCart} from 'react-icons/fa';
+import {
+    Collapse,
+    NavbarToggler,
+    NavbarBrand,
+    Navbar,
+    Nav,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText,
+    Input
+} from "reactstrap";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {GoSearch} from "react-icons/go";
+import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
+import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
+import MyDrawer from "../MyDrawer";
 
 
 /*
@@ -103,24 +120,21 @@ export const MyHeader = (props) => {
 };
 */
 const MySearchbar = () => {
-  return (
-    <div className="row mx-auto w-80 pt-3 pb-3">
-      <div className="col">
+    return (
+        <div className="row mx-auto w-80 pt-3 pb-3">
+            <div className="col">
 
-        <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText><GoSearch /></InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="søk..." />
-        </InputGroup>
-      </div>
-    </div>
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                        <InputGroupText><GoSearch/></InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="søk..."/>
+                </InputGroup>
+            </div>
+        </div>
 
-  );
+    );
 };
-
-
-
 export const MyHeader = (props) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -151,82 +165,76 @@ export const MyHeader = (props) => {
     }
 
 
-
-    const [collapsed, setCollapsed] = useState(true);
-
-    const toggleNavbar = () => setCollapsed(!collapsed);
-
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
+            <nav className="navbar navbar-expand-lg bg-light nav-container">
 
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+                <button className="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <MyDrawer/>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-                <Collapse isOpen={!collapsed} navbar>
-                    <Nav navbar>
+                    <div className="menu-container">
 
-                        <NavItem className="menu-container">
-                                <nav className="nav">
-                                    <ul className="nav__menu">
-
-                                        <li className="nav__menu-item">
-                                            <a>Parfyme</a>
-                                            <SubMenu/>
-                                        </li>
-                                        <li className="nav__menu-item">
-                                            <a>Makeup</a>
-                                            <SubMenu/>
-                                        </li>
-                                        <li className="nav__menu-item">
-                                            <a>Hudpleie</a>
-                                            <SubMenu/>
-                                        </li>
-                                    </ul>
-                                </nav>
-                        </NavItem>
-
-                        <NavItem>
-
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-
-                {/* Ikke se ned her
-                <div className="mx-auto">
-                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+                        <ul className="nav__menu">
+                            <li className="nav__menu-item">
+                                <Link href="#">
+                                    <a className="nav-link">Alle produkter</a>
+                                </Link>
+                                <MySubMenu/>
+                            </li>
+                            <li className="nav__menu-item">
+                                <Link href="#">
+                                    <a className="nav-link">Inspirasjon og guider</a>
+                                </Link>
+                                <MySubMenu/>
+                            </li>
+                            <li className="nav__menu-item">
+                                <Link href="#">
+                                    <a className="nav-link">Merker</a>
+                                </Link>
+                                <MySubMenu/>
+                            </li>
+                            <li className="nav__menu-item">
+                                <Link href="#">
+                                    <a className="nav-link">Tilbud</a>
+                                </Link>
+                                <MySubMenu/>
+                            </li>
+                            <li className="nav__menu-item">
+                                <Link href="#">
+                                    <a className="nav-link">Tax Free and Me</a>
+                                </Link>
+                                <MySubMenu/>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div className="col-xs-2">
-                    <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
-                </div>
-                <div className="ml-auto">
-                    <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black" /></a>
-                    <p>{totalprice} kr</p>
-                </div>
-                */}
-
             </nav>
+            <MySearchbar/>
         </div>
     );
 };
 
-export const SubMenu = () => {
+export const MySubMenu = () => {
     return (
         <div>
             <ul className="nav__submenu">
-                <li className="nav__submenu-item ">
-                    <a>Ansikt</a>
+                <li className="nav_submenu-item">
+                    <h1>Ansikt</h1>
                 </li>
-                <li className="nav__submenu-item ">
-                    <a>Lepper</a>
+                <li className="nav_submenu-item ">
+                    <h1>Lepper</h1>
                 </li>
-                <li className="nav__submenu-item ">
-                    <a>Øyne</a>
+                <li className="nav_submenu-item ">
+                    <h1>Øyne</h1>
                 </li>
             </ul>
         </div>
     );
 };
-
 
 export const MyFooter = () => (
     <div className="container-fluid">

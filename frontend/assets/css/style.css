@@ -233,13 +233,7 @@ a.carousel-control-next, a.carousel-control-prev {
     margin-top: 0;
     margin-bottom: 0;
 }
-.nav {
-    display: inline-block;
-    margin: 2rem auto 0;
-    background: #f8f9fa;
-    color: black;
-    text-align: left;
-}
+
 .nav a {
     display: block;
     padding: 0 16px;
@@ -247,30 +241,38 @@ a.carousel-control-next, a.carousel-control-prev {
     cursor: pointer;
 }
 .nav__menu {
-    line-height: 45px;
     font-weight: 700;
     text-transform: uppercase;
 }
 .nav__menu-item {
     display: inline-block;
     position: relative;
+    margin-left: 20px;
 }
+
 .nav__menu-item:hover {
-    background-color: lightgray;
+    /*background-color: pink; */
+    text-decoration: underline;
 }
 .nav__menu-item:hover .nav__submenu {
     display: block;
 }
+
+/* submenu rectangle*/
 .nav__submenu {
     font-weight: 300;
     text-transform: none;
     display: none;
     position: absolute;
+    min-width: 20em;
     width: 600%;
-    background-color: lightgrey;
+    height: 600%;
+    background-color: pink;
 }
-.nav__submenu-item:hover {
-    background: rgba(0, 0, 0, 0.1);
+
+/* content for subitems */
+.nav_submenu-item:hover {
+    background: greenyellow;
 }
 .nav-container {
     z-index: 10;
