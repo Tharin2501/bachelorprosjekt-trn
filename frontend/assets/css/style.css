@@ -285,4 +285,15 @@ a.carousel-control-next, a.carousel-control-prev {
     position: relative;
 }
 
+/* HAMBURGER MENY RELATED */
+.myImg {
+    margin: 3px 15px;
+    float: left;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
 /* END OF NAVBAR*/
+
+

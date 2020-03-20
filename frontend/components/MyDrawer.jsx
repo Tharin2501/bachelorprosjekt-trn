@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import Drawer from 'react-motion-drawer-improved';
 import {GiHamburgerMenu} from "react-icons/gi";
-
+import {MySubMenu} from "./layout/layout";
+import Link from "next/link";
 
 export default class MyDrawer extends Component {
     state = {
@@ -68,9 +69,39 @@ export default class MyDrawer extends Component {
                         var per = val / 300;
 
                         return (
-                            <div style={{backgroundColor: `rgba(0, 184, 212, ${per})`, width: "100%", height: "100%"}}/>
+                            <div style={{backgroundColor: `rgba(0, 184, 212, ${per})`, width: "100%", height: "100%"}}>
+                                <div style={{width: "100%"}}>
+                                    <ul>
+                                        <li className="nav_submenu-item">
+                                            <div className="myImg">
+                                                <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                                            </div>
+                                            <Link href="makeup">
+                                                <h1>Makeup</h1>
+                                            </Link>
+                                        </li>
+                                        <li className="nav_submenu-item">
+                                            <div className="myImg">
+                                                <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                                            </div>
+                                            <Link href="#">
+                                                <h1>Dior</h1>
+                                            </Link>
+                                        </li>
+                                        <li className="nav_submenu-item">
+                                            <div className="myImg">
+                                                <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                                            </div>
+                                            <Link href="#">
+                                                <h1>Dior</h1>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         );
                     }}
+
                 </Drawer>}
 
                 <div className="navbar-fixed">
