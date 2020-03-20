@@ -72,7 +72,9 @@ export default class MyDrawer extends Component {
                             <div style={{backgroundColor: `rgba(0, 184, 212, ${per})`, width: "100%", height: "100%"}}>
                                 <div style={{width: "100%"}}>
                                     <ul>
-                                        <li className="nav_submenu-item">
+                                        <li className="nav_submenu-item"
+                                            onClick={() =>
+                                                this.setState({openLeft:false, openRight: false})}>
                                             <div className="myImg">
                                                 <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
                                             </div>
@@ -113,7 +115,7 @@ export default class MyDrawer extends Component {
                                         style={{padding: 15}}
                                         className=""
                                         onClick={() =>
-                                            this.setState({openLeft: !openLeft, openRight: false})}
+                                            this.setState({openLeft:true, openRight: false})}
                                     >
                                         <GiHamburgerMenu/>
                                     </a>
