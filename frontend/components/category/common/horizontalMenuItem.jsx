@@ -1,16 +1,24 @@
 import Link from "next/link";
+import React, { useState, useEffect, useContext } from "react"
+const HorizontalMenuItem = (product) => {
+    console.log({ product })
 
-const HorizontalMenuItem = (props) => {
+    // change color of hearthfunction
+    const [categoryName, setCategoryName] = useState(product.HorizontalMenuItem.name)
+    const [categoryImageURL, setCategoryImageURL] = useState(product.HorizontalMenuItem.imageUrl)
+    const [categoryLink, setCategoryLink] = useState(product.HorizontalMenuItem.href)
+    console.log(categoryImageURL)
+    console.log(categoryName)
     return (
         <div className="navitem">
             <div>
-                <Link href="parfyme">
-                    <a className="nav-link frontpage-img-wh"><img src="/images/parfyme.png" alt="logo" /></a>
+                <Link href={categoryLink}>
+                    <a className="nav-link frontpage-img-wh"><img src={categoryImageURL} alt="logo" /></a>
                 </Link>
             </div>
             <div>
-                <Link href="parfyme">
-                    <a> parfyme</a>
+                <Link href={categoryLink}>
+                    <a> {categoryName}</a>
                 </Link>
             </div>
         </div>

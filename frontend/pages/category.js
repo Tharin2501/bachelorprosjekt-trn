@@ -8,26 +8,33 @@ import { SubCategoryList } from "../components/category/subCategoryList";
 
 
 const Category = () => {
+
+  const producttest = {
+    id: "test",
+    name: "Parfyme",
+    imageUrl: "/images/parfyme.png",
+    href: "parfyme"
+  }
+
+  const producttest2 = {
+    id: "test",
+    name: "hudpleie",
+    imageUrl: "/images/hudpleie.png",
+    href: "hudpleie"
+  }
+
   return (
     <div>
       <div className="scrollmenu">
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-        <HorizontalMenuItem></HorizontalMenuItem>
-
-
-
-
-
-
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest2}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
+        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
 
       </div>
       <Query query={PRODUCTS_QUERY} id={null}>
