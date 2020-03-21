@@ -221,3 +221,30 @@ a.carousel-control-next, a.carousel-control-prev {
     flex-direction: row;
 
 }
+
+
+/* Kategory nav bar */
+.tabbable .nav-tabs .navbarKat {
+  overflow-x: auto;
+  overflow-y:hidden;
+  flex-wrap: nowrap;
+}
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+
+
+.navitem{
+  float: left;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+.navitem:hover {
+  background-color: #777;
+}
