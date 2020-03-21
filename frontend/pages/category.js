@@ -2,28 +2,31 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PRODUCTS_QUERY from "../apollo/queries/product/products";
 import Query from "../components/query";
-import Link from "next/link";
+import HorizontalMenuItem from "../components/category/common/horizontalMenuItem"
 import Productgrid from "../components/category/productgrid";
 import { SubCategoryList } from "../components/category/subCategoryList";
-import { Navbar, NavItem, Nav, NavbarToggler, NavLink } from "reactstrap";
+
 
 const Category = () => {
   return (
     <div>
       <div className="scrollmenu">
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
+        <HorizontalMenuItem></HorizontalMenuItem>
 
-        <div className="navitem">
-          <div>
-            <Link href="parfyme">
-              <a className="nav-link frontpage-img-wh"><img src="/images/parfyme.png" alt="logo" /></a>
-            </Link>
-          </div>
-          <div>
-            <Link href="parfyme">
-              <a> parfyme</a>
-            </Link>
-          </div>
-        </div>
+
+
+
+
 
 
       </div>

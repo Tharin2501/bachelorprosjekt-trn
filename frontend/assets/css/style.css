@@ -235,10 +235,8 @@ div.scrollmenu {
   white-space: nowrap;
 }
 
-
-
 .navitem{
-  float: left;
+  
   display: inline-block;
   color: white;
   text-align: center;
