@@ -114,13 +114,7 @@ img:hover {
   cursor: pointer;
 }
 
-.card {
-  margin: auto;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+
 
 .pic1 {
   width: 250px; /* 90% */
@@ -136,10 +130,19 @@ img:hover {
   width: 100%;
 }
 
+.card {
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .card-1 {
   padding: 30px 30px 20px 30px !important;
   border: none;
-  width: 90%;
+  height: 35rem;
+  width: 20rem;
 }
 
 .category {
@@ -188,6 +191,8 @@ font-size: 14px
     padding: 5px;
     margin: 5px;
 }
+
+
 */
 /* Frontpage Horizontal line */
 .horizontal-line1 {
@@ -215,4 +220,30 @@ a.carousel-control-next, a.carousel-control-prev {
     display: flex;
     flex-direction: row;
 
+}
+
+
+/* Kategory nav bar */
+.tabbable .nav-tabs .navbarKat {
+  overflow-x: auto;
+  overflow-y:hidden;
+  flex-wrap: nowrap;
+}
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.navitem{
+  
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+.navitem:hover {
+  background-color: #777;
 }
