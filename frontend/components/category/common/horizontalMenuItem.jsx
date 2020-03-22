@@ -10,7 +10,7 @@ const HorizontalMenuItem = (category) => {
         <div className="navitem">
             <div>
                 <Link href={categoryLink}>
-                    <a className="nav-link frontpage-img-wh"><img src={"https://trnbackend.herokuapp.com" + categoryImageURL} alt="logo" /></a>
+                    <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + categoryImageURL} alt="logo" /></a>
                 </Link>
             </div>
             <div>
