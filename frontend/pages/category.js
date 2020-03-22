@@ -26,15 +26,8 @@ const Category = () => {
   }
 
   var test = "Ansiktspleie"
-
-  return (
-    <div>
-
-      <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
-        {({ data: { categories } }) => {
-          console.log(categories[0].sub_categories)
-
-          {
+  /*
+            {
             categories[0].sub_categories.map((category) => {
               return (
                 <div key={category.id}>
@@ -46,12 +39,33 @@ const Category = () => {
 
             )
           }
+          */
+
+  return (
+    <div>
+
+      <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
+        {({ data: { categories } }) => {
+          console.log(categories[0].sub_categories)
+          return (
+            <div className="scrollmenu">
+              {categories[0].sub_categories.map((category) => {
+                //console.log(category)
+                return (
+
+                  <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+
+                )
+              })}
+            </div>
+          )
+
         }}
       </QuerySubCategory>
-      <div className="scrollmenu">
 
 
-      </div>
+
+
       <Query query={PRODUCTS_QUERY} id={null}>
         {({ data: { products } }) => {
           //console.log(products)
