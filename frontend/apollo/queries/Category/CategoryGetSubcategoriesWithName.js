@@ -5,7 +5,7 @@ query Category ($nametoInsert:String!){
     categories(where:{name:$nametoInsert}) {
              
       sub_categories{
-              
+        id     
         StrapiName
         categoryName
         description

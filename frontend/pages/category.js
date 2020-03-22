@@ -27,44 +27,34 @@ const Category = () => {
 
   var test = "Ansiktspleie"
 
-  /*
-      <Query query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} id={test} >
-        {({ data: { subcategories } }) => {
-          console.log(subcategories)
-        }}
-      </Query>
-
-        function Subcategories(nametoInsert) {
-    const { loading, error, data } = useQuery(CATEGORYGETSUBCATEGOREISWITHNAME_QUERY, { variables: { nametoInsert } });
-    if (loading) return null
-    if (error) return `Error! ${error}`
-
-    return (
-      data
-    )
-  }
-      */
-
   return (
     <div>
 
+      <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
+        {({ data: { categories } }) => {
+          console.log(categories[0].sub_categories)
 
+          {
+            categories[0].sub_categories.map((category) => {
+              return (
+                <div key={category.id}>
+                  <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+                </div>
+              )
+
+            }
+
+            )
+          }
+        }}
+      </QuerySubCategory>
       <div className="scrollmenu">
 
-        <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
-          {({ data: { categories } }) => {
-            console.log(categories[0].sub_categories)
-            return (
-              //<HorizontalMenuItem HorizontalMenuItem={category[]}></HorizontalMenuItem>
-              <p> test</p>
-            )
-          }}
-        </QuerySubCategory>
 
       </div>
       <Query query={PRODUCTS_QUERY} id={null}>
         {({ data: { products } }) => {
-
+          //console.log(products)
           return (
             <div>
               <h1>Makeup</h1>
@@ -87,7 +77,7 @@ const Category = () => {
           );
         }}
       </Query>
-    </div>
+    </div >
   );
 };
 
