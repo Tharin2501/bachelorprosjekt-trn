@@ -247,3 +247,8 @@ div.scrollmenu {
 .navitem:hover {
   background-color: #777;
 }
+
+.imageSize{
+  width: 6em;
+  
+}

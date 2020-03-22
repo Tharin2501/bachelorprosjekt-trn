@@ -1,19 +1,16 @@
 import Link from "next/link";
 import React, { useState, useEffect, useContext } from "react"
-const HorizontalMenuItem = (product) => {
-    console.log({ product })
-
+const HorizontalMenuItem = (category) => {
+    console.log(category)
     // change color of hearthfunction
-    const [categoryName, setCategoryName] = useState(product.HorizontalMenuItem.name)
-    const [categoryImageURL, setCategoryImageURL] = useState(product.HorizontalMenuItem.imageUrl)
-    const [categoryLink, setCategoryLink] = useState(product.HorizontalMenuItem.href)
-    console.log(categoryImageURL)
-    console.log(categoryName)
+    const [categoryName, setCategoryName] = useState(category.HorizontalMenuItem.categoryName)
+    const [categoryImageURL, setCategoryImageURL] = useState(category.HorizontalMenuItem.image[0].url)
+    const [categoryLink, setCategoryLink] = useState(category.HorizontalMenuItem.categoryName)
     return (
         <div className="navitem">
             <div>
                 <Link href={categoryLink}>
-                    <a className="nav-link frontpage-img-wh"><img src={categoryImageURL} alt="logo" /></a>
+                    <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + categoryImageURL} alt="logo" /></a>
                 </Link>
             </div>
             <div>

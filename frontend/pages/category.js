@@ -5,8 +5,10 @@ import Query from "../components/query";
 import HorizontalMenuItem from "../components/category/common/horizontalMenuItem"
 import Productgrid from "../components/category/productgrid";
 import { SubCategoryList } from "../components/category/subCategoryList";
-
-
+import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
+import { useQuery } from "@apollo/react-hooks";
+import QuerySubCategory from "../components/querySubCategory"
+//   <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
 const Category = () => {
 
   const producttest = {
@@ -23,22 +25,50 @@ const Category = () => {
     href: "hudpleie"
   }
 
+  var test = "Ansiktspleie"
+  /*
+            {
+            categories[0].sub_categories.map((category) => {
+              return (
+                <div key={category.id}>
+                  <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+                </div>
+              )
+
+            }
+
+            )
+          }
+          */
+
   return (
     <div>
-      <div className="scrollmenu">
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest2}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
-        <HorizontalMenuItem HorizontalMenuItem={producttest}></HorizontalMenuItem>
 
-      </div>
+      <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
+        {({ data: { categories } }) => {
+          console.log(categories[0].sub_categories)
+          return (
+            <div className="scrollmenu">
+              {categories[0].sub_categories.map((category) => {
+                //console.log(category)
+                return (
+
+                  <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+
+                )
+              })}
+            </div>
+          )
+
+        }}
+      </QuerySubCategory>
+
+
+
+
       <Query query={PRODUCTS_QUERY} id={null}>
         {({ data: { products } }) => {
+          //console.log(products)
           return (
             <div>
               <h1>Makeup</h1>
@@ -61,7 +91,7 @@ const Category = () => {
           );
         }}
       </Query>
-    </div>
+    </div >
   );
 };
 
