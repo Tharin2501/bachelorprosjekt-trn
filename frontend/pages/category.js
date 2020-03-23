@@ -50,7 +50,6 @@ const Category = () => {
           return (
             <div className="scrollmenu">
               {categories[0].sub_categories.map((category) => {
-                //console.log(category)
                 return (
 
                   <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
@@ -63,12 +62,53 @@ const Category = () => {
         }}
       </QuerySubCategory>
 
+      <div classname="container">
 
+        <div className="row">
+          <div className="col-lg">
+
+            <div className="jumbotron featured-article">
+
+              <img src="images/hudpleievelger.png"></img>
+
+
+
+            </div>
+          </div>
+          {/* featured article end*/}
+          <div className="col-sm">
+            <ul >
+              <li>
+                <div className="jumbotron">
+
+                  <img src="images/groon.png"></img>
+
+
+                </div>
+              </li>
+
+              <li>
+                <div className="jumbotron">
+
+                  <img src="images/red.png"></img>
+
+
+
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
 
 
       <Query query={PRODUCTS_QUERY} id={null}>
         {({ data: { products } }) => {
-          //console.log(products)
           return (
             <div>
               <h1>Makeup</h1>
@@ -85,7 +125,6 @@ const Category = () => {
                 makeupsett i forskjellige fasonger og farger. Finn din favoritt
                 sminke hos oss til en god pris.
               </p>
-              <SubCategoryList />
               <Productgrid productgrid={products} />;
             </div>
           );

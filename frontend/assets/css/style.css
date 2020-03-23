@@ -252,3 +252,10 @@ div.scrollmenu {
   width: 6em;
   
 }
+
+.featured-article {
+	
+	height: 50em;
+	position: relative;
+	margin-bottom: 1em;
+}
