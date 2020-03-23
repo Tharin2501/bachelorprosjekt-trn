@@ -1,5 +1,4 @@
 import gql from "graphql-tag";
-//($name:String!)
 const CATEGORYGETSUBCATEGOREISWITHNAME_QUERY = gql`  
 query Category ($nametoInsert:String!){
     categories(where:{name:$nametoInsert}) {

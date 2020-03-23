@@ -6,8 +6,6 @@ import Highlight3Articles from "../components/category/highlight3Articles"
 //   <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
 const Category = () => {
 
-
-  var categoryToInsert = "Ansiktspleie"
   const router = useRouter()
   return (
     <div>
@@ -21,5 +19,5 @@ const Category = () => {
     </div >
   );
 };
-
+// Alkohol
 export default Category;
