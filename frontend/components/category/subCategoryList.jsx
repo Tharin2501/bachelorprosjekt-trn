@@ -1,13 +1,12 @@
 import React from "react";
 import QuerySubCategory from "../../components/querySubCategory"
-// ../components/querySubCategory
+import HorizontalMenuItem from "../../components/category/common/horizontalMenuItem"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName"
-//../apollo/queries/Category/CategoryGetSubcategoriesWithName
-export const SubCategoryList = () => {
+const SubCategoryList = (props) => {
     var test = "Ansiktspleie"
-
+    //console.log(props.SubCategoryList)
     return (
-        <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
+        <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={props.SubCategoryList}>
             {({ data: { categories } }) => {
                 console.log(categories[0].sub_categories)
                 return (
@@ -28,3 +27,5 @@ export const SubCategoryList = () => {
     )
 
 }
+
+export default SubCategoryList

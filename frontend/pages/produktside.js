@@ -24,4 +24,3 @@ const productSide = () => {
 };
 
 export default productSide;
-//    <Produktside></Produktside>

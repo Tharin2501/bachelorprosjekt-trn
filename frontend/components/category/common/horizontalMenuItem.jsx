@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect, useContext } from "react"
 const HorizontalMenuItem = (category) => {
-    console.log(category)
-    // change color of hearthfunction
+    // console.log(category)
     const [categoryName, setCategoryName] = useState(category.HorizontalMenuItem.categoryName)
     const [categoryImageURL, setCategoryImageURL] = useState(category.HorizontalMenuItem.image[0].url)
     const [categoryLink, setCategoryLink] = useState(category.HorizontalMenuItem.categoryName)
