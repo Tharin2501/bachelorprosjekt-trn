@@ -23,7 +23,7 @@ import {GoSearch} from "react-icons/go";
 import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
 import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
-import MyDrawer from "../MyDrawer";
+import {MyDrawer} from "../MyDrawer";
 
 
 /*

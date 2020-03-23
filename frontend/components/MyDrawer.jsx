@@ -4,93 +4,60 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {MySubMenu} from "./layout/layout";
 import Link from "next/link";
 
-export default class MyDrawer extends Component {
-    state = {
-        openLeft: false,
-        drawerStyle: `
-{
-  "background": "#F9F9F9",
-  "boxShadow": "rgba(0, 0, 0, 0.188235) 0px 10px 20px, rgba(0, 0, 0, 0.227451) 0px 6px 6px"
-}`,
-        relativeWidth: false,
-        width: 300,
-        noTouchOpen: false,
-        noTouchClose: false,
-    };
-
-
-
-    render() {
-
-
-        const {
-            drawerStyle: stringDrawerStyle,
-            openLeft,
-            noTouchOpen,
-            noTouchClose
-        } = this.state;
-
-        let drawerStyle = {};
-
-        const drawerProps = {
-            overlayColor: "rgba(255,255,255,0.6)", drawerStyle
-        };
-
-        return (
-            <div>
-
-                <div>
-                    <ul className="left">
-                        <li style={{cursor: "pointer", height: "100%"}}>
-                            <a onClick={() => this.setState({openLeft: true})}>
-                                <GiHamburgerMenu/>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <Drawer {...drawerProps}
-                        width={this.state.width}
-                        fadeOut
-                        open={openLeft}
-                        onChange={open => this.setState({openLeft: open})}
-                        noTouchOpen={noTouchOpen}
-                        noTouchClose={noTouchClose}>
-
-                    <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
-                        <div style={{width: "100%"}}>
-                            <ul>
-                                <li className="nav_submenu-item">
-
-                                    <a onClick={() => this.setState({openLeft: true})}>
-                                        <DrawerContent/>
-                                        <DrawerContent3/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </Drawer>
-
-            </div>
-        );
-    }
-}
-
-
-export function DrawerContent(){
+export const MyDrawer = () => {
 
     const [openLeft, setOpenLeft] = useState(false);
     const [width, setWidth] = useState(300);
     const [noTouchOpen, setNoTouchOpen] = useState(false);
     const [noTouchClose, setNoTouchClose] = useState(false);
+    const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
 
-    const drawerProps = {
-        overlayColor: "rgba(255,255,255,0.6)",
-    };
+    return (
 
-    return(
+        <div>
+            <div>
+                <ul className="left">
+                    <li style={{cursor: "pointer", height: "100%"}}>
+                        <a onClick={() => setOpenLeft({openLeft: true})}>
+                            <GiHamburgerMenu/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <Drawer overlayColor={overLay}
+                    width={width}
+                    fadeOut
+                    open={openLeft}
+                    noTouchOpen={noTouchOpen}
+                    noTouchClose={noTouchClose}>
+
+                <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
+                    <div style={{width: "100%"}}>
+                        <ul>
+                            <li className="nav_submenu-item">
+                                <a><DrawerContent1/></a>
+                            </li>
+                            <li className="nav_submenu-item">
+                                <a><DrawerContent2/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </Drawer>
+        </div>
+    );
+};
+
+export const DrawerContent1 = () => {
+
+    const [openLeft, setOpenLeft] = useState(false);
+    const [width, setWidth] = useState(300);
+    const [noTouchOpen, setNoTouchOpen] = useState(false);
+    const [noTouchClose, setNoTouchClose] = useState(false);
+    const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
+
+    return (
         <div>
             <div>
                 <ul>
@@ -102,7 +69,7 @@ export function DrawerContent(){
                     </li>
                 </ul>
 
-                <Drawer {...drawerProps}
+                <Drawer overlayColor={overLay}
                         width={width}
                         fadeOut
                         open={openLeft}
@@ -115,7 +82,35 @@ export function DrawerContent(){
     );
 }
 
-export function DrawerContent3() {
+
+export const MyMakeup = () => {
+
+    return (
+
+        <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
+            <div style={{width: "100%"}}>
+                <ul>
+                    <li className="nav_submenu-item">
+                        <div className="myImg">
+                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                        </div>
+                        <h1>Ansikt</h1>
+                    </li>
+                    <li className="nav_submenu-item">
+                        <div className="myImg">
+                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                        </div>
+                        <h1>Øyne</h1>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    );
+};
+
+
+export function DrawerContent2() {
 
     const [openLeft, setOpenLeft] = useState(false);
     const [width, setWidth] = useState(300);
@@ -126,7 +121,7 @@ export function DrawerContent3() {
         overlayColor: "rgba(255,255,255,0.6)",
     };
 
-    return(
+    return (
         <div>
             <div>
                 <ul>
@@ -151,30 +146,9 @@ export function DrawerContent3() {
     );
 }
 
-export const MyMakeup = () => {
-
-    return(
-
-        <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
-            <div style={{width: "100%"}}>
-                <ul>
-                    <li className="nav_submenu-item">
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Sminke</h1>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    );
-}
-
-
 export const MyHudpleie = () => {
 
-    return(
+    return (
 
         <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
             <div style={{width: "100%"}}>
@@ -183,13 +157,17 @@ export const MyHudpleie = () => {
                         <div className="myImg">
                             <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
                         </div>
-                        <h1>fdsfasddsfsdffdfsdasadfssfdsfd</h1>
+                        <h1>Ansikt</h1>
                     </li>
-
+                    <li className="nav_submenu-item">
+                        <div className="myImg">
+                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                        </div>
+                        <h1>Kropp</h1>
+                    </li>
                 </ul>
             </div>
         </div>
 
     );
-}
-
+};
