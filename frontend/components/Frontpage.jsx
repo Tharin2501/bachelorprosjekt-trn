@@ -8,14 +8,14 @@ import MyDrawer from "./MyDrawer";
 export const Frontpage = () => {
     return (
         <div>
-            {/*
+
             <MyMarquee />
             <MyCarousel />
 
             <FrontpageGrid />
 
             <hr />
-            */}
+
         </div>
     );
 };

@@ -281,7 +281,7 @@ a.carousel-control-next, a.carousel-control-prev {
     text-decoration: underline;
 }
 .nav-container {
-    z-index: 10;
+    /*z-index: 10; */
     position: relative;
 }
 

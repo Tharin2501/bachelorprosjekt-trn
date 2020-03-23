@@ -217,7 +217,7 @@ export const MyHeader = (props) => {
                     </div>
                 </div>
             </nav>
-            {/* <MySearchbar/> */}
+             <MySearchbar/>
         </div>
     );
 };
