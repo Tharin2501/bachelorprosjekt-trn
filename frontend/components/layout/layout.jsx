@@ -217,7 +217,7 @@ export const MyHeader = (props) => {
                     </div>
                 </div>
             </nav>
-            <MySearchbar/>
+            {/* <MySearchbar/> */}
         </div>
     );
 };
@@ -313,3 +313,57 @@ export const MyFooter = () => (
         </div>
     </div>
 );
+{/*
+export const MyHeader2 = () => {
+
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+            <a href="#" className="navbar-brand font-weight-bold d-block d-lg-none">MegaMenu</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars"
+                    aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" className="collapse navbar-collapse">
+                <ul className="navbar-nav mx-auto">
+
+                    <li className="nav-item dropdown megamenu"><a id="megamneu" href="" data-toggle="dropdown"
+                                                                  aria-haspopup="true" aria-expanded="false"
+                                                                  className="nav-link dropdown-toggle font-weight-bold text-uppercase">Mega
+                        Menu</a>
+                        <div aria-labelledby="megamneu" className="dropdown-menu border-0 p-0 m-0">
+                            <div className="container">
+                                <div className="row bg-white rounded-0 m-0 shadow-sm">
+                                    <div className="col-lg-7 col-xl-8">
+                                        <div className="p-4">
+                                            <div className="row">
+                                                <div className="col-lg-6 mb-4">
+                                                    <h6 className="font-weight-bold text-uppercase">MegaMenu
+                                                        heading</h6>
+                                                    <ul className="list-unstyled">
+                                                        <li className="nav-item"><a href=""
+                                                                                    className="nav-link text-small pb-0">Unique
+                                                            Features</a></li>
+                                                        <li className="nav-item"><a href=""
+                                                                                    className="nav-link text-small pb-0 ">Image
+                                                            Responsive</a></li>
+                                                        <li className="nav-item"><a href=""
+                                                                                    className="nav-link text-small pb-0 ">Auto
+                                                            Carousel</a></li>
+                                                        <li className="nav-item"><a href=""
+                                                                                    className="nav-link text-small pb-0 ">Newsletter
+                                                            Form</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
+}
+*/}

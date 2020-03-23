@@ -10,6 +10,7 @@ import {
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
+import {HorizontalScroller, HorizontalScroller2} from "../components/HorizontalScroller";
 
 var jsonObj = [
 
