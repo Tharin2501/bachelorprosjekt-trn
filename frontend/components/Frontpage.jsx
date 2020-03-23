@@ -34,9 +34,11 @@ export const FrontpageGrid = () => {
                     </div>
 
                     <div className="col-lg-sm-6 px-3">
-                        <Link href="makeup">
+
+                        <Link href={{ pathname: "/category", query: { id: "Ansiktspleie" } }}>
                             <a className="nav-link frontpage-img-wh"><img src="/images/makeup.png" alt="logo" /></a>
                         </Link>
+
                         <Link href="makeup"><a>Makeup</a></Link>
                     </div>
 
@@ -66,7 +68,7 @@ export const FrontpageGrid = () => {
                     </div>
 
                     <div className="col-sm-lg-6 px-3">
-                        <Link href="alkohol">
+                        <Link href={{ pathname: "/category", query: { id: "Alkohol" } }}>
                             <a className="nav-link frontpage-img-wh"><img src="/images/alkohol.png" alt="logo" /></a>
                         </Link>
                         <Link href="alkohol"><a>Alkohol</a></Link>

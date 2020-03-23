@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useRouter } from "next/router";
 const Highlight3Articles = (props) => {
-
+    const router = useRouter()
     return (
         <div classname="container">
 

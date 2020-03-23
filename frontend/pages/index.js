@@ -50,23 +50,6 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
 
     return (
         <div>
-
-            {/*
-            <Query query={ARTICLES_QUERY} id={null}>
-                {({data: {articles}}) => {
-                    console.log(articles)
-                    console.log(articles[0].name);
-
-                    return (
-                        <div className="hero">
-                            <h1 className="title">Welcome to Next.js!</h1>
-
-                            <Button color="danger">Pass på!!</Button>
-                        </div>
-                    );
-                }}
-            </Query>
-            */}
             <Frontpage />
         </div>
     );

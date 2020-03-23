@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useRouter } from "next/router";
 import SubCategoryList from "../components/category/subCategoryList"
 import ProductsComonent from "../components/category/productsComponent";
 import Highlight3Articles from "../components/category/highlight3Articles"
@@ -8,11 +8,11 @@ const Category = () => {
 
 
   var categoryToInsert = "Ansiktspleie"
-
+  const router = useRouter()
   return (
     <div>
 
-      <SubCategoryList SubCategoryList={categoryToInsert}></SubCategoryList>
+      <SubCategoryList SubCategoryList={router.query.id}></SubCategoryList>
 
 
       <Highlight3Articles></Highlight3Articles>
