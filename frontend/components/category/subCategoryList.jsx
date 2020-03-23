@@ -1,14 +1,29 @@
 import React from "react";
-import { Button } from "reactstrap"
-
+import QuerySubCategory from "../../components/querySubCategory"
+// ../components/querySubCategory
+import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName"
+//../apollo/queries/Category/CategoryGetSubcategoriesWithName
 export const SubCategoryList = () => {
+    var test = "Ansiktspleie"
+
     return (
-        <div className="d-flex justify-content-center">
-            <div className="row container d-flex justify-content-center">
-                <Button color="primary" size="lg">Lepper</Button>
-                <Button color="primary" size="lg">Solkrem</Button>
-            </div>
-        </div>
+        <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={test}>
+            {({ data: { categories } }) => {
+                console.log(categories[0].sub_categories)
+                return (
+                    <div className="scrollmenu">
+                        {categories[0].sub_categories.map((category) => {
+                            return (
+
+                                <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+
+                            )
+                        })}
+                    </div>
+                )
+
+            }}
+        </QuerySubCategory>
 
     )
 
