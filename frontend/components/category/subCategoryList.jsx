@@ -14,7 +14,7 @@ const SubCategoryList = (props) => {
                     <div className="scrollmenu">
                         <div className="navitem">
                             <Link href={{ pathname: "/category", query: { id: props.SubCategoryList } }}>
-                                <button type="button" class="btn btn-primary btn-circle btn-sm">Se alt</button>
+                                <button type="button" className="btn btn-primary btn-circle btn-sm">Se alt</button>
                             </Link>
                         </div>
                         {categories[0].sub_categories.map((category) => {

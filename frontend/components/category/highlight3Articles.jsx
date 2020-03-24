@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 const Highlight3Articles = (props) => {
     const router = useRouter()
     return (
-        <div classname="container">
+        <div className="container">
 
             <div className="row">
                 <div className="col-lg">
