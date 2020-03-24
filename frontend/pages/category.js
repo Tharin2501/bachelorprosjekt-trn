@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import SubCategoryList from "../components/category/subCategoryList"
 import ProductsComonent from "../components/category/productsComponent";
 import Highlight3Articles from "../components/category/highlight3Articles"
+
 //   <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
 const Category = () => {
 
