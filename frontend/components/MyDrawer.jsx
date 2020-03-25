@@ -32,24 +32,22 @@ export const MyDrawer = () => {
                     noTouchOpen={noTouchOpen}
                     noTouchClose={noTouchClose}>
 
-                <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
-                    <div style={{width: "100%"}}>
-                        <ul>
-                            <li className="nav_submenu-item">
-                                <a><DrawerContent1/></a>
-                            </li>
-                            <li className="nav_submenu-item">
-                                <a><DrawerContent2/></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
+                    <ul>
+                        <li className="nav_submenu-item">
+                            <a><DrawerContent_Makeup/></a>
+                        </li>
+                        <li className="nav_submenu-item">
+                            <a><DrawerContent_Hudpleie/></a>
+                        </li>
+                    </ul>
                 </div>
             </Drawer>
         </div>
     );
 };
 
-export const DrawerContent1 = () => {
+export const DrawerContent_Makeup = () => {
 
     const [openLeft, setOpenLeft] = useState(false);
     const [width, setWidth] = useState(300);
@@ -59,25 +57,23 @@ export const DrawerContent1 = () => {
 
     return (
         <div>
-            <div>
-                <ul>
-                    <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Makeup</h1>
-                    </li>
-                </ul>
+            <ul>
+                <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <h1>Makeup</h1>
+                </li>
+            </ul>
 
-                <Drawer overlayColor={overLay}
-                        width={width}
-                        fadeOut
-                        open={openLeft}
-                        noTouchOpen={noTouchOpen}
-                        noTouchClose={noTouchClose}>
-                    {MyMakeup}
-                </Drawer>
-            </div>
+            <Drawer overlayColor={overLay}
+                    width={width}
+                    fadeOut
+                    open={openLeft}
+                    noTouchOpen={noTouchOpen}
+                    noTouchClose={noTouchClose}>
+                {MyMakeup}
+            </Drawer>
         </div>
     );
 }
@@ -86,31 +82,39 @@ export const DrawerContent1 = () => {
 export const MyMakeup = () => {
 
     return (
-
-        <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
-            <div style={{width: "100%"}}>
-                <ul>
-                    <li className="nav_submenu-item">
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Ansikt</h1>
-                    </li>
-                    <li className="nav_submenu-item">
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Øyne</h1>
-                    </li>
-                </ul>
-            </div>
+        <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
+            <ul>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="makeup">
+                        <h1 className="nav-link">All Makeup</h1>
+                    </Link>
+                </li>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="#">
+                        <h1 className="nav-link">Ansikt</h1>
+                    </Link>
+                </li>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="#">
+                        <h1 className="nav-link">Øyne</h1>
+                    </Link>
+                </li>
+            </ul>
         </div>
-
     );
 };
 
 
-export function DrawerContent2() {
+export function DrawerContent_Hudpleie() {
 
     const [openLeft, setOpenLeft] = useState(false);
     const [width, setWidth] = useState(300);
@@ -123,25 +127,23 @@ export function DrawerContent2() {
 
     return (
         <div>
-            <div>
-                <ul>
-                    <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Hudpleie</h1>
-                    </li>
-                </ul>
+            <ul>
+                <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <h1>Hudpleie</h1>
+                </li>
+            </ul>
 
-                <Drawer {...drawerProps}
-                        width={width}
-                        fadeOut
-                        open={openLeft}
-                        noTouchOpen={noTouchOpen}
-                        noTouchClose={noTouchClose}>
-                    {MyHudpleie}
-                </Drawer>
-            </div>
+            <Drawer {...drawerProps}
+                    width={width}
+                    fadeOut
+                    open={openLeft}
+                    noTouchOpen={noTouchOpen}
+                    noTouchClose={noTouchClose}>
+                {MyHudpleie}
+            </Drawer>
         </div>
     );
 }
@@ -149,25 +151,33 @@ export function DrawerContent2() {
 export const MyHudpleie = () => {
 
     return (
-
-        <div style={{backgroundColor: `red`, width: "100%", height: "100%"}}>
-            <div style={{width: "100%"}}>
-                <ul>
-                    <li className="nav_submenu-item">
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Ansikt</h1>
-                    </li>
-                    <li className="nav_submenu-item">
-                        <div className="myImg">
-                            <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                        </div>
-                        <h1>Kropp</h1>
-                    </li>
-                </ul>
-            </div>
+        <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
+            <ul>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="hudpleie">
+                        <h1 className="nav-link">All Hudpleie</h1>
+                    </Link>
+                </li>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="#">
+                        <h1 className="nav-link">Ansikt</h1>
+                    </Link>
+                </li>
+                <li className="nav_submenu-item">
+                    <div className="myImg">
+                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
+                    </div>
+                    <Link href="#">
+                        <h1 className="nav-link">Kropp</h1>
+                    </Link>
+                </li>
+            </ul>
         </div>
-
     );
 };

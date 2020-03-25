@@ -56,9 +56,6 @@ export const MyHeader = (props) => {
 
   }
 
-
-
-
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -135,7 +132,8 @@ const MySearchbar = () => {
 
     );
 };
-export const MyHeader = (props) => {
+
+export const MyHeader = () => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -164,99 +162,31 @@ export const MyHeader = (props) => {
 
     }
 
-
-    return (
+    return(
         <div>
-            <nav className="navbar navbar-expand-lg bg-light nav-container">
-
-                <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+            <Navbar color="light">
+                <div>
                     <MyDrawer/>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-                    <div className="menu-container">
-
-                        <ul className="nav__menu">
-                            <li className="nav__menu-item">
-                                <Link href="#">
-                                    <a className="nav-link">Alle produkter</a>
-                                </Link>
-                                <MySubMenu
-                                    firstItem="Parfyme" secondItem="Makeup" thirdItem="Hudpleie"
-                                    fourthItem="Hår" fifthItem="Solkrem" sixthItem="Alkohol" seventhItem="Tobakkvare"
-                                    eigthItem="Søtsaker" ninthItem="Til Reisen" tenthItem="Mote"
-                                />
-                            </li>
-                            <li className="nav__menu-item">
-                                <Link href="#">
-                                    <a className="nav-link">Inspirasjon og guider</a>
-                                </Link>
-                                <MySubMenu/>
-                            </li>
-                            <li className="nav__menu-item">
-                                <Link href="#">
-                                    <a className="nav-link">Merker</a>
-                                </Link>
-                                <MySubMenu/>
-                            </li>
-                            <li className="nav__menu-item">
-                                <Link href="#">
-                                    <a className="nav-link">Tilbud</a>
-                                </Link>
-                                <MySubMenu/>
-                            </li>
-                            <li className="nav__menu-item">
-                                <Link href="#">
-                                    <a className="nav-link">Tax Free and Me</a>
-                                </Link>
-                                <MySubMenu/>
-                            </li>
-                        </ul>
+                </div>
+                <div className ="row mx-auto">
+                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+                </div>
+                <div className="row ml-auto">
+                    <div className="col">
+                        <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
+                    </div>
+                    <div className="col">
+                        profil
+                    </div>
+                    <div className="col">
+                        <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black " /></a>
+                        <p>{totalprice}kr</p>
                     </div>
                 </div>
-            </nav>
-             <MySearchbar/>
-        </div>
-    );
-};
+            </Navbar>
+            <MySearchbar>
 
-export const MySubMenu = (props) => {
-    return (
-        <div>
-            <ul className="nav__submenu">
-                <li className="nav_submenu-item">
-                    <h1>{props.firstItem}</h1>
-                </li>
-                <li className="nav_submenu-item ">
-                    <h1>{props.secondItem}</h1>
-                </li>
-                <li className="nav_submenu-item ">
-                    <h1>{props.thirdItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.fourthItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.fifthItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.sixthItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.seventhItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.eigthItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.ninthItem}</h1>
-                </li>
-                <li className="nav_submenu-item">
-                    <h1>{props.tenthItem}</h1>
-                </li>
-            </ul>
+            </MySearchbar>
         </div>
     );
 };
@@ -313,57 +243,3 @@ export const MyFooter = () => (
         </div>
     </div>
 );
-{/*
-export const MyHeader2 = () => {
-
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
-            <a href="#" className="navbar-brand font-weight-bold d-block d-lg-none">MegaMenu</a>
-            <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars"
-                    aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarContent" className="collapse navbar-collapse">
-                <ul className="navbar-nav mx-auto">
-
-                    <li className="nav-item dropdown megamenu"><a id="megamneu" href="" data-toggle="dropdown"
-                                                                  aria-haspopup="true" aria-expanded="false"
-                                                                  className="nav-link dropdown-toggle font-weight-bold text-uppercase">Mega
-                        Menu</a>
-                        <div aria-labelledby="megamneu" className="dropdown-menu border-0 p-0 m-0">
-                            <div className="container">
-                                <div className="row bg-white rounded-0 m-0 shadow-sm">
-                                    <div className="col-lg-7 col-xl-8">
-                                        <div className="p-4">
-                                            <div className="row">
-                                                <div className="col-lg-6 mb-4">
-                                                    <h6 className="font-weight-bold text-uppercase">MegaMenu
-                                                        heading</h6>
-                                                    <ul className="list-unstyled">
-                                                        <li className="nav-item"><a href=""
-                                                                                    className="nav-link text-small pb-0">Unique
-                                                            Features</a></li>
-                                                        <li className="nav-item"><a href=""
-                                                                                    className="nav-link text-small pb-0 ">Image
-                                                            Responsive</a></li>
-                                                        <li className="nav-item"><a href=""
-                                                                                    className="nav-link text-small pb-0 ">Auto
-                                                            Carousel</a></li>
-                                                        <li className="nav-item"><a href=""
-                                                                                    className="nav-link text-small pb-0 ">Newsletter
-                                                            Form</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
-}
-*/}
