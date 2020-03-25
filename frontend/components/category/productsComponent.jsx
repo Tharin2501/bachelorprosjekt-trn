@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
-    var isAnyChecked = false
     const [productsArray, setProductsArray] = useState([]);
     const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
@@ -71,17 +70,12 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     const filterProductsToShow = () => {
         var checkboxCount;
-
+        var isAnyChecked = false;
         for (checkboxCount = 0; checkboxCount < generalCheckboxes.length; checkboxCount++) {
             var filteredArray = []
 
-
-            if (isAnyChecked == false) {
-                setProductsArray(defaultProductsArray)
-                return
-            }
-
             if (generalCheckboxes[checkboxCount].isChecked == true) {
+                isAnyChecked = true
                 //const tempArray = defaultProductsArray.filter(product => product.type)
                 var i;
                 for (i = 0; i < defaultProductsArray.length; i++) {
@@ -100,6 +94,15 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
             }
         }
 
+        if (isAnyChecked == false) {
+            // return with showing every product in category
+            setProductsArray(defaultProductsArray)
+            return
+        } else {
+            setProductsArray(filteredArray)
+
+        }
+        console.log(filteredArray)
         /*
 
          const temp = defaultProductsArray.filter(product => product.ReviewScore < 5)
@@ -110,8 +113,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         })
         */
         //console.log(newArray)
-        setProductsArray(filteredArray)
-        console.log(filteredArray)
+
     }
 
     const handleCheckChieldElement = (event) => {
@@ -120,11 +122,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         fruites.forEach(fruite => {
             if (fruite.value === event.target.value)
                 fruite.isChecked = event.target.checked
-            if (fruite.isChecked == true) {
-                isAnyChecked = true
-            } else {
-                isAnyChecked = false
-            }
+
         })
 
         setGenerealCheckboxes(fruites)
