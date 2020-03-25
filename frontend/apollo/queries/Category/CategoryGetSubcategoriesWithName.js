@@ -14,10 +14,18 @@ query Category ($nametoInsert:String!){
         }
       
       products{
-        Strapiname
+        id
         ProductName
         pris
-        
+        ReviewScore
+        ingredients
+        directions
+        Volume
+        description
+  
+        image{
+          url
+        }
       }
       
       

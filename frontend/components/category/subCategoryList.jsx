@@ -4,11 +4,16 @@ import HorizontalMenuItem from "../../components/category/common/horizontalMenuI
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName"
 import Link from "next/link";
 const SubCategoryList = (props) => {
-    var test = "Ansiktspleie"
-    //console.log(props.SubCategoryList)
+    var ProductsArray = []
+
+
+
+
     return (
         <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={props.SubCategoryList}>
             {({ data: { categories } }) => {
+
+                getProductsArray(categories)
 
                 return (
                     <div className="scrollmenu">
@@ -31,7 +36,28 @@ const SubCategoryList = (props) => {
         </QuerySubCategory>
 
     )
+    // all category items
+    function getProductsArray(categories) {
 
+        //console.log(categories[0].sub_categories.length)
+        //console.log(categories[0].sub_categories[1])
+
+        var subcatcount;
+
+        for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
+            ProductsArray = ProductsArray.concat(categories[0].sub_categories[subcatcount].products)
+        }
+        console.log(ProductsArray)
+
+
+    };
 }
+
+
+/*
+ for (productCount = 0; productCount < categories[0].sub_categories[subcatcount].length; productCount) {
+            ProductsArray.concat(categories[0].sub_categories[subcatcount].products)
+        }
+        */
 
 export default SubCategoryList

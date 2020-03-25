@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 const ProductsComonent = (props) => {
+    //console.log(props.ProductsComonent)
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -22,13 +23,20 @@ const ProductsComonent = (props) => {
     const toggleAttributesList = () => setAttributesListIsIsOpen(!attributesalListIsOpen);
 
 
-
+    // general
     const [generalCheckboxes, setGenerealCheckboxes] = useState(
-        [{ id: 1, value: "banana", isChecked: false },
-        { id: 2, value: "apple", isChecked: false },
-        { id: 3, value: "blueberry", isChecked: false },
-        { id: 4, value: "tesla", isChecked: false },
-        { id: 5, value: "herok", isChecked: false }
+        [{ id: 1, value: "Pris", isChecked: false },
+        { id: 2, value: "Merke", isChecked: false },
+        ]
+
+    )
+    // Types
+    const [typesCheckboxes, setTypesCheckboxes] = useState(
+        [{ id: 1, value: "Rødvin", isChecked: false },
+        { id: 2, value: "Hvitvin", isChecked: false },
+        { id: 3, value: "Rosevin", isChecked: false },
+        { id: 4, value: "Dessertvin", isChecked: false },
+        { id: 5, value: "Mussenede", isChecked: false },
         ]
 
     )
@@ -43,6 +51,7 @@ const ProductsComonent = (props) => {
             {({ data: { products } }) => {
 
                 const handleCheckChieldElement = (event) => {
+                    console.log(event)
                     let fruites = generalCheckboxes
                     fruites.forEach(fruite => {
                         if (fruite.value === event.target.value)
@@ -50,6 +59,17 @@ const ProductsComonent = (props) => {
                     })
                     setGenerealCheckboxes(fruites)
                     //console.log(generalCheckboxes)
+                }
+
+                const handleCheckChieldElementTypes = (event) => {
+                    console.log(event)
+                    let fruites = typesCheckboxes
+                    fruites.forEach(fruite => {
+                        if (fruite.value === event.target.value)
+                            fruite.isChecked = event.target.checked
+                    })
+                    setTypesListIsIsOpen(fruites)
+
                 }
 
                 return (
@@ -100,12 +120,12 @@ const ProductsComonent = (props) => {
                                         <Button type="button" onClick={toggleTypesList}>Types</Button>
                                         <Collapse isOpen={typesListIsOpen}>
                                             <div id="filters" className="d-md-block">
-                                                {generalCheckboxes.map((object) => {
+                                                {typesCheckboxes.map((object) => {
                                                     return (
 
 
 
-                                                        <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
+                                                        <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={object.id}{...object} />
 
                                                     )
                                                 })}

@@ -14,9 +14,9 @@ const Category = () => {
       <SubCategoryList SubCategoryList={router.query.id}></SubCategoryList>
 
 
-      <Highlight3Articles></Highlight3Articles>
+      <Highlight3Articles ></Highlight3Articles>
 
-      <ProductsComonent></ProductsComonent>
+      <ProductsComonent ProductsComonent={router.query.id}></ProductsComonent>
     </div >
   );
 };
