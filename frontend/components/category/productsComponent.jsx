@@ -5,7 +5,7 @@ import Productgrid from "../../components/category/productgrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-const ProductsComonent = ({ categoriesList }) => {
+const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     const [productsArray, setProductsArray] = useState([]);
 
 
@@ -45,16 +45,22 @@ const ProductsComonent = ({ categoriesList }) => {
 
 
     const getProductsArray = (categories) => {
-        //console.log(categories[0].sub_categories.length)
-        //console.log(categories[0].sub_categories[1])
-        var tempproductsArray = []
-        var subcatcount;
+        if (isSubCategoryGrid) {
+            console.log("Yas")
+            setProductsArray(categories)
+        } else {
+            //console.log(categories[0].sub_categories.length)
+            //console.log(categories[0].sub_categories[1])
+            var tempproductsArray = []
+            var subcatcount;
 
-        for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
-            tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
+            for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
+                tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
+            }
+            console.log(tempproductsArray)
+            setProductsArray(tempproductsArray)
         }
-        console.log(tempproductsArray)
-        setProductsArray(tempproductsArray)
+
 
     }
 

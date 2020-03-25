@@ -32,7 +32,7 @@ const Category = () => {
 
             <Highlight3Articles ></Highlight3Articles>
 
-            <ProductsComonent categoriesList={categories}></ProductsComonent>
+            <ProductsComonent categoriesList={categories} isSubCategoryGrid={false}></ProductsComonent>
           </div >
         )
       }}
