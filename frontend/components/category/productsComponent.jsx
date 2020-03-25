@@ -9,7 +9,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     const [productsArray, setProductsArray] = useState([]);
     const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
-
+    //console.log(categoriesList)
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -24,6 +24,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     // Attributes
     const [attributesalListIsOpen, setAttributesListIsIsOpen] = useState(true);
     const toggleAttributesList = () => setAttributesListIsIsOpen(!attributesalListIsOpen);
+
 
 
     // general
@@ -43,10 +44,28 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         ]
 
     )
+    const getTypeOfProductsList = () => {
+        //var typeOfProductsSet = new Set()
+        var typeOfProductsArray = []
+        var i;
+        for (i = 0; i < categoriesList.length; i++) {
+            var j;
+            for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
+                console.log(categoriesList[i])
+                if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
+                    typeOfProductsArray.push(categoriesList[i].type_of_products[j])
+                }
+                //typeOfProductsSet.add(categoriesList[i].type_of_products[j])
+                //categoriesList[i].type_of_products[j])
 
+            }
+        }
+        console.log(typeOfProductsArray)
+    }
 
     const getProductsArray = (categories) => {
         if (isSubCategoryGrid) {
+
             setProductsArray(categories)
             setDefaultProductsArray(categories)
         } else {
@@ -65,7 +84,10 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     }
 
     useEffect(() => {
+
         getProductsArray(categoriesList)
+        getTypeOfProductsList()
+
     }, [categoriesList])
 
     const filterProductsToShow = () => {
@@ -76,13 +98,10 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
             if (generalCheckboxes[checkboxCount].isChecked == true) {
                 isAnyChecked = true
-                //const tempArray = defaultProductsArray.filter(product => product.type)
                 var i;
                 for (i = 0; i < defaultProductsArray.length; i++) {
                     var j;
-                    //console.log(defaultProductsArray[i])
                     for (j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
-                        //console.log(defaultProductsArray[i].type_of_products[j])
 
                         if (defaultProductsArray[i].type_of_products[j].StrapiName === generalCheckboxes[checkboxCount].value) {
                             filteredArray.push(defaultProductsArray[i]) // kan skape duplicates
@@ -102,22 +121,12 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
             setProductsArray(filteredArray)
 
         }
-        console.log(filteredArray)
-        /*
-
-         const temp = defaultProductsArray.filter(product => product.ReviewScore < 5)
-        console.log(temp)
-        setProductsArray(temp)
-        const temp = defaultProductsArray.filter(product => for(typecount=0; product.type_of_products[typecount].StrapiName === "vin_hvitvin"; typecount){
-
-        })
-        */
-        //console.log(newArray)
+        //console.log(filteredArray)
 
     }
 
     const handleCheckChieldElement = (event) => {
-        console.log(event)
+        //console.log(event)
         let fruites = generalCheckboxes
         fruites.forEach(fruite => {
             if (fruite.value === event.target.value)
@@ -142,7 +151,8 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         setTypesListIsIsOpen(fruites)
 
     }
-    console.log(productsArray)
+    //console.log(productsArray)
+
     return (
 
         <div>
