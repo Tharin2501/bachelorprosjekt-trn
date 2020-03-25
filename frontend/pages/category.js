@@ -5,24 +5,18 @@ import ProductsComonent from "../components/category/productsComponent";
 import Highlight3Articles from "../components/category/highlight3Articles"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
 import QuerySubCategory from "../components/querySubCategory";
-//   <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
+
 const Category = () => {
 
 
 
   const router = useRouter()
 
-  // all category items
-
 
   return (
 
     <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={router.query.id}>
       {({ data: { categories } }) => {
-        { console.log(categories) }
-
-
-
 
         return (
           <div>

@@ -36,7 +36,7 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
     const [favoritesStorage, setfavoritesStorage] = useState(() =>
         (initialfavoritesStorageValue) //  JSON.parse
     );
-    console.log(favoritesStorage)
+    //console.log(favoritesStorage)
 
 
     useEffect(() => {

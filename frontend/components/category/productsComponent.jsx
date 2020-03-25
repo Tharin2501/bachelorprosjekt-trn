@@ -66,7 +66,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     useEffect(() => {
         getProductsArray(categoriesList)
-    }, [])
+    }, [categoriesList])
 
     //getProductsArray(categoriesList)
 
