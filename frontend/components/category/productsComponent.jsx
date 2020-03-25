@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
+    var isAnyChecked = false
     const [productsArray, setProductsArray] = useState([]);
     const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
@@ -28,8 +29,8 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     // general
     const [generalCheckboxes, setGenerealCheckboxes] = useState(
-        [{ id: 1, value: "Pris", isChecked: false },
-        { id: 2, value: "Merke", isChecked: false },
+        [{ id: 1, value: "vin_rodvin", isChecked: false },
+        { id: 2, value: "vin_hvitvin", isChecked: false },
         ]
 
     )
@@ -68,12 +69,49 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         getProductsArray(categoriesList)
     }, [categoriesList])
 
-    const filterIsApplyed = () => {
+    const filterProductsToShow = () => {
+        var checkboxCount;
 
-        const temp = defaultProductsArray.filter(product => product.ReviewScore < 5)
+        for (checkboxCount = 0; checkboxCount < generalCheckboxes.length; checkboxCount++) {
+            var filteredArray = []
+
+
+            if (isAnyChecked == false) {
+                setProductsArray(defaultProductsArray)
+                return
+            }
+
+            if (generalCheckboxes[checkboxCount].isChecked == true) {
+                //const tempArray = defaultProductsArray.filter(product => product.type)
+                var i;
+                for (i = 0; i < defaultProductsArray.length; i++) {
+                    var j;
+                    //console.log(defaultProductsArray[i])
+                    for (j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
+                        //console.log(defaultProductsArray[i].type_of_products[j])
+
+                        if (defaultProductsArray[i].type_of_products[j].StrapiName === generalCheckboxes[checkboxCount].value) {
+                            filteredArray.push(defaultProductsArray[i]) // kan skape duplicates
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        /*
+
+         const temp = defaultProductsArray.filter(product => product.ReviewScore < 5)
         console.log(temp)
         setProductsArray(temp)
+        const temp = defaultProductsArray.filter(product => for(typecount=0; product.type_of_products[typecount].StrapiName === "vin_hvitvin"; typecount){
 
+        })
+        */
+        //console.log(newArray)
+        setProductsArray(filteredArray)
+        console.log(filteredArray)
     }
 
     const handleCheckChieldElement = (event) => {
@@ -82,9 +120,17 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         fruites.forEach(fruite => {
             if (fruite.value === event.target.value)
                 fruite.isChecked = event.target.checked
+            if (fruite.isChecked == true) {
+                isAnyChecked = true
+            } else {
+                isAnyChecked = false
+            }
         })
+
         setGenerealCheckboxes(fruites)
-        filterIsApplyed()
+
+
+        filterProductsToShow()
 
     }
 
