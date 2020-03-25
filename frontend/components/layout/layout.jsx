@@ -50,7 +50,7 @@ export const MyHeader = (props) => {
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
-      console.log(newtotalprice)
+      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
@@ -192,54 +192,54 @@ export const MyHeader = () => {
 };
 
 export const MyFooter = () => (
-    <div className="container-fluid">
-        <div className="row py-2">
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">Kontakt oss</a>
-                </Link>
-            </div>
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">Om oss</a>
-                </Link>
-            </div>
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">FAQ</a>
-                </Link>
-            </div>
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">Våre butikker</a>
-                </Link>
-            </div>
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">Karriere og ledige stillinger</a>
-                </Link>
-            </div>
-            <div className="col-sm-2">
-                <Link href="#">
-                    <a className="nav-link">Presse</a>
-                </Link>
-            </div>
-        </div>
-        <div className="row px-1">
-            <div className="col-lg-sm-6">
-                <Link href="#">
-                    <a className="nav-link">
-                        <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
-                    </a>
-                </Link>
-            </div>
-            <div className="col-lg-sm-6">
-                <Link href="#">
-                    <a className="nav-link">
-                        <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo"/>
-                    </a>
-                </Link>
-            </div>
-        </div>
+  <div className="container-fluid">
+    <div className="row py-2">
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">Kontakt oss</a>
+        </Link>
+      </div>
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">Om oss</a>
+        </Link>
+      </div>
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">FAQ</a>
+        </Link>
+      </div>
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">Våre butikker</a>
+        </Link>
+      </div>
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">Karriere og ledige stillinger</a>
+        </Link>
+      </div>
+      <div className="col-sm-2">
+        <Link href="#">
+          <a className="nav-link">Presse</a>
+        </Link>
+      </div>
     </div>
+    <div className="row px-1">
+      <div className="col-lg-sm-6">
+        <Link href="#">
+          <a className="nav-link">
+            <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo" />
+          </a>
+        </Link>
+      </div>
+      <div className="col-lg-sm-6">
+        <Link href="#">
+          <a className="nav-link">
+            <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo" />
+          </a>
+        </Link>
+      </div>
+    </div>
+  </div>
 );

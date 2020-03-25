@@ -5,7 +5,7 @@ import ProductgridCard from "./productgridCard";
 
 const Productgrid = ({ productgrid }) => {
 
-    console.log(productgrid)
+    //console.log(productgrid)
 
 
     return (
@@ -18,7 +18,7 @@ const Productgrid = ({ productgrid }) => {
                         return (
 
                             <div key={product.id}>
-                                {console.log(product)}
+                                {/*console.log(product)*/}
                                 <ProductgridCard key={product.id} productcard={product} />
                             </div>
 

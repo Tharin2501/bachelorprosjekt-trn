@@ -17,9 +17,9 @@ const Produktside = (props) => {
 
   var productContext = {
     id: props.productSide.id,
-    name: props.productSide.name,
+    name: props.productSide.ProductName,
     quantity: 1,
-    price: 200,
+    price: props.productSide.pris,
     image: props.productSide.image[0].url,
 
   }

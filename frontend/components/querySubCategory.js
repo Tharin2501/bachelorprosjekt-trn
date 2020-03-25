@@ -1,16 +1,16 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-const Query = ({ children, query, id }) => {
+const QuerySubCategory = ({ children, query, nametoInsert }) => {
     const { data, loading, error } = useQuery(query, {
-        variables: { id: id }
+        variables: { nametoInsert: nametoInsert }
     });
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {JSON.stringify(error)}</p>;
+    //console.log(data.categories[0].sub_categories)
     //console.log(data)
     return children({ data });
 };
 
-export default Query;
-
+export default QuerySubCategory;
