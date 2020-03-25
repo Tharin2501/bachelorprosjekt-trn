@@ -7,6 +7,7 @@ import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     const [productsArray, setProductsArray] = useState([]);
+    const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
 
     const [isOpen, setIsOpen] = useState(true);
@@ -46,19 +47,18 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     const getProductsArray = (categories) => {
         if (isSubCategoryGrid) {
-            //console.log("Yas")
             setProductsArray(categories)
+            setDefaultProductsArray(categories)
         } else {
-            //console.log(categories[0].sub_categories.length)
-            //console.log(categories[0].sub_categories[1])
+
             var tempproductsArray = []
             var subcatcount;
 
             for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
                 tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
             }
-            //console.log(tempproductsArray)
             setProductsArray(tempproductsArray)
+            setDefaultProductsArray(tempproductsArray)
         }
 
 
@@ -68,7 +68,13 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         getProductsArray(categoriesList)
     }, [categoriesList])
 
-    //getProductsArray(categoriesList)
+    const filterIsApplyed = () => {
+
+        const temp = defaultProductsArray.filter(product => product.ReviewScore < 5)
+        console.log(temp)
+        setProductsArray(temp)
+
+    }
 
     const handleCheckChieldElement = (event) => {
         console.log(event)
@@ -78,7 +84,8 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
                 fruite.isChecked = event.target.checked
         })
         setGenerealCheckboxes(fruites)
-        //console.log(generalCheckboxes)
+        filterIsApplyed()
+
     }
 
     const handleCheckChieldElementTypes = (event) => {
@@ -91,6 +98,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         setTypesListIsIsOpen(fruites)
 
     }
+    console.log(productsArray)
     return (
 
         <div>

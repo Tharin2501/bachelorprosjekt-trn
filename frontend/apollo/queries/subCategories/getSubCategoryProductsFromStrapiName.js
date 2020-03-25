@@ -15,6 +15,8 @@ query Subcategory($nametoInsert:String!) {
         StrapiName
         categoryName
         description
+
+
       
       image{
         url
@@ -33,6 +35,13 @@ query Subcategory($nametoInsert:String!) {
     directions
     Volume
     description
+
+    type_of_products
+    {
+      StrapiName
+      TypeOfProductName
+    }
+
 
     image{
       url
