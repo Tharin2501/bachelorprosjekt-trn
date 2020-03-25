@@ -5,7 +5,6 @@ import ProductgridCard from "./productgridCard";
 
 const Productgrid = ({ productgrid }) => {
 
-    console.log(productgrid)
 
 
     return (
