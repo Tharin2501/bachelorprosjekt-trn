@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Query from "../../components/query"
 import PRODUCTS_QUERY from "../../apollo/queries/product/products"
 import Productgrid from "../../components/category/productgrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-const ProductsComonent = (props) => {
-    //console.log(props.ProductsComonent)
+const ProductsComonent = ({ categoriesList }) => {
+    const [productsArray, setProductsArray] = useState([]);
+
+
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -42,8 +44,25 @@ const ProductsComonent = (props) => {
     )
 
 
+    const getProductsArray = (categories) => {
+        //console.log(categories[0].sub_categories.length)
+        //console.log(categories[0].sub_categories[1])
+        var tempproductsArray = []
+        var subcatcount;
 
+        for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
+            tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
+        }
+        console.log(tempproductsArray)
+        setProductsArray(tempproductsArray)
 
+    }
+
+    useEffect(() => {
+        getProductsArray(categoriesList)
+    }, [])
+
+    //getProductsArray(categoriesList)
 
     return (
 
@@ -162,7 +181,7 @@ const ProductsComonent = (props) => {
 
                             </div>
                             <div className="col-md-9 order-md-last">
-                                <Productgrid productgrid={products} />;
+                                <Productgrid productgrid={productsArray} />;
                         </div>
 
                         </div>
@@ -178,3 +197,5 @@ const ProductsComonent = (props) => {
 }
 
 export default ProductsComonent
+
+// product array

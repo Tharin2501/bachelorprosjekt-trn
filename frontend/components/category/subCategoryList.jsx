@@ -4,11 +4,7 @@ import HorizontalMenuItem from "../../components/category/common/horizontalMenuI
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName"
 import Link from "next/link";
 const SubCategoryList = ({ subCategoryList, categoryName }) => {
-    var subcatoryiesArray = []
 
-    console.log(subCategoryList)
-    console.log(categoryName)
-    //console.log(props.SubCategoryList.sub_categories[0])
 
     return (
         <div className="scrollmenu">
