@@ -3,7 +3,7 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
-import {MyFooter, MyHeader} from "../components/layout/layout";
+import { MyFooter, MyHeader } from "../components/layout/layout";
 
 
 
@@ -27,10 +27,10 @@ const App = ({ Component, pageProps, apollo }) => {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
                 <script src="https://kit.fontawesome.com/b0dd2d05dd.js" cross0rigin="anonymous"></script>
             </Head>
-
-            <MyHeader/>
+            {console.log("yas")}
+            <MyHeader />
             <Component {...pageProps} />
-            <MyFooter/>
+            <MyFooter />
         </ApolloProvider>
     )
 };
