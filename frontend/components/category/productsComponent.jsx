@@ -29,39 +29,72 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     // general
     const [generalCheckboxes, setGenerealCheckboxes] = useState(
-        [{ id: 1, value: "vin_rodvin", isChecked: false },
-        { id: 2, value: "vin_hvitvin", isChecked: false },
+        [{ id: 1, value: "vin_rodvin", displayValue: "Rødvin", isChecked: false },
+        { id: 2, value: "vin_hvitvin", displayValue: "Hvitvin", isChecked: false },
         ]
 
     )
     // Types
-    const [typesCheckboxes, setTypesCheckboxes] = useState(
-        [{ id: 1, value: "Rødvin", isChecked: false },
-        { id: 2, value: "Hvitvin", isChecked: false },
-        { id: 3, value: "Rosevin", isChecked: false },
-        { id: 4, value: "Dessertvin", isChecked: false },
-        { id: 5, value: "Mussenede", isChecked: false },
-        ]
+    const [typesCheckboxes, setTypesCheckboxes] = useState([]
+
 
     )
+
+    const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
+
+
+
     const getTypeOfProductsList = () => {
         //var typeOfProductsSet = new Set()
-        var typeOfProductsArray = []
-        var i;
-        for (i = 0; i < categoriesList.length; i++) {
-            var j;
-            for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
-                console.log(categoriesList[i])
-                if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
-                    typeOfProductsArray.push(categoriesList[i].type_of_products[j])
+        if (isSubCategoryGrid) {
+
+            var typeOfProductsArray = []
+            var i;
+            for (i = 0; i < categoriesList.length; i++) {
+                var j;
+                for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
+
+                    if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
+                        typeOfProductsArray.push(categoriesList[i].type_of_products[j])
+                    }
+
+
                 }
-                //typeOfProductsSet.add(categoriesList[i].type_of_products[j])
-                //categoriesList[i].type_of_products[j])
+            }
+
+
+            createTypesCheckboxes(typeOfProductsArray)
+        } else {
+            console.log("NADA")
+        }
+
+    }
+    //  [{ id: 1, value: "vin_rodvin", displayValue: "Rødvin", isChecked: false },
+
+    const createTypesCheckboxes = (typeOfProductsArray) => {
+        var i
+        var checkboxReadyArray = []
+        for (i = 0; i < typeOfProductsArray.length; i++) {
+            var type = {
+                id: i,
+                value: typeOfProductsArray[i].StrapiName,
+                displayValue: typeOfProductsArray[i].TypeOfProductName,
+                isChecked: false
+
 
             }
+            checkboxReadyArray.push(type)
+
         }
-        console.log(typeOfProductsArray)
+
+        InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
+        //console.log(generalCheckboxes)
+        //console.log(typesCheckboxes)
+
     }
+
+
+
 
     const getProductsArray = (categories) => {
         if (isSubCategoryGrid) {
@@ -76,6 +109,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
             for (subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
                 tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
             }
+
             setProductsArray(tempproductsArray)
             setDefaultProductsArray(tempproductsArray)
         }
@@ -83,27 +117,31 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     }
 
-    useEffect(() => {
 
+
+    useEffect(() => {
+        console.log(categoriesList)
         getProductsArray(categoriesList)
         getTypeOfProductsList()
 
+
+
     }, [categoriesList])
 
-    const filterProductsToShow = () => {
+    const filterProductsToShow = (listToCheck) => {
         var checkboxCount;
         var isAnyChecked = false;
-        for (checkboxCount = 0; checkboxCount < generalCheckboxes.length; checkboxCount++) {
+        for (checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
             var filteredArray = []
 
-            if (generalCheckboxes[checkboxCount].isChecked == true) {
+            if (listToCheck[checkboxCount].isChecked == true) {
                 isAnyChecked = true
                 var i;
                 for (i = 0; i < defaultProductsArray.length; i++) {
                     var j;
                     for (j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
 
-                        if (defaultProductsArray[i].type_of_products[j].StrapiName === generalCheckboxes[checkboxCount].value) {
+                        if (defaultProductsArray[i].type_of_products[j].StrapiName === listToCheck[checkboxCount].value) {
                             filteredArray.push(defaultProductsArray[i]) // kan skape duplicates
                         }
 
@@ -134,24 +172,30 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
         })
 
+
         setGenerealCheckboxes(fruites)
 
 
-        filterProductsToShow()
+        filterProductsToShow(generalCheckboxes)
 
     }
 
     const handleCheckChieldElementTypes = (event) => {
-        console.log(event)
+        //console.log(event)
         let fruites = typesCheckboxes
         fruites.forEach(fruite => {
             if (fruite.value === event.target.value)
                 fruite.isChecked = event.target.checked
         })
-        setTypesListIsIsOpen(fruites)
+
+
+
+        InsertIntoTypesCheckBoxesArray(fruites)
+        console.log(typesCheckboxes)
+        filterProductsToShow(typesCheckboxes)
 
     }
-    //console.log(productsArray)
+
 
     return (
 
