@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/router";
+// https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const Highlight3Articles = (props) => {
     const router = useRouter()
     return (

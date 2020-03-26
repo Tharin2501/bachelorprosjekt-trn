@@ -90,9 +90,6 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
         }
 
         InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
-        //console.log(generalCheckboxes)
-        //console.log(typesCheckboxes)
-
     }
 
 
@@ -131,18 +128,18 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     }, [categoriesList])
 
     const filterProductsToShow = (listToCheck) => {
-        var checkboxCount;
+
         var isAnyChecked = false;
         var filteredArray = []
-        for (checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
+        for (var checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
 
 
             if (listToCheck[checkboxCount].isChecked == true) {
                 isAnyChecked = true
-                var i;
-                for (i = 0; i < defaultProductsArray.length; i++) {
-                    var j;
-                    for (j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
+
+                for (var i = 0; i < defaultProductsArray.length; i++) {
+
+                    for (var j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
 
                         if (defaultProductsArray[i].type_of_products[j].StrapiName === listToCheck[checkboxCount].value) {
                             filteredArray.push(defaultProductsArray[i]) // kan skape duplicates
@@ -167,33 +164,33 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     }
 
     const handleCheckChieldElement = (event) => {
-        //console.log(event)
-        let fruites = generalCheckboxes
-        fruites.forEach(fruite => {
-            if (fruite.value === event.target.value)
-                fruite.isChecked = event.target.checked
+
+        let checkboxesArray = generalCheckboxes
+        checkboxesArray.forEach(checkBox => {
+            if (checkBox.value === event.target.value)
+                checkBox.isChecked = event.target.checked
 
         })
 
 
-        setGenerealCheckboxes(fruites)
+        setGenerealCheckboxes(checkboxesArray)
 
 
-        filterProductsToShow(generalCheckboxes)
+        //filterProductsToShow(generalCheckboxes)
 
     }
 
     const handleCheckChieldElementTypes = (event) => {
         //console.log(event)
-        let fruites = typesCheckboxes
-        fruites.forEach(fruite => {
-            if (fruite.value === event.target.value)
-                fruite.isChecked = event.target.checked
+        let checkboxesArray = typesCheckboxes
+        checkboxesArray.forEach(checkBox => {
+            if (checkBox.value === event.target.value)
+                checkBox.isChecked = event.target.checked
         })
 
 
 
-        InsertIntoTypesCheckBoxesArray(fruites)
+        InsertIntoTypesCheckBoxesArray(checkboxesArray)
         console.log(typesCheckboxes)
         filterProductsToShow(typesCheckboxes)
 
