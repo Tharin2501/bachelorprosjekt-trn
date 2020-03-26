@@ -1,13 +1,32 @@
-
-import React, { useState, useEffect } from "react"
+import React, {useState, useEffect} from "react"
 import Link from "next/link";
-import { FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { Navbar, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GoSearch } from "react-icons/go";
-
+import {FaHeart, FaShoppingCart} from 'react-icons/fa';
+import {
+    Collapse,
+    NavbarToggler,
+    NavbarBrand,
+    Navbar,
+    Nav,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText,
+    Input
+} from "reactstrap";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {GoSearch} from "react-icons/go";
+import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
+import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
+import {MyDrawer} from "../MyDrawer";
 
+
+/*
 export const MyHeader = (props) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -36,9 +55,6 @@ export const MyHeader = (props) => {
     }
 
   }
-
-
-
 
   return (
     <div>
@@ -99,24 +115,81 @@ export const MyHeader = (props) => {
     </div>
   );
 };
-
+*/
 const MySearchbar = () => {
-  return (
-    <div className="row mx-auto w-80 pt-3 pb-3">
-      <div className="col">
+    return (
+        <div className="row mx-auto w-80 pt-3 pb-3">
+            <div className="col">
 
-        <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText><GoSearch /></InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="søk..." />
-        </InputGroup>
-      </div>
-    </div>
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                        <InputGroupText><GoSearch/></InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="søk..."/>
+                </InputGroup>
+            </div>
+        </div>
 
-  );
+    );
 };
 
+export const MyHeader = () => {
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    const [totalprice, setTotalprice] = useState(0);
+
+
+    useEffect(() => {
+        getCartPrice()
+    }, [])
+
+    function getCartPrice() {
+        if (typeof window !== "undefined") {
+            var newtotalprice = 0
+            var cart = Cookie.getJSON("cartStorage")
+            if (cart === undefined || cart.length === 0) {
+                console.log("YAS")
+                return;
+            }
+
+            cart.map((item, i) => {
+                newtotalprice += item.quantity * item.price
+            })
+            console.log(newtotalprice)
+            setTotalprice(newtotalprice)
+        }
+
+    }
+
+    return(
+        <div>
+            <Navbar color="light">
+                <div>
+                    <MyDrawer/>
+                </div>
+                <div className ="row mx-auto">
+                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+                </div>
+                <div className="row ml-auto">
+                    <div className="col">
+                        <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
+                    </div>
+                    <div className="col">
+                        profil
+                    </div>
+                    <div className="col">
+                        <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black " /></a>
+                        <p>{totalprice}kr</p>
+                    </div>
+                </div>
+            </Navbar>
+            <MySearchbar>
+
+            </MySearchbar>
+        </div>
+    );
+};
 
 export const MyFooter = () => (
   <div className="container-fluid">

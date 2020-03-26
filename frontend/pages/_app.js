@@ -4,8 +4,7 @@ import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
 import {MyFooter, MyHeader} from "../components/layout/layout";
-import { MyMarquee } from "../components/MyMarquee";
-import MyCarousel from "../components/MyCarousel";
+
 
 
 const App = ({ Component, pageProps, apollo }) => {
@@ -29,7 +28,7 @@ const App = ({ Component, pageProps, apollo }) => {
                 <script src="https://kit.fontawesome.com/b0dd2d05dd.js" cross0rigin="anonymous"></script>
             </Head>
 
-            <MyHeader />
+            <MyHeader/>
             <Component {...pageProps} />
             <MyFooter/>
         </ApolloProvider>

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
+import Link from "next/link";
+
 
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
@@ -19,17 +21,15 @@ const FavoritesCard = (props) => {
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
-
-
     return (
 
 
         <div className="row d-flex justify-content-center border-top">
             <div className="col-5">
                 <div className="rod d-flex">
-                    <div className="book">  <img src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"></img></div>
+                    <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"></img></Link></div>
                     <div className="my-auto flex-column d-flex pad-left">
-                        {<h6 className="mob-text">{productContext.name}</h6>}
+                        <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6 className="mob-text">{productContext.name}</h6></a></Link>
 
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const FavoritesCard = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 
