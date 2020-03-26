@@ -29,8 +29,10 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
     // general
     const [generalCheckboxes, setGenerealCheckboxes] = useState(
-        [{ id: 1, value: "vin_rodvin", displayValue: "Rødvin", isChecked: false },
-        { id: 2, value: "vin_hvitvin", displayValue: "Hvitvin", isChecked: false },
+        [{ id: 1, value: "vin_rodvin", displayValue: "Hva", isChecked: false },
+        { id: 2, value: "vin_hvitvin", displayValue: "Skal", isChecked: false },
+        { id: 3, value: "vin_hvitvin", displayValue: "være", isChecked: false },
+        { id: 4, value: "vin_hvitvin", displayValue: "Hær?", isChecked: false },
         ]
 
     )
@@ -131,8 +133,9 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     const filterProductsToShow = (listToCheck) => {
         var checkboxCount;
         var isAnyChecked = false;
+        var filteredArray = []
         for (checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
-            var filteredArray = []
+
 
             if (listToCheck[checkboxCount].isChecked == true) {
                 isAnyChecked = true
