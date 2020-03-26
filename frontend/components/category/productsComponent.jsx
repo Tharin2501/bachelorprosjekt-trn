@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useAsync } from "react";
 import Query from "../../components/query"
 import PRODUCTS_QUERY from "../../apollo/queries/product/products"
 import Productgrid from "../../components/category/productgrid";
@@ -47,6 +47,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
 
     const getTypeOfProductsList = () => {
+
         //var typeOfProductsSet = new Set()
         if (isSubCategoryGrid) {
 
@@ -126,7 +127,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
 
 
     }, [categoriesList])
-
+    // async
     const filterProductsToShow = (listToCheck) => {
 
         var isAnyChecked = false;
