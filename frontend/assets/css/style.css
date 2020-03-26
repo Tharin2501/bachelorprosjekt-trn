@@ -97,6 +97,7 @@ img:hover {
   height: 20px;
 }
 
+{/* ProductGrid*/}
 .productgridFav {
   position: absolute;
   top: 10px;
@@ -114,13 +115,7 @@ img:hover {
   cursor: pointer;
 }
 
-.card {
-  margin: auto;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+
 
 .pic1 {
   width: 250px; /* 90% */
@@ -147,7 +142,8 @@ img:hover {
 .card-1 {
   padding: 30px 30px 20px 30px !important;
   border: none;
-  width: 90%;
+  height: 35rem;
+  width: 20rem;
 }
 
 .category {
@@ -160,6 +156,7 @@ img:hover {
   font-family: Florence;
   font-weight: bold;
 }
+{/* ProductGrid*/}
 
 .price {
   font-size: 18px;
@@ -307,5 +304,22 @@ div.scrollmenu {
 
 .imageSize{
   width: 6em;
-
+  
 }
+
+.featured-article {
+	
+	height: 50em;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.btn-circle.btn-sm { 
+  width: 12em; 
+  height: 12em;  
+  border-radius: 60px; 
+  font-size: 8px; 
+  text-align: center; 
+  
+  
+} 

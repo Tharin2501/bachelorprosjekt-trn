@@ -1,8 +1,7 @@
 import gql from "graphql-tag";
-//($name:String!)
 const CATEGORYGETSUBCATEGOREISWITHNAME_QUERY = gql`  
 query Category ($nametoInsert:String!){
-    categories(where:{name:$nametoInsert}) {
+    categories(where:{StrapiName:$nametoInsert}) {
              
       sub_categories{
         id     
@@ -15,10 +14,18 @@ query Category ($nametoInsert:String!){
         }
       
       products{
-        Strapiname
+        id
         ProductName
         pris
-        
+        ReviewScore
+        ingredients
+        directions
+        Volume
+        description
+  
+        image{
+          url
+        }
       }
       
       
