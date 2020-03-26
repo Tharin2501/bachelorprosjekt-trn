@@ -76,8 +76,11 @@ export const FrontpageGrid = () => {
                         <Link href={{ pathname: "/category", query: { id: "Alkohol" } }}>
                             <a className="nav-link frontpage-img-wh"><img src="/images/alkohol.png" alt="logo" /></a>
                         </Link>
-                        <Link href="alkohol"><a>Alkohol</a></Link>
+                        <Link href={{ pathname: "/category", query: { id: "Alkohol" } }}>
+                            <a>Alkohol</a>
+                        </Link>
                     </div>
+
 
                     <div className="col-sm-lg-6 px-3">
                         <Link href="tobakk">
