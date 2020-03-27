@@ -212,8 +212,6 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
             <div id="mySidenav" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
-                    <Button type="button" onClick={toggle} className="d-block d-md-none btn btn-primary btn-block mb-3"> Filters &dtrif;</Button>
-
                     <Collapse isOpen={isOpen}>
                         {/* General */}
                         <div className="col-md-1">
