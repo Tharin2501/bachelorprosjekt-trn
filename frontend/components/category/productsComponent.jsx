@@ -5,7 +5,7 @@ import Productgrid from "../../components/category/productgrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
+const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
     const [productsArray, setProductsArray] = useState([]);
     const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
@@ -201,7 +201,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid }) => {
     return (
 
         <div>
-            <h1>Makeup</h1>
+            <h1>{pageTitle}</h1>
             <p>
 
                 Festlook eller hverdagsmakeup uansett hva du er ute etter finner

@@ -2,6 +2,7 @@ import gql from "graphql-tag";
 const CATEGORYGETSUBCATEGOREISWITHNAME_QUERY = gql`  
 query Category ($nametoInsert:String!){
     categories(where:{StrapiName:$nametoInsert}) {
+
              
       sub_categories{
         id     

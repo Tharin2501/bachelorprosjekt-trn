@@ -20,7 +20,7 @@ const SubCategory = () => {
                 return (
                     <div>
                         <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
-                        <ProductsComonent categoriesList={subCategories[0].products} isSubCategoryGrid={true}></ProductsComonent>
+                        <ProductsComonent categoriesList={subCategories[0].products} isSubCategoryGrid={true} pageTitle={router.query.id}></ProductsComonent>
                     </div>
                 )
             }}

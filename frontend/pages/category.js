@@ -17,7 +17,7 @@ const Category = () => {
 
     <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={router.query.id}>
       {({ data: { categories } }) => {
-
+        console.log(categories)
         return (
           <div>
             {/* first*/}
@@ -26,7 +26,7 @@ const Category = () => {
 
             <Highlight3Articles ></Highlight3Articles>
 
-            <ProductsComonent categoriesList={categories} isSubCategoryGrid={false}></ProductsComonent>
+            <ProductsComonent categoriesList={categories} isSubCategoryGrid={false} pageTitle={router.query.id}></ProductsComonent>
           </div >
         )
       }}
