@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useAsync } from "react";
-import Query from "../../components/query"
+import Query from "../query"
 import PRODUCTS_QUERY from "../../apollo/queries/product/products"
-import Productgrid from "../../components/category/productgrid";
+import Productgrid from "./productgrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
+const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
     const [productsArray, setProductsArray] = useState([]);
     const [defaultProductsArray, setDefaultProductsArray] = useState([]);
 
@@ -21,6 +21,11 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
     const [typesListIsOpen, setTypesListIsIsOpen] = useState(true);
     const toggleTypesList = () => setTypesListIsIsOpen(!typesListIsOpen);
 
+    // Types2
+    const [typesListIs2Open, setTypesList2IsOpen] = useState(true);
+    const toggleTypesList2 = () => setTypesList2IsOpen(!typesListIs2Open);
+
+
     // Attributes
     const [attributesalListIsOpen, setAttributesListIsIsOpen] = useState(true);
     const toggleAttributesList = () => setAttributesListIsIsOpen(!attributesalListIsOpen);
@@ -29,19 +34,45 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
     // general
     const [generalCheckboxes, setGenerealCheckboxes] = useState(
-        [{ id: 1, value: "vin_rodvin", displayValue: "Hva", isChecked: false },
-        { id: 2, value: "vin_hvitvin", displayValue: "Skal", isChecked: false },
-        { id: 3, value: "vin_hvitvin", displayValue: "være", isChecked: false },
-        { id: 4, value: "vin_hvitvin", displayValue: "Hær?", isChecked: false },
+        [{ id: 1, value: "vin_rodvin", displayValue: "Gucci", isChecked: false },
+        { id: 2, value: "vin_hvitvin", displayValue: "Louis", isChecked: false },
+        { id: 3, value: "vin_hvitvin", displayValue: "Louis", isChecked: false },
+        { id: 4, value: "vin_hvitvin", displayValue: "Vendi", isChecked: false },
+        { id: 5, value: "vin_hvitvin", displayValue: "Prada", isChecked: false },
+        { id: 6, value: "vin_hvitvin", displayValue: "Those basic bitches does not even bother", isChecked: false },
         ]
 
     )
+
+
+
+    // price
+    const [priceCheckboxes, setPriceCheckboxes] = useState(
+        [{ id: 1, value: "vin_rodvin", displayValue: "Under 200kr", isChecked: false },
+        { id: 2, value: "vin_hvitvin", displayValue: "200kr-500kr", isChecked: false },
+        { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
+        { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
+        ]
+
+    )
+
+
     // Types
     const [typesCheckboxes, setTypesCheckboxes] = useState([]
 
 
     )
 
+
+    // Types 2 checkboxes display afther types (Category --> subcategory --> types )
+    const [typesCheckboxes2, settypesCheckboxes2] = useState(
+        [{ id: 1, value: "vin_rodvin", displayValue: "vin_rodvin", isChecked: false },
+        { id: 2, value: "vin_hvitvin", displayValue: "vin_hvitvin", isChecked: false },
+        { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
+        { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
+        ]
+
+    )
     const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
 
 
@@ -72,7 +103,6 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
         }
 
     }
-    //  [{ id: 1, value: "vin_rodvin", displayValue: "Rødvin", isChecked: false },
 
     const createTypesCheckboxes = (typeOfProductsArray) => {
         var i
@@ -120,7 +150,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
 
     useEffect(() => {
-        console.log(categoriesList)
+        //console.log(categoriesList)
         getProductsArray(categoriesList)
         getTypeOfProductsList()
 
@@ -160,7 +190,6 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
             setProductsArray(filteredArray)
 
         }
-        //console.log(filteredArray)
 
     }
 
@@ -169,11 +198,11 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
     }
     const closeNav = () => {
         document.getElementById("mySidenav").style.width = "0";
-        console.log("inside close")
+
     }
 
     const handleCheckChieldElement = (event) => {
-
+        toggleTypesList2()
         let checkboxesArray = generalCheckboxes
         checkboxesArray.forEach(checkBox => {
             if (checkBox.value === event.target.value)
@@ -200,12 +229,13 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
 
         InsertIntoTypesCheckBoxesArray(checkboxesArray)
-        console.log(typesCheckboxes)
+        //console.log(typesCheckboxes)
         filterProductsToShow(typesCheckboxes)
 
     }
 
-
+    // skal vi gå rett til typer eller legge inn subkat før det som ekstra steg eller man kan filtre på det. 
+    // legge til  typisk norsk, vegansk..
     return (
 
         <div>
@@ -215,7 +245,7 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
                     <Collapse isOpen={isOpen}>
                         {/* General */}
                         <div className="col-md-1">
-                            <Button type="button" onClick={toggleGeneralList}>General</Button>
+                            <Button type="button" onClick={toggleGeneralList}>Merke</Button>
                             <Collapse isOpen={generalListIsOpen}>
                                 <div id="filters" className="d-md-block">
                                     {generalCheckboxes.map((object) => {
@@ -234,9 +264,30 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
                         </div>
                         {/* General END */}
 
+                        {/* General pris */}
+                        <div className="col-md-1">
+                            <Button type="button" onClick={toggleGeneralList}>Pris</Button>
+                            <Collapse isOpen={generalListIsOpen}>
+                                <div id="filters" className="d-md-block">
+                                    {priceCheckboxes.map((object) => {
+                                        return (
+
+
+
+                                            <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
+
+                                        )
+                                    })}
+
+                                </div>
+
+                            </Collapse>
+                        </div>
+                        {/* General END */}
+
                         {/* Types Start */}
                         <div className="col-md-1">
-                            <Button type="button" onClick={toggleTypesList}>Types</Button>
+                            <Button type="button" onClick={toggleTypesList}>ProduktTyper</Button>
                             <Collapse isOpen={typesListIsOpen}>
                                 <div id="filters" className="d-md-block">
                                     {typesCheckboxes.map((object) => {
@@ -244,7 +295,25 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
 
 
-                                            <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={object.id}{...object} />
+                                            <div>
+                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={object.id}{...object}>
+                                                    <Collapse isOpen={typesListIs2Open}>
+                                                        <div id="filters" className="d-md-block">
+                                                            {typesCheckboxes2.map((object) => {
+                                                                return (
+
+
+
+                                                                    <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={object.id}{...object} />
+
+                                                                )
+                                                            })}
+
+                                                        </div>
+                                                    </Collapse>
+                                                </CheckBox>
+                                            </div>
+
 
                                         )
                                     })}
@@ -264,7 +333,11 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
 
 
-                                            <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
+                                            <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object}>
+
+
+
+                                            </CheckBox>
 
                                         )
                                     })}
@@ -323,6 +396,6 @@ const ProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle }) => {
 
 }
 
-export default ProductsComonent
+export default CategoryProductsComonent
 
 // product array

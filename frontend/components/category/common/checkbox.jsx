@@ -1,9 +1,9 @@
 import React from "react"
 export const CheckBox = (props) => {
     return (
-        <li>
+        <div>
             <input key={props.id} onClick={props.handleCheckChieldElement} type="checkbox" defaultChecked={props.isChecked} value={props.value} /> {props.displayValue}
-        </li>
+        </div>
     )
 }
 export default CheckBox

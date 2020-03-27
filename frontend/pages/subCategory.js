@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import SubCategoryList from "../components/category/subCategoryList"
-import ProductsComonent from "../components/category/productsComponent";
+import CategoryProductsComonent from "../components/category/categoryProductsComponent";
 import Highlight3Articles from "../components/category/highlight3Articles"
 import GETCATEGORYFROMSUBCATEGORYSTRAPINAME_QUERY from "../apollo/queries/subCategories/getSubCategoryFromStrapiName"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
@@ -20,7 +20,7 @@ const SubCategory = () => {
                 return (
                     <div>
                         <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
-                        <ProductsComonent categoriesList={subCategories[0].products} isSubCategoryGrid={true} pageTitle={router.query.id}></ProductsComonent>
+                        <CategoryProductsComonent categoriesList={subCategories[0].products} isSubCategoryGrid={true} pageTitle={router.query.id}></CategoryProductsComonent>
                     </div>
                 )
             }}
