@@ -245,87 +245,93 @@ export const MyFooter = () => (
 );
 
 export const MyFooter2 = () => (
-    <div className="container-fluid">
+    <div className="container-fluid footer-style">
+        <div className="py-2">
+            <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
+        </div>
         <div className="row py-2 px-2">
             <div className="col-sm-3">
                 {/* Åpningstider*/}
-                <h3>Åpningstider</h3>
+                <h3 className="footer-color">Åpningstider</h3>
                 <div className="w-100 py-2"></div>
                 <a>Duty-Free butikkene er alltid åpne.</a>
                 <div className="w-100 py-1"></div>
-                <Link href="#"><a>Se våre åpningstider her.</a></Link>
-                <div className="w-100 py-2"></div>
-                <div className="w-100 py-2"></div>
+                <Link href="#"><a className="footer-color">Se våre åpningstider her.</a></Link>
+                <div className="w-100 py-4"></div>
+
                 {/* Telefon*/}
-                <h3>Telefon</h3>
-                <a>+47 32 23 09 00</a>
+                <h3 className="footer-color">Telefon</h3>
+                <a className="footer-color">+47 32 23 09 00</a>
                 <div className="w-100 py-2"></div>
-                <a>Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.</a>
+                <a>
+                    Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.
+                </a>
                 <div className="w-100 py-2"></div>
             </div>
             {/* Snarveier */}
             <div className="col-sm-3">
-                <h3>Snarveier</h3>
+                <h3 className="footer-color">Snarveier</h3>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Kvote</a>
+                    <a className="footer-color">Kvote</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Produkter</a>
+                    <a className="footer-color">Produkter</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Klikk og hent</a>
+                    <a className="footer-color">Klikk og hent</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Tilbud</a>
+                    <a className="footer-color">Tilbud</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Tips og Trender</a>
+                    <a className="footer-color">Tips og Trender</a>
                 </Link>
                 <div className="w-100 py-2"></div>
             </div>
+            {/* Informasjon*/}
             <div className="col-sm-3">
-                <h3>Informasjon</h3>
+                <h3 className="footer-color">Informasjon</h3>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Kundeservice</a>
+                    <a className="footer-color">Kundeservice</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Ofte stillte spørsmål</a>
+                    <a className="footer-color">Ofte stillte spørsmål</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Reklamasjoner og retur</a>
+                    <a className="footer-color">Reklamasjoner og retur</a>
                 </Link>
                 <div className="w-100 py-2"></div>
             </div>
             {/* Om Oss*/}
             <div className="col-sm-3">
-                <h3>Om Oss</h3>
+                <h3 className="footer-color">Om Oss</h3>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Kontakt oss</a>
+                    <a className="footer-color">Kontakt oss</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Om oss</a>
+                    <a className="footer-color">Om oss</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Våre butikker</a>
+                    <a className="footer-color">Våre butikker</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Karriere og ledige stillinger</a>
+                    <a className="footer-color">Karriere og ledige stillinger</a>
                 </Link>
                 <div className="w-100 py-2"></div>
                 <Link href="#">
-                    <a>Presse</a>
+                    <a className="footer-color">Presse</a>
                 </Link>
             </div>
         </div>
