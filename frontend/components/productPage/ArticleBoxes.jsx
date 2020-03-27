@@ -1,19 +1,15 @@
 import React from "react"
 import Link from "next/link";
 import {Button} from 'reactstrap';
-import {useRouter} from "next/router";
 
-// https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
-const Highlight3Articles = (props) => {
-    const router = useRouter();
-
+export const ArticleBoxes = () => {
 
     return (
         <div className="container">
             <div className="row">
 
-                <div className="col-sm-8">
-                    <img src="/images/articles/hudpleievelger_test.png" alt="logo"/>
+                <div className="col-md-8">
+                    <img src="/images/articles/hudpleievelger_test.png" alt="logo" />
 
                     <div className="text-block">
                         <h3>Hudpleievelgeren</h3>
@@ -28,24 +24,21 @@ const Highlight3Articles = (props) => {
 
                 <div className="col-sm-4 pt-3">
                     <div className="article_container">
-                        <img src="/images/articles/folk.jpg" alt="logo"/>
+                        <img src="/images/articles/folk.jpg" alt="logo" />
                         <Link href="#">
                             <button className="btn">les mer</button>
                         </Link>
                     </div>
 
                     <div className="row-sm-4 pt-3 article_container">
-                        <img src="/images/articles/flerefolk.jpg" alt="logo"/>
+                        <img src="/images/articles/flerefolk.jpg" alt="logo" />
                         <Link href="#">
                             <button className="btn">les mer</button>
                         </Link>
                     </div>
                 </div>
             </div>
-            <hr/>
+            <hr />
         </div>
     );
 }
-
-
-export default Highlight3Articles
