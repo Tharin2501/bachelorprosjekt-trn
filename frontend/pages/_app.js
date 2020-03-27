@@ -3,7 +3,7 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
-import { MyFooter, MyHeader } from "../components/layout/layout";
+import { MyFooter, MyHeader, MyFooter2 } from "../components/layout/layout";
 
 
 
@@ -30,7 +30,7 @@ const App = ({ Component, pageProps, apollo }) => {
             {console.log("yas")}
             <MyHeader />
             <Component {...pageProps} />
-            <MyFooter />
+            <MyFooter2/>
         </ApolloProvider>
     )
 };

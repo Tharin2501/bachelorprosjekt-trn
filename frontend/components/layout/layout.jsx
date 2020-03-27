@@ -162,24 +162,24 @@ export const MyHeader = () => {
 
     }
 
-    return(
+    return (
         <div>
             <Navbar color="light">
                 <div>
                     <MyDrawer/>
                 </div>
-                <div className ="row mx-auto">
-                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+                <div className="row mx-auto">
+                    <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo"/></a>
                 </div>
                 <div className="row ml-auto">
                     <div className="col">
-                        <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
+                        <a className="nav-item" href="favorites"><FaHeart color="black"/></a>
                     </div>
                     <div className="col">
                         profil
                     </div>
                     <div className="col">
-                        <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black " /></a>
+                        <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black "/></a>
                         <p>{totalprice}kr</p>
                     </div>
                 </div>
@@ -192,54 +192,144 @@ export const MyHeader = () => {
 };
 
 export const MyFooter = () => (
-  <div className="container-fluid">
-    <div className="row py-2">
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">Kontakt oss</a>
-        </Link>
-      </div>
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">Om oss</a>
-        </Link>
-      </div>
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">FAQ</a>
-        </Link>
-      </div>
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">Våre butikker</a>
-        </Link>
-      </div>
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">Karriere og ledige stillinger</a>
-        </Link>
-      </div>
-      <div className="col-sm-2">
-        <Link href="#">
-          <a className="nav-link">Presse</a>
-        </Link>
-      </div>
+    <div className="container-fluid">
+        <div className="row py-2">
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">Kontakt oss</a>
+                </Link>
+            </div>
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">Om oss</a>
+                </Link>
+            </div>
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">FAQ</a>
+                </Link>
+            </div>
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">Våre butikker</a>
+                </Link>
+            </div>
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">Karriere og ledige stillinger</a>
+                </Link>
+            </div>
+            <div className="col-sm-2">
+                <Link href="#">
+                    <a className="nav-link">Presse</a>
+                </Link>
+            </div>
+        </div>
+        <div className="row px-1">
+            <div className="col-lg-sm-6">
+                <Link href="#">
+                    <a className="nav-link">
+                        <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
+                    </a>
+                </Link>
+            </div>
+            <div className="col-lg-sm-6">
+                <Link href="#">
+                    <a className="nav-link">
+                        <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo"/>
+                    </a>
+                </Link>
+            </div>
+        </div>
     </div>
-    <div className="row px-1">
-      <div className="col-lg-sm-6">
-        <Link href="#">
-          <a className="nav-link">
-            <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo" />
-          </a>
-        </Link>
-      </div>
-      <div className="col-lg-sm-6">
-        <Link href="#">
-          <a className="nav-link">
-            <img src="/images/trn-logos/trn_footer.png" width="70px" height="70px" alt="logo" />
-          </a>
-        </Link>
-      </div>
-    </div>
-  </div>
 );
+
+export const MyFooter2 = () => (
+    <div className="container-fluid">
+        <div className="row py-2 px-2">
+            <div className="col-sm-3">
+                {/* Åpningstider*/}
+                <h3>Åpningstider</h3>
+                <div className="w-100 py-2"></div>
+                <a>Duty-Free butikkene er alltid åpne.</a>
+                <div className="w-100 py-1"></div>
+                <Link href="#"><a>Se våre åpningstider her.</a></Link>
+                <div className="w-100 py-2"></div>
+                <div className="w-100 py-2"></div>
+                {/* Telefon*/}
+                <h3>Telefon</h3>
+                <a>+47 32 23 09 00</a>
+                <div className="w-100 py-2"></div>
+                <a>Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.</a>
+                <div className="w-100 py-2"></div>
+            </div>
+            {/* Snarveier */}
+            <div className="col-sm-3">
+                <h3>Snarveier</h3>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Kvote</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Produkter</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Klikk og hent</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Tilbud</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Tips og Trender</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+            </div>
+            <div className="col-sm-3">
+                <h3>Informasjon</h3>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Kundeservice</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Ofte stillte spørsmål</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Reklamasjoner og retur</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+            </div>
+            {/* Om Oss*/}
+            <div className="col-sm-3">
+                <h3>Om Oss</h3>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Kontakt oss</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Om oss</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Våre butikker</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Karriere og ledige stillinger</a>
+                </Link>
+                <div className="w-100 py-2"></div>
+                <Link href="#">
+                    <a>Presse</a>
+                </Link>
+            </div>
+        </div>
+
+    </div>
+);
+
