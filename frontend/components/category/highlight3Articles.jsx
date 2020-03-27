@@ -1,55 +1,50 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useRouter } from "next/router";
+import React from "react"
+import Link from "next/link";
+import {Button} from 'reactstrap';
+import {useRouter} from "next/router";
+
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const Highlight3Articles = (props) => {
     const router = useRouter()
+
     return (
         <div className="container">
-
             <div className="row">
-                <div className="col-lg">
 
-                    <div className="jumbotron featured-article">
+                <div className="col-sm-8">
+                    <img src="/images/articles/hudpleievelger_test.png" alt="logo"/>
 
-                        <img src="images/hudpleievelger.png"></img>
+                    <div className="text-block">
+                        <h3>Hudpleievelgeren</h3>
+                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </h6>
+                    </div>
+                    <Link href="hudpleievelger">
+                        <Button className="outlined_btn" outline color="secondary">Klikk her for å ta testen</Button>
+                    </Link>
+                </div>
 
 
+                <div className="col-sm-4 pt-3">
+                    <div className="article_container">
+                        <img src="/images/articles/folk.jpg" alt="logo"/>
+                        <Link href="#">
+                            <button className="btn">les mer</button>
+                        </Link>
+                    </div>
 
+                    <div className="row-sm-4 pt-3 article_container">
+                        <img src="/images/articles/flerefolk.jpg" alt="logo"/>
+                        <Link href="#">
+                            <button className="btn">les mer</button>
+                        </Link>
                     </div>
                 </div>
-                {/* featured article end*/}
-                <div className="col-sm">
-                    <ul >
-                        <li>
-                            <div className="jumbotron">
-
-                                <img src="images/groon.png"></img>
-
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="jumbotron">
-
-                                <img src="images/red.png"></img>
-
-
-
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-
-
             </div>
+            <hr/>
         </div>
-
-    )
-
+    );
 }
+
 
 export default Highlight3Articles

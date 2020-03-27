@@ -28,8 +28,7 @@ const App = ({ Component, pageProps, apollo }) => {
                 <script src="https://kit.fontawesome.com/b0dd2d05dd.js" cross0rigin="anonymous"></script>
             </Head>
             {console.log("yas")}
-             <MyHeader />
-            <ArticleBoxes/>
+            <MyHeader />
             <Component {...pageProps} />
             <MyFooter />
         </ApolloProvider>
