@@ -354,11 +354,13 @@ div.scrollmenu {
     border-radius: 5px;
     text-align: center;
     text-transform: uppercase;
+    white-space:nowrap
 }
 
 .article_container .btn:hover {
     background-color: darkcyan;
     color: white;
+
 }
 
 .outlined_btn {
@@ -368,6 +370,7 @@ div.scrollmenu {
     text-transform: uppercase;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    white-space:nowrap
 }
 
 .btn-outline-secondary {
