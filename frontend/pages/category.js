@@ -6,18 +6,18 @@ import Highlight3Articles from "../components/category/highlight3Articles"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
 import QuerySubCategory from "../components/querySubCategory";
 
+
 const Category = () => {
 
 
 
   const router = useRouter()
 
-
   return (
 
     <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={router.query.id}>
       {({ data: { categories } }) => {
-        console.log(categories)
+        //console.log(categories)
         return (
           <div>
             {/* first*/}

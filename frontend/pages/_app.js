@@ -27,7 +27,7 @@ const App = ({ Component, pageProps, apollo }) => {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
                 <script src="https://kit.fontawesome.com/b0dd2d05dd.js" cross0rigin="anonymous"></script>
             </Head>
-            {console.log("yas")}
+
             <MyHeader />
             <Component {...pageProps} />
             <MyFooter />
