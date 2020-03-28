@@ -69,10 +69,52 @@ const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle
     )
     const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
 
+    const getSubCategoryList = () => {
+        const subCategoryArray = categoriesList[0].sub_categories
+        createSubCategoryCheckboxes(subCategoryArray)
+    }
 
 
+    const createSubCategoryCheckboxes = (subCategoryArray) => {
+        var checkboxReadyArray = []
+        for (var i = 0; i < subCategoryArray.length; i++) {
+            var type = {
+                id: i,
+                value: subCategoryArray[i].StrapiName,
+                displayValue: subCategoryArray[i].categoryName,
+                isChecked: false
+
+
+            }
+            checkboxReadyArray.push(type)
+
+        }
+
+        InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
+    }
     const getTypeOfProductsList = () => {
 
+        if (isSubCategoryGrid) {
+
+            var typeOfProductsArray = []
+            var i;
+            for (i = 0; i < categoriesList.length; i++) {
+                var j;
+                for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
+
+                    if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
+                        typeOfProductsArray.push(categoriesList[i].type_of_products[j])
+                    }
+
+
+                }
+            }
+
+
+            createTypesCheckboxes(typeOfProductsArray)
+        } else {
+            console.log("NADA")
+        }
 
 
     }
@@ -123,9 +165,10 @@ const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle
 
 
     useEffect(() => {
-        //console.log(categoriesList)
+        console.log(categoriesList)
         getProductsArray(categoriesList)
-        getTypeOfProductsList()
+        getSubCategoryList()
+        //getTypeOfProductsList()
 
 
 
@@ -202,12 +245,10 @@ const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle
 
 
         InsertIntoTypesCheckBoxesArray(checkboxesArray)
-        //console.log(typesCheckboxes)
         filterProductsToShow(typesCheckboxes)
-        console.log(typesCheckboxes2)
     }
 
-    // skal vi gå rett til typer eller legge inn subkat før det som ekstra steg eller man kan filtre på det. 
+
     // legge til  typisk norsk, vegansk..
     return (
 
@@ -237,7 +278,7 @@ const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle
                         </div>
                         {/* General END */}
 
-                        {/* Types Start */}
+                        {/* Produktkat Start */}
                         <div className="col-md-1">
                             <Button type="button" onClick={toggleTypesList}>ProduktKategorier</Button>
                             <Collapse isOpen={typesListIsOpen}>
@@ -279,7 +320,7 @@ const CategoryProductsComonent = ({ categoriesList, isSubCategoryGrid, pageTitle
                                 </div>
                             </Collapse>
                         </div>
-                        {/* Types END */}
+                        {/* Produktkat END */}
                     </Collapse>
 
                 </div>
