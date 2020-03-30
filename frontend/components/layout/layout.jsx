@@ -18,7 +18,7 @@ import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
-    Input
+    Input,
 } from "reactstrap";
 import {GiHamburgerMenu} from "react-icons/gi";
 import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
@@ -246,32 +246,54 @@ export const MyFooter = () => (
 */
 
 export const NewsLetter = () => {
+
+    const subscribeToNewsletter = () => {
+        // register input from inputfield + check if checkbox is checked. Presist email to db
+        console.log("Subscribe to newsletter here")
+    };
+
     return (
-        <div className="container newsletter-style">
+        <div className="container-fluid newsletter-style">
             <div className="row">
                 <div className="col-sm-1">
                 </div>
                 <div className="col-sm py-5">
                     <h3>Hold deg oppdatert</h3>
                     <div className="w-100 py-1"/>
-                    <a>Vårt nyhetsbrev gir deg inspirasjon, oppdateringer på våre spesialtilbud og kampanjer</a>
+                    <p>Vårt nyhetsbrev gir deg inspirasjon, oppdateringer på våre spesialtilbud og kampanjer</p>
                     <div className="w-100 py-1"/>
                 </div>
-                <div className="col-sm pt-5">
+
+                <div className="col-sm align-self-center">
                     <div>
                         <InputGroup>
-
                             <InputGroupAddon addonType="prepend">
                                 <InputGroupText><AiOutlineMail/></InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Din e-post" />
+                            <Input placeholder="Din e-post"/>
                         </InputGroup>
+                        <div className="w-100 py-1"/>
                     </div>
-                    <div className="w-100 py-1"/>
-                    <a>[] Radio, check button</a>
+
+
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="myCheckbox"/>
+                        <label className="form-check-label" htmlFor="myCheckbox">
+                            <p style={{fontWeight: "bold"}}>
+                                Ja, jeg har lest og godkjent
+                                <Link href="#">
+                                    <a> betingelsene</a>
+                                </Link>
+                            </p>
+                        </label>
+                    </div>
                 </div>
-                <div className="col-sm pt-5">
-                    <a>Meld mef på knapp</a>
+
+                <div className="col-sm pt-1 align-self-center mb-4">
+                    <button className="newsletter-btn" onClick={subscribeToNewsletter}>
+                        Meld meg på!
+                    </button>
+                    <div className="w-100 py-3"/>
                 </div>
             </div>
         </div>

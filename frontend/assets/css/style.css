@@ -348,6 +348,32 @@ div.scrollmenu {
 }
 
 /* NewsLetter */
+
 .newsletter-style {
     background-color: lightgrey;
+}
+
+.newsletter-btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 55px;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #007de6;
+
+}
+
+.newsletter-btn:focus {
+    outline: none;
 }

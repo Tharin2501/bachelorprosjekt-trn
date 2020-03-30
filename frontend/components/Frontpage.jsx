@@ -21,6 +21,8 @@ export const Frontpage = () => {
     );
 };
 
+
+
 export const FrontpageGrid = () => {
 
     return (
