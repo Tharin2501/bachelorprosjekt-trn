@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useAsync } from "react";
-import Query from "../query"
-import PRODUCTS_QUERY from "../../apollo/queries/product/products"
+import React, { useState, useEffect } from "react";
 import Productgrid from "./productgrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import QueryCategoryFilter from "../../components/queryCategoryFilter"
 import CATEGORIESFILTER_QUERY from "../../apollo/queries/Category/CategoriesFilter"
-import { useQuery } from "@apollo/react-hooks";
 const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, pageTitle }) => {
 
     const [categoriesList, setcategoriesList] = useState(categoriesListInput)
     // products
     const [productsArray, setProductsArray] = useState([]);
-    const [defaultProductsArray, setDefaultProductsArray] = useState([]);
+    //const [defaultProductsArray, setDefaultProductsArray] = useState([]);
+
 
     // subcategories array
     const [subcategoriesArray, setSubcategoriesArray] = useState([]);
+    const [defaultSubcategoriesArray, setDefaultSubcategoriesArray] = useState([])
+    const [isSubcatroiesDefaultInitialized, setIsSubcatroiesDefaultInitialized] = useState(false)
 
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
@@ -198,6 +198,8 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     }, [categoriesList])
 
+
+
     // async
     const filterProductsToShow = (listToCheck) => {
 
@@ -229,15 +231,15 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                 } */
             }
         }
-        console.log(subcategoryNames)
-        setSubcategoriesArray(subcategoryNames)
+
+
 
         if (isAnyChecked == false) {
             // return with showing every product in category
-            setProductsArray(defaultProductsArray)
+            setSubcategoriesArray(defaultSubcategoriesArray)
             return
         } else {
-            setProductsArray(filteredArray)
+            setSubcategoriesArray(subcategoryNames)
 
         }
 
@@ -391,6 +393,10 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                     <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray}>
                         {({ data: { categories } }) => {
                             const productsArray2 = getProducts(categories)
+                            if (isSubcatroiesDefaultInitialized == false) {
+                                setDefaultSubcategoriesArray(subcategoriesArray)
+                                setIsSubcatroiesDefaultInitialized(true)
+                            }
                             return (
                                 <Productgrid productgrid={productsArray2} />
                             )
