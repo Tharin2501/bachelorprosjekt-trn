@@ -12,7 +12,7 @@ const Productgrid = ({ productgrid }) => {
 
             <div className="container-fluid px-sm-1 py-5 mx-auto">
                 <div className="row justify-content-center">
-                    {productgrid.map((product, i, ) => {
+                    {productgrid.map((product) => {
 
                         return (
 
