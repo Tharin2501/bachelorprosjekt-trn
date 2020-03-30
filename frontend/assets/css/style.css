@@ -304,18 +304,19 @@ div.scrollmenu {
 
 .imageSize{
   width: 6em;
-  
+
 }
 .frontpageIconsText{
   text-align: center;
 }
 
 .featured-article {
-	
+
 	height: 50em;
 	position: relative;
 	margin-bottom: 1em;
 }
+
 
 .btn-circle.btn-sm { 
   width: 12em; 
@@ -377,3 +378,85 @@ div.scrollmenu {
 .checkboxItem{
   white-space: nowrap;display:inline  
 }
+=======
+.btn-circle.btn-sm {
+  width: 12em;
+  height: 12em;
+  border-radius: 60px;
+  font-size: 8px;
+  text-align: center;
+
+
+}
+
+/* ArticleBoxes.jsx*/
+.article_container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.article_container img {
+    width: 100%;
+    height: auto;
+}
+
+.article_container .btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: teal;
+    color: white;
+    font-size: 14px;
+    padding: 7px 45px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space:nowrap
+}
+
+.article_container .btn:hover {
+    background-color: darkcyan;
+    color: white;
+
+}
+
+.outlined_btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    white-space:nowrap
+}
+
+.btn-outline-secondary {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    transform: translate( -70%, -30% );
+    text-transform: uppercase;
+    border: 2px solid teal !important;
+    color: black !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: darkcyan !important;
+    color: white !important;
+}
+
+.text-block {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate( -70%, -50% );
+    text-align: right;
+    color: black;
+    font-size: 12px;
+}
+
