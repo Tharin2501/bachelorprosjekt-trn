@@ -1,30 +1,30 @@
 body {
-  color: #000;
-  overflow-x: hidden;
-  height: 100%;
-  background-color: #fff;
-  background-repeat: no-repeat;
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #fff;
+    background-repeat: no-repeat;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 h1 {
-  font-family: Staatliches;
-  font-size: 120px;
+    font-family: Staatliches;
+    font-size: 120px;
 }
 
 #category {
-  font-family: Staatliches;
-  font-weight: 500;
+    font-family: Staatliches;
+    font-weight: 500;
 }
 
 #title {
-  letter-spacing: 0.4px;
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 1.13636;
+    letter-spacing: 0.4px;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.13636;
 }
 
 #banner {
@@ -306,8 +306,9 @@ div.scrollmenu {
   width: 6em;
 
 }
-.frontpageIconsText{
-  text-align: center;
+
+.frontpageIconsText {
+    text-align: center;
 }
 
 .featured-article {
@@ -396,4 +397,45 @@ div.scrollmenu {
     text-align: right;
     color: black;
     font-size: 12px;
+}
+
+/* 1.2 Footer*/
+.footer-style {
+    background-color: #042434;
+    color: white;
+}
+
+.footer-color {
+    color: white;
+}
+
+/* NewsLetter */
+
+.newsletter-style {
+    background-color: lightgrey;
+}
+
+.newsletter-btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 55px;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #007de6;
+
+}
+
+.newsletter-btn:focus {
+    outline: none;
 }
