@@ -68,7 +68,11 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     )
 
     // Types
-    const [typesCheckboxes, setTypesCheckboxes] = useState([]
+    const [typesCheckboxes, setTypesCheckboxes] = useState([{ id: 1, value: "vin_rodvin", displayValue: "Under 200kr", isChecked: false },
+    { id: 2, value: "vin_hvitvin", displayValue: "200kr-500kr", isChecked: false },
+    { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
+    { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
+    ]
 
     )
 
@@ -281,9 +285,11 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     const handleCheckChieldElementTypes = (event) => {
         // kanskje putte logikk inn her for filtrering
         let checkboxesArray = subcategoryCheckboxes
+
         checkboxesArray.forEach(checkBox => {
             if (checkBox.value === event.target.value)
                 checkBox.isChecked = event.target.checked
+
         })
 
         //console.log(checkboxesArray)
