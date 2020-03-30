@@ -4,6 +4,8 @@ import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
 import { MyFooter, MyHeader, NewsLetter } from "../components/layout/layout";
+import {ArticleBoxes} from "../components/productPage/ArticleBoxes"
+
 
 
 
