@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-const QuerySubCategory = ({ children, query, nametoInsert }) => {
+const QuerySubCategory = ({ children, query, categoryName }) => {
     const { data, loading, error } = useQuery(query, {
-        variables: { nametoInsert: nametoInsert }
+        variables: { categoryName: categoryName }
     });
 
     if (loading) return <p>Loading...</p>;

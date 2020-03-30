@@ -15,7 +15,7 @@ const Category = () => {
 
   return (
 
-    <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} nametoInsert={router.query.id}  >
+    <QuerySubCategory query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY} categoryName={router.query.id}  >
       {({ data: { categories } }) => {
         return (
           <div>

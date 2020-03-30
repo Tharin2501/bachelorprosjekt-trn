@@ -18,6 +18,10 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     const [defaultSubcategoriesArray, setDefaultSubcategoriesArray] = useState([])
     const [isSubcatroiesDefaultInitialized, setIsSubcatroiesDefaultInitialized] = useState(false)
 
+    // type
+
+    const [typesInitArray, setTypesInitArray] = useState([]);
+
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -32,11 +36,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     // Types
     const [typesListIsOpen, setTypesListIsIsOpen] = useState(true);
     const toggleTypesList = () => setTypesListIsIsOpen(!typesListIsOpen);
-
-    // Types2
-    const [typesListIs2Open, setTypesList2IsOpen] = useState(true);
-    const toggleTypesList2 = () => setTypesList2IsOpen(!typesListIs2Open);
-
 
     // Attributes
     const [attributesalListIsOpen, setAttributesListIsIsOpen] = useState(true);
@@ -71,20 +70,8 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     // Types
     const [typesCheckboxes, setTypesCheckboxes] = useState([]
 
-
     )
 
-
-
-    // Types 2 checkboxes display afther types (Category --> subcategory --> types )
-    const [typesCheckboxes2, settypesCheckboxes2] = useState(
-        [{ id: 1, value: "vin_rodvin", displayValue: "vin_rodvin", isChecked: false },
-        { id: 2, value: "vin_hvitvin", displayValue: "vin_hvitvin", isChecked: false },
-        { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
-        { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
-        ]
-
-    )
     const InsertIntoSubcategoryCheckBoxesArray = (newArray) => setsubcategoryCheckboxes(newArray)
     const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
 
@@ -175,21 +162,42 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
      */
 
 
-    const getSubcategoryArray = () => {
-        // 
-        var tempArray = []
+    const getSubcategoryArrayAndTypes = () => {
 
+
+
+        /*
+                console.log(categoriesList[0].sub_categories[0].products[0].type_of_products[0].StrapiName)
+                for (var i = 0; i < categoriesList[0].sub_categories.length; i++) {
+                    tempArray = tempArray.concat(categoriesList[0].sub_categories[i].StrapiName)
+        
+                }
+                */
+        //let testArray = categoriesList[0].sub_categories.forEach(subcategory => subcategory.products.forEach(product => product.type_of_products.forEach(type => console.log(type.StrapiName))))
+        //.products[0].type_of_products[0].StrapiName
+        let categoryArrayMakeObselete = categoriesList[0].sub_categories.map(a => a.StrapiName)
+        var typesArrayMakeObselete = []
+        var typesArrayWithCategories = []
         for (var i = 0; i < categoriesList[0].sub_categories.length; i++) {
-            tempArray = tempArray.concat(categoriesList[0].sub_categories[i].StrapiName)
+            typesArrayMakeObselete = typesArrayMakeObselete.concat(categoriesList[0].sub_categories[i].type_of_products.map(type => type.StrapiName))
+            typesArrayWithCategories.push(categoriesList[0].sub_categories[i].type_of_products)
         }
+        // push
+        console.log(typesArrayWithCategories)
 
-        setSubcategoriesArray(tempArray)
 
+        setSubcategoriesArray(categoryArrayMakeObselete)
+        setTypesInitArray(typesArrayMakeObselete)
+
+    }
+
+    const getArrayOfTypes = () => {
+        var tempArray = []
 
     }
     useEffect(() => {
 
-        getSubcategoryArray(categoriesList)
+        getSubcategoryArrayAndTypes(categoriesList)
         createSubCategoryCheckboxes()
         //createTypesCheckboxes()
         //getTypeOfProductsList()
@@ -278,7 +286,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                 checkBox.isChecked = event.target.checked
         })
 
-        console.log(checkboxesArray)
+        //console.log(checkboxesArray)
 
 
 
@@ -340,7 +348,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                                                 <Collapse isOpen={object.isChecked}>
                                                     <div id="filters" className="d-md-block">
 
-                                                        {typesCheckboxes2.map((test) => {
+                                                        {typesCheckboxes.map((test) => {
                                                             return (
 
 
@@ -390,15 +398,15 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
             <div className="row">
 
                 <div className="col-md-9 order-md-last">
-                    <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray}>
+                    <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesInitArray}>
                         {({ data: { categories } }) => {
-                            const productsArray2 = getProducts(categories)
+                            const productsArray = getProducts(categories)
                             if (isSubcatroiesDefaultInitialized == false) {
                                 setDefaultSubcategoriesArray(subcategoriesArray)
                                 setIsSubcatroiesDefaultInitialized(true)
                             }
                             return (
-                                <Productgrid productgrid={productsArray2} />
+                                <Productgrid productgrid={productsArray} />
                             )
 
 

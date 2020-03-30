@@ -1,14 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 // arrayOfTypes
-const QueryCategoryFilter = ({ children, query, categoryName, arrayOfSubcat }) => {
+const QueryCategoryFilter = ({ children, query, categoryName, arrayOfSubcat, arrayOfTypes }) => {
     const { data, loading, error } = useQuery(query, {
 
         variables: {
 
             categoryName: categoryName,
             arrayOfSubcat: arrayOfSubcat,
-            //arrayOfTypes: arrayOfTypes
+            arrayOfTypes: arrayOfTypes
         }
     });
 
