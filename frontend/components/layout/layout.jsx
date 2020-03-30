@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import Link from "next/link";
 import {FaHeart, FaShoppingCart} from 'react-icons/fa';
+import {FiUser} from "react-icons/fi";
 import {GoSearch} from "react-icons/go";
 import {AiOutlineMail} from "react-icons/ai";
 import {
@@ -176,7 +177,7 @@ export const MyHeader = () => {
                         <a className="nav-item" href="favorites"><FaHeart color="black"/></a>
                     </div>
                     <div className="col">
-                        profil
+                        <FiUser/>
                     </div>
                     <div className="col">
                         <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black "/></a>
@@ -302,7 +303,7 @@ export const NewsLetter = () => {
 
 
 export const MyFooter = () => (
-    <div className="container-fluid footer-style">
+    <div className="container-fluid footer-style pt-2">
         <div className="py-2">
             <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
         </div>

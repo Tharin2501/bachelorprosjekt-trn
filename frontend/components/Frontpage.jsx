@@ -16,12 +16,21 @@ export const Frontpage = () => {
             <FrontpageGrid />
 
             <hr />
+            <ShowIdBanner/>
 
         </div>
     );
 };
 
-
+export const ShowIdBanner = () => {
+    return(
+    <div className="container-fluid">
+        <div className="row justify-content-center py-5">
+           <img src="/images/showId.jpg" alt="logo"/>
+        </div>
+    </div>
+    );
+};
 
 export const FrontpageGrid = () => {
 
