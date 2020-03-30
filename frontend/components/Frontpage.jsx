@@ -24,7 +24,7 @@ export const Frontpage = () => {
 
 export const ShowIdBanner = () => {
     return(
-    <div className="container">
+    <div className="container-fluid">
         <div className="justify-content-center py-5">
            <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="logo"/>
         </div>

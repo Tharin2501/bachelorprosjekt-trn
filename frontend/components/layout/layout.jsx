@@ -312,14 +312,13 @@ export const MyFooter = () => (
                 {/* Åpningstider*/}
                 <h3 className="footer-color">Åpningstider</h3>
                 <div className="w-100 py-2"/>
-                <a>Duty-Free butikkene er alltid åpne.</a>
-                <div className="w-100 py-1"/>
+                <p>Duty-Free butikkene er alltid åpne.</p>
                 <Link href="#"><a className="footer-color">Se våre åpningstider her.</a></Link>
                 <div className="w-100 py-4"/>
 
                 {/* Telefon*/}
                 <h3 className="footer-color">Telefon</h3>
-                <a className="footer-color">+47 32 23 09 00</a>
+                <p className="footer-color">+47 32 23 09 00</p>
                 <div className="w-100 py-2"/>
                 <a>
                     Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.
