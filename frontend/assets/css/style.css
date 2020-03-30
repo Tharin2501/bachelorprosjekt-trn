@@ -344,5 +344,10 @@ div.scrollmenu {
 }
 
 .footer-color {
-    color: whitesmoke;
+    color: white;
+}
+
+/* NewsLetter */
+.newsletter-style {
+    background-color: lightgrey;
 }
