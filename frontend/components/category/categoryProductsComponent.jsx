@@ -8,10 +8,6 @@ import CATEGORIESFILTER_QUERY from "../../apollo/queries/Category/CategoriesFilt
 const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, pageTitle }) => {
 
     const [categoriesList, setcategoriesList] = useState(categoriesListInput)
-    // products
-    const [productsArray, setProductsArray] = useState([]);
-    //const [defaultProductsArray, setDefaultProductsArray] = useState([]);
-
 
     // subcategories array
     const [subcategoriesArray, setSubcategoriesArray] = useState([]);
@@ -20,7 +16,8 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     // type
 
-    const [typesInitArray, setTypesInitArray] = useState([]);
+    const [typesArray, setTypesArray] = useState([]);
+    const [defaultTypesArray, setDefaultTypesArray] = useState([]);
 
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
@@ -84,13 +81,16 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
         //console.log(typesList)
         var typearray = []
         for (var i = 0; i < typesList.length; i++) {
-            var type = {
-                id: i,
-                value: typesList[i].StrapiName,
-                displayValue: typesList[i].TypeOfProductName,
-                isChecked: false,
+            if (typesList[i].StrapiName != "None") {
+                var type = {
+                    id: i,
+                    value: typesList[i].StrapiName,
+                    displayValue: typesList[i].TypeOfProductName,
+                    isChecked: false,
+                }
+                typearray.push(type)
             }
-            typearray.push(type)
+
         }
         return typearray
     }
@@ -119,71 +119,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
         InsertIntoSubcategoryCheckBoxesArray(checkboxReadyArray)
     }
 
-    /*
-    const getTypeOfProductsList = () => {
-
-        if (isSubCategoryGrid) {
-
-            var typeOfProductsArray = []
-            var i;
-            for (i = 0; i < categoriesList.length; i++) {
-                var j;
-                for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
-
-                    if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
-                        typeOfProductsArray.push(categoriesList[i].type_of_products[j])
-                    }
-
-
-                }
-            }
-
-
-            createTypesCheckboxes(typeOfProductsArray)
-        } else {
-            var typeOfProductsArray = []
-            var i;
-            for (i = 0; i < categoriesList.length; i++) {
-                var j;
-                for (j = 0; j < categoriesList[i].type_of_products.length; j++) {
-
-                    if (!(typeOfProductsArray.some(e => e.StrapiName === categoriesList[i].type_of_products[j].StrapiName))) {
-                        typeOfProductsArray.push(categoriesList[i].type_of_products[j])
-                    }
-
-
-                }
-            }
-
-
-            createTypesCheckboxes(typeOfProductsArray)
-        }
-
-
-    }
-    */
-    /*
- 
-     const createTypesCheckboxes = (typeOfProductsArray) => {
-         var i
-         var checkboxReadyArray = []
-         for (i = 0; i < typeOfProductsArray.length; i++) {
-             var type = {
-                 id: i,
-                 value: typeOfProductsArray[i].StrapiName,
-                 displayValue: typeOfProductsArray[i].TypeOfProductName,
-                 isChecked: false
- 
- 
-             }
-             checkboxReadyArray.push(type)
- 
-         }
- 
-         InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
-     }
-     */
-
 
     const getSubcategoryArrayAndTypes = () => {
 
@@ -210,7 +145,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
 
         setSubcategoriesArray(categoryArrayMakeObselete)
-        setTypesInitArray(typesArrayMakeObselete)
+        setTypesArray(typesArrayMakeObselete)
 
     }
 
@@ -232,49 +167,49 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
 
     // async
-    const filterProductsToShow = (listToCheck) => {
+    const filterProductsToShow = (listToCheck, isSubcategory) => {
 
         var isAnyChecked = false;
-        var filteredArray = []
-        var subcategoryNames = []
+        var arrayNames = []
         for (var checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
 
 
             if (listToCheck[checkboxCount].isChecked == true) {
                 isAnyChecked = true
 
-                subcategoryNames.push(listToCheck[checkboxCount].value)
+                arrayNames.push(listToCheck[checkboxCount].value)
 
+            }
+        }
 
+        if (isSubcategory == true) {
+            if (isAnyChecked == false) {
+                // return with showing every product in category
+                setSubcategoriesArray(defaultSubcategoriesArray)
+                return
+            } else {
+                setSubcategoriesArray(arrayNames)
 
+            }
+        } else {
+            if (isAnyChecked == false) {
+                // return with showing every product in category
+                console.log(defaultTypesArray)
+                setTypesArray(defaultTypesArray)
+                return
+            } else {
+                setTypesArray(arrayNames)
 
-                /*
-                for (var i = 0; i < defaultProductsArray.length; i++) {
-
-                    for (var j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
-
-                        if (defaultProductsArray[i].type_of_products[j].StrapiName === listToCheck[checkboxCount].value) {
-                            filteredArray.push(defaultProductsArray[i]) // kan skape duplicates
-                        }
-
-                    }
-
-                } */
             }
         }
 
 
 
-        if (isAnyChecked == false) {
-            // return with showing every product in category
-            setSubcategoriesArray(defaultSubcategoriesArray)
-            return
-        } else {
-            setSubcategoriesArray(subcategoryNames)
-
-        }
-
     }
+
+
+
+
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "250px";
@@ -301,6 +236,28 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     }
 
+    const handleCheckChieldElementSubCategories = (event) => {
+        // kanskje putte logikk inn her for filtrering
+        let checkboxesArray = subcategoryCheckboxes
+
+        checkboxesArray.forEach(checkBox => {
+            if (checkBox.value === event.target.value)
+                checkBox.isChecked = event.target.checked
+
+        })
+
+        //console.log(checkboxesArray)
+
+
+
+
+
+        InsertIntoSubcategoryCheckBoxesArray(checkboxesArray)
+
+
+        filterProductsToShow(checkboxesArray, true)
+    }
+
     const handleCheckChieldElementTypes = (event) => {
         // kanskje putte logikk inn her for filtrering
         let checkboxesArray = subcategoryCheckboxes
@@ -320,7 +277,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
         InsertIntoSubcategoryCheckBoxesArray(checkboxesArray)
 
 
-        filterProductsToShow(checkboxesArray)
+        filterProductsToShow(checkboxesArray, false)
     }
 
 
@@ -364,8 +321,8 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
 
 
-                                            <div>
-                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={object.id}{...object}>
+                                            <div key={object.id}>
+                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={object.id}{...object}>
 
 
                                                 </CheckBox>
@@ -374,13 +331,13 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                                                 <Collapse isOpen={object.isChecked}>
                                                     <div id="filters" className="d-md-block">
 
-                                                        {object.typesList.map((test) => {
+                                                        {object.typesList.map((type) => {
 
                                                             return (
 
 
 
-                                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={test.id}{...test} />
+                                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={type.id}{...type} />
 
                                                             )
                                                         })}
@@ -425,11 +382,12 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
             <div className="row">
 
                 <div className="col-md-9 order-md-last">
-                    <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesInitArray}>
+                    <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
                         {({ data: { categories } }) => {
                             const productsArray = getProducts(categories)
                             if (isSubcatroiesDefaultInitialized == false) {
                                 setDefaultSubcategoriesArray(subcategoriesArray)
+                                setDefaultTypesArray(typesArray)
                                 setIsSubcatroiesDefaultInitialized(true)
                             }
                             return (
@@ -445,15 +403,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
             </div>
 
         </div>
-
-
-
-
-
-
-
-
-
     )
 
 }
