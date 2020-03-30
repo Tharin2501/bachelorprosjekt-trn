@@ -320,10 +320,10 @@ export const MyFooter = () => (
                 <h3 className="footer-color">Telefon</h3>
                 <p className="footer-color">+47 32 23 09 00</p>
                 <div className="w-100 py-2"/>
-                <a>
+                <p>
                     Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.
-                </a>
-                <div className="w-100 py-2"/>
+                </p>
+                <div className="w-100 py-1"/>
             </div>
             {/* Snarveier */}
             <div className="col-sm-3">
