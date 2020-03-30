@@ -109,7 +109,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
         InsertIntoSubcategoryCheckBoxesArray(checkboxReadyArray)
     }
 
-
+    /*
     const getTypeOfProductsList = () => {
 
         if (isSubCategoryGrid) {
@@ -151,46 +151,28 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
 
     }
-
-    const createTypesCheckboxes = (typeOfProductsArray) => {
-        var i
-        var checkboxReadyArray = []
-        for (i = 0; i < typeOfProductsArray.length; i++) {
-            var type = {
-                id: i,
-                value: typeOfProductsArray[i].StrapiName,
-                displayValue: typeOfProductsArray[i].TypeOfProductName,
-                isChecked: false
-
-
-            }
-            checkboxReadyArray.push(type)
-
-        }
-
-        InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
-    }
-
-
-
-    const getProductsArray = (categories) => {
-        if (isSubCategoryGrid) {
-
-            setProductsArray(categories)
-            setDefaultProductsArray(categories)
-        } else {
-
-            var tempproductsArray = []
-
-            for (var subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
-                tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
-            }
-            setProductsArray(tempproductsArray)
-            setDefaultProductsArray(tempproductsArray)
-        }
-
-
-    }
+    */
+    /*
+ 
+     const createTypesCheckboxes = (typeOfProductsArray) => {
+         var i
+         var checkboxReadyArray = []
+         for (i = 0; i < typeOfProductsArray.length; i++) {
+             var type = {
+                 id: i,
+                 value: typeOfProductsArray[i].StrapiName,
+                 displayValue: typeOfProductsArray[i].TypeOfProductName,
+                 isChecked: false
+ 
+ 
+             }
+             checkboxReadyArray.push(type)
+ 
+         }
+ 
+         InsertIntoTypesCheckBoxesArray(checkboxReadyArray)
+     }
+     */
 
 
     const getSubcategoryArray = () => {
@@ -208,10 +190,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     useEffect(() => {
 
         getSubcategoryArray(categoriesList)
-        getProductsArray(categoriesList)
-        //getTypesArray()
         createSubCategoryCheckboxes()
-        filterProductsQuery()
         //createTypesCheckboxes()
         //getTypeOfProductsList()
 
@@ -224,12 +203,19 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
         var isAnyChecked = false;
         var filteredArray = []
+        var subcategoryNames = []
         for (var checkboxCount = 0; checkboxCount < listToCheck.length; checkboxCount++) {
 
 
             if (listToCheck[checkboxCount].isChecked == true) {
                 isAnyChecked = true
 
+                subcategoryNames.push(listToCheck[checkboxCount].value)
+
+
+
+
+                /*
                 for (var i = 0; i < defaultProductsArray.length; i++) {
 
                     for (var j = 0; j < defaultProductsArray[i].type_of_products.length; j++) {
@@ -240,9 +226,11 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
                     }
 
-                }
+                } */
             }
         }
+        console.log(subcategoryNames)
+        setSubcategoriesArray(subcategoryNames)
 
         if (isAnyChecked == false) {
             // return with showing every product in category
@@ -281,30 +269,26 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     }
 
     const handleCheckChieldElementTypes = (event) => {
-
+        // kanskje putte logikk inn her for filtrering
         let checkboxesArray = subcategoryCheckboxes
         checkboxesArray.forEach(checkBox => {
             if (checkBox.value === event.target.value)
                 checkBox.isChecked = event.target.checked
         })
 
+        console.log(checkboxesArray)
+
+
+
 
 
         InsertIntoSubcategoryCheckBoxesArray(checkboxesArray)
-        //filterProductsToShow(typesCheckboxes)
+
+
+        filterProductsToShow(checkboxesArray)
     }
 
-    const filterProductsQuery = () => {
-        var newProductArray = []
-        const arraytoSubcatValues = []
 
-        /*
-        return (
-
-        )
-        */
-
-    }
     // legge til  typisk norsk, vegansk..
     return (
 
@@ -406,9 +390,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
                 <div className="col-md-9 order-md-last">
                     <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray}>
                         {({ data: { categories } }) => {
-                            //console.log(categories) 
-                            //console.log(productsArray) // subcategoriesArray
-                            // getProductsArray(categories)
                             const productsArray2 = getProducts(categories)
                             return (
                                 <Productgrid productgrid={productsArray2} />
@@ -444,7 +425,6 @@ export const getProducts = (categories) => {
     for (var subcatcount = 0; subcatcount < categories[0].sub_categories.length; subcatcount++) {
         tempproductsArray = tempproductsArray.concat(categories[0].sub_categories[subcatcount].products)
     }
-    //console.log(tempproductsArray)
     return tempproductsArray
 }
 
