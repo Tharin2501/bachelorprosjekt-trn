@@ -14,6 +14,7 @@ query Category($categoryName: String!,$arrayOfSubcat:[String],$arrayOfTypes:[Str
         pris
         type_of_products
         {
+          id
           TypeOfProductName
           StrapiName
         }

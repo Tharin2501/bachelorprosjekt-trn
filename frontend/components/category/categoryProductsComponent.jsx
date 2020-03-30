@@ -80,22 +80,41 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
 
 
-
-    const createSubCategoryCheckboxes = () => {
-        const subCategoryArray = categoriesList[0].sub_categories
-        var checkboxReadyArray = []
-        for (var i = 0; i < subCategoryArray.length; i++) {
+    const createTypesOnCheckboxesList = (typesList) => {
+        //console.log(typesList)
+        var typearray = []
+        for (var i = 0; i < typesList.length; i++) {
             var type = {
                 id: i,
-                value: subCategoryArray[i].StrapiName,
-                displayValue: subCategoryArray[i].categoryName,
-                isChecked: false
+                value: typesList[i].StrapiName,
+                displayValue: typesList[i].TypeOfProductName,
+                isChecked: false,
+            }
+            typearray.push(type)
+        }
+        return typearray
+    }
+
+    const createSubCategoryCheckboxes = () => {
+        var checkboxReadyArray = []
+        for (var i = 0; i < categoriesList[0].sub_categories.length; i++) {
+            var type = {
+                id: i,
+                value: categoriesList[0].sub_categories[i].StrapiName,
+                displayValue: categoriesList[0].sub_categories[i].categoryName,
+                isChecked: false,
+                typesList: categoriesList[0].sub_categories[i].type_of_products
 
 
             }
+
+            type.typesList = createTypesOnCheckboxesList(type.typesList)
+
+
             checkboxReadyArray.push(type)
 
         }
+
 
         InsertIntoSubcategoryCheckBoxesArray(checkboxReadyArray)
     }
@@ -187,7 +206,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
             typesArrayWithCategories.push(categoriesList[0].sub_categories[i].type_of_products)
         }
         // push
-        console.log(typesArrayWithCategories)
+
 
 
         setSubcategoriesArray(categoryArrayMakeObselete)
@@ -351,10 +370,12 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
                                                 </CheckBox>
                                                 {/* Inside hierachy*/}
+
                                                 <Collapse isOpen={object.isChecked}>
                                                     <div id="filters" className="d-md-block">
 
-                                                        {typesCheckboxes.map((test) => {
+                                                        {object.typesList.map((test) => {
+
                                                             return (
 
 
