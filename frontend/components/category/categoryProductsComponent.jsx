@@ -5,7 +5,7 @@ import CheckBox from "./common/checkbox"
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import QueryCategoryFilter from "../../components/queryCategoryFilter"
 import CATEGORIESFILTER_QUERY from "../../apollo/queries/Category/CategoriesFilter"
-const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, pageTitle }) => {
+const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
     const [categoriesList, setcategoriesList] = useState(categoriesListInput)
 
@@ -63,17 +63,9 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     )
 
-    // Types
-    const [typesCheckboxes, setTypesCheckboxes] = useState([{ id: 1, value: "vin_rodvin", displayValue: "Under 200kr", isChecked: false },
-    { id: 2, value: "vin_hvitvin", displayValue: "200kr-500kr", isChecked: false },
-    { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
-    { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
-    ]
 
-    )
 
     const InsertIntoSubcategoryCheckBoxesArray = (newArray) => setsubcategoryCheckboxes(newArray)
-    const InsertIntoTypesCheckBoxesArray = (newArray) => setTypesCheckboxes(newArray)
 
 
     const createTypesOnCheckboxesList = (typesList) => {
@@ -121,17 +113,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     const getSubcategoryArrayAndTypes = () => {
 
-
-
-        /*
-                console.log(categoriesList[0].sub_categories[0].products[0].type_of_products[0].StrapiName)
-                for (var i = 0; i < categoriesList[0].sub_categories.length; i++) {
-                    tempArray = tempArray.concat(categoriesList[0].sub_categories[i].StrapiName)
-        
-                }
-                */
-        //let testArray = categoriesList[0].sub_categories.forEach(subcategory => subcategory.products.forEach(product => product.type_of_products.forEach(type => console.log(type.StrapiName))))
-        //.products[0].type_of_products[0].StrapiName
         let categoryArrayMakeObselete = categoriesList[0].sub_categories.map(a => a.StrapiName)
         var typesArrayMakeObselete = []
         var typesArrayWithCategories = []
@@ -139,7 +120,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
             typesArrayMakeObselete = typesArrayMakeObselete.concat(categoriesList[0].sub_categories[i].type_of_products.map(type => type.StrapiName))
             typesArrayWithCategories.push(categoriesList[0].sub_categories[i].type_of_products)
         }
-        // push
 
 
 
@@ -151,10 +131,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
     }
 
-    const getArrayOfTypes = () => {
-        var tempArray = []
-
-    }
 
 
     useEffect(() => {
@@ -320,13 +296,6 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
 
         }
-        /*
-        for (var i = 0; i < subcategoryCheckboxes.length; i++) {
-            console.log(subcategoryCheckboxes[i].typesList)
-            filterProductsToShow(subcategoryCheckboxes[i].typesList, false)
-        }
-        */
-
 
         filterProductsToShowArray(subcategoryCheckboxes, false)
 
@@ -341,7 +310,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
     // legge til  typisk norsk, vegansk..
     return (
 
-        <div>
+        <React.Fragment>
             <div id="mySidenav" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
@@ -454,7 +423,7 @@ const CategoryProductsComonent = ({ categoriesListInput, isSubCategoryGrid, page
 
             </div>
 
-        </div>
+        </React.Fragment>
     )
 
 }

@@ -25,7 +25,7 @@ const Category = () => {
 
             <Highlight3Articles ></Highlight3Articles>
 
-            <CategoryProductsComonent categoriesListInput={categories} isSubCategoryGrid={false} pageTitle={router.query.id}></CategoryProductsComonent>
+            <CategoryProductsComonent categoriesListInput={categories} pageTitle={router.query.id}></CategoryProductsComonent>
           </div >
         )
       }}
