@@ -1,40 +1,32 @@
 import gql from "graphql-tag";
 const CATEGORYGETSUBCATEGOREISWITHNAME_QUERY = gql`  
-query Category ($nametoInsert:String!){
-    categories(where:{StrapiName:$nametoInsert}) {
+query Category ($categoryName:String!){
+  categories(where:{StrapiName:$categoryName}) {
+
              
-      sub_categories{
-        id     
+    sub_categories{
+      id     
+      StrapiName
+      categoryName
+      description
+      
+      image{
+        url
+      }
+      
+      type_of_products{
         StrapiName
-        categoryName
-        description
-        
-        image{
-          url
-        }
-      
-      products{
-        id
-        ProductName
-        pris
-        ReviewScore
-        ingredients
-        directions
-        Volume
-        description
-  
-        image{
-          url
-        }
+        TypeOfProductName
       }
-      
-      
-      }
+
     
-        
-        
+    
     }
+  
+      
+      
   }
+}
 `;
 
 export default CATEGORYGETSUBCATEGOREISWITHNAME_QUERY;  

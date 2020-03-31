@@ -1,16 +1,20 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-
-const QuerySubCategory = ({ children, query, categoryName }) => {
+// arrayOfTypes
+const QuerySubCategoryFilter = ({ children, query, SubcategoryName, arrayOfTypes }) => {
     const { data, loading, error } = useQuery(query, {
-        variables: { categoryName: categoryName }
+
+        variables: {
+
+            SubcategoryName: SubcategoryName,
+            arrayOfTypes: arrayOfTypes
+        }
     });
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {JSON.stringify(error)}</p>;
-    //console.log(data.categories[0].sub_categories)
-    //console.log(data)
+
     return children({ data });
 };
 
-export default QuerySubCategory;
+export default QuerySubCategoryFilter;

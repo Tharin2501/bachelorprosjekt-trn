@@ -3,54 +3,38 @@ import gql from "graphql-tag";
 Get main category  from subcategory name rens --> Ansiktspleie
 */
 const GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY = gql`  
-query Subcategory($nametoInsert:String!) {
-    subCategories(where:{StrapiName:$nametoInsert}){ 
+query Subcategory($categoryName:String!) {
+  subCategories(where:{StrapiName:$categoryName}){
     StrapiName
-
+    
+      type_of_products{
+          StrapiName
+          TypeOfProductName
+      }
+    
     category{
       StrapiName
       name
-      sub_categories
-      {
+      sub_categories{
         StrapiName
         categoryName
-        description
-
-
-      
-      image{
+        image{
         url
-      }
-      }
+      	}
+
+
       
+      }
     }
-
-    products
-    {
-      id
-    ProductName
-    pris
-    ReviewScore
-    ingredients
-    directions
-    Volume
-    description
-
-    type_of_products
-    {
-      StrapiName
-      TypeOfProductName
-    }
-
-
-    image{
-      url
-    }}
-
- 
+  
+  
   }
-
+  
 }
+
+  
+
+
 `;
 
 export default GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY;  
