@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from "react";
-import Drawer from 'react-motion-drawer-improved';
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-
+import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories.js";
+import Query from "../components/query"
+import HamburgermenuItem from "../components/hamburgermenu/hamburgermenuItem.jsx"
 export const MyDrawer = () => {
 
 
@@ -106,7 +107,37 @@ export const MyDrawer = () => {
             </div>
             <div id="mySidenav" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                {listToShow}
+                {/*listToShow*/}
+                <Query query={GETCATEGORIES_QUERY}>
+                    {({ data: { categories } }) => {
+
+                        return (
+
+                            <ul>
+
+                                {categories.map((category) => {
+                                    return (
+                                        <li className="nav_submenu-item">
+                                            <HamburgermenuItem category={category} type={"category"} >
+
+                                            </HamburgermenuItem>
+                                        </li>
+                                    )
+                                })}
+
+                            </ul>
+                        )
+
+
+
+
+
+
+
+
+
+                    }}
+                </Query>
             </div>
         </div>
     )
