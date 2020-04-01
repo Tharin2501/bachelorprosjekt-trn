@@ -138,8 +138,6 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle }) => {
             <div className="col-md-9 order-md-last">
                 <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
                     {({ data: { subCategories } }) => {
-                        console.log(subCategories[0].products)
-                        //const productsArray = getProducts(categories)
                         return (
                             <Productgrid productgrid={subCategories[0].products} />
                         )

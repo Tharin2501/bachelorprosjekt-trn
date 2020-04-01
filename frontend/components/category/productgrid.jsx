@@ -6,7 +6,6 @@ import ProductgridCard from "./productgridCard";
 const Productgrid = ({ productgrid }) => {
 
 
-
     return (
         <div>
 

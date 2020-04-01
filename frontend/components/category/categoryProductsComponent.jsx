@@ -69,7 +69,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     const createTypesOnCheckboxesList = (typesList) => {
-        //console.log(typesList)
         var typearray = []
         for (var i = 0; i < typesList.length; i++) {
             if (typesList[i].StrapiName != "None") {
@@ -194,7 +193,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
         for (var checkboxCount = 0; checkboxCount < listsToCheck.length; checkboxCount++) {
 
             for (var typesCount = 0; typesCount < listsToCheck[checkboxCount].typesList.length; typesCount++) {
-                console.log(listsToCheck[checkboxCount].typesList)
+
                 if (listsToCheck[checkboxCount].typesList[typesCount].isChecked == true) {
                     isAnyChecked = true
 
@@ -204,8 +203,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
             }
 
         }
-
-        //console.log(arrayNames)
         if (isSubcategory == true) {
             if (isAnyChecked == false) {
                 // return with showing every product in category

@@ -142,14 +142,14 @@ export const MyHeader = () => {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
       if (cart === undefined || cart.length === 0) {
-        console.log("YAS")
+        //console.log("YAS")
         return;
       }
 
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
-      console.log(newtotalprice)
+      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
