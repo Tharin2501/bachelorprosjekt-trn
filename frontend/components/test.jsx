@@ -5,7 +5,7 @@ export const MyDrawer = () => {
     const [noTouchOpen, setNoTouchOpen] = useState(false);
     const [noTouchClose, setNoTouchClose] = useState(false);
     const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
-    console.log(openLeft)
+
 
     const handleCloseing = () => {
         setOpenLeft(false)
@@ -183,3 +183,58 @@ export const MyHudpleie = () => {
         </div>
     );
 };
+
+
+/* my code */
+
+export const MyDrawer = () => {
+    const [openLeft, setOpenLeft] = useState(false);
+
+    const handleOpenLeftChange = () => setOpenLeft(!openLeft)
+
+    return (
+        <div>
+            <div>
+                <ul className="left">
+                    <li style={{ cursor: "pointer", height: "100%" }}>
+                        <a onClick={() => setOpenLeft({ openLeft: true })}>
+                            <GiHamburgerMenu />
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <MainMenu openLeft={openLeft} handleOpenLeftChange={handleOpenLeftChange}></MainMenu>
+        </div>
+    )
+}
+
+export const MainMenu = ({ openLeft }) => {
+
+
+    const [width, setWidth] = useState(300);
+    const [noTouchOpen, setNoTouchOpen] = useState(false);
+    const [noTouchClose, setNoTouchClose] = useState(false);
+    const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
+
+    return (
+        <Drawer overlayColor={overLay}
+            width={width}
+            fadeOut
+            open={openLeft}
+            noTouchOpen={noTouchOpen}
+            noTouchClose={noTouchClose}>
+
+
+            {MyMakeup}
+
+
+        </Drawer>
+    )
+
+
+}
+
+
+
+
