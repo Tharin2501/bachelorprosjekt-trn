@@ -83,6 +83,18 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
             <ul>
                 <li className="nav_submenu-item">
+
+                    <div onClick={() => (setListToDefault())}>
+                        <div className="myImg">
+                            <img className="myImg" src={"/images/carousel/placeholder1.jpg"} alt="logo" />
+                        </div>
+
+                        <h1 className="nav-link">Gå tilbake</h1>
+
+                    </div>
+
+                </li>
+                <li className="nav_submenu-item">
                     <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
                         <div onClick={() => (closeNav())}>
                             <div className="myImg">
