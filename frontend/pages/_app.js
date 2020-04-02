@@ -4,15 +4,18 @@ import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
 import { MyFooter, MyHeader, NewsLetter } from "../components/layout/layout";
-import {ArticleBoxes} from "../components/productPage/ArticleBoxes"
-
-
+import { ArticleBoxes } from "../components/productPage/ArticleBoxes"
+import CartpriceProvider from "../components/cart/cartpriceProvider"
+import { Container } from 'next/app'
 
 
 const App = ({ Component, pageProps, apollo }) => {
 
     return (
+
         <ApolloProvider client={apollo}>
+
+
             <Head>
                 {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -32,9 +35,12 @@ const App = ({ Component, pageProps, apollo }) => {
 
             <MyHeader />
             <Component {...pageProps} />
-            <NewsLetter/>
-            <MyFooter/>
+            <NewsLetter />
+            <MyFooter />
+
         </ApolloProvider>
+
+
     )
 };
 // Wraps all components in the tree with the data provider
