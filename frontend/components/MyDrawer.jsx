@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 import HamburgermenuList from "../components/hamburgermenu/hamburgermenuList.jsx"
@@ -12,11 +12,10 @@ export const MyDrawer = () => {
     }
     const closeNav = () => {
         document.getElementById("mySidenav").style.width = "0";
-
+        ref.current.setListToDefault()
     }
 
-
-
+    const ref = useRef(null)
     return (
         <div>
             <div>
@@ -36,7 +35,7 @@ export const MyDrawer = () => {
 
                         return (
 
-                            <HamburgermenuList categories={categories}></HamburgermenuList>
+                            <HamburgermenuList ref={ref} categories={categories}></HamburgermenuList>
                         )
                     }}
                 </Query>
