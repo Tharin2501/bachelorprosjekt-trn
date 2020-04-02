@@ -19,6 +19,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
     const [type, setType] = useState("category")
     const typeToSet = (newType) => setType(newType)
 
+    const [hamburgerMenuItemShowAll, setHamburgerMenuItemShowAll] = useState()
 
     const changeListToShow = (category) => {
         var newList = []
@@ -27,9 +28,11 @@ const HamburgermenuList = forwardRef((props, ref) => {
                 let showall = {
                     StrapiName: props.categories[i].StrapiName,
                     categoryName: props.categories[i].name,
-                    image: [[props.categories[i].image]]
+                    image: props.categories[i].image.url
                 }
-                newList.push(showall)
+
+                setHamburgerMenuItemShowAll(showall)
+                //newList.push(showall)
                 newList = newList.concat(props.categories[i].sub_categories)
                 typeToSet("subCategory")
             }
@@ -54,23 +57,59 @@ const HamburgermenuList = forwardRef((props, ref) => {
             setListToDefault: setListToDefault
         }
     })
-    return (
+    if (type == "category") {
+        return (
 
 
-        <ul>
+            <ul>
 
-            {categoriesToShow.map((category) => {
-                return (
-                    <li className="nav_submenu-item">
-                        <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+                {categoriesToShow.map((category) => {
+                    return (
+                        <li className="nav_submenu-item">
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
 
-                        </HamburgermenuItem>
-                    </li>
-                )
-            })}
+                            </HamburgermenuItem>
+                        </li>
+                    )
+                })}
 
-        </ul>
-    )
+            </ul>
+        )
+
+    } else {
+
+        return (
+
+
+            <ul>
+                <li className="nav_submenu-item">
+                    <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
+                        <div onClick={() => (closeNav())}>
+                            <div className="myImg">
+                                <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="logo" />
+                            </div>
+
+                            <h1 className="nav-link">{hamburgerMenuItemShowAll.categoryName}</h1>
+
+                        </div>
+                    </Link>
+                </li>
+
+                {categoriesToShow.map((category) => {
+                    return (
+                        <li className="nav_submenu-item">
+
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+
+                            </HamburgermenuItem>
+                        </li>
+                    )
+                })}
+
+            </ul>
+        )
+
+    }
 
 
 
