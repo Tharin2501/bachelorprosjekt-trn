@@ -16,10 +16,9 @@ const HamburgermenuItem = props => {
 
         )
     } else {
-        console.log(props.category)
         return (
             <Link href={{ pathname: "/subCategory", query: { id: props.category.StrapiName } }}>
-                <div onClick={closeNav}>
+                <div onClick={props.closeNav}>
                     <div className="myImg">
                         <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="logo" />
                     </div>
@@ -36,7 +35,4 @@ const HamburgermenuItem = props => {
 
 export default HamburgermenuItem
 
-export const closeNav = () => {
-    document.getElementById("mySidenav").style.width = "0";
 
-}

@@ -31,7 +31,6 @@ export const MyDrawer = () => {
             </div>
             <div id="mySidenav" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                {/*listToShow*/}
                 <Query query={GETCATEGORIES_QUERY}>
                     {({ data: { categories } }) => {
 

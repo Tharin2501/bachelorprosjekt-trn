@@ -37,6 +37,14 @@ const HamburgermenuList = ({ categories }) => {
         listToSet(newList)
 
     }
+
+    const closeNav = () => {
+        document.getElementById("mySidenav").style.width = "0";
+        typeToSet("category")
+        listToSet(categories)
+    }
+
+
     return (
 
 
@@ -45,7 +53,7 @@ const HamburgermenuList = ({ categories }) => {
             {categoriesToShow.map((category) => {
                 return (
                     <li className="nav_submenu-item">
-                        <HamburgermenuItem category={category} type={type} listFunction={changeListToShow}>
+                        <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
 
                         </HamburgermenuItem>
                     </li>

@@ -101,7 +101,8 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle }) => {
     }
     const closeNav = () => {
         document.getElementById("filterMenu").style.width = "0";
-
+        typeToSet("category")
+        listToSet(categories)
     }
 
 
