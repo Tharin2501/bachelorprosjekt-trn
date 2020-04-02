@@ -233,10 +233,10 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     const openNav = () => {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("filterMenu").style.width = "250px";
     }
     const closeNav = () => {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("filterMenu").style.width = "0";
 
     }
 
@@ -308,7 +308,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
     return (
 
         <React.Fragment>
-            <div id="mySidenav" className="sidenav">
+            <div id="filterMenu" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
                     <Collapse isOpen={isOpen}>

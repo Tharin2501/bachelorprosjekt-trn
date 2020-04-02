@@ -8,6 +8,13 @@ query Category {
         image{
             url
         }
+        sub_categories{
+            StrapiName
+      categoryName
+      image{
+          url
+      }
+        }
       
       
       
