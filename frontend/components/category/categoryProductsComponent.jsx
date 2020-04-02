@@ -389,18 +389,9 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
             <Button onClick={openNav}>Filter</Button>
             <Button>Sort</Button>
             <p>
+                {categoriesListInput[0].description}
 
-                Festlook eller hverdagsmakeup uansett hva du er ute etter finner
-                du alt innen makeup hos Tax Free. Den perfekte maskaraen.
-                Foundations til alle hudtyper og med forskjellige dekkevne.
-                Settingsprayer, concealere, primere og rouger i alle
-                konsistenser – til forskjellige anledninger. Lek deg med
-                øyenskyggene våre og skap det uttrykket du ønsker. Til leppene
-                har vi lippgloss, leppestift, leppepomader og lipliner alt fra
-                den mest shiny til den matteste matte. Her finner du også
-                makeupsett i forskjellige fasonger og farger. Finn din favoritt
-                sminke hos oss til en god pris.
-                        </p>
+            </p>
 
             <div className="row">
 

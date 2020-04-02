@@ -6,7 +6,7 @@ import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import QuerySubCategoryFilter from "../../../components/querySubCategoryFilter"
 import SUBCATEGORYFILTER_QUERY from "../../../apollo/queries/subCategories/subCategoryFilter"
 
-const SubCategoryProductsComponent = ({ typesDefault, pageTitle }) => {
+const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description }) => {
 
     const [typesArray, setTypesArray] = useState([]);
     const [defaultTypesArray, setDefaultTypesArray] = useState([]);
@@ -124,17 +124,8 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle }) => {
             <Button onClick={openNav}>Filter</Button>
             <p>
 
-                Festlook eller hverdagsmakeup uansett hva du er ute etter finner
-                du alt innen makeup hos Tax Free. Den perfekte maskaraen.
-                Foundations til alle hudtyper og med forskjellige dekkevne.
-                Settingsprayer, concealere, primere og rouger i alle
-                konsistenser – til forskjellige anledninger. Lek deg med
-                øyenskyggene våre og skap det uttrykket du ønsker. Til leppene
-                har vi lippgloss, leppestift, leppepomader og lipliner alt fra
-                den mest shiny til den matteste matte. Her finner du også
-                makeupsett i forskjellige fasonger og farger. Finn din favoritt
-                sminke hos oss til en god pris.
-        </p>
+                {description}
+            </p>
 
             <div className="col-md-9 order-md-last">
                 <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
