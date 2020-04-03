@@ -13,11 +13,10 @@ const SubCategory = () => {
 
         <QuerySubCategory query={GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY} categoryName={router.query.id}>
             {({ data: { subCategories } }) => {
-                //console.log(subCategories[0].products)
                 return (
                     <div>
                         <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
-                        <SubCategoryProductsComponent typesDefault={subCategories[0].type_of_products} pageTitle={router.query.id}></SubCategoryProductsComponent>
+                        <SubCategoryProductsComponent typesDefault={subCategories[0].type_of_products} pageTitle={router.query.id} description={subCategories[0].description} ></SubCategoryProductsComponent>
                     </div>
                 )
             }}

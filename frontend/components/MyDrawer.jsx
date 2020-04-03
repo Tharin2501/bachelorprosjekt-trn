@@ -1,183 +1,56 @@
-import React, {Component, useState} from "react";
-import Drawer from 'react-motion-drawer-improved';
-import {GiHamburgerMenu} from "react-icons/gi";
-import {MySubMenu} from "./layout/layout";
+import React, { Component, useState, useEffect, useRef } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-
+import HamburgermenuList from "../components/hamburgermenu/hamburgermenuList.jsx"
+import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories.js";
+import Query from "../components/query"
 export const MyDrawer = () => {
 
-    const [openLeft, setOpenLeft] = useState(false);
-    const [width, setWidth] = useState(300);
-    const [noTouchOpen, setNoTouchOpen] = useState(false);
-    const [noTouchClose, setNoTouchClose] = useState(false);
-    const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
+    const openNav = () => {
+        document.getElementById("mySidenav").style.width = "250px";
 
+    }
+    const closeNav = () => {
+        document.getElementById("mySidenav").style.width = "0";
+        ref.current.setListToDefault()
+    }
+
+    const ref = useRef(null)
     return (
-
         <div>
             <div>
                 <ul className="left">
-                    <li style={{cursor: "pointer", height: "100%"}}>
-                        <a onClick={() => setOpenLeft({openLeft: true})}>
-                            <GiHamburgerMenu/>
+                    <li style={{ cursor: "pointer", height: "100%" }}>
+                        <a onClick={openNav}>
+                            <GiHamburgerMenu />
                         </a>
+
                     </li>
                 </ul>
             </div>
+            <div id="mySidenav" className="sidenav">
+                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                <Query query={GETCATEGORIES_QUERY}>
+                    {({ data: { categories } }) => {
 
-            <Drawer overlayColor={overLay}
-                    width={width}
-                    fadeOut
-                    open={openLeft}
-                    noTouchOpen={noTouchOpen}
-                    noTouchClose={noTouchClose}>
+                        return (
 
-                <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
-                    <ul>
-                        <li className="nav_submenu-item">
-                            <a><DrawerContent_Makeup/></a>
-                        </li>
-                        <li className="nav_submenu-item">
-                            <a><DrawerContent_Hudpleie/></a>
-                        </li>
-                    </ul>
-                </div>
-            </Drawer>
+                            <HamburgermenuList ref={ref} categories={categories}></HamburgermenuList>
+                        )
+                    }}
+                </Query>
+
+
+
+            </div>
         </div>
-    );
-};
-
-export const DrawerContent_Makeup = () => {
-
-    const [openLeft, setOpenLeft] = useState(false);
-    const [width, setWidth] = useState(300);
-    const [noTouchOpen, setNoTouchOpen] = useState(false);
-    const [noTouchClose, setNoTouchClose] = useState(false);
-    const [overLay, setOverlay] = useState("rgba(255,255,255,0.6)");
-
-    return (
-        <div>
-            <ul>
-                <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <h1>Makeup</h1>
-                </li>
-            </ul>
-
-            <Drawer overlayColor={overLay}
-                    width={width}
-                    fadeOut
-                    open={openLeft}
-                    noTouchOpen={noTouchOpen}
-                    noTouchClose={noTouchClose}>
-                {MyMakeup}
-            </Drawer>
-        </div>
-    );
+    )
 }
 
 
-export const MyMakeup = () => {
-
-    return (
-        <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
-            <ul>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="makeup">
-                        <h1 className="nav-link">All Makeup</h1>
-                    </Link>
-                </li>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="#">
-                        <h1 className="nav-link">Ansikt</h1>
-                    </Link>
-                </li>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="#">
-                        <h1 className="nav-link">Øyne</h1>
-                    </Link>
-                </li>
-            </ul>
-        </div>
-    );
-};
 
 
-export function DrawerContent_Hudpleie() {
 
-    const [openLeft, setOpenLeft] = useState(false);
-    const [width, setWidth] = useState(300);
-    const [noTouchOpen, setNoTouchOpen] = useState(false);
-    const [noTouchClose, setNoTouchClose] = useState(false);
 
-    const drawerProps = {
-        overlayColor: "rgba(255,255,255,0.6)",
-    };
 
-    return (
-        <div>
-            <ul>
-                <li className="nav_submenu-item" onClick={() => setOpenLeft({openLeft: true})}>
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <h1>Hudpleie</h1>
-                </li>
-            </ul>
 
-            <Drawer {...drawerProps}
-                    width={width}
-                    fadeOut
-                    open={openLeft}
-                    noTouchOpen={noTouchOpen}
-                    noTouchClose={noTouchClose}>
-                {MyHudpleie}
-            </Drawer>
-        </div>
-    );
-}
-
-export const MyHudpleie = () => {
-
-    return (
-        <div style={{backgroundColor: `grey`, width: "100%", height: "100%"}}>
-            <ul>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="hudpleie">
-                        <h1 className="nav-link">All Hudpleie</h1>
-                    </Link>
-                </li>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="#">
-                        <h1 className="nav-link">Ansikt</h1>
-                    </Link>
-                </li>
-                <li className="nav_submenu-item">
-                    <div className="myImg">
-                        <img className="myImg" src="/images/carousel/placeholder1.jpg" alt="logo"/>
-                    </div>
-                    <Link href="#">
-                        <h1 className="nav-link">Kropp</h1>
-                    </Link>
-                </li>
-            </ul>
-        </div>
-    );
-};

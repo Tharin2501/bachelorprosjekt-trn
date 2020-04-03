@@ -5,6 +5,7 @@ query Subcategory($SubcategoryName: String!,$arrayOfTypes:[String]) {
 				StrapiName
         categoryName
       	products(where:{type_of_products:{StrapiName:$arrayOfTypes}}){
+          id
           Strapiname
           ProductName
           pris

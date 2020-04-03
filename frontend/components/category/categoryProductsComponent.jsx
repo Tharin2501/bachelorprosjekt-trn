@@ -69,7 +69,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     const createTypesOnCheckboxesList = (typesList) => {
-        //console.log(typesList)
         var typearray = []
         for (var i = 0; i < typesList.length; i++) {
             if (typesList[i].StrapiName != "None") {
@@ -194,7 +193,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
         for (var checkboxCount = 0; checkboxCount < listsToCheck.length; checkboxCount++) {
 
             for (var typesCount = 0; typesCount < listsToCheck[checkboxCount].typesList.length; typesCount++) {
-                console.log(listsToCheck[checkboxCount].typesList)
+
                 if (listsToCheck[checkboxCount].typesList[typesCount].isChecked == true) {
                     isAnyChecked = true
 
@@ -204,8 +203,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
             }
 
         }
-
-        //console.log(arrayNames)
         if (isSubcategory == true) {
             if (isAnyChecked == false) {
                 // return with showing every product in category
@@ -236,10 +233,10 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     const openNav = () => {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("filterMenu").style.width = "250px";
     }
     const closeNav = () => {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("filterMenu").style.width = "0";
 
     }
 
@@ -311,7 +308,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
     return (
 
         <React.Fragment>
-            <div id="mySidenav" className="sidenav">
+            <div id="filterMenu" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
                     <Collapse isOpen={isOpen}>
@@ -392,18 +389,9 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
             <Button onClick={openNav}>Filter</Button>
             <Button>Sort</Button>
             <p>
+                {categoriesListInput[0].description}
 
-                Festlook eller hverdagsmakeup uansett hva du er ute etter finner
-                du alt innen makeup hos Tax Free. Den perfekte maskaraen.
-                Foundations til alle hudtyper og med forskjellige dekkevne.
-                Settingsprayer, concealere, primere og rouger i alle
-                konsistenser – til forskjellige anledninger. Lek deg med
-                øyenskyggene våre og skap det uttrykket du ønsker. Til leppene
-                har vi lippgloss, leppestift, leppepomader og lipliner alt fra
-                den mest shiny til den matteste matte. Her finner du også
-                makeupsett i forskjellige fasonger og farger. Finn din favoritt
-                sminke hos oss til en god pris.
-                        </p>
+            </p>
 
             <div className="row">
 

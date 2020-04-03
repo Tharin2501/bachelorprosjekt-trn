@@ -46,24 +46,6 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   const [quantity, setQuantity] = useState(1);
 
 
-
-  // er en string må gjøres til js array
-  /*const [rememberMe, setRememberMe] = useState(() => (initialRememberValue));
-
-
-  useEffect(() => {
-      Cookie.set("rememberMe", (rememberMe)); //  JSON.stringify makes bool work
-
-  }, [rememberMe]);
-
-  function getCart() {
-      Cookie.set("rememberMe", (rememberMe))
-  }
-  */
-
-
-
-
   function addtoFavorites() {
 
     changeHeartcolor()

@@ -6,6 +6,7 @@ const GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY = gql`
 query Subcategory($categoryName:String!) {
   subCategories(where:{StrapiName:$categoryName}){
     StrapiName
+    description
     
       type_of_products{
           StrapiName
@@ -16,6 +17,7 @@ query Subcategory($categoryName:String!) {
       StrapiName
       name
       sub_categories{
+        id
         StrapiName
         categoryName
         image{

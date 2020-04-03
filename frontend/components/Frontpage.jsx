@@ -16,19 +16,19 @@ export const Frontpage = () => {
             <FrontpageGrid />
 
             <hr />
-            <ShowIdBanner/>
+            <ShowIdBanner />
 
         </div>
     );
 };
 
 export const ShowIdBanner = () => {
-    return(
-    <div className="container">
-        <div className="justify-content-center py-5">
-           <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="logo"/>
+    return (
+        <div className="container">
+            <div className="justify-content-center py-5">
+                <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="logo" />
+            </div>
         </div>
-    </div>
     );
 };
 
@@ -46,7 +46,6 @@ export const FrontpageGrid = () => {
 
                     <Query query={GETCATEGORIES_QUERY}>
                         {({ data: { categories } }) => {
-                            console.log(categories)
                             return (
                                 categories.map((category) => {
                                     return (
