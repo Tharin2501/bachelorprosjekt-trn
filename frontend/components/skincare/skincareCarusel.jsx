@@ -9,7 +9,7 @@ const SkincareCarusel = (props) => {
 
 
   return (
-    <div className="">
+    <div className="skincareMobileDiv">
       <p> TWAT</p>
       <Carousel
         additionalTransfrom={0}
@@ -55,7 +55,7 @@ const SkincareCarusel = (props) => {
           }
         }}
         showDots={false}
-        sliderClass="skincareMobileDiv"
+        sliderClass=""
         slidesToSlide={1}
         swipeable
       >

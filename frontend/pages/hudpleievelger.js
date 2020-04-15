@@ -4,6 +4,7 @@ import SkincareCarusel from "../components/skincare/skincareCarusel.jsx"
 
 
 const Hudpleievelger = () => (
+
     <SkincareCarusel>
 
     </SkincareCarusel>
