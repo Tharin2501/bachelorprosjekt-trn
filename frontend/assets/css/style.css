@@ -505,6 +505,5 @@ div.scrollmenu {
 /* skincare carusel mobile*/
 
 .skincareMobileDiv{
-  display: inline-block;
   -webkit-transform: translate3d(0,0,0);
 }
