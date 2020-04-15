@@ -8,10 +8,7 @@ import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/c
 import Produktside from "../productPage/produktside"
 import Router from 'next/router'
 
-import Cookie from "js-cookie";
 
-//import parsCookies from "../components/cart/parseCookies";
-import parsCookies from "../cart/parseCookies";
 import Link from "next/link";
 
 
