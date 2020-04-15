@@ -42,8 +42,8 @@ const SkincareCarusel = (props) => {
         focusOnSelect={false}
         infinite={false}
         itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
+        keyBoardControl0
+        minimumTouchDrag={8}
         partialVisible
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
