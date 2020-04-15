@@ -505,6 +505,5 @@ div.scrollmenu {
 /* skincare carusel mobile*/
 
 .skincareMobileDiv{
-  display: inline-block;
   overflow: hidden;
 }
