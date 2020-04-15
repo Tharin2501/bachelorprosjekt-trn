@@ -3,32 +3,13 @@ import Carousel from "react-multi-carousel";
 import SkincareCaruselCard from "./skincareCaruselCard"
 import "react-multi-carousel/lib/styles.css";
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
 
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareCarusel = (props) => {
 
 
   return (
-    <div>
+    <div className="skincareMobileDiv">
       <p> TWAT</p>
       <Carousel
         additionalTransfrom={0}
@@ -42,8 +23,8 @@ const SkincareCarusel = (props) => {
         focusOnSelect={false}
         infinite={false}
         itemClass=""
-        keyBoardControl0
-        minimumTouchDrag={8}
+        keyBoardControl
+        minimumTouchDrag={80}
         partialVisible
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
