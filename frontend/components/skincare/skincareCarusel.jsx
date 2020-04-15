@@ -62,7 +62,7 @@ const SkincareCarusel = (props) => {
               min: 0
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 70
           },
           tablet: {
             breakpoint: {
