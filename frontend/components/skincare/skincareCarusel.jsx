@@ -7,7 +7,6 @@ import "react-multi-carousel/lib/styles.css";
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareCarusel = (props) => {
 
-
   return (
     <div className="skincareMobileDiv">
       <p> TWAT</p>
@@ -18,6 +17,7 @@ const SkincareCarusel = (props) => {
         centerMode={false}
         className=""
         containerClass="container"
+        ssr={true} // means to render carousel on server-side.
         dotListClass=""
         draggable
         focusOnSelect={false}
