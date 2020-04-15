@@ -40,7 +40,10 @@ const SkincareCarusel = (props) => {
           mobile: {
             breakpoint: {
               max: 464,
-              min: 0
+              min: 0,
+              mouseDrag: false,
+              touchDrag: true
+
             },
             items: 1,
             partialVisibilityGutter: 70
