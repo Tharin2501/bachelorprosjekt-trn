@@ -1,10 +1,18 @@
-import React from "react"
+import React from 'react';
+import SkincareCarusel from "../components/skincare/skincareCarusel.jsx"
+
 
 
 const Hudpleievelger = () => (
+    <SkincareCarusel>
 
-    <p> COOL HUNTY</p>
+    </SkincareCarusel>
+
+
 
 );
 
 export default Hudpleievelger;
+
+
+
