@@ -505,5 +505,5 @@ div.scrollmenu {
 /* skincare carusel mobile*/
 
 .skincareMobileDiv{
-  display: inline-block;
+  display: block;
 }
