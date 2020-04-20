@@ -22,12 +22,6 @@ const SkincareCaruselCardCheckboxList = (props) => {
                     <input className="form-check-input" type="checkbox" value="" id="checkbox3"></input>
                 </div>
             </div>
-            <div className="col-sm">
-                <div>
-                    <label className="form-check-label" for="checkbox4">Testing</label>
-                    <input className="form-check-input" type="checkbox" value="" id="checkbox4"></input>
-                </div>
-            </div>
         </div>
     )
 

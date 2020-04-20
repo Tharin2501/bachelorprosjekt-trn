@@ -515,6 +515,15 @@ div.scrollmenu {
 
 }
 
+.skincareCaurselMobileCardImage{
+  align-self: center;
+  display: block;
+  max-width:250px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
 /* Circular button */
 
 .btn-circle.btn-xl {
@@ -535,3 +544,4 @@ div.scrollmenu {
   font-size: 12px;
   line-height: 1.42857;
 }
+

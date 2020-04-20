@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Progress
+    CardTitle, CardSubtitle, Button, Progress,
 } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
 import SkincareCaruselCardCheckboxList from "./skincareCaruselCardComponents/skincareCaruselCardCheckboxList"
@@ -19,7 +19,7 @@ const SkincareCaruselCard = ({ productName }) => {
             <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
                 <Progress value={33, 33}></Progress>
                 <text align="center">Steg 1: Rens</text>
-                <CardImg top width="100%" src="https://trnbackend.herokuapp.com/files/1279254-trnLargeFormat.jpg" alt="Card image cap" />
+                <img className="skincareCaurselMobileCardImage" align="center" src="https://trnbackend.herokuapp.com/files/1279254-trnLargeFormat.jpg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle >{productName}</CardTitle>
                     <div className="row px-3 justify-content-between">
