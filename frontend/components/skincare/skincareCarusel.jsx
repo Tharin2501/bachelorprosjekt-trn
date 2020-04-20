@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 const SkincareCarusel = (props) => {
   //         
   return (
+
     <div className="skincareMobileDiv">
       <Carousel
         additionalTransfrom={0}

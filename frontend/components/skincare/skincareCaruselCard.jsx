@@ -13,7 +13,7 @@ const SkincareCaruselCard = ({ productName }) => {
         <link href="../../assets/css/all.min.css" rel="stylesheet"></link>
     </head>
 
-    // gå til produt side i stedenfor se omtale eller vis antall
+    // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div >
             <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
@@ -27,13 +27,17 @@ const SkincareCaruselCard = ({ productName }) => {
                         <text>Se omtale</text>
                     </div>
 
-                    <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
+
+
+
+
                     <CardSubtitle className="h2" align="center">200kr</CardSubtitle>
                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                     <div className="row px-3 justify-content-between">
                         <button type="button" className="btn btn-info btn-circle btn-xl"> <i className="fas fa-check"></i></button>
                         <Button>Button</Button>
                     </div>
+
 
 
                 </CardBody>

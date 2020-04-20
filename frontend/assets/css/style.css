@@ -524,6 +524,22 @@ div.scrollmenu {
   height: auto;
 }
 
+.SkincareCaruselCardCheckboxListDiv{
+  display: table;
+  float: left;
+  margin-right: 15px;
+ 
+}
+
+.SkincareCaruselCardCheckboxListLabel {
+  display: table-row;
+}
+
+.SkincareCaruselCardCheckboxs {
+  display: table-row;
+  width: 100%;
+}
+
 /* Circular button */
 
 .btn-circle.btn-xl {

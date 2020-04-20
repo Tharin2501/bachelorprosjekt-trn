@@ -26,23 +26,31 @@ import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
 import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
-
+import { useRouter } from "next/router"
 
 const MySearchbar = () => {
-  return (
-    <div className="row mx-auto w-80 pt-3 pb-3">
-      <div className="col">
+  const router = useRouter();
+  if (router.pathname === "/hudpleievelger") {
+    return (
+      null
+    )
+  } else {
+    return (
+      <div className="row mx-auto w-80 pt-3 pb-3">
+        <div className="col">
 
-        <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText><GoSearch /></InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="søk..." />
-        </InputGroup>
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText><GoSearch /></InputGroupText>
+            </InputGroupAddon>
+            <Input placeholder="søk..." />
+          </InputGroup>
+        </div>
       </div>
-    </div>
 
-  );
+    );
+  }
+
 };
 
 export const MyHeader = () => {
@@ -50,7 +58,6 @@ export const MyHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
   const [totalprice, setTotalprice] = useState(0);
-
 
   useEffect(() => {
     getCartPrice()
@@ -75,6 +82,7 @@ export const MyHeader = () => {
   }
 
   return (
+
     <div>
       <Navbar color="light">
         <div>
