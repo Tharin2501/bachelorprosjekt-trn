@@ -6,15 +6,14 @@ import "react-multi-carousel/lib/styles.css";
 
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareCarusel = (props) => {
-
+  //     partialVisible
   return (
     <div className="skincareMobileDiv">
-      <p> TWAT</p>
       <Carousel
         additionalTransfrom={0}
         arrows={false}
         autoPlaySpeed={3000}
-        centerMode={false}
+        centerMode={true}
         className=""
         containerClass="container"
         ssr={true} // means to render carousel on server-side.
@@ -22,10 +21,10 @@ const SkincareCarusel = (props) => {
         draggable
         focusOnSelect={false}
         infinite={false}
-        itemClass=""
+        itemClass="skincareMobileCard"
         keyBoardControl
-        minimumTouchDrag={80}
-        partialVisible
+        minimumTouchDrag={20}
+
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
         responsive={{

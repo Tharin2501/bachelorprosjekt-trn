@@ -4,6 +4,7 @@ import {
     CardTitle, CardSubtitle, Button, Progress
 } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
+import SkincareCaruselCardCheckboxList from "./skincareCaruselCardComponents/skincareCaruselCardCheckboxList"
 
 
 
@@ -26,7 +27,7 @@ const SkincareCaruselCard = ({ productName }) => {
                         <text>Se omtale</text>
                     </div>
 
-
+                    <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
                     <CardSubtitle className="h2" align="center">200kr</CardSubtitle>
                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                     <div className="row px-3 justify-content-between">
