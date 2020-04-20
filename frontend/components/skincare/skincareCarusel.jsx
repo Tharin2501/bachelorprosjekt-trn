@@ -6,15 +6,15 @@ import "react-multi-carousel/lib/styles.css";
 
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareCarusel = (props) => {
-  //         partialVisible
+  //         
   return (
     <div className="skincareMobileDiv">
       <Carousel
         additionalTransfrom={0}
         arrows={false}
         autoPlaySpeed={3000}
-        centerMode={true}
-
+        centerMode={false}
+        partialVisible
         className=""
         containerClass="container"
         ssr={true} // means to render carousel on server-side.
