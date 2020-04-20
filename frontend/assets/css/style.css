@@ -409,11 +409,23 @@ div.scrollmenu {
 .square:after {
     content: "";
     display: block;
-    /*padding-bottom: 100%; */
 }
 
 .content {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 100%;
+}
+
+.article-main {
+    background-color: honeydew;
+    padding: 10%;
+    margin-top: -5%;
+}
+
+/* Social media box */
+.article-main2 {
+    background-color: pink;
+    padding: 10%;
+    margin-top: 12%;
 }
