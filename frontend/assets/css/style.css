@@ -506,8 +506,8 @@ div.scrollmenu {
 
 .skincareMobileDiv{
   overflow: hidden;
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 6.25rem;
+  min-height: 6.25rem;
 }
 .skincareMobileCard{
 
@@ -527,7 +527,7 @@ div.scrollmenu {
 .SkincareCaruselCardCheckboxListDiv{
   display: table;
   float: left;
-  margin-right: 15px;
+  
   overflow-x: hidden;
  
 }

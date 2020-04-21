@@ -5,12 +5,14 @@ import {
 } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
 import SkincareCaruselCardCheckboxList from "./skincareCaruselCardComponents/skincareCaruselCardCheckboxList"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 
 const SkincareCaruselCard = ({ productName }) => {
     <head>
-        <link href="../../assets/css/all.min.css" rel="stylesheet"></link>
+
     </head>
 
     // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
@@ -32,12 +34,11 @@ const SkincareCaruselCard = ({ productName }) => {
 
 
                     <CardSubtitle className="h2" align="center">200kr</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <CardText>Some quick example text to build on the card title,</CardText>
                     <div className="row px-3 justify-content-between">
-                        <button type="button" className="btn btn-info btn-circle btn-xl"> <i className="fas fa-check"></i></button>
-                        <Button>Button</Button>
+                        <button type="button" className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
+                        <Button><FontAwesomeIcon icon={faArrowRight} /></Button>
                     </div>
-
 
 
                 </CardBody>
