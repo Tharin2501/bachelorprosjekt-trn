@@ -1,70 +1,70 @@
-import React from "react"
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Frontpage } from "../components/Frontpage";
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button
 } from "reactstrap";
 
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
 
-var jsonObj = [
-
-]
+var jsonObj = [];
 // favoritesStroage
 
-jsonObj = JSON.stringify(jsonObj)
+jsonObj = JSON.stringify(jsonObj);
 
 /* <--CART --> */
-const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue = jsonObj }) => {
-    const [cartStorage, setcartStorage] = useState(() =>
-        (initialcartStorageValue) //  JSON.parse
-    );
-    //console.log(cartStorage)
+const Cart = ({
+  initialcartStorageValue = jsonObj,
+  initialfavoritesStorageValue = jsonObj
+}) => {
+  const [cartStorage, setcartStorage] = useState(
+    () => initialcartStorageValue //  JSON.parse
+  );
+  //console.log(cartStorage)
 
+  useEffect(() => {
+    Cookie.set("cartStorage", cartStorage); // JSON.stringify
+  }, []);
+  /* <--CART END-->*/
 
-    useEffect(() => {
-        Cookie.set("cartStorage", (cartStorage));// JSON.stringify
-    }, []);
-    /* <--CART END-->*/
+  /* FAV */
 
-    /* FAV */
+  const [favoritesStorage, setfavoritesStorage] = useState(
+    () => initialfavoritesStorageValue //  JSON.parse
+  );
+  //console.log(favoritesStorage)
 
-    const [favoritesStorage, setfavoritesStorage] = useState(() =>
-        (initialfavoritesStorageValue) //  JSON.parse
-    );
-    //console.log(favoritesStorage)
+  useEffect(() => {
+    Cookie.set("favoritesStorage", favoritesStorage); // JSON.stringify
+  }, []);
 
+  /* FAV END*/
 
-    useEffect(() => {
-        Cookie.set("favoritesStorage", (favoritesStorage));// JSON.stringify
-    }, []);
+  /* FAV END*/
 
-    /* FAV END*/
-
-    /* FAV END*/
-
-
-    return (
-        <div>
-            <Frontpage />
-        </div>
-    );
+  return (
+    <div>
+      <Frontpage />
+    </div>
+  );
 };
 
-
-
 Cart.getInitialProps = ({ req }) => {
-    const cookies = parsCookies(req);
+  const cookies = parsCookies(req);
 
-
-    return {
-        initialcartStorageValue: cookies.cartStorage,
-        initialfavoritesStorageValue: cookies.favoritesStorage
-    };
+  return {
+    initialcartStorageValue: cookies.cartStorage,
+    initialfavoritesStorageValue: cookies.favoritesStorage
+  };
 };
 
 export default Cart;
