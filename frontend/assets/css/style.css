@@ -417,15 +417,16 @@ div.scrollmenu {
     height: 100%;
 }
 
-.article-main {
+.article-main-container {
     background-color: honeydew;
-    padding: 10%;
+    /*padding: 10%; /* denne gjør kortet altfor tynn */
     margin-top: -5%;
+    width: 100%;
 }
 
 /* Social media box */
-.article-main2 {
-    background-color: pink;
+.socialMediaContact-container {
+    background-color: #F7C9B7;
     padding: 10%;
     margin-top: 12%;
 }
