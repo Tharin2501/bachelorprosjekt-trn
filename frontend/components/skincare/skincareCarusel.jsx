@@ -21,17 +21,6 @@ const SkincareCarusel = (props) => {
 
   const caruselRef = useRef(null);
 
-
-  useEffect(() => {
-
-
-
-    console.log(window);
-    executeScroll();
-
-
-  }, [])
-
   return (
 
     <div className="skincareMobileDiv" id="test" ref={caruselRef} >
