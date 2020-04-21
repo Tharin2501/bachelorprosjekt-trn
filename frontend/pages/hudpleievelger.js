@@ -6,17 +6,6 @@ import { Button } from "reactstrap";
 const Hudpleievelger = () => (
     <div>
 
-        <p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p><p>test</p>
-        <p>test</p>
         < SkincareCarusel  >
 
         </SkincareCarusel >
