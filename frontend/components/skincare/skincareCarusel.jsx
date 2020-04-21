@@ -2,6 +2,7 @@ import React, { Component, useRef, useEffect } from "react"
 import Carousel from "react-multi-carousel";
 import SkincareCaruselCard from "./skincareCaruselCard"
 import "react-multi-carousel/lib/styles.css";
+import { Button } from "reactstrap";
 
 const scrollToRef = (ref) => {
 
@@ -22,18 +23,19 @@ const SkincareCarusel = (props) => {
 
 
   useEffect(() => {
-    if (!isServer()) {
 
 
-      console.log(window);
-      executeScroll();
-    }
 
-  }, [caruselRef])
+    console.log(window);
+    executeScroll();
+
+
+  }, [])
 
   return (
 
-    <div className="skincareMobileDiv" >
+    <div className="skincareMobileDiv" ref={caruselRef} >
+      <Button onClick={executeScroll} > test </Button>
       <Carousel
         additionalTransfrom={0}
         arrows={false}
@@ -98,7 +100,7 @@ const SkincareCarusel = (props) => {
 
 
       </Carousel>
-      <p ref={caruselRef}> test </p>
+
     </div>
 
   );
