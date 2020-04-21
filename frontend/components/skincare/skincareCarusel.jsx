@@ -1,28 +1,39 @@
-import React, { Component, useRef } from "react"
+import React, { Component, useRef, useEffect } from "react"
 import Carousel from "react-multi-carousel";
 import SkincareCaruselCard from "./skincareCaruselCard"
 import "react-multi-carousel/lib/styles.css";
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+const scrollToRef = (ref) => {
+
+  window.scrollTo(0, ref.current.offsetTop);
+}
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareCarusel = (props) => {
   //         
-  //const scrollToRef = (ref) =>
+
   const isServer = () => typeof window === `undefined`;
-  const executeScroll = () => scrollToRef(caruselRef);
-
-  const caruselRef = useRef(null);
-  if (!isServer()) {
-
-
-    console.log(window);
-    executeScroll;
+  const executeScroll = () => {
+    console.log(caruselRef)
+    console.log(caruselRef.current.offsetTop)
+    scrollToRef(caruselRef);
   }
 
+  const caruselRef = useRef(null);
+
+
+  useEffect(() => {
+    if (!isServer()) {
+
+
+      console.log(window);
+      executeScroll();
+    }
+
+  }, [caruselRef])
 
   return (
 
-    <div className="skincareMobileDiv" ref={caruselRef}>
+    <div ref={caruselRef} className="skincareMobileDiv" >
       <Carousel
         additionalTransfrom={0}
         arrows={false}
