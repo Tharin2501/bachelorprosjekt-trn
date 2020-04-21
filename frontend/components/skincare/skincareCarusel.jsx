@@ -33,7 +33,7 @@ const SkincareCarusel = (props) => {
 
   return (
 
-    <div ref={caruselRef} className="skincareMobileDiv" >
+    <div className="skincareMobileDiv" >
       <Carousel
         additionalTransfrom={0}
         arrows={false}
@@ -98,6 +98,7 @@ const SkincareCarusel = (props) => {
 
 
       </Carousel>
+      <p ref={caruselRef}> test </p>
     </div>
 
   );
