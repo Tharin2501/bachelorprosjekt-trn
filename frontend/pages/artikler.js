@@ -30,13 +30,10 @@ const SocialMediaContactBox = () => {
         <div className="square">
             <div className="content">
                 <div className="socialMediaContact-container">
-                    <p>Undertittel 1 er kult men den går ikke ut</p>
-                    <p>This paragraph shoulb be fetched dynamically by strapi.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                    <h5>Følg vår egen TaxfreeHanne på Instagram, Facebook og blogg for flere gode tips!</h5>
+
                     {/* fetch image from strapi */}
-                    <img src="/images/articles/folk.jpg" alt="logo" width={350}/>
+                    <img className="pt-3" src="/images/articles/folk.jpg" alt="logo"/>
                 </div>
             </div>
             <div className="text-left mt-3">
@@ -61,7 +58,7 @@ const ArticleContent = () => {
                             It has survived not only five centuries, but also the leap into electronic
                             remaining essentially unchanged. It was popularised in the 1960s with the release of
                         </p>
-                        <h3>Undertittel 1</h3>
+                        <h2>Undertittel 1</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             when an unknown printer took a galley of type and scrambled it to make a type
