@@ -528,6 +528,7 @@ div.scrollmenu {
   display: table;
   float: left;
   margin-right: 15px;
+  overflow-x: hidden;
  
 }
 

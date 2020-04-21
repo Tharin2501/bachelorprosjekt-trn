@@ -35,7 +35,7 @@ const SkincareCarusel = (props) => {
   return (
 
     <div className="skincareMobileDiv" ref={caruselRef} >
-      <Button onClick={executeScroll} > test </Button>
+
       <Carousel
         additionalTransfrom={0}
         arrows={false}
@@ -100,7 +100,7 @@ const SkincareCarusel = (props) => {
 
 
       </Carousel>
-
+      <Button onClick={executeScroll} > test </Button>
     </div>
 
   );
