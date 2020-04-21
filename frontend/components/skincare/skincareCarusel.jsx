@@ -23,7 +23,7 @@ const SkincareCarusel = (props) => {
 
   return (
 
-    <div className="skincareMobileDiv" ref={caruselRef} >
+    <div className="skincareMobileDiv" id="test" ref={caruselRef} >
 
       <Carousel
         additionalTransfrom={0}
@@ -78,7 +78,7 @@ const SkincareCarusel = (props) => {
         slidesToSlide={1}
         swipeable
       >
-        <SkincareCaruselCard id="test" productName="test1" />
+        <SkincareCaruselCard productName="test1" />
         <SkincareCaruselCard productName="test2" />
         <SkincareCaruselCard productName="test3" />
         <SkincareCaruselCard productName="test4" />
