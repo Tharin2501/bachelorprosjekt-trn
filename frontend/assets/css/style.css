@@ -566,11 +566,15 @@ div.scrollmenu {
   background: rgba(200, 54, 54, .5);
   color: rgba(255, 255, 255);
   position: relative;
-  padding: 50px;
+  padding: 100px;
 }
 
 .inner{
   color:rgb(250,250,250);
   opacity: 1;
+}
+
+#controltest{
+  color: #00796b;
 }
 
