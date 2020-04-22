@@ -561,23 +561,30 @@ div.scrollmenu {
   font-size: 12px;
   line-height: 1.42857;
 }
-/* DESKTOP CARD */
+/* DESKTOP CARD  padding: 100px;*/
 #jumbo{
   background: rgba(200, 54, 54, .5);
   color: rgba(255, 255, 255);
   position: relative;
-  padding: 100px;
+  
 }
 
 .inner{
   color:rgb(250,250,250);
   opacity: 1;
 }
-
+/*  top:0 */
 .myCaruselIndictaor{
-  top:0
+
+  filter: invert(100%);
+  position: relative !important; 
 }
 .controltest{
   filter: invert(100%);
 }
 
+.contest{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -56,14 +56,16 @@ const SkincareDesktopController = (props) => {
                 key={item.src}
 
             >
-                <div className="container">
-                    <SkincareDesktopCard></SkincareDesktopCard>
-                </div>
+
+                <SkincareDesktopCard></SkincareDesktopCard>
+
             </CarouselItem>
         );
     });
 
-
+    var styles = {
+        position: 'relative'
+    };
     return (
 
         <Carousel
@@ -73,10 +75,16 @@ const SkincareDesktopController = (props) => {
             Autoplay={false}
             interval={false}
         >
-            <CarouselIndicators className="controltest myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+
             {slides}
+
+
+
+            <CarouselIndicators className="myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+
             <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+
 
         </Carousel>
 

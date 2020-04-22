@@ -7,7 +7,6 @@ const isServer = () => typeof window === `undefined`;
 const Hudpleievelger = () => {
 
     if (!isServer()) {
-        console.log()
         if (window.innerWidth > 700) {
             return (
                 <SkincareDesktopController>
