@@ -9,11 +9,15 @@ const SkincareDesktopCard = (props) => {
 
     return (
         <div className="jumbotron" id="jumbo">
+            <span className="align-top-center"><h4>Steg 1</h4></span>
             <div className="inner">
+
+
                 <h1 className="whitney">A Title Here</h1>
                 <h3 className="gotham">A Sub Title Here</h3>
                 <p>Using bootstrap's jumbotron with the particle.js background to make the jumbotron semi-transparent.</p>
                 <p><a className="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+
             </div>
         </div>
 
@@ -22,3 +26,8 @@ const SkincareDesktopCard = (props) => {
 
 
 export default SkincareDesktopCard
+/*
+    <div className="row">
+                        <td className="align-text-top"> <h2>Steg 1</h2></td>
+                    </div>
+*/

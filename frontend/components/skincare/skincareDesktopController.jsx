@@ -54,7 +54,7 @@ const SkincareDesktopController = (props) => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
                 key={item.src}
-                interval={false}
+
             >
                 <div className="container">
                     <SkincareDesktopCard></SkincareDesktopCard>
@@ -65,19 +65,21 @@ const SkincareDesktopController = (props) => {
 
 
     return (
-        <div className="container">
-            <Carousel
-                activeIndex={activeIndex}
-                next={next}
-                previous={previous}
-            >
-                <CarouselIndicators className="controltest myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-                {slides}
-                <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
-                <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
 
-            </Carousel>
-        </div>
+        <Carousel
+            activeIndex={activeIndex}
+            next={next}
+            previous={previous}
+            Autoplay={false}
+            interval={false}
+        >
+            <CarouselIndicators className="controltest myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+            {slides}
+            <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+
+        </Carousel>
+
     );
 }
 
