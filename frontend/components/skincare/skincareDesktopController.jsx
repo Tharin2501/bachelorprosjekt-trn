@@ -7,6 +7,7 @@ import {
     CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
     {
@@ -53,6 +54,7 @@ const SkincareDesktopController = (props) => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
                 key={item.src}
+                interval={false}
             >
                 <div className="container">
                     <SkincareDesktopCard></SkincareDesktopCard>
@@ -73,6 +75,7 @@ const SkincareDesktopController = (props) => {
                 {slides}
                 <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
                 <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+
             </Carousel>
         </div>
     );
