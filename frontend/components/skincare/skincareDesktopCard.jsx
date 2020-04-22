@@ -8,17 +8,15 @@ const SkincareDesktopCard = (props) => {
 
 
     return (
-        <div>
-            <Card>
-                <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-                <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
-                </CardBody>
-            </Card>
+        <div className="jumbotron" id="jumbo">
+            <div className="inner">
+                <h1 className="whitney">A Title Here</h1>
+                <h3 className="gotham">A Sub Title Here</h3>
+                <p>Using bootstrap's jumbotron with the particle.js background to make the jumbotron semi-transparent.</p>
+                <p><a className="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+            </div>
         </div>
+
     );
 }
 
