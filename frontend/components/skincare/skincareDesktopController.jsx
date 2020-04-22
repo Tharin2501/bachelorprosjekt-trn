@@ -63,18 +63,18 @@ const SkincareDesktopController = (props) => {
 
 
     return (
-
-        <Carousel
-            activeIndex={activeIndex}
-            next={next}
-            previous={previous}
-        >
-            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-            {slides}
-            <CarouselControl id="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
-            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-        </Carousel>
-
+        <div className="container">
+            <Carousel
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+            >
+                <CarouselIndicators className="controltest myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                {slides}
+                <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
+                <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+            </Carousel>
+        </div>
     );
 }
 

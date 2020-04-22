@@ -574,7 +574,10 @@ div.scrollmenu {
   opacity: 1;
 }
 
-#controltest{
-  color: #00796b;
+.myCaruselIndictaor{
+  top:0
+}
+.controltest{
+  filter: invert(100%);
 }
 
