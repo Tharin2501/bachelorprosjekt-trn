@@ -1,7 +1,7 @@
 import React from 'react';
 import SkincareCarusel from "../components/skincare/skincareCarusel.jsx"
 import { Button } from "reactstrap";
-import SkincareDesktopCard from "../components/skincare/skincareDesktopCard"
+import SkincareDesktopController from "../components/skincare/skincareDesktopController"
 const isServer = () => typeof window === `undefined`;
 
 const Hudpleievelger = () => {
@@ -10,9 +10,9 @@ const Hudpleievelger = () => {
         console.log()
         if (window.innerWidth > 700) {
             return (
-                <SkincareDesktopCard>
+                <SkincareDesktopController>
 
-                </SkincareDesktopCard>
+                </SkincareDesktopController>
             )
         } else {
             return (
