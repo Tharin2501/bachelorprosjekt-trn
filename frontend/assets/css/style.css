@@ -419,14 +419,25 @@ div.scrollmenu {
 
 .article-main-container {
     background-color: honeydew;
-    /*padding: 10%; /* denne gjør kortet altfor tynn */
+    padding: 15%;
     margin-top: -5%;
-    width: 100%;
+    width: 150%; /* Størrelsen på diven */
+    transform: translate(-15%);
 }
 
 /* Social media box */
 .socialMediaContact-container {
     background-color: #F7C9B7;
-    padding: 10%;
+    padding: 5%;
     margin-top: 12%;
+    width: 150%; /* Størrelsen på diven */
+    transform: translate(-15%);
+}
+
+
+.img-container {
+    height: 50%;
+    width: 50%;
+   /* min-width: 100%; /* The minimun size of the img when scaling*/
+    transform: translate(50%);
 }

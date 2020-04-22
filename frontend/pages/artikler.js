@@ -17,7 +17,9 @@ const Artikler = () => {
             </div>
 
             {/* fetch image from strapi */}
+            <div className="fisk">
             <img src="/images/articles/folk.jpg" alt="logo"/>
+            </div>
             {ArticleContent()}
             {SocialMediaContactBox()}
         </div>
@@ -33,7 +35,11 @@ const SocialMediaContactBox = () => {
                     <h5>Følg vår egen TaxfreeHanne på Instagram, Facebook og blogg for flere gode tips!</h5>
 
                     {/* fetch image from strapi */}
-                    <img className="pt-3" src="/images/articles/folk.jpg" alt="logo"/>
+
+                   <div className="img-container">
+                       <img className="pt-3" src="/images/articles/folk.jpg" alt="logo"/>
+                   </div>
+
                 </div>
             </div>
             <div className="text-left mt-3">
@@ -66,7 +72,7 @@ const ArticleContent = () => {
                             remaining essentially unchanged. It was popularised in the 1960s with the release of
                         </p>
                     </div>
-                    <img src="/images/articles/flerefolk.jpg" alt="logo"/>
+                    <img className=" py-3" src="/images/articles/flerefolk.jpg" alt="logo"/>
                     <h2>Undertittel 2</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
