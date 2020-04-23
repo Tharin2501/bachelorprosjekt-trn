@@ -35,7 +35,7 @@ const SocialMediaContactBox = () => {
 
                     {/* fetch image from strapi */}
 
-                    <div className="img-container">
+                    <div className="article-img-container">
                         <img className="pt-3" src="/images/articles/folk.jpg" alt="logo"/>
                     </div>
 

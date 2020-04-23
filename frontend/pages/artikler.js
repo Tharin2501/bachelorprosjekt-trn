@@ -1,13 +1,12 @@
 import React from "react"
-import {AiOutlineMail} from "react-icons/ai"
-import Link from "next/link";
 import Articles from "../components/articles/articles";
+import AllArticles from "../components/articles/AllArticles";
 
-// NOTE: Ikke bruk noe annet enn <p> tag i de responsive divene
+// Side for alle Artikler
 const Artikler = () => {
 
     return (
-        <Articles/>
+        <AllArticles/>
     )
 };
 

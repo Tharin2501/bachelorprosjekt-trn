@@ -1,5 +1,6 @@
 import gql from "graphql-tag";
 
+// query for multiple articles
 const ARTICLES_QUERY = gql`  
   query articles {
     articles {
@@ -10,4 +11,4 @@ const ARTICLES_QUERY = gql`
   }
 `;
 
-export default ARTICLES_QUERY;  
+export default ARTICLES_QUERY;
