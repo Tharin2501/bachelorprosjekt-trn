@@ -16,14 +16,13 @@ export const Articles = () => {
             </div>
 
             {/* fetch image from strapi */}
-            <div className="fisk">
                 <img src="/images/articles/folk.jpg" alt="logo"/>
-            </div>
             {ArticleContent()}
             {SocialMediaContactBox()}
         </div>
     );
 };
+
 
 // Social media contact content (Pink box)
 const SocialMediaContactBox = () => {
@@ -41,9 +40,11 @@ const SocialMediaContactBox = () => {
 
                 </div>
             </div>
-            <div className="text-left mt-3">
-                <p><AiOutlineMail style={{margin: 15}}/> Skrevet av author fra strapi </p>
-                <hr/>
+            <div className="row text-left mt-3">
+                <div className="col-sm-12">
+                    <p><AiOutlineMail style={{margin: 15}}/> Skrevet av author fra strapi</p>
+
+                </div>
             </div>
         </div>
     )

@@ -420,9 +420,9 @@ div.scrollmenu {
 .article-main-container {
     background-color: honeydew;
     padding: 15%;
-    margin-top: -5%;
+    margin-top: -10%;
     width: 150%; /* Størrelsen på diven */
-    transform: translate(-15%);
+    transform: translate(-16.5%);
 }
 
 /* Social media box */
