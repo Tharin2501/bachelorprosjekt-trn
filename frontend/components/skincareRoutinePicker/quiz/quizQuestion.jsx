@@ -9,11 +9,13 @@ const QuizQuestion = (props) => {
     return (
         <div align="center">
             <Container className="quizQuestionContainer">
-                <h2 align="center"> Hva heter du ?</h2>
-                <Button color="secondary" size="lg" block>Lars</Button>
-                <Button color="secondary" size="lg" block>Karsten</Button>
-                <Button color="secondary" size="lg" block>Bernie</Button>
-                <Button onClick={event => props.handleNextButtonPressed(event)} color="secondary" size="lg" block>Vil ikke oppggi</Button>
+                <h2 align="center"> {props.currentQustion.question}</h2>
+                {props.currentQustion.options.map((option) => {
+                    return (
+                        <Button onClick={event => props.handleAnswerButtonPressed(event)} color="secondary" size="lg" block>{option.displayText}</Button>
+                    )
+                })
+                }
 
             </Container>
             <Button onClick={props.handleNextButtonPressed} > Neste</Button>
