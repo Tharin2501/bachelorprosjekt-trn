@@ -441,3 +441,10 @@ div.scrollmenu {
    /* min-width: 100%; /* The minimun size of the img when scaling*/
     transform: translate(50%);
 }
+
+.allArticle-main-container {
+    background-color: honeydew;
+    padding: 15%;
+    width: 150%; /* Størrelsen på diven */
+    transform: translate(-16.5%);
+}
