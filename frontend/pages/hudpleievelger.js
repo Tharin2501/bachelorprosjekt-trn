@@ -1,7 +1,7 @@
 import React from 'react';
-import SkincareCarusel from "../components/skincare/skincareCarusel.jsx"
+import SkincareCarusel from "../components/skincareRoutinePicker/skincareCarusel.jsx"
 import { Button } from "reactstrap";
-import SkincareDesktopController from "../components/skincare/skincareDesktopController"
+import SkincareDesktopController from "../components/skincareRoutinePicker/skincareDesktopController"
 const isServer = () => typeof window === `undefined`;
 
 const Hudpleievelger = () => {
