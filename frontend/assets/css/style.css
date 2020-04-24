@@ -588,3 +588,8 @@ div.scrollmenu {
   justify-content: center;
   align-items: center;
 }
+
+.quizQuestionContainer{
+  background: rgba(200, 54, 54, .5);
+  
+}
