@@ -86,7 +86,7 @@ const QuizController = () => {
 
     return (
         <div align="center" >
-            {isQuizDone ? <SkincareDesktopController></SkincareDesktopController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+            {isQuizDone ? <SkincareDesktopController filtersFromQuizArray={arrayOfAnswers}></SkincareDesktopController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
             }
 
         </div>
