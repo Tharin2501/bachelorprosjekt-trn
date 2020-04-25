@@ -63,9 +63,7 @@ const SkincareDesktopController = (props) => {
         );
     });
 
-    var styles = {
-        position: 'relative'
-    };
+
     return (
 
         <Carousel
@@ -79,11 +77,11 @@ const SkincareDesktopController = (props) => {
             {slides}
 
 
+            <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
 
             <CarouselIndicators className="myCaruselIndictaor" items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
 
-            <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
-            <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
 
 
         </Carousel>
