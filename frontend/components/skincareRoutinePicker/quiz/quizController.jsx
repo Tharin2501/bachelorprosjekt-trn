@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import QuizQuestion from "./quizQuestion"
 import { Button } from 'reactstrap';
 import { NetworkStatus } from 'apollo-client';
-
+import SkincareDesktopController from "../skincareDesktopController"
 const quizData = [
     {
         id: 0,
@@ -50,7 +50,8 @@ const QuizController = () => {
     const [selectedAnswer, setSelectedAnswer] = useState(" ");
     const [currentQustionNumber, setCurrentQuestionNumber] = useState(0);
     const [arrayOfAnswers, setArrayOfAnswers] = useState([]);
-    console.log(quizData)
+    const [isQuizDone, setIsQuizDone] = useState(false);
+
     const handleAnswerButtonPressed = (event) => {
         //console.log(event.target.innerText);
 
@@ -71,6 +72,8 @@ const QuizController = () => {
 
         if (currentQustionNumber + 1 < quizData.length) {
             setCurrentQuestionNumber(currentQustionNumber + 1);
+        } else {
+            setIsQuizDone(true)
         }
     }
 
@@ -83,7 +86,8 @@ const QuizController = () => {
 
     return (
         <div align="center" >
-            <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+            {isQuizDone ? <SkincareDesktopController></SkincareDesktopController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+            }
 
         </div>
     );
