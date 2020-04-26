@@ -452,7 +452,6 @@ div.scrollmenu {
 /* Allarticles2*/
 
 .card {
-    cursor: pointer;
     width: 18rem;
     padding: 0;
 }
@@ -507,10 +506,4 @@ div.scrollmenu {
 .card:hover .card-body-description {
     opacity: 1;
     transition: all .5s ease-in-out;
-}
-
-.mycard-footer {
-
-    bottom: 0;
-    left:0
 }

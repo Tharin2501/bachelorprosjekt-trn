@@ -3,6 +3,7 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories";
 import Query from "../query";
 import Link from "next/link";
 
+
 const AllArticles = () => {
 
     return (
@@ -62,7 +63,6 @@ const AllArticles = () => {
     )
 };
 
-
 // https://www.louistiti.fr/tutoriel-html5-css3-carte-article-ui/33
 const AllArticles2 = () => {
 
@@ -72,41 +72,56 @@ const AllArticles2 = () => {
                 <span className="horizontal-line2">Våre Artikler</span>
             </h3>
             <div className="container-fluid">
+                <h4 className="text-left text-wrap mt-5">Populære artikler for Skjønnhent og velvære</h4>
                 <div className="row justify-content-center">
-                    <div className="col-12">
-                        <div className="card">
+                    <Query query={GETCATEGORIES_QUERY}>
+                        {({data: {categories}}) => {
+                            return (
+                                categories.map((category) => {
+                                    return (
+                                        <div key={category.id} className="col-lg-sm-6 px-5">
+                                            <div className="card">
 
-                            <div className="mycard-header">
-                                <img src="/images/articles/folk.jpg" alt="logo"/>
+                                                <div className="mycard-header">
+                                                    <img src="/images/articles/folk.jpg" alt="logo"/>
 
-                            </div>
+                                                </div>
 
-                            <div className="card-body">
+                                                <div className="card-body">
 
-                                <div className="card-body-header">
-                                    <h1>Alt du trenger å vite om parfyme</h1>
-                                </div>
+                                                    <div className="card-body-header">
+                                                        <h1>Alt du trenger å vite om parfyme</h1>
+                                                    </div>
+                                                    <p className="card-body-description pt-3">
+                                                        Parfyme er en blanding av eteriske oljer og aromatiske dufter.
+                                                        Det er et kunstverk vi bruker for å uttrykke hvem vi er,
+                                                        for å forføre og føle oss attraktive.
+                                                        Parfyme spiller en større rolle inn i dagene våre enn vi tror og
+                                                        det kan kobles til både minner og følelsedsdsdsdsdsr.
+                                                        <Link href="/artikkel">
+                                                            <button type="button" className="btn btn-primary mt-3 pl-3">
+                                                                <a>Les mer</a>
+                                                            </button>
+                                                        </Link>
+                                                    </p>
 
 
-                                <p className="card-body-description pt-3">
-                                    Parfyme er en blanding av eteriske oljer og aromatiske dufter.
-                                    Det er et kunstverk vi bruker for å uttrykke hvem vi er,
-                                    for å forføre og føle oss attraktive.
-                                    Parfyme spiller en større rolle inn i dagene våre enn vi tror og det kan kobles til
-                                    både minner og følelser.
-                                </p>
-
-                                <div className="pt-5"><h6 style={{color: "#757B82"}}>Skjønnhet og velvære</h6></div>
-                            </div>
-                        </div>
-                    </div>
+                                                    <div className="pt-5"><h6 style={{color: "#757B82"}}>Skjønnhet og
+                                                        velvære</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            )
+                        }}
+                    </Query>
                 </div>
-
             </div>
         </div>
     );
 };
-
 
 
 export default AllArticles2;
