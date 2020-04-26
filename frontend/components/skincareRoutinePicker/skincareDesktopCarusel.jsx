@@ -10,15 +10,6 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-
-const oleHenProduct = {
-    stepText: "Steg 1:Rens",
-    imageUrl: "/files/1279254-trnLargeFormat.jpg",
-    productName: "Ole Henriksen green tea Toner",
-    productPrice: "999 kr",
-    productDescription: "Using bootstrap's jumbotron with the particle.js background to make the jumbotron semi-transparent."
-}
-
 const SkincareDesktopCarusel = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
@@ -40,6 +31,16 @@ const SkincareDesktopCarusel = (props) => {
         setActiveIndex(newIndex);
     }
 
+
+    const changeStep = () => {
+        if (props.stepNumber === 3) {
+            return
+        } else {
+            props.goToNextStepFunction(props.stepNumber + 1);
+        }
+
+    }
+
     const slides = props.productsToShowArray.map((product) => {
         return (
             <CarouselItem
@@ -49,11 +50,22 @@ const SkincareDesktopCarusel = (props) => {
 
             >
 
-                <SkincareDesktopCard product={product}></SkincareDesktopCard>
+                <SkincareDesktopCard changeStep={changeStep} product={product}></SkincareDesktopCard>
 
             </CarouselItem>
         );
     });
+
+    /*
+    
+                <CarouselIndicators className="myCaruselIndictaor" items={props.productsToShowArray} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                {(activeIndex != 0) ? (<CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous}></CarouselControl>) : (null)}
+                {(activeIndex === props.productsToShowArray.length) ? (<CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous}></CarouselControl>) : (null)}
+    
+    
+                <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+    
+                */
 
 
     return (
