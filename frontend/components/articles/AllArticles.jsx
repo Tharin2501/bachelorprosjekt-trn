@@ -84,7 +84,6 @@ const AllArticles2 = () => {
 
                                                 <div className="mycard-header">
                                                     <img src="/images/articles/folk.jpg" alt="logo"/>
-
                                                 </div>
 
                                                 <div className="card-body">
@@ -92,19 +91,28 @@ const AllArticles2 = () => {
                                                     <div className="card-body-header">
                                                         <h1>Alt du trenger å vite om parfyme</h1>
                                                     </div>
-                                                    <p className="card-body-description pt-3">
-                                                        Parfyme er en blanding av eteriske oljer og aromatiske dufter.
-                                                        Det er et kunstverk vi bruker for å uttrykke hvem vi er,
-                                                        for å forføre og føle oss attraktive.
-                                                        Parfyme spiller en større rolle inn i dagene våre enn vi tror og
-                                                        det kan kobles til både minner og følelsedsdsdsdsdsr.
-                                                        <Link href="/artikkel">
-                                                            <button type="button" className="btn btn-primary mt-3 pl-3">
-                                                                <a>Les mer</a>
-                                                            </button>
-                                                        </Link>
-                                                    </p>
+                                                    <div className="">
+                                                        <div className="card-body-description pt-3">
+                                                            <p>
+                                                                Parfyme er en blanding av eteriske oljer og aromatiske
+                                                                dufter.
+                                                                Det er et kunstverk vi bruker for å uttrykke hvem vi er,
+                                                                for å forføre og føle oss attraktive.
+                                                                Parfyme spiller en større rolle inn i dagene våre enn vi
+                                                                tror og
+                                                                det kan kobles til både minner og følelser. Jeg liker
+                                                                ikke fisk
+                                                            </p>
+                                                            <div className="row mt-3 pl-3">
+                                                                <Link href="/artikkel">
+                                                                    <button type="button" className="btn btn-primary">
+                                                                        <a>Les mer</a>
+                                                                    </button>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
 
+                                                    </div>
 
                                                     <div className="pt-5"><h6 style={{color: "#757B82"}}>Skjønnhet og
                                                         velvære</h6>
