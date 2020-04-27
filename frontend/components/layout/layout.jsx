@@ -24,7 +24,8 @@ import {
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
-
+import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
+import { calculatePrice } from "../cookieHandler"
 const MySearchbar = () => {
   const router = useRouter();
   if (router.pathname === "/hudpleievelger") {
@@ -56,9 +57,12 @@ export const MyHeader = () => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
   const [totalprice, setTotalprice] = useState(0);
 
+
+  const currentPrice = React.useContext(CartTotalPriceContext)
   useEffect(() => {
-    getCartPrice()
-  }, [])
+    getCartPrice();
+
+  }, [Object.values(currentPrice)])
 
   function getCartPrice() {
     if (typeof window !== "undefined") {
@@ -77,6 +81,7 @@ export const MyHeader = () => {
     }
 
   }
+
 
   return (
 

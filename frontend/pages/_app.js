@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -7,7 +7,7 @@ import { MyFooter, MyHeader, NewsLetter } from "../components/layout/layout";
 import { ArticleBoxes } from "../components/productPage/ArticleBoxes"
 import CartpriceProvider from "../components/cart/cartpriceProvider"
 import { Container } from 'next/app'
-
+import CartTotalPriceContext from "../components/context/cartTotalPriceContext";
 
 const App = ({ Component, pageProps, apollo }) => {
 
@@ -33,10 +33,15 @@ const App = ({ Component, pageProps, apollo }) => {
                 <script src="https://kit.fontawesome.com/b0dd2d05dd.js" cross0rigin="anonymous"></script>
             </Head>
 
-            <MyHeader />
-            <Component {...pageProps} />
-            <NewsLetter />
-            <MyFooter />
+
+
+            <CartTotalPriceContext.Provider>
+                <MyHeader />
+                <Component {...pageProps} />
+                <NewsLetter />
+                <MyFooter />
+            </CartTotalPriceContext.Provider>
+
 
         </ApolloProvider>
 
