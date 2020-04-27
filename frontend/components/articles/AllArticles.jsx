@@ -2,6 +2,7 @@ import React from "react"
 import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories";
 import Query from "../query";
 import Link from "next/link";
+import ARTICLES_QUERY from "../../apollo/queries/article/articles";
 
 
 const AllArticles = () => {
@@ -74,34 +75,32 @@ const AllArticles2 = () => {
             <div className="container-fluid">
                 <h4 className="text-left text-wrap mt-5">Populære artikler for Skjønnhent og velvære</h4>
                 <div className="row justify-content-center">
-                    <Query query={GETCATEGORIES_QUERY}>
-                        {({data: {categories}}) => {
+                    <Query query={ARTICLES_QUERY}>
+                        {({data: {articles}}) => {
+                            console.log(articles);
                             return (
-                                categories.map((category) => {
+                                articles.map((article) => {
                                     return (
-                                        <div key={category.id} className="col-lg-sm-6 px-5">
+                                        <div key={article.id} className="col-lg-sm-6 px-5">
                                             <div className="card">
 
                                                 <div className="mycard-header">
-                                                    <img src="/images/articles/folk.jpg" alt="logo"/>
+                                                    <img
+                                                        src={"https://trnbackend.herokuapp.com" + article.headerImage[0].url}
+                                                        alt="logo"
+                                                    />
+
                                                 </div>
 
                                                 <div className="card-body">
 
                                                     <div className="card-body-header">
-                                                        <h1>Alt du trenger å vite om parfyme</h1>
+                                                        <h1>{article.title}</h1>
                                                     </div>
                                                     <div className="">
-                                                        <div className="card-body-description pt-3">
+                                                        <div className="card-body-description pt-3 mt-3">
                                                             <p>
-                                                                Parfyme er en blanding av eteriske oljer og aromatiske
-                                                                dufter.
-                                                                Det er et kunstverk vi bruker for å uttrykke hvem vi er,
-                                                                for å forføre og føle oss attraktive.
-                                                                Parfyme spiller en større rolle inn i dagene våre enn vi
-                                                                tror og
-                                                                det kan kobles til både minner og følelser. Jeg liker
-                                                                ikke fisk
+                                                                {article.introduction}
                                                             </p>
                                                             <div className="row mt-3 pl-3">
                                                                 <Link href="/artikkel">
@@ -114,8 +113,8 @@ const AllArticles2 = () => {
 
                                                     </div>
 
-                                                    <div className="pt-5"><h6 style={{color: "#757B82"}}>Skjønnhet og
-                                                        velvære</h6>
+                                                    <div className="pt-5 mt-3"><h6
+                                                        style={{color: "#757B82"}}> {article.category}</h6>
                                                     </div>
                                                 </div>
                                             </div>
