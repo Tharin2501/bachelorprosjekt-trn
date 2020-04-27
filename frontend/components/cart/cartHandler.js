@@ -4,7 +4,7 @@ export const addtoCart = (productToAdd, quantity) => {
 
 
     productToAdd.quantity = quantity
-
+    console.log(productToAdd);
     addOneProductToCart(productToAdd)
 
 }

@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const SkincareDesktopCarusel = (props) => {
     const [stepNameText, setStepNameText] = useState("Rens");
+    const [goToNextStepButtonText, setGoToNextStepButtonText] = useState(" Gå til neste steg");
 
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -46,6 +47,7 @@ const SkincareDesktopCarusel = (props) => {
                 setStepNameText("Toner")
             } else {
                 setStepNameText("Fuktihetskrem")
+                setGoToNextStepButtonText("Fullfør å gå til handlekurven")
             }
         }
 
@@ -60,7 +62,7 @@ const SkincareDesktopCarusel = (props) => {
 
             >
 
-                <SkincareDesktopCard stepText={`Steg ${props.stepNumber}:${stepNameText}`} changeStep={changeStep} product={product} addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction}></SkincareDesktopCard>
+                <SkincareDesktopCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} ></SkincareDesktopCard>
 
             </CarouselItem>
         );

@@ -1,23 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Container, Row, Col
+    Button, Container, Row, Col
 } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/router'
 const SkincareDesktopCard = (props) => {
 
-
+    const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(true);
     //console.log(props.product)
+    const router = useRouter()
+    const chooseProductButtonHandler = () => {
+
+        props.addToChosenProdutsArrayFunction(props.product);
+        setIsNextButtonDisabled(false);
+    }
+
+
+    const goNextStepButtonHandler = () => {
+        props.changeStep();
+        if (props.stepNumber === 3) {
+            props.addChosenProductsToCart();
+            router.push("/shoppingcart");
+        }
+
+
+    }
 
     return (
         <Container id="jumbo">
-
-
-
             <span className="contest"><h4>{props.stepText}</h4></span>
-            <p className="contest">Disse produkten passer perfekt for deg.Klikk på pilene for å se flere produkter</p>
+            <p className="contest">Disse produkten passer perfekt for deg. Klikk på pilene for å se flere produkter</p>
 
             <div className="inner">
 
@@ -36,8 +50,8 @@ const SkincareDesktopCard = (props) => {
                 </Row>
 
                 <div className="row justify-content-center">
-                    <button type="button" onClick={() => props.addToChosenProdutsArrayFunction(props.product)} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
-                    <Button onClick={() => props.changeStep()}><FontAwesomeIcon icon={faArrowRight} /> Gå til neste steg</Button>
+                    <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
+                    <Button disabled={isNextButtonDisabled} onClick={() => goNextStepButtonHandler()}><FontAwesomeIcon icon={faArrowRight} /> {props.goToNextStepButtonText}</Button>
                 </div>
 
 
@@ -52,8 +66,3 @@ const SkincareDesktopCard = (props) => {
 
 
 export default SkincareDesktopCard
-/*
-    <div className="row">
-                        <td className="align-text-top"> <h2>Steg 1</h2></td>
-                    </div>
-*/
