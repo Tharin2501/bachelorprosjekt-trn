@@ -11,8 +11,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const SkincareDesktopCarusel = (props) => {
+    const [stepNameText, setStepNameText] = useState("Rens");
+
+
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
+
     props.productsToShowArray
     const next = () => {
         if (animating) return;
@@ -36,7 +40,13 @@ const SkincareDesktopCarusel = (props) => {
         if (props.stepNumber === 3) {
             return
         } else {
-            props.goToNextStepFunction(props.stepNumber + 1);
+            let newStepNumber = props.stepNumber + 1
+            props.goToNextStepFunction(newStepNumber);
+            if (newStepNumber == 2) {
+                setStepNameText("Toner")
+            } else {
+                setStepNameText("Fuktihetskrem")
+            }
         }
 
     }
@@ -50,7 +60,7 @@ const SkincareDesktopCarusel = (props) => {
 
             >
 
-                <SkincareDesktopCard changeStep={changeStep} product={product}></SkincareDesktopCard>
+                <SkincareDesktopCard stepText={`Steg ${props.stepNumber}:${stepNameText}`} changeStep={changeStep} product={product}></SkincareDesktopCard>
 
             </CarouselItem>
         );

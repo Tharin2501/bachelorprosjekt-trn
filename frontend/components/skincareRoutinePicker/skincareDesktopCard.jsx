@@ -16,7 +16,7 @@ const SkincareDesktopCard = (props) => {
 
 
 
-            <span className="contest"><h4>Steg 2:Toner</h4></span>
+            <span className="contest"><h4>{props.stepText}</h4></span>
             <p className="contest">Disse produkten passer perfekt for deg.Klikk på pilene for å se flere produkter</p>
 
             <div className="inner">
