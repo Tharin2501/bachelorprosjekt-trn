@@ -21,9 +21,6 @@ import {
   InputGroupText,
   Input,
 } from "reactstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
-import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
-import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"

@@ -60,7 +60,7 @@ const SkincareDesktopCarusel = (props) => {
 
             >
 
-                <SkincareDesktopCard stepText={`Steg ${props.stepNumber}:${stepNameText}`} changeStep={changeStep} product={product}></SkincareDesktopCard>
+                <SkincareDesktopCard stepText={`Steg ${props.stepNumber}:${stepNameText}`} changeStep={changeStep} product={product} addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction}></SkincareDesktopCard>
 
             </CarouselItem>
         );

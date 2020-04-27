@@ -7,6 +7,8 @@ import QuerySubCategory from "../../components/querySubCategory";
 
 const SkincareDesktopController = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
+    const [chosenProdutsArary, setChosenProdutsArary] = useState([])
+
 
     const changeStepRequest = (changeStepValue) => {
 
@@ -17,14 +19,21 @@ const SkincareDesktopController = (props) => {
 
     }
 
+    const addToChosenProdutsArray = (productToAdd) => {
+        var tempArray = chosenProdutsArary;
+        tempArray.push(productToAdd);
+        setChosenProdutsArary(tempArray);
+        console.log(productToAdd);
+        console.log(tempArray)
+    }
+
     if (currentStep === 1) {
         return (
             // lag egen kategori
             <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rensskrubb_facecare"}>
                 {({ data: { subCategories } }) => {
-                    console.log(subCategories[0].products)
                     return (
-                        <SkincareDesktopCarusel stepNumber={1} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products}></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel stepNumber={1} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray}></SkincareDesktopCarusel>
                     )
                 }}
             </QuerySubCategory>
@@ -38,7 +47,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
                     console.log(subCategories[0].products)
                     return (
-                        <SkincareDesktopCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products}></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray}></SkincareDesktopCarusel>
                     )
                 }}
             </QuerySubCategory>
@@ -52,7 +61,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
                     console.log(subCategories[0].products)
                     return (
-                        <SkincareDesktopCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products}></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray}></SkincareDesktopCarusel>
                     )
                 }}
             </QuerySubCategory>

@@ -9,7 +9,7 @@ import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 const SkincareDesktopCard = (props) => {
 
 
-
+    //console.log(props.product)
 
     return (
         <Container id="jumbo">
@@ -36,7 +36,7 @@ const SkincareDesktopCard = (props) => {
                 </Row>
 
                 <div className="row justify-content-center">
-                    <button type="button" className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
+                    <button type="button" onClick={() => props.addToChosenProdutsArrayFunction(props.product)} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
                     <Button onClick={() => props.changeStep()}><FontAwesomeIcon icon={faArrowRight} /> Gå til neste steg</Button>
                 </div>
 
