@@ -28,10 +28,14 @@ export const removeOneProduct = (productToRemove, removefromCookie) => {
 }
 
 export const calculatePrice = () => {
+    console.log("yoo")
     const changeTotalPriceContextValue = (newValue) => (
 
-        <CartTotalPriceContext.Consumer value={newValue} >
+        <CartTotalPriceContext.Consumer>
+            {({ price, setPrice }) => {
+                setPrice(newValue)
 
+            }}
         </CartTotalPriceContext.Consumer>
 
 
@@ -54,7 +58,7 @@ export const calculatePrice = () => {
             totalprice += product.quantity * product.price
         })
 
-        changeTotalPriceContextValue(totalprice)
+        changeTotalPriceContextValue(totalprice);
         return totalprice
     }
     return 0

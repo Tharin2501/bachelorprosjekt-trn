@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-const currentPrice = {
+import React, { createContext } from 'react'
+const CartTotalPriceContext = createContext({
     price: 0,
-    setPrice: ({ value }) => this.setState({ price: value })
+    setPrice: () => { }
 
-};
-const CartTotalPriceContext = React.createContext(currentPrice);
+});
+
 export default CartTotalPriceContext;
