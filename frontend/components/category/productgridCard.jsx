@@ -89,7 +89,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
         <a onClick={(() => setNumberOfProducts(changeNumberOfProducts("increaseAmount", numberOfProducts)))}> <FaPlusCircle /></a>
       </div>
 
-      <button onClick={(() => addtoCart(productContext, numberOfProducts))} type="button" className="btn btn-dark">Buy</button>
+      <button onClick={(() => addtoCart(productContext, numberOfProducts))} type="button" className="btn btn-dark">Legg i handlepose</button>
     </div>
 
   );

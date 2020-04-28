@@ -81,7 +81,7 @@ export const MyHeader = () => {
           <MyDrawer />
         </div>
         <div className="row mx-auto">
-          <a href="index"><img src="/images/logo.png" width="50px" height="55px" alt="logo" /></a>
+          <a href="index"><img src="../images/logo4.png" width="50px" height="55px" alt="logo" /></a>
         </div>
         <div className="row ml-auto">
           <div className="col">
