@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { FiUser } from "react-icons/fi";
@@ -53,23 +53,24 @@ const MySearchbar = () => {
 
 export const MyHeader = () => {
 
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
   const [totalprice, setTotalprice] = useState(0);
 
 
-  const currentPrice = React.useContext(CartTotalPriceContext)
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext)
   useEffect(() => {
     getCartPrice();
 
-  }, [Object.values(currentPrice)])
-
+  }, [Object.values(price)])
+  console.log("YAS")
   function getCartPrice() {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
       if (cart === undefined || cart.length === 0) {
-        //console.log("YAS")
+
         return;
       }
 

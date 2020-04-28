@@ -11,10 +11,8 @@ import CartTotalPriceContext from "../components/context/cartTotalPriceContext";
 
 const App = ({ Component, pageProps, apollo }) => {
 
-    this.state = {
-        price: 0,
-        setPrice: ({ value }) => this.setState({ price: value })
-    }
+    const [price, setTotalPrice] = useState(0);
+    const ChangeTotalPrice = (newValue) => setTotalPrice(newValue);
     return (
 
         <ApolloProvider client={apollo}>
@@ -39,7 +37,7 @@ const App = ({ Component, pageProps, apollo }) => {
 
 
 
-            <CartTotalPriceContext.Provider value={this.state}>
+            <CartTotalPriceContext.Provider value={{ price, ChangeTotalPrice }}>
                 <MyHeader />
                 <Component {...pageProps} />
                 <NewsLetter />

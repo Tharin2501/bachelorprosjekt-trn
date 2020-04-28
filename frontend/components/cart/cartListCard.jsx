@@ -26,11 +26,7 @@ const CartListCard = (props) => {
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
-    /*
-      <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
-              <a><h5 className="product-name"> {productName}</h5></a>
-            </Link>
-            */
+
 
     return (
 

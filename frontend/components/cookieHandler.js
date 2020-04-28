@@ -1,5 +1,5 @@
 import Cookie from "js-cookie"
-import React from "react"
+import React, { useContext } from "react"
 import CartTotalPriceContext from "../components/context/cartTotalPriceContext";
 export const getCookieArray = (cookieName) => {
     var cart = Cookie.getJSON(cookieName)
@@ -29,22 +29,19 @@ export const removeOneProduct = (productToRemove, removefromCookie) => {
 
 export const calculatePrice = () => {
     console.log("yoo")
-    const changeTotalPriceContextValue = (newValue) => (
 
-        <CartTotalPriceContext.Consumer>
-            {({ price, setPrice }) => {
-                setPrice(newValue)
+    const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+    const changeTotalPriceContextValue = (newValue) => {
 
-            }}
-        </CartTotalPriceContext.Consumer>
+        ChangeTotalPrice(newValue);
+        console.log(price)
 
 
-
-    )
+    }
 
     if (typeof window !== "undefined") {
 
-        console.log(React.useContext(CartTotalPriceContext))
+        console.log(useContext(CartTotalPriceContext))
         var cart = getCookieArray("cartStorage")
         console.log(cart)
         var totalprice = 0
@@ -92,6 +89,7 @@ export const addOneProductToCart = (productToAdd) => {
     }
 
     saveCookieArrayToCookie(cart, "cartStorage")
+
 
 
 }
