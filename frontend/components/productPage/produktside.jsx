@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
+
+import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProduktTab from "../ProduktTab";
@@ -39,8 +41,21 @@ const Produktside = (props) => {
     }
   }
 
+
+
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+  const changeTotalPriceContextValue = (newValue) => {
+
+    ChangeTotalPrice(newValue);
+    console.log(price);
+
+
+  }
+
   const addToShoppingCartAndRecalcuatePrice = () => {
+
     addtoCart(productContext, numberOfProducts);
+    changeTotalPriceContextValue(calculatePrice());
 
   }
 
