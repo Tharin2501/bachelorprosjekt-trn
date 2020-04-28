@@ -42,12 +42,11 @@ const Produktside = (props) => {
   }
 
 
-
+  /** Adding to Cart */
   const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
-  const changeTotalPriceContextValue = (newValue) => {
+  const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
 
-    ChangeTotalPrice(newValue);
-    console.log(price);
+    changeValueFunction(newValue);
 
 
   }
@@ -55,9 +54,10 @@ const Produktside = (props) => {
   const addToShoppingCartAndRecalcuatePrice = () => {
 
     addtoCart(productContext, numberOfProducts);
-    changeTotalPriceContextValue(calculatePrice());
+    changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
 
   }
+  /** Adding to Cart END*/
 
   return (
     <div className="product-page-bg w-100 h-100 p-3 d-inline-block overflow-auto">

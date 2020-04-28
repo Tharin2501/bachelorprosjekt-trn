@@ -3,6 +3,7 @@ import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
 import { calculatePrice } from "../cookieHandler"
+import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const isServer = () => typeof window === `undefined`;
 
@@ -10,10 +11,24 @@ const CartList = () => {
 
     const [cart, setCart] = useState(Cookie.getJSON("cartStorage"))
 
-    const changecart = () => {
-        setCart(Cookie.getJSON("cartStorage"))
+
+
+    /** Adding to Cart */
+    const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+    const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
+
+        changeValueFunction(newValue);
+
     }
 
+
+    const changecart = () => {
+        changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+        console.log("Werrk")
+    }
+
+
+    /** Adding to Cart END*/
 
 
     return (
@@ -37,7 +52,6 @@ const CartList = () => {
             </div>
 
             {!isServer() && cart !== undefined && cart.map((product, i) => {
-                console.log(product.name)
                 return (
                     <div>
 

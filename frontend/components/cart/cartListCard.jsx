@@ -13,7 +13,7 @@ import Link from "next/link";
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
-    console.log(props)
+
     const productContext = {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
@@ -26,7 +26,10 @@ const CartListCard = (props) => {
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
-
+    const deleteProductFunction = () => {
+        deleteProduct(productContext);
+        props.onDelete();
+    }
 
     return (
 
@@ -56,7 +59,7 @@ const CartListCard = (props) => {
                     </div>
 
                     <div className="col-4">
-                        <button onClick={(() => deleteProduct(productContext))}> Remove</button>
+                        <button onClick={(() => deleteProductFunction())}> Remove</button>
                         <button> Add to fav</button>
                     </div>
                 </div>
