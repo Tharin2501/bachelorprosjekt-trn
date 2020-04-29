@@ -27,6 +27,10 @@ const PRODUCTS_QUERY = gql`
       	TypeOfProductName
         
       }
+      bullet_point_on_skincare_products{
+        id
+        name
+      }
     }
   }
 `;

@@ -20,7 +20,7 @@ const Highlight3Articles = (props) => {
                         <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         </h6>
                     </div>
-                    <Link href="/hudpleievelger">
+                    <Link href="/hudpleievelger#test" scroll={false}>
                         <Button className="outlined_btn" outline color="secondary">Klikk her for å ta testen</Button>
                     </Link>
                 </div>
