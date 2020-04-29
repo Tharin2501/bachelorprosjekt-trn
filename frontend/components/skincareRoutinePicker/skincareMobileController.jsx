@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
-import SkincareDesktopCarusel from "./skincareDesktopCarusel"
+import SkincareMobileCarusel from "./SkincareMobileCarusel"
 import GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY from "../../apollo/queries/carusel/GetProductsFromSubcategoryFilter"
 import QuerySubCategory from "../../components/querySubCategory";
 import { addtoCart } from "../cart/cartHandler"
@@ -43,7 +43,7 @@ const SkincareDesktopController = (props) => {
             <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rensskrubb_facecare"}>
                 {({ data: { subCategories } }) => {
                     return (
-                        <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareDesktopCarusel>
+                        <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareMobileCarusel>
                     )
                 }}
             </QuerySubCategory>
@@ -57,7 +57,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
 
                     return (
-                        <SkincareDesktopCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
+                        <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                     )
                 }}
             </QuerySubCategory>
@@ -71,7 +71,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
 
                     return (
-                        <SkincareDesktopCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
+                        <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                     )
                 }}
             </QuerySubCategory>

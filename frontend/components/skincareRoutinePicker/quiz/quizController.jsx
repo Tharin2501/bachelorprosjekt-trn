@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import QuizQuestion from "./quizQuestion"
-import { Button } from 'reactstrap';
-import { NetworkStatus } from 'apollo-client';
-import SkincareDesktopController from "../skincareDesktopController"
+import SkincareCaruselController from "../skincareCaruselController"
+
 const quizData = [
     {
         id: 0,
@@ -85,7 +84,7 @@ const QuizController = () => {
 
     return (
         <div align="center" >
-            {isQuizDone ? <SkincareDesktopController filtersFromQuizArray={arrayOfAnswers}></SkincareDesktopController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+            {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={arrayOfAnswers}></SkincareCaruselController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
             }
 
         </div>
