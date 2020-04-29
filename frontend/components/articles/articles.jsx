@@ -34,7 +34,7 @@ export const Articles = (props) => {
                     <p>{articleContext.introduction}
                     </p>
                 </div>
-                <img
+                <img className="w-100"
                     src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
                     alt="logo"/>
 
@@ -45,9 +45,11 @@ export const Articles = (props) => {
                             <div>
                                 {articleContext.content}
                             </div>
-                            <img className="mt-5 mw-100"
+
+                            <img className="mt-5 mx-auto rounded "style={{width: "50rem"}}
                                 src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
                                 alt="logo"/>
+
                             {/* {ArticleProductCard()} */}
                             <div className="container">
                                 <div className="row justify-content-center">

@@ -425,6 +425,8 @@ div.scrollmenu {
     transform: translate(-16.5%);
 }
 
+
+
 /* Social media box */
 .socialMediaContact-container {
     background-color: #F7C9B7;
@@ -436,7 +438,7 @@ div.scrollmenu {
 
 
 .article-img-container {
-  
+
     width: 60%;
     min-width: 60%; /* The minimun size of the img when scaling*/
 }
