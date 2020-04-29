@@ -54,26 +54,12 @@ const HamburgermenuList = forwardRef((props, ref) => {
     })
 
 
-    const handleQuizTestClick = () => {
-
-        router.push("/testQuiz")
-    }
     if (type == "category") {
         return (
 
 
             <ul>
-                <li className="nav_submenu-item">
-                    <div onClick={() => { handleQuizTestClick() }}>
 
-                        <div className="myImg">
-                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="logo" />
-                        </div>
-
-                        <h1 className="nav-link">{"QuizTest"}</h1>
-
-                    </div>
-                </li>
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
