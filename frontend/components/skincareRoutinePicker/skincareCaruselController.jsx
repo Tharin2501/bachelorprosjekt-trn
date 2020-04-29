@@ -27,7 +27,7 @@ const SkincareCaruselController = (props) => {
 
     if (isServer()) {
         return (
-            null;
+            null
         )
     }
 
