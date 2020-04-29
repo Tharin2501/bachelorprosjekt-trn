@@ -110,5 +110,5 @@ const SkincareMobileCarusel = (props) => {
 
 
 
-export default SkincareMobileCarusel
+export default SkincareMobileCarusel;
 
