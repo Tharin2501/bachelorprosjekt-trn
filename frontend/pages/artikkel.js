@@ -14,12 +14,10 @@ const artikkel = () => {
             {({data: {article} }) => {
                 return (
                     <div>
-
                         <Articles artikkel={article}/>
                     </div>
                 )
             }}
-             <Articles/>
         </Query>
 
 

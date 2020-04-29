@@ -7,9 +7,19 @@ import ARTICLES_QUERY from "../../apollo/queries/article/articles";
 
 export const Articles = (props) => {
 
-    let productContext = {
+    let articleContext = {
         id: props.artikkel.id,
-        title: props.artikkel.title
+        title: props.artikkel.title,
+        introduction: props.artikkel.introduction,
+        headerImage: props.artikkel.headerImage,
+        content: props.artikkel.content,
+        contentImage: props.artikkel.contentImage,
+        productImage: props.artikkel.productImage,
+        productTitle: props.artikkel.productTitle,
+        productText: props.artikkel.productText,
+        price: props.artikkel.price,
+        socialmediaImage: props.artikkel.socialmediaImage,
+        authors: props.artikkel.authors.name
     }
 
 
@@ -18,27 +28,72 @@ export const Articles = (props) => {
         <div className="justify-content-center text-center"> {/* Fjern text-center kanskje??*/}
 
             <div>
-                <h1 className="pb-4"> {productContext.title}</h1>
-                {/*
+                <h1 className="pb-4"> {articleContext.title}</h1>
+
                 <div className="square">
-                    <p>This paragraph should be fetched dynamically by strapi.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    <p>{articleContext.introduction}
                     </p>
                 </div>
+                <img
+                    src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
+                    alt="logo"/>
 
-                <img src="/images/articles/folk.jpg" alt="logo"/>
+                    {/*{ArticleContent()}*/}
+                <div className="square">
+                    <div className="content">
+                        {/* fetch article content from strapi */}
+                        <div className="article-main-container pt-5">
+                            <div>
+                                {articleContext.content}
+                            </div>
 
-                {ArticleContent()}
-                {SocialMediaContactBox()}
-                */}
+                            <img className="mt-5"
+                                src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
+                                alt="logo"/>
+
+                            {/* {ArticleProductCard()} */}
+                            <div className="container">
+                                <div className="row justify-content-center text-center">
+                                    <div className="col-sm-6">
+                                        <div className="card">
+                                            <img className="card-img-top" src={"https://trnbackend.herokuapp.com" + articleContext.productImage.url} alt="Card image cap"/>
+                                            <div className="card-body">
+                                                <h5 className="card-title">{articleContext.productTitle}</h5>
+                                                <p className="card-text">{articleContext.productText}</p>
+                                                <h6 className="card-text">{articleContext.price + " kr"} </h6>
+                                                <a href="#" className="btn btn-primary">Kjøp</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="square">
+                    <div className="content">
+                        <div className="socialMediaContact-container">
+                            <h5>Følg vår egen TaxfreeHanne på Instagram, Facebook og blogg for flere gode tips!</h5>
+                            <div className="article-img-container">
+                                <img
+                                    src={"https://trnbackend.herokuapp.com" + articleContext.socialmediaImage.url}
+                                    alt="logo"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row text-left mt-3">
+                        <div className="col-sm-12">
+                            {/* <p><AiOutlineMail style={{margin: 15}}/> Skrevet av {articleContext.authors.name}</p> */}
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     );
 };
 
-
+/*
 // Social media contact content (Pink box)
 const SocialMediaContactBox = () => {
     return (
@@ -47,10 +102,12 @@ const SocialMediaContactBox = () => {
                 <div className="socialMediaContact-container">
                     <h5>Følg vår egen TaxfreeHanne på Instagram, Facebook og blogg for flere gode tips!</h5>
 
-                    {/* fetch image from strapi */}
+
 
                     <div className="article-img-container">
-                        <img className="pt-3" src="/images/articles/folk.jpg" alt="logo"/>
+                        <img
+                            src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
+                            alt="logo"/>
                     </div>
 
                 </div>
@@ -64,13 +121,14 @@ const SocialMediaContactBox = () => {
         </div>
     )
 };
+*/
+/*
 
-// Main content for article (white box)
-const ArticleContent = () => {
+const ArticleContent = (props) => {
     return (
         <div className="square">
             <div className="content">
-                {/* fetch article content from strapi */}
+
                 <div className="article-main-container pt-5">
                     <div>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -87,7 +145,9 @@ const ArticleContent = () => {
                             remaining essentially unchanged. It was popularised in the 1960s with the release of
                         </p>
                     </div>
-                    <img className=" py-3" src="/images/articles/flerefolk.jpg" alt="logo"/>
+                    <img className="py-3"
+                         src={"https://trnbackend.herokuapp.com" + props.articleContext.headerImage.image[0].url}
+                         alt="logo"/>
                     <h2>Undertittel 2</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -110,7 +170,7 @@ export const ArticleProductCard = () => {
                     <div className="card">
                         <img className="card-img-top" src="/images/articles/flerefolk.jpg" alt="Card image cap"></img>
                         <div className="card-body">
-                            <h5 className="card-title">Produkt tittel</h5>
+                            <h5 className="card-title">{articleContext.productTitle}</h5>
                             <p className="card-text">Her kommer produktbeskrivelsen</p>
                             <a href="#" className="btn btn-primary">Kjøp</a>
                         </div>
@@ -130,5 +190,5 @@ export const ArticleProductCard = () => {
         </div>
     )
 };
-
+*/
 export default Articles;

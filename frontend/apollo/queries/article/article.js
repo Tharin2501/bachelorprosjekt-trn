@@ -21,6 +21,13 @@ const ARTICLE_QUERY = gql`
             }
             productTitle
             productText
+            price
+            socialmediaImage {
+                url
+            }
+            authors {
+                name
+            }
         }
     }
 `;
