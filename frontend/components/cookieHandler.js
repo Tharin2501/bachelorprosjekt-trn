@@ -31,9 +31,9 @@ export const calculatePrice = () => {
 
     if (typeof window !== "undefined") {
         var cart = getCookieArray("cartStorage")
-        console.log(cart)
-        var totalprice = 0
-        console.log(cart)
+
+        var totalprice = 0;
+        //console.log(cart)
         if (cart === "undefined" || cart.length === 0) {
             console.log("Cart does not exsist")
             return totalprice

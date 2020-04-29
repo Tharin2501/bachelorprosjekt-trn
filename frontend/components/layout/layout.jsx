@@ -69,7 +69,7 @@ export const MyHeader = () => {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
-      if (cart === undefined || cart.length === 0) {
+      if (cart === undefined) {
 
         return;
       }

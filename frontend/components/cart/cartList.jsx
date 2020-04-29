@@ -16,7 +16,7 @@ const CartList = () => {
     /** Adding to Cart */
     const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
     const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
-
+        console.log({ newValue })
         changeValueFunction(newValue);
 
     }
