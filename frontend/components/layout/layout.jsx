@@ -64,7 +64,6 @@ export const MyHeader = () => {
     getCartPrice();
 
   }, [Object.values(price)])
-  console.log("YAS")
   function getCartPrice() {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
@@ -77,7 +76,6 @@ export const MyHeader = () => {
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
-      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
@@ -119,7 +117,7 @@ export const NewsLetter = () => {
 
   const subscribeToNewsletter = () => {
     // register input from inputfield + check if checkbox is checked. Presist email to db
-    console.log("Subscribe to newsletter here")
+    //console.log("Subscribe to newsletter here")
   };
 
   return (

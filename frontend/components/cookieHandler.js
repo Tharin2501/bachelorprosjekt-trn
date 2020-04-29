@@ -33,9 +33,8 @@ export const calculatePrice = () => {
         var cart = getCookieArray("cartStorage")
 
         var totalprice = 0;
-        //console.log(cart)
         if (cart === "undefined" || cart.length === 0) {
-            console.log("Cart does not exsist")
+            //console.log("Cart does not exsist")
             return totalprice
         }
 
@@ -56,14 +55,7 @@ export const calculatePrice = () => {
 
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCookieArray("cartStorage")
-    /*
-    if (cart === "undefined" || cart.length === 0) {
-        console.log("Cart not defined")
-        cart.push(productToAdd)
-        //return
-    }
-    */
-    // -1 = betyr at den ikke i listen
+
     const alreadyInCart = cart.findIndex(
         product => product.id === productToAdd.id
     )
@@ -88,7 +80,6 @@ export const addOneProductToCart = (productToAdd) => {
 /* <--FAV -->*/
 export const addOneProductToFavorites = (productToAdd) => {
     var favorites = getCookieArray("favoritesStorage")
-    console.log(favorites)
 
     const alreadyInCart = favorites.findIndex(
         product => product.id === productToAdd.id

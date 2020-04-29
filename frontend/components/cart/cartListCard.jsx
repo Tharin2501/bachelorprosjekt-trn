@@ -13,7 +13,6 @@ import Link from "next/link";
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
-    console.log({ props })
     const productContext = {
         id: props.CartListCard.id,
         name: props.CartListCard.name,

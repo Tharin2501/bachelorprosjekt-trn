@@ -53,7 +53,6 @@ const QuizController = () => {
     const [isQuizDone, setIsQuizDone] = useState(false);
 
     const handleAnswerButtonPressed = (event) => {
-        //console.log(event.target.innerText);
 
         setSelectedAnswer(event.target.innerText)
     }

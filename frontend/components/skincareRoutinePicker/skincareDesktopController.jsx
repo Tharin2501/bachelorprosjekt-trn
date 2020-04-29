@@ -32,10 +32,6 @@ const SkincareDesktopController = (props) => {
                 image: product.image[0].url
 
             }
-
-
-
-            console.log({ productToAdd })
             addtoCart(productToAdd, 1)
         })
     }
