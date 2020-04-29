@@ -1,24 +1,39 @@
 import React from "react"
 import {AiOutlineMail} from "react-icons/ai"
 import Link from "next/link";
+import Query from "../query";
+import ARTICLES_QUERY from "../../apollo/queries/article/articles";
 
-export const Articles = () => {
 
-    return(
+export const Articles = (props) => {
+
+    let productContext = {
+        id: props.artikkel.id,
+        title: props.artikkel.title
+    }
+
+
+    return (
+
         <div className="justify-content-center text-center"> {/* Fjern text-center kanskje??*/}
-            <h1 className="pb-4"> Hent tittel fra strapi</h1>
 
-            <div className="square">
-                <p>This paragraph should be fetched dynamically by strapi.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                </p>
+            <div>
+                <h1 className="pb-4"> {productContext.title}</h1>
+                {/*
+                <div className="square">
+                    <p>This paragraph should be fetched dynamically by strapi.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </div>
+
+                <img src="/images/articles/folk.jpg" alt="logo"/>
+
+                {ArticleContent()}
+                {SocialMediaContactBox()}
+                */}
             </div>
 
-            {/* fetch image from strapi */}
-                <img src="/images/articles/folk.jpg" alt="logo"/>
-            {ArticleContent()}
-            {SocialMediaContactBox()}
         </div>
     );
 };

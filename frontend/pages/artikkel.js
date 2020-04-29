@@ -1,29 +1,29 @@
 import React from "react"
 import Articles from "../components/articles/articles";
-import {useRouter} from "next/router";
-import Query from "../components/query";
 import ARTICLE_QUERY from "../apollo/queries/article/article";
+import Query from "../components/query";
+import {useRouter} from "next/router";
 
 // Side for en Artikkel
-const Artikkel = () => {
+const artikkel = () => {
 
     const router = useRouter();
-    {/* articles = props i articles.jsx*/}
+    console.log(router.query.id);
     return (
-        /*
         <Query query={ARTICLE_QUERY} id={router.query.id}>
             {({data: {article} }) => {
                 return (
                     <div>
 
-                        <Articles articles ={article}/>
+                        <Articles artikkel={article}/>
                     </div>
                 )
             }}
+             <Articles/>
         </Query>
-            */
-        <Articles/>
+
+
     );
 };
 
-export default Artikkel;
+export default artikkel;
