@@ -436,10 +436,9 @@ div.scrollmenu {
 
 
 .article-img-container {
-    height: 50%;
-    width: 50%;
-   /* min-width: 100%; /* The minimun size of the img when scaling*/
-    transform: translate(50%);
+  
+    width: 60%;
+    min-width: 60%; /* The minimun size of the img when scaling*/
 }
 
 .allArticle-main-container {
@@ -447,6 +446,11 @@ div.scrollmenu {
     padding: 15%;
     width: 150%; /* Størrelsen på diven */
     transform: translate(-16.5%);
+}
+
+.article-card-container {
+
+    width: 20px; /* SLETTES*/
 }
 
 /* Allarticles2*/
@@ -491,7 +495,7 @@ div.scrollmenu {
 
 /* Hvor høyt kort foran beveger seg opp når hover */
 .card:hover .card-body-header {
-    margin-top: -30.5vh;
+    margin-top: -77%; /*-39.5vh hvor høyt den går*/
     height: 225px; /* høyden på hover kort */
 }
 

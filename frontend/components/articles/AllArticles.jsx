@@ -18,7 +18,7 @@ const AllArticles2 = () => {
                 <span className="horizontal-line2">Våre Artikler</span>
             </h3>
             <div className="container-fluid">
-                <h4 className="text-left text-wrap mt-5">Populære artikler for Skjønnhent og velvære</h4>
+                <h4 className="text-left text-wrap mt-5">Populære artikler </h4> {/* for Skjønnhent og velvære*/}
                 <div className="row justify-content-center">
                     <Query query={ARTICLES_QUERY}>
                         {({data: {articles}}) => {

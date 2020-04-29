@@ -41,21 +41,18 @@ export const Articles = (props) => {
                     {/*{ArticleContent()}*/}
                 <div className="square">
                     <div className="content">
-                        {/* fetch article content from strapi */}
                         <div className="article-main-container pt-5">
                             <div>
                                 {articleContext.content}
                             </div>
-
-                            <img className="mt-5"
+                            <img className="mt-5 mw-100"
                                 src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
                                 alt="logo"/>
-
                             {/* {ArticleProductCard()} */}
                             <div className="container">
-                                <div className="row justify-content-center text-center">
-                                    <div className="col-sm-6">
-                                        <div className="card">
+                                <div className="row justify-content-center">
+                                    <div className="col-xs-12">
+                                        <div className="card" style={{width: "14rem"}}>
                                             <img className="card-img-top" src={"https://trnbackend.herokuapp.com" + articleContext.productImage.url} alt="Card image cap"/>
                                             <div className="card-body">
                                                 <h5 className="card-title">{articleContext.productTitle}</h5>
@@ -74,13 +71,19 @@ export const Articles = (props) => {
                     <div className="content">
                         <div className="socialMediaContact-container">
                             <h5>Følg vår egen TaxfreeHanne på Instagram, Facebook og blogg for flere gode tips!</h5>
-                            <div className="article-img-container">
+                            <div className="row">
+                                <div className="col-xs">
+                            <div className="article-img-container mx-auto ">
                                 <img
                                     src={"https://trnbackend.herokuapp.com" + articleContext.socialmediaImage.url}
                                     alt="logo"/>
                             </div>
+                                </div>
                         </div>
                     </div>
+                    </div>
+
+
                     <div className="row text-left mt-3">
                         <div className="col-sm-12">
                             {/* <p><AiOutlineMail style={{margin: 15}}/> Skrevet av {articleContext.authors.name}</p> */}
