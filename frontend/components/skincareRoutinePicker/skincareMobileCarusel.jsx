@@ -1,7 +1,9 @@
+
 import React, { useRef, useState } from "react"
 import Carousel from "react-multi-carousel";
+
 import SkincareCaruselCard from "./skincareCaruselCard"
-import "react-multi-carousel/lib/styles.css";
+
 import { Button } from "reactstrap";
 
 const scrollToRef = (ref) => {
@@ -101,7 +103,6 @@ const SkincareMobileCarusel = (props) => {
 
 
       </Carousel>
-      <Button onClick={executeScroll} > test </Button>
     </div>
 
   );

@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import ProduktTab from "../ProduktTab";
 import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import {

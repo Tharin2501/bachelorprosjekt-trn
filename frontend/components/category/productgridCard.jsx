@@ -3,7 +3,6 @@
 import React, { useState, useContext } from "react"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import Produktside from "../productPage/produktside"
@@ -105,7 +104,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
 
       <button onClick={(() => addToShoppingCartAndRecalcuatePrice(productContext, numberOfProducts))} type="button" className="btn btn-dark">Buy</button>
 
- 
+
     </div>
 
   );

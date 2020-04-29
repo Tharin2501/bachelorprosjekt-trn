@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { removeOneProduct } from "../cookieHandler"
 import Link from "next/link";
 

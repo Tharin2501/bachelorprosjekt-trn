@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
 import SkincareDesktopCarusel from "./skincareDesktopCarusel"
 import GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY from "../../apollo/queries/carusel/GetProductsFromSubcategoryFilter"
 import QuerySubCategory from "../../components/querySubCategory";
