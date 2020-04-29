@@ -11,8 +11,14 @@ a {
 }
 
 h1 {
-    font-family: Staatliches;
-    font-size: 120px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+h3 {
+  font-family: sans-serif;
+  font-size: 10px;
+  margin-top: 2rem;
 }
 
 #category {
@@ -101,7 +107,7 @@ img:hover {
 .productgridFav {
   position: absolute;
   top: 10px;
-  color: #757575;
+  color: #29335c;
   font-weight: bold;
   background-color: #eeeeee;
   padding: 7px;
@@ -135,8 +141,7 @@ img:hover {
   margin: auto;
   padding: 20px;
   border-radius: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 20px;
 }
 
 .card-1 {
@@ -144,6 +149,16 @@ img:hover {
   border: none;
   height: 35rem;
   width: 20rem;
+}
+
+.card.card-1{
+  border-color: rgb(11, 57, 84);
+  border-width: 3px;
+  border-radius: 20px;
+}
+
+.buyQuantity{
+  background-color: red;
 }
 
 .category {
@@ -156,6 +171,7 @@ img:hover {
   font-family: Florence;
   font-weight: bold;
 }
+
 {/* ProductGrid*/}
 
 .price {
@@ -163,20 +179,18 @@ img:hover {
 }
 
 .sm-text {
-font-size: 14px
+font-size: 14px;
 }
-
-
 
 .book,
 .book-img {
     width: 120px;
     height: 180px;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .book {
-    margin: 20px 15px 5px 15px
+    margin: 20px 15px 5px 15px;
 }
 
 .rc-menu-root {
@@ -189,15 +203,18 @@ font-size: 14px
 /* Frontpage Horizontal line */
 .horizontal-line1 {
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     text-align: center;
     border-bottom: 1px solid #000000;
     line-height: 0.1em;
     margin: 10px 0 20px;
+    padding-top: 20px;
 }
 
 .horizontal-line2 {
     background:#ffffff;
-    padding:0 10px;
+    padding: 0 10px;
 }
 
 a.carousel-control-next, a.carousel-control-prev {
@@ -206,6 +223,13 @@ a.carousel-control-next, a.carousel-control-prev {
     width: 10%;
     height: 20%;
 }
+
+/* Resize carousel
+.carousel-inner > .carousel-item {
+  width:940px;
+  height:660px;
+}
+*/
 
 .marquee-container{
     white-space: nowrap;
@@ -265,13 +289,18 @@ a.carousel-control-next, a.carousel-control-prev {
     position: relative;
 }
 
+.nav-border{
+  border-bottom: 1px solid #000000;
+  line-height: 0.1em;
+}
+
 /* HAMBURGER MENY RELATED */
 .myImg {
-    margin: 4px 30px 0px 10px;
+    margin: 0px 30px 0px 10px;
     float: left;
     height: 35px;
     width: 35px;
-    border-radius: 50%;
+    vertical-align: middle;
 }
 
 /* END OF NAVBAR*/

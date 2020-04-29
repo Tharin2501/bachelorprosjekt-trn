@@ -104,6 +104,8 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
       </div>
 
       <button onClick={(() => addToShoppingCartAndRecalcuatePrice(productContext, numberOfProducts))} type="button" className="btn btn-dark">Buy</button>
+
+ 
     </div>
 
   );

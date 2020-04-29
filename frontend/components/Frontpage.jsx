@@ -11,9 +11,8 @@ export const Frontpage = () => {
         <div>
 
             <MyMarquee />
-            <MyCarousel />
-
             <FrontpageGrid />
+            <MyCarousel />
 
             <hr />
             <ShowIdBanner />
@@ -37,7 +36,7 @@ export const FrontpageGrid = () => {
     return (
         <div>
             <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Våre Kategorier</span>
+                <span className="horizontal-line2">Våre kategorier</span>
             </h3>
 
 
