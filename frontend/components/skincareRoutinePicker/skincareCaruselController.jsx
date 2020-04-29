@@ -1,6 +1,6 @@
-import React from "react"
-import SkincareMobileController from "../../components/skincareRoutinePicker/skincareMobileController.jsx"
-import SkincareDesktopController from "../../components/skincareRoutinePicker/skincareDesktopController.jsx"
+import React from "react";
+import SkincareMobileController from "./skincareMobileController";
+import SkincareDesktopController from "./skincareDesktopController";
 
 const isServer = () => typeof window === `undefined`;
 
@@ -27,7 +27,7 @@ const SkincareCaruselController = (props) => {
 
     if (isServer()) {
         return (
-            null
+            null;
         )
     }
 
