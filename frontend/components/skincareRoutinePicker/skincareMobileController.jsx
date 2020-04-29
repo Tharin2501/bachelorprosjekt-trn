@@ -7,7 +7,7 @@ import { addtoCart } from "../cart/cartHandler"
 
 // 1 clense 2 toner 3 Moist
 
-const SkincareDesktopController = (props) => {
+const SkincareMobileController = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
 
@@ -81,4 +81,4 @@ const SkincareDesktopController = (props) => {
 }
 
 
-export default SkincareDesktopController
+export default SkincareMobileController;
