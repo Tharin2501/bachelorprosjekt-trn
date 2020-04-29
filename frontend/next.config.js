@@ -1,5 +1,7 @@
 const withCSS = require("@zeit/next-css");
-const withPlugins = require("next-compose-plugins");
 const withFonts = require("next-fonts");
-
-module.exports = withPlugins([withCSS, withFonts], { target: "serverless" });
+module.exports = withCSS({
+    env: {
+        API_URL: process.env.API_URL
+    }
+});
