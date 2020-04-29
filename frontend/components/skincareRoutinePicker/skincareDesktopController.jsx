@@ -23,14 +23,19 @@ const SkincareDesktopController = (props) => {
     }
     const addChosenProductsToCart = () => {
 
+
         chosenProdutsArary.map((product) => {
-            var productToAdd;
-            productToAdd.id = product.id;
-            productToAdd.name = product.ProductName;
-            productToAdd.quantity = 1;
-            productToAdd.price = product.pris;
-            productToAdd.image = product.image[0].url
-            //console.log({product})
+            let productToAdd = {
+                id: product.id,
+                name: product.ProductName,
+                price: product.pris,
+                image: product.image[0].url
+
+            }
+
+
+
+            console.log({ productToAdd })
             addtoCart(productToAdd, 1)
         })
     }
