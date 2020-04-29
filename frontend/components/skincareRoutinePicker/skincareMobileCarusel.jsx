@@ -1,4 +1,4 @@
-import React, { Component, useRef, useEffect } from "react"
+import React, { useRef, useState } from "react"
 import Carousel from "react-multi-carousel";
 import SkincareCaruselCard from "./skincareCaruselCard"
 import "react-multi-carousel/lib/styles.css";
@@ -17,8 +17,25 @@ const SkincareMobileCarusel = (props) => {
   }
 
   const caruselRef = useRef(null);
+  /* From desktop*/
+  const [stepNameText, setStepNameText] = useState("Rens");
+  const [goToNextStepButtonText, setGoToNextStepButtonText] = useState(" Gå til neste steg");
 
+  const changeStep = () => {
+    if (props.stepNumber === 3) {
+      return
+    } else {
+      let newStepNumber = props.stepNumber + 1
+      props.goToNextStepFunction(newStepNumber);
+      if (newStepNumber == 2) {
+        setStepNameText("Toner")
+      } else {
+        setStepNameText("Fuktihetskrem")
+        setGoToNextStepButtonText("Fullfør å gå til handlekurven")
+      }
+    }
 
+  }
   return (
 
     <div className="skincareMobileDiv" id="test" ref={caruselRef} >
@@ -78,7 +95,7 @@ const SkincareMobileCarusel = (props) => {
       >
         {props.productsToShowArray.map((product) => {
           return (
-            <SkincareCaruselCard productName="test1" />
+            <SkincareCaruselCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} />
           )
         })}
 
