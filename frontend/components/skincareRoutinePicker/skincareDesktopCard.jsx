@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import {
-    Button, Container, Row, Col
+    Button, Container, Row, Col, Progress
 } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,9 +27,9 @@ const SkincareDesktopCard = (props) => {
 
 
     }
-
     return (
         <Container id="jumbo">
+            <Progress value={props.progressBarValue}></Progress>
             <span className="contest"><h4>{props.stepText}</h4></span>
             <p className="contest">Disse produkten passer perfekt for deg. Klikk på pilene for å se flere produkter</p>
 
@@ -39,15 +39,12 @@ const SkincareDesktopCard = (props) => {
                     <Col>
                         <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
                     </Col>
-                    <Col>
-                        <img className="skincareCaurselMobileCardImage" align="center" src="https://trnbackend.herokuapp.com/files/desktopBulletPointImage" alt="Card image cap" />
 
-                    </Col>
                     <Col>
                         <h1 className="whitney">{props.product.ProductName}</h1>
                         <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
                         <h3 className="gotham">{props.product.pris + " kr"}</h3>
-
+                        <img align="center" src="/images/desktopBulletPointImage.png" alt="Card image cap" />
                         <h4><b>Beskrivelse</b></h4>
                         <p>{props.product.description}</p>
                     </Col>

@@ -4,17 +4,19 @@ import SkincareDesktopController from "./skincareDesktopController";
 
 const isServer = () => typeof window === `undefined`;
 
+
+
 const SkincareCaruselController = (props) => {
 
     if (!isServer()) {
         if (window.innerWidth > 700) {
             return (
-                <SkincareDesktopController filtersFromQuizArray={props.filtersFromQuizArray} ></SkincareDesktopController>
+                <SkincareDesktopController filtersFromQuizArray={props.filtersFromQuizArray}></SkincareDesktopController>
             )
         } else {
             return (
 
-                < SkincareMobileController  >
+                < SkincareMobileController filtersFromQuizArray={props.filtersFromQuizArray} >
 
                 </SkincareMobileController >
 

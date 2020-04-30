@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react"
 import Carousel from "react-multi-carousel";
 
 import SkincareCaruselCard from "./skincareCaruselCard"
-
+import { setProgressBarValue } from "./utils/skincareRotuinePickerUtils"
 import { Button } from "reactstrap";
 
 const scrollToRef = (ref) => {
@@ -97,7 +97,7 @@ const SkincareMobileCarusel = (props) => {
       >
         {props.productsToShowArray.map((product) => {
           return (
-            <SkincareCaruselCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} />
+            <SkincareCaruselCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} progressBarValue={setProgressBarValue(props.stepNumber)} />
           )
         })}
 

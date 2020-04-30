@@ -15,7 +15,6 @@ import { useRouter } from 'next/router'
 const SkincareCaruselCard = (props) => {
 
     const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(true);
-    //console.log(props.product)
     const router = useRouter()
     const chooseProductButtonHandler = () => {
 
@@ -34,24 +33,11 @@ const SkincareCaruselCard = (props) => {
 
     }
 
-    const setProgressValue = () => {
-        if (props.stepNumber === 1) {
-            return 33;
-        }
-
-        if (props.stepNumber === 2) {
-            return 66;
-        }
-        if (props.stepNumber === 3) {
-            return 100;
-        }
-
-    }
     // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div >
             <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
-                <Progress value={setProgressValue()}></Progress>
+                <Progress value={props.progressBarValue}></Progress>
                 <text align="center">{props.stepText}</text>
                 <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
                 <CardBody>
@@ -64,7 +50,7 @@ const SkincareCaruselCard = (props) => {
 
 
 
-
+                    <img align="center" src="/images/desktopBulletPointImage.png" alt="Card image cap" />
                     <CardSubtitle className="h2" align="center">{props.product.pris + " kr"}</CardSubtitle>
                     <CardText>{props.product.description}</CardText>
                     <div className="row px-3 justify-content-between">
