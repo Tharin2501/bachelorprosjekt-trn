@@ -1,13 +1,19 @@
 import gql from "graphql-tag";
 
-const ARTICLES_QUERY = gql`  
-  query articles {
-    articles {
-      id
-      name
-      description
+// query for multiple articles
+
+const ARTICLES_QUERY = gql`
+    query articles {
+        articles {
+            id
+            introduction
+            title
+            headerImage {
+                url
+            }
+            category
+        }
     }
-  }
 `;
 
-export default ARTICLES_QUERY;  
+export default ARTICLES_QUERY;
