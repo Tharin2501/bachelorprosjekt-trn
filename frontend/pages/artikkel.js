@@ -11,7 +11,7 @@ const artikkel = () => {
     console.log(router.query.id);
     return (
         <Query query={ARTICLE_QUERY} id={router.query.id}>
-            {({data: {article} }) => {
+            {({data: {article}}) => {
                 return (
                     <div>
                         <Articles artikkel={article}/>
@@ -19,8 +19,6 @@ const artikkel = () => {
                 )
             }}
         </Query>
-
-
     );
 };
 

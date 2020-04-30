@@ -1,15 +1,8 @@
 import React from "react"
-import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories";
 import Query from "../query";
 import Link from "next/link";
 import ARTICLES_QUERY from "../../apollo/queries/article/articles";
-import {useRouter} from "next/router";
-import Articles from "./articles";
-import HorizontalMenuItem from "../category/common/horizontalMenuItem";
 
-
-
-// https://www.louistiti.fr/tutoriel-html5-css3-carte-article-ui/33
 const AllArticles2 = () => {
 
     return (
@@ -18,7 +11,7 @@ const AllArticles2 = () => {
                 <span className="horizontal-line2">Våre Artikler</span>
             </h3>
             <div className="container-fluid">
-                <h4 className="text-left text-wrap mt-5">Populære artikler </h4> {/* for Skjønnhent og velvære*/}
+                <h4 className="text-left text-wrap mt-5 pl-4">Populære artikler </h4>
                 <div className="row justify-content-center">
                     <Query query={ARTICLES_QUERY}>
                         {({data: {articles}}) => {
@@ -47,7 +40,10 @@ const AllArticles2 = () => {
                                                                 {article.introduction}
                                                             </p>
                                                             <div className="row mt-3 pl-3">
-                                                                <Link href= {{pathname: "artikkel", query: {id: article.id}}}>
+                                                                <Link href={{
+                                                                    pathname: "artikkel",
+                                                                    query: {id: article.id}
+                                                                }}>
                                                                     <button type="button" className="btn btn-primary">
                                                                         <a>Les mer</a>
                                                                     </button>
