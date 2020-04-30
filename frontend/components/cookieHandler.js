@@ -1,5 +1,6 @@
 import Cookie from "js-cookie"
-
+import React, { useContext } from "react"
+import CartTotalPriceContext from "../components/context/cartTotalPriceContext";
 export const getCookieArray = (cookieName) => {
     var cart = Cookie.getJSON(cookieName)
     return cart
@@ -28,15 +29,12 @@ export const removeOneProduct = (productToRemove, removefromCookie) => {
 
 export const calculatePrice = () => {
 
-
     if (typeof window !== "undefined") {
-
         var cart = getCookieArray("cartStorage")
-        console.log(cart)
-        var totalprice = 0
-        console.log(cart)
+
+        var totalprice = 0;
         if (cart === "undefined" || cart.length === 0) {
-            console.log("Cart does not exsist")
+            //console.log("Cart does not exsist")
             return totalprice
         }
 
@@ -51,18 +49,13 @@ export const calculatePrice = () => {
 
 };
 
+
+
 /* <--CART -->*/
 
 export const addOneProductToCart = (productToAdd) => {
     var cart = getCookieArray("cartStorage")
-    /*
-    if (cart === "undefined" || cart.length === 0) {
-        console.log("Cart not defined")
-        cart.push(productToAdd)
-        //return
-    }
-    */
-    // -1 = betyr at den ikke i listen
+
     const alreadyInCart = cart.findIndex(
         product => product.id === productToAdd.id
     )
@@ -77,6 +70,7 @@ export const addOneProductToCart = (productToAdd) => {
     saveCookieArrayToCookie(cart, "cartStorage")
 
 
+
 }
 
 
@@ -86,7 +80,6 @@ export const addOneProductToCart = (productToAdd) => {
 /* <--FAV -->*/
 export const addOneProductToFavorites = (productToAdd) => {
     var favorites = getCookieArray("favoritesStorage")
-    console.log(favorites)
 
     const alreadyInCart = favorites.findIndex(
         product => product.id === productToAdd.id

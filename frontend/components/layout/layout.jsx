@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { FiUser } from "react-icons/fi";
@@ -21,60 +21,69 @@ import {
   InputGroupText,
   Input,
 } from "reactstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
-import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
-import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
-
-
+import { useRouter } from "next/router"
+import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
+import { calculatePrice } from "../cookieHandler"
 const MySearchbar = () => {
-  return (
-    <div className="row mx-auto w-80 pt-3 pb-3">
-      <div className="col">
+  const router = useRouter();
+  if (router.pathname === "/hudpleievelger") {
+    return (
+      null
+    )
+  } else {
+    return (
+      <div className="row mx-auto w-80 pt-3 pb-3">
+        <div className="col">
 
-        <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText><GoSearch /></InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="søk..." />
-        </InputGroup>
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText><GoSearch /></InputGroupText>
+            </InputGroupAddon>
+            <Input placeholder="søk..." />
+          </InputGroup>
+        </div>
       </div>
-    </div>
 
-  );
+    );
+  }
+
 };
 
 export const MyHeader = () => {
+
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
   const [totalprice, setTotalprice] = useState(0);
 
 
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext)
   useEffect(() => {
-    getCartPrice()
-  }, [])
+    getCartPrice();
 
+  }, [Object.values(price)])
   function getCartPrice() {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
-      if (cart === undefined || cart.length === 0) {
-        //console.log("YAS")
+      if (cart === undefined) {
+
         return;
       }
 
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
-      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
   }
 
+
   return (
+
     <div>
       <Navbar color="light">
         <div>
@@ -108,7 +117,7 @@ export const NewsLetter = () => {
 
   const subscribeToNewsletter = () => {
     // register input from inputfield + check if checkbox is checked. Presist email to db
-    console.log("Subscribe to newsletter here")
+    //console.log("Subscribe to newsletter here")
   };
 
   return (

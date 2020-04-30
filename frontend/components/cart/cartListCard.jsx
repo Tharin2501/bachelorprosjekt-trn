@@ -12,12 +12,11 @@ import Link from "next/link";
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
-    console.log(props)
     const productContext = {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
         quantity: props.CartListCard.quantity,
-        price: 200,
+        price: props.CartListCard.price,
         image: props.CartListCard.image,
 
     }
@@ -25,11 +24,10 @@ const CartListCard = (props) => {
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
-    /*
-      <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
-              <a><h5 className="product-name"> {productName}</h5></a>
-            </Link>
-            */
+    const deleteProductFunction = () => {
+        deleteProduct(productContext);
+        props.onDelete();
+    }
 
     return (
 
@@ -55,11 +53,11 @@ const CartListCard = (props) => {
                         </div>
                     </div>
                     <div className="col-4">
-                        <h6 className="mob-text">200 nok</h6>
+                        <h6 className="mob-text">{productContext.price}nok</h6>
                     </div>
 
                     <div className="col-4">
-                        <button onClick={(() => deleteProduct(productContext))}> Remove</button>
+                        <button onClick={(() => deleteProductFunction())}> Remove</button>
                         <button> Add to fav</button>
                     </div>
                 </div>
