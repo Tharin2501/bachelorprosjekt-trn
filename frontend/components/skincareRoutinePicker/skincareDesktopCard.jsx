@@ -39,11 +39,15 @@ const SkincareDesktopCard = (props) => {
                     <Col>
                         <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
                     </Col>
+                    <Col>
+                        <img className="skincareCaurselMobileCardImage" align="center" src="https://trnbackend.herokuapp.com/files/desktopBulletPointImage" alt="Card image cap" />
 
+                    </Col>
                     <Col>
                         <h1 className="whitney">{props.product.ProductName}</h1>
                         <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
                         <h3 className="gotham">{props.product.pris + " kr"}</h3>
+
                         <h4><b>Beskrivelse</b></h4>
                         <p>{props.product.description}</p>
                     </Col>
