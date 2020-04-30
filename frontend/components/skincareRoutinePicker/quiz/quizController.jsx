@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import QuizQuestion from "./quizQuestion"
 import SkincareCaruselController from "../skincareCaruselController"
-
+import { useRouter } from 'next/router';
+import { Button } from "reactstrap";
 const quizData = [
     {
         id: 0,
@@ -50,13 +51,16 @@ const QuizController = () => {
     const [currentQustionNumber, setCurrentQuestionNumber] = useState(0);
     const [arrayOfAnswers, setArrayOfAnswers] = useState([]);
     const [isQuizDone, setIsQuizDone] = useState(false);
-
+    const router = useRouter();
     const handleAnswerButtonPressed = (event) => {
 
         setSelectedAnswer(event.target.innerText)
     }
 
+    const cancelSkincarePickerButtonHandler = () => {
 
+        router.push("/");
+    }
 
     const handleNextButtonPressed = (event) => {
         if (selectedAnswer !== " ") {
@@ -84,6 +88,7 @@ const QuizController = () => {
 
     return (
         <div align="center" >
+            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
             {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={arrayOfAnswers}></SkincareCaruselController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
             }
 

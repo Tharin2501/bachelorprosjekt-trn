@@ -40,9 +40,9 @@ const App = ({ Component, pageProps, apollo }) => {
 
 
             <CartTotalPriceContext.Provider value={{ price, ChangeTotalPrice }}>
+
                 <MyHeader />
                 <Component {...pageProps} />
-                <NewsLetter />
                 <MyFooter />
             </CartTotalPriceContext.Provider>
 
