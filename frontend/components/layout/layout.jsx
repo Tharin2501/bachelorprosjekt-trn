@@ -35,14 +35,14 @@ const MySearchbar = () => {
         )
     } else {
         return (
-            <div className="row mx-auto w-80 pt-3 pb-3">
+            <div className="row mx-auto w-80">
                 <div className="col">
 
                     <InputGroup>
                         <InputGroupAddon addonType="prepend">
-                            <InputGroupText><GoSearch/></InputGroupText>
+                            <InputGroupText style={{backgroundColor:"white"}}><GoSearch/></InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Søk... "/>
+                        <Input className="font-weight-light"  placeholder="Søk... "/>
                     </InputGroup>
                 </div>
             </div>
