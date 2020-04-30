@@ -1,6 +1,6 @@
 import React from "react";
-import SkincareMobileController from "./skincareMobileController.jsx";
-import SkincareDesktopController from "./skincareDesktopController.jsx";
+import SkincareMobileController from "./skincareMobileController";
+import SkincareDesktopController from "./skincareDesktopController";
 
 const isServer = () => typeof window === `undefined`;
 
