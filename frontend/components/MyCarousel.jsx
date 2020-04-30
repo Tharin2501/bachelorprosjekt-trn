@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledCarousel } from 'reactstrap';
+import {UncontrolledCarousel} from 'reactstrap';
 
 const items = [
     {
@@ -24,9 +24,11 @@ const items = [
 ];
 
 const MyCarousel = () => (
-
-    <UncontrolledCarousel items={items} />
-
+    <div className="row">
+    <div className="mx-auto col-10">
+        <UncontrolledCarousel items={items}/>
+    </div>
+    </div>
 );
 
 

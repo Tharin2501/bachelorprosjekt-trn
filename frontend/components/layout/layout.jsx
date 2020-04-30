@@ -37,7 +37,6 @@ const MySearchbar = () => {
         return (
             <div className="row mx-auto w-80">
                 <div className="col">
-
                     <InputGroup>
                         <InputGroupAddon addonType="prepend">
                             <InputGroupText style={{backgroundColor:"white"}}><GoSearch/></InputGroupText>
