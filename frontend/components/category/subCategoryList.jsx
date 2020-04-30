@@ -1,7 +1,5 @@
 import React from "react";
-import QuerySubCategory from "../../components/querySubCategory"
-import HorizontalMenuItem from "../../components/category/common/horizontalMenuItem"
-import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName"
+import HorizontalMenuItem from "../category/common/horizontalMenuItem"
 import Link from "next/link";
 const SubCategoryList = ({ subCategoryList, categoryName }) => {
 
@@ -15,7 +13,7 @@ const SubCategoryList = ({ subCategoryList, categoryName }) => {
             </div>
             {subCategoryList.map((category) => {
                 return (
-                    <HorizontalMenuItem key={category.id} HorizontalMenuItem={category}></HorizontalMenuItem>
+                    <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategory"} category={category}></HorizontalMenuItem>
                 )
             })
             }

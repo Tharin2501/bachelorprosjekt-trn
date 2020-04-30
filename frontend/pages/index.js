@@ -43,7 +43,6 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
 
     /* FAV END*/
 
-    /* FAV END*/
 
 
     return (

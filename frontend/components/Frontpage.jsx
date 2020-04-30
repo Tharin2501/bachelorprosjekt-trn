@@ -6,6 +6,7 @@ import MyDrawer from "./MyDrawer";
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories"
 import Query from "../components/query";
 import Category from "../pages/category";
+import HorizontalMenuItem from "./category/common/horizontalMenuItem"
 export const Frontpage = () => {
     return (
         <div>
@@ -46,18 +47,13 @@ export const FrontpageGrid = () => {
                     <Query query={GETCATEGORIES_QUERY}>
                         {({ data: { categories } }) => {
                             return (
-                                categories.map((category) => {
-                                    return (
-                                        <div key={category.id} className="col-lg-sm-6 px-3">
-                                            <Link href={{ pathname: "/category", query: { id: category.StrapiName } }}>
-                                                <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + category.image.url} alt="logo" /></a>
-                                            </Link>
-                                            <Link href={{ pathname: "/category", query: { id: category.StrapiName } }}>
-                                                <a className=".frontpageIconsText">{category.name}</a>
-                                            </Link>
-                                        </div>
-                                    )
-                                })
+                                <div className="scrollmenu">
+                                    {categories.map((category) => {
+                                        return (
+                                            <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/category"} category={category}></HorizontalMenuItem>
+                                        )
+                                    })}
+                                </div>
                             )
                         }}
                     </Query>
