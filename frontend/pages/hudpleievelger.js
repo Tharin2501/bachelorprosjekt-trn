@@ -1,19 +1,10 @@
-import React from 'react';
-import QuizController from "../components/skincareRoutinePicker/quiz/quizController"
+import React from "react"
+
 
 const Hudpleievelger = () => (
 
-    <QuizController></QuizController>
-
-
-
+    <p> COOL HUNTY</p>
 
 );
 
-
-
-
 export default Hudpleievelger;
-
-
-

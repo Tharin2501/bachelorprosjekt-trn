@@ -1,11 +1,11 @@
-import { getCart, addOneProductToCart, addOneProductToFavorites, calculatePrice } from "../cookieHandler"
+import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 export const addtoCart = (productToAdd, quantity) => {
 
 
 
     productToAdd.quantity = quantity
-    addOneProductToCart(productToAdd)
 
+    addOneProductToCart(productToAdd)
 
 }
 

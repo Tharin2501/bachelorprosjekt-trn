@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -7,13 +7,10 @@ import { MyFooter, MyHeader, NewsLetter } from "../components/layout/layout";
 import { ArticleBoxes } from "../components/productPage/ArticleBoxes"
 import CartpriceProvider from "../components/cart/cartpriceProvider"
 import { Container } from 'next/app'
-import CartTotalPriceContext from "../components/context/cartTotalPriceContext";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "react-multi-carousel/lib/styles.css";
+
+
 const App = ({ Component, pageProps, apollo }) => {
 
-    const [price, setTotalPrice] = useState(0);
-    const ChangeTotalPrice = (newValue) => setTotalPrice(newValue);
     return (
 
         <ApolloProvider client={apollo}>
@@ -37,15 +34,10 @@ const App = ({ Component, pageProps, apollo }) => {
 
             </Head>
 
-
-
-            <CartTotalPriceContext.Provider value={{ price, ChangeTotalPrice }}>
-                <MyHeader />
-                <Component {...pageProps} />
-                <NewsLetter />
-                <MyFooter />
-            </CartTotalPriceContext.Provider>
-
+            <MyHeader />
+            <Component {...pageProps} />
+            <NewsLetter />
+            <MyFooter />
 
         </ApolloProvider>
 

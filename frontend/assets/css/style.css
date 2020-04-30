@@ -124,8 +124,8 @@ img:hover {
 
 
 .pic1 {
-  max-width:250px;
-  max-height:250px;
+  width: 250px; /* 90% */
+  height: 250px; /* null */
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -529,96 +529,4 @@ div.scrollmenu {
 
 .newsletter-btn:focus {
     outline: none;
-}
-
-/* skincare carusel mobile*/
-
-.skincareMobileDiv{
-  overflow: hidden;
-  min-width: 6.25rem;
-  min-height: 6.25rem;
-}
-.skincareMobileCard{
-
-  min-width: 18.75rem;
-
-}
-
-.skincareCaurselMobileCardImage{
-  align-self: center;
-  display: block;
-  max-width:250px;
-  max-height:250px;
-  width: auto;
-  height: auto;
-}
-
-.SkincareCaruselCardCheckboxListDiv{
-  display: table;
-  float: left;
-  
-  overflow-x: hidden;
- 
-}
-
-.SkincareCaruselCardCheckboxListLabel {
-  display: table-row;
-}
-
-.SkincareCaruselCardCheckboxs {
-  display: table-row;
-  width: 100%;
-}
-
-/* Circular button */
-
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  border-radius: 35px;
-  font-size: 24px;
-  line-height: 1.33;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  padding: 6px 0px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.42857;
-}
-/* DESKTOP CARD  padding: 100px;*/
-#jumbo{
-  background: rgba(200, 54, 54, .5);
-  color: rgba(255, 255, 255);
-  position: relative;
-  
-}
-
-.inner{
-  color:rgb(250,250,250);
-  opacity: 1;
-}
-/*  top:0 */
-.myCaruselIndictaor{
-
-  filter: invert(100%);
-  position: relative !important; 
-}
-.controltest{
-  filter: invert(100%);
-}
-
-.contest{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.quizQuestionContainer{
-  background: rgba(200, 54, 54, .5);
-  
 }
