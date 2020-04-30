@@ -3,8 +3,7 @@ import React, { useRef, useState } from "react"
 import Carousel from "react-multi-carousel";
 
 import SkincareCaruselCard from "./skincareCaruselCard"
-import { setProgressBarValue } from "./utils/skincareRotuinePickerUtils"
-import { Button } from "reactstrap";
+import { setProgressBarValue } from "../utils/skincareRotuinePickerUtils";
 
 const scrollToRef = (ref) => {
 

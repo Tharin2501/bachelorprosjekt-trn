@@ -7,7 +7,7 @@ import {
     CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
-import { setProgressBarValue } from "./utils/skincareRotuinePickerUtils"
+import { setProgressBarValue } from "../utils/skincareRotuinePickerUtils"
 
 const SkincareDesktopCarusel = (props) => {
     const [stepNameText, setStepNameText] = useState("Rens");
