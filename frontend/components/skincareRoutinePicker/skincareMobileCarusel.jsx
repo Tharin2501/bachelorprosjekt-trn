@@ -12,7 +12,7 @@ const scrollToRef = (ref) => {
 }
 // https://www.w3schools.com/howto/howto_css_button_on_image.asp USE!
 const SkincareMobileCarusel = (props) => {
-  //         
+
 
   const executeScroll = () => {
     scrollToRef(caruselRef);

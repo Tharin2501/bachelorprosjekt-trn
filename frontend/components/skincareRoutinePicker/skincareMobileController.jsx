@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import SkincareMobileCarusel from "./SkincareMobileCarusel"
+import SkincareMobileCarusel from "./skincareMobileCarusel"
 import GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY from "../../apollo/queries/carusel/GetProductsFromSubcategoryFilter"
 import QuerySubCategory from "../../components/querySubCategory";
 import { addtoCart } from "../cart/cartHandler"
