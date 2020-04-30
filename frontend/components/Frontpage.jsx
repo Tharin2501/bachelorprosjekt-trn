@@ -11,12 +11,22 @@ export const Frontpage = () => {
         <div>
 
             <MyMarquee />
+            <FrontpageGrid />
             <MyCarousel />
 
-            <FrontpageGrid />
-
             <hr />
+            <ShowIdBanner />
 
+        </div>
+    );
+};
+
+export const ShowIdBanner = () => {
+    return (
+        <div className="container">
+            <div className="justify-content-center py-5">
+                <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="logo" />
+            </div>
         </div>
     );
 };
@@ -26,7 +36,7 @@ export const FrontpageGrid = () => {
     return (
         <div>
             <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Våre Kategorier</span>
+                <span className="horizontal-line2">Våre kategorier</span>
             </h3>
 
 
@@ -35,7 +45,6 @@ export const FrontpageGrid = () => {
 
                     <Query query={GETCATEGORIES_QUERY}>
                         {({ data: { categories } }) => {
-                            console.log(categories)
                             return (
                                 categories.map((category) => {
                                     return (

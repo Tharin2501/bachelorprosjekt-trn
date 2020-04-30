@@ -1,0 +1,2288 @@
+{
+  "data": {
+    "products": [
+      {
+        "Strapiname": "MountainLipstickSPF30",
+        "sub_categories": [
+          {
+            "StrapiName": "leppepleie_facecare"
+          }
+        ],
+        "pris": 39,
+        "description": "Piz Buin Mountain Lipstick med solfaktor 30 er en solkremstift til lepper spesielt laget for sol i høyden, vind og kulde. Den beskytter mot UVA- og UVB-stråler og gir fuktighet.",
+        "ReviewScore": 4,
+        "ingredients": "Bæsj",
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/PizSPF30.jpg",
+            "name": "PizSPF30.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "AntheliosXLLipStickSPF50+",
+        "sub_categories": [
+          {
+            "StrapiName": "lepper_sunscreen"
+          }
+        ],
+        "pris": 129,
+        "description": "Vannresistent stift med solfaktor 50+ som beskytter leppene mot solskader, virker mykgjørende, og gir en jevn og dekkende beskyttelse.",
+        "ReviewScore": 1,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/SPF50+Anthelios.jpg",
+            "name": "SPF50+Anthelios.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BalancingForceOilControlToner",
+        "sub_categories": [
+          {
+            "StrapiName": "toner_facecare"
+          }
+        ],
+        "pris": 189,
+        "description": "Ole Henriksen Balancing Force Oil Control Toner er et tonervann for kombinert og oljete hud som minimerer porer og kontrollerer overflødig olje. Inneholder ekstrakter fra eukalyptus, grønn te og irsk mose som virker antiseptisk.",
+        "ReviewScore": 5,
+        "ingredients": "Vann",
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/1279254-trnLargeFormat.jpg",
+            "name": "1279254-trnLargeFormat.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "ChecksAndBalancesFrothyFaceWash",
+        "sub_categories": [
+          {
+            "StrapiName": "rensskrubb_facecare"
+          }
+        ],
+        "pris": 159,
+        "description": "Origins Checks And Balances Frothy Face Wash er en skummende ansiktsrens for kombinert hud. Den inneholder tang-ekstrakt som motvirker overproduksjon av olje, samtidig som den beskytter tørre områder.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/checksAndBalances.jpeg",
+            "name": "checksAndBalances.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MiracleWipesTravel",
+        "sub_categories": [
+          {
+            "StrapiName": "rensskrubb_facecare"
+          }
+        ],
+        "pris": 39,
+        "description": "Servietter som enkelt og skånsomt fjerner sminke. Etterlater huden klar for ansiktskrem.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/miracleWipes.jpeg",
+            "name": "miracleWipes.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "JMoreauChablis",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "En hvitvin med blek sitrongul farge. Middels intens duft av grønt eple, sitrus, urter og mineraler. Lett og middels intens vin med høy syre og middels lang ettersmak. Tørr",
+        "ReviewScore": 5,
+        "ingredients": "Druer",
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/j.moreau&fils.jpg",
+            "name": "j.moreau&fils.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "KlosterEberbachSteinbergRiesling",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 119,
+        "description": "En hvitvin med blek grønngul farge. Intens duft av eple, aprikos, hvit fersken, sitrus og mineraler. Middels fyldig og intens vin med medium syre og lang ettersmak. Søt",
+        "ReviewScore": 5,
+        "ingredients": "druer",
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/Kloster_Eberbach_Steinberg_Riesling.jpg",
+            "name": "Kloster_Eberbach_Steinberg_Riesling.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "LarocheChablis",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 159,
+        "description": "En hvitvin med blek sitrongul farge. Middels intens duft av sitrus, grønt eple, mineraler og blomster. Lett og middels intens vin med middels syre og middels lang ettersmak. Tørr",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/Laroche_Chablis.jpg",
+            "name": "Laroche_Chablis.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "JeanClaudeBoissetBourgognePinotNoirLesUrsulines",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 149,
+        "description": "Middels purpur på farge. Middels intens duft av bringebær, skogsbær, krydder og blomster. Middels fyldig og middels intens vin med middels syre, moderat tannin og middels lang ettersmak. Tørr.",
+        "ReviewScore": 4.5,
+        "ingredients": "Middels purpur på farge. Middels intens duft av bringebær, skogsbær, krydder og blomster. Middels fyldig og middels intens vin med middels syre, moderat tannin og middels lang ettersmak. Tørr.",
+        "type_of_products": [
+          {
+            "StrapiName": "rodvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/Jean-Claude_Boisset_Bourgogne_Pinot_Noir_Les_Ursulines.jpg",
+            "name": "Jean-Claude_Boisset_Bourgogne_Pinot_Noir_Les_Ursulines.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Underberg",
+        "sub_categories": [
+          {
+            "StrapiName": "brennevin_alcohol"
+          }
+        ],
+        "pris": 75,
+        "description": "Middels rav på farge. Middels intens duft av urter, krydder og lakris. Fyldig og middels intens bitter med varmende alkohol og middels lang ettersmak. Serveres bar og romtemperert. Laget av aromatiske urter fra 43 forskjellige land.",
+        "ReviewScore": 1,
+        "ingredients": "Lit",
+        "type_of_products": [
+          {
+            "StrapiName": "bitter_brennevin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/Underberg.jpg",
+            "name": "Underberg.jpg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "ToniqueEclat",
+        "sub_categories": [
+          {
+            "StrapiName": "rensskrubb_facecare"
+          },
+          {
+            "StrapiName": "toner_facecare"
+          }
+        ],
+        "pris": 329,
+        "description": "Tonique Éclat er et dyptrensende ansiktsvann som skånsomt eksfolierer huden. Den kjølige friskheten frigjør huden din fra urenheter og døde hudceller. Brukes både morgen og kveld som en del av din renserutine. Passer for normal til kombinert hud.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/toniqueEclat.jpeg",
+            "name": "toniqueEclat.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RevitaliftLaserSerum",
+        "sub_categories": [
+          {
+            "StrapiName": "serumolje_facecare"
+          }
+        ],
+        "pris": 209,
+        "description": "Et serum som reduserer rynker, porer, gjør huden fastere og forbedrer hudstrukturen. Brukes morgen og kveld under din dag- eller nattkrem.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/revitaliftSerum.jpeg",
+            "name": "revitaliftSerum.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "GenifiqueAdvancedConcentrateYouthActivatorSerum",
+        "sub_categories": [
+          {
+            "StrapiName": "serumolje_facecare"
+          }
+        ],
+        "pris": 619,
+        "description": "Youth Activating Concentrate er et aktiverende serum for alle hudtyper som jevner ut huden på bare syv dager. Serumet jobber med å gjøre porer mindre synlig, glatte ut fine og dype linjer. Hudtonen blir jevnere og hudens kvalitet forbedres.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lancomeGenefique.jpeg",
+            "name": "lancomeGenefique.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "CaptureYouthIntenseRescueSerum",
+        "sub_categories": [
+          {
+            "StrapiName": "serumolje_facecare"
+          }
+        ],
+        "pris": 799,
+        "description": "Dette serumet kan brukes på to forskjellige måter. Man kan enten blande det i kremen man bruker, eller bruke det i hele ansiktet på nyrenset hud, før du påfører krem. Det er et fantastisk olje-serum som gir huden næring og intens fukt og forhindrer en uønsket hudtilstand. Den gir en fantastisk glød og kjennes lett og mykt på huden. Intense Rescure styrker hudbarrieren slik at tørrhet på hudens overflate repareres og hudens fuktighetsnivå opprettholdes. Den gir en umiddelbar følelse av komfort og ved daglig bruk vil huden oppleves sunnere og friskere. Kan også brukes som en kur for en tørr og stresset hud som mangler lipider.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/diorCaptureYouth.jpeg",
+            "name": "diorCaptureYouth.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MineralizeResetReviveCharcoalMask",
+        "sub_categories": [
+          {
+            "StrapiName": "maskepeeling_facecare"
+          }
+        ],
+        "pris": 259,
+        "description": "En mineralrik maske med pulver fra bambuskull og hvit leire som dyprenser porer og fjerner urenheter. Masken fjerner også overflødig olje fra ansiktet for et klarere og friskere utseende. Smør et tynt lag på ansiktet og vent ca. 10 minutter for at den tørker, så vask den vekk med lunkent vann. Huden er nå jevn og klar til å legge sminke.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/mineralizeMac.jpeg",
+            "name": "mineralizeMac.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "24KGoldFaceMask",
+        "sub_categories": [
+          {
+            "StrapiName": "maskepeeling_facecare"
+          }
+        ],
+        "pris": 159,
+        "description": "Opplev økt fukt og elastisitet med denne luksuriøse sheetmasken. Huden får en intens fuktboost samtidig som aktive ingredienser motarbeider fine linjer og synlige tegn til aldring for en hud som stråler.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/camillaGold.jpeg",
+            "name": "camillaGold.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "OutOfTroubleMask",
+        "sub_categories": [
+          {
+            "StrapiName": "maskepeeling_facecare"
+          }
+        ],
+        "pris": 189,
+        "description": "Origins Out Of Trouble Mask er en ansiktsmaske som forhindrer kviseutbrudd. Den inneholder svovel og zink som balanser oljeproduksjonen i huden. Brukes 2 til 4 ganger i uken i ti minutter",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/originsOutOfTrouble.jpeg",
+            "name": "originsOutOfTrouble.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "UltraFacialMoisturizerSPF30",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_facecare"
+          }
+        ],
+        "pris": 309,
+        "description": "Ansiktskrem med SPF 30 som beskytter huden mot solstråler og frie radikaler. Absorberes lett og etterlater huden myk og hydrert.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/kiehls.jpeg",
+            "name": "kiehls.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HydraZenDayCream",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_facecare"
+          }
+        ],
+        "pris": 499,
+        "description": "Hydra Zen anti-stress dagkrem er en beroligende fuktighetskrem som lindrer og nærer huden med fuktighet. Kremen ble utviklet for å gi huden opptil 24-timer beskyttelse, fuktighet og anti-stress effekt. Kremen lindrer ubehagelige følelser som varme, irritasjon, kløe og rødhet. Passer for de med tørr til veldig tørr hud.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lancomeHydra.jpeg",
+            "name": "lancomeHydra.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Anti-AgingStressCream",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_facecare"
+          }
+        ],
+        "pris": 1749,
+        "description": "Anti-Aging Stress Cream får huden til å slappe av, samtidig som den forbygger og beskytter huden mot stressrelatert aldring.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/laPrarie.jpeg",
+            "name": "laPrarie.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "DropsOfYouthEyeConcentrate",
+        "sub_categories": [
+          {
+            "StrapiName": "oyepleie_facecare"
+          }
+        ],
+        "pris": 239,
+        "description": "The Body Shop Drops Of Youth Eye Concentrate er et økologisk øyeserum beriket med stamceller som minimerer linjer, poser og mørke ringer. Øyeserumet kjøler ned huden rundt øynene og øker produksjonen av kollagen.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bodyShopEye.jpeg",
+            "name": "bodyShopEye.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Cellular Platinum Rare Eye cream",
+        "sub_categories": [
+          {
+            "StrapiName": "oyepleie_facecare"
+          }
+        ],
+        "pris": 3249,
+        "description": "Øyekremen strammer opp og lysner huden rundt øynene. Brukes morgen og kveld på renset hud.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/laPrairieEye.jpeg",
+            "name": "laPrairieEye.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "GenifiqueEyeCream",
+        "sub_categories": [
+          {
+            "StrapiName": "oyepleie_facecare"
+          }
+        ],
+        "pris": 749,
+        "description": "En frisk og lett øyekrem i Genifique serien. Den reduserer mørke ringer samtidig som den tilfører fuktighet og beroliger øyeområdet.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lancomeEye.jpeg",
+            "name": "lancomeEye.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "8-hourLipProtectant",
+        "sub_categories": [
+          {
+            "StrapiName": "leppepleie_facecare"
+          }
+        ],
+        "pris": 79,
+        "description": "Beskytter og pleier leppene i opptil åtte timer.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/elizabethA8hLip.jpeg",
+            "name": "elizabethA8hLip.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "LipBalm",
+        "sub_categories": [
+          {
+            "StrapiName": "leppepleie_facecare"
+          }
+        ],
+        "pris": 169,
+        "description": "Tromborg Lip Balm er en leppepomade som mykgjør og fukter leppene. Inneholder sheabutter, aloe vera og appelsinolje som fukter og beskytter leppene.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [],
+        "image": [
+          {
+            "url": "/files/tromborgLip.jpeg",
+            "name": "tromborgLip.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BarrierRepairingBalm(Lips)",
+        "sub_categories": [
+          {
+            "StrapiName": "leppepleie_facecare"
+          }
+        ],
+        "pris": 69,
+        "description": "Pleier tørre og såre lepper ved å gjenoppbygge leppenes barriere.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/laRocheLip.jpeg",
+            "name": "laRocheLip.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "LaitCorporelBodyMilk",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_bodycare"
+          }
+        ],
+        "pris": 159,
+        "description": "Denne hverdags-bodylotionen hjelper umiddelbart huden å gjenopprette sin glatte og satengaktige look. Oppdag en tekstur som verken er klissete eller fet, og med den mytiske og deilig vanedannende sitrusduften.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/laitCorporelBiot.jpeg",
+            "name": "laitCorporelBiot.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SakuraBodyCream",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_bodycare"
+          }
+        ],
+        "pris": 169,
+        "description": "En utrolig rik bodykrem med delikat duft av kirsebærblomst og deilig, søt rismelk. Den tilfører massevis av næring til huden og etterlater huden silkemyk. Kremen har en utrolig deilig konsistens som kjennes behagelig ut mot huden. En bodylotion som gir deg følelsen av velvære og luksus i hverdagen.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsSakBody.jpeg",
+            "name": "ritualsSakBody.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "UltraRichBodyCream",
+        "sub_categories": [
+          {
+            "StrapiName": "fuktighetskrem_bodycare"
+          }
+        ],
+        "pris": 95,
+        "description": "Karite Shea Ultra Rich Body Cream er en bodylotion for tørr og svært tørr hud. Kremen inneholder hele 25% sheasmør og jobber med å styrke huden og beskytte den mot tørrhet. Den fukter huden i dybden og inneholder aprikosolje og ekstrakt fra linfrø, søtmandel og honning. Den har en langtidsvarende effekt og beskytter og hydrerer huden i opptil 72 timer. Huden kjennes myk og smidig ut etter bruk, uten at den føles klissete og fet.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lOccitaneBody.jpeg",
+            "name": "lOccitaneBody.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "AyurvedaFoamingShowerGel",
+        "sub_categories": [
+          {
+            "StrapiName": "baddusj_bodycare"
+          }
+        ],
+        "pris": 79,
+        "description": "Et fantastisk dusjskum med deilig duft av indisk rose og søt mandelolje. Dusjskummet fra Rituals gir en unik følelse av velvære og luksus. Skummet kommer ut i geleform, men i kontakt med vann forvandles geleen til et rikt og silkemykt skum som forsiktig renser huden. Huden kjennes pleiet og næret etter bruk.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsArShower.jpeg",
+            "name": "ritualsArShower.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "AlmondShowerOil",
+        "sub_categories": [
+          {
+            "StrapiName": "baddusj_bodycare"
+          }
+        ],
+        "pris": 239,
+        "description": "En deilig, luksuriøs og behagelig dusjsåpe som gir en silkemyk følelse over hele kroppen.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lOccitaneShower.jpeg",
+            "name": "lOccitaneShower.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HandAndBodyWash",
+        "sub_categories": [
+          {
+            "StrapiName": "baddusj_bodycare"
+          }
+        ],
+        "pris": 269,
+        "description": "Med duften av bergamott og lime er denne såpen mild for både hender og kropp. En forfriskende følelse som passer like godt inn i dusjen som den gjør seg som en håndsåpe på kjøkkenet for å effektivt fjerne matlukt.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/grodeShowerHands.jpeg",
+            "name": "grodeShowerHands.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "ExfoliatingBodyScrubForSmoothSkin",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsskrubb_bodycare"
+          }
+        ],
+        "pris": 299,
+        "description": "Clarins Exfoliating Body Scrub For Smooth Skin er en kremskrubb med bambuspulver som fjerner døde hudceller og urenheter. Ekstrakter av mimosa og shea gir en følelse av mykhet.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/clarinsBodyS.jpeg",
+            "name": "clarinsBodyS.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BodySaltScrubOrange",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsskrubb_bodycare"
+          }
+        ],
+        "pris": 269,
+        "description": "En mild skrubb for kropp med fine krystaller fra dødehavet kombinert med mandelolje og eteriske oljer. Body Salt Scrub exfolierer og mykner huden slik at den føles som ny. Body Salt Scrub- orange er avstressende og renser i dybden.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/trombBodyS.jpeg",
+            "name": "trombBodyS.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "AyurvedaBodyScrub",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsskrubb_bodycare"
+          }
+        ],
+        "pris": 139,
+        "description": "En skrubb med en herlig duft av indisk rose og næringsrik, søt mandelolje som fjerner døde hudceller og etterlater et mykt lag med olje på huden.",
+        "ReviewScore": null,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsBscrub.jpeg",
+            "name": "ritualsBscrub.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BodyTreatmentOil",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsoljer_bodycare"
+          }
+        ],
+        "pris": 399,
+        "description": "Clarins Body Treatment Oil er en kroppsolje med 100% rene planteekstrakter. Oljen er rik på fuktighet og etterlater huden myk og jevn. Oljen har også en oppstrammende og stimulerende effekt samtidig som den bidrar til å fjerne avfallsstoffer. Dette er en spennende godbit for slitne ben og føtter. Setter ikke flekker.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/clarinsOil.jpeg",
+            "name": "clarinsOil.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BodyBronzingBodyOil",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsoljer_bodycare"
+          }
+        ],
+        "pris": 259,
+        "description": "Sammensetningen av naturlige oljer og vitaminer i denne kroppsoljen fukter huden og etterlater den myk og strålende. Lysreflekterende partikler sikrer deg et glødende resultat og gir huden et solkysset utseende som gjør at produktet kan brukes alene eller for å forsterke en brunfarge.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/camillaPOOil.jpeg",
+            "name": "camillaPOOil.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HappyBuddhaDryOil",
+        "sub_categories": [
+          {
+            "StrapiName": "kroppsoljer_bodycare"
+          }
+        ],
+        "pris": 189,
+        "description": "Tørrolje som nærer huden. 100% naturlig beriket med urter, pleiende søt appelsin og sedertre.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsOil.jpeg",
+            "name": "ritualsOil.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "DeoPureRoll-on",
+        "sub_categories": [
+          {
+            "StrapiName": "deodorant_bodycare"
+          }
+        ],
+        "pris": 179,
+        "description": "Langvarig og effektiv antiperspirant. En flytende konsistens og en bred kule for komfortabel bruk.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bioDeo.jpeg",
+            "name": "bioDeo.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SuperblyEfficientAntiperspirantDeodorantCream",
+        "sub_categories": [
+          {
+            "StrapiName": "deodorant_bodycare"
+          }
+        ],
+        "pris": 149,
+        "description": "Antiperspirant deodorantkrem. Etterlater huden myk og beskytter mot svette og vond lukt i 24 timer.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/kiehlsDeo.jpeg",
+            "name": "kiehlsDeo.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BocageDeodorantRoll-On",
+        "sub_categories": [
+          {
+            "StrapiName": "deodorant_bodycare"
+          }
+        ],
+        "pris": 189,
+        "description": "Alkoholfri roll-on som påfører akkurat den rette mengden av produktet for maksimal komfort. En effektiv deodorant som beskytter og som varer. Etterlater seg en herlig følelse av friskhet. Brukes hver morgen.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lancomeDeo.jpeg",
+            "name": "lancomeDeo.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "UltimateStrengthHandSalve",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 189,
+        "description": "Håndkrem som beskytter og reparerer tørr og sår hud. Inneholder en blanding av botaniske oljer og naturlig voks av olivenolje for å berolige, fukte og styrke huden.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "hender_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/kiehlsHand.jpeg",
+            "name": "kiehlsHand.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MakeADifferenceHandTreatment",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 209,
+        "description": "Origins Make a Difference Rejuvenating Hand Treatment er en rik håndkrem som reparerer og nærer tørr og sprukken hud. Inneholder jerikorose som jevner ut hudtonen og forebygger dehydrering.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "hender_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/originsHand.jpeg",
+            "name": "originsHand.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SheaButterHandCream",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 199,
+        "description": "Denne håndkremen er en stor favoritt rundt om i hele verden. Inneholder 20% Shea Butter og en blanding av mandler, honning og kokosolje som gir huden ekstra fukt og næring. Håndkremen absorberer lett, og hendene føles myke.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "hender_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/loccitaneHand.jpeg",
+            "name": "loccitaneHand.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "IntenseFootBalm",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 199,
+        "description": "En utrolig rik og reparerende fotkrem med høy konsentrasjon av sheasmør, nemlig hele 25%. Den gir intensiv næring til tørre og slitne ben, og jobber umiddelbart med å berolige huden og redusere hard hud. Den har en beskyttende effekt mot ytterligere slitasje. En rik og god balm-lignende konsistens som raskt trekker inn uten at man sitter igjen med en klissete følelse. Den gir gode resultater og det er ikke uten grunn at nettopp denne er en bestselger hos oss.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "fotter_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/loccitaneFootIntense.jpeg",
+            "name": "loccitaneFootIntense.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SheaFootCream",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 199,
+        "description": "En absolutt bestselger hos oss. Denne prisvinnende fotkremen er et must-have for å klargjøre vintertrøtte ben for vår- og sommersesongen. Beriket med fuktighetsgivende sheasmør, beroligende lavendel og arnicaekstrakt som har anti-inflammatoriske egenskaper heler og mykgjør denne fotkremen trøtte og vonde ben. Kan påføres daglig etter dusj.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "fotter_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/loccitaneFoot.jpeg",
+            "name": "loccitaneFoot.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MoodAromaTherapyDeluxeHerbalFootCream",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 169,
+        "description": "Fotkrem som pleier og mykgjør føttene og har en kjølende effekt. Duft av rosmarin og mynte. ",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "fotter_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/tromborgFoot.jpeg",
+            "name": "tromborgFoot.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SakuraHandWash",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 95,
+        "description": "En håndsåpe med deilig duft av delikat kirsebærblomst og søt rismelk som bidrar til å beskytte hendene under håndvask. Den kjennes luksuriøs og pleiende ut, og for optimal beskyttelse brukes den sammen med The Ritual of Sakura håndkrem.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "handsape_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsSoap.jpeg",
+            "name": "ritualsSoap.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "LimePatchouliHandWash",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 199,
+        "description": "En deilig og luksuriøs håndsåpe som forsiktig renser hendene ved håndvask. Tips: Ha denne alltid stående sammen med håndkrem på vasken. Ikke bare er flaskene fint interiør på badet, men man sørger også alltid for å ha velpleide hender ved å skape en rutine med håndkrem etter hver håndvask. Denne håndsåpen har en deilig duft av forfriskende lime og patchouli.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "handsape_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/moltonSoap.jpeg",
+            "name": "moltonSoap.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HandWash03High",
+        "sub_categories": [
+          {
+            "StrapiName": "henderfotter_bodycare"
+          }
+        ],
+        "pris": 139,
+        "description": "En aromaterapeutisk håndsåpe med aloe vera som vasker hendene skånsomt uten å virke uttørkende. Inneholder eteriske oljer fra sitrongress, eukalyptus, rosmarin, søt appelsin og mint.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "handsape_henderfotter_bodycare"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/karmamejuSoap.jpeg",
+            "name": "karmamejuSoap.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HommeDayControlDeodorantRoll-On",
+        "sub_categories": [
+          {
+            "StrapiName": "herre_bodycare"
+          }
+        ],
+        "pris": 189,
+        "description": "En effektiv antperspirant som absorberes raskt inn i huden. Svetteproduksjonen reduseres, og produktet gir en langvarig forfriskende følelse. Passer alle hudtyper og etterlater ikke merker på klærne.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bioDeoMen.jpeg",
+            "name": "bioDeoMen.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MenMoisturizingRecoveryCream",
+        "sub_categories": [
+          {
+            "StrapiName": "herre_bodycare"
+          }
+        ],
+        "pris": 469,
+        "description": "24-timers fuktighetsgivende ansiktskrem for menn. Virker umiddelbart reparerende på tørr og skadet hud forårsaket av barbering, og beskytter huden mot frie radikaler.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/shiseidoRecMen.jpeg",
+            "name": "shiseidoRecMen.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "UltimateBrushlessShaveCreamBlueEagle",
+        "sub_categories": [
+          {
+            "StrapiName": "herre_bodycare"
+          }
+        ],
+        "pris": 169,
+        "description": "Unik barberingskrem som lindrer og pleier huden under barbering. Inneholder Aloe Vera som virker beroligende og fuktighetsgivende.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/kiehlsShaveMen.jpeg",
+            "name": "kiehlsShaveMen.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HandCreamSet",
+        "sub_categories": [
+          {
+            "StrapiName": "gavesett_bodycare"
+          }
+        ],
+        "pris": 519,
+        "description": "Et håndkremsett med praktiske reisestørrelser av håndkremer i følgende serier: Verbena, Shea, Rose, Cherry Blossom og Lavender. Alle håndkremene er i 30ml og pleier og reparerer tørre hender. Settet er et Travel Retail Exclusive sett og er derfor kun mulig å få kjøpt på Taxfree.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/loccitaneGift.jpeg",
+            "name": "loccitaneGift.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SakuraSet",
+        "sub_categories": [
+          {
+            "StrapiName": "gavesett_bodycare"
+          }
+        ],
+        "pris": 309,
+        "description": "Et nydelig sett fra Rituals med produkter fra serien Sakura. Serien er inspirert av kirsebærblomstringens nydelige skjønnhet som er kortvarig og bør nytes til det fulle når den først blomster. Produktene dufter av deilig rismelk og kirsebærblomster. Settet inneholder en foaming shower gel, bodyscrub, bodykrem og hair mist.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ritualsGift.jpeg",
+            "name": "ritualsGift.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "AquapowerMensCareSet",
+        "sub_categories": [
+          {
+            "StrapiName": "gavesett_bodycare"
+          }
+        ],
+        "pris": 469,
+        "description": "Hudpleiesett til mann som består av Biotherm Homme Aquapower 100 ml som har en lett gelèkonsistens som trekker fort inn i huden. Gir maksimalt med fukt. Og Biotherm Homme Day Control Déodorant Roll-On 75 ml som en effektiv antiperspirant roll-on som absorberes raskt inn i huden. Svetteproduksjonen reduseres, og produktet gir en langvarig forfriskende følelse. Passer alle hudtyper og etterlater ikke merker på klærne. Travel Retail Exclusive",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bioManGift.jpeg",
+            "name": "bioManGift.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SimplyVenus2DisposableRazor",
+        "sub_categories": [
+          {
+            "StrapiName": "tilbehoer_facecare"
+          }
+        ],
+        "pris": 25,
+        "description": "6 stykker engangs barberhøvel fra Gillette.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/venusHyg.jpeg",
+            "name": "venusHyg.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "TannkremMaxFreshMint25ml",
+        "sub_categories": [
+          {
+            "StrapiName": "tilbehoer_facecare"
+          }
+        ],
+        "pris": 19,
+        "description": null,
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/colgateTooth.jpeg",
+            "name": "colgateTooth.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "CottonPads",
+        "sub_categories": [
+          {
+            "StrapiName": "tilbehoer_facecare"
+          }
+        ],
+        "pris": 9,
+        "description": "40 stykk bomullspads.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "None"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/caroliPads.jpeg",
+            "name": "caroliPads.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BourgognePinotNoirLesUrsulines",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 149,
+        "description": "Middels purpur på farge. Middels intens duft av bringebær, skogsbær, krydder og blomster. Middels fyldig og middels intens vin med middels syre, moderat tannin og middels lang ettersmak. Tørr.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Burgund\nÅrgang: 2017\nDrue: Pinot Noir;\nAroma: Bringebær; Skogsbær; Krydder; Blomster;\nSukkerinnhold: < 4 g/l\nAlkoholprosent: 12,5;\nØkologisk: False\nUtseende(metning): Middels;",
+        "type_of_products": [
+          {
+            "StrapiName": "rodvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/jeanCloudeRV.jpeg",
+            "name": "jeanCloudeRV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "ContinoReserva",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 239,
+        "description": "Dyp rubinrød på farge. Intens duft av moden plomme, bjørnebær, lakris, krydder og urter. Fyldig og intens vin med middels tannin og lang ettersmak. Tørr. 0,75L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Spania\nRegion: Rioja\nÅrgang: 2015\nDrue: Tempranillo (85 %); Graciano (10 %); Mazuelo y Garnacha (5 %);\nAroma: Moden plomme; Bjørnebær; Lakris; Krydder; Urter;\nSukkerinnhold: < 4 g/l\nAlkoholprosent: 14\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "rodvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/contresRV.jpeg",
+            "name": "contresRV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MasiCampofiorin",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 119,
+        "description": "En rødvin med dyp rubinrød farge. Middels intens duft av modne kirsebær, plomme, tørket frukt, krydder, urter og litt fat. Middels fyldig og middels intens vin med middels syre, moderat tannin og middels lang ettersmak. Tørr",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Null\nÅrgang: 2015\nDrue: Corvina (70 %), Rondinella (25 %), Molinara (5 %)\nAroma: Modne kirsebær; Plomme; Tørket frukt; Krydder; Urter; Fat;\nSukkerinnhold: 0,3 g/l (2016)\nAlkoholprosent: 13\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "rodvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/masiCampRV.jpeg",
+            "name": "masiCampRV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "J-MoreauChablis",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "En hvitvin med blek sitrongul farge. Middels intens duft av grønt eple, sitrus, urter og mineraler. Lett og middels intens vin med høy syre og middels lang ettersmak. Tørr",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Chablis\nÅrgang: 2016\nDrue: Chardonnay\nAroma: Grønt eple; Sitrus; Urter; Mineraler;\nSukkerinnhold: < 4 g/l\nAlkoholprosent: 12,5\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/jmorChabHV.jpeg",
+            "name": "jmorChabHV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SanValentinBaginBox",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "En hvitvin med middels grønngul farge. Middels intens duft av sitrus, pære, fersken og blomster. Lett og middels intens vin med middels syre og middels lang ettersmak. Halvtørr. 1,5L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Spania\nRegion: Catalonia\nÅrgang: 2018\nDrue: Parellada\nAroma: Sitrus; Pære; Fersken; Blomster;\nSukkerinnhold: 12,9 g/l\nAlkoholprosent: 11\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/torrValHV.jpeg",
+            "name": "torrValHV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "SteinbergRiesling",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 119,
+        "description": "En hvitvin med blek grønngul farge. Intens duft av eple, aprikos, hvit fersken, sitrus og mineraler. Middels fyldig og intens vin med medium syre og lang ettersmak. Søt",
+        "ReviewScore": 5,
+        "ingredients": "Land: Tyskland \nRegion: Rheingau\nÅrgang: 2017\nDrue: Riesling\nAroma: Eple, aprikos, hvit fersken, sitrus og mineraler\nSukkerinnhold: 76,9 g/l (2016)\nAlkoholprosent: 8\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "hvitvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/klosEbHV.jpeg",
+            "name": "klosEbHV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "CotesduProvenceRose",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 169,
+        "description": "Blek rosa på farge. Middels intens duft av bringebær, jordbær, lime, blomster og mineraler. Lett og middels intens rosévin med høy syre og middels lang ettersmak. Tørr.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike \nRegion: Provence\nÅrgang: 2018\nDrue: Cinsault; Grenache; Syrah; Rolle;\nAroma: Bringebær; Jordbær; Lime; Blomster; Mineraler;\nSukkerinnhold: < 4 g/l\nAlkoholprosent: 13\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "rosevin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/mirCotRoV.jpeg",
+            "name": "mirCotRoV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RosadeiMasi",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 109,
+        "description": "Blek lakserosa på farge. Middels intens duft av jordbær, bringebær, urter og litt sitrus. Lett og middels intens rosévin med middels syre og kort ettersmak. Tørr. 0,75L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Veneto\nÅrgang: 2018\nDrue: Refosco\nAroma: Jordbær; Bringebær; Urter; Sitrus;\nSukkerinnhold: 3,4 g/l (2016)\nAlkoholprosent: 12,5\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "rosevin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/masiRoV.jpeg",
+            "name": "masiRoV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RosèBaginBox3L",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 299,
+        "description": "Blek rosa på farge. Nøytral duft av røde bær, jordbær, fersken og sitrus. Lett og nøytral vin med middels syre og middels lang ettersmak. Tørr.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Languedoc\nÅrgang: 2018\nDrue: Grenache (65 %); Cabernet Sauvignon (25 %); Syrah (10 %);\nAroma: Røde bær; Jordbær; Fersken; Sitrus;\nSukkerinnhold: < 4 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "rosevin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/domMonRoV.jpeg",
+            "name": "domMonRoV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "PineaudeCharenteswhite",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 209,
+        "description": "Gyllen gul på farge. Middels intens duft av aprikos, nøtter, frukt og sødme. Lett søtlig, fyldig og middels intens sterkvin med bløt alkohol og middels lang ettersmak. Serveres bar og romtemperert eller avkjølt som aperitiff, dessert eller avec.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Null\nSukkerinnhold: Null\nAlkoholprosent: 17\nØkologisk: False\nUtseende(metning): Null",
+        "type_of_products": [
+          {
+            "StrapiName": "dessertvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bacheDV.jpeg",
+            "name": "bacheDV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RéserveSauternes",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 239,
+        "description": "Middels gyllengul på farge. Middels intens duft av fersken, tørket aprikos, honning og krydder. Middels fyldig og middels intens vin med middels syre og middels lang ettersmak. Søt.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Bordeaux\nÅrgang: 2012\nDrue: Semillon; Sauvignon Blanc; Muscadelle;\nAroma: Fersken; Tørket aprikos; Honning; Krydder;\nSukkerinnhold: Null\nAlkoholprosent: 12,5\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "dessertvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/mouDV.jpeg",
+            "name": "mouDV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RoyalTokaji5PuttonyosBlueLabel",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 259,
+        "description": "Dyp gyllengul på farge. Intens duft av tørket aprikos, botrytis, honning og appelsinskall. Fyldig og intens vin med middels syre og lang ettersmak. Søt.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Ungarn\nRegion: Tokaji\nÅrgang: 2013\nDrue: Furmint; Harslevelu;\nAroma: Tørket aprikos; Botrytis; Honning; Appelsinskall;\nSukkerinnhold: Null\nAlkoholprosent: 11\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "dessertvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/royTokDV.jpeg",
+            "name": "royTokDV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MoetChandonImpèrialBrut",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 389,
+        "description": "Blek sitrongul på farge. Middels intens duft av grønt eple, sitrus, kjeks og mineraler. Middels fyldig og middels intens champagne med høy syre og middels lang ettersmak. Brut.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Champagne\nÅrgang: Null\nDrue: Pinot Noir; Chardonnay; Pinot Meunier;\nAroma: Grønt eple; Sitrus, kjeks; Mineraler;\nSukkerinnhold: 9 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "champagne_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/moChCP.jpeg",
+            "name": "moChCP.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "TaittingerBrutRéserve",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 359,
+        "description": "Middels gyllengul på farge. Middels intens duft av sitrus, grønt eple, akasie, mineraler og brioche. Lett og middels intens champagne med høy syre og middels lang ettersmak. Brut.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Champagne\nÅrgang: Null\nDrue: Chardonnay; Pinot Noir; Pinot Meunier;\nAroma: Sitrus; Grønt eple; Akasie; Mineraler; Brioche;\nSukkerinnhold: 9 g/l\nAlkoholprosent: 12,5\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "champagne_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/tatBruCP.jpeg",
+            "name": "tatBruCP.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Veuve Clicquot Brut",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 419,
+        "description": "Blek sitrongul på farge. Intens duft av gult eple, sitrus, mineral og kjeks. Middels fyldig og middels intens champagne med høy syre og middels lang ettersmak. Brut.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Champagne\nÅrgang: Null\nDrue: Pinot Noir; Pinot Meunier; Chardonnay;\nAroma: Gult eple; Sitrus; Mineral; Kjeks;\nSukkerinnhold: <12 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "champagne_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/veCliqCP.jpeg",
+            "name": "veCliqCP.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "PerledeVigneCremantdeBourgogne",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "En crémant med en middels gyllengul farge. Middels intens duft av sitrus, eple, urter og litt toast. Middels fyldig og middels intens musserende vin med middels syre og middels lang ettersmak. Brut. 0,75L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Null\nÅrgang: Null\nDrue: Pinot Noir; Chardonnay; Aligoté; Gamay;\nAroma: Sitrus; Eple; Urter; Toast;\nSukkerinnhold: 11,9 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "cremant_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/louBouCR.jpeg",
+            "name": "louBouCR.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "CremantdeBourgogneBrutReserve",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 149,
+        "description": "En crémant med en middels gyllengul på farge. Middels intens duft av gult eple, toast og mineraler. Middels fyldig og middels intens musserende vin med høy syre og lang ettersmak. Tørr.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Null\nÅrgang: Null\nDrue: Chardonnay; Pinot Noir;\nAroma: Gult eple; Toast; Mineraler;\nSukkerinnhold: 10 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "cremant_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/albBicCR.jpeg",
+            "name": "albBicCR.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Perled'AuroreCremantdeBourgogneRose",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 159,
+        "description": "En crémant med en blek rosa farge. Middels intens duft av jordbær, solbær, bringebær og blomster. Middels fyldig og middels intens musserende vin med middels syre og middels lang ettersmak. Brut. 0,75L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Frankrike\nRegion: Null\nÅrgang: Null\nDrue: Pinot Noir; Chardonnay; Gamay;\nAroma: Jordbær; Solbær; Bringebær; Blomster;\nSukkerinnhold: 12 g/l\nAlkoholprosent: 12\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "cremant_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/louBouPerCR.jpeg",
+            "name": "louBouPerCR.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "FreixenetCarteNevada",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 85,
+        "description": "Blek sitrongul på farge. Middels intens duft av sitrus, blomster, pære og eple. Middels fyldig og middels intens musserende vin med middels syre og middels lang ettersmak. Halvtørr.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Spania\nRegion: Null\nÅrgang: Null\nDrue: Parellada; Macabeo; Xarel·lo;\nAroma: Sitrus; Blomster; Pære; Eple;\nSukkerinnhold: 38 g/l\nAlkoholprosent: 11,5\nLagringsgrad: Best innen 1 år\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "cava_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/freCarCA.jpeg",
+            "name": "freCarCA.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "VillaConchiBrutSeleccion",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 109,
+        "description": "En cava med en blek sitrongul på farge. Middels intens duft av eple, sitrus, blomster, urter og litt toast. Lett og middels intens musserende rosévin med middels syre og middels lang ettersmak. Brut.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Spania\nRegion: Null\nÅrgang: Null\nDrue: Xarel Lo (30 %); Parellada (30 %); Macabeo (30 %); Chardonnay (10 %);\nAroma: Eple; Sitrus; Blomster; Urter; Toast;\nSukkerinnhold: <12 g/l\nAlkoholprosent: 11,5\nLagringsgrad: Best innen 3 år\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "cava_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/vilConCA.jpeg",
+            "name": "vilConCA.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "FreixenetCordonNegroBrut",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 79,
+        "description": "En cava med en blek sitrongul farge. Middels intens duft av sitrus, grønne epler, mineraler og urter. Lett og middels intens musserende vin med høy syre og middels lang ettersmak. Brut.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Spania\nRegion: Null\nÅrgang: Null\nDrue: Parellada, Macabeo, xarel-lo\nAroma: Sitrus; Grønne epler; Mineraler; Urter\nSukkerinnhold: 9 g/l\nAlkoholprosent: 11,5\nLagringsgrad: Best innen 3 år\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "cava_musserende_wine"
+          },
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/freCorCA.jpeg",
+            "name": "freCorCA.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "TommasiFilodoraProsecco",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 109,
+        "description": "En prosecco med blek sitrongul farge. Middels intens duft av eple, tropisk frukt og blomster. Lett og middels intens musserende vin med middels syre og kort ettersmak. Brut. 0,75L.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Null\nÅrgang: Null\nDrue: Glera\nAroma: Eple; Tropisk Frukt; Blomster;\nSukkerinnhold: 11 g/l\nAlkoholprosent: 11\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          },
+          {
+            "StrapiName": "prosecco_musserende_wine"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/tomFilPros.jpeg",
+            "name": "tomFilPros.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "RuffinoProsecco",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "En prosecco med middels sitrongul farge. Middels intens duft av sitrus, pære, grønne epler og blomster. Lett og middels intens musserende vin med middels syre og middels lang ettersmak. Extra Dry.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Null\nÅrgang: Null\nDrue: Glera\nAroma: Sitrus; Pære; Grønne Epler; Blomster;\nSukkerinnhold: <18 g/l\nAlkoholprosent: 11\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          },
+          {
+            "StrapiName": "prosecco_musserende_wine"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/ruffPros.jpeg",
+            "name": "ruffPros.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "BottegaGoldProseccoBrut",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 49,
+        "description": "En prosecco med blek sitrongul farge. Middels intens duft av gult eple, pære, blomster og sitrus. Lett og middels intens musserende vin med middels syre og kort ettersmak. Brut. 0,2L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Veneto\nÅrgang: Null\nDrue: Glera\nAroma: Gult eple; Pære; Blomster; Sitrus;\nSukkerinnhold: <13 g/l\nAlkoholprosent: 11\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "musserende_vin_alcohol"
+          },
+          {
+            "StrapiName": "prosecco_musserende_wine"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/bottGPros.jpeg",
+            "name": "bottGPros.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "Grahams20yearsoldTawnyPort",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 399,
+        "description": "Dyp rav på farge. Intens duft av nøtter, moden frukt, appelsinskall, plomme, sjokolade og røde bær. Søtlig, middels fyldig og intens portvin med bløt alkohol og lang ettersmak. Serveres bar og romtemperert eller lettere avkjølt som avec. Passer til modne oster og dessert.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Nøtter; Moden frukt; Appelsinskall; Plomme; Sjokolade; Røde bær;\nPasser: Bar; Temperert; Avkjølt; Avec; Mat;\nPasser til: Harde oster, sjokoladedesserter, digestif.\nFylde: Middels\nIntensitet: Høy\nSødme: Søtlig\nEttersmak: Null\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 20\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "portvin_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/grah20Port.jpeg",
+            "name": "grah20Port.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "CockburnsSpecialReserve",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 119,
+        "description": "En portvin med dyp granateple på farge. Intens duft av kirsebær, plomme, tørket frukt og fat, samt litt jordbær og sjokolade. Fyldig og intens vin med middels lang ettersmak. Søt. ",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Fyldig og intens vin med middels lang ettersmak. Søt. \nPasser: Bar; Temperert; Avkjølt; Avec; Mat;\nPasser til: Oster som roquefort, gorgonzola og stilton; desserter som crème brûlée og sjokolade.\nFylde: Null\nIntensitet: Null\nSødme: Søtlig\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Null\nSukkerinnhold: Null\nAlkoholprosent: 20\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "portvin_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/cockSRPort.jpeg",
+            "name": "cockSRPort.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "GrahamsQuintadosMalvedos2015VintagePort",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 375,
+        "description": "Den har en blå rød farge. Duft av mørke bær, tørket frukt, urter, sjokolade og lakris. Smaks aromaer av sjokolade, røde bær, tørket frukt, urter og krydder.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: sjokolade, røde bær, tørket frukt, urter og krydder.\nPasser: Bar; Temperert; Mat;\nPasser til: Dessert av bær, is og smaksrike oster.\nFylde: Middels\nIntensitet: Høy\nSødme: Søtlig\nEttersmak: Null\nSyre: Null\nSmak Alkohol: bløt\nSukkerinnhold: Null\nAlkoholprosent: 20\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "portvin_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/grahQuiPort.png",
+            "name": "grahQuiPort.png"
+          }
+        ]
+      },
+      {
+        "Strapiname": "WilliamsHumbertDrySackSherry",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 109,
+        "description": "Dyp gyllenbrun på farge. Middels intens duft av tørket frukt, karamell, valnøtter og sitrus. Balansert mellom tørrhet og søthet. Middels fyldig og middels intens sherry med varmende alkohol og lang ettersmak. Serveres bar og romtemperert som aperitiff.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Tørket frukt, karamell, valnøtter og sitrus.\nPasser: Bar; Temperert; Aperitif;\nPasser til: Aperitif\nFylde: Middels\nIntensitet: Middels\nSødme: Lett søtlig\nEttersmak: Lang\nSyre: Null\nSmak Alkohol: Varmende\nSukkerinnhold: Null\nAlkoholprosent: 19,5\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "sherry_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/willDrySher.jpeg",
+            "name": "willDrySher.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "PalominoFino",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 119,
+        "description": "Blek strågul på farge. Middels intens duft av sitrus, oliven, eple, mandler og blomster. Tørr, middels fyldig og middels intens sherry med bløt alkohol og middels lang ettersmak. Serveres bar og romtemperert som aperitiff. Passer til sjømat og tapas.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Null\nPasser: Bar; Temperert; Aperitif; Mat;\nPasser til: Tapas, skalldyr, fisk, skinke, milde oster.\nFylde: Middels\nIntensitet: Middels\nSødme: Tørr\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 15\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "sherry_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/tioPepSher.jpeg",
+            "name": "tioPepSher.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "HarveysBristolCream",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 159,
+        "description": "Dyp gulbrun på farge. Middels intens duft av karamell, sjokolade og tørkede frukter. Søtlig, fyldig og intens sherry med bløt alkohol og lang ettersmak. Serveres bar og romtemperert som aperitiff eller avec. Passer til dessert.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Karamell, sjokolade og tørkede frukter\nPasser: Bar; Temperert; Aperitif; Avec; Mat;\nPasser til: Aperitif, sjokoladedesserter, drink.\nFylde: Høy\nIntensitet: Høy\nSødme: Søtlig\nEttersmak: Lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 17,5\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "sherry_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/harBriSher.jpeg",
+            "name": "harBriSher.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MartiniRosato",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 85,
+        "description": "Lys rosa på farge. Middels intens duft av røde bær, kanel, vanilje og sitrus. Søt, middels fyldig og middels intens vermut med bløt alkohol og middels lang ettersmak. Serveres bar og romtemperert, på is som aperitiff eller i drinker som Martini Rosato & Tonic.",
+        "ReviewScore": 5,
+        "ingredients": null,
+        "type_of_products": [
+          {
+            "StrapiName": "vermut_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/marRosVer.jpeg",
+            "name": "marRosVer.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MartiniExtraDry",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 85,
+        "description": "Blek grønngul på farge. Middels intens duft av kanel, vanilje, urter, krydder og sitrus. Tørr, middels fyldig og middels intens vermut med bløt alkohol og middels lang ettersmak. Serveres bar og romtemperert, på is som aperitiff eller i drinker som Aperitvio with Martini Extra Dry.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Kanel, vanilje, urter, krydder og sitrus\nPasser: Bar; Temperert; På is; Aperitif; Cocktails;\nPasser til: Null\nFylde: Middels\nIntensitet: Middels\nSødme: Tørr\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 15\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "vermut_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/marExDryVer.jpeg",
+            "name": "marExDryVer.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "MartiniRosso",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 85,
+        "description": "Dyp rødbrun på farge. Middels intens duft av kanel, sitrus, vanilje, tørket frukt, karamell og krydder. Søt, middels fyldig, middels intens bitterhet, og middels intens vermut med bløt alkohol og middels lang ettersmak. Serveres bar og romtemperert, på is som aperitiff eller i drinker som Martini Rosso & Tonic.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Kanel, sitrus, vanilje, tørket frukt, karamell og krydder\nPasser: Bar; Temperert; På is; Aperitif; Cocktails; \nPasser til: Null\nFylde: Middels\nIntensitet: Middels\nSødme: Søt\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 15\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "vermut_sterkvin_wine"
+          },
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/marRossoVer.jpeg",
+            "name": "marRossoVer.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "FlorioFineMarsala",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 99,
+        "description": "Dyp brun på farge. Middels intens duft av rosiner, vanilje, mandler og tørket frukt. Middels fyldig og middels intens marsala med bløt alkohol og middels lang ettersmak. Serveres bar, avkjølt eller til desserter som Tiramisu",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Rosiner, vanilje, mandler og tørket frukt\nPasser: Bar; Avkjølt; Mat;\nPasser til: Desserter som tiramisu.\nFylde: Middels\nIntensitet: Middels\nSødme: Null\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 18\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          },
+          {
+            "StrapiName": "marsala_sterkvin_wine"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/floFinMars.jpeg",
+            "name": "floFinMars.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "FlorioFineMarsalaSot",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 99,
+        "description": "Dyp brun på farge. Middels intens duft av rosiner, lakris, dadler og moden frukt. Søt, middels fyldig og middels intens marsala med bløt alkohol og middels lang ettersmak. Serveres bar, avkjølt eller til desserter som Tiramisu",
+        "ReviewScore": 5,
+        "ingredients": "Land: Null\nRegion: Null\nÅrgang: Null\nDrue: Null\nAroma: Rosiner, lakris, dadler og moden frukt\nPasser: Bar; Avkjølt; Mat;\nPasser til: Desserter som tiramisu.\nFylde: Middels\nIntensitet: Middels\nSødme: Søt\nEttersmak: Middels lang\nSyre: Null\nSmak Alkohol: Bløt\nSukkerinnhold: Null\nAlkoholprosent: 18\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Dyp",
+        "type_of_products": [
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          },
+          {
+            "StrapiName": "marsala_sterkvin_wine"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/floFinSoetMars.jpeg",
+            "name": "floFinSoetMars.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "GrasparossadiCastelvetro",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 89,
+        "description": "Middels purpur farge. Middels intens duft av blåbær, jordbær og sødmefull frukt. Middels fyldig og middels intens vin med lav syre og middels lang ettersmak. 0,75L",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Null\nÅrgang: 2017\nDrue: Grasparossa\nAroma: Blåbær; Jordbær; Sødmefull frukt\nPasser: Null\nPasser til: Aperitif\nFylde: Middels\nIntensitet: Middels\nSødme: Null\nEttersmak: Middels\nSyre: Lav\nSmak Alkohol: Null\nSukkerinnhold: 50 g/l\nAlkoholprosent: 8\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Middels",
+        "type_of_products": [
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          },
+          {
+            "StrapiName": "perlendevin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/lamGrasPV.jpeg",
+            "name": "lamGrasPV.jpeg"
+          }
+        ]
+      },
+      {
+        "Strapiname": "ZagaraMoscatodAsti",
+        "sub_categories": [
+          {
+            "StrapiName": "vin_alcohol"
+          }
+        ],
+        "pris": 139,
+        "description": "Blek sitrongul på farge. Intens duft av appelsin, pære, fersken og aprikosblomst. Lett og middels intens vin med lav syre og middels lang ettersmak. Søt.",
+        "ReviewScore": 5,
+        "ingredients": "Land: Italia\nRegion: Piemonte\nÅrgang: 2015\nDrue: Moscato\nAroma: Appelsin; Pære; Fersken; Aprikosblomst;\nPasser: Null\nPasser til: Frukt; søtlige desserter som panna cotta med bær og jordbærsuppe med mascarponekrem. \nFylde: Lav\nIntensitet: Middels\nSødme: Søt\nEttersmak: Middels\nSyre: Lav\nSmak Alkohol: Null\nSukkerinnhold: 140 g/l\nAlkoholprosent: 5\nLagringsgrad: Null\nØkologisk: False\nUtseende(metning): Blek",
+        "type_of_products": [
+          {
+            "StrapiName": "sterkvin_vin_alcohol"
+          },
+          {
+            "StrapiName": "perlendevin_vin_alcohol"
+          }
+        ],
+        "image": [
+          {
+            "url": "/files/marBarPV.jpeg",
+            "name": "marBarPV.jpeg"
+          }
+        ]
+      }
+    ]
+  }
+}

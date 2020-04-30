@@ -1,10 +1,9 @@
 
-import React, { useState, useEffect, useContext } from "react"
+import React from "react"
 import ProductgridCard from "./productgridCard";
 
 
 const Productgrid = ({ productgrid }) => {
-
 
 
     return (
@@ -12,7 +11,7 @@ const Productgrid = ({ productgrid }) => {
 
             <div className="container-fluid px-sm-1 py-5 mx-auto">
                 <div className="row justify-content-center">
-                    {productgrid.map((product, i, ) => {
+                    {productgrid.map((product) => {
 
                         return (
 

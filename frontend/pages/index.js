@@ -1,6 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Frontpage } from "../components/Frontpage";
 import {
     Card, CardImg, CardText, CardBody,

@@ -14,7 +14,7 @@ const HorizontalMenuItem = (category) => {
                 </Link>
             </div>
             <div>
-                <Link href={categoryLink}>
+                <Link href={{ pathname: "/subCategory", query: { id: categoryStrapiName } }}>
                     <a> {categoryName}</a>
                 </Link>
             </div>

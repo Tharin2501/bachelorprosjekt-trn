@@ -5,8 +5,8 @@ const names = ["Norges største parfymeri", "Alltid åpent", "Ingen moms", "Spar
 
 // If you don’t pass in an initial value, reduce will assume the first item in your array is your initial value
 export const MyMarquee = () => (
-    <div style={{backgroundColor: "lightgrey"}}>
-        <Ticker direction="toRight" mode="chain" speed={10}>
+    <div style={{backgroundColor: "lightblue" }}>
+        <Ticker direction="toRight" mode="chain" speed={3}>
 
             {(index) => (
                 <div className="marquee-container">

@@ -1,10 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import SubCategoryList from "../components/category/subCategoryList"
-import ProductsComonent from "../components/category/productsComponent";
-import Highlight3Articles from "../components/category/highlight3Articles"
-import GETCATEGORYFROMSUBCATEGORYSTRAPINAME_QUERY from "../apollo/queries/subCategories/getSubCategoryFromStrapiName"
-import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
+import SubCategoryProductsComponent from "../components/category/subCategory/subCategoryProductsComponent";
 import GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY from "../apollo/queries/subCategories/getSubCategoryProductsFromStrapiName"
 import QuerySubCategory from "../components/querySubCategory"
 
@@ -14,13 +11,12 @@ const SubCategory = () => {
 
     return (
 
-        <QuerySubCategory query={GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY} nametoInsert={router.query.id}>
+        <QuerySubCategory query={GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY} categoryName={router.query.id}>
             {({ data: { subCategories } }) => {
-                //console.log(subCategories[0].products)
                 return (
                     <div>
                         <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
-                        <ProductsComonent categoriesList={subCategories[0].products} isSubCategoryGrid={true}></ProductsComonent>
+                        <SubCategoryProductsComponent typesDefault={subCategories[0].type_of_products} pageTitle={router.query.id} description={subCategories[0].description} ></SubCategoryProductsComponent>
                     </div>
                 )
             }}

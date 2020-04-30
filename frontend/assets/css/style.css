@@ -1,30 +1,36 @@
 body {
-  color: #000;
-  overflow-x: hidden;
-  height: 100%;
-  background-color: #fff;
-  background-repeat: no-repeat;
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #fff;
+    background-repeat: no-repeat;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 h1 {
-  font-family: Staatliches;
-  font-size: 120px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+h3 {
+  font-family: sans-serif;
+  font-size: 10px;
+  margin-top: 2rem;
 }
 
 #category {
-  font-family: Staatliches;
-  font-weight: 500;
+    font-family: Staatliches;
+    font-weight: 500;
 }
 
 #title {
-  letter-spacing: 0.4px;
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 1.13636;
+    letter-spacing: 0.4px;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.13636;
 }
 
 #banner {
@@ -101,7 +107,7 @@ img:hover {
 .productgridFav {
   position: absolute;
   top: 10px;
-  color: #757575;
+  color: #29335c;
   font-weight: bold;
   background-color: #eeeeee;
   padding: 7px;
@@ -118,8 +124,8 @@ img:hover {
 
 
 .pic1 {
-  width: 250px; /* 90% */
-  height: 250px; /* null */
+  max-width:250px;
+  max-height:250px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -135,8 +141,7 @@ img:hover {
   margin: auto;
   padding: 20px;
   border-radius: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 20px;
 }
 
 .card-1 {
@@ -144,6 +149,16 @@ img:hover {
   border: none;
   height: 35rem;
   width: 20rem;
+}
+
+.card.card-1{
+  border-color: rgb(11, 57, 84);
+  border-width: 3px;
+  border-radius: 20px;
+}
+
+.buyQuantity{
+  background-color: red;
 }
 
 .category {
@@ -156,6 +171,7 @@ img:hover {
   font-family: Florence;
   font-weight: bold;
 }
+
 {/* ProductGrid*/}
 
 .price {
@@ -163,20 +179,18 @@ img:hover {
 }
 
 .sm-text {
-font-size: 14px
+font-size: 14px;
 }
-
-
 
 .book,
 .book-img {
     width: 120px;
     height: 180px;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .book {
-    margin: 20px 15px 5px 15px
+    margin: 20px 15px 5px 15px;
 }
 
 .rc-menu-root {
@@ -189,15 +203,18 @@ font-size: 14px
 /* Frontpage Horizontal line */
 .horizontal-line1 {
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     text-align: center;
     border-bottom: 1px solid #000000;
     line-height: 0.1em;
     margin: 10px 0 20px;
+    padding-top: 20px;
 }
 
 .horizontal-line2 {
     background:#ffffff;
-    padding:0 10px;
+    padding: 0 10px;
 }
 
 a.carousel-control-next, a.carousel-control-prev {
@@ -206,6 +223,13 @@ a.carousel-control-next, a.carousel-control-prev {
     width: 10%;
     height: 20%;
 }
+
+/* Resize carousel
+.carousel-inner > .carousel-item {
+  width:940px;
+  height:660px;
+}
+*/
 
 .marquee-container{
     white-space: nowrap;
@@ -265,13 +289,18 @@ a.carousel-control-next, a.carousel-control-prev {
     position: relative;
 }
 
+.nav-border{
+  border-bottom: 1px solid #000000;
+  line-height: 0.1em;
+}
+
 /* HAMBURGER MENY RELATED */
 .myImg {
-    margin: 4px 30px 0px 10px;
+    margin: 0px 30px 0px 10px;
     float: left;
     height: 35px;
     width: 35px;
-    border-radius: 50%;
+    vertical-align: middle;
 }
 
 /* END OF NAVBAR*/
@@ -306,8 +335,9 @@ div.scrollmenu {
   width: 6em;
 
 }
-.frontpageIconsText{
-  text-align: center;
+
+.frontpageIconsText {
+    text-align: center;
 }
 
 .featured-article {
@@ -315,6 +345,68 @@ div.scrollmenu {
 	height: 50em;
 	position: relative;
 	margin-bottom: 1em;
+}
+
+
+.btn-circle.btn-sm {
+  width: 12em;
+  height: 12em;
+  border-radius: 60px;
+  font-size: 8px;
+  text-align: center;
+
+
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgb(255, 255, 255); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* CHECKBOX */
+.checkboxItem{
+  white-space: nowrap;display:inline
 }
 
 .btn-circle.btn-sm {
@@ -510,4 +602,137 @@ div.scrollmenu {
 .card:hover .card-body-description {
     opacity: 1;
     transition: all .5s ease-in-out;
+}
+
+/* 1.2 Footer*/
+.footer-style {
+    background-color: #042434;
+    color: white;
+}
+
+.footer-color {
+    color: white;
+}
+
+/* NewsLetter */
+
+.newsletter-style {
+    background-color: lightgrey;
+}
+
+.newsletter-btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 55px;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #007de6;
+
+}
+
+.newsletter-btn:focus {
+    outline: none;
+}
+
+/* skincare carusel mobile*/
+
+.skincareMobileDiv{
+  overflow: hidden;
+  min-width: 6.25rem;
+  min-height: 6.25rem;
+}
+.skincareMobileCard{
+
+  min-width: 18.75rem;
+
+}
+
+.skincareCaurselMobileCardImage{
+  align-self: center;
+  display: block;
+  max-width:250px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
+.SkincareCaruselCardCheckboxListDiv{
+  display: table;
+  float: left;
+
+  overflow-x: hidden;
+
+}
+
+.SkincareCaruselCardCheckboxListLabel {
+  display: table-row;
+}
+
+.SkincareCaruselCardCheckboxs {
+  display: table-row;
+  width: 100%;
+}
+
+/* Circular button */
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+/* DESKTOP CARD  padding: 100px;*/
+#jumbo{
+  background: rgba(200, 54, 54, .5);
+  color: rgba(255, 255, 255);
+  position: relative;
+
+}
+
+.inner{
+  color:rgb(250,250,250);
+  opacity: 1;
+}
+/*  top:0 */
+.myCaruselIndictaor{
+
+  filter: invert(100%);
+  position: relative !important;
+}
+.controltest{
+  filter: invert(100%);
+}
+
+.contest{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizQuestionContainer{
+  background: rgba(200, 54, 54, .5);
+
 }
