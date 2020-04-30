@@ -70,14 +70,14 @@ export const Articles = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="square">
+                <div className="square pb-5">
 
                     <div className="content">
                         <div className="socialMediaContact-container">
                             <h3 className="font-italic">Takk for at du leste! </h3>
                             <div className="row">
                                 <div className="col-xs">
-                                    <div className="article-img-container mx-auto">
+                                    <div className="article-img-container mx-auto ">
                                         <img className="rounded mt-2"
                                              src={"https://trnbackend.herokuapp.com" + articleContext.socialmediaImage.url}
                                              alt="logo"/>
