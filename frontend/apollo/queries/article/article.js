@@ -32,5 +32,4 @@ const ARTICLE_QUERY = gql`
     }
 `;
 
-
 export default ARTICLE_QUERY;

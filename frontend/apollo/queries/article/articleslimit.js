@@ -1,10 +1,8 @@
 import gql from "graphql-tag";
 
-// query for multiple articles
-
-const ARTICLES_QUERY = gql`
+const ARTICLES_QUERY_WITHLIMIT = gql`
     query articles {
-        articles {
+        articles(limit: 2) {
             id
             introduction
             title
@@ -16,6 +14,4 @@ const ARTICLES_QUERY = gql`
     }
 `;
 
-
-
-export default ARTICLES_QUERY;
+export default ARTICLES_QUERY_WITHLIMIT;
