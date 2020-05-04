@@ -49,8 +49,8 @@ const FavoritesCard = (props) => {
                     </div>
 
                     <div className="col-4">
-                        <button onClick={(() => deleteProduct(productContext))}> Remove</button>
-                        <button onClick={(() => addOneProductToCart(productContext))}> Add to Cart</button>
+                        <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
+                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til</button>
                     </div>
                 </div>
             </div>
