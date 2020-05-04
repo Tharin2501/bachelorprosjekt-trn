@@ -5,7 +5,7 @@ import ProduktTab from "../ProduktTab";
 import {
   addtoCart,
   addItemToFavorites,
-  changeNumberOfProducts
+  changeNumberOfProducts,
 } from "../cart/cartHandler";
 import {
   FaShoppingCart,
@@ -13,17 +13,17 @@ import {
   FaHeart,
   FaPlus,
   FaPlusCircle,
-  FaMinusCircle
+  FaMinusCircle,
 } from "react-icons/fa";
-//TODO: Fiks så breadcrumbs blir
+//TODO: Fiks så breadcrumbs blir dynamiske
 
-const Produktside = props => {
+const Produktside = (props) => {
   var productContext = {
     id: props.productSide.id,
     name: props.productSide.ProductName,
     quantity: 1,
     price: props.productSide.pris,
-    image: props.productSide.image[0].url
+    image: props.productSide.image[0].url,
   };
 
   //Variables

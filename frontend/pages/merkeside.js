@@ -1,28 +1,22 @@
 import React from "react";
-/* import { useRouter } from "next/router";
-import Query from "../components/query";
-import PRODUCT_QUERY from "../apollo/queries/product/product"; */
+import BrandPage from "../components/brandPage/brandPage";
+import BrandPageOverView from "../components/brandPage/brandPageOverView";
+import SpecificBrandPage from "../components/brandPage/specificBrandPage";
 
-const merkeside = () => {
-  //const router = useRouter();
+const merkeSide = () => {
   return (
     <div>
       <h1>Dette er merkesiden</h1>
+      <BrandPageOverView />
+      <BrandPage />
     </div>
   );
 };
 
-export default merkeside;
+export default merkeSide;
 
 /**
- * <Query query={PRODUCT_QUERY} id={router.query.id}>
-      {({ data: { product } }) => {
-        return (
-          <div>
-            <h1>Dette er merkesiden</h1>
-          </div>
-        );
-      }}
-    </Query>
  * 
+ *
+      <SpecificBrandPage />
  */
