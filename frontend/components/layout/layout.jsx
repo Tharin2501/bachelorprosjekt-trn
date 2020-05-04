@@ -85,22 +85,22 @@ export const MyHeader = () => {
 
     return (
         <Navbar color="light">
-            <div className="col-xs ml-1">
+            <div className="col-2 ml-1">
                 <MyDrawer/>
             </div>
             {/* Bilde*/}
-            <div className="col-xs-sm mx-auto ml-5">
-                <a href="index"><img src="../images/logo4.png" className="mt-4 ml-5 " width="50px" height="55px" alt="logo"/></a>
+            <div className="col-xs mx-auto">
+                <a href="index"><img src="../images/logo4.png" className="mt-4 ml-5" width="50px" height="55px" alt="logo"/></a>
             </div>
             {/* Logo*/}
-            <a className="nav-item mx-3 mb-3" href="favorites"><FaHeart color="black"/></a>
+            <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black"/></a>
             <FiUser className="mx-2 mb-2"/>
             <div className="">
-                <a className="nav-item" href="favorites"><FaShoppingCart className="ml-3 mr-4 mt-3" color="black"/></a>
-                <p className="mt-0 mb-0 ml-3">{totalprice}kr</p>
+                <a className="nav-item" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black"/></a>
+                <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
             </div>
             {/* Searchbar*/}
-            <div className="col-xs mr-3">
+            <div className="col-xs mr-2">
                 <MySearchbar/>
             </div>
         </Navbar>
