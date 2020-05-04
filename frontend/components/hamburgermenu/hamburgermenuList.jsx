@@ -1,18 +1,13 @@
 import Link from "next/link";
 import React, { Component, useState, useEffect, forwardRef, useImperativeHandle } from "react";
-import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js";
-import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
+import { useRouter } from 'next/router'
 
-// onClickFuntion
-//   <li className="nav_submenu-item" onClick={() => { onClickFuntion }}>
-// lage annerldes for subcat
 const HamburgermenuList = forwardRef((props, ref) => {
 
 
-    // src={"https://trnbackend.herokuapp.com" + props.productSide.image[0].url}
 
-
+    const router = useRouter()
     const [categoriesToShow, setCategoreisToShow] = useState(props.categories)
     const listToSet = (newlist) => setCategoreisToShow(newlist)
 
@@ -57,6 +52,8 @@ const HamburgermenuList = forwardRef((props, ref) => {
             setListToDefault: setListToDefault
         }
     })
+
+
     if (type == "category") {
         return (
 

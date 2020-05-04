@@ -25,4 +25,4 @@ query Category {
   }
 `;
 
-export default GETCATEGORIES_QUERY;  
+export default GETCATEGORIES_QUERY;
