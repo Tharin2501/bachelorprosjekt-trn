@@ -27,7 +27,7 @@ import "rc-menu/assets/index.css"
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
-import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
+/* import CartTotalPriceContext from "../../components/context/cartTotalPriceContext"; */
 import { calculatePrice } from "../cookieHandler"
 const MySearchbar = () => {
     const router = useRouter();
@@ -51,7 +51,6 @@ const MySearchbar = () => {
         );
     }
 
-  );
 };
 
 export const MyHeader = () => {
