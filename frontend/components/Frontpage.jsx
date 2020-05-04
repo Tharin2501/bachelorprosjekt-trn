@@ -53,7 +53,7 @@ export const FrontpageGrid = () => {
                                                 <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + category.image.url} alt="logo" /></a>
                                             </Link>
                                             <Link href={{ pathname: "/category", query: { id: category.StrapiName } }}>
-                                                <a className=".frontpageIconsText">{category.name}</a>
+                                                <a className="nav-link frontpageIconsText">{category.name}</a>
                                             </Link>
                                         </div>
                                     )
