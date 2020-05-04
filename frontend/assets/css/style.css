@@ -599,7 +599,7 @@ div.scrollmenu {
 }
 
 .newsletter-btn {
-    background-color: #007bff;
+    background-color: #0056b5 ;
     border: none;
     border-radius: 20px;
     padding: 10px 55px;
@@ -615,10 +615,14 @@ div.scrollmenu {
 }
 
 .newsletter-btn:hover {
-    background-color: #007de6;
+    background-color: #0056b5 ;
 
 }
 
 .newsletter-btn:focus {
     outline: none;
+}
+
+.link-to-condition{
+  color: #003d85;
 }
