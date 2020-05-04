@@ -1,6 +1,8 @@
 import React from "react"
 import {AiOutlineMail} from "react-icons/ai"
 import Link from "next/link";
+import ARTICLES_QUERY from "../../apollo/queries/article/articles";
+import Query from "../query";
 
 export const Articles = (props) => {
 
@@ -16,7 +18,7 @@ export const Articles = (props) => {
         productText: props.artikkel.productText,
         price: props.artikkel.price,
         socialmediaImage: props.artikkel.socialmediaImage,
-        authors: props.artikkel.authors.name
+        authors: props.artikkel.authors
     };
 
     return (
@@ -24,7 +26,7 @@ export const Articles = (props) => {
         <div className="justify-content-center text-center">
 
             <div>
-                <h1 className="pb-4"> {articleContext.title}</h1>
+                <h1 className="pb-4 mt-3"> {articleContext.title}</h1>
 
                 <div className="square">
                     <p>{articleContext.introduction}
@@ -42,7 +44,7 @@ export const Articles = (props) => {
                                 {articleContext.content}
                             </div>
 
-                            <img className="mt-5 mx-auto rounded " style={{width: "44rem", height: "22rem"}}
+                            <img className="mt-5 mx-auto rounded " style={{minwidth: "44rem", height: "22rem"}}
                                  src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
                                  alt="logo"/>
 
@@ -70,7 +72,7 @@ export const Articles = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="square pb-5">
+                <div className="square pb-2">
 
                     <div className="content">
                         <div className="socialMediaContact-container">
@@ -86,19 +88,16 @@ export const Articles = (props) => {
                             </div>
                         </div>
                     </div>
-                    {/*
-                    <div className="row text-left mt-3">
-
-                        <div className="col-sm-12">
-                             <p><AiOutlineMail style={{margin: 15}}/> Skrevet av {articleContext.authors.name}</p>
-                        </div>
+                    <div className="mt-2">
+                        <p className="font-weight-light"><AiOutlineMail style={{margin: 10}}/>
+                        Skrevet av {articleContext.authors[0].name}</p>
                     </div>
-                    */}
                 </div>
             </div>
 
         </div>
     );
 };
+
 
 export default Articles;

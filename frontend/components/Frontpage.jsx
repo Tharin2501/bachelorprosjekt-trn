@@ -6,8 +6,6 @@ import MyDrawer from "./MyDrawer";
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories"
 import Query from "../components/query";
 import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
-import {DisplayAllArticles} from "./articles/AllArticles";
-
 
 export const Frontpage = () => {
     return (

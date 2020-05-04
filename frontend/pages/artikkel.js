@@ -1,5 +1,5 @@
 import React from "react"
-import Articles from "../components/articles/articles";
+import Articles, {ArticleAuthor} from "../components/articles/articles";
 import ARTICLE_QUERY from "../apollo/queries/article/article";
 import Query from "../components/query";
 import {useRouter} from "next/router";
@@ -19,6 +19,7 @@ const artikkel = () => {
                 )
             }}
         </Query>
+
     );
 };
 
