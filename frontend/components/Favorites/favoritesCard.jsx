@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
 import Link from "next/link";
+
+
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const FavoritesCard = (props) => {
