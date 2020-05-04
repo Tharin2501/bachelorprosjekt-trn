@@ -3,44 +3,8 @@ import QuizQuestion from "./quizQuestion"
 import SkincareCaruselController from "../skincareCaruselController"
 import { useRouter } from 'next/router';
 import { Button } from "reactstrap";
-const quizData = [
-    {
-        id: 0,
-        question: `Hva er ditt kjønn?`,
-        options: [
-            { "displayText": "Han", "filters": ["han"] },
-            { "displayText": "Hun", "filters": ["hun"] },
-            { "displayText": "annet", "filters": ["none"] },
-        ],
-    },
-    {
-        id: 1,
-        question: `Hva er din alder?`,
-        options: [
-            { "displayText": "13-25", "filters": ["young"] },
-            { "displayText": "26-50", "filters": ["middle"] },
-            { "displayText": "Over 50", "filters": ["old"] },
-        ],
-    },
-    {
-        id: 2,
-        question: `Hva er din hudtype?`,
-        options: [
-            { "displayText": "tørr", "filters": ["dry"] },
-            { "displayText": "fet", "filters": ["thicc"] },
-            { "displayText": "normal", "filters": ["boring"] },
-        ],
-    },
-    {
-        id: 3,
-        question: `Hva ønsker du å oppnå?`,
-        options: [
-            { "displayText": "redusere linjer", "filters": ["reduceWrinkles"] },
-            { "displayText": "redusere akne", "filters": ["avoidAcne"] },
-            { "displayText": "mindre tørhet", "filters": ["moisturizer"] },
-        ],
-    }
-];
+import GETQUIZQUESTION_QUERY from "../../../apollo/queries/carusel/GetQuizQuestions"
+import Query from "../../query"
 
 const QuizController = () => {
 
@@ -72,7 +36,7 @@ const QuizController = () => {
 
 
 
-        if (currentQustionNumber + 1 < quizData.length) {
+        if (currentQustionNumber + 1 < 4) {
             setCurrentQuestionNumber(currentQustionNumber + 1);
         } else {
             setIsQuizDone(true)
@@ -87,13 +51,23 @@ const QuizController = () => {
     }
 
     return (
-        <div align="center" >
-            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-            {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={arrayOfAnswers}></SkincareCaruselController> : <QuizQuestion currentQustion={quizData[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
-            }
+        <Query query={GETQUIZQUESTION_QUERY}>
+            {({ data: { quizdata } }) => {
+                console.log(quizdata[0].quizJSONdata);
 
-        </div>
+                return (
+                    <div align="center" >
+                        <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+                        {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={arrayOfAnswers}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+                        }
+
+                    </div>
+                )
+            }}
+        </Query>
+
     );
 };
 
 export default QuizController;
+

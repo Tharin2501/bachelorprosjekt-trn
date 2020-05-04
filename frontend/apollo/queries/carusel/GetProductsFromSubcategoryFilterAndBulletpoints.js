@@ -1,4 +1,6 @@
-/*
+import gql from "graphql-tag";
+
+const GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY = gql`  
 query Subcategory($categoryName:String! ,$bulletPointsName:[String!]){
     subCategories(where:{StrapiName:$categoryName}){
        categoryName
@@ -22,25 +24,6 @@ query Subcategory($categoryName:String! ,$bulletPointsName:[String!]){
        }
      }
  }
- */
+`;
 
-import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-
-const QurySkincareCarusel = ({ children, query, SubcategoryName, bulletPointsName }) => {
-  const { data, loading, error } = useQuery(query, {
-
-    variables: {
-
-      categoryName: SubcategoryName,
-      bulletPointsName: bulletPointsName,
-    }
-  });
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {JSON.stringify(error)}</p>;
-
-  return children({ data });
-};
-
-export default QurySkincareCarusel;
+export default GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY;  

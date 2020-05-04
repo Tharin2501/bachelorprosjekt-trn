@@ -39,7 +39,7 @@ const SkincareDesktopController = (props) => {
     if (currentStep === 1) {
         return (
             // lag egen kategori
-            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rensskrubb_facecare"}>
+            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rens_facecare"}>
                 {({ data: { subCategories } }) => {
                     return (
                         <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareDesktopCarusel>
