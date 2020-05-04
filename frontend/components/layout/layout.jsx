@@ -141,7 +141,7 @@ export const NewsLetter = () => {
               <p style={{ fontWeight: "bold" }}>
                 Ja, jeg har lest og godkjent
                                 <Link href="#">
-                  <a> betingelsene</a>
+                  <a className="link-to-condition"> betingelsene</a>
                 </Link>
               </p>
             </label>
