@@ -1,5 +1,5 @@
 import React from "react"
-import {Frontpage} from "../components/Frontpage";
+import { Frontpage } from "../components/Frontpage";
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
@@ -14,13 +14,15 @@ import Query from "../components/query";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
 import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
-var jsonObj = []
+var jsonObj = [
+
+]
 // favoritesStroage
 
 jsonObj = JSON.stringify(jsonObj)
 
 /* <--CART --> */
-const Cart = ({initialcartStorageValue = jsonObj, initialfavoritesStorageValue = jsonObj}) => {
+const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue = jsonObj }) => {
     const [cartStorage, setcartStorage] = useState(() =>
         (initialcartStorageValue) //  JSON.parse
     );
