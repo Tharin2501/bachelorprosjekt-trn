@@ -34,7 +34,6 @@ const SkincareDesktopCard = (props) => {
     }
 
 
-    console.log(props.product.description.length)
     if (props.product.description.length > 201) {
         return (
             <Container id="jumbo">

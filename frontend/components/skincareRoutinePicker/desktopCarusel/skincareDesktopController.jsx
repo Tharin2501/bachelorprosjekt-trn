@@ -10,7 +10,7 @@ const SkincareDesktopController = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
 
-
+    console.log(props.filtersFromQuizArray);
     const changeStepRequest = (changeStepValue) => {
         setCurrentStep(changeStepValue)
     }

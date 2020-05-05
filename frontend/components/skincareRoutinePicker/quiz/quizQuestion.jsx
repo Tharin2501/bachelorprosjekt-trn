@@ -12,13 +12,13 @@ const QuizQuestion = (props) => {
                 <h2 align="center"> {props.currentQustion.question}</h2>
                 {props.currentQustion.options.map((option) => {
                     return (
-                        <Button onClick={event => props.handleAnswerButtonPressed(event)} color="secondary" size="lg" block>{option.displayText}</Button>
+                        <Button onClick={event => props.handleAnswerButtonPressed(props.currentQustion.effect, option)} color="secondary" size="lg" block>{option.displayText}</Button>
                     )
                 })
                 }
 
             </Container>
-            <Button onClick={props.handleNextButtonPressed} > Neste</Button>
+            <Button onClick={props.handleNextButtonPressed}> Neste</Button>
         </div>
     );
 };

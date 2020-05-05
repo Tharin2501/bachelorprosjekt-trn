@@ -8,17 +8,29 @@ import Query from "../../query"
 
 const QuizController = () => {
 
+    var filterAnswersArrays = {
+        cleanseArray: [],
+        tonerArray: [],
+        moistzerierArray: []
+    }
     // varibal for om svaret er valgt 
     // så en func for legge det til listen
     // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
-    const [selectedAnswer, setSelectedAnswer] = useState(" ");
+    const [selectedAnswer, setSelectedAnswer] = useState();
     const [currentQustionNumber, setCurrentQuestionNumber] = useState(0);
-    const [arrayOfAnswers, setArrayOfAnswers] = useState([]);
+    const [filterArrays, setfilterArrays] = useState(filterAnswersArrays);
     const [isQuizDone, setIsQuizDone] = useState(false);
     const router = useRouter();
-    const handleAnswerButtonPressed = (event) => {
 
-        setSelectedAnswer(event.target.innerText)
+
+
+
+    const handleAnswerButtonPressed = (listsToEffect, optionChosen) => {
+        var selectedAnswer = { listsToEffect, optionChosen };
+        console.log(selectedAnswer)
+        setSelectedAnswer(selectedAnswer);
+
+
     }
 
     const cancelSkincarePickerButtonHandler = () => {
@@ -44,21 +56,53 @@ const QuizController = () => {
     }
 
     const addAnswerToArray = (newAnswer) => {
-        var tempArray = arrayOfAnswers;
-        tempArray.push(newAnswer);
 
-        setArrayOfAnswers(tempArray);
+        for (let i = 0; i < newAnswer.listsToEffect.length; i++) {
+
+            console.log(newAnswer.listsToEffect[i])
+            if (newAnswer.listsToEffect[i] === "moisturizer") {
+                var temparrys = filterArrays;
+
+                for (let i = 0; i < newAnswer.optionChosen.filters.length; i++) {
+                    temparrys.moistzerierArray.push(newAnswer.optionChosen.filters[i]);
+                }
+
+                setfilterArrays(temparrys)
+                continue;
+            }
+
+            if (newAnswer.listsToEffect[i] === "toner") {
+
+                var temparrys = filterArrays;
+
+                for (let i = 0; i < newAnswer.optionChosen.filters.length; i++) {
+                    temparrys.tonerArray.push(newAnswer.optionChosen.filters[i]);
+                }
+
+                setfilterArrays(temparrys)
+                continue;
+            }
+
+            if (newAnswer.listsToEffect[i] === "cleanser") {
+                var temparrys = filterArrays;
+                for (let i = 0; i < newAnswer.optionChosen.filters.length; i++) {
+                    temparrys.cleanseArray.push(newAnswer.optionChosen.filters[i]);
+                }
+
+                setfilterArrays(temparrys)
+                continue;
+            }
+        }
     }
 
     return (
         <Query query={GETQUIZQUESTION_QUERY}>
             {({ data: { quizdata } }) => {
-                console.log(quizdata[0].quizJSONdata);
 
                 return (
                     <div align="center" >
                         <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                        {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={arrayOfAnswers}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+                        {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
                         }
 
                     </div>
@@ -70,4 +114,6 @@ const QuizController = () => {
 };
 
 export default QuizController;
+
+
 
