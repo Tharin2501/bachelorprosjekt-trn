@@ -8,7 +8,7 @@ const SubCategoryList = ({ subCategoryList, categoryName }) => {
         <div className="scrollmenu">
             <div className="navitem">
                 <Link href={{ pathname: "/category", query: { id: categoryName } }}>
-                    <button type="button" className="btn btn-primary btn-circle btn-sm">Se alt</button>
+                    <button type="button" className="btn btn-circle btn-sm">Se alt</button>
                 </Link>
             </div>
             {subCategoryList.map((category) => {

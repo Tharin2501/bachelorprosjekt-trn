@@ -3,7 +3,7 @@ import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
 import { calculatePrice } from "../cookieHandler"
-import CartTotalPriceContext from "../context/cartTotalPriceContext";
+import NoSSR from 'react-no-ssr';
 
 const isServer = () => typeof window === `undefined`;
 
@@ -11,22 +11,10 @@ const CartList = () => {
 
     const [cart, setCart] = useState(Cookie.getJSON("cartStorage"))
 
-
-
-    /** Adding to Cart */
-    const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
-    const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
-        changeValueFunction(newValue);
-
-    }
-
-
     const changecart = () => {
-        changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+        setCart(Cookie.getJSON("cartStorage"))
     }
 
-
-    /** Adding to Cart END*/
 
 
     return (
@@ -50,6 +38,7 @@ const CartList = () => {
             </div>
 
             {!isServer() && cart !== undefined && cart.map((product, i) => {
+                console.log(product.name)
                 return (
                     <div>
 
@@ -59,13 +48,13 @@ const CartList = () => {
                 );
 
             })}
-
-            <div className="row d-flex justify-content-center">
-                <div className="col-5"><h4> Total pris:</h4></div>
-                <div className="col-5"><h4> {calculatePrice()}</h4> </div>
-                <Button> Betal</Button>
-            </div>
-
+            <NoSSR>
+                <div className="row d-flex justify-content-center">
+                    <div className="col-5"><h4> Total pris:</h4></div>
+                    <div className="col-5"><h4> {calculatePrice()}</h4> </div>
+                    <Button> Betal</Button>
+                </div>
+            </NoSSR>
         </div>
 
     );

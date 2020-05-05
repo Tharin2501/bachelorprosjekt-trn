@@ -6,8 +6,13 @@ import {
 } from "reactstrap";
 
 import Cookie from "js-cookie";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import parsCookies from "../components/cart/parseCookies";
+import {useRouter} from "next/router";
+import ARTICLE_QUERY from "../apollo/queries/article/article";
+import Query from "../components/query";
+import ARTICLES_QUERY from "../apollo/queries/article/articles";
+import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
 var jsonObj = [
 
@@ -44,17 +49,24 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
     /* FAV END*/
 
 
+    const router = useRouter();
+    console.log(router.query.id);
 
     return (
-        <div>
-            <Frontpage />
-        </div>
+        <Query query={ARTICLES_QUERY_WITHLIMIT}>
+            {({data: {article}}) => {
+                return (
+                    <div>
+                        <Frontpage artikkel={article}/>
+                    </div>
+                )
+            }}
+        </Query>
     );
 };
 
 
-
-Cart.getInitialProps = ({ req }) => {
+Cart.getInitialProps = ({req}) => {
     const cookies = parsCookies(req);
 
 

@@ -2,7 +2,7 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-color: #fff;
+    background-color: #f9f9f9;
     background-repeat: no-repeat;
 }
 
@@ -121,11 +121,25 @@ img:hover {
   cursor: pointer;
 }
 
+/*favoritesCard*/
+button.delete-btn{
+  background-color: #0b3954;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 5px;
+}
 
+button.add-btn{
+  background-color: #0b3954;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+/*END favoritesCard*/
 
 .pic1 {
-  max-width:250px;
-  max-height:250px;
+  width: 250px; /* 90% */
+  height: 250px; /* null */
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -147,7 +161,7 @@ img:hover {
 .card-1 {
   padding: 30px 30px 20px 30px !important;
   border: none;
-  height: 35rem;
+  height: 33rem;
   width: 20rem;
 }
 
@@ -166,20 +180,60 @@ img:hover {
   color: grey;
 }
 
+/*horizontalMenuItem*/
+.category-link{
+  color: #534d41;
+}
+
+.category-link:hover{
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 1px;
+  border-bottom-style: solid;
+  color: #06a77d;
+}
+/*End horizontalMenuItem*/
+
 .product-name {
-  padding-bottom: 15px;
-  font-family: Florence;
+  font-family: sans-serif;
   font-weight: bold;
+  text-align: center;
 }
 
 {/* ProductGrid*/}
+
+div.row.px-3.justify-content-around{
+  background-color: white;
+}
+
+.vl {
+  border-left: 1px solid rgb(143, 157, 167);
+  height: 30px;
+}
 
 .price {
   font-size: 18px;
 }
 
+/*Set quantity*/
+.row.px-3.justify-content-between{
+  margin: 2px;
+}
+
 .sm-text {
 font-size: 14px;
+}
+
+.btn.btn-light{
+  color: #fff;
+  border-radius: 15px;
+  font-weight: bold;
+  background-color: #0b3954;
+}
+
+.btn.btn-light:hover{
+  color: #0b3954;
+  background-color: #bfd7ea;
 }
 
 .book,
@@ -217,20 +271,26 @@ font-size: 14px;
     padding: 0 10px;
 }
 
+/* CAROUSEL - FRONTPAGE */
+
 a.carousel-control-next, a.carousel-control-prev {
     position: absolute;
-    top: 40%;
-    width: 10%;
-    height: 20%;
+    top: 50%;
+    width: 7%;
+    height: 12%;
+    background-color: lightgrey;
+    border: 1px solid silver;
 }
 
-/* Resize carousel
-.carousel-inner > .carousel-item {
-  width:940px;
-  height:660px;
+a.carousel-control-next:hover, a.carousel-control-prev:hover {
+    background-color: gainsboro;
 }
-*/
 
+.carousel-inner > .carousel-item > img {
+    max-height: 100vh;
+}
+
+/* MARQUEE */
 .marquee-container{
     white-space: nowrap;
     display: flex;
@@ -313,31 +373,51 @@ a.carousel-control-next, a.carousel-control-prev {
   flex-wrap: nowrap;
 }
 div.scrollmenu {
-  background-color: #333;
   overflow: auto;
   white-space: nowrap;
   text-align: center;
+  margin: 10px;
 }
 
 .navitem{
-
   display: inline-block;
   color: white;
   text-align: center;
   padding: 14px;
   text-decoration: none;
 }
+
 .navitem:hover {
-  background-color: #777;
+  color: #ff6663;
+  padding: 14px;
 }
 
 .imageSize{
   width: 6em;
-
+  height: 6em;
+  transition: transform .4s; /* Animation */
 }
 
-.frontpageIconsText {
-    text-align: center;
+/*Enlarge icons*/
+.imageSize:hover{
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.nav-link.frontpageIconsText {
+  text-align: center;
+  color: #534d41;
+}
+
+.nav-link.frontpageIconsText:hover {
+  text-align: center;
+  padding-bottom: 1px;
+  border-bottom-style: solid;
+  color: #06a77d;
+}
+
+.nav-link.imageSize{
+  position: relative;
+  height: auto;
 }
 
 .featured-article {
@@ -347,16 +427,23 @@ div.scrollmenu {
 	margin-bottom: 1em;
 }
 
+.btn-circle.btn-sm {
+  width: 6em;
+  height: 6em;
+  border-radius: 120px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #0b3954;
+  margin-bottom: 5em;
+}
 
-.btn-circle.btn-sm { 
-  width: 12em; 
-  height: 12em;  
-  border-radius: 60px; 
-  font-size: 8px; 
-  text-align: center; 
-  
-  
-} 
+.btn-circle.btn-sm:hover{
+  color: #041f2f;
+  background-color: #bfd7ea;
+}
 
 /* The side navigation menu */
 .sidenav {
@@ -406,9 +493,9 @@ div.scrollmenu {
 
 /* CHECKBOX */
 .checkboxItem{
-  white-space: nowrap;display:inline  
+  white-space: nowrap;display:inline
 }
-=======
+
 .btn-circle.btn-sm {
   width: 12em;
   height: 12em;
@@ -417,6 +504,10 @@ div.scrollmenu {
   text-align: center;
 
 
+}
+
+.category-title{
+  background-color: pink;
 }
 
 /* ArticleBoxes.jsx*/
@@ -455,6 +546,13 @@ div.scrollmenu {
 
 }
 
+.article_container .btn:hover {
+  background-color: #bfd7ea;
+  color: black;
+  font-weight: bold;
+
+}
+
 .outlined_btn {
     position: absolute;
     top: 80%;
@@ -489,6 +587,120 @@ div.scrollmenu {
     color: black;
     font-size: 12px;
 }
+/* ARTIKKLER PAGE*/
+
+/* Responsive box-model. Use when you need to have a responsive text-block */
+.square {
+    position: relative;
+    width: 50%;
+    transform: translate(50%);
+}
+
+.square:after {
+    content: "";
+    display: block;
+}
+
+.content {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+}
+
+.article-main-container {
+    background-color: honeydew;
+    padding: 15%;
+    margin-top: -20%;
+    width: 190%; /* Størrelsen på diven */
+    transform: translate(-23.7%);
+    margin-bottom: -20%;
+}
+
+
+
+/* Social media box */
+.socialMediaContact-container {
+    background-color: #F7C9B7;
+    padding: 5%;
+    margin-top: 12%;
+    width: 150%; /* Størrelsen på diven */
+    transform: translate(-15%);
+}
+
+
+.article-img-container {
+    width: 60%;
+    min-width: 60%; /* The minimun size of the img when scaling*/
+}
+
+.allArticle-main-container {
+    background-color: honeydew;
+    padding: 15%;
+    width: 150%; /* Størrelsen på diven */
+    transform: translate(-16.5%);
+}
+
+/* Allarticles*/
+
+.card {
+    width: 18rem;
+    padding: 0;
+}
+
+/* BILDE */
+.mycard-header {
+    width: 100.1%;
+    min-height: 200px;
+    max-height: 200px;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover .mycard-header {
+    background-size: 403px 267px;
+    background-position: -16px -16px;
+}
+
+
+/* card bak */
+.card-body {
+    background-color: white;
+    border-radius: 0 0 1px 1px;
+    padding: 0 26px 26px 26px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+
+}
+
+/* card foran */
+.card-body-header {
+    position: absolute;
+    left: 0;
+    padding: 1.6rem;
+    background-color: white;
+    transition: all .3s ease-in-out;
+    margin-top: -15%;
+    width: 100.1%;
+}
+
+/* Hvor høyt kort foran beveger seg opp når hover */
+.card:hover .card-body-header {
+    margin-top: -77%; /*-39.5vh hvor høyt den går*/
+    height: 225px; /* høyden på hover kort */
+}
+
+/* text når hover*/
+.card-body-description {
+    opacity: 0;
+    color: #757B82;
+    line-height: 110%;
+    padding-top: 5%;
+    transition: all .2s ease-in-out;
+}
+
+
+.card:hover .card-body-description {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
 
 /* 1.2 Footer*/
 .footer-style {
@@ -507,7 +719,7 @@ div.scrollmenu {
 }
 
 .newsletter-btn {
-    background-color: #007bff;
+    background-color: #0056b5 ;
     border: none;
     border-radius: 20px;
     padding: 10px 55px;
@@ -523,7 +735,7 @@ div.scrollmenu {
 }
 
 .newsletter-btn:hover {
-    background-color: #007de6;
+    background-color: blue;
 
 }
 
@@ -531,94 +743,6 @@ div.scrollmenu {
     outline: none;
 }
 
-/* skincare carusel mobile*/
-
-.skincareMobileDiv{
-  overflow: hidden;
-  min-width: 6.25rem;
-  min-height: 6.25rem;
-}
-.skincareMobileCard{
-
-  min-width: 18.75rem;
-
-}
-
-.skincareCaurselMobileCardImage{
-  align-self: center;
-  display: block;
-  max-width:250px;
-  max-height:250px;
-  width: auto;
-  height: auto;
-}
-
-.SkincareCaruselCardCheckboxListDiv{
-  display: table;
-  float: left;
-  
-  overflow-x: hidden;
- 
-}
-
-.SkincareCaruselCardCheckboxListLabel {
-  display: table-row;
-}
-
-.SkincareCaruselCardCheckboxs {
-  display: table-row;
-  width: 100%;
-}
-
-/* Circular button */
-
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  border-radius: 35px;
-  font-size: 24px;
-  line-height: 1.33;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  padding: 6px 0px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.42857;
-}
-/* DESKTOP CARD  padding: 100px;*/
-#jumbo{
-  background: rgba(200, 54, 54, .5);
-  color: rgba(255, 255, 255);
-  position: relative;
-  
-}
-
-.inner{
-  color:rgb(250,250,250);
-  opacity: 1;
-}
-/*  top:0 */
-.myCaruselIndictaor{
-
-  filter: invert(100%);
-  position: relative !important; 
-}
-.controltest{
-  filter: invert(100%);
-}
-
-.contest{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.quizQuestionContainer{
-  background: rgba(200, 54, 54, .5);
-  
+.link-to-condition{
+  color: #003d85;
 }

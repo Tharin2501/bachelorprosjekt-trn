@@ -21,58 +21,62 @@ import {
   InputGroupText,
   Input,
 } from "reactstrap";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
+
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
-import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
+/* import CartTotalPriceContext from "../../components/context/cartTotalPriceContext"; */
 import { calculatePrice } from "../cookieHandler"
 const MySearchbar = () => {
-
-
-
-  return (
-    <div className="row mx-auto w-80 pt-3 pb-3">
-      <div className="col">
-
-        <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText><GoSearch /></InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="søk..." />
-        </InputGroup>
+  const router = useRouter();
+  if (router.pathname === "/hudpleievelger") {
+    return (
+      null
+    )
+  } else {
+    return (
+      <div className="row mx-auto w-80">
+        <div className="col">
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
+            </InputGroupAddon>
+            <Input className="font-weight-light" placeholder="Søk... " />
+          </InputGroup>
+        </div>
       </div>
-    </div>
 
-  );
-
+    );
+  }
 
 };
 
 export const MyHeader = () => {
-
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
   const [totalprice, setTotalprice] = useState(0);
   const router = useRouter();
 
-  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext)
   useEffect(() => {
-    getCartPrice();
+    getCartPrice()
+  }, [])
 
-  }, [Object.values(price)])
   function getCartPrice() {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
-      if (cart === undefined) {
-
+      if (cart === undefined || cart.length === 0) {
+        //console.log("YAS")
         return;
       }
 
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
+      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
@@ -85,32 +89,26 @@ export const MyHeader = () => {
 
   } else {
     return (
-
-      <div>
-        <Navbar color="light">
-          <div>
-            <MyDrawer />
-          </div>
-          <div className="row mx-auto">
-            <a href="index"><img src="../images/logo4.png" width="50px" height="55px" alt="logo" /></a>
-          </div>
-          <div className="row ml-auto">
-            <div className="col">
-              <a className="nav-item" href="favorites"><FaHeart color="black" /></a>
-            </div>
-            <div className="col">
-              <FiUser />
-            </div>
-            <div className="col">
-              <a className="nav-item" href="shoppingcart"><FaShoppingCart color="black " /></a>
-              <p>{totalprice}kr</p>
-            </div>
-          </div>
-        </Navbar>
-        <MySearchbar>
-
-        </MySearchbar>
-      </div>
+      <Navbar color="light">
+        <div className="col-2 ml-1">
+          <MyDrawer />
+        </div>
+        {/* Bilde*/}
+        <div className="col-xs mx-auto">
+          <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo" /></a>
+        </div>
+        {/* Logo*/}
+        <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black" /></a>
+        <FiUser className="mx-2 mb-2" />
+        <div className="">
+          <a className="nav-item" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
+          <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
+        </div>
+        {/* Searchbar*/}
+        <div className="col-xs mr-2">
+          <MySearchbar />
+        </div>
+      </Navbar>
     );
   }
 
@@ -154,7 +152,7 @@ export const NewsLetter = () => {
               <p style={{ fontWeight: "bold" }}>
                 Ja, jeg har lest og godkjent
                                 <Link href="#">
-                  <a> betingelsene</a>
+                  <a className="link-to-condition"> betingelsene</a>
                 </Link>
               </p>
             </label>

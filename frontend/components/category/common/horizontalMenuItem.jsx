@@ -14,7 +14,7 @@ const HorizontalMenuItem = (props) => {
                 </div>
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a> {props.category.name}</a>
+                        <a className="category-link">> {props.category.name}</a>
                     </Link>
                 </div>
             </div>
@@ -30,7 +30,7 @@ const HorizontalMenuItem = (props) => {
                 </div>
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a> {props.category.categoryName}</a>
+                        <a className="category-link"> {props.category.categoryName}</a>
                     </Link>
                 </div>
             </div>
