@@ -640,7 +640,7 @@ div.scrollmenu {
     transform: translate(-16.5%);
 }
 
-/* Allarticles2*/
+/* Allarticles*/
 
 .card {
     width: 18rem;
@@ -735,7 +735,7 @@ div.scrollmenu {
 }
 
 .newsletter-btn:hover {
-    background-color: #0056b5 ;
+    background-color: blue;
 
 }
 

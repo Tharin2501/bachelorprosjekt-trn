@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const ARTICLES_QUERY_WITHLIMIT = gql`
     query articles {
-        articles(limit: 2) {
+        articles(limit: 3) {
             id
             introduction
             title

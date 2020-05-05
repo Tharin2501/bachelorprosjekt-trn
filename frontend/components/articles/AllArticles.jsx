@@ -69,7 +69,7 @@ const AllArticles = () => {
                 <span className="horizontal-line2">Våre Artikler</span>
             </h3>
             <div className="container-fluid">
-                <h4 className="text-left text-wrap mt-5 pl-4">Populære artikler </h4>
+                {/*<h4 className="text-left text-wrap mt-5 pl-4">Populære artikler </h4> */}
                 <div className="row justify-content-center">
                     <DisplayAllArticles/>
                 </div>

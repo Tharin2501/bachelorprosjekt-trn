@@ -1,8 +1,5 @@
-
-
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import Produktside from "../productPage/produktside"

@@ -90,7 +90,7 @@ export const MyHeader = () => {
             </div>
             {/* Bilde*/}
             <div className="col-xs mx-auto">
-                <a href="index"><img src="../images/logo4.png" className="mt-4 ml-5" width="50px" height="55px" alt="logo"/></a>
+                <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo"/></a>
             </div>
             {/* Logo*/}
             <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black"/></a>
