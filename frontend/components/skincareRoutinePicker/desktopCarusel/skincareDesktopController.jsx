@@ -12,10 +12,14 @@ export const filterFunction = (products, filterArray) => {
     var resultarray = [];
 
     for (var product of products) {
-        (filterProduct(matchesNeed, product, filterArray));
+        resultarray.push(filterProduct(matchesNeed, product, filterArray));
     }
+    // remove udefined
+    resultarray = resultarray.filter(function (product) {
+        return product != null;
+    })
 
-    console.log(resultarray)
+    return resultarray;
 
 
 }
@@ -96,14 +100,13 @@ const SkincareDesktopController = (props) => {
             // lag egen kategori
             <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray.cleanseArray}>
                 {({ data: { subCategories } }) => {
-                    // const resultarray = 
-                    console.log(props.filtersFromQuizArray.cleanseArray)
-                    filterFunction(subCategories[0].products, props.filtersFromQuizArray.cleanseArray)
+
+                    const resultarray = filterFunction(subCategories[0].products, props.filtersFromQuizArray.cleanseArray)
 
 
 
                     return (
-                        <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareDesktopCarusel>
                     )
                 }}
             </QurySkincareCarusel>
