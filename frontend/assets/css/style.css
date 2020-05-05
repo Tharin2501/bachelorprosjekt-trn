@@ -273,10 +273,17 @@ font-size: 14px;
 
 a.carousel-control-next, a.carousel-control-prev {
     position: absolute;
-    top: 40%;
-    width: 10%;
-    height: 20%;
+    top: 50%;
+    width: 7%;
+    height: 12%;
+    background-color: lightgrey;
+    border: 1px black;
 }
+
+a.carousel-control-next:hover, a.carousel-control-prev:hover {
+    background-color: gainsboro;
+}
+
 
 /* Resize carousel
 .carousel-inner > .carousel-item {
