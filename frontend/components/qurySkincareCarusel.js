@@ -27,12 +27,12 @@ query Subcategory($categoryName:String! ,$bulletPointsName:[String!]){
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-const QurySkincareCarusel = ({ children, query, SubcategoryName, bulletPointsName }) => {
+const QurySkincareCarusel = ({ children, query, categoryName, bulletPointsName }) => {
   const { data, loading, error } = useQuery(query, {
 
     variables: {
 
-      categoryName: SubcategoryName,
+      categoryName: categoryName,
       bulletPointsName: bulletPointsName,
     }
   });

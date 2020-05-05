@@ -1,16 +1,51 @@
 import React, { useState } from "react"
 import SkincareDesktopCarusel from "./skincareDesktopCarusel"
-import GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY from "../../../apollo/queries/carusel/GetProductsFromSubcategoryFilter"
-import QuerySubCategory from "../../querySubCategory";
+
+import GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY from "../../../apollo/queries/carusel/GetProductsFromSubcategoryFilterAndBulletpoints";
+import QurySkincareCarusel from "../../qurySkincareCarusel";
 import { addtoCart } from "../../cart/cartHandler"
 
 // 1 clense 2 toner 3 Moist
+
+export const filterFunction = (products, filterArray) => {
+    const matchesNeed = filterArray.length; // flytt ut
+    var resultarray = [];
+
+    for (var product of products) {
+        (filterProduct(matchesNeed, product, filterArray));
+    }
+
+    console.log(resultarray)
+
+
+}
+
+export const filterProduct = (matchesRequired, product, filterArray) => {
+
+    var curretMatches = 0;
+    //console.log(product)
+    //console.log(filterArray)
+
+    for (var i = 0; i < product.bullet_point_on_skincare_products.length; i++) {
+        for (var filter of filterArray) {
+            if (product.bullet_point_on_skincare_products[i].name === filter) {
+                ++curretMatches;
+                if (curretMatches == matchesRequired) {
+                    console.log(product)
+                    return product;
+                }
+                break;
+
+            }
+        }
+    }
+
+}
 
 const SkincareDesktopController = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
 
-    console.log(props.filtersFromQuizArray);
     const changeStepRequest = (changeStepValue) => {
         setCurrentStep(changeStepValue)
     }
@@ -35,17 +70,41 @@ const SkincareDesktopController = (props) => {
             addtoCart(productToAdd, 1)
         })
     }
-
+    /*
+                // lag egen kategori
+                <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray}>
+                    {({ data: { subCategories } }) => {
+                        var resultarray = []
+                        if (filtersFromQuizArray.length === 1) {
+                            // send videre
+                            resultarray = subCategories[0].products;
+                        } else {
+    
+                        }
+    
+    
+                        return (
+                            <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareMobileCarusel>
+                        )
+                    }}
+                </QuerySubCategory>
+                */
     if (currentStep === 1) {
         return (
+
             // lag egen kategori
-            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rens_facecare"}>
+            <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray.cleanseArray}>
                 {({ data: { subCategories } }) => {
+                    // const resultarray = 
+                    filterFunction(subCategories[0].products, props.filtersFromQuizArray.cleanseArray)
+
+
+
                     return (
                         <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareDesktopCarusel>
                     )
                 }}
-            </QuerySubCategory>
+            </QurySkincareCarusel>
         )
     }
 

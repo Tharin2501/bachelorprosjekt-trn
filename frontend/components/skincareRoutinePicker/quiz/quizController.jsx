@@ -27,7 +27,6 @@ const QuizController = () => {
 
     const handleAnswerButtonPressed = (listsToEffect, optionChosen) => {
         var selectedAnswer = { listsToEffect, optionChosen };
-        console.log(selectedAnswer)
         setSelectedAnswer(selectedAnswer);
 
 
@@ -59,7 +58,6 @@ const QuizController = () => {
 
         for (let i = 0; i < newAnswer.listsToEffect.length; i++) {
 
-            console.log(newAnswer.listsToEffect[i])
             if (newAnswer.listsToEffect[i] === "moisturizer") {
                 var temparrys = filterArrays;
 
