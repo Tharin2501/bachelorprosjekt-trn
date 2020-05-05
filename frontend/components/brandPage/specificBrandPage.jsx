@@ -40,11 +40,8 @@ const SpecificBrandPage = (props) => {
     brandName: props.brandDetailSide.name,
     brandDescription: props.brandDetailSide.description,
     brandLogo: props.brandDetailSide.logo.url,
-    brandProducts: props.brandDetailSide.products,
+    brandproducts: props.brandDetailSide.products[0].name,
   };
-
-  const router = useRouter();
-  console.log(router.query.id);
 
   return (
     <div>
@@ -84,6 +81,9 @@ const SpecificBrandPage = (props) => {
             </Button>
           </div>
         </Col>
+      </Row>
+      <Row>
+        <div>{brandContext.products}</div>
       </Row>
     </div>
   );

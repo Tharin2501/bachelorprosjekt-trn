@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col } from "reactstrap";
 import Query from "../query";
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
+import Link from "next/link";
 //TODO: Gjøre
 
 const BrandPage = (props) => {
@@ -17,11 +18,14 @@ const BrandPage = (props) => {
                 <Row>
                   <Nav vertical sm="6">
                     <Col className="bg-danger pm-3">
-                      <NavItem>
-                        <NavLink href="merkesidedetalj">
-                          <p>{brand.name}</p>
-                        </NavLink>
-                      </NavItem>
+                      <Link
+                        href={{
+                          pathname: "merkesidedetalj",
+                          query: { id: brand.id },
+                        }}
+                      >
+                        <p>{brand.name}</p>
+                      </Link>
                     </Col>
                   </Nav>
                 </Row>
