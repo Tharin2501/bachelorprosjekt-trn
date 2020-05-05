@@ -25,8 +25,10 @@ const SkincareDesktopCard = (props) => {
 
     const goNextStepButtonHandler = () => {
         props.changeStep();
+        console.log("outside")
         if (props.stepNumber === 3) {
             props.addChosenProductsToCart();
+            console.log("inside")
             router.push("/shoppingcart");
         }
 
