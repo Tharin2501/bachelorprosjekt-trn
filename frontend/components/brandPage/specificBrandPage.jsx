@@ -22,19 +22,20 @@ import HorizontalMenuItem from "../category/common/horizontalMenuItem";
 //TODO: Hente inn Logo-bildet og merkenavn fra strapi
 
 const SpecificBrandPage = (props) => {
+  {
+    /**Collapsing info text */
+  }
   const [collapse, setCollapse] = useState(false);
   const [status, setStatus] = useState("Les om merket");
-
   const onEntering = () => setStatus("Laster...");
-
   const onEntered = () => setStatus("Lukk");
-
   const onExiting = () => setStatus("Lukker...");
-
   const onExited = () => setStatus("Les om merket");
-
   const toggle = () => setCollapse(!collapse);
 
+  {
+    /**Getting brand info */
+  }
   let brandContext = {
     id: props.brandDetailSide.id,
     brandName: props.brandDetailSide.name,
@@ -42,18 +43,19 @@ const SpecificBrandPage = (props) => {
     brandLogo: props.brandDetailSide.logo.url,
     brandproducts: props.brandDetailSide.products[0].name,
   };
+  console.log(brandContext.brandproducts);
 
   return (
     <div>
       <Row>
         <Col>
-          <h1 className="bg-warning text-center">{brandContext.brandName}</h1>
+          <h1 className="text-center">{brandContext.brandName}</h1>
         </Col>
       </Row>
-      <Row className="bg-info p-3">
-        <Col className="text-center bg-success">
+      <Row className="p-3">
+        <Col className="text-center">
           <img
-            className="mw-25 h-75 bg-danger"
+            className="mw-25 h-75"
             src={
               "https://trnbackend.herokuapp.com" +
               props.brandDetailSide.logo.url
@@ -61,7 +63,7 @@ const SpecificBrandPage = (props) => {
           />
         </Col>
       </Row>
-      <Row className="text-center bg-primary">
+      <Row className="text-center">
         <Col>
           <div className="text-center p-0 m-0">
             <h5>Les mer om {brandContext.brandName} her</h5>
@@ -72,11 +74,11 @@ const SpecificBrandPage = (props) => {
               onExiting={onExiting}
               onExited={onExited}
             >
-              <Card className="p-0 m-0 w-75 bg-warning text-left">
+              <Card className="p-3 m-0 w-75 border-0 text-left">
                 <p>{brandContext.brandDescription}</p>
               </Card>
             </Collapse>
-            <Button onClick={toggle} className="bg-none">
+            <Button onClick={toggle} className="bg-dark text-light border-0">
               {status}
             </Button>
           </div>
