@@ -1,30 +1,13 @@
 import React, { useState } from "react"
 
 import SkincareMobileCarusel from "./skincareMobileCarusel"
-import GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY from "../../../apollo/queries/carusel/GetProductsFromSubcategoryFilter";
-import QuerySubCategory from "../../querySubCategory";
+import GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY from "../../../apollo/queries/carusel/GetProductsFromSubcategoryFilterAndBulletpoints";
+import QurySkincareCarusel from "../../qurySkincareCarusel";
 import { addtoCart } from "../../cart/cartHandler";
+import { filterProductsFunction } from "../utils/skincareRotuinePickerUtils"
 
 // 1 clense 2 toner 3 Moist
 
-export const filterFunction = (product, filterArray) => {
-    const matchesNeed = filterArray.length; // flytt ut
-    var curretMatches = 0;
-
-    for (filter in filterArray) {
-        for (bullet in product) {
-
-            if (bullet.name === filter) {
-                curretMatches++;
-                if (curretMatches === matchesNeed) {
-                    return product;
-                }
-
-            }
-        }
-    }
-
-}
 const SkincareMobileController = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
@@ -54,54 +37,48 @@ const SkincareMobileController = (props) => {
             addtoCart(productToAdd, 1)
         })
     }
-
+    // lag egen kategori
     if (currentStep === 1) {
         return (
             // lag egen kategori
-            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray}>
+            <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray.cleanseArray}>
                 {({ data: { subCategories } }) => {
-                    var resultarray = []
-                    if (filtersFromQuizArray.length === 1) {
-                        // send videre
-                        resultarray = subCategories[0].products;
-                    } else {
-
-                    }
+                    const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.cleanseArray)
 
 
                     return (
-                        <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={subCategories[0].products} ></SkincareMobileCarusel>
+                        <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
                     )
                 }}
-            </QuerySubCategory>
+            </QurySkincareCarusel>
         )
     }
 
     if (currentStep === 2) {
         return (
 
-            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"toner_facecare"}>
+            <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"toner_facecare"} bulletPointsName={props.filtersFromQuizArray.tonerArray}>
                 {({ data: { subCategories } }) => {
-
+                    const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.tonerArray)
                     return (
-                        <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                     )
                 }}
-            </QuerySubCategory>
+            </QurySkincareCarusel>
         )
     }
 
     if (currentStep === 3) {
         return (
 
-            <QuerySubCategory query={GETPRODUCTSFROMSUBCATEGORYFILTER_QUERY} categoryName={"fuktighetskrem_facecare"}>
+            <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"fuktighetskrem_facecare"} bulletPointsName={props.filtersFromQuizArray.moistzerierArray}>
                 {({ data: { subCategories } }) => {
-
+                    const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.moistzerierArray)
                     return (
-                        <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={subCategories[0].products} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                     )
                 }}
-            </QuerySubCategory>
+            </QurySkincareCarusel>
         )
     }
 

@@ -5,7 +5,7 @@ const QuizQuestion = (props) => {
 
     </head>
 
-    // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
+    // gå til product side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div align="center">
             <Container className="quizQuestionContainer">
