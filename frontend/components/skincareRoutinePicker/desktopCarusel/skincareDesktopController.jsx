@@ -23,14 +23,15 @@ export const filterFunction = (products, filterArray) => {
 export const filterProduct = (matchesRequired, product, filterArray) => {
 
     var curretMatches = 0;
-    //console.log(product)
-    //console.log(filterArray)
+
 
     for (var i = 0; i < product.bullet_point_on_skincare_products.length; i++) {
         for (var filter of filterArray) {
+
             if (product.bullet_point_on_skincare_products[i].name === filter) {
                 ++curretMatches;
-                if (curretMatches == matchesRequired) {
+
+                if (curretMatches === matchesRequired) {
                     console.log(product)
                     return product;
                 }
@@ -96,6 +97,7 @@ const SkincareDesktopController = (props) => {
             <QurySkincareCarusel query={GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY} categoryName={"rens_facecare"} bulletPointsName={props.filtersFromQuizArray.cleanseArray}>
                 {({ data: { subCategories } }) => {
                     // const resultarray = 
+                    console.log(props.filtersFromQuizArray.cleanseArray)
                     filterFunction(subCategories[0].products, props.filtersFromQuizArray.cleanseArray)
 
 
