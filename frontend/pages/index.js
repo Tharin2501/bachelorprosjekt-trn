@@ -6,9 +6,9 @@ import {
 } from "reactstrap";
 
 import Cookie from "js-cookie";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import ARTICLE_QUERY from "../apollo/queries/article/article";
 import Query from "../components/query";
 import ARTICLES_QUERY from "../apollo/queries/article/articles";
@@ -39,7 +39,6 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
     const [favoritesStorage, setfavoritesStorage] = useState(() =>
         (initialfavoritesStorageValue) //  JSON.parse
     );
-    //console.log(favoritesStorage)
 
 
     useEffect(() => {
@@ -50,14 +49,13 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
 
 
     const router = useRouter();
-    console.log(router.query.id);
 
     return (
         <Query query={ARTICLES_QUERY_WITHLIMIT}>
-            {({data: {article}}) => {
+            {({ data: { article } }) => {
                 return (
                     <div>
-                        <Frontpage artikkel={article}/>
+                        <Frontpage artikkel={article} />
                     </div>
                 )
             }}
@@ -66,7 +64,7 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
 };
 
 
-Cart.getInitialProps = ({req}) => {
+Cart.getInitialProps = ({ req }) => {
     const cookies = parsCookies(req);
 
 
