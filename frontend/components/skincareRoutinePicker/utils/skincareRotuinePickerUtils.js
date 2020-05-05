@@ -11,3 +11,46 @@ export const setProgressBarValue = (stepnumber) => {
     }
 
 }
+
+export const filterProductsFunction = (products, filterArray) => {
+    const matchesNeed = filterArray.length; // flytt ut
+    console.log(filterArray)
+    console.log(matchesNeed)
+    var resultarray = [];
+
+    for (var product of products) {
+        resultarray.push(compareFiltersToOneProduct(matchesNeed, product, filterArray));
+    }
+    console.log(resultarray)
+    // remove udefined
+    resultarray = resultarray.filter(function (product) {
+        return product != null;
+    })
+
+    return resultarray;
+
+
+}
+
+export const compareFiltersToOneProduct = (matchesRequired, product, filterArray) => {
+
+    var curretMatches = 0;
+
+
+    for (var i = 0; i < product.bullet_point_on_skincare_products.length; i++) {
+        for (var filter of filterArray) {
+
+            if (product.bullet_point_on_skincare_products[i].name === filter) {
+                ++curretMatches;
+
+                if (curretMatches === matchesRequired) {
+                    console.log(product)
+                    return product;
+                }
+                break;
+
+            }
+        }
+    }
+
+}
