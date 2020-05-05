@@ -1,5 +1,5 @@
 import React from "react";
-import HorizontalMenuItem from "../category/common/horizontalMenuItem"
+import HorizontalMenuItem from "./common/horizontalMenuItem"
 import Link from "next/link";
 const SubCategoryList = ({ subCategoryList, categoryName }) => {
 

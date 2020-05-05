@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MyMarquee } from "./MyMarquee";
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories"
 import Query from "../components/query";
+import Category from "../pages/category";
 import HorizontalMenuItem from "./category/common/horizontalMenuItem"
 import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 

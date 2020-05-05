@@ -3,7 +3,11 @@ import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { removeOneProduct } from "../cookieHandler"
 import Link from "next/link";
 
-
+/*
+    <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
+            <a><h5 className="product-name"> {productName}</h5></a>
+          </Link>
+          */
 
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257

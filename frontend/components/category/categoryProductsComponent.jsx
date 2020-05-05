@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Productgrid from "./productgrid";
 
 import CheckBox from "./common/checkbox"
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, Button } from 'reactstrap';
 import QueryCategoryFilter from "../../components/queryCategoryFilter"
 import CATEGORIESFILTER_QUERY from "../../apollo/queries/Category/CategoriesFilter"
 const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {

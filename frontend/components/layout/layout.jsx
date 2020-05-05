@@ -5,30 +5,17 @@ import { FiUser } from "react-icons/fi";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
 import {
-  Collapse,
-  NavbarToggler,
-  NavbarBrand,
-  Navbar,
-  Nav,
-  NavItem,
-  NavLink,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   InputGroup,
   InputGroupAddon,
   InputGroupText,
   Input,
+  Navbar
 } from "reactstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
-import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
-
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
-/* import CartTotalPriceContext from "../../components/context/cartTotalPriceContext"; */
 import { calculatePrice } from "../cookieHandler"
+import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
 const MySearchbar = () => {
   const router = useRouter();
   if (router.pathname === "/hudpleievelger") {
@@ -60,23 +47,23 @@ export const MyHeader = () => {
   const [totalprice, setTotalprice] = useState(0);
   const router = useRouter();
 
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext)
   useEffect(() => {
     getCartPrice()
-  }, [])
+  }, [[Object.values(price)]])
 
   function getCartPrice() {
     if (typeof window !== "undefined") {
       var newtotalprice = 0
       var cart = Cookie.getJSON("cartStorage")
-      if (cart === undefined || cart.length === 0) {
-        //console.log("YAS")
+      if (cart === undefined) {
+
         return;
       }
 
       cart.map((item, i) => {
         newtotalprice += item.quantity * item.price
       })
-      //console.log(newtotalprice)
       setTotalprice(newtotalprice)
     }
 
@@ -101,7 +88,7 @@ export const MyHeader = () => {
         <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black" /></a>
         <FiUser className="mx-2 mb-2" />
         <div className="">
-          <a className="nav-item" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
+          <a className="nav-item" href="shoppingcart"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
           <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
         </div>
         {/* Searchbar*/}
