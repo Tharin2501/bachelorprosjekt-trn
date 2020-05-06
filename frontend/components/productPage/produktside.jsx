@@ -144,6 +144,7 @@ const Produktside = (props) => {
         </Col>
       </Row>
       {/** Info tabs start */}
+      test
       <Row className="pb-5 text-left">
         <Col>
           <ProduktTab />
