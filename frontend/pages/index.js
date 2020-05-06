@@ -1,6 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Frontpage } from "../components/Frontpage";
 import {
   Card,
@@ -9,12 +7,15 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
+  Button,
 } from "reactstrap";
 
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
+import { useRouter } from "next/router";
+import Query from "../components/query";
+import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
 var jsonObj = [];
 // favoritesStroage
@@ -24,7 +25,7 @@ jsonObj = JSON.stringify(jsonObj);
 /* <--CART --> */
 const Cart = ({
   initialcartStorageValue = jsonObj,
-  initialfavoritesStorageValue = jsonObj
+  initialfavoritesStorageValue = jsonObj,
 }) => {
   const [cartStorage, setcartStorage] = useState(
     () => initialcartStorageValue //  JSON.parse
@@ -41,7 +42,6 @@ const Cart = ({
   const [favoritesStorage, setfavoritesStorage] = useState(
     () => initialfavoritesStorageValue //  JSON.parse
   );
-  //console.log(favoritesStorage)
 
   useEffect(() => {
     Cookie.set("favoritesStorage", favoritesStorage); // JSON.stringify
@@ -49,12 +49,18 @@ const Cart = ({
 
   /* FAV END*/
 
-  /* FAV END*/
+  const router = useRouter();
 
   return (
-    <div>
-      <Frontpage />
-    </div>
+    <Query query={ARTICLES_QUERY_WITHLIMIT}>
+      {({ data: { article } }) => {
+        return (
+          <div>
+            <Frontpage artikkel={article} />
+          </div>
+        );
+      }}
+    </Query>
   );
 };
 
@@ -63,7 +69,7 @@ Cart.getInitialProps = ({ req }) => {
 
   return {
     initialcartStorageValue: cookies.cartStorage,
-    initialfavoritesStorageValue: cookies.favoritesStorage
+    initialfavoritesStorageValue: cookies.favoritesStorage,
   };
 };
 

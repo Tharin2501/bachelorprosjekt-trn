@@ -105,7 +105,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                             <img className="myImg" src={"/images/carousel/placeholder1.jpg"} alt="logo" />
                         </div>
 
-                        <h1 className="nav-link">Gå tilbake</h1>
+                        <p className="nav-link">Gå tilbake</p>
 
                     </div>
 
@@ -119,7 +119,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                                 <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="logo" />
                             </div>
 
-                            <h1 className="nav-link">{hamburgerMenuItemShowAll.categoryName}</h1>
+                            <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
 
                         </div>
                     </Link>

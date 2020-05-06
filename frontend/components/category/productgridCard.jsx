@@ -1,26 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { FaHeart, FaMinusCircle, FaPlusCircle } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  getCart,
-  addOneProductToCart,
-  addOneProductToFavorites
-} from "../cookieHandler";
 import {
   addtoCart,
   addItemToFavorites,
-  changeNumberOfProducts
+  changeNumberOfProducts,
 } from "../cart/cartHandler";
-import Produktside from "../productPage/produktside";
-import Router from "next/router";
-
-import Cookie from "js-cookie";
-
-//import parsCookies from "../components/cart/parseCookies";
-import parsCookies from "../cart/parseCookies";
 import Link from "next/link";
-
-var jsonObj = [];
+import CartTotalPriceContext from "../context/cartTotalPriceContext";
+import { calculatePrice } from "../cookieHandler";
 
 jsonObj = JSON.stringify(jsonObj);
 
@@ -31,7 +18,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     name: productcard.ProductName,
     quantity: 1,
     price: productcard.pris,
-    image: productcard.image[0].url
+    image: productcard.image[0].url,
   };
 
   // change color of heartfunction
@@ -39,7 +26,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   const [productImage, setProductImage] = useState(productContext.image);
   const [heartColor, setheartColor] = useState("black");
   const [numberOfProducts, setNumberOfProducts] = useState(1);
-  const [price, setPrice] = useState(productContext.price);
+  const [productprice, setProductPrice] = useState(productContext.price);
   const [quantity, setQuantity] = useState(1);
 
   function addtoFavorites() {
@@ -56,12 +43,28 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   }
   ///// end change color of hearthfunction
 
+  /** Adding to Cart */
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+  const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
+    changeValueFunction(newValue);
+  };
+
+  const addToShoppingCartAndRecalcuatePrice = () => {
+    addtoCart(productContext, numberOfProducts);
+    changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+  };
+  /** Adding to Cart END*/
   return (
     <div className="card  card-1">
-      <div className="pr-3 row justify-content-end">
-        <a onClick={() => addtoFavorites()}>
-          <FaHeart color={heartColor} />
-        </a>
+      <div className="pr-3 row justify-content-stretch">
+        <div className="p-2 bd-highlight">
+          <small className="category"> lepper</small>
+        </div>
+        <div className="ml-auto p-2 bd-highlight">
+          <a onClick={() => addtoFavorites()}>
+            <FaHeart color={heartColor} />
+          </a>
+        </div>
       </div>
       <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
         <div className="product-pic">
@@ -72,14 +75,14 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           />{" "}
         </div>
       </Link>
-      <small className="category"> lepper</small>
       <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
         <a>
           <h5 className="product-name"> {productName}</h5>
         </a>
       </Link>
-      <div className="row px-3 justify-content-between">
-        <p className="price">{price} kr</p>
+      <div className="row px-3 justify-content-around">
+        <p className="price">{productprice} kr</p>
+        <div className="vl"></div>
         <p className="price">{quantity}ml</p>
       </div>
       <div className="row px-3 justify-content-between">
@@ -92,7 +95,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
         >
           <FaMinusCircle />
         </a>
-        <small> {numberOfProducts}</small>
+        <p className="setNumberOfProducts"> {numberOfProducts}</p>
         <a
           onClick={() =>
             setNumberOfProducts(
@@ -106,11 +109,13 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
       </div>
 
       <button
-        onClick={() => addtoCart(productContext, numberOfProducts)}
+        onClick={() =>
+          addToShoppingCartAndRecalcuatePrice(productContext, numberOfProducts)
+        }
         type="button"
-        className="btn btn-dark"
+        className="btn btn-light"
       >
-        Buy
+        Legg i handlepose
       </button>
     </div>
   );

@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
 import Link from "next/link";
-
-
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const FavoritesCard = (props) => {
@@ -49,8 +46,8 @@ const FavoritesCard = (props) => {
                     </div>
 
                     <div className="col-4">
-                        <button onClick={(() => deleteProduct(productContext))}> Remove</button>
-                        <button onClick={(() => addOneProductToCart(productContext))}> Add to Cart</button>
+                        <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
+                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til</button>
                     </div>
                 </div>
             </div>

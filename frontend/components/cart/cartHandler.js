@@ -1,4 +1,4 @@
-import { getCart, addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
+import { addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
 export const addtoCart = (productToAdd, quantity) => {
 
 

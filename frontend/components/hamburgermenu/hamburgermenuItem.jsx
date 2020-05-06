@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 
 const HamburgermenuItem = props => {
 
@@ -12,7 +12,7 @@ const HamburgermenuItem = props => {
                     <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="logo" />
                 </div>
 
-                <h1 className="nav-link">{props.category.name}</h1>
+                <p className="nav-link">{props.category.name}</p>
 
             </div>
 
@@ -32,7 +32,7 @@ const HamburgermenuItem = props => {
                         <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="logo" />
                     </div>
 
-                    <h1 className="nav-link">{props.category.categoryName}</h1>
+                    <p className="nav-link">{props.category.categoryName}</p>
 
                 </div>
             </Link>

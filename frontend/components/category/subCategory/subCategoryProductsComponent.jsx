@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Productgrid from ".././productgrid";
-import "bootstrap/dist/css/bootstrap.min.css";
 import CheckBox from ".././common/checkbox"
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Button } from 'reactstrap';
 import QuerySubCategoryFilter from "../../../components/querySubCategoryFilter"
 import SUBCATEGORYFILTER_QUERY from "../../../apollo/queries/subCategories/subCategoryFilter"
 
