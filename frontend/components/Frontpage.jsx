@@ -15,8 +15,9 @@ export const Frontpage = () => {
             <FrontpageGrid />
             <MyCarousel />
             <DisplayAllArticlesFrontpage />
-            <hr />
+            <ClickandCollectBanner />
             <ShowIdBanner />
+
         </div>
     );
 };
@@ -90,6 +91,16 @@ export const DisplayAllArticlesFrontpage = () => {
 
     )
 }
+
+export const ClickandCollectBanner = () => {
+    return (
+        <div className="container">
+            <div className="justify-content-center pb-4 pt-3">
+                <img className="img-fluid" src="/images/klikkAndHent.png" width="100%" alt="klikkoghent" />
+            </div>
+        </div>
+    );
+};
 
 export const ShowIdBanner = () => {
     return (
