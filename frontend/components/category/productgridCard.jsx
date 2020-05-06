@@ -9,6 +9,8 @@ import Link from "next/link";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { calculatePrice } from "../cookieHandler";
 
+var jsonObj = [];
+
 jsonObj = JSON.stringify(jsonObj);
 
 const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {

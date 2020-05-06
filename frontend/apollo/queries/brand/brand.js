@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 //GETPRODUCTSBRAND
 
 const BRAND_QUERY = gql`
-  query brands($id: ID!) {
+  query brand($id: ID!) {
     brand(id: $id) {
       id
       name
@@ -14,9 +14,9 @@ const BRAND_QUERY = gql`
       }
       products {
         id
-        name
+        ProductName
         description
-        logo {
+        image {
           url
         }
       }

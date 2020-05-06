@@ -41,7 +41,7 @@ const SpecificBrandPage = (props) => {
     brandName: props.brandDetailSide.name,
     brandDescription: props.brandDetailSide.description,
     brandLogo: props.brandDetailSide.logo.url,
-    brandproducts: props.brandDetailSide.products[0].name,
+    brandproducts: props.brandDetailSide.products,
   };
   console.log(brandContext.brandproducts);
 
@@ -85,7 +85,7 @@ const SpecificBrandPage = (props) => {
         </Col>
       </Row>
       <Row>
-        <div>{brandContext.products}</div>
+        <Col>{brandContext.brandproducts}</Col>
       </Row>
     </div>
   );
