@@ -14,34 +14,12 @@ const merkesidedetalj = () => {
 
   return (
     <div>
-      {/**Horizontal scroll menu */}
-      {/*<QuerySubCategory
-        query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY}
-        categoryName={router.query.id}
-      >
-        {({ data: { categories } }) => {
-          return (
-            <div>
-              <SubCategoryList
-                subCategoryList={categories[0].sub_categories}
-                categoryName={router.query.id}
-              ></SubCategoryList>
-              <CategoryProductsComonent
-                categoriesListInput={categories}
-                pageTitle={router.query.id}
-              ></CategoryProductsComonent>
-            </div>
-          );
-        }}
-      </QuerySubCategory>*/}
 
       {/**Brand info */}
       <Query query={BRAND_QUERY} id={router.query.id}>
         {({ data: { brand, productid } }) => {
-          console.log(brand);
           return (
             <div>
-              <h1>Dette er merkedetalj siden</h1>
               <SpecificBrandPage brandDetailSide={brand} key={productid} />
             </div>
           );

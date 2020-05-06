@@ -8,9 +8,8 @@ import {
   CardBody,
   Card,
 } from "reactstrap";
-import { useRouter } from "next/router";
-//import Query from "../query";
-//import BRAND_QUERY from "../../apollo/queries/brand/brand";
+
+
 import QuerySubCategory from "../querySubCategory";
 
 import SubCategoryList from "../../components/category/subCategoryList";
@@ -33,23 +32,15 @@ const SpecificBrandPage = (props) => {
   const onExited = () => setStatus("Les om merket");
   const toggle = () => setCollapse(!collapse);
 
-  {
-    /**Getting brand info */
-  }
-  let brandContext = {
-    id: props.brandDetailSide.id,
-    brandName: props.brandDetailSide.name,
-    brandDescription: props.brandDetailSide.description,
-    brandLogo: props.brandDetailSide.logo.url,
-    brandproducts: props.brandDetailSide.products,
-  };
-  console.log(brandContext.brandproducts);
+
+
+  console.log(props.brandDetailSide)
 
   return (
     <div>
       <Row>
         <Col>
-          <h1 className="text-center">{brandContext.brandName}</h1>
+          <h1 className="text-center">{props.brandDetailSide.name}</h1>
         </Col>
       </Row>
       <Row className="p-3">
@@ -66,7 +57,7 @@ const SpecificBrandPage = (props) => {
       <Row className="text-center">
         <Col>
           <div className="text-center p-0 m-0">
-            <h5>Les mer om {brandContext.brandName} her</h5>
+            <h5>Les mer om {props.brandDetailSide.name} her</h5>
             <Collapse
               isOpen={collapse}
               onEntering={onEntering}
@@ -75,7 +66,7 @@ const SpecificBrandPage = (props) => {
               onExited={onExited}
             >
               <Card className="p-3 m-0 w-75 border-0 text-left">
-                <p>{brandContext.brandDescription}</p>
+                <p>{props.brandDetailSide.description}</p>
               </Card>
             </Collapse>
             <Button onClick={toggle} className="bg-dark text-light border-0">
@@ -85,37 +76,10 @@ const SpecificBrandPage = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col>{brandContext.brandproducts}</Col>
+        <h2>Faewn</h2>
       </Row>
     </div>
   );
 };
 
 export default SpecificBrandPage;
-
-/**
- * 
- * <QuerySubCategory
-        query={CATEGORYGETSUBCATEGOREISWITHNAME_QUERY}
-        categoryName={router.query.id}
-      >
-        {({ data: { categories } }) => {
-          return (
-            <div>
-            
-              <SubCategoryList
-                subCategoryList={categories[0].sub_categories}
-                categoryName={router.query.id}
-              ></SubCategoryList>
-
-              <Highlight3Articles />
-
-              <CategoryProductsComonent
-                categoriesListInput={categories}
-                pageTitle={router.query.id}
-              ></CategoryProductsComonent>
-            </div>
-          );
-        }}
-      </QuerySubCategory>
- */

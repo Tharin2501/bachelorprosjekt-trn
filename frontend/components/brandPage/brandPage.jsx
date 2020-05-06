@@ -11,7 +11,6 @@ const BrandPage = (props) => {
       <hr />
       <Query query={BRANDS_QUERY}>
         {({ data: { brands } }) => {
-          console.log(brands);
           return brands.map((brand) => {
             return (
               <Container>
@@ -41,13 +40,13 @@ const BrandPage = (props) => {
 export default BrandPage;
 
 /**
- * 
- * 
+ *
+ *
  *       <Container className="bg-danger">
         <Col className="bg-primary">
           <h1 className="text-lg-left text-center">A</h1>
           <Row className="bg-success p-3">
-        
+
             <Nav vertical sm="6">
               <Col className="bg-danger pm-3">
                 <NavItem>
@@ -70,7 +69,7 @@ export default BrandPage;
                 </NavItem>
               </Col>
             </Nav>
-         
+
             <Nav vertical sm="6">
               <Col className="bg-danger">
                 <NavItem>
@@ -93,7 +92,7 @@ export default BrandPage;
                 </NavItem>
               </Col>
             </Nav>
-      
+
             <Nav vertical sm="6">
               <Col className="bg-danger">
                 <NavItem>
@@ -119,12 +118,12 @@ export default BrandPage;
           </Row>
         </Col>
       </Container>
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
 <NavItem>
                   <NavLink>Ardbeg</NavLink>
                 </NavItem>
