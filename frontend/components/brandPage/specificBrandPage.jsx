@@ -19,7 +19,25 @@ import Highlight3Articles from "../category/highlight3Articles";
 import HorizontalMenuItem from "../category/common/horizontalMenuItem";
 
 //TODO: Hente inn Logo-bildet og merkenavn fra strapi
+export const getSubcategoriesList = (products) => {
+  var subcategoriesArray = [];
 
+
+  for (var product of products) {
+    if (subcategoriesArray.length == 0) {
+      subcategoriesArray.push(product.sub_categories[0]);
+      continue;
+    }
+    for (var subcategory of subcategoriesArray) {
+      if (product.sub_categories[0].id != subcategory.id) {
+        subcategoriesArray.push(product.sub_categories[0]);
+      }
+    }
+
+  }
+
+  console.log(subcategoriesArray)
+}
 const SpecificBrandPage = (props) => {
   {
     /**Collapsing info text */
@@ -34,8 +52,8 @@ const SpecificBrandPage = (props) => {
 
 
 
-  console.log(props.brandDetailSide)
-
+  //console.log(props.brandDetailSide)
+  getSubcategoriesList(props.brandDetailSide.products);
   return (
     <div>
       <Row>
@@ -76,7 +94,33 @@ const SpecificBrandPage = (props) => {
         </Col>
       </Row>
       <Row>
-        <h2>Faewn</h2>
+        <Col>
+          <div>
+            <h3 className="horizontal-line1">
+              <span className="horizontal-line2">Våre kategorier</span>
+            </h3>
+
+
+            <div className="container-fluid">
+              <div className="row justify-content-center py-5">
+
+
+
+                {/* 
+                <div className="scrollmenu">
+                  {categories.map((category) => {
+                    return (
+                      <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/category"} category={category}></HorizontalMenuItem>
+                    )
+                  })}
+                </div>
+
+              */}
+
+              </div>
+            </div>
+          </div>
+        </Col>
       </Row>
     </div>
   );
