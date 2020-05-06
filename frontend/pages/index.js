@@ -1,6 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Frontpage } from "../components/Frontpage";
 import {
     Card, CardImg, CardText, CardBody,
@@ -10,6 +8,9 @@ import {
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
+import { useRouter } from "next/router";
+import Query from "../components/query";
+import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
 var jsonObj = [
 
@@ -36,7 +37,6 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
     const [favoritesStorage, setfavoritesStorage] = useState(() =>
         (initialfavoritesStorageValue) //  JSON.parse
     );
-    //console.log(favoritesStorage)
 
 
     useEffect(() => {
@@ -45,16 +45,21 @@ const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue 
 
     /* FAV END*/
 
-    /* FAV END*/
 
+    const router = useRouter();
 
     return (
-        <div>
-            <Frontpage />
-        </div>
+        <Query query={ARTICLES_QUERY_WITHLIMIT}>
+            {({ data: { article } }) => {
+                return (
+                    <div>
+                        <Frontpage artikkel={article} />
+                    </div>
+                )
+            }}
+        </Query>
     );
 };
-
 
 
 Cart.getInitialProps = ({ req }) => {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 
 const HamburgermenuItem = props => {
 

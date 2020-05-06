@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import ProduktTab from "../ProduktTab";
 import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
 import {
@@ -11,7 +10,8 @@ import {
   FaPlusCircle,
   FaMinusCircle
 } from "react-icons/fa";
-
+import { calculatePrice } from "../cookieHandler"
+import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const Produktside = (props) => {
 
@@ -29,14 +29,22 @@ const Produktside = (props) => {
   const [numberOfProducts, setNumberOfProducts] = useState(1);
 
 
-  //Add to Shopping Cart
-  function addToShoppingCart(value) {
-    if (value === "shoppingCart") {
-      alert("This product has been added to your shopping cart!");
-    } else if (value === "wishList") {
-      alert("This product has been added to your wishlist!");
-    }
+  /** Adding to Cart */
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+  const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
+
+    changeValueFunction(newValue);
+
+
   }
+
+  const addToShoppingCartAndRecalcuatePrice = () => {
+
+    addtoCart(productContext, numberOfProducts);
+    changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+
+  }
+  /** Adding to Cart END*/
 
   return (
     <div className="product-page-bg w-100 h-100 p-3 d-inline-block overflow-auto">
@@ -105,7 +113,7 @@ const Produktside = (props) => {
             <Row className="p-3">
               <Col>
                 <Button
-                  onClick={(() => addtoCart(productContext, numberOfProducts))}
+                  onClick={(() => addToShoppingCartAndRecalcuatePrice())}
                   className="bg-light border border-secondary text-dark p-2 w-100"
                 >
                   <Row>
