@@ -2,17 +2,12 @@ import React, { useState, useEffect, useContext } from "react"
 import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
 import { Button } from "reactstrap";
-import { calculatePrice } from "../cookieHandler"
+import { calculatePrice, calculateCollectMePoints } from "../cookieHandler"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const isServer = () => typeof window === `undefined`;
 
 
-export const calculateCollectMePoints = (priceToCalculateFrom) => {
-    var collectMePoints = priceToCalculateFrom / 10;
-    collectMePoints = Math.floor(collectMePoints);
-    return collectMePoints
-}
 
 const CartList = () => {
 

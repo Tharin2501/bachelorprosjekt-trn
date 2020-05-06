@@ -10,7 +10,7 @@ import {
   FaPlusCircle,
   FaMinusCircle
 } from "react-icons/fa";
-import { calculatePrice } from "../cookieHandler"
+import { calculatePrice, calculateCollectMePoints } from "../cookieHandler"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const Produktside = (props) => {
@@ -144,7 +144,7 @@ const Produktside = (props) => {
         </Col>
       </Row>
       {/** Info tabs start */}
-      test
+      man tjener {calculateCollectMePoints(productContext.price)} collect me points for dette kjøpet
       <Row className="pb-5 text-left">
         <Col>
           <ProduktTab />
