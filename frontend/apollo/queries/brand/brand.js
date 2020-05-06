@@ -13,7 +13,10 @@ const BRAND_QUERY = gql`
         url
       }
       products {
-      ProductName
+        id
+        ProductName
+          pris
+          Volume
       image{
         url
       }
