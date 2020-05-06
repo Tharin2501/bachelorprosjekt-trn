@@ -21,22 +21,29 @@ import HorizontalMenuItem from "../category/common/horizontalMenuItem";
 //TODO: Hente inn Logo-bildet og merkenavn fra strapi
 export const getSubcategoriesList = (products) => {
   var subcategoriesArray = [];
-
+  var addCategory = true;
 
   for (var product of products) {
-    if (subcategoriesArray.length == 0) {
+    if (subcategoriesArray.length === 0) {
       subcategoriesArray.push(product.sub_categories[0]);
       continue;
     }
+    addCategory = true;
     for (var subcategory of subcategoriesArray) {
-      if (product.sub_categories[0].id != subcategory.id) {
-        subcategoriesArray.push(product.sub_categories[0]);
+
+      if (product.sub_categories[0].id == subcategory.id) {
+        addCategory = false;
       }
+
+
+
+    }
+    if (addCategory == true) {
+      subcategoriesArray.push(product.sub_categories[0]);
     }
 
   }
-
-  console.log(subcategoriesArray)
+  return subcategoriesArray;
 }
 const SpecificBrandPage = (props) => {
   {
@@ -53,7 +60,8 @@ const SpecificBrandPage = (props) => {
 
 
   //console.log(props.brandDetailSide)
-  getSubcategoriesList(props.brandDetailSide.products);
+  const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
+  console.log(subcategoryArray)
   return (
     <div>
       <Row>
@@ -106,16 +114,16 @@ const SpecificBrandPage = (props) => {
 
 
 
-                {/* 
-                <div className="scrollmenu">
-                  {categories.map((category) => {
-                    return (
-                      <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/category"} category={category}></HorizontalMenuItem>
-                    )
-                  })}
-                </div>
+                {
+                  <div className="scrollmenu">
+                    {subcategoryArray.map((category) => {
+                      return (
+                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategory"} category={category}></HorizontalMenuItem>
+                      )
+                    })}
+                  </div>
 
-              */}
+                }
 
               </div>
             </div>
