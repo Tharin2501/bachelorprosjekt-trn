@@ -13,7 +13,11 @@ const BRAND_QUERY = gql`
         url
       }
       products {
-			ProductName
+      ProductName
+      image{
+        url
+      }
+
       sub_categories{
         id
         categoryName

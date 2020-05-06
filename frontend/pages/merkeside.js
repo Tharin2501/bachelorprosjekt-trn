@@ -6,7 +6,6 @@ import SpecificBrandPage from "../components/brandPage/specificBrandPage";
 const merkeSide = () => {
   return (
     <div>
-      <h1>Dette er merkesiden</h1>
       <BrandPageOverView />
       <BrandPage />
     </div>
@@ -16,7 +15,7 @@ const merkeSide = () => {
 export default merkeSide;
 
 /**
- * 
+ *
  *
       <SpecificBrandPage />
  */

@@ -11,7 +11,7 @@ import {
 
 
 import QuerySubCategory from "../querySubCategory";
-
+import Productgrid from "../category/productgrid"
 import SubCategoryList from "../../components/category/subCategoryList";
 import CategoryProductsComonent from "../../components/category/categoryProductsComponent";
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName";
@@ -128,6 +128,20 @@ const SpecificBrandPage = (props) => {
               </div>
             </div>
           </div>
+        </Col>
+
+      </Row>
+      <Row>
+        <Col>
+
+
+
+
+          <Productgrid productgrid={props.brandDetailSide.products} />
+
+
+
+
         </Col>
       </Row>
     </div>
