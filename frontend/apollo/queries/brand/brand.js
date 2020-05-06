@@ -23,6 +23,7 @@ const BRAND_QUERY = gql`
 
       sub_categories{
         id
+        StrapiName
         categoryName
          image{
           url

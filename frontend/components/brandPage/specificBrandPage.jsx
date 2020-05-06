@@ -118,7 +118,7 @@ const SpecificBrandPage = (props) => {
                   <div className="scrollmenu">
                     {subcategoryArray.map((category) => {
                       return (
-                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategory"} category={category}></HorizontalMenuItem>
+                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brandDetailSide.name}></HorizontalMenuItem>
                       )
                     })}
                   </div>
