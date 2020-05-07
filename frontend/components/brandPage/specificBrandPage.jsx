@@ -61,7 +61,7 @@ const SpecificBrandPage = (props) => {
 
   //console.log(props.brandDetailSide)
   const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
-  console.log(subcategoryArray)
+
   return (
     <div>
       <Row>
@@ -116,9 +116,10 @@ const SpecificBrandPage = (props) => {
 
                 {
                   <div className="scrollmenu">
+
                     {subcategoryArray.map((category) => {
                       return (
-                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brandDetailSide.name}></HorizontalMenuItem>
+                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brandDetailSide.name} brandID={props.brandDetailSide.id} ></HorizontalMenuItem>
                       )
                     })}
                   </div>

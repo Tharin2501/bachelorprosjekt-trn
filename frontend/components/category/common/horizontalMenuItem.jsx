@@ -23,7 +23,7 @@ const HorizontalMenuItem = (props) => {
 
             <div className="navitem">
                 <div>
-                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName } }}>
+                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName, brandID: props.brandID } }}>
                         <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></a>
                     </Link>
                 </div>

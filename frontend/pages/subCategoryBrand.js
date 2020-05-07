@@ -2,31 +2,31 @@ import React from "react";
 import { useRouter } from "next/router";
 import SubCategoryList from "../components/category/subCategoryList"
 import SubCategoryProductsComponent from "../components/category/subCategory/subCategoryProductsComponent";
-import GETSUBCATEGORYPRODUCTSFROMBRANDNAME_QUERY from "../apollo/queries/subCategories/getSubCategoryProductsFromBrandName"
-import QuerySubCategoryBrandName from "../components/querySubCategoryBrandName"
-import Productgrid from "../components/category/productgrid";
+import BRAND_QUERY from "../apollo/queries/brand/brand";
+import Query from "../components/query";
+
+import SubCategoryBrandcomponent from "../components/brandPage/subCategoryBrandcomponent"
 /*
 <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
                         <SubCategoryProductsComponent typesDefault={subCategories[0].type_of_products} pageTitle={router.query.id} description={subCategories[0].description} ></SubCategoryProductsComponent>
                         */
-const SubCategory = () => {
+const SubCategoryBrand = () => {
 
     const router = useRouter()
     return (
+        <div>
 
-        <QuerySubCategoryBrandName query={GETSUBCATEGORYPRODUCTSFROMBRANDNAME_QUERY} subCategoryName={router.query.id} brandName={router.query.brandName}>
+            <Query query={BRAND_QUERY} id={router.query.brandID}>
+                {({ data: { brand, productid } }) => {
+                    return (
+                        <div>
+                            <SubCategoryBrandcomponent brand={brand} subCategoryName={router.query.id} brandName={router.query.brandName} />
+                        </div>
+                    );
+                }}
+            </Query>
 
-            {({ data: { subCategories } }) => {
-                return (
-                    <div>
-
-
-                        <Productgrid productgrid={subCategories[0].products} />
-                    </div>
-                )
-            }}
-
-        </QuerySubCategoryBrandName>
+        </div>
     );
 };
-export default SubCategory;
+export default SubCategoryBrand;
