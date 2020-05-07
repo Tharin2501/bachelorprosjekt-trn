@@ -62,6 +62,10 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
         router.push("/merkeside")
     }
+    const handlearticlesClick = () => {
+
+        router.push("/artikler")
+    }
 
     if (type == "category") {
         return (
@@ -69,10 +73,21 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
             <ul>
                 <li className="nav_submenu-item">
+                    <div onClick={() => { handlearticlesClick() }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
+                        </div>
+
+                        <h1 className="nav-link">{"se artikler"}</h1>
+
+                    </div>
+                </li>
+                <li className="nav_submenu-item">
                     <div onClick={() => { handleBrandClick() }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="logo" />
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
                         </div>
 
                         <h1 className="nav-link">{"Merker"}</h1>
