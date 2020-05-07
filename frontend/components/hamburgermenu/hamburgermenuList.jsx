@@ -3,7 +3,7 @@ import React, { Component, useState, useEffect, forwardRef, useImperativeHandle 
 import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js";
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
-
+import { useRouter } from 'next/router'
 // onClickFuntion
 //   <li className="nav_submenu-item" onClick={() => { onClickFuntion }}>
 // lage annerldes for subcat
@@ -20,7 +20,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
     const typeToSet = (newType) => setType(newType)
 
     const [hamburgerMenuItemShowAll, setHamburgerMenuItemShowAll] = useState()
-
+    const router = useRouter()
     const changeListToShow = (category) => {
         var newList = []
         for (var i = 0; i < props.categories.length; i++) {
@@ -57,12 +57,43 @@ const HamburgermenuList = forwardRef((props, ref) => {
             setListToDefault: setListToDefault
         }
     })
+
+    const handleBrandClick = () => {
+
+        router.push("/merkeside")
+    }
+    const handlearticlesClick = () => {
+
+        router.push("/artikler")
+    }
+
     if (type == "category") {
         return (
 
 
             <ul>
+                <li className="nav_submenu-item">
+                    <div onClick={() => { handlearticlesClick() }}>
 
+                        <div className="myImg">
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
+                        </div>
+
+                        <h1 className="nav-link">{"se artikler"}</h1>
+
+                    </div>
+                </li>
+                <li className="nav_submenu-item">
+                    <div onClick={() => { handleBrandClick() }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
+                        </div>
+
+                        <h1 className="nav-link">{"Merker"}</h1>
+
+                    </div>
+                </li>
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
@@ -94,6 +125,8 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     </div>
 
                 </li>
+
+
                 <li className="nav_submenu-item">
                     <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
                         <div onClick={() => (closeNav())}>

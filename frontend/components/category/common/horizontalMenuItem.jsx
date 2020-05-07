@@ -2,14 +2,13 @@ import Link from "next/link";
 import React, { useState, useEffect, useContext } from "react"
 const HorizontalMenuItem = (props) => {
     const [categoryStrapiName, setCategoryStrapiName] = useState(props.category.StrapiName)
-
     if (props.pathnamekatOrSub === "/category") {
         return (
 
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="logo" /></a>
+                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="" /></a>
                     </Link>
                 </div>
                 <div>
@@ -19,13 +18,30 @@ const HorizontalMenuItem = (props) => {
                 </div>
             </div>
         )
-    } else {
+    } else if (props.pathnamekatOrSub === "/subCategoryBrand") {
+        return (
+
+            <div className="navitem">
+                <div>
+                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName, brandID: props.brandID } }}>
+                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName, brandID: props.brandID } }} >
+                        <a> {props.category.categoryName}</a>
+                    </Link>
+                </div>
+            </div>
+        )
+    }
+    else {
         return (
 
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="logo" /></a>
+                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></a>
                     </Link>
                 </div>
                 <div>

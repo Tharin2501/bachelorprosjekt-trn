@@ -1,8 +1,13 @@
-import React from "react"
+import React from "react";
 import { Frontpage } from "../components/Frontpage";
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button,
 } from "reactstrap";
 
 import Cookie from "js-cookie";
@@ -12,64 +17,60 @@ import { useRouter } from "next/router";
 import Query from "../components/query";
 import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
-var jsonObj = [
-
-]
+var jsonObj = [];
 // favoritesStroage
 
-jsonObj = JSON.stringify(jsonObj)
+jsonObj = JSON.stringify(jsonObj);
 
 /* <--CART --> */
-const Cart = ({ initialcartStorageValue = jsonObj, initialfavoritesStorageValue = jsonObj }) => {
-    const [cartStorage, setcartStorage] = useState(() =>
-        (initialcartStorageValue) //  JSON.parse
-    );
-    //console.log(cartStorage)
+const Cart = ({
+  initialcartStorageValue = jsonObj,
+  initialfavoritesStorageValue = jsonObj,
+}) => {
+  const [cartStorage, setcartStorage] = useState(
+    () => initialcartStorageValue //  JSON.parse
+  );
+  //console.log(cartStorage)
 
+  useEffect(() => {
+    Cookie.set("cartStorage", cartStorage); // JSON.stringify
+  }, []);
+  /* <--CART END-->*/
 
-    useEffect(() => {
-        Cookie.set("cartStorage", (cartStorage));// JSON.stringify
-    }, []);
-    /* <--CART END-->*/
+  /* FAV */
 
-    /* FAV */
+  const [favoritesStorage, setfavoritesStorage] = useState(
+    () => initialfavoritesStorageValue //  JSON.parse
+  );
 
-    const [favoritesStorage, setfavoritesStorage] = useState(() =>
-        (initialfavoritesStorageValue) //  JSON.parse
-    );
+  useEffect(() => {
+    Cookie.set("favoritesStorage", favoritesStorage); // JSON.stringify
+  }, []);
 
+  /* FAV END*/
 
-    useEffect(() => {
-        Cookie.set("favoritesStorage", (favoritesStorage));// JSON.stringify
-    }, []);
+  const router = useRouter();
 
-    /* FAV END*/
-
-
-    const router = useRouter();
-
-    return (
-        <Query query={ARTICLES_QUERY_WITHLIMIT}>
-            {({ data: { article } }) => {
-                return (
-                    <div>
-                        <Frontpage artikkel={article} />
-                    </div>
-                )
-            }}
-        </Query>
-    );
+  return (
+    <Query query={ARTICLES_QUERY_WITHLIMIT}>
+      {({ data: { article } }) => {
+        return (
+          <div>
+            <Frontpage artikkel={article} />
+          </div>
+        );
+      }}
+    </Query>
+  );
 };
 
-
 Cart.getInitialProps = ({ req }) => {
-    const cookies = parsCookies(req);
+  const cookies = parsCookies(req);
 
-
-    return {
-        initialcartStorageValue: cookies.cartStorage,
-        initialfavoritesStorageValue: cookies.favoritesStorage
-    };
+  return {
+    initialcartStorageValue: cookies.cartStorage,
+    initialfavoritesStorageValue: cookies.favoritesStorage,
+  };
 };
 
 export default Cart;
