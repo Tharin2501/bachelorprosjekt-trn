@@ -28,7 +28,7 @@ const HorizontalMenuItem = (props) => {
                     </Link>
                 </div>
                 <div>
-                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
+                    <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName, brandID: props.brandID } }} >
                         <a> {props.category.categoryName}</a>
                     </Link>
                 </div>
