@@ -1,8 +1,10 @@
 import gql from "graphql-tag";
 
-const ARTICLES_QUERY_WITHLIMIT = gql`
+// query for multiple articles
+
+const ARTICLES_CATEGORY= gql`
     query articles {
-        articles(limit: 3) { 
+        articles(limit:3 where:{category: "Solbeskyttelse"}) {
             id
             introduction
             title
@@ -14,4 +16,6 @@ const ARTICLES_QUERY_WITHLIMIT = gql`
     }
 `;
 
-export default ARTICLES_QUERY_WITHLIMIT;
+
+
+export default ARTICLES_CATEGORY;

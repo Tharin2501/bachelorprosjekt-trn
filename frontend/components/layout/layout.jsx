@@ -37,13 +37,13 @@ const MySearchbar = () => {
         )
     } else {
         return (
-            <div className="row mx-auto w-80">
-                <div className="col">
-                    <InputGroup>
+            <div className="row mr-5 ">
+                <div className="col ">
+                    <InputGroup className="p-0">
                         <InputGroupAddon addonType="prepend">
                             <InputGroupText style={{backgroundColor:"white"}}><GoSearch/></InputGroupText>
                         </InputGroupAddon>
-                        <Input className="font-weight-light"  placeholder="Søk... "/>
+                        <Input className="font-weight-light "  placeholder="Søk... "/>
                     </InputGroup>
                 </div>
             </div>
@@ -82,30 +82,93 @@ export const MyHeader = () => {
 
   }
 
+    {/*
+    return (
 
+        <div>
+
+            <Navbar color="light">
+
+                {   <div className="float-left mt-5">
+                    <a href="/" ><img src="../images/logo4.png"  width="70px" alt="logo"/></a>
+                </div>
+                <MySearchbar/>
+                <a className=" nav-item  mb-3 mr-5" href="favorites"><FaHeart color="black"/></a>
+                <a className="nav-item mr-5" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black"/></a>
+                <p className="mt-0 mb-0 mr-5">{totalprice}kr</p>
+                <FiUser className=" mb-2 mr-5"/>
+
+                {/*}
+                <a className=" nav-item  mb-3 mr-5" href="favorites"><FaHeart color="black"/></a>
+                <a className="nav-item mr-5" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black"/></a>
+                <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
+                <FiUser className=" mb-2 mr-5"/>
+
+
+            </Navbar>
+            <SecondNav/>
+        </div>
+
+
+    );
+*/}
     return (
         <Navbar color="light">
-            <div className="col-2 ml-1">
-                <MyDrawer/>
+
+            {/* Bilde leg i samme komponent som searchbar?*/}
+            <div className="">
+                <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo" /></a>
             </div>
-            {/* Bilde*/}
-            <div className="col-xs mx-auto">
-                <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo"/></a>
+            <div className="col-10 mr-2">
+                <MySearchbar />
             </div>
             {/* Logo*/}
-            <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black"/></a>
-            <FiUser className="mx-2 mb-2"/>
             <div className="">
-                <a className="nav-item" href="favorites"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black"/></a>
+                <a className="nav-item mr-2" href="shoppingcart"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
                 <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
             </div>
+
+            <a className="nav-item  mb-3 p-1 mr-3" href="favorites"><FaHeart color="black" /></a>
+
+            <FiUser className=" nav-item  mb-2" />
+
             {/* Searchbar*/}
-            <div className="col-xs mr-2">
-                <MySearchbar/>
-            </div>
+
         </Navbar>
     );
 };
+
+export const SecondNav = () => {
+    return(
+        <div>
+            <Navbar color="light">
+
+                <div className="col-xs mr-5">
+                    <MyDrawer/>
+                </div>
+                <a className="col-xs" href="#">
+                    Alle produkter
+                </a>
+                <a className="col-xs" href="#">
+                    Inspirasjon og guider
+                </a>
+                <a className="col-xs" href="#">
+                    Merker
+                </a>
+                <a className="col-xs" href="#">
+                    Tilbud
+                </a>
+                <a className="col-xs mr-3" href="#">
+                    Klikk og hent
+                </a>
+
+                <a className="col-xs nav-item ml-5" href="favorites">Tax free & me</a>
+                <a className="col-xs mr-4" href="#"> Kvote og kundeservice</a>
+
+            </Navbar>
+        </div>
+    )
+}
 
 
 export const NewsLetter = () => {

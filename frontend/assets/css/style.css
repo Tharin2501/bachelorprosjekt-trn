@@ -510,17 +510,13 @@ div.scrollmenu {
   background-color: pink;
 }
 
-/* ArticleBoxes.jsx*/
+/* ArticleBoxes.jsx 3articles*/
 .article_container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
+   position: relative;
+    max-width: 300px;
+    max-height: 200px;
 }
 
-.article_container img {
-    width: 100%;
-    height: auto;
-}
 
 .article_container .btn {
     position: absolute;
@@ -745,4 +741,14 @@ div.scrollmenu {
 
 .link-to-condition{
   color: #003d85;
+}
+
+.imageContainer {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.totalPrice {
+    margin-right: 40%;
 }
