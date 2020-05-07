@@ -3,7 +3,7 @@ import BrandPage from "../components/brandPage/brandPage";
 import BrandPageOverView from "../components/brandPage/brandPageOverView";
 import SpecificBrandPage from "../components/brandPage/specificBrandPage";
 
-const merkeSide = () => {
+const merkeSide = (props) => {
   return (
     <div>
       <BrandPageOverView />

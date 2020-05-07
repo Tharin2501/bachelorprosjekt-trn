@@ -23,7 +23,7 @@ const BrandPage = (props) => {
                           query: { id: brand.id },
                         }}
                       >
-                        <p>{brand.name}</p>
+                        <p className="text-dark p-2">{brand.name}</p>
                       </Link>
                     </Col>
                   </Nav>
