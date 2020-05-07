@@ -2,10 +2,45 @@ import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
 
 const BrandPageOverView = (props) => {
+  {
+    /*const alphabetList = [
+    'A',
+    'B',
+    'C',
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+    "Æ",
+    "Ø",
+    "Å",
+    "#",
+  ];*/
+  }
+
   return (
     <div className="bg-success text-center p-3">
       <Nav className="bg-danger">
-        <NavItem>
+        <NavItem className="text-dark">
           <NavLink href="#">A</NavLink>
         </NavItem>
         <NavItem>
