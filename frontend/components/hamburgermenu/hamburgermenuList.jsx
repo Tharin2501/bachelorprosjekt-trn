@@ -76,7 +76,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div onClick={() => { handlearticlesClick() }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
+                            <img className="myImg" src={"/images/icons/artikkel2ikon.svg"} alt="" />
                         </div>
 
                         <h1 className="nav-link">{"se artikler"}</h1>
@@ -87,7 +87,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div onClick={() => { handleBrandClick() }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"https://trnbackend.herokuapp.com/files/kosedyr.svg"} alt="" />
+                            <img className="myImg" src={"/images/icons/brandsikon.svg"} alt="" />
                         </div>
 
                         <h1 className="nav-link">{"Merker"}</h1>
@@ -117,7 +117,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                     <div onClick={() => (setListToDefault())}>
                         <div className="myImg">
-                            <img className="myImg" src={"/images/carousel/placeholder1.jpg"} alt="logo" />
+                            <img className="myImg" src={"/images/icons/arrowLeftpng.png"} alt="" />
                         </div>
 
                         <p className="nav-link">Gå tilbake</p>
