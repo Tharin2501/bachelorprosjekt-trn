@@ -1,22 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col, Input } from "reactstrap";
-import Query from "../query";
+import QuerybrandsOnString from "../querybrandsOnString";
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
+import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
 import Link from "next/link";
-//TODO: Gjøre
+
+
+// debounce
+export function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(
+    () => {
+
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+
+      return () => {
+        clearTimeout(handler);
+      };
+    },
+    [value]
+  );
+
+  return debouncedValue;
+}
+
+
+
+
 
 const BrandPage = (props) => {
+  // faktisk brukt i spørring
   const [searchTerm, setSearchTerm] = useState("");
+  // used in input field to user
+  const [inputTextTerm, setInputTextTerm] = useState("");
+  // State for search status (whether there is a pending API request)
+
+
+  const debounceSearchTerm = useDebounce(inputTextTerm, 400);
+
+  useEffect(() => {
+    if (debounceSearchTerm) {
+      setSearchTerm(inputTextTerm);
+    }
+  }), [debounceSearchTerm];
 
   const handleSerachFieldChanged = (e) => {
-    setSearchTerm(e.target.value);
+    setInputTextTerm(e.target.value);
   }
   return (
 
     <div>
       <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
       <hr />
-      <Query query={BRANDS_QUERY}>
+      <QuerybrandsOnString query={GETBRANDSBASEDONSTRING_QUERY} searchString={searchTerm}>
         {({ data: { brands } }) => {
           return brands.map((brand) => {
             return (
@@ -39,7 +79,7 @@ const BrandPage = (props) => {
             );
           });
         }}
-      </Query>
+      </QuerybrandsOnString>
     </div>
   );
 };
