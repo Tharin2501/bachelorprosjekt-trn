@@ -76,7 +76,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div onClick={() => { handlearticlesClick() }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"/images/icons/artikler5.png"} alt="" />
+                            <img className="myImg" src={"/images/icons/artikler2.0.svg"} alt="" />
                         </div>
 
                         <h1 className="nav-link">{"se artikler"}</h1>
