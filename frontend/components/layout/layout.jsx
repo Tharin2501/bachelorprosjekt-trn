@@ -30,9 +30,8 @@ import {useRouter} from "next/router"
 /* import CartTotalPriceContext from "../../components/context/cartTotalPriceContext"; */
 import {calculatePrice} from "../cookieHandler"
 
+{/*
 const MySearchbar = () => {
-
-
 
     const router = useRouter();
     if (router.pathname === "/hudpleievelger") {
@@ -55,7 +54,7 @@ const MySearchbar = () => {
 
                     <a className=" nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="black"/></a>
                     <FiUser className="nav-item mr-2 ml-1 "/>
-                    <p className="ml-1"> 0 kr</p>
+                    <p className="ml-1"> {totalPrice}kr</p>
                 </div>
 
             </div>
@@ -64,8 +63,10 @@ const MySearchbar = () => {
     }
 
 };
-
+*/}
 export const MyHeader = () => {
+
+    const router = useRouter();
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -94,35 +95,40 @@ export const MyHeader = () => {
 
     }
 
-    return (
-        <div>
-            <Navbar color="light p-0">
-                <div className="container-fluid">
-                            <MySearchbar/>
+    if (router.pathname === "/hudpleievelger") {
+        return (
+            null
+        )
+    }else {
 
+        return (
+            <div>
+                <Navbar style={{backgroundColor: "#042434"}}>
+                    <div className="container-fluid">
+                        <a href="/" ><img src="../images/logo4.png" className="mt-5" width="70px" alt="logo"/></a>
+                        <InputGroup className="col-xs w-50">
+                            <InputGroupAddon addonType="prepend">
+                                <InputGroupText style={{backgroundColor: "white"}}><GoSearch/></InputGroupText>
+                            </InputGroupAddon>
+                            <Input className="font-weight-light " placeholder="Søk... "/>
+                        </InputGroup>
 
-                </div>
-                {/* Bilde leg i samme komponent som searchbar?*/}
-                {/*
-            <div className="">
-                <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo" /></a>
+                        <div className="mt-4">
+                            <a className="nav-item mr-1 ml-1" href="shoppingcart"><FaShoppingCart className="" color="white" /></a>
+
+                            <a className=" nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white"/></a>
+                            <FiUser color="white" className="nav-item mr-2 ml-1 "/>
+                            <p style={{color: "white"}} className="ml-1"> {totalprice}kr</p>
+                        </div>
+
+                    </div>
+                </Navbar>
+
+                <SecondNav/>
             </div>
+        );
+    }
 
-
-            <div className="row">
-                <a className="nav-item mr-5" href="shoppingcart"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
-                <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
-
-            <a className="nav-item  mb-3 p-1 mr-3" href="favorites"><FaHeart color="black" /></a>
-            <FiUser className=" nav-item  mb-2" />
-            */}
-
-
-            </Navbar>
-
-            <SecondNav/>
-        </div>
-    );
 };
 
 export const SecondNav = () => {
@@ -130,27 +136,27 @@ export const SecondNav = () => {
         <div>
             <Navbar  style={{backgroundColor: "#e3f2fd"}}>
 
-                <div className="col-xs mr-5">
+                <div className=" d-inline px-2 pt-2 nav-link frontpageIconsText">
                     <MyDrawer/>
                 </div>
-                <a className="col-xs" href="#">
+                <a className=" d-inline px-2 pt-2 nav-link frontpageIconsText"  href="#">
                     Alle produkter
                 </a>
-                <a className="col-xs" href="#">
+                <a className="d-inline px-2 pt-2 nav-link frontpageIconsText" href="#">
                     Inspirasjon og guider
                 </a>
-                <a className="col-xs" href="#">
-                    Merker
-                </a>
-                <a className="col-xs" href="#">
+                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#">
                     Tilbud
                 </a>
-                <a className="col-xs mr-3" href="#">
+                <a className="d-inline px-2 pt-2 nav-link frontpageIconsText" href="#">
+                    Merker
+                </a>
+                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#">
                     Klikk og hent
                 </a>
 
-                <a className="col-xs nav-item ml-5" href="favorites">Tax free & me</a>
-                <a className="col-xs mr-4" href="#"> Kvote og kundeservice</a>
+                <a className="d-inline ml-5 px-0 pt-2 nav-link frontpageIconsText" href="favorites">Tax free & me</a>
+                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#"> Kvote og kundeservice</a>
 
             </Navbar>
         </div>
