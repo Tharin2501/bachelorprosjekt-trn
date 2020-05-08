@@ -4,26 +4,52 @@ import QuerybrandsOnString from "../querybrandsOnString";
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
 import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
 import Link from "next/link";
-//TODO: Gjøre
+
+
+// debounce
+export function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(
+    () => {
+
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+
+      return () => {
+        clearTimeout(handler);
+      };
+    },
+    [value]
+  );
+
+  return debouncedValue;
+}
+
+
+
+
 
 const BrandPage = (props) => {
+  // faktisk brukt i spørring
   const [searchTerm, setSearchTerm] = useState("");
-
-  const [results, setResults] = useState([]);
+  // used in input field to user
+  const [inputTextTerm, setInputTextTerm] = useState("");
   // State for search status (whether there is a pending API request)
-  const [isSearching, setIsSearching] = useState(false);
 
-  //const debounceSearchTerm = useDebounce(searchTerm, 500);
-  /*
-    useEffect(() => {
-      if (debounceSearchTerm) {
-        setIsSearching(true);
-  
-      }
-    })
-    */
+
+  const debounceSearchTerm = useDebounce(inputTextTerm, 400);
+
+  useEffect(() => {
+    if (debounceSearchTerm) {
+      setSearchTerm(inputTextTerm);
+    }
+  }), [debounceSearchTerm];
+
   const handleSerachFieldChanged = (e) => {
-    setSearchTerm(e.target.value);
+    setInputTextTerm(e.target.value);
   }
   return (
 
