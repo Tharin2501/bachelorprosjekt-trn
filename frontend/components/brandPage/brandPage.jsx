@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col, Input } from "reactstrap";
-import Query from "../query";
+import QuerybrandsOnString from "../querybrandsOnString";
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
+import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
 import Link from "next/link";
 //TODO: Gjøre
 
 const BrandPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [results, setResults] = useState([]);
+  // State for search status (whether there is a pending API request)
+  const [isSearching, setIsSearching] = useState(false);
+
+  //const debounceSearchTerm = useDebounce(searchTerm, 500);
+  /*
+    useEffect(() => {
+      if (debounceSearchTerm) {
+        setIsSearching(true);
+  
+      }
+    })
+    */
   const handleSerachFieldChanged = (e) => {
     setSearchTerm(e.target.value);
   }
@@ -16,7 +30,7 @@ const BrandPage = (props) => {
     <div>
       <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
       <hr />
-      <Query query={BRANDS_QUERY}>
+      <QuerybrandsOnString query={GETBRANDSBASEDONSTRING_QUERY} searchString={searchTerm}>
         {({ data: { brands } }) => {
           return brands.map((brand) => {
             return (
@@ -39,7 +53,7 @@ const BrandPage = (props) => {
             );
           });
         }}
-      </Query>
+      </QuerybrandsOnString>
     </div>
   );
 };
