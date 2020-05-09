@@ -6,8 +6,8 @@ const QuerybrandsOnString = ({ children, query, searchString }) => {
         variables: { searchString: searchString }
     });
 
-    if (loading) return <p>Loading...</p>;
-    if (data.brands.length == 0) return <p> Ingen merker funnet boo</p>;
+    if (loading) return <p>Henter merker</p>;
+    if (data.brands.length == 0) return <p> Ingen merker funnet</p>;
     if (error) return <p>Error: {JSON.stringify(error)}</p>;
     return children({ data });
 };
