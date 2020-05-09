@@ -40,7 +40,7 @@ const BrandPage = (props) => {
   // State for search status (whether there is a pending API request)
 
 
-  const debounceSearchTerm = useDebounce(inputTextTerm, 400);
+  const debounceSearchTerm = useDebounce(inputTextTerm, 200);
 
   useEffect(() => {
     if (debounceSearchTerm) {
