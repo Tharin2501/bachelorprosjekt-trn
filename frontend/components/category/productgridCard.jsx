@@ -21,6 +21,9 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     quantity: 1,
     price: productcard.pris,
     image: productcard.image[0].url,
+    volume: productcard.Volume,
+    brand: productcard.brand
+
   };
 
   // change color of heartfunction
@@ -29,7 +32,8 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   const [heartColor, setheartColor] = useState("black");
   const [numberOfProducts, setNumberOfProducts] = useState(1);
   const [productprice, setProductPrice] = useState(productContext.price);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(productContext.volume);
+
 
   function addtoFavorites() {
     changeHeartcolor();
@@ -60,7 +64,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     <div className="card  card-1">
       <div className="pr-3 row justify-content-stretch">
         <div className="p-2 bd-highlight">
-          <small className="category"> lepper</small>
+          <small className="category"> {productContext.brand.name}</small>
         </div>
         <div className="ml-auto p-2 bd-highlight">
           <a onClick={() => addtoFavorites()}>
@@ -85,7 +89,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
       <div className="row px-3 justify-content-around">
         <p className="price">{productprice} kr</p>
         <div className="vl"></div>
-        <p className="price">{quantity}ml</p>
+        <p className="price">{quantity}</p>
       </div>
       <div className="row px-3 justify-content-between">
         <a

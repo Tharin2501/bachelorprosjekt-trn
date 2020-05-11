@@ -9,9 +9,13 @@ query Subcategory($SubcategoryName: String!,$arrayOfTypes:[String]) {
           Strapiname
           ProductName
           pris
-
+          Volume
           image{
           url
+        }
+        brand{
+          id
+          name
         }
 
         }
