@@ -1,38 +1,22 @@
-import React, {useState, useContext, useEffect} from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link";
-import {FaHeart, FaShoppingCart} from 'react-icons/fa';
-import {FiUser} from "react-icons/fi";
-import {GoSearch} from "react-icons/go";
-import {AiOutlineMail} from "react-icons/ai";
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FiUser } from "react-icons/fi";
+import { GoSearch } from "react-icons/go";
+import { AiOutlineMail } from "react-icons/ai";
 import {
-    Collapse,
-    NavbarToggler,
-    NavbarBrand,
-    Navbar,
-    Nav,
-    NavItem,
-    NavLink,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    InputGroup,
-    InputGroupAddon,
-    InputGroupText,
-    Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Input,
+  Navbar
 } from "reactstrap";
-import {GiHamburgerMenu} from "react-icons/gi";
-import Menu, {SubMenu, Item as MenuItem, Divider} from 'rc-menu';
-
 import Cookie from "js-cookie";
-import {MyDrawer} from "../MyDrawer";
-import {useRouter} from "next/router"
-/* import CartTotalPriceContext from "../../components/context/cartTotalPriceContext"; */
-import {calculatePrice} from "../cookieHandler"
-
-{/*
+import { MyDrawer } from "../MyDrawer";
+import { useRouter } from "next/router"
+import { calculatePrice } from "../cookieHandler"
+import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
 const MySearchbar = () => {
-
     const router = useRouter();
     if (router.pathname === "/hudpleievelger") {
         return (
@@ -40,30 +24,22 @@ const MySearchbar = () => {
         )
     } else {
         return (
-            <div className="container-fluid">
-                <a href="/" ><img src="../images/logo4.png" className="mt-5" width="70px" alt="logo"/></a>
-                    <InputGroup className="col-xs w-50">
+            <div className="row mx-auto w-80">
+                <div className="col">
+                    <InputGroup>
                         <InputGroupAddon addonType="prepend">
-                            <InputGroupText style={{backgroundColor: "white"}}><GoSearch/></InputGroupText>
+                            <InputGroupText style={{backgroundColor:"white"}}><GoSearch/></InputGroupText>
                         </InputGroupAddon>
-                        <Input className="font-weight-light " placeholder="Søk... "/>
+                        <Input className="font-weight-light"  placeholder="Søk... "/>
                     </InputGroup>
-
-                <div className="mt-4">
-                    <a className="nav-item mr-1 ml-1" href="shoppingcart"><FaShoppingCart className="" color="black" /></a>
-
-                    <a className=" nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="black"/></a>
-                    <FiUser className="nav-item mr-2 ml-1 "/>
-                    <p className="ml-1"> {totalPrice}kr</p>
                 </div>
-
             </div>
 
         );
     }
 
 };
-*/}
+
 export const MyHeader = () => {
 
     const router = useRouter();
@@ -93,7 +69,7 @@ export const MyHeader = () => {
             setTotalprice(newtotalprice)
         }
 
-    }
+  }
 
     if (router.pathname === "/hudpleievelger") {
         return (
@@ -172,38 +148,7 @@ export const MyHeader = () => {
     }
 
 };
-/*
-export const SecondNav = () => {
-    return (
-        <div>
-            <Navbar  style={{backgroundColor: "#e3f2fd"}}>
-                <div className=" d-inline px-2 pt-2 nav-link frontpageIconsText">
-                    <MyDrawer/>
-                </div>
-                <a className="   px-2 pt-2 nav-link frontpageIconsText .hidden-xs col-sm-2"  href="#">
-                    Alle produkter
-                </a>
-                <a className="d-inline px-2 pt-2 nav-link frontpageIconsText" href="#">
-                    Inspirasjon og guider
-                </a>
-                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#">
-                    Tilbud
-                </a>
-                <a className="d-inline px-2 pt-2 nav-link frontpageIconsText" href="#">
-                    Merker
-                </a>
-                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#">
-                    Klikk og hent
-                </a>
 
-                <a className="d-inline ml-5 px-0 pt-2 nav-link frontpageIconsText" href="favorites">Tax free & me</a>
-                <a className="d-inline pt-2 nav-link frontpageIconsText" href="#"> Kvote og kundeservice</a>
-
-            </Navbar>
-        </div>
-    )
-}
-*/
 
 export const NewsLetter = () => {
 
@@ -242,115 +187,126 @@ export const NewsLetter = () => {
                             <p style={{fontWeight: "bold"}}>
                                 Ja, jeg har lest og godkjent
                                 <Link href="#">
-                                    <a className="link-to-condition"> betingelsene</a>
-                                </Link>
-                            </p>
-                        </label>
-                    </div>
-                </div>
-
-                <div className="col-sm pt-1 align-self-center mb-4">
-                    <button className="newsletter-btn" onClick={subscribeToNewsletter}>
-                        Meld meg på!
-                    </button>
-                    <div className="w-100 py-3"/>
-                </div>
-            </div>
+                  <a className="link-to-condition"> betingelsene</a>
+                </Link>
+              </p>
+            </label>
+          </div>
         </div>
-    );
+
+        <div className="col-sm pt-1 align-self-center mb-4">
+          <button className="newsletter-btn" onClick={subscribeToNewsletter}>
+            Meld meg på!
+                    </button>
+          <div className="w-100 py-3" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 
-export const MyFooter = () => (
-    <div className="container-fluid footer-style pt-2">
-        <div className="py-2">
-            <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo"/>
-        </div>
-        <div className="row py-2 px-2">
-            <div className="col-sm-3">
-                {/* Åpningstider*/}
-                <h3 className="footer-color">Åpningstider</h3>
-                <div className="w-100 py-2"/>
-                <p>Duty-Free butikkene er alltid åpne.</p>
-                <Link href="#"><a className="footer-color">Se våre åpningstider her.</a></Link>
-                <div className="w-100 py-4"/>
+export const MyFooter = () => {
+  const router = useRouter();
+  if (router.pathname === "/hudpleievelger") {
+    return (
+      null
+    )
+  } else {
+    return (
+      <div>
+        <NewsLetter>
 
-                {/* Telefon*/}
-                <h3 className="footer-color">Telefon</h3>
-                <p className="footer-color">+47 32 23 09 00</p>
-                <div className="w-100 py-2"/>
-                <p>
-                    Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.
+        </NewsLetter>
+        <div className="container-fluid footer-style pt-2">
+          <div className="py-2">
+            <img src="/images/trn-logos/heinman_footer.png" width="70px" height="70px" alt="logo" />
+          </div>
+          <div className="row py-2 px-2">
+            <div className="col-sm-3">
+              {/* Åpningstider*/}
+              <h3 className="footer-color">Åpningstider</h3>
+              <div className="w-100 py-2" />
+              <p>Duty-Free butikkene er alltid åpne.</p>
+              <Link href="#"><a className="footer-color">Se våre åpningstider her.</a></Link>
+              <div className="w-100 py-4" />
+
+        {/* Telefon*/}
+        <h3 className="footer-color">Telefon</h3>
+        <p className="footer-color">+47 32 23 09 00</p>
+        <div className="w-100 py-2" />
+        <p>
+          Kontakt oss i tidsrommet mandag til fredag 08:00 til 16:00, med unntak av helligdager.
                 </p>
-                <div className="w-100 py-1"/>
-            </div>
-            {/* Snarveier */}
-            <div className="col-sm-3">
-                <h3 className="footer-color">Snarveier</h3>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Kvote</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Produkter</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Klikk og hent</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Tilbud</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Tips og Trender</a>
-                </Link>
-                <div className="w-100 py-2"/>
-            </div>
-            {/* Informasjon*/}
-            <div className="col-sm-3">
-                <h3 className="footer-color">Informasjon</h3>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Kundeservice</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Ofte stillte spørsmål</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Reklamasjoner og retur</a>
-                </Link>
-                <div className="w-100 py-2"/>
-            </div>
-            {/* Om Oss*/}
-            <div className="col-sm-3">
-                <h3 className="footer-color">Om Oss</h3>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Kontakt oss</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Om oss</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Våre butikker</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Karriere og ledige stillinger</a>
-                </Link>
-                <div className="w-100 py-2"/>
-                <Link href="#">
-                    <a className="footer-color">Presse</a>
-                </Link>
-            </div>
-        </div>
-
+        <div className="w-100 py-1" />
+      </div>
+      {/* Snarveier */}
+      <div className="col-sm-3">
+        <h3 className="footer-color">Snarveier</h3>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Kvote</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Produkter</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Klikk og hent</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Tilbud</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Tips og Trender</a>
+        </Link>
+        <div className="w-100 py-2" />
+      </div>
+      {/* Informasjon*/}
+      <div className="col-sm-3">
+        <h3 className="footer-color">Informasjon</h3>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Kundeservice</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Ofte stillte spørsmål</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Reklamasjoner og retur</a>
+        </Link>
+        <div className="w-100 py-2" />
+      </div>
+      {/* Om Oss*/}
+      <div className="col-sm-3">
+        <h3 className="footer-color">Om Oss</h3>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Kontakt oss</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Om oss</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Våre butikker</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Karriere og ledige stillinger</a>
+        </Link>
+        <div className="w-100 py-2" />
+        <Link href="#">
+          <a className="footer-color">Presse</a>
+        </Link>
+      </div>
     </div>
+
+  </div>
 );

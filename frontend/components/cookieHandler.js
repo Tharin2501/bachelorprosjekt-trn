@@ -51,6 +51,16 @@ export const calculatePrice = () => {
 
 };
 
+
+export const calculateCollectMePoints = (priceToCalculateFrom) => {
+    if (priceToCalculateFrom < 10) {
+        return 0;
+    }
+    var collectMePoints = priceToCalculateFrom / 10;
+    collectMePoints = Math.floor(collectMePoints);
+    return collectMePoints;
+}
+
 /* <--CART -->*/
 
 export const addOneProductToCart = (productToAdd) => {

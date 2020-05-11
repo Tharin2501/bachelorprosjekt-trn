@@ -1,9 +1,5 @@
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
-import parsCookies from "./parseCookies";
-
-//const CART_KEY = "cart";
-
 
 const Cart = ({ initialRememberValue = 1 }) => {
     const [cartStorage, setcartStorage] = useState(() =>

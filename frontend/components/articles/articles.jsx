@@ -1,8 +1,6 @@
 import React from "react"
-import {AiOutlineMail} from "react-icons/ai"
-import Link from "next/link";
-import ARTICLES_QUERY from "../../apollo/queries/article/articles";
-import Query from "../query";
+import { AiOutlineMail } from "react-icons/ai"
+
 
 export const Articles = (props) => {
 
@@ -33,8 +31,8 @@ export const Articles = (props) => {
                     </p>
                 </div>
                 <img className="w-100"
-                     src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
-                     alt="logo"/>
+                    src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
+                    alt="logo" />
 
                 {/*{ArticleContent()}*/}
                 <div className="square">
@@ -44,24 +42,24 @@ export const Articles = (props) => {
                                 {articleContext.content}
                             </div>
 
-                            <img className="mt-5 mx-auto rounded " style={{minwidth: "44rem", height: "22rem"}}
-                                 src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
-                                 alt="logo"/>
+                            <img className="mt-5 mx-auto rounded " style={{ minwidth: "44rem", height: "22rem" }}
+                                src={"https://trnbackend.herokuapp.com" + articleContext.contentImage.url}
+                                alt="logo" />
 
                             {/* {ArticleProductCard()} */}
                             <div className="container">
                                 <div className="row justify-content-center">
                                     <div className="col-xs-12">
-                                        <div className="card" style={{width: "14rem"}}>
+                                        <div className="card" style={{ width: "14rem" }}>
                                             <img className="card-img-top"
-                                                 src={"https://trnbackend.herokuapp.com" + articleContext.productImage.url}
-                                                 alt="Card image cap"/>
+                                                src={"https://trnbackend.herokuapp.com" + articleContext.productImage.url}
+                                                alt="Card image cap" />
                                             <div className="card-body">
                                                 <h5 className="card-title">{articleContext.productTitle}</h5>
                                                 <p className="card-text">{articleContext.productText}</p>
                                                 <h6 className="card-text pb-2"
-                                                    style={{color: "red"}}>{articleContext.price} <span
-                                                    className="font-weight-light" style={{color: "black"}}>kr</span>
+                                                    style={{ color: "red" }}>{articleContext.price} <span
+                                                        className="font-weight-light" style={{ color: "black" }}>kr</span>
                                                 </h6>
                                                 <a href="#" className="btn btn-primary p">Kjøp</a>
                                             </div>
@@ -81,15 +79,15 @@ export const Articles = (props) => {
                                 <div className="col-xs">
                                     <div className="article-img-container mx-auto ">
                                         <img className="rounded mt-2"
-                                             src={"https://trnbackend.herokuapp.com" + articleContext.socialmediaImage.url}
-                                             alt="logo"/>
+                                            src={"https://trnbackend.herokuapp.com" + articleContext.socialmediaImage.url}
+                                            alt="logo" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <p className="font-weight-light"><AiOutlineMail style={{margin: 10}}/>
+                        <p className="font-weight-light"><AiOutlineMail style={{ margin: 10 }} />
                         Skrevet av {articleContext.authors[0].name}</p>
                     </div>
                 </div>

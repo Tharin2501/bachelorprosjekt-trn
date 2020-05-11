@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import { FaInfo, FaVial, FaStar } from "react-icons/fa";
+//TODO: Fikse statisk info-tekst og gjøre den dynamisk for å vise info om hvert enkelt produkt
 
 const ProduktTab = props => {
   const [activeTab, setActiveTab] = useState("1");

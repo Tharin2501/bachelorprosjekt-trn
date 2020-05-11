@@ -1,41 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import ProduktTab from "../ProduktTab";
-import { addtoCart, addItemToFavorites, changeNumberOfProducts } from "../cart/cartHandler"
+import {
+  addtoCart,
+  addItemToFavorites,
+  changeNumberOfProducts,
+} from "../cart/cartHandler";
 import {
   FaShoppingCart,
   FaShoppingBasket,
   FaHeart,
   FaPlus,
   FaPlusCircle,
-  FaMinusCircle
+  FaMinusCircle,
 } from "react-icons/fa";
-
+import { calculatePrice, calculateCollectMePoints } from "../cookieHandler";
+import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const Produktside = (props) => {
-
   var productContext = {
     id: props.productSide.id,
     name: props.productSide.ProductName,
     quantity: 1,
     price: props.productSide.pris,
     image: props.productSide.image[0].url,
-
-  }
-
+  };
 
   //Variables
   const [numberOfProducts, setNumberOfProducts] = useState(1);
 
+  /** Adding to Cart */
+  const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+  const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
+    changeValueFunction(newValue);
+  };
 
-  //Add to Shopping Cart
-  function addToShoppingCart(value) {
-    if (value === "shoppingCart") {
-      alert("This product has been added to your shopping cart!");
-    } else if (value === "wishList") {
-      alert("This product has been added to your wishlist!");
-    }
-  }
+  const addToShoppingCartAndRecalcuatePrice = () => {
+    addtoCart(productContext, numberOfProducts);
+    changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+  };
+  /** Adding to Cart END*/
 
   return (
     <div className="product-page-bg w-100 h-100 p-3 d-inline-block overflow-auto">
@@ -62,7 +66,10 @@ const Produktside = (props) => {
         <Col lg="6" xs="12" className="text-center h-auto w-50">
           <img
             className="mh-25 w-25"
-            src={"https://trnbackend.herokuapp.com" + props.productSide.image[0].url}
+            src={
+              "https://trnbackend.herokuapp.com" +
+              props.productSide.image[0].url
+            }
           />
         </Col>
         {/** Product title++ start */}
@@ -78,7 +85,11 @@ const Produktside = (props) => {
                 <Row>
                   <Col xs="4" sm="4" lg="4">
                     <Button
-                      onClick={(() => setNumberOfProducts(changeNumberOfProducts("decAmount", numberOfProducts)))}
+                      onClick={() =>
+                        setNumberOfProducts(
+                          changeNumberOfProducts("decAmount", numberOfProducts)
+                        )
+                      }
                       className="bg-transparent border-0 p-0"
                     >
                       <FaMinusCircle color="black" />
@@ -89,7 +100,14 @@ const Produktside = (props) => {
                   </Col>
                   <Col xs="4" sm="4" lg="4">
                     <Button
-                      onClick={(() => setNumberOfProducts(changeNumberOfProducts("increaseAmount", numberOfProducts)))}
+                      onClick={() =>
+                        setNumberOfProducts(
+                          changeNumberOfProducts(
+                            "increaseAmount",
+                            numberOfProducts
+                          )
+                        )
+                      }
                       className="bg-transparent border-0 p-0"
                     >
                       {" "}
@@ -104,7 +122,7 @@ const Produktside = (props) => {
             <Row className="p-3">
               <Col>
                 <Button
-                  onClick={(() => addtoCart(productContext, numberOfProducts))}
+                  onClick={() => addToShoppingCartAndRecalcuatePrice()}
                   className="bg-light border border-secondary text-dark p-2 w-100"
                 >
                   <Row>
@@ -119,7 +137,7 @@ const Produktside = (props) => {
             <Row className="p-3">
               <Col>
                 <Button
-                  onClick={(() => addItemToFavorites(productContext))}
+                  onClick={() => addItemToFavorites(productContext)}
                   className="bg-light border border-secondary text-dark p-2 w-100"
                 >
                   <Row>
@@ -135,6 +153,8 @@ const Produktside = (props) => {
         </Col>
       </Row>
       {/** Info tabs start */}
+      man tjener {calculateCollectMePoints(productContext.price)} collect me
+      points for dette kjøpet
       <Row className="pb-5 text-left">
         <Col>
           <ProduktTab />
