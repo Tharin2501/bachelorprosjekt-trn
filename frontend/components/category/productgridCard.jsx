@@ -10,7 +10,7 @@ import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { calculatePrice } from "../cookieHandler";
 
 var jsonObj = [];
-
+const isServer = () => typeof window === `undefined`;
 jsonObj = JSON.stringify(jsonObj);
 
 const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
@@ -25,6 +25,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     brand: productcard.brand
 
   };
+
 
   // change color of heartfunction
   const [productName, setProductName] = useState(productContext.name);
@@ -60,11 +61,15 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
   };
   /** Adding to Cart END*/
+
+  console.log(productContext.brand.id)
+
   return (
     <div className="card  card-1">
       <div className="pr-3 row justify-content-stretch">
         <div className="p-2 bd-highlight">
-          <small className="category"> {productContext.brand.name}</small>
+
+          <Link href={{ pathname: "/merkesidedetalj", query: { id: productcard.brand.id } }}> <small className="category"> <a>{productContext.brand.name}</a></small></Link>
         </div>
         <div className="ml-auto p-2 bd-highlight">
           <a onClick={() => addtoFavorites()}>
