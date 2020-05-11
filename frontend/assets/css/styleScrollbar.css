@@ -5,6 +5,6 @@
   }
   
   ::-webkit-scrollbar-thumb:horizontal{
-    background: black;
+    background: #D3D3D3;
     border-radius: 10px;
   }
