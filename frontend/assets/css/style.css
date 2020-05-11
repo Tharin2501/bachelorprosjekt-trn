@@ -149,7 +149,7 @@ button.add-btn{
   padding-left: auto;
   padding-right: auto;
   width: 100%;
-  
+
 }
 
 .card {
@@ -513,10 +513,13 @@ div.scrollmenu {
 
 /* ArticleBoxes.jsx 3articles*/
 .article_container {
-   position: relative;
+
     max-width: 300px;
     max-height: 200px;
+
+
 }
+
 
 
 .article_container .btn {
@@ -552,19 +555,18 @@ div.scrollmenu {
 
 .outlined_btn {
     position: absolute;
-    top: 80%;
+    top: 60%;
     left: 50%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     white-space:nowrap
 }
 
 .btn-outline-secondary {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 70%;
-    transform: translate( -70%, -30% );
+    transform: translate( -70%, -50% );
     text-transform: uppercase;
     border: 2px solid teal !important;
     color: black !important;
@@ -577,7 +579,7 @@ div.scrollmenu {
 
 .text-block {
     position: absolute;
-    top: 40%;
+    top: 25%;
     left: 70%;
     transform: translate( -70%, -50% );
     text-align: right;
@@ -642,6 +644,7 @@ div.scrollmenu {
 .card {
     width: 18rem;
     padding: 0;
+    transform: translate(0,-8%);
 }
 
 /* BILDE */
@@ -666,6 +669,7 @@ div.scrollmenu {
     box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 
 }
+
 
 /* card foran */
 .card-body-header {
@@ -692,7 +696,6 @@ div.scrollmenu {
     padding-top: 5%;
     transition: all .2s ease-in-out;
 }
-
 
 .card:hover .card-body-description {
     opacity: 1;

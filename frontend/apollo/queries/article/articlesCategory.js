@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 
 const ARTICLES_CATEGORY= gql`
     query articles {
-        articles(limit:3 where:{category: "Solbeskyttelse"}) {
+        articles(limit:1 where:{category: "Solbeskyttelse"}) {
             id
             introduction
             title

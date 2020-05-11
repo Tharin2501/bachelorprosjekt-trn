@@ -102,7 +102,7 @@ export const MyHeader = () => {
 
                 <div>
                     <Navbar  style={{backgroundColor: "#e3f2fd"}}>
-                        <div className="  px-2 pt-2 nav-link frontpageIconsText">
+                        <div className="  px-2 pt-2 nav-link">
                             <MyDrawer/>
                         </div>
                         <div className=" px-2 pt-2 d-none d-md-block">
