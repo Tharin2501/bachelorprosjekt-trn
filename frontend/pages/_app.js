@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import "../assets/css/style.css";
+import "../assets/css/styleScrollbar.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
 import { MyFooter, MyHeader, } from "../components/layout/layout";

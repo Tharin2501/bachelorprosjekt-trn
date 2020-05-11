@@ -1,0 +1,10 @@
+
+::-webkit-scrollbar {
+    width: 0.625rem !important;
+    height: 0.625rem !important;
+  }
+  
+  ::-webkit-scrollbar-thumb:horizontal{
+    background: black;
+    border-radius: 10px;
+  }
