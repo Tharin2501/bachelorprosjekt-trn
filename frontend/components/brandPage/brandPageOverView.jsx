@@ -38,8 +38,9 @@ const BrandPageOverView = (props) => {
   }
 
   return (
-    <div className="bg-success text-center p-3">
-      <Nav className="bg-danger">
+    <div className="text-center p-3">
+      <h1>Merker</h1>
+      <Nav className="">
         <NavItem className="text-dark">
           <NavLink href="#">A</NavLink>
         </NavItem>

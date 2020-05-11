@@ -9,7 +9,7 @@ const HamburgermenuItem = props => {
             <div onClick={() => props.listFunction(props.category)}>
 
                 <div className="myImg">
-                    <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="logo" />
+                    <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="" />
                 </div>
 
                 <p className="nav-link">{props.category.name}</p>
@@ -20,16 +20,10 @@ const HamburgermenuItem = props => {
         )
     } else {
         return (
-
-
-
-
-
-
             <Link href={{ pathname: "/subCategory", query: { id: props.category.StrapiName } }}>
                 <div onClick={props.closeNav}>
                     <div className="myImg">
-                        <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="logo" />
+                        <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" />
                     </div>
 
                     <p className="nav-link">{props.category.categoryName}</p>

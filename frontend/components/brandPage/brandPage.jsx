@@ -1,29 +1,84 @@
+<<<<<<< HEAD
 import React from "react";
-import { Nav, NavItem, NavLink, Container, Row, Col } from "reactstrap";
+import { Nav, NavItem, NavLink, Container, Row, Col, Button } from "reactstrap";
 import Query from "../query";
+=======
+import React, { useState, useEffect } from "react";
+import { Nav, NavItem, NavLink, Container, Row, Col, Input } from "reactstrap";
+import QuerybrandsOnString from "../querybrandsOnString";
+>>>>>>> 3fe30b9c7c9a849e0f8bf93158a6491b131a797c
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
+import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
 import Link from "next/link";
-//TODO: Gjøre
+
+
+// debounce
+export function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(
+    () => {
+
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+
+      return () => {
+        clearTimeout(handler);
+      };
+    },
+    [value]
+  );
+
+  return debouncedValue;
+}
+
+
+
+
 
 const BrandPage = (props) => {
+  // faktisk brukt i spørring
+  const [searchTerm, setSearchTerm] = useState("");
+  // used in input field to user
+  const [inputTextTerm, setInputTextTerm] = useState("");
+  // State for search status (whether there is a pending API request)
+
+
+  const debounceSearchTerm = useDebounce(inputTextTerm, 200);
+
+  useEffect(() => {
+    if (debounceSearchTerm) {
+      setSearchTerm(inputTextTerm);
+    }
+  }), [debounceSearchTerm];
+
+  const handleSerachFieldChanged = (e) => {
+    setInputTextTerm(e.target.value);
+  }
   return (
+
     <div>
+      <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
       <hr />
-      <Query query={BRANDS_QUERY}>
+      <QuerybrandsOnString query={GETBRANDSBASEDONSTRING_QUERY} searchString={searchTerm}>
         {({ data: { brands } }) => {
           return brands.map((brand) => {
             return (
               <Container>
                 <Row>
-                  <Nav vertical sm="6">
-                    <Col className="bg-danger pm-3">
+                  <Nav sm="6">
+                    <Col className="pm-3">
                       <Link
                         href={{
                           pathname: "merkesidedetalj",
                           query: { id: brand.id },
                         }}
                       >
-                        <p className="text-dark p-2">{brand.name}</p>
+                        <Button className="text-dark bg-white p-2 border-0">
+                          {brand.name}
+                        </Button>
                       </Link>
                     </Col>
                   </Nav>
@@ -32,7 +87,7 @@ const BrandPage = (props) => {
             );
           });
         }}
-      </Query>
+      </QuerybrandsOnString>
     </div>
   );
 };
