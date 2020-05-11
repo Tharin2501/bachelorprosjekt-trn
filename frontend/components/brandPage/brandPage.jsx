@@ -1,42 +1,25 @@
-<<<<<<< HEAD
-import React from "react";
-import { Nav, NavItem, NavLink, Container, Row, Col, Button } from "reactstrap";
-import Query from "../query";
-=======
 import React, { useState, useEffect } from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col, Input } from "reactstrap";
 import QuerybrandsOnString from "../querybrandsOnString";
->>>>>>> 3fe30b9c7c9a849e0f8bf93158a6491b131a797c
-import BRANDS_QUERY from "../../apollo/queries/brand/brands";
 import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
 import Link from "next/link";
-
 
 // debounce
 export function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
-  useEffect(
-    () => {
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
 
-      const handler = setTimeout(() => {
-        setDebouncedValue(value);
-      }, delay);
-
-
-      return () => {
-        clearTimeout(handler);
-      };
-    },
-    [value]
-  );
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value]);
 
   return debouncedValue;
 }
-
-
-
-
 
 const BrandPage = (props) => {
   // faktisk brukt i spørring
@@ -45,24 +28,32 @@ const BrandPage = (props) => {
   const [inputTextTerm, setInputTextTerm] = useState("");
   // State for search status (whether there is a pending API request)
 
-
   const debounceSearchTerm = useDebounce(inputTextTerm, 200);
 
   useEffect(() => {
     if (debounceSearchTerm) {
       setSearchTerm(inputTextTerm);
     }
-  }), [debounceSearchTerm];
+  }),
+    [debounceSearchTerm];
 
   const handleSerachFieldChanged = (e) => {
     setInputTextTerm(e.target.value);
-  }
+  };
   return (
-
     <div>
-      <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
+      <Input
+        type="textarea"
+        name="serach"
+        id="searchbar"
+        placeholder="Søk etter merke her"
+        onChange={handleSerachFieldChanged}
+      />
       <hr />
-      <QuerybrandsOnString query={GETBRANDSBASEDONSTRING_QUERY} searchString={searchTerm}>
+      <QuerybrandsOnString
+        query={GETBRANDSBASEDONSTRING_QUERY}
+        searchString={searchTerm}
+      >
         {({ data: { brands } }) => {
           return brands.map((brand) => {
             return (
