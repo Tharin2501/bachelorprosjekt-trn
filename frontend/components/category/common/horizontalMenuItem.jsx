@@ -13,7 +13,7 @@ const HorizontalMenuItem = (props) => {
                 </div>
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a> {props.category.name}</a>
+                        <a className="nav-link frontpageIconsText"> {props.category.name}</a>
                     </Link>
                 </div>
             </div>
