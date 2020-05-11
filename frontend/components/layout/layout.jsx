@@ -105,8 +105,8 @@ export const MyHeader = () => {
             <div>
                 <Navbar style={{backgroundColor: "#042434"}}>
                     <div className="container-fluid">
-                        <a href="/" ><img src="../images/logo4.png" className="mt-5" width="70px" alt="logo"/></a>
-                        <InputGroup className="col-xs w-50">
+                        <a href="/" ><img src="../images/logo4.png" className="mt-4  mr-4" width="40px" alt="logo"/></a>
+                        <InputGroup className=" w-50 mx-auto">
                             <InputGroupAddon addonType="prepend">
                                 <InputGroupText style={{backgroundColor: "white"}}><GoSearch/></InputGroupText>
                             </InputGroupAddon>
@@ -114,32 +114,73 @@ export const MyHeader = () => {
                         </InputGroup>
 
                         <div className="mt-4">
-                            <a className="nav-item mr-1 ml-1" href="shoppingcart"><FaShoppingCart className="" color="white" /></a>
+                            <a className="nav-item mr-1 ml-1" href="shoppingcart">< FiUser color="white"/></a>
 
                             <a className=" nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white"/></a>
-                            <FiUser color="white" className="nav-item mr-2 ml-1 "/>
-                            <p style={{color: "white"}} className="ml-1"> {totalprice}kr</p>
+                            < FaShoppingCart className="" color="white" className="nav-item mr-2 ml-1 "/>
+                            <p style={{color: "white"}} className="ml-5 pl-2"> {totalprice}kr</p>
                         </div>
 
                     </div>
                 </Navbar>
 
-                <SecondNav/>
+                <div>
+                    <Navbar  style={{backgroundColor: "#e3f2fd"}}>
+                        <div className="  px-2 pt-2 nav-link frontpageIconsText">
+                            <MyDrawer/>
+                        </div>
+                        <div className=" px-2 pt-2 d-none d-md-block">
+                            <Link  href="#">
+                                <a>Alle Produkter</a>
+                            </Link>
+                        </div>
+                        <div className=" px-2 pt-2 d-none d-md-block" href="#">
+                            <Link  href="#">
+                                <a>Inspirasjon og guider</a>
+                            </Link>
+                        </div>
+                        <div className=" pt-2 d-none d-md-block" href="#">
+                            <Link  href="#">
+                                <a>Tilbud</a>
+                            </Link>
+                        </div>
+                        <div className=" px-2 pt-2 d-none d-md-block" href="#">
+                            <Link  href="#">
+                                <a>Merker</a>
+                            </Link>
+                        </div>
+                        <div className=" pt-2 d-none d-md-block" href="#">
+                            <Link  href="#">
+                                <a>Klikk og Hent</a>
+                            </Link>
+                        </div>
+
+                        <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
+                            <Link  href="#">
+                            <a>Tax free & me</a>
+                        </Link></div>
+                        <div className="pt-2 d-none d-md-block" href="#">
+                            <Link  href="#">
+                                <a>Kvote og kundeservice</a>
+                            </Link>
+                        </div>
+
+                    </Navbar>
+                </div>
             </div>
         );
     }
 
 };
-
+/*
 export const SecondNav = () => {
     return (
         <div>
             <Navbar  style={{backgroundColor: "#e3f2fd"}}>
-
                 <div className=" d-inline px-2 pt-2 nav-link frontpageIconsText">
                     <MyDrawer/>
                 </div>
-                <a className=" d-inline px-2 pt-2 nav-link frontpageIconsText"  href="#">
+                <a className="   px-2 pt-2 nav-link frontpageIconsText .hidden-xs col-sm-2"  href="#">
                     Alle produkter
                 </a>
                 <a className="d-inline px-2 pt-2 nav-link frontpageIconsText" href="#">
@@ -162,7 +203,7 @@ export const SecondNav = () => {
         </div>
     )
 }
-
+*/
 
 export const NewsLetter = () => {
 
