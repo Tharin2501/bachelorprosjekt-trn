@@ -4,7 +4,7 @@ import Link from "next/link";
 import HamburgermenuList from "../components/hamburgermenu/hamburgermenuList.jsx"
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories.js";
 import Query from "../components/query"
-export const MyDrawer = () => {
+export const MyDrawer = (props) => {
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "250px";
@@ -22,7 +22,7 @@ export const MyDrawer = () => {
                 <ul className="left">
                     <li style={{ cursor: "pointer", height: "100%" }}>
                         <a onClick={openNav}>
-                            <GiHamburgerMenu />
+                            < GiHamburgerMenu style={{ color: props.hamburgerIconColor }} />
                         </a>
 
                     </li>

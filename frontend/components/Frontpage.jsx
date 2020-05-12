@@ -16,7 +16,6 @@ export const Frontpage = () => {
             <DisplayAllArticlesFrontpage />
             <ClickandCollectBanner />
             <ShowIdBanner />
-
         </div>
     );
 };

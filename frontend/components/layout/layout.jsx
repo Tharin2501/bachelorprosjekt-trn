@@ -16,6 +16,7 @@ import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
 import { calculatePrice } from "../cookieHandler"
 import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
+import { Media, MediaContextProvider } from "../media"
 const MySearchbar = () => {
     const router = useRouter();
     if (router.pathname === "/hudpleievelger") {
@@ -76,73 +77,99 @@ export const MyHeader = () => {
 
     } else {
         return (
-            <div>
-                <Navbar style={{ backgroundColor: "#042434" }}>
-                    <div className="container-fluid">
-                        <a href="/" ><img src="../images/logo4.png" className="mt-4  mr-4" width="40px" alt="logo" /></a>
-                        <InputGroup className=" w-50 mx-auto">
-                            <InputGroupAddon addonType="prepend">
-                                <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
-                            </InputGroupAddon>
-                            <Input className="font-weight-light " placeholder="Søk... " />
-                        </InputGroup>
-
-                        <div className="mt-4">
-                            <a className="nav-item mr-1 ml-1">< FiUser color="white" /></a>
-                            <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white" /></a>
-                            <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart color="white" /></a>
-                            <p style={{ color: "white" }} className="ml-5 pl-3"> {totalprice}kr</p>
+            <MediaContextProvider>
+                <Media at="sm">
+                    <Navbar style={{ backgroundColor: "#042434" }}>
+                        <div className="col-2 ml-1">
+                            <MyDrawer hamburgerIconColor={"white"} />
                         </div>
+                        {/* Bilde*/}
+                        <div className="col-xs mx-auto">
+                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
+                        </div>
+                        {/* Logo*/}
+                        <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart alt={"Hjerte,link til favorittside"} color="white" /></a>
+                        <FiUser alt={"Person,link til profil"} className="mx-2 mb-2" />
+                        <div className="">
+                            <a className="nav-item" href="shoppingcart"><FaShoppingCart alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="white" /></a>
+                            <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
+                        </div>
+                        {/* Searchbar*/}
+                        <div className="col-xs mr-2">
+                            <MySearchbar />
+                        </div>
+                    </Navbar>
+                </Media>
+                <Media greaterThan="sm">
+                    <div>
+                        <Navbar style={{ backgroundColor: "#042434" }}>
+                            <div className="container-fluid">
+                                <a href="/" ><img src="../images/logo4.png" className="mt-4  mr-4" width="40px" alt={"Taxfree.no logo"} /></a>
+                                <InputGroup className=" w-50 mx-auto">
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input className="font-weight-light " placeholder="Søk... " />
+                                </InputGroup>
+
+                                <div className="mt-4">
+                                    <a className="nav-item mr-1 ml-1">< FiUser color="white" /></a>
+                                    <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white" /></a>
+                                    <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart color="white" /></a>
+                                    <p style={{ color: "white" }} className="ml-5 pl-3"> {totalprice}kr</p>
+                                </div>
+
+                            </div>
+                        </Navbar>
+
+                        <div>
+                            <Navbar style={{ backgroundColor: "#e3f2fd" }}>
+                                <div className="  px-2 pt-2 nav-link">
+                                    <MyDrawer hamburgerIconColor={"black"} />
+                                </div>
+                                <div className=" px-2 pt-2 d-none d-md-block">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Alle Produkter</a>
+                                    </Link>
+                                </div>
+                                <div className=" px-2 pt-2 d-none d-md-block" href="#">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
+                                    </Link>
+                                </div>
+                                <div className=" pt-2 d-none d-md-block" href="#">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Tilbud</a>
+                                    </Link>
+                                </div>
+                                <div className=" px-2 pt-2 d-none d-md-block" href="#">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Merker</a>
+                                    </Link>
+                                </div>
+                                <div className=" pt-2 d-none d-md-block" href="#">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Klikk og Hent</a>
+                                    </Link>
+                                </div>
+
+                                <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Tax free & me</a>
+                                    </Link></div>
+                                <div className="pt-2 d-none d-md-block" href="#">
+                                    <Link href="#">
+                                        <a className="nav-link frontpageIconsText">Kvote og kundeservice</a>
+                                    </Link>
+                                </div>
+
+                            </Navbar>
+                        </div>
+
 
                     </div>
-                </Navbar>
-
-                <div>
-                    <Navbar style={{ backgroundColor: "#e3f2fd" }}>
-                        <div className="  px-2 pt-2 nav-link">
-                            <MyDrawer />
-                        </div>
-                        <div className=" px-2 pt-2 d-none d-md-block">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Alle Produkter</a>
-                            </Link>
-                        </div>
-                        <div className=" px-2 pt-2 d-none d-md-block" href="#">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
-                            </Link>
-                        </div>
-                        <div className=" pt-2 d-none d-md-block" href="#">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Tilbud</a>
-                            </Link>
-                        </div>
-                        <div className=" px-2 pt-2 d-none d-md-block" href="#">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Merker</a>
-                            </Link>
-                        </div>
-                        <div className=" pt-2 d-none d-md-block" href="#">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Klikk og Hent</a>
-                            </Link>
-                        </div>
-
-                        <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Tax free & me</a>
-                            </Link></div>
-                        <div className="pt-2 d-none d-md-block" href="#">
-                            <Link href="#">
-                                <a className="nav-link frontpageIconsText">Kvote og kundeservice</a>
-                            </Link>
-                        </div>
-
-                    </Navbar>
-                </div>
-
-
-            </div>
+                </Media>
+            </MediaContextProvider>
         );
     }
 
