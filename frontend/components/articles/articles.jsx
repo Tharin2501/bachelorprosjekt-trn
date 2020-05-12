@@ -47,7 +47,7 @@ export const Articles = (props) => {
                                 alt="logo" />
 
                             {/* {ArticleProductCard()} */}
-                            <div className="container">
+                            <div className="container mt-5">
                                 <div className="row justify-content-center">
                                     <div className="col-xs-12">
                                         <div className="card" style={{ width: "14rem" }}>
