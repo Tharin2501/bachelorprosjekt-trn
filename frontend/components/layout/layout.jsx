@@ -104,37 +104,37 @@ export const MyHeader = () => {
                         </div>
                         <div className=" px-2 pt-2 d-none d-md-block">
                             <Link href="#">
-                                <a>Alle Produkter</a>
+                                <a className="nav-link frontpageIconsText">Alle Produkter</a>
                             </Link>
                         </div>
                         <div className=" px-2 pt-2 d-none d-md-block" href="#">
                             <Link href="#">
-                                <a>Inspirasjon og guider</a>
+                                <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
                             </Link>
                         </div>
                         <div className=" pt-2 d-none d-md-block" href="#">
                             <Link href="#">
-                                <a>Tilbud</a>
+                                <a className="nav-link frontpageIconsText">Tilbud</a>
                             </Link>
                         </div>
                         <div className=" px-2 pt-2 d-none d-md-block" href="#">
                             <Link href="#">
-                                <a>Merker</a>
+                                <a className="nav-link frontpageIconsText">Merker</a>
                             </Link>
                         </div>
                         <div className=" pt-2 d-none d-md-block" href="#">
                             <Link href="#">
-                                <a>Klikk og Hent</a>
+                                <a className="nav-link frontpageIconsText">Klikk og Hent</a>
                             </Link>
                         </div>
 
                         <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
                             <Link href="#">
-                                <a>Tax free & me</a>
+                                <a className="nav-link frontpageIconsText">Tax free & me</a>
                             </Link></div>
                         <div className="pt-2 d-none d-md-block" href="#">
                             <Link href="#">
-                                <a>Kvote og kundeservice</a>
+                                <a className="nav-link frontpageIconsText">Kvote og kundeservice</a>
                             </Link>
                         </div>
 

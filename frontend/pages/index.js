@@ -3,8 +3,7 @@ import { Frontpage } from "../components/Frontpage";
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
-import Query from "../components/query";
-import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
+
 
 var jsonObj = [];
 // favoritesStroage
