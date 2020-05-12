@@ -11,6 +11,7 @@ import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/C
 
 const merkesidedetalj = () => {
   const router = useRouter();
+  console.log(router.query.id)
 
   return (
     <div>

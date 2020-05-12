@@ -20,6 +20,12 @@ const BRAND_QUERY = gql`
       image{
         url
       }
+      
+      
+      brand{
+        id
+        name
+      }
 
       sub_categories{
         id
