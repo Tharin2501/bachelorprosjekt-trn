@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Nav, NavItem, NavLink, Container, Row, Col, Input } from "reactstrap";
+import { Nav, NavItem, NavLink, Container, Row, Col, Input, Button } from "reactstrap";
 import QuerybrandsOnString from "../querybrandsOnString";
 import BRANDS_QUERY from "../../apollo/queries/brand/brands";
 import GETBRANDSBASEDONSTRING_QUERY from "../../apollo/queries/brand/getBrandsbasedOnString";
@@ -63,14 +63,16 @@ const BrandPage = (props) => {
               <Container>
                 <Row>
                   <Nav vertical sm="6">
-                    <Col className="bg-danger pm-3">
+                    <Col className="pm-3">
                       <Link
                         href={{
                           pathname: "merkesidedetalj",
                           query: { id: brand.id },
                         }}
                       >
-                        <p className="text-dark p-2">{brand.name}</p>
+                        <Button className="text-dark bg-white p-2 border-0">
+                          {brand.name}
+                        </Button>
                       </Link>
                     </Col>
                   </Nav>
