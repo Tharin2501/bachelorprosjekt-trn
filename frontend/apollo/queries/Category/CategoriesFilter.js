@@ -12,6 +12,7 @@ query Category($categoryName: String!,$arrayOfSubcat:[String],$arrayOfTypes:[Str
         Strapiname
         ProductName
         pris
+        Volume
         type_of_products
         {
           id
@@ -21,6 +22,11 @@ query Category($categoryName: String!,$arrayOfSubcat:[String],$arrayOfTypes:[Str
         image{
           url
         }
+        brand{
+          id
+          name
+        }
+
       }
     } 
   

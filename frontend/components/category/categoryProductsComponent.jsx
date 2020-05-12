@@ -305,6 +305,15 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     // legge til  typisk norsk, vegansk..
+    /* failcheck
+      //console.log(productsArray)
+                            for (var product of productsArray) {
+                                if (product.brand == null) {
+                                    console.log(product.ProductName)
+                                }
+                            }
+                            */
+
     return (
 
         <React.Fragment>
@@ -385,9 +394,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
 
-            <h1>{pageTitle}</h1>
             <Button onClick={openNav}>Filter</Button>
-            <Button>Sort</Button>
             <p>
                 {categoriesListInput[0].description}
 
@@ -399,6 +406,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
                     <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
                         {({ data: { categories } }) => {
                             const productsArray = getProducts(categories)
+
                             return (
                                 <Productgrid productgrid={productsArray} />
                             )

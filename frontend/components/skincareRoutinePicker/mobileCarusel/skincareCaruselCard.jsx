@@ -42,18 +42,18 @@ const SkincareCaruselCard = (props) => {
                 <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
                     <Progress value={props.progressBarValue}></Progress>
                     <text align="center">{props.stepText}</text>
-                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
+                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     <CardBody>
                         <CardTitle >{props.product.ProductName}</CardTitle>
                         <div className="row px-3 justify-content-between">
-                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
+                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke"></StarRatings>
                             <text>Se omtale</text>
                         </div>
 
 
 
 
-                        <img align="center" src="/images/desktopBulletPointImage.png" alt="Card image cap" />
+                        <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                         <CardSubtitle className="h2" align="center">{props.product.pris + " kr"}</CardSubtitle>
                         <Button onClick={() => toogleShowText()}>Vis beskrivelse</Button>
                         {showText && <CardText>{props.product.description}</CardText>}
@@ -74,18 +74,18 @@ const SkincareCaruselCard = (props) => {
                 <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
                     <Progress value={props.progressBarValue}></Progress>
                     <text align="center">{props.stepText}</text>
-                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
+                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     <CardBody>
                         <CardTitle >{props.product.ProductName}</CardTitle>
                         <div className="row px-3 justify-content-between">
-                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
+                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke" ></StarRatings>
                             <text>Se omtale</text>
                         </div>
 
 
 
 
-                        <img align="center" src="/images/desktopBulletPointImage.png" alt="Card image cap" />
+                        <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                         <CardSubtitle className="h2" align="center">{props.product.pris + " kr"}</CardSubtitle>
                         <CardText>{props.product.description}</CardText>
                         <div className="row px-3 justify-content-between">

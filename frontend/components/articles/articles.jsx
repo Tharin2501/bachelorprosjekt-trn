@@ -32,7 +32,7 @@ export const Articles = (props) => {
                 </div>
                 <img className="w-100"
                     src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
-                    alt="logo" />
+                    alt={articleContext.headerImage[0].alt} />
 
                 {/*{ArticleContent()}*/}
                 <div className="square">
@@ -47,7 +47,7 @@ export const Articles = (props) => {
                                 alt="logo" />
 
                             {/* {ArticleProductCard()} */}
-                            <div className="container">
+                            <div className="container mt-5">
                                 <div className="row justify-content-center">
                                     <div className="col-xs-12">
                                         <div className="card" style={{ width: "14rem" }}>

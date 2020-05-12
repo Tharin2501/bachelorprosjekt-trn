@@ -4,7 +4,6 @@ import Link from "next/link";
 import { MyMarquee } from "./MyMarquee";
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories"
 import Query from "../components/query";
-import Category from "../pages/category";
 import HorizontalMenuItem from "./category/common/horizontalMenuItem"
 import ARTICLES_QUERY_WITHLIMIT from "../apollo/queries/article/articleslimit";
 
@@ -29,7 +28,7 @@ export const DisplayAllArticlesFrontpage = () => {
     return (
         <div>
             <h3 className="horizontal-line1 pt-4">
-                <span className="horizontal-line2">Våre Artikler</span>
+                <span className="horizontal-line2">Artikler</span>
             </h3>
             <div className="container-fluid">
                 <div className="row justify-content-center">
@@ -46,7 +45,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                                 <div className="mycard-header">
                                                     <img
                                                         src={"https://trnbackend.herokuapp.com" + article.headerImage[0].url}
-                                                        alt="logo" />
+                                                        alt={article.headerImage[0].alt} />
                                                 </div>
 
                                                 <div className="card-body">
@@ -96,7 +95,7 @@ export const ClickandCollectBanner = () => {
     return (
         <div className="container">
             <div className="justify-content-center pb-4 pt-3">
-                <img className="img-fluid" src="/images/klikkAndHent.png" width="100%" alt="klikkoghent" />
+                <img className="img-fluid" src="/images/klikkAndHent.png" width="100%" alt="Klikk og hent.Tre sirkler. 1 Viser bilde av en handlekurv med tekst:Velg produkt. Dobble to viser en flybilett med tekst legg til flyinformasjon. 3 viser en figur av en person som holder en pose. Tekst som sier Hent ved ankomt i flyplassen" />
             </div>
         </div>
     );
@@ -106,7 +105,7 @@ export const ShowIdBanner = () => {
     return (
         <div className="container">
             <div className="justify-content-center pb-4 pt-3">
-                <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="logo" />
+                <img className="img-fluid" src="/images/showId.jpg" width="100%" alt="Beina til tre forskjellige personer. Med tekst i stor hvit font som sier «Under 25? Vis leg!»" />
             </div>
         </div>
     );
@@ -117,7 +116,7 @@ export const FrontpageGrid = () => {
     return (
         <div>
             <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Våre kategorier</span>
+                <span className="horizontal-line2">Kategorier</span>
             </h3>
 
 

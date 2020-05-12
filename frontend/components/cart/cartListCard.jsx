@@ -35,7 +35,7 @@ const CartListCard = (props) => {
         <div className="row d-flex justify-content-center border-top">
             <div className="col-5">
                 <div className="rod d-flex">
-                    <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"></img></Link></div>
+                    <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} alt={""} className="book-img"></img></Link></div>
                     <div className="my-auto flex-column d-flex pad-left">
                         <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6 className="mob-text">{productContext.name}</h6></a></Link>
 
@@ -47,9 +47,9 @@ const CartListCard = (props) => {
 
                     <div className="col-4">
                         <div className="row px-3 justify-content-between">
-                            <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle /></a>
+                            <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
                             <small> {numberOfProducts}</small>
-                            <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle /></a>
+                            <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
                         </div>
                     </div>
                     <div className="col-4">

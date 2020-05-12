@@ -10,39 +10,42 @@ import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { calculatePrice } from "../cookieHandler";
 
 var jsonObj = [];
-
 jsonObj = JSON.stringify(jsonObj);
 
 const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
-  // to pass around to cart
-  var productContext = {
-    id: productcard.id,
-    name: productcard.ProductName,
-    quantity: 1,
-    price: productcard.pris,
-    image: productcard.image[0].url,
-  };
+
+
 
   // change color of heartfunction
-  const [productName, setProductName] = useState(productContext.name);
-  const [productImage, setProductImage] = useState(productContext.image);
   const [heartColor, setheartColor] = useState("black");
   const [numberOfProducts, setNumberOfProducts] = useState(1);
-  const [productprice, setProductPrice] = useState(productContext.price);
-  const [quantity, setQuantity] = useState(1);
 
-  function addtoFavorites() {
+  // to pass around to cart
+  const createProductContext = () => {
+    const productContext = {
+      id: productcard.id,
+      name: productcard.ProductName,
+      quantity: 1,
+      price: productcard.pris,
+      image: productcard.image[0].url,
+
+    };
+    return productContext;
+  }
+  const addtoFavorites = () => {
     changeHeartcolor();
+    const productContext = createProductContext();
     addItemToFavorites(productContext);
   }
 
-  function changeHeartcolor() {
+  const changeHeartcolor = () => {
     if (heartColor === "black") {
       setheartColor("red");
     } else {
       setheartColor("black");
     }
   }
+
   ///// end change color of hearthfunction
 
   /** Adding to Cart */
@@ -52,19 +55,25 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   };
 
   const addToShoppingCartAndRecalcuatePrice = () => {
+    const productContext = createProductContext();
     addtoCart(productContext, numberOfProducts);
     changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
   };
   /** Adding to Cart END*/
+
   return (
     <div className="card  card-1">
       <div className="pr-3 row justify-content-stretch">
-        <div className="p-2 bd-highlight">
-          <small className="category"> lepper</small>
-        </div>
+        <Link href={{ pathname: "/merkesidedetalj", query: { id: productcard.brand.id } }}>
+          <div className="p-2 bd-highlight">
+            <small className="category">   <a >{productcard.brand.name}</a></small>
+          </div>
+        </Link>
+
+
         <div className="ml-auto p-2 bd-highlight">
           <a onClick={() => addtoFavorites()}>
-            <FaHeart color={heartColor} />
+            <FaHeart alt={"Hjerte"} color={heartColor} />
           </a>
         </div>
       </div>
@@ -73,19 +82,19 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           {" "}
           <img
             className="pic1"
-            src={"https://trnbackend.herokuapp.com" + productImage}
+            src={"https://trnbackend.herokuapp.com" + productcard.image[0].url}
           />{" "}
         </div>
       </Link>
       <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
         <a>
-          <h5 className="product-name"> {productName}</h5>
+          <h5 className="product-name"> {productcard.ProductName}</h5>
         </a>
       </Link>
       <div className="row px-3 justify-content-around">
-        <p className="price">{productprice} kr</p>
+        <p className="price">{productcard.pris} kr</p>
         <div className="vl"></div>
-        <p className="price">{quantity}ml</p>
+        <p className="price">{productcard.Volume}</p>
       </div>
       <div className="row px-3 justify-content-between">
         <a
@@ -95,7 +104,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
             )
           }
         >
-          <FaMinusCircle />
+          <FaMinusCircle alt={"minus"} />
         </a>
         <p className="setNumberOfProducts"> {numberOfProducts}</p>
         <a
@@ -106,20 +115,20 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           }
         >
           {" "}
-          <FaPlusCircle />
+          <FaPlusCircle alt={"pluss"} />
         </a>
       </div>
 
       <button
         onClick={() =>
-          addToShoppingCartAndRecalcuatePrice(productContext, numberOfProducts)
+          addToShoppingCartAndRecalcuatePrice(numberOfProducts)
         }
         type="button"
         className="btn btn-light"
       >
         Legg i handlepose
       </button>
-    </div>
+    </div >
   );
 };
 

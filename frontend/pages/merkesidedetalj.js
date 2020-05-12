@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import Query from "../components/query";
 import BRAND_QUERY from "../apollo/queries/brand/brand";
 
-//TODO: Fikse horizontal scroll + laste inn produkter fra spesifikt merke
 
 const merkesidedetalj = () => {
   const router = useRouter();
+  console.log(router.query.id)
 
   return (
     <div>

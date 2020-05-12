@@ -7,10 +7,8 @@ import {
   changeNumberOfProducts,
 } from "../cart/cartHandler";
 import {
-  FaShoppingCart,
   FaShoppingBasket,
   FaHeart,
-  FaPlus,
   FaPlusCircle,
   FaMinusCircle,
 } from "react-icons/fa";
@@ -69,16 +67,16 @@ const Produktside = (props) => {
             src={
               "https://trnbackend.herokuapp.com" +
               props.productSide.image[0].url
-            }
+            } alt={" "}
           />
         </Col>
         {/** Product title++ start */}
         <Col lg="6" xs="12" className="text-left overflow-auto w-50">
           <h2>{productContext.name}</h2>
-          <h3>Volum</h3>
+          <h3>{props.productSide.Volume}</h3>
           <Row className="">
             <Col xs="6">
-              <h4>{productContext.price}</h4>
+              <h4>{productContext.price} kr</h4>
             </Col>
             <Col>
               <h3>
@@ -92,7 +90,7 @@ const Produktside = (props) => {
                       }
                       className="bg-transparent border-0 p-0"
                     >
-                      <FaMinusCircle color="black" />
+                      <FaMinusCircle alt={minus} color="black" />
                     </Button>
                   </Col>
                   <Col xs="4" sm="4" lg="4">
@@ -111,7 +109,7 @@ const Produktside = (props) => {
                       className="bg-transparent border-0 p-0"
                     >
                       {" "}
-                      <FaPlusCircle color="black" />
+                      <FaPlusCircle alt="pluss" color="black" />
                     </Button>
                   </Col>
                 </Row>
@@ -157,7 +155,7 @@ const Produktside = (props) => {
       points for dette kjøpet
       <Row className="pb-5 text-left">
         <Col>
-          <ProduktTab />
+          <ProduktTab product={props.productSide} />
         </Col>
       </Row>
     </div>
