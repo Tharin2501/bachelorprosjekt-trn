@@ -7,10 +7,8 @@ import {
   changeNumberOfProducts,
 } from "../cart/cartHandler";
 import {
-  FaShoppingCart,
   FaShoppingBasket,
   FaHeart,
-  FaPlus,
   FaPlusCircle,
   FaMinusCircle,
 } from "react-icons/fa";
@@ -75,10 +73,10 @@ const Produktside = (props) => {
         {/** Product title++ start */}
         <Col lg="6" xs="12" className="text-left overflow-auto w-50">
           <h2>{productContext.name}</h2>
-          <h3>Volum</h3>
+          <h3>{props.productSide.Volume}</h3>
           <Row className="">
             <Col xs="6">
-              <h4>{productContext.price}</h4>
+              <h4>{productContext.price} kr</h4>
             </Col>
             <Col>
               <h3>
@@ -157,7 +155,7 @@ const Produktside = (props) => {
       points for dette kjøpet
       <Row className="pb-5 text-left">
         <Col>
-          <ProduktTab />
+          <ProduktTab product={props.productSide} />
         </Col>
       </Row>
     </div>

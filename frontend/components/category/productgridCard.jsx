@@ -88,7 +88,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
       </Link>
       <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
         <a>
-          <h5 className="product-name"> {productcard.name}</h5>
+          <h5 className="product-name"> {productcard.ProductName}</h5>
         </a>
       </Link>
       <div className="row px-3 justify-content-around">
