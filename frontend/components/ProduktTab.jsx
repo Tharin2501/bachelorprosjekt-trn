@@ -6,10 +6,11 @@ import {
   NavItem,
   NavLink,
   Row,
-  Col
+  Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Container
 } from "reactstrap";
 import classnames from "classnames";
 import { FaInfo, FaVial, FaStar } from "react-icons/fa";
+import StarRatings from 'react-star-ratings';
 //TODO: Fikse statisk info-tekst og gjøre den dynamisk for å vise info om hvert enkelt produkt
 
 const ProduktTab = props => {
@@ -87,7 +88,19 @@ const ProduktTab = props => {
         <TabPane tabId="3">
           <Row className="p-3">
             <Col>
-              Ikke implmentert enda
+              <Container>
+                <ListGroup>
+                  <ListGroupItem >
+                    <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+                    <ListGroupItemText>
+                      Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+        </ListGroupItemText>
+                    <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt={`ratingen til annmeldsen`}></StarRatings>
+                    <p>Skrevet av Line</p>
+                  </ListGroupItem>
+                </ListGroup>
+
+              </Container>
             </Col>
           </Row>
         </TabPane>
