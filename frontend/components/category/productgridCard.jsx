@@ -73,7 +73,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
 
         <div className="ml-auto p-2 bd-highlight">
           <a onClick={() => addtoFavorites()}>
-            <FaHeart color={heartColor} />
+            <FaHeart alt={"hjerte"} color={heartColor} />
           </a>
         </div>
       </div>
@@ -104,7 +104,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
             )
           }
         >
-          <FaMinusCircle />
+          <FaMinusCircle alt={"minus"} />
         </a>
         <p className="setNumberOfProducts"> {numberOfProducts}</p>
         <a
@@ -115,7 +115,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
           }
         >
           {" "}
-          <FaPlusCircle />
+          <FaPlusCircle alt={"pluss"} />
         </a>
       </div>
 

@@ -13,7 +13,7 @@ const Highlight3Articles = (props) => {
             <div className="row">
 
                 <div className="col-sm-8">
-                    <img src="/images/articles/hudpleievelger_test.png" alt="logo" />
+                    <img src="/images/articles/hudpleievelger_test.png" alt="En helt hvit tube med en oransje oransj tykk væske bak seg på en lys turkisblå bakgrunn" />
 
                     <div className="text-block">
                         <h3>Hudpleievelgeren</h3>

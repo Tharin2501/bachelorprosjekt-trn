@@ -25,7 +25,6 @@ const SkincareDesktopCard = (props) => {
 
     const goNextStepButtonHandler = () => {
         props.changeStep();
-        console.log("outside")
         if (props.stepNumber === 3) {
             props.addChosenProductsToCart();
             console.log("inside")
@@ -47,14 +46,14 @@ const SkincareDesktopCard = (props) => {
 
                     <Row>
                         <Col>
-                            <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
+                            <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                         </Col>
 
                         <Col>
                             <h1 className="whitney">{props.product.ProductName}</h1>
-                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
+                            <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke"></StarRatings>
                             <h3 className="gotham">{props.product.pris + " kr"}</h3>
-                            <img align="center" src="/images/desktopBulletPointImage.png" alt="bulletpoints list" />
+                            <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                             <h4><b>Beskrivelse</b></h4>
                             <Button onClick={() => toogleShowText()}>Vis beskrivelse</Button>
                             {showText && <p>{props.product.description}</p>}
@@ -85,14 +84,14 @@ const SkincareDesktopCard = (props) => {
 
                 <Row>
                     <Col>
-                        <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="Card image cap" />
+                        <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     </Col>
 
                     <Col>
                         <h1 className="whitney">{props.product.ProductName}</h1>
-                        <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' ></StarRatings>
+                        <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke" ></StarRatings>
                         <h3 className="gotham">{props.product.pris + " kr"}</h3>
-                        <img align="center" src="/images/desktopBulletPointImage.png" alt="bulletpoints list" />
+                        <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                         <h4><b>Beskrivelse</b></h4>
                         <p>{props.product.description}</p>
                     </Col>

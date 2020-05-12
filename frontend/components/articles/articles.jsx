@@ -32,7 +32,7 @@ export const Articles = (props) => {
                 </div>
                 <img className="w-100"
                     src={"https://trnbackend.herokuapp.com" + articleContext.headerImage[0].url}
-                    alt="logo" />
+                    alt={articleContext.headerImage[0].alt} />
 
                 {/*{ArticleContent()}*/}
                 <div className="square">

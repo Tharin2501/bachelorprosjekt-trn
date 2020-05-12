@@ -15,9 +15,6 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
 
     )
 
-
-
-
     const createTypesCheckboxes = () => {
         var checkboxReadyArray = []
         for (var i = 0; i < typesDefault.length; i++) {

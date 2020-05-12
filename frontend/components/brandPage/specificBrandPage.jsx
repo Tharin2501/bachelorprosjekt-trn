@@ -77,6 +77,7 @@ const SpecificBrandPage = (props) => {
               "https://trnbackend.herokuapp.com" +
               props.brandDetailSide.logo.url
             }
+            alt={""}
           />
         </Col>
       </Row>
@@ -105,7 +106,7 @@ const SpecificBrandPage = (props) => {
         <Col>
           <div>
             <h3 className="horizontal-line1">
-              <span className="horizontal-line2">Våre kategorier</span>
+              <span className="horizontal-line2">Kategorier</span>
             </h3>
 
 

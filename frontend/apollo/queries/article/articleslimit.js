@@ -8,6 +8,7 @@ const ARTICLES_QUERY_WITHLIMIT = gql`
             title
             headerImage {
                 url
+                alternativeText
             }
             category
         }
