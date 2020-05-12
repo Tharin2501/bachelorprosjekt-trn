@@ -90,11 +90,10 @@ export const MyHeader = () => {
                         </InputGroup>
 
                         <div className="mt-4">
-                            <a className="nav-item mr-1 ml-1" href="shoppingcart">< FiUser color="white"/></a>
-
-                            <a className=" nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white"/></a>
-                            < FaShoppingCart className="" color="white" className="nav-item mr-2 ml-1 "/>
-                            <p style={{color: "white"}} className="ml-5 pl-2"> {totalprice}kr</p>
+                            <a className="nav-item mr-1 ml-1">< FiUser color="white"/></a>
+                            <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white"/></a>
+                            <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart color="white"/></a>
+                            <p style={{color: "white"}} className="ml-5 pl-3"> {totalprice}kr</p>
                         </div>
 
                     </div>
