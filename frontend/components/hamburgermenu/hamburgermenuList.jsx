@@ -4,13 +4,10 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js"
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
-// onClickFuntion
-//   <li className="nav_submenu-item" onClick={() => { onClickFuntion }}>
-// lage annerldes for subcat
+
 const HamburgermenuList = forwardRef((props, ref) => {
 
 
-    // src={"https://trnbackend.herokuapp.com" + props.productSide.image[0].url}
 
 
     const [categoriesToShow, setCategoreisToShow] = useState(props.categories)
@@ -131,7 +128,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
                         <div onClick={() => (closeNav())}>
                             <div className="myImg">
-                                <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="logo" />
+                                <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
                             </div>
 
                             <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
