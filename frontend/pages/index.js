@@ -40,16 +40,13 @@ const Cart = ({
 
 
   return (
-    <Query query={ARTICLES_QUERY_WITHLIMIT}>
-      {({ data: { article } }) => {
-        return (
-          <div>
-            <Frontpage artikkel={article} />
-          </div>
-        );
-      }}
-    </Query>
+
+    <div>
+      <Frontpage />
+    </div>
   );
+
+
 };
 
 Cart.getInitialProps = ({ req }) => {
