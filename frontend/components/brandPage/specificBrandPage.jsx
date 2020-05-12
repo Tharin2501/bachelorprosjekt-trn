@@ -9,9 +9,8 @@ import {
   Card,
 } from "reactstrap";
 
-
 import QuerySubCategory from "../querySubCategory";
-import Productgrid from "../category/productgrid"
+import Productgrid from "../category/productgrid";
 import SubCategoryList from "../../components/category/subCategoryList";
 import CategoryProductsComonent from "../../components/category/categoryProductsComponent";
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../../apollo/queries/Category/CategoryGetSubcategoriesWithName";
@@ -30,21 +29,16 @@ export const getSubcategoriesList = (products) => {
     }
     addCategory = true;
     for (var subcategory of subcategoriesArray) {
-
       if (product.sub_categories[0].id == subcategory.id) {
         addCategory = false;
       }
-
-
-
     }
     if (addCategory == true) {
       subcategoriesArray.push(product.sub_categories[0]);
     }
-
   }
   return subcategoriesArray;
-}
+};
 const SpecificBrandPage = (props) => {
   {
     /**Collapsing info text */
@@ -56,8 +50,6 @@ const SpecificBrandPage = (props) => {
   const onExiting = () => setStatus("Lukker...");
   const onExited = () => setStatus("Les om merket");
   const toggle = () => setCollapse(!collapse);
-
-
 
   //console.log(props.brandDetailSide)
   const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
@@ -108,41 +100,31 @@ const SpecificBrandPage = (props) => {
               <span className="horizontal-line2">Våre kategorier</span>
             </h3>
 
-
             <div className="container-fluid">
               <div className="row justify-content-center py-5">
-
-
-
                 {
                   <div className="scrollmenu">
-
                     {subcategoryArray.map((category) => {
                       return (
-                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brandDetailSide.name} brandID={props.brandDetailSide.id} ></HorizontalMenuItem>
-                      )
+                        <HorizontalMenuItem
+                          key={category.id}
+                          pathnamekatOrSub={"/subCategoryBrand"}
+                          category={category}
+                          brandName={props.brandDetailSide.name}
+                          brandID={props.brandDetailSide.id}
+                        ></HorizontalMenuItem>
+                      );
                     })}
                   </div>
-
                 }
-
               </div>
             </div>
           </div>
         </Col>
-
       </Row>
       <Row>
         <Col>
-
-
-
-
           <Productgrid productgrid={props.brandDetailSide.products} />
-
-
-
-
         </Col>
       </Row>
     </div>
