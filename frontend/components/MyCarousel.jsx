@@ -24,7 +24,7 @@ const items = [
 ];
 
 const MyCarousel = () => (
-    <div className="mx-auto w-100">
+    <div>
         <UncontrolledCarousel items={items}/>
     </div>
 );
