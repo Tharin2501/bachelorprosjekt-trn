@@ -90,7 +90,7 @@ const Produktside = (props) => {
                       }
                       className="bg-transparent border-0 p-0"
                     >
-                      <FaMinusCircle alt={minus} color="black" />
+                      <FaMinusCircle alt={"minus"} color="black" />
                     </Button>
                   </Col>
                   <Col xs="4" sm="4" lg="4">
