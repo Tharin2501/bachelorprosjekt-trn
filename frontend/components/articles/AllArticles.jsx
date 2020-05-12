@@ -12,7 +12,7 @@ export const DisplayAllArticles = () => {
                 return (
                     articles.map((article) => {
                         return (
-                            <div key={article.id} className="col-lg-sm-6 px-5">
+                            <div key={article.id} className="col-lg-sm-6 mx-5 px-5">
 
                                 <div className="card">
 
