@@ -28,7 +28,7 @@ const MySearchbar = () => {
         <div className="col">
           <InputGroup>
             <InputGroupAddon addonType="prepend">
-              <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
+              <InputGroupText style={{ backgroundColor: "white" }}><GoSearch alt={"forstørrelsesglass "} /></InputGroupText>
             </InputGroupAddon>
             <Input className="font-weight-light" placeholder="Søk... " />
           </InputGroup>
@@ -82,13 +82,13 @@ export const MyHeader = () => {
         </div>
         {/* Bilde*/}
         <div className="col-xs mx-auto">
-          <a href="/"><img src="../images/logo4.png" className="mt-4 ml-5" width="70px" alt="logo" /></a>
+          <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" alt="logo" /></a>
         </div>
         {/* Logo*/}
-        <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart color="black" /></a>
-        <FiUser className="mx-2 mb-2" />
+        <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart alt={"Hjerte,link til favorittside"} color="black" /></a>
+        <FiUser alt={"Person,link til profil"} className="mx-2 mb-2" />
         <div className="">
-          <a className="nav-item" href="shoppingcart"><FaShoppingCart className="ml-2 mr-4 mt-3" color="black" /></a>
+          <a className="nav-item" href="shoppingcart"><FaShoppingCart alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="black" /></a>
           <p className="mt-0 mb-0 ml-2">{totalprice}kr</p>
         </div>
         {/* Searchbar*/}
