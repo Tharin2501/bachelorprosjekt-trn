@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import QuerySubCategoryFilter from "../../../components/querySubCategoryFilter"
 import SUBCATEGORYFILTER_QUERY from "../../../apollo/queries/subCategories/subCategoryFilter"
 
-const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description }) => {
+const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, categoryName }) => {
 
     const [typesArray, setTypesArray] = useState([]);
     const [defaultTypesArray, setDefaultTypesArray] = useState([]);
@@ -121,6 +121,7 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description }) 
                 </div>
             </div>
             <Button onClick={openNav}>Filter</Button>
+            <h3>{categoryName}</h3>
             <p>
 
                 {description}

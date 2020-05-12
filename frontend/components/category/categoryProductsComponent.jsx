@@ -394,9 +394,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
 
-            <h1>{pageTitle}</h1>
             <Button onClick={openNav}>Filter</Button>
-            <Button>Sort</Button>
             <p>
                 {categoriesListInput[0].description}
 
