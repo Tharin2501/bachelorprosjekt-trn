@@ -8,6 +8,6 @@ const KlikkOgHent = () => (
     </div>
 );
 
-export default klikkOgHent;
+export default KlikkOgHent;
 
 
