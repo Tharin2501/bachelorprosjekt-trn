@@ -277,11 +277,9 @@ font-size: 14px;
 a.carousel-control-next, a.carousel-control-prev {
     position: absolute;
     top: 50%;
-    width: 5%;
+    width: 10%;
     height: 15%;
     background-color: lightgrey;
-    margin-right: 24.8%;
-    margin-left: 24.8%;
 }
 
 a.carousel-control-next:hover, a.carousel-control-prev:hover {
@@ -289,11 +287,9 @@ a.carousel-control-next:hover, a.carousel-control-prev:hover {
 }
 
 .carousel-inner > .carousel-item > img {
-  max-height: 50vh;
-  max-width: 50vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* MARQUEE */
