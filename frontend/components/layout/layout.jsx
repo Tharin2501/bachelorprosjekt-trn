@@ -127,11 +127,6 @@ export const MyHeader = () => {
                                 <div className="  px-2 pt-2 nav-link">
                                     <MyDrawer hamburgerIconColor={"black"} />
                                 </div>
-                                <div className=" px-2 pt-2 d-none d-md-block">
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Alle Produkter</a>
-                                    </Link>
-                                </div>
                                 <div className=" px-2 pt-2 d-none d-md-block" href="#">
                                     <Link href="#">
                                         <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
