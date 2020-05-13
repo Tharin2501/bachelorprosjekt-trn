@@ -650,6 +650,7 @@ div.scrollmenu {
 .card {
     width: 18rem;
     padding: 0;
+    transform: translate(0,-8%);
 }
 
 /* BILDE */
