@@ -42,28 +42,6 @@ const CartListCard = (props) => {
                     </div>
                 </div>
             </div>
-            {/*}
-            <div className="my-auto col-7">
-                <div className="row text-right">
-
-                    <div className="col-4">
-                        <div className="row px-3 justify-content-between">
-                            <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
-                            <small> {numberOfProducts}</small>
-                            <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
-                        </div>
-                    </div>
-                    <div className="col-4">
-                        <h6 className="mob-text">{productContext.price}nok</h6>
-                    </div>
-
-                    <div className="col-4">
-                        <button onClick={(() => deleteProductFunction())}> Remove</button>
-                        <button className="text-nowrap"> Add to fav</button>
-                    </div>
-                </div>
-            </div>
-            */}
 
             <div className="my-auto col-7">
                 <div className="row">

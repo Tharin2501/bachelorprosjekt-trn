@@ -50,13 +50,13 @@ const CartList = () => {
                     <h4 className="heading">Shopping Bag</h4>
                 </div>
                 <div className="col-7">
-                    <div className="row text-right">
+                    <div className="row">
 
-                        <div className="col-4">
-                            <h6 className="mt-2">Quantity</h6>
+                        <div className="col-6">
+                            <h6 className="mt-2">Antall</h6>
                         </div>
-                        <div className="col-4">
-                            <h6 className="mt-2">Price</h6>
+                        <div className="col-5">
+                            <h6 className="mt-2 ml-5 pl-2">Pris</h6>
                         </div>
 
                     </div>
@@ -74,13 +74,19 @@ const CartList = () => {
 
             })}
 
-            <div className="row d-flex justify-content-center">
-                <div className="col-5"><h4> Total pris:</h4></div>
-                <div className="col-5"><h4> {totalPrice}</h4> </div>
-                <div> <h4> Dine tax free poeng:{collectMePoints}</h4></div>
-                <Button> Betal</Button>
-            </div>
+            <div className="row d-flex justify-content-end mt-5 pt-5 ">
+                <div className="col-9 pb-1"><h4> Total pris:</h4></div>
+                <div className="col-3"><h4 className="text-nowrap"> {totalPrice} kr</h4> </div>
 
+                <div className="col-9"> <h4> Dine tax free poeng:</h4></div>
+                <div className="col-3"><h4> {collectMePoints}</h4> </div>
+
+
+            </div>
+            <div className="row">
+                <div className="col-9"></div>
+                <div className="col-3 mt-2"><Button> Betal</Button></div>
+            </div>
         </div>
 
     );

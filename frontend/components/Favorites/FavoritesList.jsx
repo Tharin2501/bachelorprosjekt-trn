@@ -28,10 +28,10 @@ const FavoritesList = () => {
                     <div className="row">
 
                         <div className="col-6">
-                            <h6 className="mt-2">Quantity</h6>
+                            <h6 className="mt-2">Antall</h6>
                         </div>
                         <div className="col-5">
-                            <h6 className="mt-2 ml-5">Price</h6>
+                            <h6 className="mt-2 ml-5">Pris</h6>
                         </div>
 
                     </div>
