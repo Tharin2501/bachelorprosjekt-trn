@@ -65,6 +65,19 @@ const HamburgermenuList = forwardRef((props, ref) => {
         router.push("/artikler")
     }
 
+    const closeNavAndChangeURL = () => {
+        handleSubcategoryClick();
+        document.getElementById("mySidenav").style.width = "0";
+        setListToDefault()
+    }
+
+    const handleSubcategoryClick = () => {
+
+        router.push({ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } })
+    }
+
+
+
     if (type == "category") {
         return (
 
@@ -108,14 +121,13 @@ const HamburgermenuList = forwardRef((props, ref) => {
         )
 
     } else {
-
         return (
 
 
             <ul>
                 <li className="nav_submenu-item">
 
-                    <div onClick={() => (setListToDefault())}>
+                    <div tabindex="0" onClick={() => (setListToDefault())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? setListToDefault() : null }}>
                         <div className="myImg">
                             <img className="myImg" src={"/images/icons/arrowLeftpng.png"} alt="" />
                         </div>
@@ -126,18 +138,21 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                 </li>
 
-
+                {/* Subcategoryies MAINCATEGORY*/}
                 <li className="nav_submenu-item">
-                    <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
-                        <div onClick={() => (closeNav())}>
-                            <div className="myImg">
-                                <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
-                            </div>
 
-                            <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
 
+                    <div tabindex="0" onClick={() => (closeNavAndChangeURL())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? closeNavAndChangeURL() : null }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
                         </div>
-                    </Link>
+
+                        <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
+
+                    </div>
+
+
                 </li>
 
                 {categoriesToShow.map((category) => {
@@ -163,3 +178,20 @@ const HamburgermenuList = forwardRef((props, ref) => {
 })
 
 export default HamburgermenuList
+
+/*
+    const MaincatInSub = React.forwardRef(({ onClick, href }, ref) => {
+        return (
+            <a href={href} onClick={onClick} ref={ref}>
+                <div tabindex="0" onClick={() => (closeNav())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? closeNav() : null }}>
+                    <div className="myImg">
+                        <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
+                    </div>
+
+                    <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
+
+                </div>
+            </a>
+        )
+    })
+*/
