@@ -45,7 +45,7 @@ const FavoritesCard = (props) => {
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
                                                                                                      className="mx-1"/></a>
                     </div>
-                    <div className="col-xs-10 mr-2 mb-3 mt-1">
+                    <div className="col-xs-10 ml-2 mb-3 mt-1">
                         <h6>200 nok</h6>
                     </div>
                     <div className="ml-4">
