@@ -89,7 +89,7 @@ export const MyHeader = () => {
                         </div>
                         {/* Logo*/}
                         <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className={"iconsNavbar"} alt={"Hjerte,link til favorittside"} color="white" /></a>
-                        <FiUser alt={"Person,link til profil"} color="white" className="mx-2 mb-2 iconsNavbar" />
+                        <FiUser className={"iconsNavbar"} alt={"Person,link til profil"} color="white" className="mx-2 mb-2" />
                         <div className="">
                             <a className="nav-item" href="shoppingcart"><FaShoppingCart className={"iconsNavbar"} alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="white" /></a>
                             <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
