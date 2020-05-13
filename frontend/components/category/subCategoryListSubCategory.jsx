@@ -14,7 +14,7 @@ const SubCategoryListSubCategory = ({ subCategoryList, categoryName, mainCategor
                 </div>
                 <div>
                     <Link href={{ pathname: "/category", query: { id: categoryName } }}>
-                        <a className="nav-link frontpageIconsText"> {mainCategory.name}</a>
+                        <a className="nav-link frontpageIconsText"> Til {mainCategory.name}</a>
                     </Link>
                 </div>
                 <div className="verticalLine"></div>
