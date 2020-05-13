@@ -250,8 +250,8 @@ font-size: 14px;
     text-align: center;
     border-bottom: 1px solid #000000;
     line-height: 0.1em;
-    margin: 10px 0 20px;
-    padding-top: 20px;
+    margin: 10px 0 10px;
+    padding-top: 10px;
 }
 
 .horizontal-line2 {
@@ -372,19 +372,20 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
   text-align: center;
-  margin: 0.313rem;
+  
 }
-
+/* margin: 0.313rem;*/
 
 .navitem{
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 14px;
+  padding: 0.875rem;
   text-decoration: none;
   
  
 }
+/* padding 14 px*/
 
 .navitem:hover {
   color: #ff6663;
