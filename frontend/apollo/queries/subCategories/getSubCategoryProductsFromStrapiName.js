@@ -17,6 +17,10 @@ query Subcategory($categoryName:String!) {
     category{
       StrapiName
       name
+
+      image{
+        url
+    }
       sub_categories{
         id
         StrapiName

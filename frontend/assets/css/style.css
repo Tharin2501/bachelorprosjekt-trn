@@ -255,6 +255,10 @@ font-size: 14px;
     background:#ffffff;
     padding: 0 10px;
 }
+.verticalLine{
+  border-left: 1px solid #000000;
+  height: 100%;
+}
 
 /* CAROUSEL - FRONTPAGE */
 
@@ -386,6 +390,9 @@ div.scrollmenu {
   width: 4.5em;
   height: 4.5em;
   transition: transform .4s; /* Animation */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Enlarge icons*/
