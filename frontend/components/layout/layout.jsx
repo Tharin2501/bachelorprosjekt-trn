@@ -25,16 +25,16 @@ const MySearchbar = () => {
         )
     } else {
         return (
-            <div className="row mx-auto w-80">
-                <div className="col">
-                    <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                            <InputGroupText style={{ backgroundColor: "white" }}><GoSearch alt={"forstørrelsesglass "} /></InputGroupText>
-                        </InputGroupAddon>
-                        <Input className="font-weight-light" placeholder="Søk... " />
-                    </InputGroup>
-                </div>
-            </div>
+
+
+            <InputGroup className=" w-100  mx-auto">
+                <InputGroupAddon addonType="prepend" >
+                    <InputGroupText style={{ backgroundColor: "white" }} ><GoSearch alt={"forstørrelsesglass "} /></InputGroupText>
+                </InputGroupAddon>
+                <Input className="font-weight-light" placeholder="Søk... " />
+            </InputGroup>
+
+
 
         );
     }
@@ -80,7 +80,7 @@ export const MyHeader = () => {
             <MediaContextProvider>
                 <Media at="sm">
                     <Navbar style={{ backgroundColor: "#042434" }}>
-                        <div className="col-2 ml-1">
+                        <div className="col-xs mx-auto">
                             <MyDrawer hamburgerIconColor={"white"} />
                         </div>
                         {/* Bilde*/}
@@ -95,7 +95,7 @@ export const MyHeader = () => {
                             <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
                         </div>
                         {/* Searchbar*/}
-                        <div className="col-xs mr-2">
+                        <div className="col-lg mr-2">
                             <MySearchbar />
                         </div>
                     </Navbar>
