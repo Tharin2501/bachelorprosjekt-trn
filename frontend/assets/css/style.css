@@ -4,6 +4,7 @@ body {
     height: 100%;
     background-color: #f9f9f9;
     background-repeat: no-repeat;
+    overflow-y: auto
 }
 
 a {
@@ -20,10 +21,6 @@ h3 {
 }
 
 
-.textbarItem{
-  margin: 0;
-  padding: 0;
-}
 .iconsNavbar{
   transform: scale(1.5);
 }
@@ -356,7 +353,6 @@ a.carousel-control-next:hover, a.carousel-control-prev:hover {
 /* Kategory nav bar */
 .tabbable .nav-tabs .navbarKat {
   overflow-x: auto;
-  overflow-y:hidden;
   flex-wrap: nowrap;
 }
 div.scrollmenu {

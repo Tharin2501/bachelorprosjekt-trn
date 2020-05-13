@@ -1,5 +1,5 @@
 
-::-webkit-scrollbar {
+::-webkit-scrollbar:horizontal {
     width: 0.625rem !important;
     height: 0.625rem !important;
   }

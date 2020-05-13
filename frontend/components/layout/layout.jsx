@@ -132,7 +132,7 @@ export const MyHeader = () => {
                         <div>
                             <Navbar style={divStyle} >
                                 <div className=" pt-2 nav-link">
-                                    <MyDrawer hamburgerIconColor={"black"} />
+                                    <a><MyDrawer hamburgerIconColor={"black"} /></a>
                                 </div>
                                 <div className="d-none d-md-block" href="#">
                                     <Link href="#">
