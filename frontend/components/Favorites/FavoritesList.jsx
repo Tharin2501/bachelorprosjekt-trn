@@ -25,13 +25,13 @@ const FavoritesList = () => {
                     <h4 className="heading">Favorites</h4>
                 </div>
                 <div className="col-7">
-                    <div className="row text-right">
+                    <div className="row">
 
-                        <div className="col-4">
+                        <div className="col-6">
                             <h6 className="mt-2">Quantity</h6>
                         </div>
-                        <div className="col-4">
-                            <h6 className="mt-2">Price</h6>
+                        <div className="col-5">
+                            <h6 className="mt-2 ml-5">Price</h6>
                         </div>
 
                     </div>
