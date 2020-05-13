@@ -25,11 +25,11 @@ const items = [
 
 const MyCarousel = () => (
     <div className="container-fluid">
-    <div className="row justify-content-center">
-        <div className=" col-lg-5 col-xs-12">
-        <UncontrolledCarousel items={items} />
+        <div className="row justify-content-center">
+            <div className=" col-lg-6 col-xs-12">
+                <UncontrolledCarousel items={items} />
+            </div>
         </div>
-    </div>
     </div>
 );
 
