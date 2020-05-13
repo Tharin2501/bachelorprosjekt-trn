@@ -44,7 +44,7 @@ const CartList = () => {
 
 
     return (
-        <div div className="container px-4 py-5 mx-auto">
+        <div  className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
                 <div className="col-5">
                     <h4 className="heading">Shopping Bag</h4>
