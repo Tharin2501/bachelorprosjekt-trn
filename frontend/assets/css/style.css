@@ -26,23 +26,7 @@ h3 {
     font-weight: 500;
 }
 
-#title {
-    letter-spacing: 0.4px;
-    font-size: 22px;
-    font-size: 1.375rem;
-    line-height: 1.13636;
-}
 
-#banner {
-  margin: 20px;
-  height: 800px;
-}
-
-#editor {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.75;
-}
 
 .uk-navbar-container {
   background: #fff !important;
@@ -381,7 +365,7 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
   text-align: center;
-  margin: 10px;
+  margin: 0.313rem;
 }
 
 
@@ -399,8 +383,8 @@ div.scrollmenu {
 }
 
 .imageSize{
-  width: 6em;
-  height: 6em;
+  width: 4.5em;
+  height: 4.5em;
   transition: transform .4s; /* Animation */
 }
 
@@ -411,6 +395,7 @@ div.scrollmenu {
 
 .nav-link.frontpageIconsText {
   text-align: center;
+  font-size: small;
   color: #534d41;
 }
 
@@ -434,16 +419,17 @@ div.scrollmenu {
 }
 
 .btn-circle.btn-sm {
-  width: 6em;
-  height: 6em;
-  border-radius: 120px;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 60px;
+  top: -200px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   font-family: sans-serif;
   color: #fff;
   background-color: #0b3954;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
 .btn-circle.btn-sm:hover{
