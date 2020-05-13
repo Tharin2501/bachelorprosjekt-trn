@@ -4,6 +4,7 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js"
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
+import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 
 const HamburgermenuList = forwardRef((props, ref) => {
 
@@ -70,7 +71,8 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
             <ul>
                 <li className="nav_submenu-item">
-                    <div onClick={() => { handlearticlesClick() }}>
+
+                    <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
                             <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
@@ -79,9 +81,10 @@ const HamburgermenuList = forwardRef((props, ref) => {
                         <h1 className="nav-link">{"se artikler"}</h1>
 
                     </div>
+
                 </li>
                 <li className="nav_submenu-item">
-                    <div onClick={() => { handleBrandClick() }}>
+                    <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
 
                         <div className="myImg">
                             <img className="myImg" src={"/images/brandsikon.svg"} alt="" />
