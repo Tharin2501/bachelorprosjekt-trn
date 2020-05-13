@@ -20,7 +20,10 @@ h3 {
 }
 
 
-
+.textbarItem{
+  margin: 0;
+  padding: 0;
+}
 .iconsNavbar{
   transform: scale(1.5);
 }
