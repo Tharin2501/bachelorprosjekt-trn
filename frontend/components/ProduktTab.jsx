@@ -6,16 +6,18 @@ import {
   NavItem,
   NavLink,
   Row,
-  Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Container
+  Col, ListGroup, Container
 } from "reactstrap";
 import classnames from "classnames";
 import { FaInfo, FaVial, FaStar } from "react-icons/fa";
-import StarRatings from 'react-star-ratings';
+import Query from "./query";
+import REVIEWS_QUERY from "../apollo/queries/product/reviews"
+import ReviewListItem from "./productPage/reviewListItem"
+
 //TODO: Fikse statisk info-tekst og gjøre den dynamisk for å vise info om hvert enkelt produkt
 
 const ProduktTab = props => {
   const [activeTab, setActiveTab] = useState("1");
-  console.log(props.product)
 
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
@@ -88,16 +90,22 @@ const ProduktTab = props => {
         <TabPane tabId="3">
           <Row className="p-3">
             <Col>
+              <Query query={REVIEWS_QUERY}>
+                {({ data: { reviews } }) => {
+
+                  return reviews.map((review) => {
+                    return (
+                      <ReviewListItem reviewdata={review}> </ReviewListItem>
+                    )
+                  })
+
+
+
+                }}
+              </Query>
               <Container>
                 <ListGroup>
-                  <ListGroupItem >
-                    <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
-                    <ListGroupItemText>
-                      Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        </ListGroupItemText>
-                    <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt={`ratingen til annmeldsen`}></StarRatings>
-                    <p>Skrevet av Line</p>
-                  </ListGroupItem>
+
                 </ListGroup>
 
               </Container>
@@ -110,3 +118,15 @@ const ProduktTab = props => {
 };
 
 export default ProduktTab;
+/*
+                    {reviews.map((object) => {
+                      return (
+
+
+
+                          <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
+
+                      )
+                      };
+                    }
+                    */
