@@ -140,7 +140,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                     <div tabindex="0" onClick={() => (setListToDefault())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? setListToDefault() : null }}>
                         <div className="myImg">
-                            <img className="myImg" src={"/images/icons/arrowLeftpng.png"} alt="" />
+                            <img className="myImg" src={"/images/arrowLeftpng.png"} alt="" />
                         </div>
 
                         <p className="nav-link">Gå tilbake</p>
