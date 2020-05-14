@@ -98,7 +98,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={require("/images/artikler2.0.svg")} alt="" />
+                            <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
                         </div>
 
                         <p className="nav-link">{"Artikler"}</p>
