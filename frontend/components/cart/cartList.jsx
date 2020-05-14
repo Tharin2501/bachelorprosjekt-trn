@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, {useState, useEffect, useContext} from "react"
 import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
-import { Button } from "reactstrap";
-import { calculatePrice, calculateCollectMePoints } from "../cookieHandler"
+import {Button} from "reactstrap";
+import {calculatePrice, calculateCollectMePoints} from "../cookieHandler"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const isServer = () => typeof window === `undefined`;
-
 
 
 const CartList = () => {
@@ -22,7 +21,7 @@ const CartList = () => {
         setCollectMePoints(calculateCollectMePoints(newprice));
     }
     /** Adding to Cart */
-    const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+    const {price, ChangeTotalPrice} = useContext(CartTotalPriceContext);
     const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
         changeValueFunction(newValue);
         calculatePriceFunction();
@@ -42,16 +41,14 @@ const CartList = () => {
     /** Adding to Cart END*/
 
 
-
     return (
-        <div  className="container px-4 py-5 mx-auto">
+        <div className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
                 <div className="col-5">
                     <h4 className="heading">Shopping Bag</h4>
                 </div>
                 <div className="col-7">
                     <div className="row">
-
                         <div className="col-6">
                             <h6 className="mt-2">Antall</h6>
                         </div>
@@ -66,8 +63,7 @@ const CartList = () => {
             {!isServer() && cart !== undefined && cart.map((product, i) => {
                 return (
                     <div>
-
-                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
+                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product}/>
                     </div>
 
                 );
@@ -76,11 +72,9 @@ const CartList = () => {
 
             <div className="row d-flex justify-content-end mt-5 pt-5 ">
                 <div className="col-9 pb-1"><h4> Total pris:</h4></div>
-                <div className="col-3"><h4 className="text-nowrap"> {totalPrice} kr</h4> </div>
-
-                <div className="col-9"> <h4> Dine tax free poeng:</h4></div>
-                <div className="col-3"><h4> {collectMePoints}</h4> </div>
-
+                <div className="col-3"><h4 className="text-nowrap"> {totalPrice} kr</h4></div>
+                <div className="col-9"><h4> Dine tax free poeng:</h4></div>
+                <div className="col-3"><h4> {collectMePoints}</h4></div>
 
             </div>
             <div className="row">
