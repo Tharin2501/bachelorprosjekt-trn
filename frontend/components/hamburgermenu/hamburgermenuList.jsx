@@ -5,7 +5,6 @@ import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
-//import { ReactComponent as brandsSVG } from "../../public/images//images/artikler2.0.svg"
 const HamburgermenuList = forwardRef((props, ref) => {
 
 
@@ -88,7 +87,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
     }
 
 
-
+    //./images
     if (type == "category") {
         return (
 
@@ -99,7 +98,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
+                            <img className="myImg" src={require("../../public/images/artikler2.0.svg")} alt="" />
                         </div>
 
                         <p className="nav-link">{"Artikler"}</p>
