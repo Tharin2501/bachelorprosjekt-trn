@@ -65,7 +65,6 @@ const CartList = () => {
                     <div>
                         <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product}/>
                     </div>
-
                 );
 
             })}
