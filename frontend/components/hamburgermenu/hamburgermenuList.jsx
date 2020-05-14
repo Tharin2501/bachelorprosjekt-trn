@@ -4,7 +4,6 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js"
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
-import ArticleLogoSVG from "./artikler2.0.svg"
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 const HamburgermenuList = forwardRef((props, ref) => {
 
