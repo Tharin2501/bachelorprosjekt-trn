@@ -123,8 +123,10 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
 
                 {description}
             </p>
-
-            <div className="col-md-9 order-md-last">
+            <h3 className="horizontal-line1">
+                <span className="horizontal-line2">Produkter</span>
+            </h3>
+            <div className="">
                 <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
                     {({ data: { subCategories } }) => {
                         return (
