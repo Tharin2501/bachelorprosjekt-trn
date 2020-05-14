@@ -45,12 +45,12 @@ const CartListCard = (props) => {
 
             <div className="my-auto col-6">
                 <div className="row">
-                    <div className="col-7 ml-3">
+                    <div className="col-7 ml-2">
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
                         <small> {numberOfProducts}</small>
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
                     </div>
-                    <div className="col-xs-10 ml-3 mb-3 mt-1">
+                    <div className="col-xs-9 mb-3 mt-1">
                         <h6 className="mob-text">{productContext.price}nok</h6>
                     </div>
                     <div className="ml-4">

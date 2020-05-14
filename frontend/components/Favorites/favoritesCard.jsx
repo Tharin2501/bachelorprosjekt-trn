@@ -35,9 +35,9 @@ const FavoritesCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-7">
+            <div className="my-auto col-6">
                 <div className="row">
-                    <div className="col-7">
+                    <div className="col-7 ml-2">
 
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
                                                                                                 className="mx-1"/></a>
@@ -45,7 +45,7 @@ const FavoritesCard = (props) => {
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
                                                                                                      className="mx-1"/></a>
                     </div>
-                    <div className="col-xs-10 ml-4 mb-3 mt-1">
+                    <div className="col-xs-9 mb-3 mt-1">
                         <h6>200 nok</h6>
                     </div>
                     <div className="ml-4">
