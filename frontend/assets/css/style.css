@@ -226,8 +226,8 @@ font-size: 14px;
 
 .book,
 .book-img {
-    max-width: 7.5rem;
-    min-height: 10rem;
+    max-width: 7.75rem;
+    max-height: 7.75rem;
 }
 
 .book {
