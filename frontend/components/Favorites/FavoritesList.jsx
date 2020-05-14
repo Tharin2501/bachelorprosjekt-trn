@@ -19,7 +19,7 @@ const FavoritesList = () => {
 
     return (
         <div className="container px-5 py-5 mx-auto">
-            <div className="row d-flex justify-content-center">
+            <div className="row justify-content-center">
                 <div className="col-7">
                     <h4 className="heading">Favorites</h4>
                 </div>

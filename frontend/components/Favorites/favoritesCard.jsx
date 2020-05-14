@@ -22,37 +22,38 @@ const FavoritesCard = (props) => {
 
 
         <div className="row border-top">
-            <div className="col-6">
+            <div className="col-7">
                 <div className="row justify-content-start">
                     <div className="book"><Link href={{pathname: "/produktside", query: {id: productContext.id}}}><img
                         src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"
                         alt={""}></img></Link></div>
                     <div className="my-auto mx-auto">
                         <Link href={{pathname: "/produktside", query: {id: productContext.id}}}><a><h6
-                            className="mob-text">{productContext.name}</h6></a></Link>
+                            className="">{productContext.name}</h6></a></Link>
 
                     </div>
                 </div>
             </div>
 
-            <div className="my-auto col-6">
+            <div className="my-auto col-5">
                 <div className="row">
-                    <div className="col-7 ml-2">
+                    <div className="col-7">
 
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
-                                                                                                className="mx-1"/></a>
+                                                                                                /></a>
                         <small> {numberOfProducts}</small>
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
-                                                                                                     className="mx-1"/></a>
+                                                                                                     /></a>
                     </div>
                     <div className="col-xs-9 mb-3 mt-1">
                         <h6>200 nok</h6>
                     </div>
-                    <div className="ml-4">
+                    <div className="ml-2">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
                         <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til handlekurv
                         </button>
                     </div>
+
                 </div>
 
 

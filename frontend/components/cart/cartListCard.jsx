@@ -33,7 +33,7 @@ const CartListCard = (props) => {
 
 
         <div className="row border-top">
-            <div className="col-6">
+            <div className="col-7">
                 <div className="row justify-content-start">
                     <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} alt={""} className="book-img"></img></Link></div>
                     <div className="mx-auto my-auto">
@@ -43,17 +43,19 @@ const CartListCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-6">
+            <div className="my-auto col-5">
                 <div className="row">
-                    <div className="col-7 ml-2">
+                    <div className="col-7">
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
                         <small> {numberOfProducts}</small>
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
                     </div>
+
                     <div className="col-xs-9 mb-3 mt-1">
                         <h6 className="mob-text">{productContext.price}nok</h6>
                     </div>
-                    <div className="ml-4">
+
+                    <div className="ml-2">
                         <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
                         <button className="text-nowrap add-btn"> Legg til i favoritter</button>
                     </div>
