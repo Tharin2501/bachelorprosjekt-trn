@@ -21,7 +21,7 @@ export const MyDrawer = (props) => {
             <div>
                 <ul className="left">
                     <li style={{ cursor: "pointer", height: "100%" }}>
-                        <a onClick={openNav}>
+                        <a href="#" onClick={openNav}>
                             < GiHamburgerMenu style={{ color: props.hamburgerIconColor }} />
                         </a>
 

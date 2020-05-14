@@ -1,5 +1,5 @@
-
-::-webkit-scrollbar {
+/* Remove horizontal for round bar, but no vertical slider*/
+::-webkit-scrollbar:horizontal {
     width: 0.625rem !important;
     height: 0.625rem !important;
   }

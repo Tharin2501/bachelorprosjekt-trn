@@ -53,6 +53,13 @@ export const MyHeader = () => {
         getCartPrice()
     }, [[Object.values(price)]])
 
+    const divStyle = {
+        backgroundColor: "#e3f2fd",
+        margin: '0px',
+        padding: '0px'
+
+    };
+
     function getCartPrice() {
         if (typeof window !== "undefined") {
             var newtotalprice = 0
@@ -123,18 +130,18 @@ export const MyHeader = () => {
                         </Navbar>
 
                         <div>
-                            <Navbar style={{ backgroundColor: "#e3f2fd" }}>
-                                <div className="  px-2 pt-2 nav-link">
+                            <Navbar style={divStyle} >
+                                <div className=" pt-2 nav-link">
                                     <MyDrawer hamburgerIconColor={"black"} />
                                 </div>
-                                <div className=" px-2 pt-2 d-none d-md-block" href="#">
+                                <div className="d-none d-md-block" href="#">
                                     <Link href="#">
                                         <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
                                     </Link>
                                 </div>
                                 <div className=" pt-2 d-none d-md-block" href="#">
                                     <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Tilbud</a>
+                                        <a className="nav-link frontpageIconsText ">Tilbud</a>
                                     </Link>
                                 </div>
                                 <div className=" px-2 pt-2 d-none d-md-block" href="#">
