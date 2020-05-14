@@ -343,9 +343,11 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
                 </div>
             </div>
 
+            <h3 className="horizontal-line1">
+                <span className="horizontal-line2">Alle produkter</span>
+            </h3>
 
-
-            <Button onClick={openNav}>Filter</Button>
+            <Button size="lg" block onClick={openNav}>Filter</Button>
             <p>
                 {categoriesListInput[0].description}
 
@@ -353,7 +355,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
             <div className="row">
 
-                <div className="col-md-9 order-md-last">
+                <div className="">
                     <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
                         {({ data: { categories } }) => {
                             const productsArray = getProducts(categories)

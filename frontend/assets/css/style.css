@@ -134,12 +134,13 @@ button.add-btn{
   padding: 20px;
   border-radius: 15px;
   margin: 50px 20px;
+  position: relative;
 }
 
 .card-1 {
   padding: 30px 30px 20px 30px !important;
   border: none;
-  height: 33rem;
+  height: 30rem;
   width: 20rem;
 }
 
@@ -202,11 +203,13 @@ div.row.px-3.justify-content-around{
 font-size: 14px;
 }
 
+
 .btn.btn-light{
   color: #fff;
   border-radius: 15px;
   font-weight: bold;
   background-color: #0b3954;
+  
 }
 
 .btn.btn-light:hover{
