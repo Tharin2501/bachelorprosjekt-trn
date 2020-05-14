@@ -10,7 +10,7 @@ const FavoritesCard = (props) => {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
         quantity: props.CartListCard.quantity,
-        price: 200,
+        price: props.CartListCard.price,
         image: props.CartListCard.image,
 
     }
@@ -35,9 +35,9 @@ const FavoritesCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-6">
+            <div className="my-auto col-7">
                 <div className="row">
-                    <div className="col-7 ml-3">
+                    <div className="col-7">
 
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
                                                                                                 className="mx-1"/></a>
@@ -50,7 +50,7 @@ const FavoritesCard = (props) => {
                     </div>
                     <div className="ml-4">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til
+                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til handlekurv
                         </button>
                     </div>
                 </div>

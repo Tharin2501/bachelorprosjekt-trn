@@ -54,8 +54,8 @@ const CartListCard = (props) => {
                         <h6 className="mob-text">{productContext.price}nok</h6>
                     </div>
                     <div className="ml-4">
-                        <button onClick={(() => deleteProductFunction())} className="delete-btn"> Remove</button>
-                        <button className="text-nowrap add-btn"> Add to fav</button>
+                        <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
+                        <button className="text-nowrap add-btn"> Legg til i favoritter</button>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ const CartListCard = (props) => {
             if (numberOfProducts < 99) {
                 setNumberOfProducts(numberOfProducts + 1)
             } else {
-                alert("U cant add more then 99 products" + cartStorage)
+                alert("Man kan ikke legge inn med enn 99 produkter" + cartStorage)
             }
 
         } else {
