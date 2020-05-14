@@ -8,7 +8,7 @@ const HorizontalMenuItem = (props) => {
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="" /></a>
+                        <div className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="" /></div>
                     </Link>
                 </div>
                 <div>
@@ -24,7 +24,7 @@ const HorizontalMenuItem = (props) => {
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: props.category.StrapiName, brandName: props.brandName, brandID: props.brandID } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></a>
+                        <div className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></div>
                     </Link>
                 </div>
                 <div>
@@ -41,7 +41,7 @@ const HorizontalMenuItem = (props) => {
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: props.pathnamekatOrSub, query: { id: categoryStrapiName } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></a>
+                        <div className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" /></div>
                     </Link>
                 </div>
                 <div>
