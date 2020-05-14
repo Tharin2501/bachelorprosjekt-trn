@@ -120,7 +120,7 @@ export const FrontpageGrid = () => {
 
 
             <div className="container-fluid">
-                <div className="row justify-content-center py-5">
+                <div className="row justify-content-center ">
 
                     <Query query={GETCATEGORIES_QUERY}>
                         {({ data: { categories } }) => {

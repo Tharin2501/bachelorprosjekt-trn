@@ -26,23 +26,10 @@ h3 {
     font-weight: 500;
 }
 
-#title {
-    letter-spacing: 0.4px;
-    font-size: 22px;
-    font-size: 1.375rem;
-    line-height: 1.13636;
+.iconsNavbar{
+  transform: scale(1.5);
 }
 
-#banner {
-  margin: 20px;
-  height: 800px;
-}
-
-#editor {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.75;
-}
 
 .uk-navbar-container {
   background: #fff !important;
@@ -262,13 +249,17 @@ font-size: 14px;
     text-align: center;
     border-bottom: 1px solid #000000;
     line-height: 0.1em;
-    margin: 10px 0 20px;
-    padding-top: 20px;
+    margin: 10px 0 10px;
+    padding-top: 10px;
 }
 
 .horizontal-line2 {
     background:#ffffff;
     padding: 0 10px;
+}
+.verticalLine{
+  border-left: 1px solid #000000;
+  height: 100%;
 }
 
 /* CAROUSEL - FRONTPAGE */
@@ -276,10 +267,9 @@ font-size: 14px;
 a.carousel-control-next, a.carousel-control-prev {
     position: absolute;
     top: 50%;
-    width: 7%;
-    height: 12%;
+    width: 10%;
+    height: 15%;
     background-color: lightgrey;
-    border: 1px solid silver;
 }
 
 a.carousel-control-next:hover, a.carousel-control-prev:hover {
@@ -287,11 +277,9 @@ a.carousel-control-next:hover, a.carousel-control-prev:hover {
 }
 
 .carousel-inner > .carousel-item > img {
-  max-height: 80vh;
-  max-width: 100vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* MARQUEE */
@@ -380,17 +368,20 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
   text-align: center;
-  margin: 10px;
+  
 }
-
+/* margin: 0.313rem;*/
 
 .navitem{
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 14px;
+  padding: 0.875rem;
   text-decoration: none;
+  
+ 
 }
+/* padding 14 px*/
 
 .navitem:hover {
   color: #ff6663;
@@ -398,9 +389,12 @@ div.scrollmenu {
 }
 
 .imageSize{
-  width: 6em;
-  height: 6em;
+  width: 4.5em;
+  height: 4.5em;
   transition: transform .4s; /* Animation */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Enlarge icons*/
@@ -410,6 +404,7 @@ div.scrollmenu {
 
 .nav-link.frontpageIconsText {
   text-align: center;
+  font-size: small;
   color: #534d41;
 }
 
@@ -433,16 +428,17 @@ div.scrollmenu {
 }
 
 .btn-circle.btn-sm {
-  width: 6em;
-  height: 6em;
-  border-radius: 120px;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 60px;
+  top: -200px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   font-family: sans-serif;
   color: #fff;
   background-color: #0b3954;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
 .btn-circle.btn-sm:hover{
@@ -560,19 +556,18 @@ div.scrollmenu {
 
 .outlined_btn {
     position: absolute;
-    top: 80%;
+    top: 60%;
     left: 50%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     white-space:nowrap
 }
 
 .btn-outline-secondary {
     position: absolute;
-    top: 80%;
+    top: 60%;
     left: 70%;
-    transform: translate( -70%, -30% );
+    transform: translate( -70%, -50% );
     text-transform: uppercase;
     border: 2px solid teal !important;
     color: black !important;
@@ -585,7 +580,7 @@ div.scrollmenu {
 
 .text-block {
     position: absolute;
-    top: 40%;
+    top: 25%;
     left: 70%;
     transform: translate( -70%, -50% );
     text-align: right;
@@ -650,6 +645,7 @@ div.scrollmenu {
 .card {
     width: 18rem;
     padding: 0;
+    transform: translate(0,-8%);
 }
 
 /* BILDE */

@@ -84,14 +84,14 @@ export const MyHeader = () => {
                             <MyDrawer hamburgerIconColor={"white"} />
                         </div>
                         {/* Bilde*/}
-                        <div className="col-xs mx-auto">
+                        <div className="col-xs mx-auto ">
                             <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
                         </div>
                         {/* Logo*/}
-                        <a className="nav-item mx-2 mb-3" href="favorites"><FaHeart alt={"Hjerte,link til favorittside"} color="white" /></a>
-                        <FiUser alt={"Person,link til profil"} color="white" className="mx-2 mb-2" />
+                        <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className={"iconsNavbar"} alt={"Hjerte,link til favorittside"} color="white" /></a>
+                        <FiUser className={"iconsNavbar"} alt={"Person,link til profil"} color="white" className="mx-2 mb-2" />
                         <div className="">
-                            <a className="nav-item" href="shoppingcart"><FaShoppingCart alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="white" /></a>
+                            <a className="nav-item" href="shoppingcart"><FaShoppingCart className={"iconsNavbar"} alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="white" /></a>
                             <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
                         </div>
                         {/* Searchbar*/}
@@ -113,9 +113,9 @@ export const MyHeader = () => {
                                 </InputGroup>
 
                                 <div className="mt-4">
-                                    <a className="nav-item mr-1 ml-1">< FiUser color="white" /></a>
-                                    <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart color="white" /></a>
-                                    <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart color="white" /></a>
+                                    <a className="nav-item mr-1 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
+                                    <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
+                                    <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart className={"iconsNavbar"} color="white" /></a>
                                     <p style={{ color: "white" }} className="ml-5 pl-3"> {totalprice}kr</p>
                                 </div>
 
@@ -164,7 +164,7 @@ export const MyHeader = () => {
 
                     </div>
                 </Media>
-            </MediaContextProvider>
+            </MediaContextProvider >
         );
     }
 

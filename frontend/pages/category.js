@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import SubCategoryList from "../components/category/subCategoryList"
+import SubCategoryListMainCategory from "../components/category/subCategoryListMainCategory"
 import CategoryProductsComonent from "../components/category/categoryProductsComponent";
 import Highlight3Articles from "../components/category/highlight3Articles"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
@@ -20,7 +20,7 @@ const Category = () => {
         return (
           <div>
             {/* first*/}
-            <SubCategoryList subCategoryList={categories[0].sub_categories} categoryName={router.query.id}></SubCategoryList>
+            <SubCategoryListMainCategory subCategoryList={categories[0].sub_categories} categoryName={router.query.id}></SubCategoryListMainCategory>
 
 
             <Highlight3Articles ></Highlight3Articles>
