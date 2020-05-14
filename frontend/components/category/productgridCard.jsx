@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { calculatePrice } from "../cookieHandler";
-
+import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 var jsonObj = [];
 jsonObj = JSON.stringify(jsonObj);
 
@@ -65,14 +65,17 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
     <div className="card  card-1">
       <div className="pr-3 row justify-content-stretch">
         <Link href={{ pathname: "/merkesidedetalj", query: { id: productcard.brand.id } }}>
-          <div className="p-2 bd-highlight">
-            <small className="category">   <a >{productcard.brand.name}</a></small>
-          </div>
+          <a  >
+            <div tabIndex="0" className="p-2 bd-highlight">
+              <small className="category">   {productcard.brand.name}</small>
+            </div>
+          </a>
+
         </Link>
 
 
         <div className="ml-auto p-2 bd-highlight">
-          <a onClick={() => addtoFavorites()}>
+          <a tabIndex="0" onClick={() => addtoFavorites()} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? addtoFavorites() : null }}>
             <FaHeart alt={"Hjerte"} color={heartColor} />
           </a>
         </div>

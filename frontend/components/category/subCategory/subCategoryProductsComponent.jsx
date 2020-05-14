@@ -92,7 +92,11 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
         }
 
     }
-    const openNav = () => {
+
+
+    /* Filter menu
+
+        const openNav = () => {
         document.getElementById("filterMenu").style.width = "250px";
     }
     const closeNav = () => {
@@ -100,8 +104,6 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
         typeToSet("category")
         listToSet(categories)
     }
-
-    /* Filter menu
                 <div id="filterMenu" className="sidenav">
                     <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                     <div className="col-md-3 order-md-first">
@@ -122,10 +124,13 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
 
 
             <h3 className="text-center">{categoryName}</h3>
-            <p className="text-center">
+            <div class="container">
+                <p className="text-center">
 
-                {description}
-            </p>
+                    {description}
+                </p>
+            </div>
+
             <h3 className="horizontal-line1">
                 <span className="horizontal-line2">Produkter</span>
             </h3>
