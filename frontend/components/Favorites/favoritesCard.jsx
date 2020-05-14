@@ -21,13 +21,13 @@ const FavoritesCard = (props) => {
     return (
 
 
-        <div className="row d-flex justify-content-center border-top">
-            <div className="col-5">
-                <div className="row d-flex">
+        <div className="row border-top">
+            <div className="col-6">
+                <div className="row justify-content-start">
                     <div className="book"><Link href={{pathname: "/produktside", query: {id: productContext.id}}}><img
                         src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"
                         alt={""}></img></Link></div>
-                    <div className="my-auto flex-column d-flex pad-left ml-4">
+                    <div className="my-auto mx-auto">
                         <Link href={{pathname: "/produktside", query: {id: productContext.id}}}><a><h6
                             className="mob-text">{productContext.name}</h6></a></Link>
 
@@ -35,9 +35,9 @@ const FavoritesCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-7">
+            <div className="my-auto col-6">
                 <div className="row">
-                    <div className="col-7">
+                    <div className="col-7 ml-3">
 
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
                                                                                                 className="mx-1"/></a>
@@ -45,7 +45,7 @@ const FavoritesCard = (props) => {
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
                                                                                                      className="mx-1"/></a>
                     </div>
-                    <div className="col-xs-10 ml-2 mb-3 mt-1">
+                    <div className="col-xs-10 ml-4 mb-3 mt-1">
                         <h6>200 nok</h6>
                     </div>
                     <div className="ml-4">

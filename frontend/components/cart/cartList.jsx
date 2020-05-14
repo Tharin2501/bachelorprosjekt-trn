@@ -44,16 +44,16 @@ const CartList = () => {
     return (
         <div className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
-                <div className="col-5">
+                <div className="col-6">
                     <h4 className="heading">Shopping Bag</h4>
                 </div>
-                <div className="col-7">
+                <div className="col-6">
                     <div className="row">
-                        <div className="col-6">
-                            <h6 className="mt-2">Antall</h6>
+                        <div className="col-7">
+                            <h6 className="mt-2 ml-3">Antall</h6>
                         </div>
                         <div className="col-5">
-                            <h6 className="mt-2 ml-5 pl-2">Pris</h6>
+                            <h6 className="mt-2 ml-2 pl-2">Pris</h6>
                         </div>
 
                     </div>

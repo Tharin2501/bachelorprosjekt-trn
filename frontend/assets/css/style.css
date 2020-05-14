@@ -227,7 +227,8 @@ font-size: 14px;
 .book,
 .book-img {
     max-width: 7.5rem;
-    min-height: 10rem;
+
+    max-height: 10rem;
 }
 
 .book {
@@ -368,7 +369,7 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
   text-align: center;
-  
+
 }
 /* margin: 0.313rem;*/
 
@@ -378,8 +379,8 @@ div.scrollmenu {
   text-align: center;
   padding: 0.875rem;
   text-decoration: none;
-  
- 
+
+
 }
 /* padding 14 px*/
 
