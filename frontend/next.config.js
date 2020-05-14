@@ -4,7 +4,7 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg)$/i,
             loader: "file-loader",
             options: {
-                outputPath: "static"
+                outputPath: "images"
             }
         });
         return config;
