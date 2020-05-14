@@ -5,7 +5,7 @@ import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
-import ArticlesSVG from "../../public/images/artikler2.0.svg";
+import ArticlesSVG from "/images/artikler2.0.svg";
 const HamburgermenuList = forwardRef((props, ref) => {
 
 
