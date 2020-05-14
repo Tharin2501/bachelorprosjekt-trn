@@ -58,8 +58,14 @@ const SpecificBrandPage = (props) => {
   const toggle = () => setCollapse(!collapse);
 
 
+  var imageUrl
+  try {
+    imageUrl = props.brandDetailSide.logo.url
+  } catch (error) {
+    imageUrl = "/files/cliniqueLogo"
+  }
 
-  //console.log(props.brandDetailSide)
+  console.log(imageUrl)
   const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
 
   return (
@@ -75,7 +81,7 @@ const SpecificBrandPage = (props) => {
             className="mw-25 h-75"
             src={
               "https://trnbackend.herokuapp.com" +
-              props.brandDetailSide.logo.url
+              imageUrl
             }
             alt={""}
           />

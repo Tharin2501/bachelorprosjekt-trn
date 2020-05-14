@@ -65,7 +65,7 @@ const BrandPage = (props) => {
         {({ data: { brands } }) => {
           return brands.map((brand) => {
             return (
-              <Container>
+              <Container className="text-center">
                 <Row>
                   <Nav vertical sm="6">
                     <Col className="pm-3">
