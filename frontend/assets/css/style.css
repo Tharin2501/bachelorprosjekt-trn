@@ -125,8 +125,8 @@ button.add-btn{
 /*END favoritesCard*/
 
 .pic1 {
-  width: 250px; /* 90% */
-  height: 250px; /* null */
+  max-width: 200px; /* 90% */
+  max-height: 200px; /* null */
   margin-left: auto;
   margin-right: auto;
   display: block;
