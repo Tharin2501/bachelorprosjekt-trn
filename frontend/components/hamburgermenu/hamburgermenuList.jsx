@@ -57,23 +57,34 @@ const HamburgermenuList = forwardRef((props, ref) => {
     })
 
     const handleBrandClick = () => {
-
+        closeNav();
         router.push("/merkeside")
     }
     const handlearticlesClick = () => {
-
+        closeNav();
         router.push("/artikler")
     }
-
+    // for main cat in sub menu
     const closeNavAndChangeURL = () => {
-        handleSubcategoryClick();
+        handleSubcategoryMainCategoryClick();
         document.getElementById("mySidenav").style.width = "0";
         setListToDefault()
     }
 
-    const handleSubcategoryClick = () => {
+    const closeNavAndChangeURLForSubcategoryIcon = (subCategoryName) => {
+        handleSubcategoryClick(subCategoryName);
+        document.getElementById("mySidenav").style.width = "0";
+        setListToDefault()
+    }
+
+    const handleSubcategoryMainCategoryClick = () => {
 
         router.push({ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } })
+    }
+
+    const handleSubcategoryClick = (subCategoryName) => {
+
+        router.push({ pathname: "/subCategory", query: { id: subCategoryName } })
     }
 
 
@@ -91,7 +102,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                             <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
                         </div>
 
-                        <h1 className="nav-link">{"se artikler"}</h1>
+                        <p className="nav-link">{"Artikler"}</p>
 
                     </div>
 
@@ -103,14 +114,14 @@ const HamburgermenuList = forwardRef((props, ref) => {
                             <img className="myImg" src={"/images/brandsikon.svg"} alt="" />
                         </div>
 
-                        <h1 className="nav-link">{"Merker"}</h1>
+                        <p className="nav-link">{"Merker"}</p>
 
                     </div>
                 </li>
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
-                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow}>
 
                             </HamburgermenuItem>
                         </li>
@@ -138,7 +149,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                 </li>
 
-                {/* Subcategoryies MAINCATEGORY*/}
+                {/* Subcategoryies MAINCATEGORY Button*/}
                 <li className="nav_submenu-item">
 
 
@@ -151,22 +162,23 @@ const HamburgermenuList = forwardRef((props, ref) => {
                         <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
 
                     </div>
-
-
                 </li>
-
+                {/* Subcategories icons*/}
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
 
-                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} categoryClickFunction={closeNavAndChangeURLForSubcategoryIcon} >
 
                             </HamburgermenuItem>
                         </li>
                     )
                 })}
 
-            </ul>
+
+
+
+            </ul >
         )
 
     }
