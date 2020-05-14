@@ -4,8 +4,8 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js"
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
+import ArticleLogoSVG from "./artikler2.0.svg"
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
-import ArticlesSVG from "../../public/images/artikler2.0.svg";
 const HamburgermenuList = forwardRef((props, ref) => {
 
 
@@ -99,9 +99,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
-
-                            <ArticlesSVG />
-
+                            <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
                         </div>
 
                         <p className="nav-link">{"Artikler"}</p>
