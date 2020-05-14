@@ -99,7 +99,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
+                            <img className="myImg" src={"/images/artikler.png"} alt="" />
                         </div>
 
                         <p className="nav-link">{"Artikler"}</p>
@@ -110,8 +110,8 @@ const HamburgermenuList = forwardRef((props, ref) => {
                 <li className="nav_submenu-item">
                     <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
 
-                        <div className="myImg">
-                            <img className="myImg" src={"/images/brandsikon.svg"} alt="" />
+                        <div className="myImg">{/*"/images/brandsikon.svg" */}
+                            <img className="myImg" src={"/images/brands.png"} alt="" />
                         </div>
 
                         <p className="nav-link">{"Merker"}</p>
