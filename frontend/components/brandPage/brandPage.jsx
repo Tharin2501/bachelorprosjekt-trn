@@ -51,6 +51,11 @@ const BrandPage = (props) => {
   const handleSerachFieldChanged = (e) => {
     setInputTextTerm(e.target.value);
   }
+
+  const divStyle = {
+    padding: '1.5em',
+
+  };
   return (
 
     <div>
@@ -70,8 +75,10 @@ const BrandPage = (props) => {
                           query: { id: brand.id },
                         }}
                       >
-                        <Button className="text-dark bg-white p-2 border-0">
-                          {brand.name}
+                        <Button style={divStyle} className="text-dark bg-white p-2 border-0" >
+                          <a className="nav-link frontpageIconsText">{brand.name}</a>
+
+
                         </Button>
                       </Link>
                     </Col>
@@ -82,7 +89,7 @@ const BrandPage = (props) => {
           });
         }}
       </QuerybrandsOnString>
-    </div>
+    </div >
   );
 };
 
