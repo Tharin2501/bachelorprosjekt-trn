@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, {useState, useEffect, useContext} from "react"
 import CartListCard from "./cartListCard"
 import Cookie from "js-cookie";
-import { Button } from "reactstrap";
-import { calculatePrice, calculateCollectMePoints } from "../cookieHandler"
+import {Button} from "reactstrap";
+import {calculatePrice, calculateCollectMePoints} from "../cookieHandler"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
 const isServer = () => typeof window === `undefined`;
@@ -21,7 +21,7 @@ const CartList = () => {
         setCollectMePoints(calculateCollectMePoints(newprice));
     }
     /** Adding to Cart */
-    const { price, ChangeTotalPrice } = useContext(CartTotalPriceContext);
+    const {price, ChangeTotalPrice} = useContext(CartTotalPriceContext);
     const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
         changeValueFunction(newValue);
         calculatePriceFunction();
@@ -45,7 +45,7 @@ const CartList = () => {
         <div className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
                 <div className="col-5">
-                    <h4 className="heading">Handlekurv</h4>
+                    <h4 className="heading">Shopping Bag</h4>
                 </div>
                 <div className="col-7">
                     <div className="row">
@@ -63,7 +63,7 @@ const CartList = () => {
             {!isServer() && cart !== undefined && cart.map((product, i) => {
                 return (
                     <div>
-                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
+                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product}/>
                     </div>
 
                 );

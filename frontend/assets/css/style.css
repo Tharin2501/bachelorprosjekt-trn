@@ -226,12 +226,8 @@ font-size: 14px;
 
 .book,
 .book-img {
-    max-width: 6rem;
-    max-height: 6rem;
-    margin: auto;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
+    max-width: 7.5rem;
+    min-height: 10rem;
 }
 
 .book {
