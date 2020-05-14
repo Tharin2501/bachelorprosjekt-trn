@@ -65,7 +65,6 @@ const SpecificBrandPage = (props) => {
     imageUrl = "/files/cliniqueLogo"
   }
 
-  console.log(imageUrl)
   const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
 
   return (
@@ -78,7 +77,7 @@ const SpecificBrandPage = (props) => {
       <Row className="p-3">
         <Col className="text-center">
           <img
-            className="mw-25 h-75"
+            className="brandImage"
             src={
               "https://trnbackend.herokuapp.com" +
               imageUrl

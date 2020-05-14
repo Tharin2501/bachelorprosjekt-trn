@@ -740,3 +740,10 @@ div.scrollmenu {
 .link-to-condition{
   color: #003d85;
 }
+
+/* Brandpage*/
+.brandImage{
+  max-width: 330px;
+  max-width: 330px;
+  margin: auto;
+}
