@@ -101,25 +101,28 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
         listToSet(categories)
     }
 
-
+    /* Filter menu
+                <div id="filterMenu" className="sidenav">
+                    <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                    <div className="col-md-3 order-md-first">
+                        <div id="filters" className="d-md-block">
+                            {typesCheckboxes.map((TypeCheckbox) => {
+                                return (
+                                    <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={TypeCheckbox.id}{...TypeCheckbox} />
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <Button onClick={openNav}>Filter</Button>
+    */
 
     return (
         <React.Fragment>
-            <div id="filterMenu" className="sidenav">
-                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                <div className="col-md-3 order-md-first">
-                    <div id="filters" className="d-md-block">
-                        {typesCheckboxes.map((TypeCheckbox) => {
-                            return (
-                                <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={TypeCheckbox.id}{...TypeCheckbox} />
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-            <Button onClick={openNav}>Filter</Button>
-            <h3>{categoryName}</h3>
-            <p>
+
+
+            <h3 className="text-center">{categoryName}</h3>
+            <p className="text-center">
 
                 {description}
             </p>
