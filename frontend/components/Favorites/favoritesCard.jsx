@@ -1,6 +1,6 @@
-import React, {useState} from "react"
-import {FaHeart, FaMinusCircle, FaPlusCircle} from 'react-icons/fa';
-import {removeOneProduct, addOneProductToCart} from "../cookieHandler"
+import React, { useState } from "react"
+import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
 import Link from "next/link";
 import Cookie from "js-cookie"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
@@ -10,7 +10,7 @@ const FavoritesCard = (props) => {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
         quantity: props.CartListCard.quantity,
-        price: 200,
+        price: props.CartListCard.price,
         image: props.CartListCard.image,
 
     }
@@ -24,12 +24,12 @@ const FavoritesCard = (props) => {
         <div className="row d-flex justify-content-center border-top">
             <div className="col-5">
                 <div className="row d-flex">
-                    <div className="book"><Link href={{pathname: "/produktside", query: {id: productContext.id}}}><img
+                    <div className="book"><Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img
                         src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"
                         alt={""}></img></Link></div>
                     <div className="my-auto flex-column d-flex pad-left ml-4">
-                        <Link href={{pathname: "/produktside", query: {id: productContext.id}}}><a><h6
-                            className="mob-text">{productContext.name}</h6></a></Link>
+                        <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6
+                            className="">{productContext.name}</h6></a></Link>
 
                     </div>
                 </div>
@@ -40,13 +40,13 @@ const FavoritesCard = (props) => {
                     <div className="col-7">
 
                         <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
-                                                                                                className="mx-1"/></a>
+                            className="mx-1" /></a>
                         <small> {numberOfProducts}</small>
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
-                                                                                                     className="mx-1"/></a>
+                            className="mx-1" /></a>
                     </div>
                     <div className="col-xs-10 ml-2 mb-3 mt-1">
-                        <h6>200 nok</h6>
+                        <h6>{productContext.price} nok</h6>
                     </div>
                     <div className="ml-4">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import {addOneProductToCart, removeOneProduct} from "../cookieHandler"
+import { addOneProductToCart, removeOneProduct } from "../cookieHandler"
 import Link from "next/link";
 
 /*
@@ -51,16 +51,16 @@ const CartListCard = (props) => {
                         <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
                     </div>
                     <div className="col-xs-10 ml-2 mb-3 mt-1">
-                        <h6 className="mob-text">{productContext.price}nok</h6>
+                        <h6 className="mob-text">{productContext.price} nok</h6>
                     </div>
                     <div className="ml-4">
-                        <button onClick={(() => deleteProductFunction())} className="delete-btn"> Remove</button>
-                        <button className="text-nowrap add-btn"> Add to fav</button>
+                        <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern</button>
+                        <button className="text-nowrap add-btn"> Legg til i favoritter</button>
                     </div>
                 </div>
             </div>
 
-            </div>
+        </div>
 
     );
 
