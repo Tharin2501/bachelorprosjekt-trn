@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-multi-carousel/lib/styles.css";
 
 
+
 const App = ({ Component, pageProps, apollo }) => {
     const [price, setTotalPrice] = useState(0);
     const ChangeTotalPrice = (newValue) => setTotalPrice(newValue);
