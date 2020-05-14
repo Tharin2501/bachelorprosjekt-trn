@@ -181,8 +181,7 @@ export const MyHeader = () => {
 export const NewsLetter = () => {
 
     const subscribeToNewsletter = () => {
-        // register input from inputfield + check if checkbox is checked. Presist email to db
-        //console.log("Subscribe to newsletter here")
+
     };
 
     return (
