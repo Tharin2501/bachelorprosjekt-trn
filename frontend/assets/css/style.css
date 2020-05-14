@@ -115,8 +115,8 @@ button.add-btn{
 /*END favoritesCard*/
 
 .pic1 {
-  width: 250px; /* 90% */
-  height: 250px; /* null */
+  max-width: 200px; /* 90% */
+  max-height: 200px; /* null */
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -216,9 +216,8 @@ font-size: 14px;
 
 .book,
 .book-img {
-    width: 120px;
-    height: 180px;
-    border-radius: 5px;
+    max-width: 7.75rem;
+    max-height: 7.75rem;
 }
 
 .book {

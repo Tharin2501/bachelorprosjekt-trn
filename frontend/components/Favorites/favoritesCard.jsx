@@ -10,7 +10,7 @@ const FavoritesCard = (props) => {
         id: props.CartListCard.id,
         name: props.CartListCard.name,
         quantity: props.CartListCard.quantity,
-        price: 200,
+        price: props.CartListCard.price,
         image: props.CartListCard.image,
 
     }
@@ -23,35 +23,42 @@ const FavoritesCard = (props) => {
 
         <div className="row d-flex justify-content-center border-top">
             <div className="col-5">
-                <div className="rod d-flex">
-                    <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img" alt={""}></img></Link></div>
-                    <div className="my-auto flex-column d-flex pad-left">
-                        <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6 className="mob-text">{productContext.name}</h6></a></Link>
+                <div className="row d-flex">
+                    <div className="book"><Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img
+                        src={"https://trnbackend.herokuapp.com" + productContext.image} className="book-img"
+                        alt={""}></img></Link></div>
+                    <div className="my-auto flex-column d-flex pad-left ml-4">
+                        <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6
+                            className="mob-text">{productContext.name}</h6></a></Link>
 
                     </div>
                 </div>
             </div>
+
             <div className="my-auto col-7">
-                <div className="row text-right">
+                <div className="row">
+                    <div className="col-7">
 
-                    <div className="col-4">
-                        <div className="row px-3 justify-content-between">
-                            <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"} /></a>
-                            <small> {numberOfProducts}</small>
-                            <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"} /></a>
-                        </div>
+                        <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
+                            className="mx-1" /></a>
+                        <small> {numberOfProducts}</small>
+                        <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
+                            className="mx-1" /></a>
                     </div>
-                    <div className="col-4">
-                        <h6 className="mob-text">200 nok</h6>
+                    <div className="col-xs-10 ml-2 mb-3 mt-1">
+                        <h6>{productContext.price} nok</h6>
                     </div>
-
-                    <div className="col-4">
+                    <div className="ml-4">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til</button>
+                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til handlekurv
+                        </button>
                     </div>
                 </div>
+
+
             </div>
-        </div >
+
+        </div>
 
     );
 

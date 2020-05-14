@@ -17,21 +17,19 @@ const FavoritesList = () => {
     }
 
 
-
     return (
         <div div className="container px-4 py-5 mx-auto">
             <div className="row d-flex justify-content-center">
                 <div className="col-5">
-                    <h4 className="heading">Favorites</h4>
+                    <h4 className="heading">Favoritter</h4>
                 </div>
                 <div className="col-7">
-                    <div className="row text-right">
-
-                        <div className="col-4">
-                            <h6 className="mt-2">Quantity</h6>
+                    <div className="row">
+                        <div className="col-6">
+                            <h6 className="mt-2">Antall</h6>
                         </div>
-                        <div className="col-4">
-                            <h6 className="mt-2">Price</h6>
+                        <div className="col-5">
+                            <h6 className="mt-2 ml-5">Pris</h6>
                         </div>
 
                     </div>
@@ -43,7 +41,8 @@ const FavoritesList = () => {
                 return (
                     <div>
 
-                        <FavoritesCard key={product.id} setFavorites={setFavorites} onDelete={changeFavorites} CartListCard={product} />
+                        <FavoritesCard key={product.id} setFavorites={setFavorites} onDelete={changeFavorites}
+                            CartListCard={product} />
                     </div>
 
                 );
