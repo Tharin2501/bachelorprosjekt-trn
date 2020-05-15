@@ -18,24 +18,7 @@ const SubCategory = () => {
             {({ data: { subCategories } }) => {
                 return (
                     <div>
-                        {/** Breadcrumbs start */}
-                        <div>
-                            <Breadcrumb style={divStyle}>
-                                <BreadcrumbItem style={divStyle}>
-                                    <a href="/">Hjem</a>
-                                </BreadcrumbItem>
-                                <BreadcrumbItem>
-                                    <a href="#">Alkohol</a>
-                                </BreadcrumbItem>
-                                <BreadcrumbItem>
-                                    <a href="#">Vin</a>
-                                </BreadcrumbItem>
-                                <BreadcrumbItem>
-                                    <a href="#">Rødvin</a>
-                                </BreadcrumbItem>
-                                <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
-                            </Breadcrumb>
-                        </div>
+
                         <SubCategoryListSubCategory mainCategory={subCategories[0].category} subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryListSubCategory>
 
 
