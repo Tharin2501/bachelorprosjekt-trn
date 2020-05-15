@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Button, Row, Col, Breadcrumb, BreadcrumbItem, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import ProduktTab from "../ProduktTab";
 import {
   addtoCart,
@@ -56,6 +56,10 @@ const Produktside = (props) => {
 
     }
   }
+
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
+  const toggle = () => setPopoverOpen(!popoverOpen);
   return (
     <div className="container">
       <div className="">
@@ -178,8 +182,19 @@ const Produktside = (props) => {
                       <Col>Legg til i ønskelisten</Col>
                     </Row>
 
+
                   </Button>
+
                 </Col>
+                <div>
+                  <Button id="Popover1" type="button">
+                    Launch Popover
+      </Button>
+                  <Popover placement="bottom" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
+                    <PopoverHeader>Popover Title</PopoverHeader>
+                    <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
+                  </Popover>
+                </div>
               </Row>
               <Row>
 
