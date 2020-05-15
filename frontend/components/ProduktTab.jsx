@@ -13,6 +13,7 @@ import { FaInfo, FaVial, FaStar } from "react-icons/fa";
 import Query from "./query";
 import REVIEWS_QUERY from "../apollo/queries/product/reviews"
 import ReviewListItem from "./productPage/reviewListItem"
+import { checkIfSpaceOrEnterPressed } from "../components/utils/accessibilityUtil"
 
 //TODO: Fikse statisk info-tekst og gjøre den dynamisk for å vise info om hvert enkelt produkt
 
@@ -27,11 +28,11 @@ const ProduktTab = props => {
     <div className="h-100">
       <Nav tabs className="w-auto m-3 mx-auto">
         <NavItem className="mx-auto">
-          <NavLink
+          <NavLink tabIndex="0"
             className={classnames({ active: activeTab === "1" })}
             onClick={() => {
               toggle("1");
-            }}
+            }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? toggle("1") : null }}
           >
             <Row>
               <Col>
@@ -42,11 +43,11 @@ const ProduktTab = props => {
           </NavLink>
         </NavItem>
         <NavItem className="mx-auto">
-          <NavLink
+          <NavLink tabIndex="0"
             className={classnames({ active: activeTab === "2" })}
             onClick={() => {
               toggle("2");
-            }}
+            }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? toggle("2") : null }}
           >
             <Row>
               <Col>
@@ -57,11 +58,13 @@ const ProduktTab = props => {
           </NavLink>
         </NavItem>
         <NavItem className="mx-auto">
-          <NavLink
+          <NavLink tabIndex="0"
             className={classnames({ active: activeTab === "3" })}
             onClick={() => {
               toggle("3");
+
             }}
+            onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? toggle("3") : null }}
           >
             <Row>
               <Col>

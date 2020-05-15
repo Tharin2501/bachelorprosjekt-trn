@@ -75,7 +75,8 @@ const Produktside = (props) => {
           </Col>
           {/** Product title++ start */}
           <Col lg="6" xs="12" className="text-left overflow-auto w-50">
-            <h3>{productContext.name}</h3>  <h4>Volume: {props.productSide.Volume}</h4>
+            <h3>{productContext.name}</h3>
+            <h4>Volume: {props.productSide.Volume}</h4>
 
             <Row className="">
               <Col xs="6">
