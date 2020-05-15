@@ -76,7 +76,13 @@ const ProduktTab = props => {
         <TabPane tabId="1">
           <Row className="p-3">
             <Col>
-              {props.product.description}
+              <div>
+                {props.product.description}
+                <div className="p-1 mx-auto">
+                  <p > På dette produktet tjener man {props.collectmePoints} collect me points.</p>
+                </div>
+              </div>
+
             </Col>
           </Row>
         </TabPane>
@@ -118,15 +124,3 @@ const ProduktTab = props => {
 };
 
 export default ProduktTab;
-/*
-                    {reviews.map((object) => {
-                      return (
-
-
-
-                          <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
-
-                      )
-                      };
-                    }
-                    */

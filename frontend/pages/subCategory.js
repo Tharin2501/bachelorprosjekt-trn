@@ -4,17 +4,38 @@ import SubCategoryListSubCategory from "../components/category/subCategoryListSu
 import SubCategoryProductsComponent from "../components/category/subCategory/subCategoryProductsComponent";
 import GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY from "../apollo/queries/subCategories/getSubCategoryProductsFromStrapiName"
 import QuerySubCategory from "../components/querySubCategory"
-
+import { Button, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 const SubCategory = () => {
 
     const router = useRouter()
+    const divStyle = {
+        color: "white",
 
+    };
     return (
 
         <QuerySubCategory query={GETSUBCATEGORYPRODUCTSFROMSTRAPINAME_QUERY} categoryName={router.query.id}>
             {({ data: { subCategories } }) => {
                 return (
                     <div>
+                        {/** Breadcrumbs start */}
+                        <div>
+                            <Breadcrumb style={divStyle}>
+                                <BreadcrumbItem style={divStyle}>
+                                    <a href="/">Hjem</a>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <a href="#">Alkohol</a>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <a href="#">Vin</a>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <a href="#">Rødvin</a>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
+                            </Breadcrumb>
+                        </div>
                         <SubCategoryListSubCategory mainCategory={subCategories[0].category} subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryListSubCategory>
 
 

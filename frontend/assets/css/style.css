@@ -39,10 +39,11 @@ img:hover {
   color: #101622;
 }
 
-.product-page-bg {
-  background-color: #f9f9f9;
+/* product page */
+.productImageSize{
+  max-width: 250px;
+  max-height: 250px;
 }
-
 .sm-font {
   font-size: 12px;
 }
@@ -747,3 +748,8 @@ div.scrollmenu {
   max-width: 330px;
   margin: auto;
 }
+
+light-font .breadcrumb-item + .breadcrumb-item::before {
+  color: #fff; }
+  .light-font .breadcrumb-item.active {
+  color: #cfd8dc; }

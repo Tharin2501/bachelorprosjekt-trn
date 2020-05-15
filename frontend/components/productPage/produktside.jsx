@@ -39,125 +39,128 @@ const Produktside = (props) => {
   };
   /** Adding to Cart END*/
 
+  const collectMePoints = calculateCollectMePoints(productContext.price)
+
   return (
-    <div className="product-page-bg w-100 h-100 p-3 d-inline-block overflow-auto">
-      {/** Breadcrumbs start */}
-      <div>
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <a href="/">Hjem</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="#">Alkohol</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="#">Vin</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="#">Rødvin</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
-        </Breadcrumb>
-      </div>
-      <Row>
-        {/** Image start */}
-        <Col lg="6" xs="12" className="text-center h-auto w-50">
-          <img
-            className="mh-25 w-25"
-            src={
-              "https://trnbackend.herokuapp.com" +
-              props.productSide.image[0].url
-            } alt={" "}
-          />
-        </Col>
-        {/** Product title++ start */}
-        <Col lg="6" xs="12" className="text-left overflow-auto w-50">
-          <h2>{productContext.name}</h2>
-          <h3>{props.productSide.Volume}</h3>
-          <Row className="">
-            <Col xs="6">
-              <h4>{productContext.price} kr</h4>
-            </Col>
-            <Col>
-              <h3>
-                <Row>
-                  <Col xs="4" sm="4" lg="4">
-                    <Button
-                      onClick={() =>
-                        setNumberOfProducts(
-                          changeNumberOfProducts("decAmount", numberOfProducts)
-                        )
-                      }
-                      className="bg-transparent border-0 p-0"
-                    >
-                      <FaMinusCircle alt={"minus"} color="black" />
-                    </Button>
-                  </Col>
-                  <Col xs="4" sm="4" lg="4">
-                    {numberOfProducts}
-                  </Col>
-                  <Col xs="4" sm="4" lg="4">
-                    <Button
-                      onClick={() =>
-                        setNumberOfProducts(
-                          changeNumberOfProducts(
-                            "increaseAmount",
-                            numberOfProducts
+    <div className="container">
+      <div className="">
+        {/** Breadcrumbs start */}
+        <div>
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <a href="/">Hjem</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <a href="#">Alkohol</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <a href="#">Vin</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <a href="#">Rødvin</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
+        <Row>
+          {/** Image start */}
+          <Col lg="6" xs="12" className="text-center h-auto w-50">
+            <img
+              className="productImageSize"
+              src={
+                "https://trnbackend.herokuapp.com" +
+                props.productSide.image[0].url
+              } alt={" "}
+            />
+          </Col>
+          {/** Product title++ start */}
+          <Col lg="6" xs="12" className="text-left overflow-auto w-50">
+            <h2>{productContext.name}</h2>
+            <h3>{props.productSide.Volume}</h3>
+            <Row className="">
+              <Col xs="6">
+                <h4>{productContext.price} kr</h4>
+              </Col>
+              <Col>
+                <h3>
+                  <Row>
+                    <Col xs="4" sm="4" lg="4">
+                      <Button
+                        onClick={() =>
+                          setNumberOfProducts(
+                            changeNumberOfProducts("decAmount", numberOfProducts)
                           )
-                        )
-                      }
-                      className="bg-transparent border-0 p-0"
-                    >
-                      {" "}
-                      <FaPlusCircle alt="pluss" color="black" />
-                    </Button>
-                  </Col>
-                </Row>
-              </h3>
-            </Col>
-          </Row>
-          <div className="text-center w-75 m-auto">
-            <Row className="p-3">
-              <Col>
-                <Button
-                  onClick={() => addToShoppingCartAndRecalcuatePrice()}
-                  className="bg-light border border-secondary text-dark p-2 w-100"
-                >
-                  <Row>
-                    <Col>
-                      <FaShoppingBasket color="black" />
+                        }
+                        className="bg-transparent border-0 p-0"
+                      >
+                        <FaMinusCircle alt={"minus"} color="black" />
+                      </Button>
                     </Col>
-                    <Col>Legg til i handleposen</Col>
+                    <Col xs="4" sm="4" lg="4">
+                      {numberOfProducts}
+                    </Col>
+                    <Col xs="4" sm="4" lg="4">
+                      <Button
+                        onClick={() =>
+                          setNumberOfProducts(
+                            changeNumberOfProducts(
+                              "increaseAmount",
+                              numberOfProducts
+                            )
+                          )
+                        }
+                        className="bg-transparent border-0 p-0"
+                      >
+                        {" "}
+                        <FaPlusCircle alt="pluss" color="black" />
+                      </Button>
+                    </Col>
                   </Row>
-                </Button>
+                </h3>
               </Col>
             </Row>
-            <Row className="p-3">
-              <Col>
-                <Button
-                  onClick={() => addItemToFavorites(productContext)}
-                  className="bg-light border border-secondary text-dark p-2 w-100"
-                >
-                  <Row>
-                    <Col>
-                      <FaHeart className="black" />
-                    </Col>
-                    <Col>Legg til i ønskelisten</Col>
-                  </Row>
-                </Button>
-              </Col>
-            </Row>
-          </div>
-        </Col>
-      </Row>
-      {/** Info tabs start */}
-      man tjener {calculateCollectMePoints(productContext.price)} collect me
-      points for dette kjøpet
-      <Row className="pb-5 text-left">
-        <Col>
-          <ProduktTab product={props.productSide} />
-        </Col>
-      </Row>
+            <div className="text-center w-75 m-auto">
+              <Row className="p-3">
+                <Col>
+                  <Button
+                    onClick={() => addToShoppingCartAndRecalcuatePrice()}
+                    className="bg-light border border-secondary text-dark p-2 w-100"
+                  >
+                    <Row>
+                      <Col>
+                        <FaShoppingBasket color="black" />
+                      </Col>
+                      <Col>Legg til i handleposen</Col>
+                    </Row>
+                  </Button>
+                </Col>
+              </Row>
+              <Row className="p-3">
+                <Col>
+                  <Button
+                    onClick={() => addItemToFavorites(productContext)}
+                    className="bg-light border border-secondary text-dark p-2 w-100"
+                  >
+                    <Row>
+                      <Col>
+                        <FaHeart className="black" />
+                      </Col>
+                      <Col>Legg til i ønskelisten</Col>
+                    </Row>
+                  </Button>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+        {/** Info tabs start */}
+
+        <Row className="pb-5 text-left">
+          <Col>
+            <ProduktTab product={props.productSide} collectmePoints={collectMePoints} />
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };
