@@ -17,6 +17,12 @@ const FavoritesCard = (props) => {
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
+    const addToCart = () => {
+
+        addOneProductToCart(productContext)
+        props.newPriceFunction();
+    }
+
     return (
 
 
@@ -49,7 +55,7 @@ const FavoritesCard = (props) => {
                     </div>
                     <div className="ml-2">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                        <button className="add-btn" onClick={(() => addOneProductToCart(productContext))}> Legg til handlekurv
+                        <button className="add-btn" onClick={(() => addToCart())}> Legg til handlekurv
                         </button>
                     </div>
 
