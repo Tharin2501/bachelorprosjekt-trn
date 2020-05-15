@@ -134,23 +134,23 @@ export const MyHeader = () => {
                                 <div className=" pt-2 nav-link">
                                     <MyDrawer hamburgerIconColor={"black"} />
                                 </div>
-                                <div className="d-none d-md-block" href="#">
-                                    <Link href="#">
+                                <div className="d-none d-md-block">
+                                    <Link href="artikler">
                                         <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
                                     </Link>
                                 </div>
-                                <div className=" pt-2 d-none d-md-block" href="#">
+                                <div className=" pt-2 d-none d-md-block" >
                                     <Link href="#">
                                         <a className="nav-link frontpageIconsText ">Tilbud</a>
                                     </Link>
                                 </div>
-                                <div className=" px-2 pt-2 d-none d-md-block" href="#">
-                                    <Link href="#">
+                                <div className=" px-2 pt-2 d-none d-md-block">
+                                    <Link href="merkeside">
                                         <a className="nav-link frontpageIconsText">Merker</a>
                                     </Link>
                                 </div>
-                                <div className=" pt-2 d-none d-md-block" href="#">
-                                    <Link href="#">
+                                <div className=" pt-2 d-none d-md-block">
+                                    <Link href="klikkOgHent">
                                         <a className="nav-link frontpageIconsText">Klikk og Hent</a>
                                     </Link>
                                 </div>
@@ -170,7 +170,7 @@ export const MyHeader = () => {
 
 
                     </div>
-                </Media>
+                </Media >
             </MediaContextProvider >
         );
     }
@@ -181,8 +181,7 @@ export const MyHeader = () => {
 export const NewsLetter = () => {
 
     const subscribeToNewsletter = () => {
-        // register input from inputfield + check if checkbox is checked. Presist email to db
-        //console.log("Subscribe to newsletter here")
+
     };
 
     return (
