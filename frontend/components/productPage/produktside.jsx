@@ -15,6 +15,7 @@ import {
 import { calculatePrice, calculateCollectMePoints } from "../cookieHandler";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import Link from "next/link";
+import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 const Produktside = (props) => {
   var productContext = {
     id: props.productSide.id,
@@ -24,6 +25,8 @@ const Produktside = (props) => {
     image: props.productSide.image[0].url,
 
   };
+
+
 
   //Variables
   const [numberOfProducts, setNumberOfProducts] = useState(1);
@@ -41,7 +44,18 @@ const Produktside = (props) => {
   /** Adding to Cart END*/
 
   const collectMePoints = calculateCollectMePoints(productContext.price)
-  console.log(props.productSide.sub_categories[0].category.id)
+  const [heartColor, setheartColor] = useState("black");
+
+
+
+  const changeHeartcolorAndAddToFavorite = () => {
+    if (heartColor === "black") {
+      setheartColor("red");
+      addItemToFavorites(productContext)
+    } else {
+
+    }
+  }
   return (
     <div className="container">
       <div className="">
@@ -152,12 +166,14 @@ const Produktside = (props) => {
               <Row className="p-3">
                 <Col>
                   <Button
-                    onClick={() => addItemToFavorites(productContext)}
+                    onClick={() => changeHeartcolorAndAddToFavorite()}
                     className="bg-light border border-secondary text-dark p-2 w-100"
                   >
                     <Row>
                       <Col>
-                        <FaHeart className="black" />
+
+                        <FaHeart alt={"Hjerte"} color={heartColor} />
+
                       </Col>
                       <Col>Legg til i ønskelisten</Col>
                     </Row>
