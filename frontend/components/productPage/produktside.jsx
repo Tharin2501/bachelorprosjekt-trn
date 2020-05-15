@@ -75,11 +75,11 @@ const Produktside = (props) => {
           </Col>
           {/** Product title++ start */}
           <Col lg="6" xs="12" className="text-left overflow-auto w-50">
-            <h2>{productContext.name}</h2>
-            <h3>{props.productSide.Volume}</h3>
+            <h3>{productContext.name}</h3>  <h4>Volume: {props.productSide.Volume}</h4>
+
             <Row className="">
               <Col xs="6">
-                <h4>{productContext.price} kr</h4>
+                <h3>Pris: {productContext.price} kr</h3>
               </Col>
               <Col>
                 <h3>

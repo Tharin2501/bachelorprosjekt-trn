@@ -22,7 +22,7 @@ const ProduktTab = props => {
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
   };
-
+  // clinque liqguid face soap ingrdients
   return (
     <div className="h-100">
       <Nav tabs className="w-auto m-3 mx-auto">
@@ -89,7 +89,7 @@ const ProduktTab = props => {
         <TabPane tabId="2">
           <Row className="p-3">
             <Col>
-              {props.product.ingredients}
+              Water\Aqua\Eau, Caprylic/Capric Triglyceride, Glycerin, Olea Europaea (Olive) Fruit Oil, Butylene Glycol, Phenyl Trimethicone, Cucumis Sativus (Cucumber) Fruit Extract, Hordeum Vulgare (Barley) Extract\Extrait D'Orge, Helianthus Annuus (Sunflower) Seedcake, Dimethicone, Sodium Hyaluronate, Tocopheryl Acetate, Dipotassium Glycyrrhizate, Cholesterol, Sucrose Stearate, Sucrose, Caffeine, Ppg-20 Methyl Glucose Ether, Urea, Sodium Pca, Linoleic Acid, Propylene Glycol Dicaprate, Pentylene Glycol, Polyquaternium-51, Trehalose, Caprylyl Glycol, Ammonium Acryloyldimethyltaurate/Vp Copolymer, Phenoxyethanol
             </Col>
           </Row>
         </TabPane>
