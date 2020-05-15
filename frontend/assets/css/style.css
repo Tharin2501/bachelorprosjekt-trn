@@ -41,8 +41,8 @@ img:hover {
 
 /* product page */
 .productImageSize{
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 300px;
+  max-height: 300px;
 }
 .sm-font {
   font-size: 12px;
