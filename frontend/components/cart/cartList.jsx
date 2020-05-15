@@ -42,18 +42,18 @@ const CartList = () => {
 
 
     return (
-        <div className="container px-4 py-5 mx-auto">
-            <div className="row d-flex justify-content-center">
-                <div className="col-5">
+        <div className="container px-5 py-5 mx-auto">
+            <div className="row  justify-content-center">
+                <div className="col-7">
                     <h4 className="heading">Handlekurv</h4>
                 </div>
-                <div className="col-7">
+                <div className="col-5">
                     <div className="row">
-                        <div className="col-6">
-                            <h6 className="mt-2">Antall</h6>
+                        <div className="col-8">
+                            <h6 className="mt-2 ">Antall</h6>
                         </div>
-                        <div className="col-5">
-                            <h6 className="mt-2 ml-5 pl-2">Pris</h6>
+                        <div className="col-4">
+                            <h6 className="mt-2">Pris</h6>
                         </div>
 
                     </div>

@@ -116,8 +116,8 @@ button.add-btn{
 /*END favoritesCard*/
 
 .pic1 {
-  max-width: 200px; /* 90% */
-  max-height: 200px; /* null */
+  width: 250px; /* 90% */
+  height: 250px; /* null */
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -220,8 +220,9 @@ font-size: 14px;
 
 .book,
 .book-img {
-    max-width: 7.75rem;
-    max-height: 7.75rem;
+    max-width: 7.5rem;
+
+    max-height: 10rem;
 }
 
 .book {
@@ -362,7 +363,7 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
   text-align: center;
-  
+
 }
 /* margin: 0.313rem;*/
 
@@ -372,8 +373,8 @@ div.scrollmenu {
   text-align: center;
   padding: 0.875rem;
   text-decoration: none;
-  
- 
+
+
 }
 /* padding 14 px*/
 
