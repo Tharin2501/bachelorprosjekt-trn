@@ -92,7 +92,11 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
         }
 
     }
-    const openNav = () => {
+
+
+    /* Filter menu
+
+        const openNav = () => {
         document.getElementById("filterMenu").style.width = "250px";
     }
     const closeNav = () => {
@@ -100,31 +104,37 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
         typeToSet("category")
         listToSet(categories)
     }
-
-
+                <div id="filterMenu" className="sidenav">
+                    <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                    <div className="col-md-3 order-md-first">
+                        <div id="filters" className="d-md-block">
+                            {typesCheckboxes.map((TypeCheckbox) => {
+                                return (
+                                    <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={TypeCheckbox.id}{...TypeCheckbox} />
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <Button onClick={openNav}>Filter</Button>
+    */
 
     return (
         <React.Fragment>
-            <div id="filterMenu" className="sidenav">
-                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                <div className="col-md-3 order-md-first">
-                    <div id="filters" className="d-md-block">
-                        {typesCheckboxes.map((TypeCheckbox) => {
-                            return (
-                                <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={TypeCheckbox.id}{...TypeCheckbox} />
-                            )
-                        })}
-                    </div>
-                </div>
+
+
+            <h3 className="text-center">{categoryName}</h3>
+            <div class="container">
+                <p className="text-center">
+
+                    {description}
+                </p>
             </div>
-            <Button onClick={openNav}>Filter</Button>
-            <h3>{categoryName}</h3>
-            <p>
 
-                {description}
-            </p>
-
-            <div className="col-md-9 order-md-last">
+            <h3 className="horizontal-line1">
+                <span className="horizontal-line2">Produkter</span>
+            </h3>
+            <div className="">
                 <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
                     {({ data: { subCategories } }) => {
                         return (

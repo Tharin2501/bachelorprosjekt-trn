@@ -39,24 +39,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
 
-    // general
-    const [generalCheckboxes, setGenerealCheckboxes] = useState(
-
-
-    )
-
-
-
-    // price
-    const [priceCheckboxes, setPriceCheckboxes] = useState(
-        [{ id: 1, value: "vin_rodvin", displayValue: "Under 200kr", isChecked: false },
-        { id: 2, value: "vin_hvitvin", displayValue: "200kr-500kr", isChecked: false },
-        { id: 3, value: "vin_hvitvin", displayValue: "500kr-1000kr", isChecked: false },
-        { id: 4, value: "vin_hvitvin", displayValue: "Over 1000kr", isChecked: false },
-        ]
-
-    )
-
     // Subcategories
     const [subcategoryCheckboxes, setsubcategoryCheckboxes] = useState([]
 
@@ -138,8 +120,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
         createSubCategoryCheckboxes()
 
 
-        //createTypesCheckboxes()
-        //getTypeOfProductsList()
 
 
 
@@ -304,16 +284,6 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
     }
 
 
-    // legge til  typisk norsk, vegansk..
-    /* failcheck
-      //console.log(productsArray)
-                            for (var product of productsArray) {
-                                if (product.brand == null) {
-                                    console.log(product.ProductName)
-                                }
-                            }
-                            */
-
     return (
 
         <React.Fragment>
@@ -321,26 +291,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
                     <Collapse isOpen={isOpen}>
-                        {/* General pris */}
-                        <div className="col-md-1">
-                            <Button type="button" onClick={toggleGeneralList}>Pris</Button>
-                            <Collapse isOpen={generalListIsOpen}>
-                                <div id="filters" className="d-md-block">
-                                    {priceCheckboxes.map((object) => {
-                                        return (
 
-
-
-                                            <CheckBox handleCheckChieldElement={handleCheckChieldElement} key={object.id}{...object} />
-
-                                        )
-                                    })}
-
-                                </div>
-
-                            </Collapse>
-                        </div>
-                        {/* General END */}
 
                         {/* Produktkat Start */}
                         <div className="col-md-1">
@@ -392,9 +343,11 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
                 </div>
             </div>
 
+            <h3 className="horizontal-line1">
+                <span className="horizontal-line2">Alle produkter</span>
+            </h3>
 
-
-            <Button onClick={openNav}>Filter</Button>
+            <Button size="lg" block onClick={openNav}>Filter</Button>
             <p>
                 {categoriesListInput[0].description}
 
@@ -402,7 +355,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
             <div className="row">
 
-                <div className="col-md-9 order-md-last">
+                <div className="">
                     <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
                         {({ data: { categories } }) => {
                             const productsArray = getProducts(categories)

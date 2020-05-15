@@ -33,11 +33,10 @@ export const DisplayAllArticlesFrontpage = () => {
                 <div className="row justify-content-center">
                     <Query query={ARTICLES_QUERY_WITHLIMIT}>
                         {({ data: { articles } }) => {
-                            console.log(articles);
                             return (
                                 articles.map((article) => {
                                     return (
-                                        <div key={article.id} className="col-lg-sm-8 px-5">
+                                        <div key={article.id} className="col-lg-sm-6 px-5">
 
                                             <div className="card">
 
@@ -50,7 +49,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                                 <div className="card-body">
 
                                                     <div className="card-body-header">
-                                                        <h1>{article.title}</h1>
+                                                        <h2>{article.title}</h2>
                                                     </div>
                                                     <div className="">
                                                         <div className="card-body-description pt-3 mt-3">

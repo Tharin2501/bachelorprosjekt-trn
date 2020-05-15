@@ -4,6 +4,7 @@ import GETCATEGORIES_QUERY from "../../apollo/queries/Category/GetCategories.js"
 import Query from "../../components/query"
 import HamburgermenuItem from "../../components/hamburgermenu/hamburgermenuItem.jsx"
 import { useRouter } from 'next/router'
+import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 
 const HamburgermenuList = forwardRef((props, ref) => {
 
@@ -56,13 +57,37 @@ const HamburgermenuList = forwardRef((props, ref) => {
     })
 
     const handleBrandClick = () => {
-
+        closeNav();
         router.push("/merkeside")
     }
     const handlearticlesClick = () => {
-
+        closeNav();
         router.push("/artikler")
     }
+    // for main cat in sub menu
+    const closeNavAndChangeURL = () => {
+        handleSubcategoryMainCategoryClick();
+        document.getElementById("mySidenav").style.width = "0";
+        setListToDefault()
+    }
+
+    const closeNavAndChangeURLForSubcategoryIcon = (subCategoryName) => {
+        handleSubcategoryClick(subCategoryName);
+        document.getElementById("mySidenav").style.width = "0";
+        setListToDefault()
+    }
+
+    const handleSubcategoryMainCategoryClick = () => {
+
+        router.push({ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } })
+    }
+
+    const handleSubcategoryClick = (subCategoryName) => {
+
+        router.push({ pathname: "/subCategory", query: { id: subCategoryName } })
+    }
+
+
 
     if (type == "category") {
         return (
@@ -70,31 +95,33 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
             <ul>
                 <li className="nav_submenu-item">
-                    <div onClick={() => { handlearticlesClick() }}>
+
+                    <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
-                            <img className="myImg" src={"/images/artikler2.0.svg"} alt="" />
+                            <img className="myImg" src={"/images/artikler.png"} alt="" />
                         </div>
 
-                        <h1 className="nav-link">{"se artikler"}</h1>
+                        <p className="nav-link">{"Artikler"}</p>
 
                     </div>
+
                 </li>
                 <li className="nav_submenu-item">
-                    <div onClick={() => { handleBrandClick() }}>
+                    <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
 
-                        <div className="myImg">
-                            <img className="myImg" src={"/images/brandsikon.svg"} alt="" />
+                        <div className="myImg">{/*"/images/brandsikon.svg" */}
+                            <img className="myImg" src={"/images/brands.png"} alt="" />
                         </div>
 
-                        <h1 className="nav-link">{"Merker"}</h1>
+                        <p className="nav-link">{"Merker"}</p>
 
                     </div>
                 </li>
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
-                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow}>
 
                             </HamburgermenuItem>
                         </li>
@@ -105,16 +132,15 @@ const HamburgermenuList = forwardRef((props, ref) => {
         )
 
     } else {
-
         return (
 
 
             <ul>
                 <li className="nav_submenu-item">
 
-                    <div onClick={() => (setListToDefault())}>
+                    <div tabindex="0" onClick={() => (setListToDefault())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? setListToDefault() : null }}>
                         <div className="myImg">
-                            <img className="myImg" src={"/images/icons/arrowLeftpng.png"} alt="" />
+                            <img className="myImg" src={"/images/arrowLeftpng.png"} alt="" />
                         </div>
 
                         <p className="nav-link">Gå tilbake</p>
@@ -123,32 +149,36 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                 </li>
 
-
+                {/* Subcategoryies MAINCATEGORY Button*/}
                 <li className="nav_submenu-item">
-                    <Link href={{ pathname: "/category", query: { id: hamburgerMenuItemShowAll.StrapiName } }}>
-                        <div onClick={() => (closeNav())}>
-                            <div className="myImg">
-                                <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
-                            </div>
 
-                            <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
 
+                    <div tabindex="0" onClick={() => (closeNavAndChangeURL())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? closeNavAndChangeURL() : null }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
                         </div>
-                    </Link>
-                </li>
 
+                        <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
+
+                    </div>
+                </li>
+                {/* Subcategories icons*/}
                 {categoriesToShow.map((category) => {
                     return (
                         <li className="nav_submenu-item">
 
-                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} closeNav={closeNav}>
+                            <HamburgermenuItem category={category} type={type} listFunction={changeListToShow} categoryClickFunction={closeNavAndChangeURLForSubcategoryIcon} >
 
                             </HamburgermenuItem>
                         </li>
                     )
                 })}
 
-            </ul>
+
+
+
+            </ul >
         )
 
     }
@@ -160,3 +190,20 @@ const HamburgermenuList = forwardRef((props, ref) => {
 })
 
 export default HamburgermenuList
+
+/*
+    const MaincatInSub = React.forwardRef(({ onClick, href }, ref) => {
+        return (
+            <a href={href} onClick={onClick} ref={ref}>
+                <div tabindex="0" onClick={() => (closeNav())} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? closeNav() : null }}>
+                    <div className="myImg">
+                        <img className="myImg" src={"https://trnbackend.herokuapp.com" + hamburgerMenuItemShowAll.image} alt="" />
+                    </div>
+
+                    <p className="nav-link">{hamburgerMenuItemShowAll.categoryName}</p>
+
+                </div>
+            </a>
+        )
+    })
+*/
