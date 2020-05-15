@@ -22,7 +22,9 @@ const PRODUCT_QUERY = gql`
         image{url}
         category{
           id
+          StrapiName
           name
+          
         }
         
       }

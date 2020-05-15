@@ -41,7 +41,7 @@ const Produktside = (props) => {
   /** Adding to Cart END*/
 
   const collectMePoints = calculateCollectMePoints(productContext.price)
-
+  console.log(props.productSide.sub_categories[0].category.id)
   return (
     <div className="container">
       <div className="">
@@ -52,10 +52,10 @@ const Produktside = (props) => {
               <a href="/">Forsiden</a>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <Link href={{ pathname: "/category", query: { id: props.productSide.sub_categories[0].category.id } }}>
+              <Link href={{ pathname: "/category", query: { id: props.productSide.sub_categories[0].category.StrapiName } }}>
 
+                <a >{props.productSide.sub_categories[0].category.name}</a>
 
-                <a tabIndex="0" className="category">{props.productSide.sub_categories[0].categoryName}</a>
 
               </Link>
 
@@ -63,7 +63,14 @@ const Produktside = (props) => {
 
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <a href="#">{props.productSide.sub_categories[0].category.name}</a>
+
+              <Link href={{ pathname: "/subCategory", query: { id: props.productSide.sub_categories[0].StrapiName } }}>
+
+                <a >{props.productSide.sub_categories[0].categoryName}</a>
+
+
+              </Link>
+
             </BreadcrumbItem>
             <BreadcrumbItem active>{productContext.name}</BreadcrumbItem>
           </Breadcrumb>
