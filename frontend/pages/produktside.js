@@ -9,6 +9,7 @@ const productSide = () => {
   return (
     <Query query={PRODUCT_QUERY} id={router.query.id}>
       {({ data: { product } }) => {
+
         return (
 
           <Produktside productSide={product}></Produktside>

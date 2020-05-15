@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 import { calculatePrice, calculateCollectMePoints } from "../cookieHandler";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
-
+import Link from "next/link";
 const Produktside = (props) => {
   var productContext = {
     id: props.productSide.id,
@@ -22,6 +22,7 @@ const Produktside = (props) => {
     quantity: 1,
     price: props.productSide.pris,
     image: props.productSide.image[0].url,
+
   };
 
   //Variables
@@ -48,18 +49,23 @@ const Produktside = (props) => {
         <div>
           <Breadcrumb>
             <BreadcrumbItem>
-              <a href="/">Hjem</a>
+              <a href="/">Forsiden</a>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <a href="#">Alkohol</a>
+              <Link href={{ pathname: "/category", query: { id: props.productSide.sub_categories[0].category.id } }}>
+
+
+                <a tabIndex="0" className="category">{props.productSide.sub_categories[0].categoryName}</a>
+
+              </Link>
+
+
+
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <a href="#">Vin</a>
+              <a href="#">{props.productSide.sub_categories[0].category.name}</a>
             </BreadcrumbItem>
-            <BreadcrumbItem>
-              <a href="#">Rødvin</a>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>Nåværende rødvin</BreadcrumbItem>
+            <BreadcrumbItem active>{productContext.name}</BreadcrumbItem>
           </Breadcrumb>
         </div>
         <Row>
@@ -148,7 +154,21 @@ const Produktside = (props) => {
                       </Col>
                       <Col>Legg til i ønskelisten</Col>
                     </Row>
+
                   </Button>
+                </Col>
+              </Row>
+              <Row>
+
+                <Col>
+                  <Link href={{ pathname: "/merkesidedetalj", query: { id: props.productSide.brand.id } }}>
+                    <a tabIndex="0" className="category" >
+
+                      Se alt fra {props.productSide.brand.name}
+
+                    </a>
+
+                  </Link>
                 </Col>
               </Row>
             </div>
