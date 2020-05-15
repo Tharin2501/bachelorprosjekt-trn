@@ -110,10 +110,6 @@ const SubCategoryBrandcomponent = (props) => {
 
                                     <div className="container-fluid">
                                         <div className="row justify-content-center py-5">
-
-
-
-
                                             <div className="scrollmenu">
                                                 <div className="navitem">
 
