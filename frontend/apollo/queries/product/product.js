@@ -16,17 +16,21 @@ const PRODUCT_QUERY = gql`
         url
       }
       sub_categories{
+        categoryName
         StrapiName
         description
         image{url}
-        category{name}
+        category{
+          id
+          StrapiName
+          name
+          
+        }
         
       }
-      type_of_products{
+      brand{
         id
-        StrapiName
-      	TypeOfProductName
-        
+        name
       }
     }
   }

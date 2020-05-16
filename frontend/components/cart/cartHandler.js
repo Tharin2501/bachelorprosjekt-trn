@@ -19,7 +19,8 @@ export const changeNumberOfProducts = (value, count) => {
         if (count < 99) {
             return count + 1
         } else {
-            alert("U cant add more then 99 products")
+            alert("Man kan ikke legge til mer enn 99 av samme produkt")
+            return count;
         }
 
     } else {
@@ -27,7 +28,8 @@ export const changeNumberOfProducts = (value, count) => {
             return count - 1
         } else {
 
-            alert("U cant have minus products")
+
+            return 1;
         }
     }
 }
