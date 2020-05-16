@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Row, Col, Breadcrumb, BreadcrumbItem, Popover, PopoverHeader, PopoverBody } from "reactstrap";
+import { Button, Row, Col, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import ProduktTab from "../ProduktTab";
 import {
   addtoCart,
@@ -15,7 +15,8 @@ import {
 import { calculatePrice, calculateCollectMePoints } from "../cookieHandler";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import Link from "next/link";
-import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
+import CartModalCard from "../CartModalCard"
+import { useRouter } from 'next/router'
 const Produktside = (props) => {
   var productContext = {
     id: props.productSide.id,
@@ -25,6 +26,7 @@ const Produktside = (props) => {
     image: props.productSide.image[0].url,
 
   };
+
 
 
 
@@ -40,12 +42,13 @@ const Produktside = (props) => {
   const addToShoppingCartAndRecalcuatePrice = () => {
     addtoCart(productContext, numberOfProducts);
     changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+    toggle();
   };
   /** Adding to Cart END*/
 
   const collectMePoints = calculateCollectMePoints(productContext.price)
   const [heartColor, setheartColor] = useState("black");
-
+  const router = useRouter()
 
 
   const changeHeartcolorAndAddToFavorite = () => {
@@ -57,9 +60,20 @@ const Produktside = (props) => {
     }
   }
 
-  const [popoverOpen, setPopoverOpen] = useState(false);
+  const {
+    buttonLabel,
+    className
+  } = props;
 
-  const toggle = () => setPopoverOpen(!popoverOpen);
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
+
+  const goToCart = () => {
+    router.push("/shoppingcart")
+  }
+
+
   return (
     <div className="container">
       <div className="">
@@ -187,13 +201,17 @@ const Produktside = (props) => {
 
                 </Col>
                 <div>
-                  <Button id="Popover1" type="button">
-                    Launch Popover
-      </Button>
-                  <Popover placement="bottom" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
-                    <PopoverHeader>Popover Title</PopoverHeader>
-                    <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
-                  </Popover>
+
+                  <Modal isOpen={modal} toggle={toggle} className={className}>
+                    <ModalHeader toggle={toggle}>Produktet er nå lagt i din handlekurven</ModalHeader>
+                    <ModalBody>
+                      <CartModalCard productContext={productContext}></CartModalCard>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="primary" onClick={toggle}>Avbryt</Button>{' '}
+                      <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
+                    </ModalFooter>
+                  </Modal>
                 </div>
               </Row>
               <Row>
