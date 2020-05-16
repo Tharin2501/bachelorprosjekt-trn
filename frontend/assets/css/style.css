@@ -263,7 +263,15 @@ font-size: 14px;
 }
 
 /* CAROUSEL - FRONTPAGE */
+.caruselSizeController{
 
+  max-height: 700px;
+}
+/*
+.caruselImageController{
+  width:100%;
+}
+*/
 a.carousel-control-next, a.carousel-control-prev {
     position: absolute;
     top: 50%;

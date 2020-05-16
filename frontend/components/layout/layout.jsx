@@ -139,7 +139,7 @@ export const MyHeader = () => {
                                         <div className="pt-2 nav-link hamburgerIconMargin">
                                             <MyDrawer hamburgerIconColor={"black"} />
                                         </div>
-                                        <div className="text-nowrap col-sm   ">
+                                        <div className="text-nowrap col-sm  pt-2 ">
                                             <Link href="artikler">
                                                 <a className="nav-link frontpageIconsText">Artikler</a>
                                             </Link>
