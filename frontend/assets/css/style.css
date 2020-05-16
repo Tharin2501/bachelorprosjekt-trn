@@ -419,6 +419,15 @@ div.scrollmenu {
   height: auto;
 }
 
+
+.navbarColor{
+  background-color: #E3F2FD;
+}
+.hamburgerIconMargin{
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
 .featured-article {
 
 	height: 50em;

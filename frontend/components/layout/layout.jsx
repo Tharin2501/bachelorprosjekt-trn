@@ -9,7 +9,8 @@ import {
     InputGroupAddon,
     InputGroupText,
     Input,
-    Navbar
+    Navbar,
+    Container
 } from "reactstrap";
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
@@ -130,38 +131,43 @@ export const MyHeader = () => {
                         </Navbar>
 
                         <div>
-                            <Navbar style={divStyle} >
-                                <div className=" pt-2 nav-link">
-                                    <MyDrawer hamburgerIconColor={"black"} />
-                                </div>
-                                <div className="d-none d-md-block">
-                                    <Link href="artikler">
-                                        <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
-                                    </Link>
-                                </div>
-                                <div className=" pt-2 d-none d-md-block" >
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText ">Tilbud</a>
-                                    </Link>
-                                </div>
-                                <div className=" px-2 pt-2 d-none d-md-block">
-                                    <Link href="merkeside">
-                                        <a className="nav-link frontpageIconsText">Merker</a>
-                                    </Link>
-                                </div>
-                                <div className=" pt-2 d-none d-md-block">
-                                    <Link href="klikkOgHent">
-                                        <a className="nav-link frontpageIconsText">Hudpleievelger</a>
-                                    </Link>
-                                </div>
-                                <div className=" pt-2 d-none d-md-block">
-                                    <Link href="klikkOgHent">
-                                        <a className="nav-link frontpageIconsText">Klikk og Hent</a>
-                                    </Link>
-                                </div>
+                            <nav class="navbar-nav nav-fill navbarColor">
+                                <div className={"container-fluid"}>
+                                    <div className="row justify-content-center  ">
 
 
-                            </Navbar>
+                                        <div className=" col  pt-2 nav-link hamburgerIconMargin">
+                                            <MyDrawer hamburgerIconColor={"black"} />
+                                        </div>
+                                        <div className="text-nowrap col  pt-2 ">
+                                            <Link href="artikler">
+                                                <a className="nav-link frontpageIconsText">Artikler</a>
+                                            </Link>
+                                        </div>
+                                        <div className="col pt-2" >
+                                            <Link href="#">
+                                                <a className="nav-link frontpageIconsText ">Tilbud</a>
+                                            </Link>
+                                        </div>
+                                        <div className="col px-2 pt-2 ">
+                                            <Link href="merkeside">
+                                                <a className="nav-link frontpageIconsText">Merker</a>
+                                            </Link>
+                                        </div>
+                                        <div className="text-nowrap col pt-2">
+                                            <Link href="klikkOgHent">
+                                                <a className="nav-link frontpageIconsText">Hudpleievelger</a>
+                                            </Link>
+                                        </div>
+                                        <div className="text-nowrap col pt-2">
+                                            <Link href="klikkOgHent">
+                                                <a className="nav-link frontpageIconsText">Klikk og Hent</a>
+                                            </Link>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
                         </div>
 
 
