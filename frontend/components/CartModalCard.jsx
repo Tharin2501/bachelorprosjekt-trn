@@ -33,7 +33,7 @@ const CartModalCard = (props) => {
 
 
                     <div className="ml-2">
-                        <button className="text-nowrap add-btn"> Legg til i favoritter</button>
+                        <button className="text-nowrap add-btn" onClick={() => props.addToFavoriteFunction()}> Legg til i favoritter</button>
                     </div>
                 </div>
             </div>

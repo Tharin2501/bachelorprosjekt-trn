@@ -206,7 +206,7 @@ const Produktside = (props) => {
                     <ModalHeader toggle={toggle}>Produktet er nå lagt i din handlekurven</ModalHeader>
                     <ModalBody>
 
-                      <CartModalCard productContext={productContext}></CartModalCard>
+                      <CartModalCard productContext={productContext} addToFavoriteFunction={changeHeartcolorAndAddToFavorite}></CartModalCard>
                     </ModalBody>
                     <ModalFooter>
                       <Button color="primary" onClick={toggle}>Avbryt</Button>{' '}
