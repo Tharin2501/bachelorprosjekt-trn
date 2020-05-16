@@ -9,32 +9,37 @@ import Link from "next/link";
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 import { calculatePrice } from "../cookieHandler";
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import CartModalCard from "../CartModalCard"
 var jsonObj = [];
 jsonObj = JSON.stringify(jsonObj);
 
-const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
+const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }, props) => {
 
-
+  const {
+    buttonLabel,
+    className
+  } = props;
 
   // change color of heartfunction
   const [heartColor, setheartColor] = useState("black");
   const [numberOfProducts, setNumberOfProducts] = useState(1);
 
   // to pass around to cart
-  const createProductContext = () => {
-    const productContext = {
-      id: productcard.id,
-      name: productcard.ProductName,
-      quantity: 1,
-      price: productcard.pris,
-      image: productcard.image[0].url,
 
-    };
-    return productContext;
-  }
+  const productContext = {
+    id: productcard.id,
+    name: productcard.ProductName,
+    quantity: 1,
+    price: productcard.pris,
+    image: productcard.image[0].url,
+
+  };
+
+
   const addtoFavorites = () => {
     changeHeartcolor();
-    const productContext = createProductContext();
+    //const productContext = createProductContext();
     addItemToFavorites(productContext);
   }
 
@@ -55,11 +60,23 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
   };
 
   const addToShoppingCartAndRecalcuatePrice = () => {
-    const productContext = createProductContext();
+    // const productContext = createProductContext();
     addtoCart(productContext, numberOfProducts);
     changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
+    toggleModal();
   };
   /** Adding to Cart END*/
+  /* MODAL*/
+
+
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => setModal(!modal);
+
+  const goToCart = () => {
+    router.push("/shoppingcart")
+  }
+
 
   return (
     <div className="card  card-1">
@@ -131,7 +148,17 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }) => {
       >
         Legg i handlepose
       </button>
+      <Modal isOpen={modal} toggle={toggleModal} className={className}>
+        <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
+        <ModalBody>
 
+          <CartModalCard productContext={productContext} addToFavoriteFunction={addtoFavorites}></CartModalCard>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
+          <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
+        </ModalFooter>
+      </Modal>
     </div >
   );
 };
