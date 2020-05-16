@@ -205,6 +205,7 @@ const Produktside = (props) => {
                   <Modal isOpen={modal} toggle={toggle} className={className}>
                     <ModalHeader toggle={toggle}>Produktet er nå lagt i din handlekurven</ModalHeader>
                     <ModalBody>
+
                       <CartModalCard productContext={productContext}></CartModalCard>
                     </ModalBody>
                     <ModalFooter>
