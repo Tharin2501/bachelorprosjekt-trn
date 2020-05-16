@@ -1,6 +1,6 @@
 body {
     color: #000;
-    overflow-x: hidden;
+  
     height: 100%;
     background-color: #f9f9f9;
     background-repeat: no-repeat;
@@ -360,7 +360,7 @@ a.carousel-control-next:hover, a.carousel-control-prev:hover {
   flex-wrap: nowrap;
 }
 div.scrollmenu {
-  overflow: auto;
+  overflow-x:auto;
   white-space: nowrap;
   text-align: center;
 
