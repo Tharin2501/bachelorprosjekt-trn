@@ -133,33 +133,33 @@ export const MyHeader = () => {
                         <div>
                             <nav class="navbar-nav nav-fill navbarColor">
                                 <div className={"container-fluid"}>
-                                    <div className="row justify-content-center  ">
+                                    <div className="row justify-content-center ">
 
 
-                                        <div className=" col  pt-2 nav-link hamburgerIconMargin">
+                                        <div className="pt-2 nav-link hamburgerIconMargin">
                                             <MyDrawer hamburgerIconColor={"black"} />
                                         </div>
-                                        <div className="text-nowrap col  pt-2 ">
+                                        <div className="text-nowrap col-sm   ">
                                             <Link href="artikler">
                                                 <a className="nav-link frontpageIconsText">Artikler</a>
                                             </Link>
                                         </div>
-                                        <div className="col pt-2" >
+                                        <div className="col-sm pt-2" >
                                             <Link href="#">
                                                 <a className="nav-link frontpageIconsText ">Tilbud</a>
                                             </Link>
                                         </div>
-                                        <div className="col px-2 pt-2 ">
+                                        <div className="col-sm px-2 pt-2 ">
                                             <Link href="merkeside">
                                                 <a className="nav-link frontpageIconsText">Merker</a>
                                             </Link>
                                         </div>
-                                        <div className="text-nowrap col pt-2">
+                                        <div className="text-nowrap col-sm pt-2">
                                             <Link href="klikkOgHent">
                                                 <a className="nav-link frontpageIconsText">Hudpleievelger</a>
                                             </Link>
                                         </div>
-                                        <div className="text-nowrap col pt-2">
+                                        <div className="text-nowrap col-sm pt-2">
                                             <Link href="klikkOgHent">
                                                 <a className="nav-link frontpageIconsText">Klikk og Hent</a>
                                             </Link>
