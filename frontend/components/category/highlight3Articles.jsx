@@ -29,7 +29,7 @@ const Highlight3Articles = (props) => {
                                     </h6>
                                 </div>
                                 <Link href="/hudpleievelger" >
-                                    <Button className="outlined_btn" color="info">Klikk her for å ta
+                                    <Button className="outlined_btn" color={"info"}>Klikk her for å ta
                                         testen</Button>
                                 </Link>
                             </div>

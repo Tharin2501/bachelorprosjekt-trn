@@ -99,6 +99,45 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                         <div className="myImg">
+                            <img className="myImg" src={"/images/hudpleievelger.png"} alt="" />
+                        </div>
+
+                        <p className="nav-link">{"Hudpleievelger"}</p>
+
+                    </div>
+
+                </li>
+                <li className="nav_submenu-item">
+
+                    <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"/images/klikkhent.png"} alt="" />
+                        </div>
+
+                        <p className="nav-link">{"klikk og hent"}</p>
+
+                    </div>
+
+                </li>
+                <li className="nav_submenu-item">
+
+                    <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
+
+                        <div className="myImg">
+                            <img className="myImg" src={"/images/tilbud.png"} alt="" />
+                        </div>
+
+                        <p className="nav-link">{"Tilbud"}</p>
+
+                    </div>
+
+                </li>
+                <li className="nav_submenu-item">
+
+                    <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
+
+                        <div className="myImg">
                             <img className="myImg" src={"/images/artikler.png"} alt="" />
                         </div>
 

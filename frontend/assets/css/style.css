@@ -7,6 +7,10 @@ body {
    
 }
 
+.btn-info{
+  color: white;
+  background-color: #255661 !important;
+}
 a {
     text-decoration: none;
 }
@@ -23,8 +27,8 @@ h3 {
 
 .iconsNavbar{
   transform: scale(1.5);
+ 
 }
-
 
 img:hover {
   opacity: 1;
