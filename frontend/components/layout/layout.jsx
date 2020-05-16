@@ -151,19 +151,15 @@ export const MyHeader = () => {
                                 </div>
                                 <div className=" pt-2 d-none d-md-block">
                                     <Link href="klikkOgHent">
+                                        <a className="nav-link frontpageIconsText">Hudpleievelger</a>
+                                    </Link>
+                                </div>
+                                <div className=" pt-2 d-none d-md-block">
+                                    <Link href="klikkOgHent">
                                         <a className="nav-link frontpageIconsText">Klikk og Hent</a>
                                     </Link>
                                 </div>
 
-                                <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Tax free & me</a>
-                                    </Link></div>
-                                <div className="pt-2 d-none d-md-block" href="#">
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Kvote og kundeservice</a>
-                                    </Link>
-                                </div>
 
                             </Navbar>
                         </div>

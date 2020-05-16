@@ -209,7 +209,7 @@ const Produktside = (props) => {
                       <CartModalCard productContext={productContext} addToFavoriteFunction={changeHeartcolorAndAddToFavorite}></CartModalCard>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="primary" onClick={toggle}>Avbryt</Button>{' '}
+                      <Button color="primary" onClick={toggle}>Fortsett å handle</Button>
                       <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
                     </ModalFooter>
                   </Modal>

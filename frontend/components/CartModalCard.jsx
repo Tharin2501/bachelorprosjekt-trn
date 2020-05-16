@@ -11,7 +11,7 @@ const CartModalCard = (props) => {
     return (
 
 
-        <div className="row border-top">
+        <div className="row">
             <div className="col-7">
                 <div className="row justify-content-center">
                     <div className="book"> <img src={"https://trnbackend.herokuapp.com" + props.productContext.image} alt={""} className="book-img"></img></div>
