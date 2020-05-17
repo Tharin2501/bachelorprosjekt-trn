@@ -14,7 +14,7 @@ export const DisplayAllArticles = () => {
                         return (
                             <div key={article.id} className="col-lg-sm-6 mx-5 px-5">
 
-                                <div className="card">
+                                <div className="card" tabIndex="1">
 
                                     <div className="mycard-header">
                                         <img
@@ -27,7 +27,7 @@ export const DisplayAllArticles = () => {
                                         <div className="card-body-header">
                                             <h1>{article.title}</h1>
                                         </div>
-                                        <div className="">
+                                        <div>
                                             <div className="card-body-description pt-3 mt-3">
                                                 <p>
                                                     {article.introduction}

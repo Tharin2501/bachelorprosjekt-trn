@@ -38,7 +38,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                     return (
                                         <div key={article.id} className="col-lg-sm-6 px-5">
 
-                                            <div className="card">
+                                            <div className="card" tabIndex="1">
 
                                                 <div className="mycard-header">
                                                     <img
