@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 
-const CartModalCardFavorite = (props) => {
-
-
-
-    //const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
-
+const CartModalCard = (props) => {
 
 
     return (
@@ -33,7 +28,7 @@ const CartModalCardFavorite = (props) => {
 
 
                     <div className="ml-2">
-                        <button className="add-btn" onClick={props.goToCart} > Gå til Handlekurv</button>
+                        <button className="add-btn" onClick={() => props.addToFavoriteFunction()}> Legg til i favoritter</button>
                     </div>
                 </div>
             </div>
@@ -43,4 +38,4 @@ const CartModalCardFavorite = (props) => {
     );
 }
 
-export default CartModalCardFavorite;
+export default CartModalCard;
