@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { addtoCart } from "../cart/cartHandler"
 import Link from "next/link";
 import Cookie from "js-cookie"
+import { useRouter } from "next/router";
+import CartModalCardFavorite from "../cartModalCardFavorite"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const FavoritesCard = (props) => {
     const productContext = {
@@ -15,6 +18,21 @@ const FavoritesCard = (props) => {
 
     }
 
+    const {
+        buttonLabel,
+        className
+    } = props;
+
+    const router = useRouter();
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => setModal(!modal);
+
+    const goToCart = () => {
+        router.push("/shoppingcart")
+    }
+
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
@@ -22,6 +40,7 @@ const FavoritesCard = (props) => {
 
         addtoCart(productContext, numberOfProducts)
         props.newPriceFunction();
+        toggleModal();
     }
 
     return (
@@ -64,7 +83,17 @@ const FavoritesCard = (props) => {
 
 
             </div>
+            <Modal isOpen={modal} toggle={toggleModal} className={className}>
+                <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
+                <ModalBody>
 
+                    <CartModalCardFavorite productContext={productContext}></CartModalCardFavorite>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
+                    <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
+                </ModalFooter>
+            </Modal>
         </div>
 
     );

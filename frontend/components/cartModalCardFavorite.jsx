@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 
-const CartModalCard = (props) => {
+const CartModalCardFavorite = (props) => {
 
 
 
@@ -33,7 +33,7 @@ const CartModalCard = (props) => {
 
 
                     <div className="ml-2">
-                        <button className="add-btn" onClick={() => props.addToFavoriteFunction()}> Legg til i favoritter</button>
+                        <button className="add-btn" > <a href="/shoppingcart"> Gå til Handlekurv</a></button>
                     </div>
                 </div>
             </div>
@@ -43,4 +43,4 @@ const CartModalCard = (props) => {
     );
 }
 
-export default CartModalCard;
+export default CartModalCardFavorite;
