@@ -39,10 +39,11 @@ img:hover {
   color: #101622;
 }
 
-.product-page-bg {
-  background-color: #f9f9f9;
+/* product page */
+.productImageSize{
+  max-width: 300px;
+  max-height: 300px;
 }
-
 .sm-font {
   font-size: 12px;
 }
@@ -134,12 +135,13 @@ button.add-btn{
   padding: 20px;
   border-radius: 15px;
   margin: 50px 20px;
+  position: relative;
 }
 
 .card-1 {
   padding: 30px 30px 20px 30px !important;
   border: none;
-  height: 33rem;
+  height: 30rem;
   width: 20rem;
 }
 
@@ -202,11 +204,13 @@ div.row.px-3.justify-content-around{
 font-size: 14px;
 }
 
+
 .btn.btn-light{
   color: #fff;
   border-radius: 15px;
   font-weight: bold;
   background-color: #0b3954;
+  
 }
 
 .btn.btn-light:hover{
@@ -216,8 +220,9 @@ font-size: 14px;
 
 .book,
 .book-img {
-    max-width: 7.75rem;
-    max-height: 7.75rem;
+    max-width: 7.5rem;
+
+    max-height: 10rem;
 }
 
 .book {
@@ -737,3 +742,15 @@ div.scrollmenu {
 .link-to-condition{
   color: #003d85;
 }
+
+/* Brandpage*/
+.brandImage{
+  max-width: 330px;
+  max-width: 330px;
+  margin: auto;
+}
+
+light-font .breadcrumb-item + .breadcrumb-item::before {
+  color: #fff; }
+  .light-font .breadcrumb-item.active {
+  color: #cfd8dc; }

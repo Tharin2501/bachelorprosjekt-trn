@@ -7,8 +7,6 @@ import BRAND_QUERY from "../apollo/queries/brand/brand";
 
 const merkesidedetalj = () => {
   const router = useRouter();
-  console.log(router.query.id)
-
   return (
     <div>
 

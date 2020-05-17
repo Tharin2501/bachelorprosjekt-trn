@@ -47,6 +47,14 @@ const SubCategoryBrandcomponent = (props) => {
 
     const subcategoryArray = getSubcategoriesList(props.brand.products);
 
+
+    var imageUrl
+    try {
+        imageUrl = props.brand.logo.url
+    } catch (error) {
+        imageUrl = "/files/cliniqueLogo"
+    }
+
     return (
 
         <QuerySubCategoryBrandName query={GETSUBCATEGORYPRODUCTSFROMBRANDNAME_QUERY} subCategoryName={props.subCategoryName} brandName={props.brandName}>
@@ -63,10 +71,10 @@ const SubCategoryBrandcomponent = (props) => {
                         <Row className="p-3">
                             <Col className="text-center">
                                 <img
-                                    className="mw-25 h-75"
+                                    className="brandImage"
                                     src={
                                         "https://trnbackend.herokuapp.com" +
-                                        props.brand.logo.url
+                                        imageUrl
                                     }
                                 />
                             </Col>
@@ -96,26 +104,35 @@ const SubCategoryBrandcomponent = (props) => {
                             <Col>
                                 <div>
                                     <h3 className="horizontal-line1">
-                                        <span className="horizontal-line2">Våre kategorier</span>
+                                        <span className="horizontal-line2">Kategorier</span>
                                     </h3>
 
 
                                     <div className="container-fluid">
                                         <div className="row justify-content-center py-5">
+                                            <div className="scrollmenu">
+                                                <div className="navitem">
 
+                                                    <div>
+                                                        <Link href={{ pathname: "/merkesidedetalj", query: { id: subCategories[0].products[0].brand.id } }}>
+                                                            <a> <div className="nav-link imageSize"> <img src={"/images/arrowLeftpng.png"} alt=""></img> </div></a>
+                                                        </Link>
+                                                    </div>
 
+                                                    <div>
 
-                                            {
-                                                <div className="scrollmenu">
+                                                        <a href="/" className="nav-link frontpageIconsText"> Til merkesiden</a>
 
-                                                    {subcategoryArray.map((category) => {
-                                                        return (
-                                                            <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brand.name} brandID={props.brand.id} ></HorizontalMenuItem>
-                                                        )
-                                                    })}
+                                                    </div>
                                                 </div>
+                                                {subcategoryArray.map((category) => {
+                                                    return (
+                                                        <HorizontalMenuItem key={category.id} pathnamekatOrSub={"/subCategoryBrand"} category={category} brandName={props.brand.name} brandID={props.brand.id} ></HorizontalMenuItem>
+                                                    )
+                                                })}
+                                            </div>
 
-                                            }
+
 
                                         </div>
                                     </div>
