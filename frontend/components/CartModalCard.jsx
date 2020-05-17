@@ -22,7 +22,7 @@ const CartModalCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-5">
+            <div className="my-auto col">
                 <div className="row">
 
                     <div className="col-4 mb-2 mt-1">

@@ -1,15 +1,9 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import {addOneProductToCart, removeOneProduct} from "../cookieHandler"
+import { addOneProductToCart, removeOneProduct, } from "../cookieHandler"
 import Link from "next/link";
-
-/*
-    <Link href={{ pathname: "/produktside", query: { id: productcard.id } }}>
-            <a><h5 className="product-name"> {productName}</h5></a>
-          </Link>
-          */
-
 import Cookie from "js-cookie"
+import { ChangeQuantityOfProductsOnProduct } from "./cartHandler"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
     const productContext = {
@@ -28,6 +22,9 @@ const CartListCard = (props) => {
         deleteProduct(productContext);
         props.onDelete();
     }
+
+
+
 
     return (
 
@@ -62,25 +59,30 @@ const CartListCard = (props) => {
                 </div>
             </div>
 
-            </div>
+        </div>
 
     );
 
     function changeNumberofProducts(value) {
         if (value === "increaseAmount") {
             if (numberOfProducts < 99) {
-                setNumberOfProducts(numberOfProducts + 1)
+                const newValue = numberOfProducts + 1
+                setNumberOfProducts(newValue)
+                ChangeQuantityOfProductsOnProduct(productContext, newValue)
             } else {
                 alert("Man kan ikke legge inn med enn 99 produkter" + cartStorage)
             }
 
         } else {
             if ((numberOfProducts - 1) >= 1) {
-                setNumberOfProducts(numberOfProducts - 1)
+                const newValue = numberOfProducts - 1
+                setNumberOfProducts(newValue)
+                ChangeQuantityOfProductsOnProduct(productContext, newValue)
             } else {
-
+                deleteProductFunction();
             }
         }
+        props.onDelete();
     }
 
     function deleteProduct(productContext) {

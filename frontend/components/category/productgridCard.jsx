@@ -11,6 +11,7 @@ import { calculatePrice } from "../cookieHandler";
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import CartModalCard from "../CartModalCard"
+import { useRouter } from "next/router";
 var jsonObj = [];
 jsonObj = JSON.stringify(jsonObj);
 
@@ -58,6 +59,7 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }, props)
   const changeTotalPriceContextValue = (newValue, changeValueFunction) => {
     changeValueFunction(newValue);
   };
+  const router = useRouter();
 
   const addToShoppingCartAndRecalcuatePrice = () => {
     // const productContext = createProductContext();

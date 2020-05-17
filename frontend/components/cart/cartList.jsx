@@ -5,6 +5,7 @@ import { Button } from "reactstrap";
 import { calculatePrice, calculateCollectMePoints } from "../cookieHandler"
 import CartTotalPriceContext from "../context/cartTotalPriceContext";
 
+
 const isServer = () => typeof window === `undefined`;
 
 
