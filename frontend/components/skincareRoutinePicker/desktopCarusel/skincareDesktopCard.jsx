@@ -46,7 +46,7 @@ const SkincareDesktopCard = (props) => {
 
                     <Row>
                         <Col>
-                            <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                            <img className="DesktopSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                         </Col>
 
                         <Col>
@@ -84,7 +84,7 @@ const SkincareDesktopCard = (props) => {
 
                 <Row>
                     <Col>
-                        <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                        <img className="DesktopSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     </Col>
 
                     <Col>

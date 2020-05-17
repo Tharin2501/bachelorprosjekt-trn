@@ -812,5 +812,10 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
 
   .desktopSkincareCaruselWrapper{
     background-color: white;
+    overflow:hidden
   }
   
+  .DesktopSkincareCaurselCardImage{
+    max-width: 525px;
+    max-height: 525px;
+  }
