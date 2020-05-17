@@ -42,7 +42,7 @@ const SkincareCaruselCard = (props) => {
                 <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
                     <Progress value={props.progressBarValue}></Progress>
                     <text align="center">{props.stepText}</text>
-                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                    <img className="MobileSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     <CardBody>
                         <CardTitle >{props.product.ProductName}</CardTitle>
                         <div className="row px-3 justify-content-between">
@@ -55,7 +55,7 @@ const SkincareCaruselCard = (props) => {
 
                         <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                         <CardSubtitle className="h2" align="center">{props.product.pris + " kr"}</CardSubtitle>
-                        <Button onClick={() => toogleShowText()}>Vis beskrivelse</Button>
+                        <button onClick={() => toogleShowText()} type="button" className="btn btn-dark m-4 btn-lg justify-content-center"> Vis beskrivelse</button>
                         {showText && <CardText>{props.product.description}</CardText>}
                         <div className="row px-3 justify-content-between">
                             <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
@@ -74,7 +74,7 @@ const SkincareCaruselCard = (props) => {
                 <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
                     <Progress value={props.progressBarValue}></Progress>
                     <text align="center">{props.stepText}</text>
-                    <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                    <img className="MobileSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     <CardBody>
                         <CardTitle >{props.product.ProductName}</CardTitle>
                         <div className="row px-3 justify-content-between">

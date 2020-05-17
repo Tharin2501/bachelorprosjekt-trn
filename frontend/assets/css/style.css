@@ -795,7 +795,6 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
 
 }
 .quizCloseButton{
-  top: 200px;
   font-size: 2rem;
 
 }
@@ -858,4 +857,20 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
   .controltest{
    
   }
+/* Mobile */
+
+.desktopSkincareCaruselWrapper{
+  background-color: white;
+  overflow:hidden
+}
+
+.MobileSkincareCaurselCardImage{
+  max-width: 225px;
+  max-height: 225px;
+  align-self: center;
+}
+
+.desktopBulletpointImage{
+  width: 80%;
   
+}

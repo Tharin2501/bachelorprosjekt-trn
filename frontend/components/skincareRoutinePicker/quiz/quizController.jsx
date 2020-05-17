@@ -100,7 +100,7 @@ const QuizController = () => {
                 return (
                     <div  >
 
-                        <div className={"container-fluid  quizContainer"} id="background">
+                        <div className={"container-fluid "} id="background">
                             {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
                             }
                         </div>

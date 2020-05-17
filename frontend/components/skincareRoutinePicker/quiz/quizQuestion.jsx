@@ -8,7 +8,7 @@ const QuizQuestion = (props) => {
     // gå til product side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div align="center" >
-            <div className="">
+            <div className="quizContainer">
                 <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
                 <div className={"jumbotron "}>
 

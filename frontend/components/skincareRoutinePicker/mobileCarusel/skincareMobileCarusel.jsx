@@ -58,8 +58,9 @@ const SkincareMobileCarusel = (props) => {
         keyBoardControl
         minimumTouchDrag={20}
 
+
         renderButtonGroupOutside={false}
-        renderDotsOutside={false}
+        renderDotsOutside={true}
         responsive={{
           desktop: {
             breakpoint: {
@@ -89,7 +90,7 @@ const SkincareMobileCarusel = (props) => {
             partialVisibilityGutter: 30
           }
         }}
-        showDots={false}
+        showDots={true}
         sliderClass=""
         slidesToSlide={1}
         swipeable
