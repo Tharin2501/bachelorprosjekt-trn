@@ -11,14 +11,19 @@ const QuizQuestion = (props) => {
             <div className="">
                 <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
                 <div className={"jumbotron "}>
+
+                    <a href="javascript:void(0)" className="float-right quizCloseButton mx-auto" >&times;</a>
                     <h2 align="center"> {props.currentQustion.question}</h2>
                     {props.currentQustion.options.map((option) => {
                         return (
-                            <Button key={option.displayText} onClick={event => props.handleAnswerButtonPressed(props.currentQustion.effect, option)} color="secondary" size="lg" block>{option.displayText}</Button>
+
+                            <button key={option.displayText} onClick={event => props.handleAnswerButtonPressed(props.currentQustion.effect, option)} type="button" class="btn btn-dark btn-lg btn-block m-2">{option.displayText}</button>
+
+
                         )
                     })
                     }
-                    <Button onClick={props.handleNextButtonPressed}> Neste</Button>
+                    <button onClick={props.handleNextButtonPressed} type="button" className="btn btn-dark m-4 btn-lg"> Neste</button>
                 </div>
 
             </div>

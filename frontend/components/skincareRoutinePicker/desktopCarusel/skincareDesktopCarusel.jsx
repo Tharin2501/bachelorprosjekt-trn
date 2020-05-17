@@ -80,7 +80,7 @@ const SkincareDesktopCarusel = (props) => {
 
 
     return (
-        <div className="container">
+        <div className="container desktopCarusel">
             <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -89,15 +89,18 @@ const SkincareDesktopCarusel = (props) => {
                 interval={false}
                 className="desktopSkincareCaruselWrapper"
                 itemClass="desktopSkincareCaruselWrapper"
+
             >
 
+
+
+                <CarouselIndicators items={props.productsToShowArray} className="myCaruselIndictaor" activeIndex={activeIndex} onClickHandler={goToIndex} />
+
                 {slides}
-
-
                 <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
                 <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
 
-                <CarouselIndicators className="myCaruselIndictaor" items={props.productsToShowArray} activeIndex={activeIndex} onClickHandler={goToIndex} />
+
 
 
 

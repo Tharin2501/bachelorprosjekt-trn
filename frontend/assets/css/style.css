@@ -794,7 +794,11 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
 
 
 }
+.quizCloseButton{
+  top: 200px;
+  font-size: 2rem;
 
+}
 
   .quizContainer{
     height: 100%;
@@ -819,3 +823,39 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
     max-width: 525px;
     max-height: 525px;
   }
+
+  .desktopBulletpointImage{
+    width: 80%;
+    
+  }
+/*
+  .myCaruselIndictaor{
+    background-color: grey;
+    bottom:-200px;
+    top:20px;
+   
+    z-index: -5;
+  }
+
+*/
+  .myCaruselIndictaor{
+    background-color: grey;
+    position: initial !important;
+    
+   
+    z-index: -5;
+  }
+
+
+  .carousel-indicators .active{
+
+    background-color: #00796b;
+}
+.desktopCarusel .carousel-indicator{
+  color: hotpink;
+  background-color:hotpink;
+}
+  .controltest{
+   
+  }
+  
