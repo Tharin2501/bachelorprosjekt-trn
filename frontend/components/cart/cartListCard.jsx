@@ -24,8 +24,6 @@ const CartListCard = (props) => {
     }
 
 
-
-
     return (
 
 
