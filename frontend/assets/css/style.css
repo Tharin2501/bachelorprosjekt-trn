@@ -253,7 +253,7 @@ font-size: 14px;
 }
 
 .logoSize{
-  max-width: 5.313rem;
+  max-width: 4.688rem;  /* 75 px*/
 }
 .horizontal-line2 {
     background:#ffffff;
@@ -780,3 +780,32 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
   color: #fff; }
   .light-font .breadcrumb-item.active {
   color: #cfd8dc; }
+
+  /* Quiz*/
+
+#background{
+  position: fixed; 
+
+  background-image: url(./quizBackground.jpg);
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+
+
+}
+
+
+  .quizContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .jumpbotronpadder{
+    width: 800px;
+    height: 800px;
+  }
+
+  

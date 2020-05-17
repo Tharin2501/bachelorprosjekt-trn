@@ -7,19 +7,23 @@ const QuizQuestion = (props) => {
 
     // gå til product side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
-        <div align="center">
-            <Container className="quizQuestionContainer">
-                <h2 align="center"> {props.currentQustion.question}</h2>
-                {props.currentQustion.options.map((option) => {
-                    return (
-                        <Button key={option.displayText} onClick={event => props.handleAnswerButtonPressed(props.currentQustion.effect, option)} color="secondary" size="lg" block>{option.displayText}</Button>
-                    )
-                })
-                }
+        <div align="center" >
+            <div className="">
+                <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+                <div className={"jumbotron "}>
+                    <h2 align="center"> {props.currentQustion.question}</h2>
+                    {props.currentQustion.options.map((option) => {
+                        return (
+                            <Button key={option.displayText} onClick={event => props.handleAnswerButtonPressed(props.currentQustion.effect, option)} color="secondary" size="lg" block>{option.displayText}</Button>
+                        )
+                    })
+                    }
+                    <Button onClick={props.handleNextButtonPressed}> Neste</Button>
+                </div>
 
-            </Container>
-            <Button onClick={props.handleNextButtonPressed}> Neste</Button>
-        </div>
+            </div>
+
+        </div >
     );
 };
 

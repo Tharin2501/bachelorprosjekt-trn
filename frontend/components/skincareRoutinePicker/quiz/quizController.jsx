@@ -98,10 +98,12 @@ const QuizController = () => {
             {({ data: { quizdata } }) => {
 
                 return (
-                    <div align="center" >
-                        <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                        {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
-                        }
+                    <div  >
+
+                        <div className={"container-fluid  quizContainer"} id="background">
+                            {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+                            }
+                        </div>
 
                     </div>
                 )
