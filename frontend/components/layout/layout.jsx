@@ -155,7 +155,7 @@ export const MyHeader = () => {
                                             </Link>
                                         </div>
                                         <div className="text-nowrap col-sm pt-2">
-                                            <Link href="klikkOgHent">
+                                            <Link href="hudpleievelger">
                                                 <a className="nav-link frontpageIconsText">Hudpleievelger</a>
                                             </Link>
                                         </div>
