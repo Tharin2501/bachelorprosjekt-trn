@@ -87,6 +87,8 @@ const SkincareDesktopCarusel = (props) => {
             previous={previous}
             Autoplay={false}
             interval={false}
+            className="desktopSkincareCaruselWrapper"
+            itemClass="desktopSkincareCaruselWrapper"
         >
 
             {slides}

@@ -808,4 +808,9 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
     height: 800px;
   }
 
+  /* Desktop skincare carusel*/
+
+  .desktopSkincareCaruselWrapper{
+    background-color: white;
+  }
   
