@@ -252,6 +252,9 @@ font-size: 14px;
     padding-top: 10px;
 }
 
+.logoSize{
+  max-width: 85px;
+}
 .horizontal-line2 {
     background:#ffffff;
     padding: 0 10px;

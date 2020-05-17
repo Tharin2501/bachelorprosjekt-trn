@@ -10,7 +10,7 @@ import {
     InputGroupText,
     Input,
     Navbar,
-    Container
+    NavbarBrand
 } from "reactstrap";
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
@@ -93,7 +93,7 @@ export const MyHeader = () => {
                         </div>
                         {/* Bilde*/}
                         <div className="col-xs mx-auto ">
-                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
+                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="80px" /></a>
                         </div>
                         {/* Logo*/}
                         <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className={"iconsNavbar"} alt={"Hjerte,link til favorittside"} color="white" /></a>
@@ -112,7 +112,7 @@ export const MyHeader = () => {
                     <div>
                         <Navbar style={{ backgroundColor: "#042434" }}>
                             <div className="container-fluid">
-                                <a href="/" ><img src="../images/logo4.png" className="mt-4  mr-4" width="40px" alt={"Taxfree.no logo"} /></a>
+                                <NavbarBrand><a href="/" ><img src="../images/logo2.png" className="justify-content-center logoSize" alt={"Taxfree.no logo"} /></a></NavbarBrand>
                                 <InputGroup className=" w-50 mx-auto">
                                     <InputGroupAddon addonType="prepend">
                                         <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
