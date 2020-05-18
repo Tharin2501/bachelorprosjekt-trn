@@ -59,7 +59,9 @@ const MyCarousel = () => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
+
                 <img src={item.src} alt={item.altText} className={"d-block w-120 caruselSizeController"} />
+
                 <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
 

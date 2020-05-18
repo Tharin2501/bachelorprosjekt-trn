@@ -26,7 +26,7 @@ export const DisplayAllArticlesFrontpage = () => {
 
     return (
         <div>
-            <h3 className="horizontal-line1 pt-4">
+            <h3 className="horizontal-line1 p-4">
                 <span className="horizontal-line2">Artikler</span>
             </h3>
             <div className="container-fluid">
