@@ -16,9 +16,9 @@ const SkincareCaruselController = (props) => {
     if (!isServer()) {
         if (window.innerWidth > 700) {
             return (
-
-                <SkincareDesktopController filtersFromQuizArray={props.filtersFromQuizArray}></SkincareDesktopController>
-
+                <div className={"quizContainer"}>
+                    <SkincareDesktopController filtersFromQuizArray={props.filtersFromQuizArray}></SkincareDesktopController>
+                </div>
             )
         } else {
             return (

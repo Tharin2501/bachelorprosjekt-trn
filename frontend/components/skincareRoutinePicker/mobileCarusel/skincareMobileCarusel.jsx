@@ -39,7 +39,7 @@ const SkincareMobileCarusel = (props) => {
   }
   return (
 
-    <div className="skincareMobileDiv" id="test" ref={caruselRef} >
+    <div className="skincareMobileDiv" ref={caruselRef} >
 
       <Carousel
         additionalTransfrom={0}
@@ -78,7 +78,7 @@ const SkincareMobileCarusel = (props) => {
 
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 40
           },
           tablet: {
             breakpoint: {
@@ -96,7 +96,7 @@ const SkincareMobileCarusel = (props) => {
       >
         {props.productsToShowArray.map((product) => {
           return (
-            <SkincareCaruselCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} progressBarValue={setProgressBarValue(props.stepNumber)} />
+            <SkincareCaruselCard key={product.id} addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} progressBarValue={setProgressBarValue(props.stepNumber)} />
           )
         })}
 
