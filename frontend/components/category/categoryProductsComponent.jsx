@@ -342,12 +342,14 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
                 </div>
             </div>
+            <div className="container">
+                <h3 className="horizontal-line1 ">
+                    <span className="horizontal-line2">Alle produkter</span>
+                </h3>
 
-            <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Alle produkter</span>
-            </h3>
+                <Button size="lg" block onClick={openNav}>Filter</Button>
+            </div>
 
-            <Button size="lg" block onClick={openNav}>Filter</Button>
             <p>
                 {categoriesListInput[0].description}
 
