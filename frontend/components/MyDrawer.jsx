@@ -5,16 +5,19 @@ import HamburgermenuList from "../components/hamburgermenu/hamburgermenuList.jsx
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories.js";
 import Query from "../components/query"
 export const MyDrawer = (props) => {
-    const tabindexNumber = "-1";
+    const [tabindexNumber, setTabindexNumber] = useState("-1")
+
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "250px";
-
+        setTabindexNumber("0")
 
     }
     const closeNav = () => {
         document.getElementById("mySidenav").style.width = "0";
+        setTabindexNumber("-1")
         ref.current.setListToDefault()
+
     }
 
     const ref = useRef(null)
