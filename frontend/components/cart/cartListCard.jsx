@@ -41,9 +41,13 @@ const CartListCard = (props) => {
             <div className="my-auto col-5">
                 <div className="row">
                     <div className="col-8">
-                        <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
-                        <small> {numberOfProducts}</small>
-                        <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                        <div className="row pl-2">
+
+                            <a className="p-2" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
+                            <p className="pt-2"> {numberOfProducts}</p>
+                            <a className="p-2" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                        </div>
+
                     </div>
 
                     <div className="col-4 mb-3 mt-1">
