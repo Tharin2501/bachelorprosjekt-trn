@@ -7,10 +7,6 @@ import { useRouter } from 'next/router'
 import { checkIfSpaceOrEnterPressed } from "../utils/accessibilityUtil"
 import { Media, MediaContextProvider } from "../media"
 const HamburgermenuList = forwardRef((props, ref) => {
-
-
-
-
     const [categoriesToShow, setCategoreisToShow] = useState(props.categories)
     const listToSet = (newlist) => setCategoreisToShow(newlist)
 
