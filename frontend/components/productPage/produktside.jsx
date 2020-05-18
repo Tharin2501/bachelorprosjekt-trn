@@ -193,7 +193,7 @@ const Produktside = (props) => {
                         <FaHeart alt={"Hjerte"} color={heartColor} />
 
                       </Col>
-                      <Col>Legg til i ønskelisten</Col>
+                      <Col>Legg til i favoritter</Col>
                     </Row>
 
 
