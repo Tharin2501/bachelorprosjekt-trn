@@ -121,8 +121,9 @@ export const MyHeader = () => {
                                 </InputGroup>
 
                                 <div className="mt-4">
-                                    <a className="nav-item mr-2 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
                                     <a className="nav-item  mt-1 mr-3 ml-3" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
+                                    <a className="nav-item mr-2 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
+
                                     <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart className={"iconsNavbar"} color="white" /></a>
                                     <p style={{ color: "white" }} className="ml-5 pl-4 padding-right-2"> {totalprice}kr</p>
                                 </div>
