@@ -77,7 +77,7 @@ const FavoritesCard = (props) => {
                             </div>
                             <div className="ml-2">
                                 <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                                <button className="add-btn" onClick={(() => addToCartClikerHandler())}> Legg til handlekurv
+                                <button className="add-btn" onClick={(() => addToCartClikerHandler())}> Legg i handlekurv
                         </button>
                             </div>
 
@@ -132,7 +132,7 @@ const FavoritesCard = (props) => {
                             </div>
                             <div className="ml-2">
                                 <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                                <button className="add-btn" onClick={(() => addToCartClikerHandler())}> Legg til handlekurv
+                                <button className="add-btn" onClick={(() => addToCartClikerHandler())}> Legg i handlekurv
                         </button>
                             </div>
 
