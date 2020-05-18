@@ -16,7 +16,7 @@ const CartModal = (props) => {
     }
     return (
         <Modal isOpen={modal} toggle={toggleModal} className={className}>
-            <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
+            <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurv.</ModalHeader>
             <ModalBody>
 
                 <CartModalCard productContext={productContext} addToFavoriteFunction={changeHeartcolorAndAddToFavorite}></CartModalCard>
