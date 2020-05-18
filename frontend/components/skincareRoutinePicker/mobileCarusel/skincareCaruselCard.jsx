@@ -47,7 +47,7 @@ const SkincareCaruselCard = (props) => {
                         <CardTitle >{props.product.ProductName}</CardTitle>
                         <div className="row px-3 justify-content-between">
                             <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke"></StarRatings>
-                            <text>Se omtale</text>
+
                         </div>
 
 
