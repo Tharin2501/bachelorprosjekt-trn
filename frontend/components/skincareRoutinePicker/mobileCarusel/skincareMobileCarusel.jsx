@@ -49,6 +49,7 @@ const SkincareMobileCarusel = (props) => {
         partialVisible
         className=""
         containerClass="container"
+        dotListClass=""
         ssr={true} // means to render carousel on server-side.
         dotListClass=""
         draggable
@@ -57,10 +58,8 @@ const SkincareMobileCarusel = (props) => {
         itemClass="skincareMobileCard"
         keyBoardControl
         minimumTouchDrag={20}
-
-
         renderButtonGroupOutside={false}
-        renderDotsOutside={true}
+        renderDotsOutside={false}
         responsive={{
           desktop: {
             breakpoint: {
@@ -90,7 +89,7 @@ const SkincareMobileCarusel = (props) => {
             partialVisibilityGutter: 30
           }
         }}
-        showDots={true}
+        showDots
         sliderClass=""
         slidesToSlide={1}
         swipeable

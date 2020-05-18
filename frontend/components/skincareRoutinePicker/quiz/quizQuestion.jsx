@@ -1,18 +1,24 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'reactstrap';
+import { useRouter } from 'next/router';
 const QuizQuestion = (props) => {
-    <head>
 
-    </head>
+    const router = useRouter();
+    const cancelSkincarePickerButtonHandler = () => {
+
+        router.push("/");
+    }
+
+
 
     // gå til product side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div align="center" >
             <div className="quizContainer">
-                <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+
                 <div className={"jumbotron "}>
 
-                    <a href="javascript:void(0)" className="float-right quizCloseButton mx-auto" >&times;</a>
+                    <a href="javascript:void(0)" onClick={() => cancelSkincarePickerButtonHandler()} className="float-right quizCloseButton mx-auto" >&times;</a>
                     <h2 align="center"> {props.currentQustion.question}</h2>
                     {props.currentQustion.options.map((option) => {
                         return (
