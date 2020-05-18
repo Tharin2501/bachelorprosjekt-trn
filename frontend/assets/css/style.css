@@ -817,6 +817,10 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
     background-color: white;
     overflow:hidden
   }
+  .desktopCardButtons{
+    margin: 30px;
+    
+  }
   
   .DesktopSkincareCaurselCardImage{
     max-width: 525px;
@@ -839,8 +843,7 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
 */
   .myCaruselIndictaor{
     background-color: grey;
-    position: initial !important;
-    
+    bottom: -20px !important;
    
     z-index: -5;
   }
@@ -854,9 +857,7 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
   color: hotpink;
   background-color:hotpink;
 }
-  .controltest{
-   
-  }
+ 
 /* Mobile */
 
 .desktopSkincareCaruselWrapper{

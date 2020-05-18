@@ -60,7 +60,7 @@ const SkincareDesktopCard = (props) => {
                         </Col>
                     </Row>
 
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center desktopCardButtons">
                         <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
                         <Button disabled={isNextButtonDisabled} onClick={() => goNextStepButtonHandler()}><FontAwesomeIcon icon={faArrowRight} /> {props.goToNextStepButtonText}</Button>
                     </div>
@@ -97,7 +97,7 @@ const SkincareDesktopCard = (props) => {
                     </Col>
                 </Row>
 
-                <div className="row justify-content-center">
+                <div className="row justify-content-center desktopCardButtons">
                     <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
                     <Button disabled={isNextButtonDisabled} onClick={() => goNextStepButtonHandler()}><FontAwesomeIcon icon={faArrowRight} /> {props.goToNextStepButtonText}</Button>
                 </div>
