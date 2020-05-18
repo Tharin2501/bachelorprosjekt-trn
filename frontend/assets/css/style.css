@@ -874,3 +874,7 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
   width: 80%;
   
 }
+
+.facircle{
+  transform: scale(1.5);
+}

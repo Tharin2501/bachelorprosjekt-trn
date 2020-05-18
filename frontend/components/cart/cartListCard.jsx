@@ -43,9 +43,9 @@ const CartListCard = (props) => {
                     <div className="col-8">
                         <div className="row pl-2">
 
-                            <a className="p-2" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
-                            <p className="pt-2"> {numberOfProducts}</p>
-                            <a className="p-2" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
+                            <h5 className="pt-3"> {numberOfProducts}</h5>
+                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
                         </div>
 
                     </div>
