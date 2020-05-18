@@ -96,8 +96,9 @@ export const MyHeader = () => {
                             <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
                         </div>
                         {/* Logo*/}
-                        <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className="iconsNavbar2" alt={"Hjerte,link til favorittside"} color="white" /></a>
                         <FiUser className="iconsNavbar2 mx-2 mb-2" alt={"Person,link til profil"} color="white" />
+                        <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className="iconsNavbar2" alt={"Hjerte,link til favorittside"} color="white" /></a>
+
                         <div className="">
                             <a className="nav-item" href="shoppingcart"><FaShoppingCart className="iconsNavbar2 ml-2 mr-4 mt-3" alt={"Handlekurv,link til handlekurv"} color="white" /></a>
                             <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
@@ -121,9 +122,8 @@ export const MyHeader = () => {
                                 </InputGroup>
 
                                 <div className="mt-4">
-                                    <a className="nav-item  mt-1 mr-3 ml-3" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
                                     <a className="nav-item mr-2 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
-
+                                    <a className="nav-item  mt-1 mr-3 ml-3" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
                                     <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart className={"iconsNavbar"} color="white" /></a>
                                     <p style={{ color: "white" }} className="ml-5 pl-4 padding-right-2"> {totalprice}kr</p>
                                 </div>
