@@ -148,17 +148,17 @@ const ProductgridCard = ({ productcard, initialRememberValue = jsonObj }, props)
         type="button"
         className="btn btn-light"
       >
-        Legg i handlekurv
+        Legg i handlepose
       </button>
       <Modal isOpen={modal} toggle={toggleModal} className={className}>
-        <ModalHeader toggle={toggleModal}>Produktet er nå lagt i handlekurv</ModalHeader>
+        <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
         <ModalBody>
 
           <CartModalCard productContext={productContext} addToFavoriteFunction={addtoFavorites}></CartModalCard>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
-          <Button color="secondary" onClick={goToCart}>Gå til handlekurv</Button>
+          <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
         </ModalFooter>
       </Modal>
     </div >

@@ -384,19 +384,9 @@ div.scrollmenu {
   text-align: center;
 
 }
-
-@media only screen and (max-width: 700px) {
-  div.scrollmenu {
-    overflow-x:scroll;
-    white-space: nowrap;
-    text-align: center;
-  
-  }
-}
 /* margin: 0.313rem;*/
 
 .navitem{
-  cursor: pointer;
   display: inline-block;
   color: white;
   text-align: center;

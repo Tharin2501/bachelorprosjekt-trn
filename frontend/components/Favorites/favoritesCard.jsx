@@ -84,14 +84,14 @@ const FavoritesCard = (props) => {
                         </div>
 
                         <Modal isOpen={modal} toggle={toggleModal} className={className}>
-                            <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurv</ModalHeader>
+                            <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
                             <ModalBody>
 
                                 <CartModalCardFavorite productContext={productContext} goToCart={goToCart}></CartModalCardFavorite>
                             </ModalBody>
                             <ModalFooter>
                                 <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
-                                <Button color="secondary" onClick={goToCart}>Gå til handlekurv</Button>
+                                <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
                             </ModalFooter>
                         </Modal>
                     </div>
