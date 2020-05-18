@@ -98,6 +98,46 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <ul>
                         <li className="nav_submenu-item">
 
+                            <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
+
+                                <div className="myImg">
+                                    <img className="myImg" src={"/images/artikler.png"} alt="" />
+                                </div>
+
+                                <p className="nav-link">{"Artikler"}</p>
+
+                            </div>
+
+                        </li>
+
+                        <li className="nav_submenu-item">
+
+                            <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/") : null }}>
+
+                                <div className="myImg">
+                                    <img className="myImg" src={"/images/tilbud.png"} alt="" />
+                                </div>
+
+                                <p className="nav-link">{"Tilbud"}</p>
+
+                            </div>
+
+                        </li>
+
+                        <li className="nav_submenu-item">
+                            <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
+
+                                <div className="myImg">{/*"/images/brandsikon.svg" */}
+                                    <img className="myImg" src={"/images/brands.png"} alt="" />
+                                </div>
+
+                                <p className="nav-link">{"Merker"}</p>
+
+                            </div>
+                        </li>
+
+                        <li className="nav_submenu-item">
+
                             <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/hudpleievelger") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/hudpleievelger") : null }}>
 
                                 <div className="myImg">
@@ -122,43 +162,9 @@ const HamburgermenuList = forwardRef((props, ref) => {
                             </div>
 
                         </li>
-                        <li className="nav_submenu-item">
 
-                            <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/") : null }}>
 
-                                <div className="myImg">
-                                    <img className="myImg" src={"/images/tilbud.png"} alt="" />
-                                </div>
 
-                                <p className="nav-link">{"Tilbud"}</p>
-
-                            </div>
-
-                        </li>
-                        <li className="nav_submenu-item">
-
-                            <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
-
-                                <div className="myImg">
-                                    <img className="myImg" src={"/images/artikler.png"} alt="" />
-                                </div>
-
-                                <p className="nav-link">{"Artikler"}</p>
-
-                            </div>
-
-                        </li>
-                        <li className="nav_submenu-item">
-                            <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
-
-                                <div className="myImg">{/*"/images/brandsikon.svg" */}
-                                    <img className="myImg" src={"/images/brands.png"} alt="" />
-                                </div>
-
-                                <p className="nav-link">{"Merker"}</p>
-
-                            </div>
-                        </li>
                         {categoriesToShow.map((category) => {
                             return (
                                 <li className="nav_submenu-item">
