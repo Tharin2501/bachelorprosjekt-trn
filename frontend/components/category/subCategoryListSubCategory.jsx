@@ -9,8 +9,9 @@ const SubCategoryListSubCategory = ({ subCategoryList, categoryName, mainCategor
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: "/category", query: { id: categoryName } }}>
-                        <a className="nav-link imageSize"><img src={"https://trnbackend.herokuapp.com" + mainCategory.image.url} alt="" /></a>
+                        <a> <div className="nav-link imageSize"> <img src={"/images/arrowLeftpng.png"} alt=""></img> </div></a>
                     </Link>
+
                 </div>
                 <div>
                     <Link href={{ pathname: "/category", query: { id: categoryName } }}>

@@ -1,8 +1,12 @@
 import React, { useState } from "react"
 import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { removeOneProduct, addOneProductToCart } from "../cookieHandler"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { addtoCart } from "../cart/cartHandler"
 import Link from "next/link";
 import Cookie from "js-cookie"
+import { useRouter } from "next/router";
+import CartModalCardFavorite from "../cartModalCardFavorite"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const FavoritesCard = (props) => {
     const productContext = {
@@ -14,13 +18,29 @@ const FavoritesCard = (props) => {
 
     }
 
+    const {
+        buttonLabel,
+        className
+    } = props;
+
+    const router = useRouter();
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => setModal(!modal);
+
+    const goToCart = () => {
+        router.push("/shoppingcart")
+    }
+
 
     const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
 
-    const addToCart = () => {
+    const addToCartClikerHandler = () => {
 
-        addOneProductToCart(productContext)
+        addtoCart(productContext, numberOfProducts)
         props.newPriceFunction();
+        toggleModal();
     }
 
     return (
@@ -43,19 +63,20 @@ const FavoritesCard = (props) => {
             <div className="my-auto col-5">
                 <div className="row">
                     <div className="col-8">
-
-                        <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
-                        /></a>
-                        <small> {numberOfProducts}</small>
-                        <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
-                        /></a>
+                        <div className="row pl-2">
+                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"pluss"}
+                            /></a>
+                            <h5 className="pt-3"> {numberOfProducts}</h5>
+                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"minus"}
+                            /></a>
+                        </div>
                     </div>
                     <div className="col-4 mb-3 mt-1">
                         <h6>{productContext.price} nok</h6>
                     </div>
                     <div className="ml-2">
                         <button className="delete-btn" onClick={(() => deleteProduct(productContext))}> Fjern</button>
-                        <button className="add-btn" onClick={(() => addToCart())}> Legg til handlekurv
+                        <button className="add-btn" onClick={(() => addToCartClikerHandler())}> Legg til handlekurv
                         </button>
                     </div>
 
@@ -63,7 +84,17 @@ const FavoritesCard = (props) => {
 
 
             </div>
+            <Modal isOpen={modal} toggle={toggleModal} className={className}>
+                <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
+                <ModalBody>
 
+                    <CartModalCardFavorite productContext={productContext} goToCart={goToCart}></CartModalCardFavorite>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
+                    <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
+                </ModalFooter>
+            </Modal>
         </div>
 
     );

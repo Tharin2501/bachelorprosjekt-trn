@@ -9,7 +9,8 @@ import {
     InputGroupAddon,
     InputGroupText,
     Input,
-    Navbar
+    Navbar,
+    NavbarBrand
 } from "reactstrap";
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
@@ -92,7 +93,7 @@ export const MyHeader = () => {
                         </div>
                         {/* Bilde*/}
                         <div className="col-xs mx-auto ">
-                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
+                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="80px" /></a>
                         </div>
                         {/* Logo*/}
                         <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className={"iconsNavbar"} alt={"Hjerte,link til favorittside"} color="white" /></a>
@@ -111,7 +112,7 @@ export const MyHeader = () => {
                     <div>
                         <Navbar style={{ backgroundColor: "#042434" }}>
                             <div className="container-fluid">
-                                <a href="/" ><img src="../images/logo4.png" className="mt-4  mr-4" width="40px" alt={"Taxfree.no logo"} /></a>
+                                <NavbarBrand><a href="/" ><img src="../images/logo2.png" className="justify-content-center logoSize" alt={"Taxfree.no logo"} /></a></NavbarBrand>
                                 <InputGroup className=" w-50 mx-auto">
                                     <InputGroupAddon addonType="prepend">
                                         <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
@@ -120,52 +121,53 @@ export const MyHeader = () => {
                                 </InputGroup>
 
                                 <div className="mt-4">
-                                    <a className="nav-item mr-1 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
-                                    <a className="nav-item  mt-1 mr-2 ml-2" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
+                                    <a className="nav-item mr-2 ml-1">< FiUser className={"iconsNavbar"} color="white" /></a>
+                                    <a className="nav-item  mt-1 mr-3 ml-3" href="favorites"><FaHeart className={"iconsNavbar"} color="white" /></a>
                                     <a className="nav-item mr-2 ml-1" href="shoppingcart"> <FaShoppingCart className={"iconsNavbar"} color="white" /></a>
-                                    <p style={{ color: "white" }} className="ml-5 pl-3"> {totalprice}kr</p>
+                                    <p style={{ color: "white" }} className="ml-5 pl-4 padding-right-2"> {totalprice}kr</p>
                                 </div>
 
                             </div>
                         </Navbar>
 
                         <div>
-                            <Navbar style={divStyle} >
-                                <div className=" pt-2 nav-link">
-                                    <MyDrawer hamburgerIconColor={"black"} />
-                                </div>
-                                <div className="d-none d-md-block">
-                                    <Link href="artikler">
-                                        <a className="nav-link frontpageIconsText">Inspirasjon og guider</a>
-                                    </Link>
-                                </div>
-                                <div className=" pt-2 d-none d-md-block" >
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText ">Tilbud</a>
-                                    </Link>
-                                </div>
-                                <div className=" px-2 pt-2 d-none d-md-block">
-                                    <Link href="merkeside">
-                                        <a className="nav-link frontpageIconsText">Merker</a>
-                                    </Link>
-                                </div>
-                                <div className=" pt-2 d-none d-md-block">
-                                    <Link href="klikkOgHent">
-                                        <a className="nav-link frontpageIconsText">Klikk og Hent</a>
-                                    </Link>
-                                </div>
+                            <nav class="navbar-nav nav-fill navbarColor">
+                                <div className={"container-fluid"}>
+                                    <div className="row justify-content-center ">
 
-                                <div className="ml-5 px-0 pt-2 d-none d-md-block" href="favorites">
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Tax free & me</a>
-                                    </Link></div>
-                                <div className="pt-2 d-none d-md-block" href="#">
-                                    <Link href="#">
-                                        <a className="nav-link frontpageIconsText">Kvote og kundeservice</a>
-                                    </Link>
-                                </div>
 
-                            </Navbar>
+                                        <div className="pt-2 nav-link hamburgerIconMargin">
+                                            <MyDrawer hamburgerIconColor={"black"} />
+                                        </div>
+                                        <div className="text-nowrap col-sm  pt-2 ">
+                                            <Link href="artikler">
+                                                <a className="nav-link frontpageIconsText">Artikler</a>
+                                            </Link>
+                                        </div>
+                                        <div className="col-sm pt-2" >
+                                            <Link href="#">
+                                                <a className="nav-link frontpageIconsText ">Tilbud</a>
+                                            </Link>
+                                        </div>
+                                        <div className="col-sm px-2 pt-2 ">
+                                            <Link href="merkeside">
+                                                <a className="nav-link frontpageIconsText">Merker</a>
+                                            </Link>
+                                        </div>
+                                        <div className="text-nowrap col-sm pt-2">
+                                            <Link href="hudpleievelger">
+                                                <a className="nav-link frontpageIconsText">Hudpleievelger</a>
+                                            </Link>
+                                        </div>
+                                        <div className="text-nowrap col-sm pt-2">
+                                            <Link href="klikkOgHent">
+                                                <a className="nav-link frontpageIconsText">Klikk og Hent</a>
+                                            </Link>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
                         </div>
 
 

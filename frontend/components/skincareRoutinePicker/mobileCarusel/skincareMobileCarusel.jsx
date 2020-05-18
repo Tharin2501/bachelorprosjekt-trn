@@ -39,7 +39,7 @@ const SkincareMobileCarusel = (props) => {
   }
   return (
 
-    <div className="skincareMobileDiv" id="test" ref={caruselRef} >
+    <div className="skincareMobileDiv" ref={caruselRef} >
 
       <Carousel
         additionalTransfrom={0}
@@ -49,6 +49,7 @@ const SkincareMobileCarusel = (props) => {
         partialVisible
         className=""
         containerClass="container"
+        dotListClass=""
         ssr={true} // means to render carousel on server-side.
         dotListClass=""
         draggable
@@ -57,7 +58,6 @@ const SkincareMobileCarusel = (props) => {
         itemClass="skincareMobileCard"
         keyBoardControl
         minimumTouchDrag={20}
-
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
         responsive={{
@@ -78,7 +78,7 @@ const SkincareMobileCarusel = (props) => {
 
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 40
           },
           tablet: {
             breakpoint: {
@@ -89,14 +89,14 @@ const SkincareMobileCarusel = (props) => {
             partialVisibilityGutter: 30
           }
         }}
-        showDots={false}
+        showDots
         sliderClass=""
         slidesToSlide={1}
         swipeable
       >
         {props.productsToShowArray.map((product) => {
           return (
-            <SkincareCaruselCard addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} progressBarValue={setProgressBarValue(props.stepNumber)} />
+            <SkincareCaruselCard key={product.id} addToChosenProdutsArrayFunction={props.addToChosenProdutsArrayFunction} addChosenProductsToCart={props.addChosenProductsToCart} stepNumber={props.stepNumber} stepText={`Steg ${props.stepNumber}:${stepNameText}`} goToNextStepButtonText={goToNextStepButtonText} changeStep={changeStep} product={product} progressBarValue={setProgressBarValue(props.stepNumber)} />
           )
         })}
 

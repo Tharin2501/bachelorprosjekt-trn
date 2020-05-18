@@ -16,7 +16,7 @@ const QuizController = () => {
     // varibal for om svaret er valgt 
     // så en func for legge det til listen
     // gå til produt side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
-    const [selectedAnswer, setSelectedAnswer] = useState();
+    const [selectedAnswer, setSelectedAnswer] = useState(" ");
     const [currentQustionNumber, setCurrentQuestionNumber] = useState(0);
     const [filterArrays, setfilterArrays] = useState(filterAnswersArrays);
     const [isQuizDone, setIsQuizDone] = useState(false);
@@ -98,10 +98,12 @@ const QuizController = () => {
             {({ data: { quizdata } }) => {
 
                 return (
-                    <div align="center" >
-                        <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                        {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
-                        }
+                    <div  >
+
+                        <div className={"container-fluid  "} id="background">
+                            {isQuizDone ? <SkincareCaruselController filtersFromQuizArray={filterArrays}></SkincareCaruselController> : <QuizQuestion currentQustion={quizdata[0].quizJSONdata[currentQustionNumber]} handleNextButtonPressed={handleNextButtonPressed} handleAnswerButtonPressed={handleAnswerButtonPressed}></QuizQuestion>
+                            }
+                        </div>
 
                     </div>
                 )

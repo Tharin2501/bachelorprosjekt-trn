@@ -3,15 +3,10 @@ import React, { useState, useEffect, useContext } from "react"
 const CartModalCard = (props) => {
 
 
-
-    //const [numberOfProducts, setNumberOfProducts] = useState(productContext.quantity);
-
-
-
     return (
 
 
-        <div className="row border-top">
+        <div className="row">
             <div className="col-7">
                 <div className="row justify-content-center">
                     <div className="book"> <img src={"https://trnbackend.herokuapp.com" + props.productContext.image} alt={""} className="book-img"></img></div>
@@ -22,7 +17,7 @@ const CartModalCard = (props) => {
                 </div>
             </div>
 
-            <div className="my-auto col-5">
+            <div className="my-auto col">
                 <div className="row">
 
                     <div className="col-4 mb-2 mt-1">
