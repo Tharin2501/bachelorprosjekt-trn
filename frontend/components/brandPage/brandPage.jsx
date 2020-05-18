@@ -58,8 +58,10 @@ const BrandPage = (props) => {
   };
   return (
 
-    <div>
-      <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
+    <div >
+      <div className="container">
+        <Input type="textarea" name="serach" id="searchbar" placeholder="Søk etter merke her" onChange={handleSerachFieldChanged} />
+      </div>
       <hr />
       <QuerybrandsOnString query={GETBRANDSBASEDONSTRING_QUERY} searchString={searchTerm}>
         {({ data: { brands } }) => {
