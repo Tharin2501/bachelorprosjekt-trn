@@ -176,7 +176,7 @@ const Produktside = (props) => {
                       <Col>
                         <FaShoppingBasket color="black" />
                       </Col>
-                      <Col>Legg til i handleposen</Col>
+                      <Col>Legg i handlekurv</Col>
                     </Row>
                   </Button>
                 </Col>
