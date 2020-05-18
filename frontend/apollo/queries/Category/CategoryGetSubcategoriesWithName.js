@@ -4,7 +4,7 @@ query Category ($categoryName:String!){
   categories(where:{StrapiName:$categoryName}) {
 
              
-    sub_categories{
+    sub_categories(sort: "categoryName:asc"){
       id     
       StrapiName
       categoryName
