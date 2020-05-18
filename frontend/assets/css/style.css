@@ -210,7 +210,7 @@ font-size: 14px;
   border-radius: 15px;
   font-weight: bold;
   background-color: #0b3954;
-  
+
 }
 
 .btn.btn-light:hover{
@@ -675,6 +675,7 @@ div.scrollmenu {
     transition: all .3s ease-in-out;
     margin-top: -15%;
     width: 100.1%;
+    height: 60%;
 }
 
 /* Hvor høyt kort foran beveger seg opp når hover */
@@ -683,7 +684,15 @@ div.scrollmenu {
     height: 225px; /* høyden på hover kort */
 }
 
-/* text når hover*/
+
+
+.card-body-header:focus {
+    margin-top: -77%; /*-39.5vh hvor høyt den går*/
+    height: 225px; /* høyden på hover kort */
+
+}
+
+/*
 .card-body-description {
     opacity: 0;
     color: #757B82;
@@ -691,12 +700,21 @@ div.scrollmenu {
     padding-top: 5%;
     transition: all .2s ease-in-out;
 }
-
+*/
+.card-body-description:focus {
+    opacity: 0;
+    color: #757B82;
+    line-height: 110%;
+    padding-top: 5%;
+    transition: all .2s ease-in-out;
+}
 
 .card:hover .card-body-description {
     opacity: 1;
     transition: all .5s ease-in-out;
 }
+
+
 
 /* 1.2 Footer*/
 .footer-style {

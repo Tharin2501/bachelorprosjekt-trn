@@ -14,7 +14,7 @@ export const DisplayAllArticles = () => {
                         return (
                             <div key={article.id} className="col-lg-sm-6 mx-5 px-5">
 
-                                <div className="card" tabIndex="1">
+                                <div className="card">
 
                                     <div className="mycard-header">
                                         <img
@@ -22,13 +22,12 @@ export const DisplayAllArticles = () => {
                                             alt={article.headerImage[0].url} />
                                     </div>
 
-                                    <div className="card-body">
+                                    <div className="card-body" >
 
-                                        <div className="card-body-header">
+                                        <div className="card-body-header" tabIndex="1">
                                             <h1>{article.title}</h1>
                                         </div>
-                                        <div>
-                                            <div className="card-body-description pt-3 mt-3">
+                                            <div className="card-body-description pt-3 mt-3" tabIndex="1">
                                                 <p>
                                                     {article.introduction}
                                                 </p>
@@ -43,8 +42,6 @@ export const DisplayAllArticles = () => {
                                                     </Link>
                                                 </div>
                                             </div>
-
-                                        </div>
                                         <div className="pt-5 mt-3">
                                             <h6 style={{ color: "#757B82" }}>
                                                 {article.category}

@@ -38,7 +38,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                     return (
                                         <div key={article.id} className="col-lg-sm-6 px-5">
 
-                                            <div className="card" tabIndex="1">
+                                            <div className="card">
 
                                                 <div className="mycard-header">
                                                     <img
@@ -48,11 +48,11 @@ export const DisplayAllArticlesFrontpage = () => {
 
                                                 <div className="card-body">
 
-                                                    <div className="card-body-header">
+                                                    <div className="card-body-header" tabIndex="1" >
                                                         <h2>{article.title}</h2>
                                                     </div>
-                                                    <div className="">
-                                                        <div className="card-body-description pt-3 mt-3">
+                                                    <div className="" tabIndex="1">
+                                                        <div className="card-body-description pt-3 mt-3" >
                                                             <p>
                                                                 {article.introduction}
                                                             </p>
@@ -67,7 +67,6 @@ export const DisplayAllArticlesFrontpage = () => {
                                                                 </Link>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                     <div className="pt-5 mt-3">
                                                         <h6 style={{ color: "#757B82" }}>
