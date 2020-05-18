@@ -4,6 +4,7 @@ import { addOneProductToCart, removeOneProduct, } from "../cookieHandler"
 import Link from "next/link";
 import Cookie from "js-cookie"
 import { ChangeQuantityOfProductsOnProduct } from "./cartHandler"
+import { Media, MediaContextProvider } from "../media"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
     const productContext = {
@@ -25,43 +26,80 @@ const CartListCard = (props) => {
 
 
     return (
+        <MediaContextProvider>
+            <Media at="sm">
+                <div className="row border-top">
+                    <div className="col-7">
+                        <div className="row justify-content-start">
+                            <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} alt={""} className="book-img"></img></Link></div>
+                            <div className="mx-auto my-auto">
+                                <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6>{productContext.name}</h6></a></Link>
 
-
-        <div className="row border-top">
-            <div className="col-7">
-                <div className="row justify-content-start">
-                    <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} alt={""} className="book-img"></img></Link></div>
-                    <div className="mx-auto my-auto">
-                        <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6>{productContext.name}</h6></a></Link>
-
-                    </div>
-                </div>
-            </div>
-
-            <div className="my-auto col-5">
-                <div className="row">
-                    <div className="col-8">
-                        <div className="row pl-2">
-
-                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
-                            <h5 className="pt-3"> {numberOfProducts}</h5>
-                            <a className="p-3 facircle" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                            </div>
                         </div>
-
                     </div>
 
-                    <div className="col-4 mb-3 mt-1">
-                        <h6>{productContext.price}nok</h6>
+                    <div className="my-auto col-5">
+                        <div className="row">
+                            <div className="col-8">
+                                <a onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
+                                <small> {numberOfProducts}</small>
+                                <a onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                            </div>
+
+                            <div className="col-4 mb-3 mt-1">
+                                <h6>{productContext.price}nok</h6>
+                            </div>
+
+                            <div className="ml-2">
+                                <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
+                                <button className="text-nowrap add-btn"> Legg til i favoritter</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="ml-2">
-                        <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
-                        <button className="text-nowrap add-btn"> Legg til i favoritter</button>
-                    </div>
                 </div>
-            </div>
+            </Media>
+            <Media greaterThan="sm">
+                <div className="row border-top">
+                    <div className="col-7">
+                        <div className="row justify-content-start">
+                            <div className="book">  <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><img src={"https://trnbackend.herokuapp.com" + productContext.image} alt={""} className="book-img"></img></Link></div>
+                            <div className="mx-auto my-auto">
+                                <Link href={{ pathname: "/produktside", query: { id: productContext.id } }}><a><h6>{productContext.name}</h6></a></Link>
 
-        </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="my-auto col-5">
+                        <div className="row">
+                            <div className="col-8">
+                                <div className="row pl-2">
+
+                                    <a className="p-3 facircle" onClick={(() => changeNumberofProducts("decAmount"))}><FaMinusCircle alt={"minus"} /></a>
+                                    <h5 className="pt-3"> {numberOfProducts}</h5>
+                                    <a className="p-3 facircle" onClick={(() => changeNumberofProducts("increaseAmount"))}> <FaPlusCircle alt={"pluss"} /></a>
+                                </div>
+
+                            </div>
+
+                            <div className="col-4 mb-3 mt-1">
+                                <h6>{productContext.price}nok</h6>
+                            </div>
+
+                            <div className="ml-2">
+                                <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
+                                <button className="text-nowrap add-btn"> Legg til i favoritter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </Media>
+
+        </MediaContextProvider >
+
 
     );
 
