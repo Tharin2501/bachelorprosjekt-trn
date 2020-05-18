@@ -91,15 +91,15 @@ export const MyHeader = () => {
                         <div className="col-xs mx-auto">
                             <MyDrawer hamburgerIconColor={"white"} />
                         </div>
-                        {/* Bilde*/}
+                        {/* Bilde */}
                         <div className="col-xs mx-auto ">
-                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="80px" /></a>
+                            <a href="/"><img src="../images/logo4.png" alt={"Taxfree.no logo"} className="mt-4 ml-5" width="70px" /></a>
                         </div>
                         {/* Logo*/}
-                        <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className={"iconsNavbar"} alt={"Hjerte,link til favorittside"} color="white" /></a>
-                        <FiUser className={"iconsNavbar"} alt={"Person,link til profil"} color="white" className="mx-2 mb-2" />
+                        <a className="nav-item mx-2 mb-3 " href="favorites"><FaHeart className="iconsNavbar2" alt={"Hjerte,link til favorittside"} color="white" /></a>
+                        <FiUser className="iconsNavbar2 mx-2 mb-2" alt={"Person,link til profil"} color="white" />
                         <div className="">
-                            <a className="nav-item" href="shoppingcart"><FaShoppingCart className={"iconsNavbar"} alt={"Handlekurv,link til handlekurv"} className="ml-2 mr-4 mt-3" color="white" /></a>
+                            <a className="nav-item" href="shoppingcart"><FaShoppingCart className="iconsNavbar2 ml-2 mr-4 mt-3" alt={"Handlekurv,link til handlekurv"} color="white" /></a>
                             <p style={{ color: "white" }} className="mt-0 mb-0 ml-2">{totalprice}kr</p>
                         </div>
                         {/* Searchbar*/}
