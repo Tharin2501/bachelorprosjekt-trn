@@ -48,10 +48,10 @@ export const DisplayAllArticlesFrontpage = () => {
 
                                                 <div className="card-body">
 
-                                                    <div className="card-body-header" tabIndex="1" >
+                                                    <div className="card-body-header" tabIndex="0" >
                                                         <h2>{article.title}</h2>
                                                     </div>
-                                                    <div className="" tabIndex="1">
+                                                    <div className="" >
                                                         <div className="card-body-description pt-3 mt-3" >
                                                             <p>
                                                                 {article.introduction}
