@@ -183,7 +183,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                         {categoriesToShow.map((category) => {
                             return (
                                 <li className="nav_submenu-item">
-                                    <HamburgermenuItem category={category} type={type} listFunction={changeListToShow}>
+                                    <HamburgermenuItem tabindexNumber={props.tabindexNumber} category={category} type={type} listFunction={changeListToShow}>
 
                                     </HamburgermenuItem>
                                 </li>

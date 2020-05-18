@@ -5,9 +5,11 @@ import HamburgermenuList from "../components/hamburgermenu/hamburgermenuList.jsx
 import GETCATEGORIES_QUERY from "../apollo/queries/Category/GetCategories.js";
 import Query from "../components/query"
 export const MyDrawer = (props) => {
+    const tabindexNumber = "-1";
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "250px";
+
 
     }
     const closeNav = () => {
@@ -29,13 +31,13 @@ export const MyDrawer = (props) => {
                 </ul>
             </div>
             <div id="mySidenav" className="sidenav">
-                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                <a href="javascript:void(0)" tabIndex={tabindexNumber} className="closebtn" onClick={closeNav}>&times;</a>
                 <Query query={GETCATEGORIES_QUERY}>
                     {({ data: { categories } }) => {
 
                         return (
 
-                            <HamburgermenuList ref={ref} categories={categories}></HamburgermenuList>
+                            <HamburgermenuList tabindexNumber={tabindexNumber} ref={ref} categories={categories}></HamburgermenuList>
                         )
                     }}
                 </Query>
