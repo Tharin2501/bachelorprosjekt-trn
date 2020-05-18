@@ -68,7 +68,7 @@ const SpecificBrandPage = (props) => {
   const subcategoryArray = getSubcategoriesList(props.brandDetailSide.products);
 
   return (
-    <div>
+    <div className="container">
       <Row>
         <Col>
           <h1 className="text-center">{props.brandDetailSide.name}</h1>
