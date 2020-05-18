@@ -28,10 +28,12 @@ const Highlight3Articles = (props) => {
                                     <h6> Finn den perfekte hudpleie rutinen tilpasset din hud.
                                     </h6>
                                 </div>
-                                <Link href="/hudpleievelger" >
-                                    <Button className="outlined_btn" color={"info"}>Klikk her for å ta
+                                <div className="p-3">
+                                    <Link href="/hudpleievelger" >
+                                        <Button className="outlined_btn" color={"info"}>Klikk her for å ta
                                         testen</Button>
-                                </Link>
+                                    </Link>
+                                </div>
                             </div>
 
                             <div className="col-sm-3">
