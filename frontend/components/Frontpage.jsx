@@ -26,7 +26,7 @@ export const DisplayAllArticlesFrontpage = () => {
 
     return (
         <div>
-            <h3 className="horizontal-line1 pt-4">
+            <h3 className="horizontal-line1 p-4 container">
                 <span className="horizontal-line2">Artikler</span>
             </h3>
             <div className="container-fluid">
@@ -69,7 +69,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                                         </div>
                                                     </div>
                                                     <div className="pt-5 mt-3">
-                                                        <h6 style={{ color: "#757B82" }}>
+                                                        <h6 style={{ color: "#757582" }}>
                                                             {article.category}
                                                         </h6>
                                                     </div>
@@ -112,13 +112,8 @@ export const FrontpageGrid = () => {
 
     return (
         <div>
-            <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Kategorier</span>
-            </h3>
-
-
             <div className="container-fluid">
-                <div className="row justify-content-center ">
+                <div className="row justify-content-center  ">
 
                     <Query query={GETCATEGORIES_QUERY}>
                         {({ data: { categories } }) => {

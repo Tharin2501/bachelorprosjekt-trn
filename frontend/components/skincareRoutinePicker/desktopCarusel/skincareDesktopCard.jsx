@@ -46,21 +46,21 @@ const SkincareDesktopCard = (props) => {
 
                     <Row>
                         <Col>
-                            <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                            <img className="DesktopSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                         </Col>
 
                         <Col>
                             <h1 className="whitney">{props.product.ProductName}</h1>
                             <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke"></StarRatings>
-                            <h3 className="gotham">{props.product.pris + " kr"}</h3>
-                            <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
+                            <h3 className="gotham">Pris: {props.product.pris + " kr"}</h3>
+                            <img align="center" className="desktopBulletpointImage" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                             <h4><b>Beskrivelse</b></h4>
                             <Button onClick={() => toogleShowText()}>Vis beskrivelse</Button>
                             {showText && <p>{props.product.description}</p>}
                         </Col>
                     </Row>
 
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center desktopCardButtons">
                         <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
                         <Button disabled={isNextButtonDisabled} onClick={() => goNextStepButtonHandler()}><FontAwesomeIcon icon={faArrowRight} /> {props.goToNextStepButtonText}</Button>
                     </div>
@@ -84,20 +84,20 @@ const SkincareDesktopCard = (props) => {
 
                 <Row>
                     <Col>
-                        <img className="skincareCaurselMobileCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
+                        <img className="DesktopSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />
                     </Col>
 
                     <Col>
                         <h1 className="whitney">{props.product.ProductName}</h1>
                         <StarRatings starDimension="20px" rating={3} starRatedColor="black" numberOfStars={5} name='rating' alt="Fem stjerner hvor tre er fylt inn og to er blanke" ></StarRatings>
-                        <h3 className="gotham">{props.product.pris + " kr"}</h3>
-                        <img align="center" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
+                        <h3 className="gotham">Pris: {props.product.pris + " kr"}</h3>
+                        <img align="center" className="desktopBulletpointImage" src="/images/desktopBulletPointImage.png" alt="En horisontal sjekkliste med fire punkter. Hvor Alkholfri, Silikonfri, Nøttefri er godkjent og Alkholfri er ikke godkjent. " />
                         <h4><b>Beskrivelse</b></h4>
                         <p>{props.product.description}</p>
                     </Col>
                 </Row>
 
-                <div className="row justify-content-center">
+                <div className="row justify-content-center desktopCardButtons">
                     <button type="button" onClick={() => chooseProductButtonHandler()} className="btn btn-info btn-circle btn-xl"> <FontAwesomeIcon icon={faCheck} /></button>
                     <Button disabled={isNextButtonDisabled} onClick={() => goNextStepButtonHandler()}><FontAwesomeIcon icon={faArrowRight} /> {props.goToNextStepButtonText}</Button>
                 </div>

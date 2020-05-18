@@ -21,7 +21,7 @@ query Subcategory($categoryName:String!) {
       image{
         url
     }
-      sub_categories{
+      sub_categories(sort: "categoryName:asc"){
         id
         StrapiName
         categoryName

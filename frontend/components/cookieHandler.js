@@ -88,6 +88,31 @@ export const addOneProductToCart = (productToAdd) => {
 
 }
 
+export const changeProductQuantityInCart = (productToChange) => {
+    if (productToChange.quantity == 0) {
+        removeOneProduct(productToChange, "cartStorage")
+    } else {
+        var cart = getCookieArray("cartStorage")
+
+        // -1 = betyr at den ikke i listen
+        const alreadyInCart = cart.findIndex(
+            product => product.id === productToChange.id
+        )
+        // nytt produkt
+        if (alreadyInCart === -1) {
+            cart.push(productToChange)
+        } else {
+
+            cart[alreadyInCart].quantity = productToChange.quantity
+        }
+
+        saveCookieArrayToCookie(cart, "cartStorage")
+    }
+
+
+
+}
+
 
 /* <--CART END -->*/
 

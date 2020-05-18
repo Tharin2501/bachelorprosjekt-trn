@@ -1,4 +1,4 @@
-import { addOneProductToCart, addOneProductToFavorites } from "../cookieHandler"
+import { addOneProductToCart, addOneProductToFavorites, changeProductQuantityInCart } from "../cookieHandler"
 export const addtoCart = (productToAdd, quantity) => {
 
 
@@ -9,9 +9,15 @@ export const addtoCart = (productToAdd, quantity) => {
 
 }
 
+export const ChangeQuantityOfProductsOnProduct = (productToChange, quantity) => {
+    productToChange.quantity = quantity
+    console.log(quantity)
+    changeProductQuantityInCart(productToChange)
+}
+
 export const addItemToFavorites = (productToAdd) => {
     productToAdd.quantity = 1
-    addOneProductToFavorites(productToAdd)
+    addOneProductToFavorites(productToAdd);
 }
 
 export const changeNumberOfProducts = (value, count) => {

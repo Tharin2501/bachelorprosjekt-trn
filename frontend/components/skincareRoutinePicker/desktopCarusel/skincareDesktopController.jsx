@@ -5,12 +5,15 @@ import GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY from "../../../apol
 import QurySkincareCarusel from "../../qurySkincareCarusel";
 import { addtoCart } from "../../cart/cartHandler"
 import { filterProductsFunction } from "../utils/skincareRotuinePickerUtils"
+import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 // 1 clense 2 toner 3 Moist
 
 
 
 const SkincareDesktopController = (props) => {
-    const [currentStep, setCurrentStep] = useState(1);
+    const [currentStep, setCurrentStep] = useState(0);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
 
     const changeStepRequest = (changeStepValue) => {
@@ -36,6 +39,30 @@ const SkincareDesktopController = (props) => {
             }
             addtoCart(productToAdd, 1)
         })
+    }
+
+    if (currentStep === 0) {
+        return (
+            <div align="center" >
+                <div className="quizContainer">
+
+                    <div className={"jumbotron "}>
+
+
+                        <h2 align="center"> Produktene dine er nå klare</h2>
+                        <p> Swipe til venstre og høyre for å se de forskjellige produktene.</p>
+                        <p> Trykk på <FontAwesomeIcon icon={faCheck} alt={"checkmark"}></FontAwesomeIcon> for velge et produkt.</p>
+                        <p> Trykk på <FontAwesomeIcon icon={faArrowRight} alt={"Pil til høyre"}></FontAwesomeIcon>  når du har bestemt deg å ønsker å gå videre.</p>
+
+                        <button onClick={() => changeStepRequest(1)} type="button" className="btn btn-dark m-4 btn-lg"> Start</button>
+
+                    </div>
+
+                </div>
+
+            </div >
+        );
+
     }
 
     if (currentStep === 1) {

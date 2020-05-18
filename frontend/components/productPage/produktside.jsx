@@ -42,7 +42,7 @@ const Produktside = (props) => {
   const addToShoppingCartAndRecalcuatePrice = () => {
     addtoCart(productContext, numberOfProducts);
     changeTotalPriceContextValue(calculatePrice(), ChangeTotalPrice);
-    toggle();
+    toggleModal();
   };
   /** Adding to Cart END*/
 
@@ -67,7 +67,7 @@ const Produktside = (props) => {
 
   const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  const toggleModal = () => setModal(!modal);
 
   const goToCart = () => {
     router.push("/shoppingcart")
@@ -176,7 +176,7 @@ const Produktside = (props) => {
                       <Col>
                         <FaShoppingBasket color="black" />
                       </Col>
-                      <Col>Legg til i handleposen</Col>
+                      <Col>Legg i handlekurv</Col>
                     </Row>
                   </Button>
                 </Col>
@@ -193,7 +193,7 @@ const Produktside = (props) => {
                         <FaHeart alt={"Hjerte"} color={heartColor} />
 
                       </Col>
-                      <Col>Legg til i ønskelisten</Col>
+                      <Col>Legg til i favoritter</Col>
                     </Row>
 
 
@@ -202,14 +202,14 @@ const Produktside = (props) => {
                 </Col>
                 <div>
 
-                  <Modal isOpen={modal} toggle={toggle} className={className}>
-                    <ModalHeader toggle={toggle}>Produktet er nå lagt i din handlekurven</ModalHeader>
+                  <Modal isOpen={modal} toggle={toggleModal} className={className}>
+                    <ModalHeader toggle={toggleModal}>Produktet er nå lagt i din handlekurven</ModalHeader>
                     <ModalBody>
 
                       <CartModalCard productContext={productContext} addToFavoriteFunction={changeHeartcolorAndAddToFavorite}></CartModalCard>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="primary" onClick={toggle}>Avbryt</Button>{' '}
+                      <Button color="primary" onClick={toggleModal}>Fortsett å handle</Button>
                       <Button color="secondary" onClick={goToCart}>Gå til handllekurv</Button>
                     </ModalFooter>
                   </Modal>

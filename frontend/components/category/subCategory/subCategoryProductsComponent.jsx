@@ -94,56 +94,33 @@ const SubCategoryProductsComponent = ({ typesDefault, pageTitle, description, ca
     }
 
 
-    /* Filter menu
-
-        const openNav = () => {
-        document.getElementById("filterMenu").style.width = "250px";
-    }
-    const closeNav = () => {
-        document.getElementById("filterMenu").style.width = "0";
-        typeToSet("category")
-        listToSet(categories)
-    }
-                <div id="filterMenu" className="sidenav">
-                    <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                    <div className="col-md-3 order-md-first">
-                        <div id="filters" className="d-md-block">
-                            {typesCheckboxes.map((TypeCheckbox) => {
-                                return (
-                                    <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={TypeCheckbox.id}{...TypeCheckbox} />
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
-                <Button onClick={openNav}>Filter</Button>
-    */
 
     return (
         <React.Fragment>
 
+            <div className="container">
+                <h3 className="text-center">{categoryName}</h3>
+                <div class="container">
+                    <p className="text-center">
 
-            <h3 className="text-center">{categoryName}</h3>
-            <div class="container">
-                <p className="text-center">
+                        {description}
+                    </p>
+                </div>
 
-                    {description}
-                </p>
-            </div>
-
-            <h3 className="horizontal-line1">
-                <span className="horizontal-line2">Produkter</span>
-            </h3>
-            <div className="">
-                <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
-                    {({ data: { subCategories } }) => {
-                        return (
-                            <Productgrid productgrid={subCategories[0].products} />
-                        )
+                <h3 className="horizontal-line1">
+                    <span className="horizontal-line2">Produkter</span>
+                </h3>
+                <div className="">
+                    <QuerySubCategoryFilter query={SUBCATEGORYFILTER_QUERY} SubcategoryName={pageTitle} arrayOfTypes={typesArray}>
+                        {({ data: { subCategories } }) => {
+                            return (
+                                <Productgrid productgrid={subCategories[0].products} />
+                            )
 
 
-                    }}
-                </QuerySubCategoryFilter>
+                        }}
+                    </QuerySubCategoryFilter>
+                </div>
             </div>
         </React.Fragment>
     )
