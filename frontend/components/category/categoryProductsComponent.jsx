@@ -348,32 +348,32 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
                 </h3>
 
                 <Button size="lg" block onClick={openNav}>Filter</Button>
-            </div>
-
-            <p>
-                {categoriesListInput[0].description}
-
-            </p>
-
-            <div className="row">
-
-                <div className="">
-                    <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
-                        {({ data: { categories } }) => {
-                            const productsArray = getProducts(categories)
-
-                            return (
-                                <Productgrid productgrid={productsArray} />
-                            )
 
 
-                        }}
-                    </QueryCategoryFilter>
+                <p>
+                    {categoriesListInput[0].description}
+
+                </p>
+
+                <div className="row">
+
+                    <div className="">
+                        <QueryCategoryFilter query={CATEGORIESFILTER_QUERY} categoryName={pageTitle} arrayOfSubcat={subcategoriesArray} arrayOfTypes={typesArray}>
+                            {({ data: { categories } }) => {
+                                const productsArray = getProducts(categories)
+
+                                return (
+                                    <Productgrid productgrid={productsArray} />
+                                )
+
+
+                            }}
+                        </QueryCategoryFilter>
+
+                    </div>
 
                 </div>
-
             </div>
-
         </React.Fragment>
     )
 
