@@ -20,20 +20,24 @@ const Highlight3Articles = (props) => {
                     <div className="container">
                         <div className="row">
 
-                            <div className="col-sm-9">
+                            <div className="col">
                                 <img src="/images/articles/hudpleievelger_test.png" alt="logo" />
+                                <div>
+                                    <div className="text-block">
+                                        <h3>Hudpleievelgeren</h3>
+                                        <h6 className=""> Finn den perfekte hudpleie rutinen tilpasset din hud.</h6>
 
-                                <div className="text-block">
-                                    <h3>Hudpleievelgeren</h3>
-                                    <h6> Finn den perfekte hudpleie rutinen tilpasset din hud.
-                                    </h6>
+
+
+                                    </div>
                                 </div>
-                                <div className="p-3">
+                                <div className=" ">
                                     <Link href="/hudpleievelger" >
-                                        <Button className="outlined_btn" color={"info"}>Klikk her for å ta
+                                        <Button className="outlined_btn m-3" color={"info"}>Klikk her for å ta
                                         testen</Button>
                                     </Link>
                                 </div>
+
                             </div>
 
                             <div className="col-sm-3">
