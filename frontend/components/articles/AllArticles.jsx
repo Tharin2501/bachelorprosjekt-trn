@@ -8,7 +8,6 @@ export const DisplayAllArticles = () => {
     return (
         <Query query={ARTICLES_QUERY}>
             {({ data: { articles } }) => {
-                console.log(articles);
                 return (
                     articles.map((article) => {
                         return (
@@ -27,21 +26,21 @@ export const DisplayAllArticles = () => {
                                         <div className="card-body-header" tabIndex="1">
                                             <h1>{article.title}</h1>
                                         </div>
-                                            <div className="card-body-description pt-3 mt-3" tabIndex="1">
-                                                <p>
-                                                    {article.introduction}
-                                                </p>
-                                                <div className="row mt-3 pl-3">
-                                                    <Link href={{
-                                                        pathname: "artikkel",
-                                                        query: { id: article.id }
-                                                    }}>
-                                                        <button type="button" className="btn btn-primary">
-                                                            <a>Les mer</a>
-                                                        </button>
-                                                    </Link>
-                                                </div>
+                                        <div className="card-body-description pt-3 mt-3" tabIndex="1">
+                                            <p>
+                                                {article.introduction}
+                                            </p>
+                                            <div className="row mt-3 pl-3">
+                                                <Link href={{
+                                                    pathname: "artikkel",
+                                                    query: { id: article.id }
+                                                }}>
+                                                    <button type="button" className="btn btn-primary">
+                                                        <a>Les mer</a>
+                                                    </button>
+                                                </Link>
                                             </div>
+                                        </div>
                                         <div className="pt-5 mt-3">
                                             <h6 style={{ color: "#757B82" }}>
                                                 {article.category}

@@ -33,7 +33,7 @@ export const DisplayAllArticlesFrontpage = () => {
                 <div className="row justify-content-center">
                     <Query query={ARTICLES_QUERY_WITHLIMIT}>
                         {({ data: { articles } }) => {
-                            console.log(articles)
+
                             return (
                                 articles.map((article) => {
                                     return (

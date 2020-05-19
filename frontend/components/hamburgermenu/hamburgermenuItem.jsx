@@ -5,7 +5,7 @@ const HamburgermenuItem = props => {
     if (props.type == "category") {
         return (
 
-            <div tabindex={props.tabindexNumber} onClick={() => props.listFunction(props.category)} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? props.listFunction(props.category) : null }}>
+            <div tabIndex={props.tabindexNumber} onClick={() => props.listFunction(props.category)} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? props.listFunction(props.category) : null }}>
 
                 <div className="myImg">
                     <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image.url} alt="" />
@@ -20,7 +20,7 @@ const HamburgermenuItem = props => {
     } else {
         return (
 
-            <div tabindex={props.tabindexNumber} onClick={() => props.categoryClickFunction(props.category.StrapiName)} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? props.categoryClickFunction(props.category.StrapiName) : null }}>
+            <div tabIndex={props.tabindexNumber} onClick={() => props.categoryClickFunction(props.category.StrapiName)} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? props.categoryClickFunction(props.category.StrapiName) : null }}>
                 <div className="myImg">
                     <img className="myImg" src={"https://trnbackend.herokuapp.com" + props.category.image[0].url} alt="" />
                 </div>

@@ -50,9 +50,8 @@ const FavoritesList = () => {
             </div>
 
             {!isServer() && favorites !== undefined && favorites.map((product, i) => {
-                console.log(product.name)
                 return (
-                    <div>
+                    <div key={product.id}>
 
                         <FavoritesCard key={product.id} setFavorites={setFavorites} onDelete={changeFavorites} newPriceFunction={changecart}
                             CartListCard={product} />

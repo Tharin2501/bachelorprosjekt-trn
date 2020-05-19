@@ -123,7 +123,7 @@ export const MyHeader = () => {
 
 
                                     <Input id="sokefelt" className="font-weight-light " placeholder="Søk... " />
-                                    <label for="sokefelt" className="inputLabelHide">
+                                    <label htmlFor="sokefelt" className="inputLabelHide">
                                         Søk på siden her
                                 </label>
                                 </InputGroup>
@@ -139,7 +139,7 @@ export const MyHeader = () => {
                         </Navbar>
 
                         <div>
-                            <nav class="navbar-nav nav-fill navbarColor">
+                            <nav className="navbar-nav nav-fill navbarColor">
                                 <div className={"container-fluid"}>
                                     <div className="row justify-content-center ">
 
@@ -214,7 +214,7 @@ export const NewsLetter = () => {
                             </InputGroupAddon>
 
                             <Input id="epostintastingsfelt" placeholder="Din e-post" />
-                            <label for="epostintastingsfelt" className="inputLabelHide">
+                            <label htmlFor="epostintastingsfelt" className="inputLabelHide">
                                 Skriv inn epost
                                 </label>
 

@@ -94,7 +94,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                     <ul>
                         <li className="nav_submenu-item">
 
-                            <div tabindex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
+                            <div tabIndex="0" onClick={() => { handlearticlesClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handlearticlesClick() : null }}>
 
                                 <div className="myImg">
                                     <img className="myImg" src={"/images/artikler.png"} alt="" />
@@ -108,7 +108,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                         <li className="nav_submenu-item">
 
-                            <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/") : null }}>
+                            <div tabIndex="0" onClick={() => { handleMainNavgationIconClick("/") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/") : null }}>
 
                                 <div className="myImg">
                                     <img className="myImg" src={"/images/tilbud.png"} alt="" />
@@ -121,7 +121,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                         </li>
 
                         <li className="nav_submenu-item">
-                            <div tabindex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
+                            <div tabIndex="0" onClick={() => { handleBrandClick() }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleBrandClick() : null }}>
 
                                 <div className="myImg">{/*"/images/brandsikon.svg" */}
                                     <img className="myImg" src={"/images/brands.png"} alt="" />
@@ -134,7 +134,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                         <li className="nav_submenu-item">
 
-                            <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/hudpleievelger") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/hudpleievelger") : null }}>
+                            <div tabIndex="0" onClick={() => { handleMainNavgationIconClick("/hudpleievelger") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/hudpleievelger") : null }}>
 
                                 <div className="myImg">
                                     <img className="myImg" src={"/images/hudpleievelger.png"} alt="" />
@@ -147,7 +147,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
                         </li>
                         <li className="nav_submenu-item">
 
-                            <div tabindex="0" onClick={() => { handleMainNavgationIconClick("/klikkOgHent") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/klikkOgHent") : null }}>
+                            <div tabIndex="0" onClick={() => { handleMainNavgationIconClick("/klikkOgHent") }} onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? handleMainNavgationIconClick("/klikkOgHent") : null }}>
 
                                 <div className="myImg">
                                     <img className="myImg" src={"/images/klikkhent.png"} alt="" />
@@ -163,7 +163,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                         {categoriesToShow.map((category) => {
                             return (
-                                <li className="nav_submenu-item">
+                                <li className="nav_submenu-item" key={category.id} >
                                     <HamburgermenuItem category={category} type={type} listFunction={changeListToShow}>
 
                                     </HamburgermenuItem>
@@ -178,7 +178,7 @@ const HamburgermenuList = forwardRef((props, ref) => {
 
                         {categoriesToShow.map((category) => {
                             return (
-                                <li className="nav_submenu-item">
+                                <li className="nav_submenu-item" key={category.id}>
                                     <HamburgermenuItem tabindexNumber={props.tabindexNumber} category={category} type={type} listFunction={changeListToShow}>
 
                                     </HamburgermenuItem>

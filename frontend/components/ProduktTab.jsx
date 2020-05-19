@@ -104,7 +104,7 @@ const ProduktTab = props => {
 
                   return reviews.map((review) => {
                     return (
-                      <ReviewListItem reviewdata={review}> </ReviewListItem>
+                      <ReviewListItem key={review.id} reviewdata={review}> </ReviewListItem>
                     )
                   })
 

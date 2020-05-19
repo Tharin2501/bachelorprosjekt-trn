@@ -63,9 +63,9 @@ const CartList = () => {
 
             {!isServer() && cart !== undefined && cart.map((product, i) => {
                 return (
-                    <div>
-                        <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
-                    </div>
+
+                    <CartListCard key={product.id} setcart={setCart} onDelete={changecart} CartListCard={product} />
+
                 );
 
             })}
