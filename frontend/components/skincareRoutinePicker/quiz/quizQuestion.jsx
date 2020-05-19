@@ -14,11 +14,12 @@ const QuizQuestion = (props) => {
     // gå til product side i stedenfor se omtale eller vis antall  <SkincareCaruselCardCheckboxList></SkincareCaruselCardCheckboxList>
     return (
         <div align="center" >
+            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
             <div className="quizContainer">
 
                 <div className={"jumbotron "}>
 
-                    <a href="javascript:void(0)" onClick={() => cancelSkincarePickerButtonHandler()} className="float-right quizCloseButton mx-auto" >&times;</a>
+
                     <h2 align="center"> {props.currentQustion.question}</h2>
                     {props.currentQustion.options.map((option) => {
                         return (

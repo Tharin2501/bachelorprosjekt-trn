@@ -5,8 +5,10 @@ import GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY from "../../../apol
 import QurySkincareCarusel from "../../qurySkincareCarusel";
 import { addtoCart } from "../../cart/cartHandler"
 import { filterProductsFunction } from "../utils/skincareRotuinePickerUtils"
-import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from "next/router";
+import {
+    Button, Container, Row, Col, Progress
+} from 'reactstrap';
 
 // 1 clense 2 toner 3 Moist
 
@@ -15,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const SkincareDesktopController = (props) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
-
+    const router = useRouter();
     const changeStepRequest = (changeStepValue) => {
         setCurrentStep(changeStepValue)
     }
@@ -41,9 +43,15 @@ const SkincareDesktopController = (props) => {
         })
     }
 
+    const cancelSkincarePickerButtonHandler = () => {
+
+        router.push("/");
+    }
+
     if (currentStep === 0) {
         return (
             <div align="center" >
+                <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
                 <div className="quizContainer">
 
                     <div className={"jumbotron "}>
