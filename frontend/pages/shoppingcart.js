@@ -1,10 +1,13 @@
 import React from "react"
 import CartList from "../components/cart/cartList";
-
+import Head from 'next/head'
 const ShoppingCart = () => (
-
-    <CartList></CartList>
-
+    <div>
+        <Head>
+            <title> Handlekurv </title>
+        </Head>
+        <CartList></CartList>
+    </div>
 );
 
 export default ShoppingCart;

@@ -1,10 +1,13 @@
 import React from 'react';
 import QuizController from "../components/skincareRoutinePicker/quiz/quizController"
-
+import Head from 'next/head'
 const Hudpleievelger = () => (
-
-    <QuizController></QuizController>
-
+    <div>
+        <Head>
+            <title> Hudpleievelger</title>
+        </Head>
+        <QuizController></QuizController>
+    </div>
 
 
 

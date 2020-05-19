@@ -33,6 +33,7 @@ export const DisplayAllArticlesFrontpage = () => {
                 <div className="row justify-content-center">
                     <Query query={ARTICLES_QUERY_WITHLIMIT}>
                         {({ data: { articles } }) => {
+                            console.log(articles)
                             return (
                                 articles.map((article) => {
                                     return (
@@ -43,7 +44,7 @@ export const DisplayAllArticlesFrontpage = () => {
                                                 <div className="mycard-header">
                                                     <img
                                                         src={"https://trnbackend.herokuapp.com" + article.headerImage[0].url}
-                                                        alt={article.headerImage[0].alt} />
+                                                        alt={article.headerImage[0].alternativeText} />
                                                 </div>
 
                                                 <div className="card-body">

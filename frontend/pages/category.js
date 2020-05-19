@@ -5,7 +5,7 @@ import CategoryProductsComonent from "../components/category/categoryProductsCom
 import Highlight3Articles from "../components/category/highlight3Articles"
 import CATEGORYGETSUBCATEGOREISWITHNAME_QUERY from "../apollo/queries/Category/CategoryGetSubcategoriesWithName"
 import QuerySubCategory from "../components/querySubCategory";
-
+import Head from 'next/head'
 
 const Category = () => {
 
@@ -19,6 +19,9 @@ const Category = () => {
       {({ data: { categories } }) => {
         return (
           <div>
+            <Head>
+              <title> {categories[0].categoryName} </title>
+            </Head>
             {/* first*/}
             <SubCategoryListMainCategory subCategoryList={categories[0].sub_categories} categoryName={router.query.id}></SubCategoryListMainCategory>
 

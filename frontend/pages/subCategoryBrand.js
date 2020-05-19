@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import BRAND_QUERY from "../apollo/queries/brand/brand";
 import Query from "../components/query";
-
+import Head from 'next/head'
 import SubCategoryBrandcomponent from "../components/brandPage/subCategoryBrandcomponent"
 /*
 <SubCategoryList subCategoryList={subCategories[0].category.sub_categories} categoryName={subCategories[0].category.StrapiName}></SubCategoryList>
@@ -18,6 +18,9 @@ const SubCategoryBrand = () => {
                 {({ data: { brand } }) => {
                     return (
                         <div>
+                            <Head>
+                                <title> {brand.title} </title>
+                            </Head>
                             <SubCategoryBrandcomponent brand={brand} subCategoryName={router.query.id} brandName={router.query.brandName} />
                         </div>
                     );

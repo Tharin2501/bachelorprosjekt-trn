@@ -31,7 +31,14 @@ const MySearchbar = () => {
                 <InputGroupAddon addonType="prepend" >
                     <InputGroupText style={{ backgroundColor: "white" }} ><GoSearch alt={"forstørrelsesglass "} /></InputGroupText>
                 </InputGroupAddon>
+
+
+
+                <label className="inputLabelHide">
+                    Søk etter produkter her
+                                </label>
                 <Input className="font-weight-light" placeholder="Søk... " />
+
             </InputGroup>
 
 
@@ -53,12 +60,7 @@ export const MyHeader = () => {
         getCartPrice()
     }, [[Object.values(price)]])
 
-    const divStyle = {
-        backgroundColor: "#e3f2fd",
-        margin: '0px',
-        padding: '0px'
 
-    };
 
     function getCartPrice() {
         if (typeof window !== "undefined") {
@@ -117,7 +119,13 @@ export const MyHeader = () => {
                                     <InputGroupAddon addonType="prepend">
                                         <InputGroupText style={{ backgroundColor: "white" }}><GoSearch /></InputGroupText>
                                     </InputGroupAddon>
-                                    <Input className="font-weight-light " placeholder="Søk... " />
+
+
+
+                                    <Input id="sokefelt" className="font-weight-light " placeholder="Søk... " />
+                                    <label for="sokefelt" className="inputLabelHide">
+                                        Søk på siden her
+                                </label>
                                 </InputGroup>
 
                                 <div className="mt-4">
@@ -204,13 +212,20 @@ export const NewsLetter = () => {
                             <InputGroupAddon addonType="prepend">
                                 <InputGroupText><AiOutlineMail /></InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Din e-post" />
+
+                            <Input id="epostintastingsfelt" placeholder="Din e-post" />
+                            <label for="epostintastingsfelt" className="inputLabelHide">
+                                Skriv inn epost
+                                </label>
+
                         </InputGroup>
                         <div className="w-100 py-1" />
                     </div>
 
 
                     <div className="form-check">
+
+
                         <input className="form-check-input" type="checkbox" value="" id="myCheckbox" />
                         <label className="form-check-label" htmlFor="myCheckbox">
                             <p style={{ fontWeight: "bold" }}>

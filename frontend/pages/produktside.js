@@ -3,6 +3,7 @@ import Produktside from "../components/productPage/produktside";
 import PRODUCT_QUERY from "../apollo/queries/product/product";
 import Query from "../components/query";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 
 const productSide = () => {
   const router = useRouter();
@@ -11,9 +12,12 @@ const productSide = () => {
       {({ data: { product } }) => {
 
         return (
-
-          <Produktside productSide={product}></Produktside>
-
+          <div>
+            <Head>
+              <title> {product.ProductName} </title>
+            </Head>
+            <Produktside productSide={product}></Produktside>
+          </div>
         );
       }}
     </Query>

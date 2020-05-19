@@ -3,7 +3,7 @@ import { Frontpage } from "../components/Frontpage";
 import Cookie from "js-cookie";
 import { useState, useEffect } from "react";
 import parsCookies from "../components/cart/parseCookies";
-
+import Head from 'next/head'
 
 var jsonObj = [];
 // favoritesStroage
@@ -41,6 +41,10 @@ const Cart = ({
   return (
 
     <div>
+      <Head>
+        <title> Forsiden</title>
+      </Head>
+
       <Frontpage />
     </div>
   );
