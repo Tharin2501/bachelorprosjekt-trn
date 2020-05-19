@@ -797,7 +797,7 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
   /* Quiz*/
 
 #background{
-  position: fixed;
+  position: relative;
 
   background-image: url(./quizBackground.jpg);
   background-color: white;
@@ -876,6 +876,10 @@ light-font .breadcrumb-item + .breadcrumb-item::before {
 .desktopSkincareCaruselWrapper{
   background-color: white;
   overflow:hidden
+}
+
+.skincareMobileDiv{
+  overflow-y: scroll;
 }
 
 .MobileSkincareCaurselCardImage{

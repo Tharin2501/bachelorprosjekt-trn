@@ -39,7 +39,7 @@ const SkincareCaruselCard = (props) => {
     return (
 
         <div >
-            <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded">
+            <Card className="ml-2 shadow-lg p-3 mb-5 bg-white rounded ">
                 <Progress value={props.progressBarValue}></Progress>
                 <text align="center">{props.stepText}</text>
                 <img className="MobileSkincareCaurselCardImage" align="center" src={"https://trnbackend.herokuapp.com" + props.product.image[0].url} alt="" />

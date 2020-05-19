@@ -1,5 +1,8 @@
 import React, { useState } from "react"
-
+import {
+    Card, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Progress,
+} from 'reactstrap';
 import SkincareMobileCarusel from "./skincareMobileCarusel"
 import GETPRODUCTSFROMSUBCATEGORYFILTERANDBULLETPOINTS_QUERY from "../../../apollo/queries/carusel/GetProductsFromSubcategoryFilterAndBulletpoints";
 import QurySkincareCarusel from "../../qurySkincareCarusel";
@@ -41,7 +44,9 @@ const SkincareMobileController = (props) => {
     }
     if (currentStep === 0) {
         return (
+
             <div align="center" >
+                <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
                 <div className="quizContainer">
 
                     <div className={"jumbotron "}>
@@ -72,7 +77,10 @@ const SkincareMobileController = (props) => {
 
 
                     return (
-                        <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
+                        <div align="center skincareMobileDiv" >
+                            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+                            <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
+                        </div>
                     )
                 }}
             </QurySkincareCarusel>
