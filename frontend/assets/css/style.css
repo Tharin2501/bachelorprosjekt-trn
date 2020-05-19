@@ -231,6 +231,14 @@ font-size: 14px;
 
 }
 
+.btn.btn-favorite{
+  
+  border-radius: 15px;
+  font-weight: bold;
+  background-color: white;
+
+}
+
 .btn.btn-light:hover{
   color: #0b3954;
   background-color: #bfd7ea;

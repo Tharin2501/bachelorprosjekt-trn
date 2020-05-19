@@ -7,7 +7,7 @@ import {
   changeNumberOfProducts,
 } from "../cart/cartHandler";
 import {
-  FaShoppingBasket,
+  FaShoppingCart,
   FaHeart,
   FaPlusCircle,
   FaMinusCircle,
@@ -170,11 +170,11 @@ const Produktside = (props) => {
                 <Col>
                   <Button
                     onClick={() => addToShoppingCartAndRecalcuatePrice()}
-                    className="bg-light border border-secondary text-dark p-2 w-100"
+                    className="btn btn-light text-white p-2 w-100"
                   >
                     <Row>
-                      <Col>
-                        <FaShoppingBasket color="black" />
+                      <Col sm="4">
+                        <FaShoppingCart color="white" />
                       </Col>
                       <Col>Legg i handlekurv</Col>
                     </Row>
@@ -185,15 +185,15 @@ const Produktside = (props) => {
                 <Col>
                   <Button
                     onClick={() => changeHeartcolorAndAddToFavorite()}
-                    className="bg-light border border-secondary text-dark p-2 w-100"
+                    className="btn btn-favorite  text-dark p-2 w-100"
                   >
                     <Row>
-                      <Col>
+                      <Col sm="4">
 
                         <FaHeart alt={"Hjerte"} color={heartColor} />
 
                       </Col>
-                      <Col>Legg til i favoritter</Col>
+                      <Col >Legg til i favoritter</Col>
                     </Row>
 
 
