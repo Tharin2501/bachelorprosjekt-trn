@@ -115,7 +115,7 @@ const SpecificBrandPage = (props) => {
             </h3>
 
 
-            <div className="container-fluid">
+            <div className="container">
               <div className="row justify-content-center py-5">
 
 
