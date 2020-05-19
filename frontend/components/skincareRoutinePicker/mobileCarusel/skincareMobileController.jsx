@@ -10,13 +10,14 @@ import { addtoCart } from "../../cart/cartHandler";
 import { filterProductsFunction } from "../utils/skincareRotuinePickerUtils"
 import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from "next/router";
 
 // 1 clense 2 toner 3 Moist
 
 const SkincareMobileController = (props) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [chosenProdutsArary, setChosenProdutsArary] = useState([])
-
+    const router = useRouter();
 
     const changeStepRequest = (changeStepValue) => {
         setCurrentStep(changeStepValue)
@@ -27,6 +28,11 @@ const SkincareMobileController = (props) => {
         tempArray.push(productToAdd);
         setChosenProdutsArary(tempArray);
 
+    }
+
+    const cancelSkincarePickerButtonHandler = () => {
+
+        router.push("/");
     }
     const addChosenProductsToCart = () => {
 
