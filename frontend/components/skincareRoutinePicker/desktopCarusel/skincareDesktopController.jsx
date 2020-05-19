@@ -50,10 +50,9 @@ const SkincareDesktopController = (props) => {
 
 
                         <h2 align="center"> Produktene dine er nå klare</h2>
-                        <p> Swipe til venstre og høyre for å se de forskjellige produktene.</p>
-                        <p> Trykk på <FontAwesomeIcon icon={faCheck} alt={"checkmark"}></FontAwesomeIcon> for velge et produkt.</p>
-                        <p> Trykk på <FontAwesomeIcon icon={faArrowRight} alt={"Pil til høyre"}></FontAwesomeIcon>  når du har bestemt deg å ønsker å gå videre.</p>
-
+                        <br></br>
+                        <h4 align="center"> Trykk på start for se produktene anbefalt til deg.</h4>
+                        <br></br>
                         <button onClick={() => changeStepRequest(1)} type="button" className="btn btn-dark m-4 btn-lg"> Start</button>
 
                     </div>
