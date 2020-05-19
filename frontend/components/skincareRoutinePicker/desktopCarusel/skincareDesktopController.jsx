@@ -51,9 +51,8 @@ const SkincareDesktopController = (props) => {
     if (currentStep === 0) {
         return (
             <div align="center" >
-                <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                <div className="quizContainer">
 
+                <div className="quizContainer">
                     <div className={"jumbotron "}>
 
 
