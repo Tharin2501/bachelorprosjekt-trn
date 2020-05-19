@@ -10,7 +10,7 @@ import {
 import { setProgressBarValue } from "../utils/skincareRotuinePickerUtils"
 
 const SkincareDesktopCarusel = (props) => {
-    const [stepNameText, setStepNameText] = useState("Rens");
+    const [stepNameText, setStepNameText] = useState(props.steptext);
     const [goToNextStepButtonText, setGoToNextStepButtonText] = useState(" Gå til neste steg");
 
 
@@ -43,9 +43,9 @@ const SkincareDesktopCarusel = (props) => {
             let newStepNumber = props.stepNumber + 1
             props.goToNextStepFunction(newStepNumber);
             if (newStepNumber == 2) {
-                setStepNameText("Toner")
+
             } else {
-                setStepNameText("Fuktihetskrem")
+
                 setGoToNextStepButtonText("Fullfør å gå til handlekurven")
             }
         }

@@ -86,7 +86,7 @@ const SkincareMobileController = (props) => {
                     return (
                         <div align="center" >
                             <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                            <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
+                            <SkincareMobileCarusel steptext="Rens" goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
                         </div>
                     )
                 }}
@@ -103,7 +103,7 @@ const SkincareMobileController = (props) => {
                     return (
                         <div align="center">
                             <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                            <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                            <SkincareMobileCarusel stepNumber={2} steptext="Toner" goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                         </div>
 
                     )
@@ -121,7 +121,7 @@ const SkincareMobileController = (props) => {
                     return (
                         <div align="center">
                             <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
-                            <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                            <SkincareMobileCarusel stepNumber={3} steptext="Fuktighetskrem" goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
                         </div>
                     )
                 }}

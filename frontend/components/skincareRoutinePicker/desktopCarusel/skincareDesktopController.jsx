@@ -83,7 +83,7 @@ const SkincareDesktopController = (props) => {
 
 
                     return (
-                        <SkincareDesktopCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel steptext="Rens" goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareDesktopCarusel>
                     )
                 }}
             </QurySkincareCarusel>
@@ -97,7 +97,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
                     const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.tonerArray)
                     return (
-                        <SkincareDesktopCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel stepNumber={2} steptext="Toner" goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
                     )
                 }}
             </QurySkincareCarusel>
@@ -111,7 +111,7 @@ const SkincareDesktopController = (props) => {
                 {({ data: { subCategories } }) => {
                     const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.moistzerierArray)
                     return (
-                        <SkincareDesktopCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
+                        <SkincareDesktopCarusel stepNumber={3} steptext="Fuktighetskrem" goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareDesktopCarusel>
                     )
                 }}
             </QurySkincareCarusel>
