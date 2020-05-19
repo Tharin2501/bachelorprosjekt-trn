@@ -41,7 +41,7 @@ const Highlight3Articles = (props) => {
                                     return (
                                         <div key={article.id}>
                                             <div className="card">
-                                                <div className="mycard-header">
+                                                <div className="mycard-header" >
                                                     <img
                                                         src={"https://trnbackend.herokuapp.com" + article.headerImage[0].url}
                                                         alt="logo" />
@@ -49,7 +49,7 @@ const Highlight3Articles = (props) => {
 
                                                 <div className="card-body">
 
-                                                    <div className="card-body-header">
+                                                    <div className="card-body-header" tabIndex="0">
                                                         <h1>{article.title}</h1>
                                                     </div>
 
