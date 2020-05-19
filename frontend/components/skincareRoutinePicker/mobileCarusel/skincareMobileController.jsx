@@ -83,7 +83,7 @@ const SkincareMobileController = (props) => {
 
 
                     return (
-                        <div align="center skincareMobileDiv" >
+                        <div align="center" >
                             <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
                             <SkincareMobileCarusel goToNextStepFunction={changeStepRequest} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart} stepNumber={1} productsToShowArray={resultarray} ></SkincareMobileCarusel>
                         </div>
