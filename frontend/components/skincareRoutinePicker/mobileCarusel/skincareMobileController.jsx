@@ -101,7 +101,11 @@ const SkincareMobileController = (props) => {
                 {({ data: { subCategories } }) => {
                     const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.tonerArray)
                     return (
-                        <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        <div align="center">
+                            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+                            <SkincareMobileCarusel stepNumber={2} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        </div>
+
                     )
                 }}
             </QurySkincareCarusel>
@@ -115,7 +119,10 @@ const SkincareMobileController = (props) => {
                 {({ data: { subCategories } }) => {
                     const resultarray = filterProductsFunction(subCategories[0].products, props.filtersFromQuizArray.moistzerierArray)
                     return (
-                        <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        <div align="center">
+                            <Button onClick={() => cancelSkincarePickerButtonHandler()}> Avbryt</Button>
+                            <SkincareMobileCarusel stepNumber={3} goToNextStepFunction={changeStepRequest} productsToShowArray={resultarray} addToChosenProdutsArrayFunction={addToChosenProdutsArray} addChosenProductsToCart={addChosenProductsToCart}></SkincareMobileCarusel>
+                        </div>
                     )
                 }}
             </QurySkincareCarusel>
