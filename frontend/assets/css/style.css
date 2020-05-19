@@ -387,6 +387,7 @@ div.scrollmenu {
 /* margin: 0.313rem;*/
 
 .navitem{
+  cursor: pointer;
   display: inline-block;
   color: white;
   text-align: center;
