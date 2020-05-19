@@ -62,7 +62,7 @@ const SubCategoryBrandcomponent = (props) => {
             {({ data: { subCategories } }) => {
                 return (
 
-                    <div>
+                    <div className="container">
                         <Row>
                             <Col>
                                 <h1 className="text-center">{props.brand.name}</h1>
