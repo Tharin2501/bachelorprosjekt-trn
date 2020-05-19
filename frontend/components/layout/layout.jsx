@@ -15,7 +15,6 @@ import {
 import Cookie from "js-cookie";
 import { MyDrawer } from "../MyDrawer";
 import { useRouter } from "next/router"
-import { calculatePrice } from "../cookieHandler"
 import CartTotalPriceContext from "../../components/context/cartTotalPriceContext";
 import { Media, MediaContextProvider } from "../media"
 const MySearchbar = () => {
