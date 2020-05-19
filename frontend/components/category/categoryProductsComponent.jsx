@@ -21,13 +21,23 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
     const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
+    const [tabindexNumber, setTabindexNumber] = useState("-1")
+
     // general
     const [generalListIsOpen, setGeneralListIsIsOpen] = useState(true);
     const toggleGeneralList = () => setGeneralListIsIsOpen(!generalListIsOpen);
 
     // SubCategories
     const [subcategoreisListIsOpen, setSubcategoreisListIsOpen] = useState(true);
-    const toggleSubcategoryList = () => setSubcategoreisListIsOpen(!subcategoreisListIsOpen);
+    const toggleSubcategoryList = () => {
+        setSubcategoreisListIsOpen(!subcategoreisListIsOpen);
+        if (tabindexNumber == "-1") {
+            setTabindexNumber("0");
+        } else {
+            setTabindexNumber("-1")
+        }
+    }
+
 
     // Types
     const [typesListIsOpen, setTypesListIsIsOpen] = useState(true);
@@ -44,6 +54,8 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
     )
+
+
 
 
 
@@ -214,9 +226,11 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
     const openNav = () => {
         document.getElementById("filterMenu").style.width = "250px";
+        setTabindexNumber("0")
     }
     const closeNav = () => {
         document.getElementById("filterMenu").style.width = "0";
+        setTabindexNumber("-1")
 
     }
 
@@ -288,14 +302,14 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
         <React.Fragment>
             <div id="filterMenu" className="sidenav">
-                <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                <a href="javascript:void(0)" className="closebtn" tabIndex={tabindexNumber} onClick={closeNav}>&times;</a>
                 <div className="col-md-3 order-md-first">
                     <Collapse isOpen={isOpen}>
 
 
                         {/* Produktkat Start */}
                         <div className="col-md-1">
-                            <Button type="button" onClick={toggleSubcategoryList}>ProduktKategorier</Button>
+                            <Button type="button" tabIndex={tabindexNumber} onClick={toggleSubcategoryList}>ProduktKategorier</Button>
                             <Collapse isOpen={subcategoreisListIsOpen}>
                                 <div id="filters" className="d-md-block">
                                     {subcategoryCheckboxes.map((object) => {
@@ -305,7 +319,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
                                             <div key={object.id}>
-                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementSubCategories} key={object.id}{...object}>
+                                                <CheckBox tabindexNumber={tabindexNumber} handleCheckChieldElement={handleCheckChieldElementSubCategories} key={object.id}{...object}>
 
 
                                                 </CheckBox>
@@ -320,7 +334,7 @@ const CategoryProductsComonent = ({ categoriesListInput, pageTitle }) => {
 
 
 
-                                                                <CheckBox handleCheckChieldElement={handleCheckChieldElementTypes} key={type.id}{...type} />
+                                                                <CheckBox tabIndex={tabindexNumber} handleCheckChieldElement={handleCheckChieldElementTypes} key={type.id}{...type} />
 
                                                             )
                                                         })}

@@ -9,7 +9,7 @@ const SubCategoryListSubCategory = ({ subCategoryList, categoryName, mainCategor
             <div className="navitem">
                 <div>
                     <Link href={{ pathname: "/category", query: { id: categoryName } }}>
-                        <a> <div className="nav-link imageSize"> <img src={"/images/arrowLeftpng.png"} alt=""></img> </div></a>
+                        <a> <div className="nav-link imageSize " tabIndex="-1"> <img src={"/images/arrowLeftpng.png"} alt=""></img> </div></a>
                     </Link>
 
                 </div>
