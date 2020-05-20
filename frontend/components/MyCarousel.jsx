@@ -96,10 +96,10 @@ const MyCarousel = () => {
                         </div>
                     </div>
 
-                    <a className="carousel-control-prev" href="#demo" data-slide="prev">
+                    <a className="carousel-control-prev" href="#" data-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </a>
-                    <a className="carousel-control-next" href="#demo" data-slide="next">
+                    <a className="carousel-control-next" href="#" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
 

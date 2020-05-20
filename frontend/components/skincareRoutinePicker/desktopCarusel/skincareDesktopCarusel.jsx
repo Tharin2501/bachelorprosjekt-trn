@@ -8,6 +8,7 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import { setProgressBarValue } from "../utils/skincareRotuinePickerUtils"
+import { checkIfSpaceOrEnterPressed } from "../../utils/accessibilityUtil"
 
 const SkincareDesktopCarusel = (props) => {
     const [stepNameText, setStepNameText] = useState(props.steptext);
@@ -54,6 +55,9 @@ const SkincareDesktopCarusel = (props) => {
 
     const slides = props.productsToShowArray.map((product) => {
         return (
+
+
+
             <CarouselItem
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
@@ -77,7 +81,9 @@ const SkincareDesktopCarusel = (props) => {
                 <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
     
                 */
-
+    const test = () => {
+        console.log("test")
+    }
 
     return (
         <div className="container desktopCarusel">
@@ -97,8 +103,8 @@ const SkincareDesktopCarusel = (props) => {
                 <CarouselIndicators items={props.productsToShowArray} className="myCaruselIndictaor" activeIndex={activeIndex} onClickHandler={goToIndex} />
 
                 {slides}
-                <CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} />
-                <CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} />
+                <a onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? previous() : null }}><CarouselControl className="controltest" direction="prev" directionText="Previous" onClickHandler={previous} /></a>
+                <a onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? next() : null }}><CarouselControl className="controltest" direction="next" directionText="Next" onClickHandler={next} /></a>
 
 
 
@@ -106,6 +112,8 @@ const SkincareDesktopCarusel = (props) => {
 
             </Carousel>
         </div>
+
+
 
     );
 }
