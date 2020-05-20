@@ -4,23 +4,29 @@ import Ticker from 'react-ticker'
 const names = ["Norges største parfymeri", "Alltid åpent", "Ingen moms", "Spar Tid", "Merkevarer"];
 
 // If you don’t pass in an initial value, reduce will assume the first item in your array is your initial value
-export const MyMarquee = () => (
-    <div style={{ backgroundColor: "lightblue" }}>
+export const MyMarquee = () => {
 
-        <Ticker direction="toRight" mode="chain" speed={3}>
+    return (
+        <div>
+            <div style={{ backgroundColor: "lightblue" }}>
 
-            {(index) => (
-                <div className="marquee-container">
+                <Ticker offset="0.1%" mode="chain" move={false} speed={3}>
 
-                    {names.map(name =>
+                    {(index) => (
+                        <div className="marquee-container">
 
-                        <li key={name}> {name} </li>)
-                        .reduce((accumulator, curr, ) => [accumulator, <div key={name} className="px-4" />, curr], [])}
+                            {names.map(name =>
+
+                                <li key={name}> {name} </li>)
+                                .reduce((accumulator, curr, ) => [accumulator, <div key={name} className="px-4" />, curr], [])}
 
 
-                </div>
-            )}
-        </Ticker>
+                        </div>
+                    )}
+                </Ticker>
 
-    </div >
-);
+            </div >
+
+        </div>
+    )
+};

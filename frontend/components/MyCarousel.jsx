@@ -6,7 +6,7 @@ import {
     CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
-
+import { checkIfSpaceOrEnterPressed } from "./utils/accessibilityUtil"
 const items = [
     {
         src: "../images/carousel/nyhet1.jpg",
@@ -67,7 +67,9 @@ const MyCarousel = () => {
 
         );
     });
-
+    const test = () => {
+        console.log("YASS")
+    }
 
     return (
         <div className="container ">
@@ -77,11 +79,12 @@ const MyCarousel = () => {
                         activeIndex={activeIndex}
                         next={next}
                         previous={previous}
+                        ride={false}
                     >
                         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                         {slides}
-                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-                        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} onKeyDown={test()} />
+                        <CarouselControl direction="next" directionText="Next" onClickHandler={next} onKeyDown={test()} />
                     </Carousel>
                 </div>
             </div>
