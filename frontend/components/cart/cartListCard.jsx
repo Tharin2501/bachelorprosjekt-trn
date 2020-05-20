@@ -3,7 +3,7 @@ import { FaHeart, FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { addOneProductToCart, removeOneProduct, } from "../cookieHandler"
 import Link from "next/link";
 import Cookie from "js-cookie"
-import { ChangeQuantityOfProductsOnProduct } from "./cartHandler"
+import { ChangeQuantityOfProductsOnProduct, addItemToFavorites, } from "./cartHandler"
 import { Media, MediaContextProvider } from "../media"
 // heavy influence https://bbbootstrap.com/snippets/shopping-cart-checkout-payment-options-86973257
 const CartListCard = (props) => {
@@ -24,7 +24,9 @@ const CartListCard = (props) => {
         props.onDelete();
     }
 
-
+    const setAsFav = () => {
+        addItemToFavorites(productContext)
+    }
     return (
         <MediaContextProvider>
             <Media at="sm">
@@ -53,7 +55,7 @@ const CartListCard = (props) => {
 
                             <div className="ml-2">
                                 <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
-                                <button className="text-nowrap add-btn"> Legg til i favoritter</button>
+                                <button className="text-nowrap add-btn" onClick={() => setAsFav()}> Legg til i favoritter</button>
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,7 @@ const CartListCard = (props) => {
 
                             <div className="ml-2">
                                 <button onClick={(() => deleteProductFunction())} className="delete-btn"> Fjern alle</button>
-                                <button className="text-nowrap add-btn"> Legg til i favoritter</button>
+                                <button className="text-nowrap add-btn" onClick={() => setAsFav()}> Legg til i favoritter</button>
                             </div>
                         </div>
                     </div>
