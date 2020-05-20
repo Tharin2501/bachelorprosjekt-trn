@@ -7,6 +7,7 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import { checkIfSpaceOrEnterPressed } from "./utils/accessibilityUtil"
+
 const items = [
     {
         src: "../images/carousel/nyhet1.jpg",
@@ -67,47 +68,27 @@ const MyCarousel = () => {
 
         );
     });
-    const test = () => {
 
-    }
 
     return (
         <div className="container ">
             <div className="row justify-content-center ">
-                <div id="demo" className="carousel slide" data-ride="carousel" ride={false}>
-
-
-                    <ul className="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" className="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-
-
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="./images/carousel/nyhet1.jpg" alt="Tre sminket kvinner med en lakserosa bakgrunnsfarge.Med tekst som sier Get the look, Få tips av våre eksperter" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./images/carousel/nyhet2.jpg" alt="Salg opp til -40% på utvalgte produkter" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./images/carousel/nyhet3.jpg" alt="Typisks huser man finner i San Fransisco med en hippy van foran. Lokalisert i en ørken med en rosa bakgrunn. To av husene til venstra har en bilboard på taket som sier  Benefit San Fransisco kommer snart" />
-                        </div>
-                    </div>
-
-                    <a className="carousel-control-prev" href="#" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a className="carousel-control-next" href="#" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-
+                <div>
+                    <Carousel
+                        activeIndex={activeIndex}
+                        next={next}
+                        previous={previous}
+                        Autoplay={false}
+                        interval={false}
+                    >
+                        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                        {slides}
+                        <a onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? previous() : null }}><CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} /></a>
+                        <a onKeyDown={() => { checkIfSpaceOrEnterPressed(event) ? next() : null }}><CarouselControl direction="next" directionText="Next" onClickHandler={next} /></a>
+                    </Carousel>
                 </div>
             </div>
         </div>
-
-
     );
 
 
