@@ -68,27 +68,46 @@ const MyCarousel = () => {
         );
     });
     const test = () => {
-        console.log("YASS")
+
     }
 
     return (
         <div className="container ">
             <div className="row justify-content-center ">
-                <div>
-                    <Carousel
-                        activeIndex={activeIndex}
-                        next={next}
-                        previous={previous}
-                        ride={false}
-                    >
-                        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-                        {slides}
-                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} onKeyDown={test()} />
-                        <CarouselControl direction="next" directionText="Next" onClickHandler={next} onKeyDown={test()} />
-                    </Carousel>
+                <div id="demo" className="carousel slide" data-ride="carousel" ride={false}>
+
+
+                    <ul className="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" className="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+
+
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img src="./images/carousel/nyhet1.jpg" alt="Tre sminket kvinner med en lakserosa bakgrunnsfarge.Med tekst som sier Get the look, Få tips av våre eksperter" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="./images/carousel/nyhet2.jpg" alt="Salg opp til -40% på utvalgte produkter" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="./images/carousel/nyhet3.jpg" alt="Typisks huser man finner i San Fransisco med en hippy van foran. Lokalisert i en ørken med en rosa bakgrunn. To av husene til venstra har en bilboard på taket som sier  Benefit San Fransisco kommer snart" />
+                        </div>
+                    </div>
+
+                    <a className="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a className="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
                 </div>
             </div>
         </div>
+
+
     );
 
 
@@ -98,11 +117,67 @@ const MyCarousel = () => {
 
 export default MyCarousel;
 /*
-       <div className="container-fluid ">
-            <div className="row justify-content-center">
-                <div className={"caruselSizeController"}>
-                    <UncontrolledCarousel items={items} />
+
+ <div>
+            <div className="container ">
+                <div className="row justify-content-center ">
+                    <div>
+                        <Carousel
+                            activeIndex={activeIndex}
+                            next={next}
+                            previous={previous}
+                            ride={false}
+                        >
+                            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                            {slides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} onKeyDown={test()} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={next} onKeyDown={test()} />
+                        </Carousel>
+                    </div>
                 </div>
+
+
+
             </div>
+
+
+            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div className="carousel-inner">
+
+                    <div className="carousel-item active">
+
+                        <img className="d-block w-100" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="First slide" />
+                    </div>
+                    <div class="carousel-item">
+                        <img className="d-block w-100" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Second slide" />
+                    </div>
+                    <div class="carousel-item">
+                        <img className="d-block w-100" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Third slide" />
+                    </div>
+
+
+                </div>
+                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span claclassNamess="sr-only">Previous</span>
+                </a>
+                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Next</span>
+                </a>
+
+
+
+
+
+            </div>
+
+
+
         </div>
-        */
+*/
