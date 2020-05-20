@@ -42,7 +42,7 @@ export const DisplayAllArticles = () => {
                                             </div>
                                         </div>
                                         <div className="pt-5 mt-3">
-                                            <h6 style={{ color: "#757B82" }}>
+                                            <h6 style={{ color: "#757582" }}>
                                                 {article.category}
                                             </h6>
                                         </div>
